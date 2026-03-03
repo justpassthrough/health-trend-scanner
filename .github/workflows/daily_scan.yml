@@ -1,0 +1,45 @@
+name: Daily Health Trend Scan
+
+on:
+  schedule:
+    # 매일 한국시간 오전 6시 (UTC 21:00 전날)
+    - cron: '0 21 * * *'
+  workflow_dispatch:  # 수동 실행도 가능
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run data collection
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python scripts/collect.py
+
+      - name: Build dashboard
+        run: python scripts/build_dashboard.py
+
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/
+          git diff --cached --quiet || git commit -m "update: $(date +%Y-%m-%d) scan results"
+          git push

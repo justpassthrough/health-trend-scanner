@@ -501,6 +501,24 @@ def build_html(data, keyword_history=None):
     font-size: 12px;
     margin-top: 6px;
   }}
+  .token-save-btn {{
+    background: #238636;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }}
+  .token-save-btn:hover {{ background: #2ea043; }}
+  .status-msg {{
+    font-size: 11px;
+    color: #8b949e;
+    margin-top: 6px;
+    text-align: center;
+  }}
   .footer {{
     text-align: center;
     font-size: 11px;
@@ -527,7 +545,10 @@ def build_html(data, keyword_history=None):
 </div>
 <div class="token-setup" id="tokenSetup" style="display:none;">
   <span>GitHub PAT 입력 (최초 1회):</span>
-  <input type="password" class="token-input" id="tokenInput" placeholder="ghp_xxxx..." onchange="saveToken(this.value)">
+  <div style="display:flex;gap:6px;margin-top:6px;">
+    <input type="password" class="token-input" id="tokenInput" placeholder="ghp_xxxx 또는 github_pat_xxxx" style="margin-top:0;flex:1;">
+    <button class="token-save-btn" onclick="saveToken(document.getElementById('tokenInput').value)">저장</button>
+  </div>
 </div>
 
 <div class="summary">
@@ -568,11 +589,23 @@ function getToken() {{
 }}
 
 function saveToken(val) {{
-  if (val) {{
+  if (val && val.trim()) {{
     localStorage.setItem('ht_github_token', val.trim());
     document.getElementById('tokenSetup').style.display = 'none';
+    document.getElementById('tokenInput').value = '';
     triggerRefresh();
   }}
+}}
+
+function showStatus(msg) {{
+  let el = document.getElementById('statusMsg');
+  if (!el) {{
+    el = document.createElement('div');
+    el.id = 'statusMsg';
+    el.className = 'status-msg';
+    document.querySelector('.refresh-bar').after(el);
+  }}
+  el.textContent = msg;
 }}
 
 async function triggerRefresh() {{
@@ -580,36 +613,61 @@ async function triggerRefresh() {{
   const token = getToken();
   if (!token) {{
     document.getElementById('tokenSetup').style.display = 'block';
+    showStatus('GitHub PAT를 먼저 입력하세요.');
     return;
   }}
   btn.disabled = true;
   btn.textContent = '갱신 중...';
+  showStatus('GitHub Actions 트리거 요청 중...');
+
+  // fine-grained PAT(github_pat_) → Bearer, classic PAT(ghp_) → token
+  const authPrefix = token.startsWith('github_pat_') ? 'Bearer' : 'token';
+
   try {{
     const resp = await fetch(
       `https://api.github.com/repos/${{REPO}}/actions/workflows/${{WORKFLOW}}/dispatches`,
       {{
         method: 'POST',
         headers: {{
-          'Authorization': `token ${{token}}`,
+          'Authorization': `${{authPrefix}} ${{token}}`,
           'Accept': 'application/vnd.github.v3+json',
         }},
         body: JSON.stringify({{ ref: 'main', inputs: {{ skip_youtube: 'true' }} }}),
       }}
     );
     if (resp.status === 204) {{
-      btn.textContent = '실행됨! 2분 후 새로고침';
-      setTimeout(() => location.reload(), 130000);
-    }} else if (resp.status === 401) {{
+      btn.textContent = '실행됨!';
+      showStatus('Actions 실행 시작됨. 약 3~4분 후 자동 새로고침합니다...');
+      // 데이터 수집 ~3분 + Pages 배포 ~1분 = 약 4분
+      let sec = 240;
+      const timer = setInterval(() => {{
+        sec--;
+        if (sec <= 0) {{
+          clearInterval(timer);
+          location.reload();
+        }} else {{
+          showStatus(`새로고침까지 ${{sec}}초... (수집+배포 진행 중)`);
+        }}
+      }}, 1000);
+    }} else if (resp.status === 401 || resp.status === 403) {{
       localStorage.removeItem('ht_github_token');
       document.getElementById('tokenSetup').style.display = 'block';
       btn.textContent = '토큰 오류';
       btn.disabled = false;
+      const errText = await resp.text().catch(() => '');
+      if (resp.status === 403) {{
+        showStatus('권한 부족. PAT에 Actions 읽기/쓰기 권한이 필요합니다.');
+      }} else {{
+        showStatus('토큰이 유효하지 않습니다. 다시 입력해주세요.');
+      }}
     }} else {{
       btn.textContent = '실패 (' + resp.status + ')';
+      showStatus('요청 실패. 상태 코드: ' + resp.status);
       setTimeout(() => {{ btn.textContent = '실시간 갱신'; btn.disabled = false; }}, 3000);
     }}
   }} catch (e) {{
     btn.textContent = '네트워크 오류';
+    showStatus('네트워크 오류: ' + e.message);
     setTimeout(() => {{ btn.textContent = '실시간 갱신'; btn.disabled = false; }}, 3000);
   }}
 }}
@@ -617,6 +675,9 @@ async function triggerRefresh() {{
 // 토큰이 없으면 안내 표시
 if (!getToken()) {{
   document.getElementById('tokenSetup').style.display = 'block';
+}} else {{
+  // 토큰이 있으면 저장됨 표시
+  showStatus('');
 }}
 </script>
 

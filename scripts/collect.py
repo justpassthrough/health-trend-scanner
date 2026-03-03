@@ -358,6 +358,56 @@ def calc_g_score(keyword):
 # 5단계: Y — 유튜브 선행 배수
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+def _is_relevant_yt_video(title, keyword=""):
+    """유튜브 영상 제목이 건강/의약 관련인지 검증.
+
+    필터 기준:
+    1. 한국어(한글) 포함 여부 — 러시아어/영어 등 무관한 영상 제거
+    2. 건강/의약 맥락 단어 포함 여부 — 동명이인/비유적 사용 제거
+    3. 검색 키워드가 제목에 실제로 포함되는지 (키워드 지정 시)
+    """
+    # 1) 한글이 하나도 없으면 탈락 (러시아어, 영어 전용 영상 등)
+    if not re.search(r"[가-힣]", title):
+        return False
+
+    # 2) 제목에서 한글 단어 추출
+    korean_words = re.findall(r"[가-힣]+", title)
+    title_text = " ".join(korean_words)
+
+    # 3) 키워드가 지정된 경우 — 키워드(공백 제거)가 제목에 포함되는지 확인
+    #    예: keyword="비타민D" → "비타민" in title이면 OK
+    if keyword:
+        kw_norm = keyword.replace(" ", "")
+        # 키워드 자체 또는 2글자 이상 부분이 제목에 있으면 통과
+        kw_found = kw_norm in title.replace(" ", "")
+        if not kw_found:
+            # 키워드의 핵심 부분(2글자 이상 한글)이라도 제목에 있는지
+            kw_parts = re.findall(r"[가-힣]{2,}", keyword)
+            kw_found = any(part in title_text for part in kw_parts)
+        if not kw_found:
+            return False
+
+    # 4) 건강/의약 맥락 확인 — 제목에 HEALTH_CONTEXT_WORDS 중 하나라도 있어야 함
+    has_health = any(hw in title_text for hw in HEALTH_CONTEXT_WORDS)
+
+    # 검색 키워드 자체가 건강 단어이면 맥락 체크 생략
+    if not has_health and keyword:
+        has_health = any(hw in keyword for hw in HEALTH_CONTEXT_WORDS)
+
+    # 5) 비건강 오탐 패턴 제거 (예: "비타민 우리 왕자님", 펫/반려동물 전용)
+    noise_patterns = [
+        r"왕자", r"공주", r"강아지.*행복", r"행복.*강아지",
+        r"반려[견묘]", r"펫\s*푸드", r"사료", r"애견",
+        r"먹방", r"ASMR", r"asmr", r"언박싱", r"하울",
+        r"게임", r"리그오브레전드", r"롤$", r"피파",
+    ]
+    for pat in noise_patterns:
+        if re.search(pat, title):
+            return False
+
+    return has_health
+
+
 def search_youtube(keyword):
     """YouTube Data API로 최근 48시간 내 급등 영상 검색"""
     if not YOUTUBE_API_KEY:
@@ -372,7 +422,7 @@ def search_youtube(keyword):
         "type": "video",
         "order": "viewCount",
         "publishedAfter": published_after,
-        "maxResults": 5,
+        "maxResults": 10,
         "regionCode": "KR",
         "relevanceLanguage": "ko",
         "key": YOUTUBE_API_KEY,
@@ -404,8 +454,13 @@ def search_youtube(keyword):
         videos = []
         max_views = 0
         for v in sr.json().get("items", []):
-            views = int(v.get("statistics", {}).get("viewCount", 0))
             title = v.get("snippet", {}).get("title", "")
+
+            # 관련성 필터: 건강/의약 무관 영상 제거
+            if not _is_relevant_yt_video(title, keyword=keyword):
+                continue
+
+            views = int(v.get("statistics", {}).get("viewCount", 0))
             channel = v.get("snippet", {}).get("channelTitle", "")
             published = v.get("snippet", {}).get("publishedAt", "")
             if views > max_views:
@@ -607,9 +662,13 @@ def find_youtube_only_trends():
 
             for v in stats_r.json().get("items", []):
                 views = int(v.get("statistics", {}).get("viewCount", 0))
+                title = v["snippet"]["title"]
+                # 관련성 필터: 건강/의약 무관 영상 제거
+                if not _is_relevant_yt_video(title, keyword=q):
+                    continue
                 if views >= 30000:
                     hot_videos.append({
-                        "title": v["snippet"]["title"],
+                        "title": title,
                         "channel": v["snippet"]["channelTitle"],
                         "views": views,
                         "published": v["snippet"]["publishedAt"],

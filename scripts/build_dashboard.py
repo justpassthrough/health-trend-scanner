@@ -149,9 +149,18 @@ def build_html(data, keyword_history=None):
             link = nh.get("link", "#")
             news_html += f'<div class="news-context"><a href="{link}" target="_blank">📰 {title}</a></div>'
 
-        # 경쟁도 쿼리 표시
-        c_query = t.get("c_query", t["keyword"])
-        c_display = f'"{c_query}" {t["blog_count"]}건' if c_query != t["keyword"] else f'{t["blog_count"]}건'
+        # 전문가 갭 표시
+        g_total = t.get("g_total", 0)
+        g_expert = t.get("g_expert", 0)
+        g_label = t.get("g_label", "보통")
+        if g_label == "전문가 갭 큼":
+            g_color_cls = "gap-high"
+        elif g_label == "전문가 부족":
+            g_color_cls = "gap-mid"
+        elif g_label == "전문가 포화" or g_label == "수요 없음":
+            g_color_cls = "gap-low"
+        else:
+            g_color_cls = "gap-normal"
 
         yt_note = ""
         if t["yt_videos"]:
@@ -179,7 +188,7 @@ def build_html(data, keyword_history=None):
             <div class="metrics">
               <span class="metric">급등 {change_sign}{t["change_rate"]}%</span>
               {intent_badge(t["intent_type"])}
-              <span class="metric">블로그 {c_display} ({t["c_level"]})</span>
+              <span class="metric {g_color_cls}">후기 {g_total}건 vs 전문가 {g_expert}건 → {g_label}</span>
             </div>
             <div class="pharma-tags">{pharma_tags}</div>
             {yt_note}
@@ -327,6 +336,10 @@ def build_html(data, keyword_history=None):
   .intent.doubt {{ background: #1a3a1a; color: #3fb950; }}
   .intent.shop {{ background: #3a1a1a; color: #f85149; }}
   .intent.neutral {{ background: #21262d; color: #8b949e; }}
+  .gap-high {{ background: #1a3a1a !important; color: #3fb950 !important; }}
+  .gap-mid {{ background: #3a2a0a !important; color: #d29922 !important; }}
+  .gap-low {{ background: #3a1a1a !important; color: #f85149 !important; }}
+  .gap-normal {{ background: #21262d !important; color: #8b949e !important; }}
   .pharma-tags {{ margin-top: 6px; }}
   .tag.pharma {{
     font-size: 11px;
@@ -527,7 +540,7 @@ def build_html(data, keyword_history=None):
 
 <div class="footer">
   건강·약 트렌드 스캐너 · 매일 07:30 / 13:00 / 19:00 / 00:00 자동 갱신<br>
-  점수 = H(주제온도) × I(검색의도) × P(약사근거) × C(경쟁도) × Y(유튜브)
+  점수 = H(주제온도) × I(검색의도) × P(약사근거) × G(전문가갭) × Y(유튜브)
 </div>
 
 <script>

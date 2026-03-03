@@ -262,93 +262,47 @@ def get_keyword_news(keyword, count=2):
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 3.6단계: 동반 세부키워드 추출 (C 경쟁도용)
+# 4단계: G — 전문가 갭 (일반 콘텐츠 vs 전문가 콘텐츠 비율)
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-def extract_sub_keywords(keyword, related_text):
-    """블로그 동반 텍스트에서 세부 키워드 추출 (키워드 자체는 제외)"""
-    words = re.findall(r"[가-힣]{2,}", related_text)
-    counter = Counter(words)
-
-    # 키워드 자체, 불용어 제거
-    stopwords = {"기자", "뉴스", "보도", "관련", "대한", "통해", "위해", "이상",
-                 "이하", "최근", "현재", "오늘", "올해", "지난", "경우", "가능",
-                 "정도", "사진", "제공", "그리고", "하지만", "그래서", "때문",
-                 "정말", "진짜", "오늘", "어제", "내일", "우리", "나는", "저는",
-                 "블로그", "포스팅", "리뷰", "소개", "안녕", "여러분", "공유"}
-    for sw in stopwords:
-        counter.pop(sw, None)
-    counter.pop(keyword, None)
-    # 키워드의 부분 문자열도 제거
-    for w in list(counter.keys()):
-        if w in keyword or keyword in w:
-            counter.pop(w, None)
-
-    # 빈도 상위 3개 세부키워드
-    return [w for w, _ in counter.most_common(3)]
-
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 4단계: C — 경쟁도 (키워드+세부키워드 조합으로 블로그 검색)
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-def _count_recent_blogs(query):
-    """특정 쿼리로 블로그 검색 → 최근 7일 게시글 수 반환"""
+def _get_blog_total_count(query):
+    """네이버 블로그 검색 → totalCount 반환"""
     url = "https://openapi.naver.com/v1/search/blog.json"
-    params = {"query": query, "display": 100, "sort": "date"}
+    params = {"query": query, "display": 1}
     try:
         r = requests.get(url, headers=NAVER_HEADERS, params=params, timeout=10)
         r.raise_for_status()
-        items = r.json().get("items", [])
-
-        cutoff = datetime.now() - timedelta(days=7)
-        count = 0
-        for item in items:
-            try:
-                post_date = datetime.strptime(item.get("postdate", ""), "%Y%m%d")
-                if post_date >= cutoff:
-                    count += 1
-            except ValueError:
-                continue
-        return count
+        return r.json().get("total", 0)
     except Exception:
         return 0
 
 
-def calc_c_score(keyword, sub_keywords):
-    """키워드+세부키워드 조합으로 블로그 경쟁도 산출"""
-    # 세부키워드가 있으면 조합으로 검색, 없으면 키워드 단독
-    if sub_keywords:
-        counts = []
-        queries_used = []
-        for sk in sub_keywords[:2]:
-            q = f"{keyword} {sk}"
-            c = _count_recent_blogs(q)
-            counts.append(c)
-            queries_used.append((q, c))
-            time.sleep(0.1)
-        # 가장 낮은 경쟁도를 대표값으로 (= 가장 블루오션인 앵글)
-        best_idx = counts.index(min(counts))
-        recent_count = counts[best_idx]
-        best_query = queries_used[best_idx][0]
-    else:
-        recent_count = _count_recent_blogs(keyword)
-        best_query = keyword
+def calc_g_score(keyword):
+    """전문가 갭 배수 계산: 일반 콘텐츠 대비 전문가 콘텐츠 비율"""
+    total = _get_blog_total_count(keyword)
+    time.sleep(0.1)
+    expert = _get_blog_total_count(f"{keyword} 약사")
 
-    if recent_count <= 5:
-        c_score = 1.2
-        level = "블루오션"
-    elif recent_count <= 20:
-        c_score = 1.0
-        level = "보통"
-    elif recent_count <= 50:
-        c_score = 0.7
-        level = "경쟁 많음"
-    else:
-        c_score = 0.5
-        level = "레드오션"
+    gap_ratio = total / (expert + 1)
 
-    return c_score, recent_count, level, best_query
+    # total < 5: 수요 자체가 없음
+    if total < 5:
+        g_score = 0.7
+        g_label = "수요 없음"
+    elif gap_ratio >= 30:
+        g_score = 1.3
+        g_label = "전문가 갭 큼"
+    elif gap_ratio >= 10:
+        g_score = 1.1
+        g_label = "전문가 부족"
+    elif gap_ratio >= 3:
+        g_score = 1.0
+        g_label = "보통"
+    else:
+        g_score = 0.7
+        g_label = "전문가 포화"
+
+    return g_score, total, expert, gap_ratio, g_label
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -646,13 +600,9 @@ def main():
         p_score, pharma_matched = calc_p_score(related)
         print(f"    P={p_score} (매칭: {', '.join(pharma_matched) if pharma_matched else '없음'})")
 
-        # 세부키워드 추출 (C 경쟁도용)
-        sub_keywords = extract_sub_keywords(kw, related)
-        print(f"    세부키워드: {sub_keywords}")
-
-        # C — 경쟁도 (키워드+세부키워드 조합)
-        c_score, blog_count, c_level, c_query = calc_c_score(kw, sub_keywords)
-        print(f"    C={c_score} (\"{c_query}\" 7일내 {blog_count}건, {c_level})")
+        # G — 전문가 갭
+        g_score, g_total, g_expert, g_ratio, g_label = calc_g_score(kw)
+        print(f"    G={g_score} (후기 {g_total}건 vs 전문가 {g_expert}건, 갭비율 {g_ratio:.0f}배, {g_label})")
         time.sleep(0.15)
 
         # Y — 유튜브
@@ -664,7 +614,7 @@ def main():
         print(f"    Y={y_score}")
 
         # 최종 점수
-        total = round(h * i_score * p_score * c_score * y_score, 1)
+        total = round(h * i_score * p_score * g_score * y_score, 1)
         verdict = judge(total)
         print(f"    ★ 점수 = {total} → {verdict}")
 
@@ -675,8 +625,8 @@ def main():
             "h": h, "change_rate": round(change_rate, 1),
             "i": i_score, "intent_type": intent_type,
             "p": p_score, "pharma_keywords": pharma_matched,
-            "c": c_score, "blog_count": blog_count, "c_level": c_level,
-            "c_query": c_query,
+            "g": g_score, "g_total": g_total, "g_expert": g_expert,
+            "g_label": g_label,
             "y": y_score, "yt_videos": yt_videos[:2],
             "news_headlines": news_headlines,
         })

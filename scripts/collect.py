@@ -127,7 +127,7 @@ def get_search_trend(keyword):
     url = "https://openapi.naver.com/v1/datalab/search"
 
     today = datetime.now()
-    start_date = (today - timedelta(days=30)).strftime("%Y-%m-%d")
+    start_date = (today - timedelta(days=28)).strftime("%Y-%m-%d")
     end_date = today.strftime("%Y-%m-%d")
 
     body = {
@@ -152,12 +152,12 @@ def get_search_trend(keyword):
             return 0, 0
 
         points = results[0]["data"]
-        if len(points) < 8:
+        if len(points) < 14:
             return 0, 0
 
-        # 최근 3일 평균 vs 그 전 7일 평균 비교
-        recent = [p.get("ratio", 0) for p in points[-3:]]
-        previous = [p.get("ratio", 0) for p in points[-10:-3]]
+        # 최근 7일 평균 vs 이전 7일 평균 비교
+        recent = [p.get("ratio", 0) for p in points[-7:]]
+        previous = [p.get("ratio", 0) for p in points[-14:-7]]
 
         avg_recent = sum(recent) / len(recent) if recent else 0
         avg_previous = sum(previous) / len(previous) if previous else 0

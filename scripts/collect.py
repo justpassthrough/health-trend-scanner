@@ -391,8 +391,13 @@ def get_autocomplete_keywords(keyword, max_results=5):
     """네이버 자동완성 API로 연관 키워드 조회"""
     url = "https://ac.search.naver.com/nx/ac"
     params = {"q": keyword, "con": 1, "frm": "nv", "ans": 2}
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Referer": "https://search.naver.com/",
+        "Accept": "application/json, text/javascript, */*",
+    }
     try:
-        r = requests.get(url, timeout=5)
+        r = requests.get(url, params=params, headers=headers, timeout=5)
         r.raise_for_status()
         data = r.json()
         # 자동완성 결과는 items[0] 배열에 [키워드, ...] 형태

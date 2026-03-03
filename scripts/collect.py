@@ -246,47 +246,108 @@ def calc_p_score(related_text):
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 4단계: C — 경쟁도 (최근 7일 블로그 게시글 수)
+# 3.5단계: 관련 뉴스 헤드라인 (왜 급등했는지 맥락 제공)
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-def calc_c_score(keyword):
-    """블로그 경쟁도 산출"""
+def get_keyword_news(keyword, count=2):
+    """해당 키워드의 최신 뉴스 헤드라인 반환"""
+    items = fetch_naver_news(keyword, display=10, sort="date")
+    headlines = []
+    for item in items[:count]:
+        title = re.sub(r"<[^>]+>", "", item.get("title", ""))
+        link = item.get("link", "")
+        headlines.append({"title": title, "link": link})
+    return headlines
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 3.6단계: 동반 세부키워드 추출 (C 경쟁도용)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def extract_sub_keywords(keyword, related_text):
+    """블로그 동반 텍스트에서 세부 키워드 추출 (키워드 자체는 제외)"""
+    words = re.findall(r"[가-힣]{2,}", related_text)
+    counter = Counter(words)
+
+    # 키워드 자체, 불용어 제거
+    stopwords = {"기자", "뉴스", "보도", "관련", "대한", "통해", "위해", "이상",
+                 "이하", "최근", "현재", "오늘", "올해", "지난", "경우", "가능",
+                 "정도", "사진", "제공", "그리고", "하지만", "그래서", "때문",
+                 "정말", "진짜", "오늘", "어제", "내일", "우리", "나는", "저는",
+                 "블로그", "포스팅", "리뷰", "소개", "안녕", "여러분", "공유"}
+    for sw in stopwords:
+        counter.pop(sw, None)
+    counter.pop(keyword, None)
+    # 키워드의 부분 문자열도 제거
+    for w in list(counter.keys()):
+        if w in keyword or keyword in w:
+            counter.pop(w, None)
+
+    # 빈도 상위 3개 세부키워드
+    return [w for w, _ in counter.most_common(3)]
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 4단계: C — 경쟁도 (키워드+세부키워드 조합으로 블로그 검색)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def _count_recent_blogs(query):
+    """특정 쿼리로 블로그 검색 → 최근 7일 게시글 수 반환"""
     url = "https://openapi.naver.com/v1/search/blog.json"
-    params = {"query": keyword, "display": 100, "sort": "date"}
+    params = {"query": query, "display": 100, "sort": "date"}
     try:
         r = requests.get(url, headers=NAVER_HEADERS, params=params, timeout=10)
         r.raise_for_status()
         items = r.json().get("items", [])
 
-        # 최근 7일 내 게시글 수 카운트
         cutoff = datetime.now() - timedelta(days=7)
-        recent_count = 0
+        count = 0
         for item in items:
             try:
                 post_date = datetime.strptime(item.get("postdate", ""), "%Y%m%d")
                 if post_date >= cutoff:
-                    recent_count += 1
+                    count += 1
             except ValueError:
                 continue
+        return count
+    except Exception:
+        return 0
 
-        if recent_count <= 5:
-            c_score = 1.2
-            level = "블루오션"
-        elif recent_count <= 20:
-            c_score = 1.0
-            level = "보통"
-        elif recent_count <= 50:
-            c_score = 0.7
-            level = "경쟁 많음"
-        else:
-            c_score = 0.5
-            level = "레드오션"
 
-        return c_score, recent_count, level
+def calc_c_score(keyword, sub_keywords):
+    """키워드+세부키워드 조합으로 블로그 경쟁도 산출"""
+    # 세부키워드가 있으면 조합으로 검색, 없으면 키워드 단독
+    if sub_keywords:
+        counts = []
+        queries_used = []
+        for sk in sub_keywords[:2]:
+            q = f"{keyword} {sk}"
+            c = _count_recent_blogs(q)
+            counts.append(c)
+            queries_used.append((q, c))
+            time.sleep(0.1)
+        # 가장 낮은 경쟁도를 대표값으로 (= 가장 블루오션인 앵글)
+        best_idx = counts.index(min(counts))
+        recent_count = counts[best_idx]
+        best_query = queries_used[best_idx][0]
+    else:
+        recent_count = _count_recent_blogs(keyword)
+        best_query = keyword
 
-    except Exception as e:
-        print(f"  [ERROR] 경쟁도 조회 실패 ({keyword}): {e}")
-        return 1.0, 0, "확인불가"
+    if recent_count <= 5:
+        c_score = 1.2
+        level = "블루오션"
+    elif recent_count <= 20:
+        c_score = 1.0
+        level = "보통"
+    elif recent_count <= 50:
+        c_score = 0.7
+        level = "경쟁 많음"
+    else:
+        c_score = 0.5
+        level = "레드오션"
+
+    return c_score, recent_count, level, best_query
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -564,6 +625,12 @@ def main():
             print(f"    → H=0이므로 스킵")
             continue
 
+        # 관련 뉴스 헤드라인 (왜 급등했는지)
+        news_headlines = get_keyword_news(kw, count=2)
+        for nh in news_headlines:
+            print(f"    📰 {nh['title'][:50]}")
+        time.sleep(0.1)
+
         # I, P — 동반 검색어 분석
         related = get_related_keywords(kw)
         time.sleep(0.15)
@@ -574,9 +641,13 @@ def main():
         p_score, pharma_matched = calc_p_score(related)
         print(f"    P={p_score} (매칭: {', '.join(pharma_matched) if pharma_matched else '없음'})")
 
-        # C — 경쟁도
-        c_score, blog_count, c_level = calc_c_score(kw)
-        print(f"    C={c_score} (7일내 {blog_count}건, {c_level})")
+        # 세부키워드 추출 (C 경쟁도용)
+        sub_keywords = extract_sub_keywords(kw, related)
+        print(f"    세부키워드: {sub_keywords}")
+
+        # C — 경쟁도 (키워드+세부키워드 조합)
+        c_score, blog_count, c_level, c_query = calc_c_score(kw, sub_keywords)
+        print(f"    C={c_score} (\"{c_query}\" 7일내 {blog_count}건, {c_level})")
         time.sleep(0.15)
 
         # Y — 유튜브
@@ -597,7 +668,9 @@ def main():
             "i": i_score, "intent_type": intent_type,
             "p": p_score, "pharma_keywords": pharma_matched,
             "c": c_score, "blog_count": blog_count, "c_level": c_level,
+            "c_query": c_query,
             "y": y_score, "yt_videos": yt_videos[:2],
+            "news_headlines": news_headlines,
         })
 
     # 점수순 정렬

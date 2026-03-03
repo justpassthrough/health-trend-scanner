@@ -56,6 +56,17 @@ def build_html(data):
                 f'<span class="tag pharma">{k}</span>' for k in t["pharma_keywords"][:3]
             )
 
+        # 관련 뉴스 헤드라인 (왜 급등했는지)
+        news_html = ""
+        for nh in t.get("news_headlines", [])[:2]:
+            title = nh["title"][:55]
+            link = nh.get("link", "#")
+            news_html += f'<div class="news-context"><a href="{link}" target="_blank">📰 {title}</a></div>'
+
+        # 경쟁도 쿼리 표시
+        c_query = t.get("c_query", t["keyword"])
+        c_display = f'"{c_query}" {t["blog_count"]}건' if c_query != t["keyword"] else f'{t["blog_count"]}건'
+
         yt_note = ""
         if t["yt_videos"]:
             v = t["yt_videos"][0]
@@ -70,10 +81,11 @@ def build_html(data):
             {verdict_badge(t["verdict"])}
           </div>
           <div class="card-body">
+            {news_html}
             <div class="metrics">
               <span class="metric">급등 {change_sign}{t["change_rate"]}%</span>
               {intent_badge(t["intent_type"])}
-              <span class="metric">블로그 {t["blog_count"]}건 ({t["c_level"]})</span>
+              <span class="metric">블로그 {c_display} ({t["c_level"]})</span>
             </div>
             <div class="pharma-tags">{pharma_tags}</div>
             {yt_note}
@@ -226,6 +238,16 @@ def build_html(data):
     border-radius: 4px;
     margin-right: 4px;
   }}
+  .news-context {{
+    margin-bottom: 6px;
+  }}
+  .news-context a {{
+    font-size: 12px;
+    color: #c9d1d9;
+    text-decoration: none;
+    line-height: 1.5;
+  }}
+  .news-context a:hover {{ color: #58a6ff; }}
   .yt-note {{
     font-size: 11px;
     color: #8b949e;

@@ -674,8 +674,9 @@ def merge_duplicate_topics(topics):
             o_norm = o_kw.replace(" ", "")
             is_dup = False
 
-            # 규칙 1: 포함 관계
-            if t_kw in o_kw or o_kw in t_kw:
+            # 규칙 1: 포함 관계 (짧은 쪽이 3글자 이상이어야 함, 오탐 방지)
+            shorter = min(len(t_kw), len(o_kw))
+            if shorter >= 3 and (t_kw in o_kw or o_kw in t_kw):
                 is_dup = True
 
             # 규칙 2: 띄어쓰기 제거 후 동일
@@ -909,6 +910,7 @@ def main():
     # 1.5. 이전 스캔의 유효 키워드 유지 (점수 15+ = "패스"가 아닌 것만)
     prev_path = os.path.join(DATA_DIR, "latest.json")
     prev_topic_scores = {}  # keyword → previous score
+    prev_data = None
     if os.path.exists(prev_path):
         try:
             with open(prev_path, "r", encoding="utf-8") as f:
@@ -926,12 +928,30 @@ def main():
     print(f"  [새 키워드] {len(new_keywords)}개 (전체 추출: {len(keyword_data)}개)")
 
     # 이월 키워드: 이전 스캔에서 점수 15+ 였지만 이번에 새로 추출되지 않은 것
-    # 이전 점수 높은 순으로 정렬하여 최대 10개
-    carried = [(kw, 3) for kw in sorted(
+    # 건강 필터도 적용: 이전에 AI 해석이 있었던 것만 이월 (건강 관련 확인됨)
+    # 또는 키워드 자체가 건강 단어를 포함하면 통과
+    def is_health_keyword(kw):
+        return any(hw in kw for hw in HEALTH_CONTEXT_WORDS)
+
+    carried_candidates = [kw for kw in sorted(
         prev_topic_scores.keys(),
         key=lambda k: prev_topic_scores[k],
         reverse=True
     ) if kw not in new_kw_set]
+
+    # 건강 관련 키워드만 이월 (이전 AI 해석이 있거나 건강 단어 포함)
+    prev_ai = set()
+    if prev_data:
+        for t in prev_data.get("topics", []):
+            if t.get("ai_summary", ""):
+                prev_ai.add(t["keyword"])
+
+    carried = []
+    for kw in carried_candidates:
+        if is_health_keyword(kw) or kw in prev_ai:
+            carried.append((kw, 3))
+        else:
+            print(f"  [이월 제외] {kw} (건강 무관, 이전 점수: {prev_topic_scores[kw]:.1f})")
 
     remaining_slots = 30 - len(new_keywords)
     carried = carried[:remaining_slots]

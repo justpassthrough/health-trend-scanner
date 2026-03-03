@@ -726,8 +726,17 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
+    # 히스토리 누적 저장
+    history_dir = os.path.join(DATA_DIR, "history")
+    os.makedirs(history_dir, exist_ok=True)
+    ts = datetime.now().strftime("%Y-%m-%d_%H%M")
+    history_path = os.path.join(history_dir, f"{ts}.json")
+    with open(history_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+
     print(f"\n{'=' * 50}")
     print(f"완료! 결과 저장: {output_path}")
+    print(f"히스토리 저장: {history_path}")
     print(f"  글감 {len(topics)}개 분석, 약업계 뉴스 {len(pharma_news)}건")
     print(f"{'=' * 50}")
 

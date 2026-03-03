@@ -5,10 +5,94 @@ data/latest.json을 읽어서 모바일 최적화 HTML을 만듭니다.
 
 import json
 import os
+import glob
+from datetime import datetime, timedelta
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 DOCS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "docs")
 os.makedirs(DOCS_DIR, exist_ok=True)
+
+
+def load_history(hours=48):
+    """최근 N시간 이내 히스토리 파일들을 로드하여 키워드별 점수 이력 반환"""
+    history_dir = os.path.join(DATA_DIR, "history")
+    if not os.path.isdir(history_dir):
+        return {}
+
+    files = sorted(glob.glob(os.path.join(history_dir, "*.json")))
+    cutoff = datetime.now() - timedelta(hours=hours)
+
+    # 키워드 → [(timestamp, score), ...] 시간순
+    keyword_history = {}
+    for fpath in files:
+        fname = os.path.basename(fpath).replace(".json", "")
+        try:
+            ts = datetime.strptime(fname, "%Y-%m-%d_%H%M")
+        except ValueError:
+            continue
+        if ts < cutoff:
+            continue
+        try:
+            with open(fpath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for t in data.get("topics", []):
+                kw = t["keyword"]
+                if kw not in keyword_history:
+                    keyword_history[kw] = []
+                keyword_history[kw].append((fname, t["score"]))
+        except Exception:
+            continue
+
+    return keyword_history
+
+
+def calc_trend(keyword, current_score, keyword_history):
+    """키워드의 추이 라벨과 점수 이력 반환"""
+    history = keyword_history.get(keyword, [])
+
+    if not history:
+        return "new", "🆕 신규", []
+
+    # 현재 점수 포함하여 최근 순서 점수 리스트 (오래된 → 최신)
+    scores = [s for _, s in history]
+    # 마지막이 현재 실행 결과일 수 있으므로, 중복 방지
+    if scores and scores[-1] == current_score:
+        all_scores = scores
+    else:
+        all_scores = scores + [current_score]
+
+    if len(all_scores) < 2:
+        return "new", "🆕 신규", all_scores
+
+    prev = all_scores[-2]
+    curr = all_scores[-1]
+    diff = curr - prev
+
+    if len(all_scores) >= 3:
+        prev2 = all_scores[-3]
+        if curr > prev > prev2:
+            return "up2", "↑↑ 상승 중", all_scores[-4:]
+        elif curr < prev < prev2:
+            return "down2", "↓↓ 하락 중", all_scores[-4:]
+
+    if diff > 3:
+        return "up", "↑ 상승", all_scores[-4:]
+    elif diff < -3:
+        return "down", "↓ 하락", all_scores[-4:]
+    else:
+        return "flat", "→ 유지", all_scores[-4:]
+
+
+def trend_badge(trend_type, trend_label):
+    css_class = {
+        "up2": "trend-up",
+        "up": "trend-up",
+        "down2": "trend-down",
+        "down": "trend-down",
+        "flat": "trend-flat",
+        "new": "trend-new",
+    }.get(trend_type, "trend-flat")
+    return f'<span class="{css_class}">{trend_label}</span>'
 
 
 def verdict_badge(verdict):
@@ -39,7 +123,9 @@ def format_views(n):
     return str(n)
 
 
-def build_html(data):
+def build_html(data, keyword_history=None):
+    if keyword_history is None:
+        keyword_history = {}
     date = data.get("date", "")
     updated = data.get("updated_at", "")
     topics = data.get("topics", [])
@@ -72,6 +158,13 @@ def build_html(data):
             v = t["yt_videos"][0]
             yt_note = f'<div class="yt-note">🎬 YT: {v["title"][:30]}… ({format_views(v["views"])}회)</div>'
 
+        # 추이 계산
+        t_type, t_label, t_scores = calc_trend(t["keyword"], t["score"], keyword_history)
+        trend_html = ""
+        if t_scores:
+            scores_str = " → ".join(str(s) for s in t_scores)
+            trend_html = f'<div class="trend-line">{trend_badge(t_type, t_label)} {scores_str}</div>'
+
         topic_cards += f"""
         <div class="card">
           <div class="card-header">
@@ -81,6 +174,7 @@ def build_html(data):
             {verdict_badge(t["verdict"])}
           </div>
           <div class="card-body">
+            {trend_html}
             {news_html}
             <div class="metrics">
               <span class="metric">급등 {change_sign}{t["change_rate"]}%</span>
@@ -241,6 +335,35 @@ def build_html(data):
     padding: 2px 6px;
     border-radius: 4px;
     margin-right: 4px;
+  }}
+  .trend-line {{
+    font-size: 12px;
+    color: #8b949e;
+    margin-bottom: 6px;
+    padding: 4px 8px;
+    background: #0d1117;
+    border-radius: 6px;
+    border-left: 3px solid #21262d;
+  }}
+  .trend-up {{
+    color: #3fb950;
+    font-weight: 600;
+    margin-right: 6px;
+  }}
+  .trend-down {{
+    color: #f85149;
+    font-weight: 600;
+    margin-right: 6px;
+  }}
+  .trend-flat {{
+    color: #8b949e;
+    font-weight: 600;
+    margin-right: 6px;
+  }}
+  .trend-new {{
+    color: #58a6ff;
+    font-weight: 600;
+    margin-right: 6px;
   }}
   .news-context {{
     margin-bottom: 6px;
@@ -483,7 +606,10 @@ def main():
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    html = build_html(data)
+    keyword_history = load_history(hours=48)
+    print(f"히스토리 로드: {len(keyword_history)}개 키워드 추적 중")
+
+    html = build_html(data, keyword_history)
 
     output_path = os.path.join(DOCS_DIR, "index.html")
     with open(output_path, "w", encoding="utf-8") as f:

@@ -173,6 +173,14 @@ def build_html(data, keyword_history=None):
             v = t["yt_videos"][0]
             yt_note = f'<div class="yt-note">🎬 YT: {v["title"][:30]}… ({format_views(v["views"])}회)</div>'
 
+        # AI 해석
+        ai_summary_html = ""
+        ai_summary = t.get("ai_summary", "")
+        if ai_summary:
+            # HTML 이스케이프
+            safe_summary = ai_summary.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            ai_summary_html = f'<div class="ai-summary"><span class="ai-icon">💡</span>{safe_summary}</div>'
+
         # 추이 계산
         t_type, t_label, t_scores = calc_trend(t["keyword"], t["score"], keyword_history)
         trend_html = ""
@@ -189,6 +197,7 @@ def build_html(data, keyword_history=None):
             {verdict_badge(t["verdict"])}
           </div>
           <div class="card-body">
+            {ai_summary_html}
             {parent_html}
             {trend_html}
             {news_html}
@@ -356,6 +365,20 @@ def build_html(data, keyword_history=None):
     border-radius: 4px;
     margin-right: 4px;
   }}
+  .ai-summary {
+    font-size: 13px;
+    line-height: 1.6;
+    background: #1a1525;
+    border: 1px solid #2d2640;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    color: #d4c8ef;
+    white-space: pre-line;
+  }
+  .ai-summary .ai-icon {
+    margin-right: 4px;
+  }
   .parent-note {{
     font-size: 12px;
     color: #58a6ff;

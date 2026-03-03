@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 NAVER_CLIENT_ID = os.environ.get("NAVER_CLIENT_ID", "")
 NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET", "")
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "")
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 NAVER_HEADERS = {
     "X-Naver-Client-Id": NAVER_CLIENT_ID,
@@ -587,6 +588,107 @@ def find_youtube_only_trends():
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 8단계: AI 해석 (블로그 기획 포인트)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def generate_interpretations(topics):
+    """상위 15개 토픽에 대해 Claude Haiku로 블로그 기획 포인트를 생성.
+
+    각 키워드별로:
+    - 뒤집을 상식: 대중이 흔히 믿는 오해 (→ 블로그 후킹 소재)
+    - 약사 앵글: 병원 약사/DDS 연구자 관점의 차별화 포인트
+
+    API 키가 없거나 실패 시 빈 문자열로 graceful fallback.
+    """
+    if not ANTHROPIC_API_KEY:
+        print("\n  [SKIP] AI 해석 — ANTHROPIC_API_KEY 없음")
+        return
+
+    try:
+        import anthropic
+    except ImportError:
+        print("\n  [SKIP] AI 해석 — anthropic 패키지 미설치")
+        return
+
+    top = topics[:15]
+    if not top:
+        return
+
+    print("\n" + "=" * 50)
+    print("8단계: AI 해석 (블로그 기획 포인트)")
+    print("=" * 50)
+
+    # 키워드별 맥락 데이터 구성
+    keyword_lines = []
+    for t in top:
+        headlines = " / ".join(nh["title"][:40] for nh in t.get("news_headlines", []))
+        keyword_lines.append(
+            f"- {t['keyword']} | 점수:{t['score']} | {t['intent_type']} | "
+            f"급등:{t['change_rate']:+.0f}% | 전문가갭:{t.get('g_label','보통')} | "
+            f"뉴스: {headlines or '없음'}"
+        )
+
+    keywords_block = "\n".join(keyword_lines)
+
+    prompt = f"""당신은 병원 약사이자 약물전달(DDS) 연구자가 운영하는 네이버 건강 블로그의 콘텐츠 기획 어시스턴트입니다.
+
+이 블로그의 핵심 공식: "다들 ~라고 알잖아요. 근데 그거, 좀 달라요."
+(대중의 흔한 오해를 뒤집고, 약사/연구자만의 전문 관점으로 차별화)
+
+아래 트렌딩 키워드들을 보고, 각각에 대해 블로그 기획에 바로 쓸 수 있는 포인트를 뽑아주세요.
+
+[트렌딩 키워드]
+{keywords_block}
+
+[출력 규칙]
+- 반드시 JSON 배열로만 응답
+- 각 항목: {{"keyword": "키워드", "summary": "뒤집을 상식 + 약사 앵글 2줄"}}
+- summary 형식 (줄바꿈 \\n 사용):
+  1줄: 뒤집기 — 대중이 믿는 오해와 실제가 다른 포인트 (예: "공복에 먹어야 좋다고 알려졌지만, 균주에 따라 다름")
+  2줄: 앵글 — 약사/DDS 연구자로서 다룰 수 있는 차별화 소재 (예: "코팅 기술별 위산 생존율 비교 → 성분표 읽는 법으로 풀면 좋음")
+- 건강/의약과 직접 관련 없는 키워드는 summary를 빈 문자열로
+- 한국어로 작성"""
+
+    try:
+        client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+        response = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=2000,
+            messages=[{"role": "user", "content": prompt}],
+        )
+
+        raw = response.content[0].text.strip()
+
+        # JSON 배열 추출 (```json ... ``` 감싸기 대응)
+        if "```" in raw:
+            match = re.search(r"```(?:json)?\s*(\[.*?\])\s*```", raw, re.DOTALL)
+            if match:
+                raw = match.group(1)
+
+        interpretations = json.loads(raw)
+
+        # topic dict에 ai_summary 필드 추가
+        interp_map = {item["keyword"]: item.get("summary", "") for item in interpretations}
+        matched = 0
+        for t in topics:
+            summary = interp_map.get(t["keyword"], "")
+            t["ai_summary"] = summary
+            if summary:
+                matched += 1
+
+        print(f"  AI 해석 완료: {matched}/{len(top)}개 키워드에 해석 추가")
+
+    except json.JSONDecodeError as e:
+        print(f"  [ERROR] AI 응답 JSON 파싱 실패: {e}")
+        for t in topics:
+            t["ai_summary"] = ""
+    except Exception as e:
+        print(f"  [ERROR] AI 해석 실패: {e}")
+        for t in topics:
+            t["ai_summary"] = ""
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 메인: 전체 파이프라인
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -740,6 +842,9 @@ def main():
     # 기존 + 연관 키워드 합쳐서 점수순 정렬
     topics.extend(related_topics)
     topics.sort(key=lambda x: x["score"], reverse=True)
+
+    # 8. AI 해석 (블로그 기획 포인트)
+    generate_interpretations(topics)
 
     # 6. 약업계 뉴스
     pharma_news = collect_pharma_news()

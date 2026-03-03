@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>건강·약 트렌드 스캐너</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+  }
+  .header {
+    text-align: center;
+    padding: 20px 0 12px;
+    border-bottom: 1px solid #21262d;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .header .date { font-size: 13px; color: #8b949e; }
+  .summary {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 12px 0 20px;
+  }
+  .summary-box {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 10px 18px;
+    text-align: center;
+  }
+  .summary-box .num { font-size: 22px; font-weight: 700; }
+  .summary-box .label { font-size: 11px; color: #8b949e; }
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 24px 0 12px;
+    padding-left: 4px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .rank { color: #8b949e; font-size: 13px; font-weight: 600; }
+  .keyword { font-size: 15px; font-weight: 700; flex: 1; }
+  .score {
+    font-size: 18px;
+    font-weight: 800;
+    color: #58a6ff;
+  }
+  .badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .badge.now { background: #1a7f37; color: #fff; }
+  .badge.good { background: #9e6a03; color: #fff; }
+  .badge.maybe { background: #333; color: #aaa; }
+  .badge.skip { background: #21262d; color: #666; }
+  .metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .metric {
+    background: #21262d;
+    padding: 3px 8px;
+    border-radius: 6px;
+    color: #8b949e;
+  }
+  .intent {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .intent.doubt { background: #1a3a1a; color: #3fb950; }
+  .intent.shop { background: #3a1a1a; color: #f85149; }
+  .intent.neutral { background: #21262d; color: #8b949e; }
+  .pharma-tags { margin-top: 6px; }
+  .tag.pharma {
+    font-size: 11px;
+    background: #1c2541;
+    color: #58a6ff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+  .yt-note {
+    font-size: 11px;
+    color: #8b949e;
+    margin-top: 6px;
+    padding: 4px 8px;
+    background: #1a1a2e;
+    border-radius: 6px;
+  }
+  .yt-card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 8px;
+  }
+  .yt-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .yt-meta { font-size: 11px; color: #8b949e; }
+  .news-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 13px;
+  }
+  .news-icon { font-size: 14px; }
+  .news-title {
+    flex: 1;
+    color: #e6edf3;
+    text-decoration: none;
+  }
+  .news-title:hover { color: #58a6ff; }
+  .news-tag {
+    font-size: 10px;
+    background: #21262d;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #8b949e;
+    white-space: nowrap;
+  }
+  .empty {
+    text-align: center;
+    color: #484f58;
+    padding: 20px;
+    font-size: 13px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #484f58;
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid #21262d;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>건강·약 트렌드 스캐너</h1>
+  <div class="date">2026-03-03 · 2026-03-03 00:52 갱신</div>
+</div>
+
+<div class="summary">
+  <div class="summary-box">
+    <div class="num" style="color:#3fb950">0</div>
+    <div class="label">지금 써라</div>
+  </div>
+  <div class="summary-box">
+    <div class="num" style="color:#d29922">0</div>
+    <div class="label">쓸 만하다</div>
+  </div>
+  <div class="summary-box">
+    <div class="num">0</div>
+    <div class="label">분석 키워드</div>
+  </div>
+</div>
+
+<div class="section-title">🔥 오늘의 글감 (점수순)</div>
+<div class="empty">오늘 분석된 글감 없음</div>
+
+<div class="section-title">🎬 유튜브 급등 (네이버에 아직 안 옴)</div>
+
+        <div class="yt-card">
+          <div class="yt-title">🎬 98년생아니고 98학번인 이승희약사 #최욱 #매불쇼</div>
+          <div class="yt-meta">우리는 지금 매불쇼의 시대에 살고 있다 · 26.5만회</div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-title">🎬 Top 5 Vitamins for Immunity & Energy 💊 | #vitamins</div>
+          <div class="yt-meta">Pharmacist Simranjeet · 9.1만회</div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-title">🎬 사랑빈의 비타민 우리 왕자님.  춤도 고마워요 #김용빈 #보고싶어서 #강진청자축제</div>
+          <div class="yt-meta">용빈왕자 · 7.5만회</div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-title">🎬 방치하면 병 된다! 꼭 알아야 할 내 몸이 보내는 비타민 부족 신호 10</div>
+          <div class="yt-meta">시간을 아껴드립니다 · 4.0만회</div>
+        </div>
+        <div class="yt-card">
+          <div class="yt-title">🎬 카메라에 포착된 감동적인 순간 #감동 #강아지 #강아지영양제 #ai</div>
+          <div class="yt-meta">AUTO AI · 3.9만회</div>
+        </div>
+
+<div class="section-title">📰 약업계 헤드라인</div>
+
+        <div class="news-item">
+          <span class="news-icon">🔴</span>
+          <a href="https://n.news.naver.com/mnews/article/030/0003403430?sid=102" target="_blank" class="news-title">식약처, 의료기기법 시행규칙 개정안 입법 예고…“의료기기 변경허가...</a>
+          <span class="news-tag">허가</span>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🔴</span>
+          <a href="https://www.rapportian.com/news/articleView.html?idxno=232999" target="_blank" class="news-title">식약처, '의료기기 변경 허가' 네거티브 방식 도입</a>
+          <span class="news-tag">허가</span>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🔴</span>
+          <a href="https://n.news.naver.com/mnews/article/366/0001145412?sid=105" target="_blank" class="news-title">식약처, 의료기기 규제 손질…변경허가 ‘네거티브’ 전환</a>
+          <span class="news-tag">허가</span>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🔴</span>
+          <a href="https://www.medipana.com/news/articleView.html?idxno=407573" target="_blank" class="news-title">식약처, 의료기기 변경허가 네거티브 전환으로 기술혁신 신속 대응</a>
+          <span class="news-tag">허가</span>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🔴</span>
+          <a href="https://mdtoday.co.kr/news/view/1065592577573360" target="_blank" class="news-title">성인 급성 간성 포르피린증 치료제 ‘기브라리’ 국내 품목허가</a>
+          <span class="news-tag">허가</span>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🟡</span>
+          <a href="https://www.viva100.com/article/20260302500317" target="_blank" class="news-title">‘3세대 뇌전증 치료제’ 제네릭 쏟아진다⋯ 성패는 ‘급여 문턱’</a>
+          <span class="news-tag">급여</span>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🔴</span>
+          <a href="https://www.hitnews.co.kr/news/articleView.html?idxno=74251" target="_blank" class="news-title">CAR-T 치료제 글로벌 독주 깨질까… 국내사 잇단 허가 도전</a>
+          <span class="news-tag">허가</span>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🔴</span>
+          <a href="https://n.news.naver.com/mnews/article/001/0015933186?sid=100" target="_blank" class="news-title">피씨엘, 식약처 상대 '제조업무·품목허가 정지' 취소 소송</a>
+          <span class="news-tag">허가</span>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🟡</span>
+          <a href="https://www.dailypharm.com/user/news/336113?REFERER=NP" target="_blank" class="news-title">천연물약 동반 승승장구…규제 찬밥에도 더 커지는 존재감</a>
+          <span class="news-tag">규제</span>
+        </div>
+        <div class="news-item">
+          <span class="news-icon">🟡</span>
+          <a href="https://www.yakup.com/news/index.html?mode=view&cat=12&nid=323928" target="_blank" class="news-title">글로벌 규제기관 한자리에…세포·유전자치료제 규제 대전환 조망</a>
+          <span class="news-tag">규제</span>
+        </div>
+
+<div class="footer">
+  건강·약 트렌드 스캐너 · GitHub Actions 자동 갱신<br>
+  점수 = H(주제온도) × I(검색의도) × P(약사근거) × C(경쟁도) × Y(유튜브)
+</div>
+
+</body>
+</html>

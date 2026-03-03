@@ -162,6 +162,12 @@ def build_html(data, keyword_history=None):
         else:
             g_color_cls = "gap-normal"
 
+        # 연관 키워드 parent 표시
+        parent_html = ""
+        parent_kw = t.get("parent", "")
+        if parent_kw:
+            parent_html = f'<div class="parent-note">↑ "{parent_kw}" 연관검색어에서 발견</div>'
+
         yt_note = ""
         if t["yt_videos"]:
             v = t["yt_videos"][0]
@@ -183,6 +189,7 @@ def build_html(data, keyword_history=None):
             {verdict_badge(t["verdict"])}
           </div>
           <div class="card-body">
+            {parent_html}
             {trend_html}
             {news_html}
             <div class="metrics">
@@ -348,6 +355,15 @@ def build_html(data, keyword_history=None):
     padding: 2px 6px;
     border-radius: 4px;
     margin-right: 4px;
+  }}
+  .parent-note {{
+    font-size: 12px;
+    color: #58a6ff;
+    margin-bottom: 6px;
+    padding: 3px 8px;
+    background: #0d1117;
+    border-radius: 6px;
+    border-left: 3px solid #58a6ff;
   }}
   .trend-line {{
     font-size: 12px;

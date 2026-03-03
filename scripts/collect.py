@@ -384,6 +384,35 @@ def search_youtube(keyword):
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 5.5단계: 연관 키워드 확장 (네이버 자동완성)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def get_autocomplete_keywords(keyword, max_results=5):
+    """네이버 자동완성 API로 연관 키워드 조회"""
+    url = "https://ac.search.naver.com/nx/ac"
+    params = {"q": keyword, "con": 1, "frm": "nv", "ans": 2}
+    try:
+        r = requests.get(url, timeout=5)
+        r.raise_for_status()
+        data = r.json()
+        # 자동완성 결과는 items[0] 배열에 [키워드, ...] 형태
+        items = data.get("items", [])
+        if not items:
+            return []
+        suggestions = []
+        for group in items:
+            for item in group:
+                kw = item[0] if isinstance(item, list) else str(item)
+                # 원본 키워드와 동일한 건 제외
+                if kw != keyword and kw not in suggestions:
+                    suggestions.append(kw)
+        return suggestions[:max_results]
+    except Exception as e:
+        print(f"  [ERROR] 자동완성 실패 ({keyword}): {e}")
+        return []
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 6단계: 약업계 뉴스 수집
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -544,6 +573,71 @@ def judge(score):
         return "pass"
 
 
+def score_keyword(kw, news_count, skip_youtube, parent=None):
+    """단일 키워드의 H, I, P, G, Y 점수를 산출하고 결과 dict 반환. H=0이면 None 반환."""
+    prefix = f"    [{'+' if parent else ''}] " if parent else "    "
+
+    # H — 주제 온도
+    change_rate, current_vol = get_search_trend(kw)
+    h = calc_h_score(change_rate, news_count=news_count)
+    print(f"{prefix}H={h} (변화율 {change_rate:+.0f}%)")
+    time.sleep(0.15)
+
+    if h == 0:
+        print(f"{prefix}→ H=0이므로 스킵")
+        return None
+
+    # 관련 뉴스 헤드라인
+    news_headlines = get_keyword_news(kw, count=2)
+    for nh in news_headlines:
+        print(f"{prefix}📰 {nh['title'][:50]}")
+    time.sleep(0.1)
+
+    # I, P — 동반 검색어 분석
+    related = get_related_keywords(kw)
+    time.sleep(0.15)
+
+    i_score, intent_type, doubt_n, shop_n = calc_i_score(related)
+    print(f"{prefix}I={i_score} ({intent_type})")
+
+    p_score, pharma_matched = calc_p_score(related)
+    print(f"{prefix}P={p_score} (매칭: {', '.join(pharma_matched) if pharma_matched else '없음'})")
+
+    # G — 전문가 갭
+    g_score, g_total, g_expert, g_ratio, g_label = calc_g_score(kw)
+    print(f"{prefix}G={g_score} (후기 {g_total}건 vs 전문가 {g_expert}건, {g_label})")
+    time.sleep(0.15)
+
+    # Y — 유튜브
+    if skip_youtube:
+        y_score, yt_videos = 1.0, []
+    else:
+        y_score, yt_videos = search_youtube(kw)
+        time.sleep(0.15)
+    print(f"{prefix}Y={y_score}")
+
+    # 최종 점수
+    total = round(h * i_score * p_score * g_score * y_score, 1)
+    verdict = judge(total)
+    print(f"{prefix}★ 점수 = {total} → {verdict}")
+
+    result = {
+        "keyword": kw,
+        "score": total,
+        "verdict": verdict,
+        "h": h, "change_rate": round(change_rate, 1),
+        "i": i_score, "intent_type": intent_type,
+        "p": p_score, "pharma_keywords": pharma_matched,
+        "g": g_score, "g_total": g_total, "g_expert": g_expert,
+        "g_label": g_label,
+        "y": y_score, "yt_videos": yt_videos[:2],
+        "news_headlines": news_headlines,
+    }
+    if parent:
+        result["parent"] = parent
+    return result
+
+
 def main():
     skip_youtube = "--skip-youtube" in sys.argv
 
@@ -571,67 +665,52 @@ def main():
     print("=" * 50)
 
     topics = []
+    scored_keywords = set()  # 이미 점수 매긴 키워드 (중복 방지)
+
     for i, (kw, news_count) in enumerate(keyword_data):
         print(f"\n  [{i+1}/{len(keyword_data)}] {kw} (뉴스 {news_count}건)")
+        scored_keywords.add(kw)
 
-        # H — 주제 온도
-        change_rate, current_vol = get_search_trend(kw)
-        h = calc_h_score(change_rate, news_count=news_count)
-        print(f"    H={h} (변화율 {change_rate:+.0f}%, 뉴스 {news_count}건)")
-        time.sleep(0.15)
+        result = score_keyword(kw, news_count, skip_youtube)
+        if result:
+            topics.append(result)
 
-        if h == 0:
-            print(f"    → H=0이므로 스킵")
-            continue
+    # 5.5단계: 연관 키워드 확장 (상위 10개 키워드)
+    print("\n" + "=" * 50)
+    print("5.5단계: 연관 키워드 확장")
+    print("=" * 50)
 
-        # 관련 뉴스 헤드라인 (왜 급등했는지)
-        news_headlines = get_keyword_news(kw, count=2)
-        for nh in news_headlines:
-            print(f"    📰 {nh['title'][:50]}")
+    # 현재 상위 10개를 parent로 사용
+    top_for_expansion = sorted(topics, key=lambda x: x["score"], reverse=True)[:10]
+    related_topics = []
+
+    for t in top_for_expansion:
+        parent_kw = t["keyword"]
+        print(f"\n  [{parent_kw}] 연관검색어 조회...")
+        suggestions = get_autocomplete_keywords(parent_kw, max_results=5)
         time.sleep(0.1)
 
-        # I, P — 동반 검색어 분석
-        related = get_related_keywords(kw)
-        time.sleep(0.15)
+        if not suggestions:
+            print(f"    → 연관검색어 없음")
+            continue
 
-        i_score, intent_type, doubt_n, shop_n = calc_i_score(related)
-        print(f"    I={i_score} ({intent_type}, 의심{doubt_n}/쇼핑{shop_n})")
+        print(f"    자동완성: {suggestions}")
 
-        p_score, pharma_matched = calc_p_score(related)
-        print(f"    P={p_score} (매칭: {', '.join(pharma_matched) if pharma_matched else '없음'})")
+        for rel_kw in suggestions:
+            if rel_kw in scored_keywords:
+                print(f"    [{rel_kw}] 이미 분석됨, 스킵")
+                continue
+            scored_keywords.add(rel_kw)
 
-        # G — 전문가 갭
-        g_score, g_total, g_expert, g_ratio, g_label = calc_g_score(kw)
-        print(f"    G={g_score} (후기 {g_total}건 vs 전문가 {g_expert}건, 갭비율 {g_ratio:.0f}배, {g_label})")
-        time.sleep(0.15)
+            print(f"\n    + 연관: {rel_kw} (← {parent_kw})")
+            result = score_keyword(rel_kw, 0, skip_youtube, parent=parent_kw)
+            if result:
+                related_topics.append(result)
 
-        # Y — 유튜브
-        if skip_youtube:
-            y_score, yt_videos = 1.0, []
-        else:
-            y_score, yt_videos = search_youtube(kw)
-            time.sleep(0.15)
-        print(f"    Y={y_score}")
+    print(f"\n  연관 키워드에서 {len(related_topics)}개 추가 발견")
 
-        # 최종 점수
-        total = round(h * i_score * p_score * g_score * y_score, 1)
-        verdict = judge(total)
-        print(f"    ★ 점수 = {total} → {verdict}")
-
-        topics.append({
-            "keyword": kw,
-            "score": total,
-            "verdict": verdict,
-            "h": h, "change_rate": round(change_rate, 1),
-            "i": i_score, "intent_type": intent_type,
-            "p": p_score, "pharma_keywords": pharma_matched,
-            "g": g_score, "g_total": g_total, "g_expert": g_expert,
-            "g_label": g_label,
-            "y": y_score, "yt_videos": yt_videos[:2],
-            "news_headlines": news_headlines,
-        })
-
-    # 점수순 정렬
+    # 기존 + 연관 키워드 합쳐서 점수순 정렬
+    topics.extend(related_topics)
     topics.sort(key=lambda x: x["score"], reverse=True)
 
     # 6. 약업계 뉴스

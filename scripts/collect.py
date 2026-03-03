@@ -4,6 +4,7 @@
 """
 
 import os
+import sys
 import json
 import re
 import math
@@ -590,8 +591,12 @@ def judge(score):
 
 
 def main():
+    skip_youtube = "--skip-youtube" in sys.argv
+
     print(f"\n{'#' * 50}")
     print(f"  건강·약 트렌드 스캐너 — {datetime.now().strftime('%Y.%m.%d %H:%M')}")
+    if skip_youtube:
+        print(f"  [모드] 실시간 갱신 (유튜브 스킵)")
     print(f"{'#' * 50}\n")
 
     # 1. 키워드 자동 추출
@@ -651,9 +656,12 @@ def main():
         time.sleep(0.15)
 
         # Y — 유튜브
-        y_score, yt_videos = search_youtube(kw)
+        if skip_youtube:
+            y_score, yt_videos = 1.0, []
+        else:
+            y_score, yt_videos = search_youtube(kw)
+            time.sleep(0.15)
         print(f"    Y={y_score}")
-        time.sleep(0.15)
 
         # 최종 점수
         total = round(h * i_score * p_score * c_score * y_score, 1)
@@ -680,12 +688,35 @@ def main():
     pharma_news = collect_pharma_news()
 
     # 7. 유튜브 급등
-    youtube_trends = find_youtube_only_trends()
+    # skip_youtube면 이전 데이터 재사용
+    prev_yt_trends = []
+    prev_yt_updated = ""
+    output_path = os.path.join(DATA_DIR, "latest.json")
+    if os.path.exists(output_path):
+        try:
+            with open(output_path, "r", encoding="utf-8") as f:
+                prev = json.load(f)
+            prev_yt_trends = prev.get("youtube_trends", [])
+            prev_yt_updated = prev.get("youtube_updated_at", "")
+        except Exception:
+            pass
+
+    if skip_youtube:
+        print("\n[SKIP] 유튜브 — 이전 데이터 재사용")
+        youtube_trends = prev_yt_trends
+        yt_updated = prev_yt_updated or "이전 데이터"
+    else:
+        youtube_trends = find_youtube_only_trends()
+        yt_updated = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
 
     # 결과 저장
     result = {
         "date": datetime.now().strftime("%Y-%m-%d"),
-        "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "updated_at": now_str,
+        "naver_updated_at": now_str,
+        "youtube_updated_at": yt_updated,
         "topics": topics,
         "pharma_news": pharma_news[:15],
         "youtube_trends": youtube_trends,

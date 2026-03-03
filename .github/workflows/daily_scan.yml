@@ -2,9 +2,20 @@ name: Daily Health Trend Scan
 
 on:
   schedule:
-    # 매일 한국시간 오전 6시 (UTC 21:00 전날)
-    - cron: '0 21 * * *'
-  workflow_dispatch:  # 수동 실행도 가능
+    - cron: '30 22 * * *'   # 한국시간 07:30 (기상 직후 확인용)
+    - cron: '0 4 * * *'     # 한국시간 13:00 (오전 뉴스 반영)
+    - cron: '0 10 * * *'    # 한국시간 19:00 (저녁 글쓰기 전)
+    - cron: '0 15 * * *'    # 한국시간 00:00 (해외 이슈 반영)
+  workflow_dispatch:
+    inputs:
+      skip_youtube:
+        description: '유튜브 스킵 (API 한도 절약)'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 permissions:
   contents: write
@@ -31,7 +42,13 @@ jobs:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: python scripts/collect.py
+        run: |
+          SKIP_YT="${{ github.event.inputs.skip_youtube || 'false' }}"
+          if [ "$SKIP_YT" = "true" ]; then
+            python scripts/collect.py --skip-youtube
+          else
+            python scripts/collect.py
+          fi
 
       - name: Build dashboard
         run: python scripts/build_dashboard.py
@@ -41,5 +58,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ docs/
-          git diff --cached --quiet || git commit -m "update: $(date +%Y-%m-%d) scan results"
+          git diff --cached --quiet || git commit -m "update: $(TZ=Asia/Seoul date +%Y-%m-%d\ %H:%M) scan results"
           git push

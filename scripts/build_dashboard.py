@@ -123,6 +123,10 @@ def build_html(data):
     if not news_items:
         news_items = '<div class="empty">오늘 약업계 주요 뉴스 없음</div>'
 
+    # 데이터 시점
+    naver_updated = data.get("naver_updated_at", updated)
+    yt_updated = data.get("youtube_updated_at", updated)
+
     # 통계 요약
     now_count = sum(1 for t in topics if t["verdict"] == "now")
     good_count = sum(1 for t in topics if t["verdict"] == "good")
@@ -294,6 +298,57 @@ def build_html(data):
     padding: 20px;
     font-size: 13px;
   }}
+  .refresh-bar {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }}
+  .refresh-info {{
+    font-size: 11px;
+    color: #8b949e;
+    line-height: 1.6;
+  }}
+  .refresh-btn {{
+    background: #238636;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }}
+  .refresh-btn:hover {{ background: #2ea043; }}
+  .refresh-btn:disabled {{
+    background: #21262d;
+    color: #484f58;
+    cursor: not-allowed;
+  }}
+  .token-setup {{
+    font-size: 11px;
+    color: #484f58;
+    text-align: center;
+    margin-top: 6px;
+  }}
+  .token-setup a {{ color: #58a6ff; text-decoration: none; }}
+  .token-input {{
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+    color: #e6edf3;
+    padding: 6px 10px;
+    font-size: 12px;
+    margin-top: 6px;
+  }}
   .footer {{
     text-align: center;
     font-size: 11px;
@@ -308,7 +363,19 @@ def build_html(data):
 
 <div class="header">
   <h1>건강·약 트렌드 스캐너</h1>
-  <div class="date">{date} · {updated} 갱신</div>
+  <div class="date">{date}</div>
+</div>
+
+<div class="refresh-bar">
+  <div class="refresh-info">
+    네이버: {naver_updated}<br>
+    유튜브: {yt_updated}
+  </div>
+  <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()">실시간 갱신</button>
+</div>
+<div class="token-setup" id="tokenSetup" style="display:none;">
+  <span>GitHub PAT 입력 (최초 1회):</span>
+  <input type="password" class="token-input" id="tokenInput" placeholder="ghp_xxxx..." onchange="saveToken(this.value)">
 </div>
 
 <div class="summary">
@@ -336,9 +403,70 @@ def build_html(data):
 {news_items}
 
 <div class="footer">
-  건강·약 트렌드 스캐너 · GitHub Actions 자동 갱신<br>
+  건강·약 트렌드 스캐너 · 매일 07:30 / 13:00 / 19:00 / 00:00 자동 갱신<br>
   점수 = H(주제온도) × I(검색의도) × P(약사근거) × C(경쟁도) × Y(유튜브)
 </div>
+
+<script>
+const REPO = 'justpassthrough/health-trend-scanner';
+const WORKFLOW = 'daily_scan.yml';
+
+function getToken() {{
+  return localStorage.getItem('ht_github_token') || '';
+}}
+
+function saveToken(val) {{
+  if (val) {{
+    localStorage.setItem('ht_github_token', val.trim());
+    document.getElementById('tokenSetup').style.display = 'none';
+    triggerRefresh();
+  }}
+}}
+
+async function triggerRefresh() {{
+  const btn = document.getElementById('refreshBtn');
+  const token = getToken();
+  if (!token) {{
+    document.getElementById('tokenSetup').style.display = 'block';
+    return;
+  }}
+  btn.disabled = true;
+  btn.textContent = '갱신 중...';
+  try {{
+    const resp = await fetch(
+      `https://api.github.com/repos/${{REPO}}/actions/workflows/${{WORKFLOW}}/dispatches`,
+      {{
+        method: 'POST',
+        headers: {{
+          'Authorization': `token ${{token}}`,
+          'Accept': 'application/vnd.github.v3+json',
+        }},
+        body: JSON.stringify({{ ref: 'main', inputs: {{ skip_youtube: 'true' }} }}),
+      }}
+    );
+    if (resp.status === 204) {{
+      btn.textContent = '실행됨! 2분 후 새로고침';
+      setTimeout(() => location.reload(), 130000);
+    }} else if (resp.status === 401) {{
+      localStorage.removeItem('ht_github_token');
+      document.getElementById('tokenSetup').style.display = 'block';
+      btn.textContent = '토큰 오류';
+      btn.disabled = false;
+    }} else {{
+      btn.textContent = '실패 (' + resp.status + ')';
+      setTimeout(() => {{ btn.textContent = '실시간 갱신'; btn.disabled = false; }}, 3000);
+    }}
+  }} catch (e) {{
+    btn.textContent = '네트워크 오류';
+    setTimeout(() => {{ btn.textContent = '실시간 갱신'; btn.disabled = false; }}, 3000);
+  }}
+}}
+
+// 토큰이 없으면 안내 표시
+if (!getToken()) {{
+  document.getElementById('tokenSetup').style.display = 'block';
+}}
+</script>
 
 </body>
 </html>"""

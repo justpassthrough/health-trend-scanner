@@ -165,6 +165,57 @@
     padding: 20px;
     font-size: 13px;
   }
+  .refresh-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .refresh-info {
+    font-size: 11px;
+    color: #8b949e;
+    line-height: 1.6;
+  }
+  .refresh-btn {
+    background: #238636;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .refresh-btn:hover { background: #2ea043; }
+  .refresh-btn:disabled {
+    background: #21262d;
+    color: #484f58;
+    cursor: not-allowed;
+  }
+  .token-setup {
+    font-size: 11px;
+    color: #484f58;
+    text-align: center;
+    margin-top: 6px;
+  }
+  .token-setup a { color: #58a6ff; text-decoration: none; }
+  .token-input {
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+    color: #e6edf3;
+    padding: 6px 10px;
+    font-size: 12px;
+    margin-top: 6px;
+  }
   .footer {
     text-align: center;
     font-size: 11px;
@@ -179,12 +230,24 @@
 
 <div class="header">
   <h1>건강·약 트렌드 스캐너</h1>
-  <div class="date">2026-03-03 · 2026-03-03 01:14 갱신</div>
+  <div class="date">2026-03-03</div>
+</div>
+
+<div class="refresh-bar">
+  <div class="refresh-info">
+    네이버: 2026-03-03 01:21<br>
+    유튜브: 2026-03-03 01:21
+  </div>
+  <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()">실시간 갱신</button>
+</div>
+<div class="token-setup" id="tokenSetup" style="display:none;">
+  <span>GitHub PAT 입력 (최초 1회):</span>
+  <input type="password" class="token-input" id="tokenInput" placeholder="ghp_xxxx..." onchange="saveToken(this.value)">
 </div>
 
 <div class="summary">
   <div class="summary-box">
-    <div class="num" style="color:#3fb950">1</div>
+    <div class="num" style="color:#3fb950">0</div>
     <div class="label">지금 써라</div>
   </div>
   <div class="summary-box">
@@ -203,101 +266,47 @@
           <div class="card-header">
             <span class="rank">#1</span>
             <span class="keyword">백신</span>
-            <span class="score">89.6</span>
-            <span class="badge now">지금 써라</span>
+            <span class="score">68.9</span>
+            <span class="badge good">쓸 만하다</span>
           </div>
           <div class="card-body">
-            <div class="news-context"><a href="https://www.yakup.com/news/index.html?mode=view&cat=12&nid=323983" target="_blank">📰 MSD, 성인 전용 21가 폐렴구균 백신 ‘캡박시브’ 출시</a></div><div class="news-context"><a href="https://www.rapportian.com/news/articleView.html?idxno=233001" target="_blank">📰 한국MSD, 성인 전용 21가 폐렴구균 백신 '캡박시브' 출시</a></div>
+            <div class="news-context"><a href="http://www.bokuennews.com/news/article.html?no=274473" target="_blank">📰 국내 사망원인 3위 폐렴… 성인 맞춤 예방 본격화</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/029/0003013402?sid=105" target="_blank">📰 한국MSD, 성인 전용 21가 폐렴구균 백신 ‘캡박시브’ 출시</a></div>
             <div class="metrics">
               <span class="metric">급등 +305.6%</span>
               <span class="intent doubt">의심/경고형</span>
               <span class="metric">블로그 "백신 접종" 100건 (레드오션)</span>
             </div>
             <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span> <span class="tag pharma">대사</span></div>
-            <div class="yt-note">🎬 YT: 공포에 떠는 국민들 알고도…"이걸 몸속에?" 5년 뒤 … (59.0만회)</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#2</span>
-            <span class="keyword">캡박시브</span>
-            <span class="score">60.7</span>
-            <span class="badge good">쓸 만하다</span>
-          </div>
-          <div class="card-body">
-            <div class="news-context"><a href="https://www.yakup.com/news/index.html?mode=view&cat=12&nid=323983" target="_blank">📰 MSD, 성인 전용 21가 폐렴구균 백신 ‘캡박시브’ 출시</a></div><div class="news-context"><a href="https://www.rapportian.com/news/articleView.html?idxno=233001" target="_blank">📰 한국MSD, 성인 전용 21가 폐렴구균 백신 '캡박시브' 출시</a></div>
-            <div class="metrics">
-              <span class="metric">급등 +107.6%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric">블로그 "캡박시브 백신" 3건 (블루오션)</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span></div>
             
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#3</span>
+            <span class="rank">#2</span>
             <span class="keyword">올영세일</span>
-            <span class="score">15.7</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="score">12.1</span>
+            <span class="badge skip">패스</span>
           </div>
           <div class="card-body">
-            <div class="news-context"><a href="http://www.enewstoday.co.kr/news/articleView.html?idxno=2400327" target="_blank">📰 KB국민카드, '올영세일' 맞아 청구할인 프로모션 실시</a></div><div class="news-context"><a href="https://www.thefairnews.co.kr/news/articleView.html?idxno=70442" target="_blank">📰 &quot;올영세일에 국민카드 더하면 꿀조합&quot; KB국민카드, 오프라인 단독 할인</a></div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/030/0003403466?sid=101" target="_blank">📰 KB국민카드, '올영세일' 맞아 청구할인 행사 실시</a></div><div class="news-context"><a href="http://www.wsobi.com/news/articleView.html?idxno=305921" target="_blank">📰 동아제약 오쏘몰, 3월 올영세일 맞아 할인 행사 진행</a></div>
             <div class="metrics">
               <span class="metric">급등 +170.5%</span>
               <span class="intent shop">구매/추천형</span>
               <span class="metric">블로그 "올영세일 올리브영" 100건 (레드오션)</span>
             </div>
             <div class="pharma-tags"></div>
-            <div class="yt-note">🎬 YT: 광고❌ 올영 골드등급 코덕의 뽕뽑는 올영세일 추천템 모… (21.8만회)</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#4</span>
-            <span class="keyword">논란</span>
-            <span class="score">12.2</span>
-            <span class="badge skip">패스</span>
-          </div>
-          <div class="card-body">
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/421/0008802389?sid=110" target="_blank">📰 트럼프의 '에픽 퓨리'…70년 이란 악연 겨눴다[최종일의 월드 뷰]</a></div><div class="news-context"><a href="https://newscham.net/articles/115606" target="_blank">📰 이란 공습과 보드리야르: ‘왜곡은 실행으로 이어진다’</a></div>
-            <div class="metrics">
-              <span class="metric">급등 -0.7%</span>
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric">블로그 "논란 사건은" 100건 (레드오션)</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span> <span class="tag pharma">대사</span></div>
             
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#5</span>
-            <span class="keyword">다이어트</span>
-            <span class="score">10.8</span>
-            <span class="badge skip">패스</span>
-          </div>
-          <div class="card-body">
-            <div class="news-context"><a href="https://www.newscj.com/news/articleView.html?idxno=3380332" target="_blank">📰 서울, 시민 쓰레기 줄이기 100일 도전… 감량 아이디어 겨룬다</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/346/0000105567?sid=103" target="_blank">📰 “6개월만, 7kg 감량” 조혜련, 쌀밥 대신 ‘이것’ 먹었더니 빠졌다</a></div>
-            <div class="metrics">
-              <span class="metric">급등 -8.5%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric">블로그 "다이어트 운동" 100건 (레드오션)</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">함량</span> <span class="tag pharma">부작용</span></div>
-            <div class="yt-note">🎬 YT: 80 감량 다이어트 레전드… (24.7만회)</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#6</span>
+            <span class="rank">#3</span>
             <span class="keyword">삼천당제약</span>
             <span class="score">10.8</span>
             <span class="badge skip">패스</span>
           </div>
           <div class="card-body">
-            <div class="news-context"><a href="http://www.seouleconews.com/news/articleView.html?idxno=89700" target="_blank">📰 코스피,美-이란 전쟁에 2%대 내려 6,100대…환율 급등</a></div><div class="news-context"><a href="https://www.etoday.co.kr/news/view/2561122" target="_blank">📰 중동 리스크에 코스피 6100선 ‘흔들’⋯개인·기관의 매수세 속 방산주...</a></div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/277/0005728330?sid=101" target="_blank">📰 코스피, 장중 낙폭 줄여…코스닥은 상승 반전</a></div><div class="news-context"><a href="https://www.ziksir.com/news/articleView.html?idxno=125639" target="_blank">📰 코스피, 美-이란 전쟁에 6100대로 후퇴</a></div>
             <div class="metrics">
               <span class="metric">급등 +153.3%</span>
               <span class="intent shop">구매/추천형</span>
@@ -309,25 +318,7 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#7</span>
-            <span class="keyword">위고비</span>
-            <span class="score">10.7</span>
-            <span class="badge skip">패스</span>
-          </div>
-          <div class="card-body">
-            <div class="news-context"><a href="https://m.entertain.naver.com/article/311/0001980737" target="_blank">📰 '미나 시누이' 박수지, 위고비 없이 150kg→80kg 감량…&quot;마음 흔들렸지만...</a></div><div class="news-context"><a href="https://mdtoday.co.kr/news/view/1065616011539838" target="_blank">📰 노보 노디스크, 차세대 비만치료제 ‘아미크레틴’ 국내 3상 돌입</a></div>
-            <div class="metrics">
-              <span class="metric">급등 -0.3%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric">블로그 "위고비 마운자로" 100건 (레드오션)</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
-            <div class="yt-note">🎬 YT: 위고비 열풍이 분 스프링필드… (5.0만회)</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#8</span>
+            <span class="rank">#4</span>
             <span class="keyword">비만치료제</span>
             <span class="score">10.5</span>
             <span class="badge skip">패스</span>
@@ -340,12 +331,12 @@
               <span class="metric">블로그 "비만치료제 위고비" 100건 (레드오션)</span>
             </div>
             <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
-            <div class="yt-note">🎬 YT: 2026년 신약이 판을 바꾼다. 비만·CAR-T·ADC… (1.3만회)</div>
+            
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#9</span>
+            <span class="rank">#5</span>
             <span class="keyword">홍현희</span>
             <span class="score">10.3</span>
             <span class="badge skip">패스</span>
@@ -358,90 +349,108 @@
               <span class="metric">블로그 "홍현희 벨베이비" 23건 (경쟁 많음)</span>
             </div>
             <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
-            <div class="yt-note">🎬 YT: 준범이 지아빠랑 똑같네!… (2.5만회)</div>
+            
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#10</span>
-            <span class="keyword">폐렴구균</span>
-            <span class="score">10.2</span>
+            <span class="rank">#6</span>
+            <span class="keyword">논란</span>
+            <span class="score">9.5</span>
             <span class="badge skip">패스</span>
           </div>
           <div class="card-body">
-            <div class="news-context"><a href="https://www.yakup.com/news/index.html?mode=view&cat=12&nid=323983" target="_blank">📰 MSD, 성인 전용 21가 폐렴구균 백신 ‘캡박시브’ 출시</a></div><div class="news-context"><a href="https://www.rapportian.com/news/articleView.html?idxno=233001" target="_blank">📰 한국MSD, 성인 전용 21가 폐렴구균 백신 '캡박시브' 출시</a></div>
+            <div class="news-context"><a href="https://www.globale.co.kr/news/articleView.html?idxno=36814" target="_blank">📰 [매출순위] 〈메이플키우기〉 1위 독주···&quot;경쟁자 없어&quot;</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/079/0004120398?sid=102" target="_blank">📰 강태영 양산시의원 '공개 사과' 징계 의결…이달 표결 부쳐</a></div>
             <div class="metrics">
-              <span class="metric">급등 +32.6%</span>
+              <span class="metric">급등 -0.7%</span>
               <span class="intent doubt">의심/경고형</span>
-              <span class="metric">블로그 "폐렴구균 예방접종" 100건 (레드오션)</span>
+              <span class="metric">블로그 "논란 사건은" 100건 (레드오션)</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
+            <div class="pharma-tags"><span class="tag pharma">부작용</span> <span class="tag pharma">대사</span></div>
             
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#11</span>
-            <span class="keyword">감량</span>
-            <span class="score">9.8</span>
-            <span class="badge skip">패스</span>
-          </div>
-          <div class="card-body">
-            <div class="news-context"><a href="https://www.newscj.com/news/articleView.html?idxno=3380332" target="_blank">📰 서울, 시민 쓰레기 줄이기 100일 도전… 감량 아이디어 겨룬다</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/296/0000098105?sid=103" target="_blank">📰 잘 쉬었는데 왜 이렇게 피곤하지?...신진대사 떨어졌다 알리는 신호</a></div>
-            <div class="metrics">
-              <span class="metric">급등 +21.7%</span>
-              <span class="intent neutral">중립</span>
-              <span class="metric">블로그 "감량 체중" 100건 (레드오션)</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
-            
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#12</span>
-            <span class="keyword">제이쓴</span>
-            <span class="score">9.6</span>
-            <span class="badge skip">패스</span>
-          </div>
-          <div class="card-body">
-            <div class="news-context"><a href="https://m.entertain.naver.com/article/109/0005485703" target="_blank">📰 '다이어트 49kg' 홍현희, 조막만한 얼굴…양갈래 머리로 여리여리</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/609/0001097925" target="_blank">📰 “약장사 NO” 해명 홍현희, 얼굴 사라지겠네…동료들도 “미모 성수기...</a></div>
-            <div class="metrics">
-              <span class="metric">급등 -4.0%</span>
-              <span class="intent neutral">중립</span>
-              <span class="metric">블로그 "제이쓴 남편" 31건 (경쟁 많음)</span>
-            </div>
-            <div class="pharma-tags"></div>
-            <div class="yt-note">🎬 YT: 현희엄마는 녹화 중 #기다리기 힘든 준범이 #제이쓴… (18.4만회)</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#13</span>
+            <span class="rank">#7</span>
             <span class="keyword">약국</span>
-            <span class="score">9.1</span>
+            <span class="score">9.4</span>
             <span class="badge skip">패스</span>
           </div>
           <div class="card-body">
-            <div class="news-context"><a href="https://www.kpanews.co.kr/news/articleView.html?idxno=530195" target="_blank">📰 &quot;약국매출 한계, 정말 상권 때문일까?&quot; 휴베이스 이달 HIC 15일 개최</a></div><div class="news-context"><a href="http://www.shinailbo.co.kr/news/articleView.html?idxno=2197762" target="_blank">📰 영천경찰서, 다각적인 약물운전 예방 안전수칙 홍보 실시</a></div>
+            <div class="news-context"><a href="https://www.kpanews.co.kr/news/articleView.html?idxno=530202" target="_blank">📰 디오니헬스케어, '지노프리미엄밸런스Q10' 1차 완판</a></div><div class="news-context"><a href="http://www.seongjuro.co.kr/news/view.php?idx=59489" target="_blank">📰 성주군, &quot;이번엔 반대쪽&quot; 1년 지나 주정차 변경</a></div>
             <div class="metrics">
               <span class="metric">급등 -30.1%</span>
               <span class="intent shop">구매/추천형</span>
               <span class="metric">블로그 "약국 병원" 100건 (레드오션)</span>
             </div>
             <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
-            <div class="yt-note">🎬 YT: “운동하면 최대 5만 원”…튼튼머니, 병원·약국 결제도… (1.7만회)</div>
+            
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#14</span>
+            <span class="rank">#8</span>
+            <span class="keyword">위고비</span>
+            <span class="score">9.3</span>
+            <span class="badge skip">패스</span>
+          </div>
+          <div class="card-body">
+            <div class="news-context"><a href="https://m.entertain.naver.com/article/311/0001980737" target="_blank">📰 '미나 시누이' 박수지, 위고비 없이 150kg→80kg 감량…&quot;마음 흔들렸지만...</a></div><div class="news-context"><a href="https://mdtoday.co.kr/news/view/1065616011539838" target="_blank">📰 노보 노디스크, 차세대 비만치료제 ‘아미크레틴’ 국내 3상 돌입</a></div>
+            <div class="metrics">
+              <span class="metric">급등 -0.3%</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric">블로그 "위고비 마운자로" 100건 (레드오션)</span>
+            </div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
+            
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#9</span>
+            <span class="keyword">다이어트</span>
+            <span class="score">9.2</span>
+            <span class="badge skip">패스</span>
+          </div>
+          <div class="card-body">
+            <div class="news-context"><a href="https://www.newscj.com/news/articleView.html?idxno=3380332" target="_blank">📰 서울, 시민 쓰레기 줄이기 100일 도전… 감량 아이디어 겨룬다</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/346/0000105567?sid=103" target="_blank">📰 “6개월만, 7kg 감량” 조혜련, 쌀밥 대신 ‘이것’ 먹었더니 빠졌다</a></div>
+            <div class="metrics">
+              <span class="metric">급등 -8.5%</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric">블로그 "다이어트 건강한" 100건 (레드오션)</span>
+            </div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
+            
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#10</span>
+            <span class="keyword">감량</span>
+            <span class="score">9.2</span>
+            <span class="badge skip">패스</span>
+          </div>
+          <div class="card-body">
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/296/0000098105?sid=103" target="_blank">📰 잘 쉬었는데 왜 이렇게 피곤하지?...신진대사 떨어졌다 알리는 신호</a></div><div class="news-context"><a href="https://www.newscj.com/news/articleView.html?idxno=3380332" target="_blank">📰 서울, 시민 쓰레기 줄이기 100일 도전… 감량 아이디어 겨룬다</a></div>
+            <div class="metrics">
+              <span class="metric">급등 +21.7%</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric">블로그 "감량 체중" 100건 (레드오션)</span>
+            </div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">함량</span></div>
+            
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#11</span>
             <span class="keyword">비만약</span>
             <span class="score">8.2</span>
             <span class="badge skip">패스</span>
           </div>
           <div class="card-body">
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/081/0003622249?sid=105" target="_blank">📰 운동 열심히 해서 살 빼기…‘이것’ 때문에 쉽지 않다 [핵잼 사이언스...</a></div><div class="news-context"><a href="https://www.pharmnews.com/news/articleView.html?idxno=301762" target="_blank">📰 먹는 당뇨·비만약 임상 결과 잇단 공개… 제약사 간 신약 개발 경쟁 본...</a></div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/003/0013797438?sid=102" target="_blank">📰 &quot;살 빼야지&quot; 새해 결심에…비만약 '마운자로' 품귀 현상</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/081/0003622249?sid=105" target="_blank">📰 운동 열심히 해서 살 빼기…‘이것’ 때문에 쉽지 않다 [핵잼 사이언스...</a></div>
             <div class="metrics">
               <span class="metric">급등 -0.3%</span>
               <span class="intent neutral">중립</span>
@@ -453,20 +462,74 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#15</span>
-            <span class="keyword">반려동물</span>
-            <span class="score">7.5</span>
+            <span class="rank">#12</span>
+            <span class="keyword">제이쓴</span>
+            <span class="score">7.3</span>
             <span class="badge skip">패스</span>
           </div>
           <div class="card-body">
-            <div class="news-context"><a href="https://www.m-i.kr/news/articleView.html?idxno=1341969" target="_blank">📰 조용한 농촌에 켜진 변화 불빛, 구미시 옥성면 달라졌다</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/108/0003413038" target="_blank">📰 이상아, 애견 카페에 경찰 출동 &quot;법 개정 탓..충분히 예감했던 일&quot; [스타...</a></div>
+            <div class="news-context"><a href="https://m.entertain.naver.com/article/109/0005485703" target="_blank">📰 '다이어트 49kg' 홍현희, 조막만한 얼굴…양갈래 머리로 여리여리</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/609/0001097925" target="_blank">📰 “약장사 NO” 해명 홍현희, 얼굴 사라지겠네…동료들도 “미모 성수기...</a></div>
+            <div class="metrics">
+              <span class="metric">급등 -4.0%</span>
+              <span class="intent neutral">중립</span>
+              <span class="metric">블로그 "제이쓴 남편" 31건 (경쟁 많음)</span>
+            </div>
+            <div class="pharma-tags"></div>
+            
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#13</span>
+            <span class="keyword">펫쇼</span>
+            <span class="score">6.3</span>
+            <span class="badge skip">패스</span>
+          </div>
+          <div class="card-body">
+            <div class="news-context"><a href="http://www.weeklytoday.com/news/articleView.html?idxno=762336" target="_blank">📰 [위클리오늘] &quot;2만1천 명 몰린다&quot;… 역대 최대 규모 '대구 펫쇼' 엑스코...</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/001/0015933599?sid=102" target="_blank">📰 대구시 6∼8일 '제23회 대구 펫쇼'…500부스 참여</a></div>
+            <div class="metrics">
+              <span class="metric">급등 -31.4%</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric">블로그 "펫쇼 대구" 27건 (경쟁 많음)</span>
+            </div>
+            <div class="pharma-tags"></div>
+            
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#14</span>
+            <span class="keyword">운영</span>
+            <span class="score">5.8</span>
+            <span class="badge skip">패스</span>
+          </div>
+          <div class="card-body">
+            <div class="news-context"><a href="https://www.kbmaeil.com/article/20260303500098" target="_blank">📰 상주 백두달표고, 롯데백화점 본점 팝업스토어 큰 호응</a></div><div class="news-context"><a href="https://www.gukjenews.com/news/articleView.html?idxno=3518162" target="_blank">📰 김진석 충주시장 권한대행, 본연 역할 충실한 행정 강조</a></div>
+            <div class="metrics">
+              <span class="metric">급등 +24.7%</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric">블로그 "운영 휴진" 100건 (레드오션)</span>
+            </div>
+            <div class="pharma-tags"><span class="tag pharma">용량</span></div>
+            
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#15</span>
+            <span class="keyword">반려동물</span>
+            <span class="score">5.5</span>
+            <span class="badge skip">패스</span>
+          </div>
+          <div class="card-body">
+            <div class="news-context"><a href="https://www.viva100.com/article/20260303500318" target="_blank">📰 [유통소식] 봄 정원·펫 컬렉션… 부산 백화점, 체험형 콘텐츠 강화</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/312/0000750015" target="_blank">📰 이상아 영업장에 경찰 들이닥쳤다…&quot;출근 전 벌어진 상황, 이후에도 정...</a></div>
             <div class="metrics">
               <span class="metric">급등 +31.0%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric">블로그 "반려동물 필터" 100건 (레드오션)</span>
+              <span class="metric">블로그 "반려동물 있는" 100건 (레드오션)</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span></div>
-            <div class="yt-note">🎬 YT: 독특한 반려동물을 키우는 소녀… (104.2만회)</div>
+            <div class="pharma-tags"><span class="tag pharma">성분</span></div>
+            
           </div>
         </div>
 
@@ -527,9 +590,70 @@
         </div>
 
 <div class="footer">
-  건강·약 트렌드 스캐너 · GitHub Actions 자동 갱신<br>
+  건강·약 트렌드 스캐너 · 매일 07:30 / 13:00 / 19:00 / 00:00 자동 갱신<br>
   점수 = H(주제온도) × I(검색의도) × P(약사근거) × C(경쟁도) × Y(유튜브)
 </div>
+
+<script>
+const REPO = 'justpassthrough/health-trend-scanner';
+const WORKFLOW = 'daily_scan.yml';
+
+function getToken() {
+  return localStorage.getItem('ht_github_token') || '';
+}
+
+function saveToken(val) {
+  if (val) {
+    localStorage.setItem('ht_github_token', val.trim());
+    document.getElementById('tokenSetup').style.display = 'none';
+    triggerRefresh();
+  }
+}
+
+async function triggerRefresh() {
+  const btn = document.getElementById('refreshBtn');
+  const token = getToken();
+  if (!token) {
+    document.getElementById('tokenSetup').style.display = 'block';
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = '갱신 중...';
+  try {
+    const resp = await fetch(
+      `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+        },
+        body: JSON.stringify({ ref: 'main', inputs: { skip_youtube: 'true' } }),
+      }
+    );
+    if (resp.status === 204) {
+      btn.textContent = '실행됨! 2분 후 새로고침';
+      setTimeout(() => location.reload(), 130000);
+    } else if (resp.status === 401) {
+      localStorage.removeItem('ht_github_token');
+      document.getElementById('tokenSetup').style.display = 'block';
+      btn.textContent = '토큰 오류';
+      btn.disabled = false;
+    } else {
+      btn.textContent = '실패 (' + resp.status + ')';
+      setTimeout(() => { btn.textContent = '실시간 갱신'; btn.disabled = false; }, 3000);
+    }
+  } catch (e) {
+    btn.textContent = '네트워크 오류';
+    setTimeout(() => { btn.textContent = '실시간 갱신'; btn.disabled = false; }, 3000);
+  }
+}
+
+// 토큰이 없으면 안내 표시
+if (!getToken()) {
+  document.getElementById('tokenSetup').style.display = 'block';
+}
+</script>
 
 </body>
 </html>

@@ -101,7 +101,15 @@ def extract_keywords_from_news():
                  "경우", "가능", "정도", "사진", "제공", "연합", "한겨레", "조선",
                  "중앙", "동아", "매일", "한국", "서울", "국내", "세계", "글로벌",
                  "시장", "업계", "기업", "회사", "사업", "발표", "조사", "연구",
-                 "결과", "분석", "전문", "관계", "이번"}
+                 "결과", "분석", "전문", "관계", "이번",
+                 # 연예/엔터/게임/스포츠/정치 — 건강과 무관한 키워드
+                 "배우", "감독", "영화", "드라마", "출연", "방송", "예능", "아이돌",
+                 "콘서트", "앨범", "데뷔", "컴백", "팬미팅",
+                 "게임", "하자드", "레퀴엠", "플레이", "업데이트", "시즌",
+                 "축구", "야구", "배드민턴", "올림픽", "경기", "우승", "선수",
+                 "대통령", "국회", "정부", "총선", "대선", "후보", "탄핵",
+                 "주가", "코스피", "코스닥", "투자", "상장", "펀드",
+                 "후원", "공식", "운영", "지정", "최대", "진행", "출시"}
 
     for title in all_titles:
         words = re.findall(r"[가-힣]{2,}", title)
@@ -786,7 +794,30 @@ def main():
                         ["마운자로", "위고비", "오젬픽", "비타민D", "유산균",
                          "글루타치온", "콜라겐", "오메가3", "NMN", "코엔자임Q10"]]
 
-    # 상위 30개 키워드만 분석 (API 호출 절약)
+    # 1.5. 이전 스캔의 유효 키워드 유지 (점수 15+ = "패스"가 아닌 것만)
+    prev_path = os.path.join(DATA_DIR, "latest.json")
+    prev_keywords = {}  # keyword → news_count (기본값 3)
+    if os.path.exists(prev_path):
+        try:
+            with open(prev_path, "r", encoding="utf-8") as f:
+                prev_data = json.load(f)
+            for t in prev_data.get("topics", []):
+                if t.get("score", 0) >= 15:
+                    prev_keywords[t["keyword"]] = 3  # 이전 유효 키워드는 뉴스 3건으로 간주
+        except Exception:
+            pass
+
+    # 새 키워드 set
+    new_kw_set = set(kw for kw, _ in keyword_data)
+    # 이전에 있었지만 이번에 빠진 키워드 추가
+    carried = [(kw, cnt) for kw, cnt in prev_keywords.items() if kw not in new_kw_set]
+    if carried:
+        print(f"\n  [유지] 이전 스캔에서 {len(carried)}개 키워드 이월")
+        for kw, _ in carried[:10]:
+            print(f"    ↩ {kw}")
+        keyword_data.extend(carried)
+
+    # 상위 30개 키워드만 분석 (API 호출 절약 — 새 키워드 우선, 이월 키워드 후순위)
     keyword_data = keyword_data[:30]
 
     # 2~5. 각 키워드별 점수 산출

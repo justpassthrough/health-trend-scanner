@@ -388,32 +388,55 @@ def search_youtube(keyword):
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 def get_autocomplete_keywords(keyword, max_results=5):
-    """네이버 자동완성 API로 연관 키워드 조회"""
-    url = "https://ac.search.naver.com/nx/ac"
-    params = {"q": keyword, "con": 1, "frm": "nv", "ans": 2}
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Referer": "https://search.naver.com/",
-        "Accept": "application/json, text/javascript, */*",
-    }
+    """네이버 블로그 검색 동반 키워드에서 연관 키워드 추출.
+
+    자동완성 API(ac.search.naver.com)는 해외 IP 차단으로 GitHub Actions에서 사용 불가.
+    대안: 블로그 검색 결과 제목/설명에서 "키워드 + X" 패턴의 복합어를 추출.
+    """
+    url = "https://openapi.naver.com/v1/search/blog.json"
+    params = {"query": keyword, "display": 50, "sort": "date"}
     try:
-        r = requests.get(url, params=params, headers=headers, timeout=5)
+        r = requests.get(url, headers=NAVER_HEADERS, params=params, timeout=10)
         r.raise_for_status()
-        data = r.json()
-        # 자동완성 결과는 items[0] 배열에 [키워드, ...] 형태
-        items = data.get("items", [])
-        if not items:
-            return []
-        suggestions = []
-        for group in items:
-            for item in group:
-                kw = item[0] if isinstance(item, list) else str(item)
-                # 원본 키워드와 동일한 건 제외
-                if kw != keyword and kw not in suggestions:
-                    suggestions.append(kw)
-        return suggestions[:max_results]
+        items = r.json().get("items", [])
+
+        # 제목+설명에서 키워드 포함 2~5글자 복합어 추출
+        compound_counter = Counter()
+        for item in items:
+            title = re.sub(r"<[^>]+>", "", item.get("title", ""))
+            desc = re.sub(r"<[^>]+>", "", item.get("description", ""))
+            text = f"{title} {desc}"
+            # "키워드 X" 또는 "X 키워드" 패턴의 2어절 조합 추출
+            # 예: "위고비 부작용", "마운자로 품절"
+            words = text.split()
+            for j, w in enumerate(words):
+                if keyword in w or w in keyword:
+                    # 앞뒤 단어와 조합
+                    if j > 0:
+                        combo = f"{words[j-1]} {w}"
+                        if combo != keyword and len(combo) > len(keyword) + 2:
+                            compound_counter[combo] += 1
+                    if j < len(words) - 1:
+                        combo = f"{w} {words[j+1]}"
+                        if combo != keyword and len(combo) > len(keyword) + 2:
+                            compound_counter[combo] += 1
+
+        # 한글 포함 + 빈도 2회 이상 필터
+        results = []
+        for combo, count in compound_counter.most_common(20):
+            if count >= 2 and re.search(r"[가-힣]", combo):
+                # 불용어 제거
+                skip = False
+                for sw in ["블로그", "포스팅", "리뷰", "안녕", "여러분", "공유",
+                           "합니다", "있습니다", "입니다", "됩니다", "같습니다"]:
+                    if sw in combo:
+                        skip = True
+                        break
+                if not skip and combo != keyword:
+                    results.append(combo)
+        return results[:max_results]
     except Exception as e:
-        print(f"  [ERROR] 자동완성 실패 ({keyword}): {e}")
+        print(f"  [ERROR] 연관키워드 추출 실패 ({keyword}): {e}")
         return []
 
 

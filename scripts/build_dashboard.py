@@ -365,7 +365,7 @@ def build_html(data, keyword_history=None):
     border-radius: 4px;
     margin-right: 4px;
   }}
-  .ai-summary {
+  .ai-summary {{
     font-size: 13px;
     line-height: 1.6;
     background: #1a1525;
@@ -375,10 +375,10 @@ def build_html(data, keyword_history=None):
     margin-bottom: 8px;
     color: #d4c8ef;
     white-space: pre-line;
-  }
-  .ai-summary .ai-icon {
+  }}
+  .ai-summary .ai-icon {{
     margin-right: 4px;
-  }
+  }}
   .parent-note {{
     font-size: 12px;
     color: #58a6ff;

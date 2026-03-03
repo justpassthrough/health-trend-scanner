@@ -113,6 +113,15 @@
     border-radius: 4px;
     margin-right: 4px;
   }
+  .parent-note {
+    font-size: 12px;
+    color: #58a6ff;
+    margin-bottom: 6px;
+    padding: 3px 8px;
+    background: #0d1117;
+    border-radius: 6px;
+    border-left: 3px solid #58a6ff;
+  }
   .trend-line {
     font-size: 12px;
     color: #8b949e;
@@ -268,7 +277,7 @@
 
 <div class="refresh-bar">
   <div class="refresh-info">
-    네이버: 2026-03-03 02:53<br>
+    네이버: 2026-03-03 02:59<br>
     유튜브: 2026-03-03 01:21
   </div>
   <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()">실시간 갱신</button>
@@ -303,12 +312,13 @@
             <span class="badge good">쓸 만하다</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑↑ 상승 중</span> 68.9 → 72.2 → 77.3</div>
-            <div class="news-context"><a href="http://www.aflnews.co.kr/news/articleView.html?idxno=315574" target="_blank">📰 검역본부, 구제역·아프리카돼지열병 백신 개발 지원 간담회 개최</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/277/0005728415?sid=101" target="_blank">📰 한국MSD, 성인 전용 21가 폐렴구균 백신 '캡박시브' 출시</a></div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 68.9 → 72.2 → 77.3 → 77.3</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/056/0012134128?sid=100" target="_blank">📰 국민의힘 김미애, ‘코로나 백신 이물질’ 논란에 “청문회·국정조사 ...</a></div><div class="news-context"><a href="https://www.dailyvet.co.kr/news/industry/275148" target="_blank">📰 동물용의약품·소독제 개발 연구에 수의생명자원 활용</a></div>
             <div class="metrics">
               <span class="metric">급등 +305.6%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 3248006건 vs 전문가 103925건 → 전문가 갭 큼</span>
+              <span class="metric gap-high">후기 3248004건 vs 전문가 103925건 → 전문가 갭 큼</span>
             </div>
             <div class="pharma-tags"></div>
             
@@ -322,7 +332,8 @@
             <span class="badge good">쓸 만하다</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 47.3</div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 47.3 → 47.3</div>
             <div class="news-context"><a href="https://n.news.naver.com/mnews/article/277/0005728415?sid=101" target="_blank">📰 한국MSD, 성인 전용 21가 폐렴구균 백신 '캡박시브' 출시</a></div><div class="news-context"><a href="http://digitalchosun.dizzo.com/site/data/html_dir/2026/03/03/2026030380085.html" target="_blank">📰 MSD, 성인용 21가 폐렴구균 백신 ‘캡박시브’ 국내 출시</a></div>
             <div class="metrics">
               <span class="metric">급등 +107.6%</span>
@@ -337,16 +348,17 @@
           <div class="card-header">
             <span class="rank">#3</span>
             <span class="keyword">비만치료제</span>
-            <span class="score">29.2</span>
+            <span class="score">28.4</span>
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 10.5 → 10.5 → 29.2</div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 10.5 → 10.5 → 29.2 → 28.4</div>
             <div class="news-context"><a href="https://n.news.naver.com/mnews/article/417/0001132224?sid=101" target="_blank">📰 지배구조 흔들? 셀트리온 '서정진 키맨' 기우성·김형기, 사실상 연임</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/016/0002607395?sid=103" target="_blank">📰 “새해는 살빼야지”너도 나도 구매…비만약 ‘마운자로’ 품귀 현상</a></div>
             <div class="metrics">
               <span class="metric">급등 +33.0%</span>
               <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">후기 244383건 vs 전문가 6969건 → 전문가 갭 큼</span>
+              <span class="metric gap-high">후기 244384건 vs 전문가 6969건 → 전문가 갭 큼</span>
             </div>
             <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
             
@@ -355,57 +367,60 @@
         <div class="card">
           <div class="card-header">
             <span class="rank">#4</span>
-            <span class="keyword">국제약품</span>
-            <span class="score">28.9</span>
+            <span class="keyword">프로바이오틱스</span>
+            <span class="score">25.4</span>
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 28.9</div>
-            <div class="news-context"><a href="http://www.hansbiz.co.kr/news/articleView.html?idxno=820845" target="_blank">📰 국제약품, 녹내장 신약 개발 속도…2028년 목표</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/648/0000044892?sid=101" target="_blank">📰 국제약품 &quot;녹내장 신약 임상 3상…내후년 출시&quot;</a></div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 22.6 → 25.4</div>
+            <div class="news-context"><a href="http://www.weeklytoday.com/news/articleView.html?idxno=762334" target="_blank">📰 [위클리오늘] hy, 프로바이오틱스 선택 기준으로 '균주번호' 캠페인 전개</a></div><div class="news-context"><a href="https://biz.newdaily.co.kr/site/data/html/2026/03/03/2026030300033.html" target="_blank">📰 [Daily New유통] 노스페이스, 공영홈쇼핑, NOL 外</a></div>
             <div class="metrics">
-              <span class="metric">급등 +92.1%</span>
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">후기 34660건 vs 전문가 581건 → 전문가 갭 큼</span>
+              <span class="metric">급등 -4.6%</span>
+              <span class="intent neutral">중립</span>
+              <span class="metric gap-high">후기 1049934건 vs 전문가 31484건 → 전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"></div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
             
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#5</span>
-            <span class="keyword">감량</span>
-            <span class="score">25.4</span>
+            <span class="keyword">논란</span>
+            <span class="score">24.0</span>
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 10.2 → 8.7 → 25.4</div>
-            <div class="news-context"><a href="https://www.mhns.co.kr/news/articleView.html?idxno=740175" target="_blank">📰 리플레쉬 제이 킥복싱, 2025 브랜드만족지수 1위 스포츠교육 부문 수상</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/213/0001375826" target="_blank">📰 '28kg 감량' 풍자, 부작용에도 살 뺐더니…&quot;120kg 처럼 보여&quot; 절망 [R</a></div>
+            
+            <div class="trend-line"><span class="trend-up">↑ 상승</span> 6.4 → 6.4 → 24.0</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/021/0002774326?sid=100" target="_blank">📰 민주 하반기 ‘상임위 싹쓸이’ 압박…“위원장 배분 원점 재검토”</a></div><div class="news-context"><a href="https://www.dkilbo.com/news/articleView.html?idxno=535473" target="_blank">📰 국민의힘 대구시당 긴급회의, TK 통합법 처리 촉구</a></div>
             <div class="metrics">
-              <span class="metric">급등 +21.7%</span>
-              <span class="intent neutral">중립</span>
-              <span class="metric gap-high">후기 4467355건 vs 전문가 24858건 → 전문가 갭 큼</span>
+              <span class="metric">급등 -0.7%</span>
+              <span class="intent doubt">의심/경고형</span>
+              <span class="metric gap-high">후기 5394487건 vs 전문가 23860건 → 전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
+            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">약물</span></div>
             
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#6</span>
-            <span class="keyword">출시</span>
-            <span class="score">23.1</span>
+            <span class="keyword">감량</span>
+            <span class="score">23.8</span>
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑↑ 상승 중</span> 4.9 → 6.0 → 23.1</div>
-            <div class="news-context"><a href="https://m.sports.naver.com/esports/article/347/0000192241" target="_blank">📰 에이수스, 세랄루미늄 소재 초경량 AI PC 출시</a></div><div class="news-context"><a href="https://www.thelec.kr/news/articleView.html?idxno=52950" target="_blank">📰 코닝, '고릴라 글래스 세라믹 3' 공개…모토로라 차세대 폴더블에 적용</a></div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 10.2 → 8.7 → 25.4 → 23.8</div>
+            <div class="news-context"><a href="https://www.mhns.co.kr/news/articleView.html?idxno=740175" target="_blank">📰 리플레쉬 제이 킥복싱, 2025 브랜드만족지수 1위 스포츠교육 부문 수상</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/213/0001375826" target="_blank">📰 '28kg 감량' 풍자, 부작용에도 살 뺐더니…&quot;120kg 처럼 보여&quot; 절망 [R</a></div>
             <div class="metrics">
-              <span class="metric">급등 +35.1%</span>
+              <span class="metric">급등 +21.7%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 19527111건 vs 전문가 53954건 → 전문가 갭 큼</span>
+              <span class="metric gap-high">후기 4467388건 vs 전문가 24858건 → 전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span> <span class="tag pharma">함량</span></div>
+            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
             
           </div>
         </div>
@@ -417,7 +432,8 @@
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 22.7</div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 22.7 → 22.7</div>
             <div class="news-context"><a href="http://www.weeklytoday.com/news/articleView.html?idxno=762334" target="_blank">📰 [위클리오늘] hy, 프로바이오틱스 선택 기준으로 '균주번호' 캠페인 전개</a></div><div class="news-context"><a href="https://www.insightkorea.co.kr/news/articleView.html?idxno=242001" target="_blank">📰 hy, '균주번호' 전면에…프로바이오틱스 선택 기준 제시</a></div>
             <div class="metrics">
               <span class="metric">급등 0%</span>
@@ -436,7 +452,8 @@
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 10.3 → 10.3 → 22.6</div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 10.3 → 10.3 → 22.6 → 22.6</div>
             <div class="news-context"><a href="https://www.ggilbo.com/news/articleView.html?idxno=1143672" target="_blank">📰 네고왕, 새MC는 '장윤정'</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/109/0005485703" target="_blank">📰 '다이어트 49kg' 홍현희, 조막만한 얼굴…양갈래 머리로 여리여리</a></div>
             <div class="metrics">
               <span class="metric">급등 -7.7%</span>
@@ -451,49 +468,32 @@
           <div class="card-header">
             <span class="rank">#9</span>
             <span class="keyword">다이어트</span>
-            <span class="score">22.6</span>
+            <span class="score">21.8</span>
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 9.8 → 9.8 → 22.6</div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 9.8 → 9.8 → 22.6 → 21.8</div>
             <div class="news-context"><a href="https://m.entertain.naver.com/article/312/0000750021" target="_blank">📰 미나♥류필립 도움 거절한 수지, 몸무게 안 줄어든다…숫자 확인 후 '침...</a></div><div class="news-context"><a href="https://www.mhns.co.kr/news/articleView.html?idxno=740175" target="_blank">📰 리플레쉬 제이 킥복싱, 2025 브랜드만족지수 1위 스포츠교육 부문 수상</a></div>
             <div class="metrics">
               <span class="metric">급등 -8.5%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 20876335건 vs 전문가 69707건 → 전문가 갭 큼</span>
+              <span class="metric gap-high">후기 20876412건 vs 전문가 69706건 → 전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">용량</span> <span class="tag pharma">부작용</span></div>
+            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span> <span class="tag pharma">대사</span></div>
             
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#10</span>
-            <span class="keyword">프로바이오틱스</span>
-            <span class="score">22.6</span>
-            <span class="badge maybe">앵글 바꾸면</span>
-          </div>
-          <div class="card-body">
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 22.6</div>
-            <div class="news-context"><a href="http://www.weeklytoday.com/news/articleView.html?idxno=762334" target="_blank">📰 [위클리오늘] hy, 프로바이오틱스 선택 기준으로 '균주번호' 캠페인 전개</a></div><div class="news-context"><a href="https://biz.newdaily.co.kr/site/data/html/2026/03/03/2026030300033.html" target="_blank">📰 [Daily New유통] 노스페이스, 공영홈쇼핑, NOL 外</a></div>
-            <div class="metrics">
-              <span class="metric">급등 -4.6%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 1049928건 vs 전문가 31484건 → 전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
-            
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#11</span>
             <span class="keyword">비만약</span>
             <span class="score">21.4</span>
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 8.2 → 8.2 → 21.4</div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 8.2 → 8.2 → 21.4 → 21.4</div>
             <div class="news-context"><a href="https://n.news.naver.com/mnews/article/016/0002607395?sid=103" target="_blank">📰 “새해는 살빼야지”너도 나도 구매…비만약 ‘마운자로’ 품귀 현상</a></div><div class="news-context"><a href="https://www.widedaily.com/news/articleView.html?idxno=289552" target="_blank">📰 &quot;살 빼야지&quot; 새해 결심에…비만약 '마운자로' 품귀 현상</a></div>
             <div class="metrics">
               <span class="metric">급등 -0.3%</span>
@@ -506,18 +506,19 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#12</span>
+            <span class="rank">#11</span>
             <span class="keyword">위고비</span>
             <span class="score">20.5</span>
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 9.8 → 9.8 → 20.5</div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 9.8 → 9.8 → 20.5 → 20.5</div>
             <div class="news-context"><a href="https://m.entertain.naver.com/article/213/0001375826" target="_blank">📰 '28kg 감량' 풍자, 부작용에도 살 뺐더니…&quot;120kg 처럼 보여&quot; 절망 [R</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/609/0001098404" target="_blank">📰 ‘미나 시누이’ 박수지, 150kg→80kg…위고비 마운자로에 흔들렸다 “비...</a></div>
             <div class="metrics">
               <span class="metric">급등 -0.3%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 119936건 vs 전문가 2884건 → 전문가 갭 큼</span>
+              <span class="metric gap-high">후기 119934건 vs 전문가 2883건 → 전문가 갭 큼</span>
             </div>
             <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
             
@@ -525,20 +526,41 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#13</span>
-            <span class="keyword">지원</span>
-            <span class="score">19.8</span>
+            <span class="rank">#12</span>
+            <span class="keyword">운영</span>
+            <span class="score">17.6</span>
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 4.5 → 4.5 → 19.8</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/659/0000041742?sid=102" target="_blank">📰 전북 착한가격업소 올해 540곳으로 확대.. 공공요금 등 지원</a></div><div class="news-context"><a href="http://www.newslock.co.kr/news/articleView.html?idxno=126173" target="_blank">📰 '설상 첫 금' 최가온·피겨 신지아, 세화여고 특별장학금 받아</a></div>
+            
+            <div class="trend-line"><span class="trend-up">↑↑ 상승 중</span> 5.3 → 3.5 → 10.6 → 17.6</div>
+            <div class="news-context"><a href="https://www.nbntv.co.kr/news/articleView.html?idxno=4019424" target="_blank">📰 사)토박이말바라기·바이미컴퍼니, 지역 커뮤니티·청년 활성화 업무협...</a></div><div class="news-context"><a href="http://www.breaknews.com/1188576" target="_blank">📰 부천시, ‘의존자 12단계 촉진’ 알코올 교육 진행</a></div>
             <div class="metrics">
-              <span class="metric">급등 -3.1%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 53604701건 vs 전문가 132811건 → 전문가 갭 큼</span>
+              <span class="metric">급등 +24.7%</span>
+              <span class="intent neutral">중립</span>
+              <span class="metric gap-high">후기 64130318건 vs 전문가 141966건 → 전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span> <span class="tag pharma">대사</span></div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span></div>
+            
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#13</span>
+            <span class="keyword">반려동물</span>
+            <span class="score">17.4</span>
+            <span class="badge maybe">앵글 바꾸면</span>
+          </div>
+          <div class="card-body">
+            
+            <div class="trend-line"><span class="trend-up">↑↑ 상승 중</span> 3.8 → 5.1 → 14.2 → 17.4</div>
+            <div class="news-context"><a href="https://www.public25.com/news/articleView.html?idxno=41219" target="_blank">📰 반려동물 동반 외식시대 개막... 식품위생법 시행규칙 개정</a></div><div class="news-context"><a href="https://www.topstarnews.net/news/articleView.html?idxno=15989117" target="_blank">📰 아이와 함께 떠나는 이천 가볼 만한 곳</a></div>
+            <div class="metrics">
+              <span class="metric">급등 +31.0%</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric gap-high">후기 6800773건 vs 전문가 15635건 → 전문가 갭 큼</span>
+            </div>
+            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">대사</span></div>
             
           </div>
         </div>
@@ -550,12 +572,13 @@
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 16.7</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/648/0000044894?sid=101" target="_blank">📰 아이오페, 북미 시장 진출…세포라 입점</a></div><div class="news-context"><a href="http://www.weeklytoday.com/news/articleView.html?idxno=762321" target="_blank">📰 [위클리오늘] 아모레퍼시픽 아이오페, 美 세포라 전 채널 입점…북미 시...</a></div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 16.7 → 16.7</div>
+            <div class="news-context"><a href="https://www.betanews.net/article/view/beta202603030045" target="_blank">📰 아이오페, 세계 최대 화장품 편집숍 세포라 입점...북미 시장 공식 '진출...</a></div><div class="news-context"><a href="https://www.ebn.co.kr/news/articleView.html?idxno=1701351" target="_blank">📰 아모레, '아이오페' 세포라 입점…북미 안티에이징 승부수</a></div>
             <div class="metrics">
               <span class="metric">급등 -11.3%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 112123건 vs 전문가 499건 → 전문가 갭 큼</span>
+              <span class="metric gap-high">후기 112124건 vs 전문가 499건 → 전문가 갭 큼</span>
             </div>
             <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
             
@@ -565,18 +588,19 @@
           <div class="card-header">
             <span class="rank">#15</span>
             <span class="keyword">약국</span>
-            <span class="score">16.6</span>
+            <span class="score">15.2</span>
             <span class="badge maybe">앵글 바꾸면</span>
           </div>
           <div class="card-body">
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 8.9 → 8.9 → 16.6</div>
+            
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 8.9 → 8.9 → 16.6 → 15.2</div>
             <div class="news-context"><a href="http://www.ccnnews.co.kr/news/articleView.html?idxno=402709" target="_blank">📰 청양군 농어촌 기본소득, 지급 첫날 &quot;1억 9천만 원 돌파&quot;</a></div><div class="news-context"><a href="https://www.tournews21.com/news/articleView.html?idxno=130873" target="_blank">📰 인천 서구, 공공심야약국 1곳 신규 지정... 의약품 구매 불편 해소</a></div>
             <div class="metrics">
               <span class="metric">급등 -30.1%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-normal">후기 3650410건 vs 전문가 457704건 → 보통</span>
+              <span class="metric gap-normal">후기 3650415건 vs 전문가 457703건 → 보통</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">함량</span></div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">약물</span></div>
             
           </div>
         </div>

@@ -173,6 +173,13 @@ def build_html(data, keyword_history=None):
             v = t["yt_videos"][0]
             yt_note = f'<div class="yt-note">🎬 YT: {v["title"][:30]}… ({format_views(v["views"])}회)</div>'
 
+        # 중복 병합 표시
+        aliases_html = ""
+        aliases = t.get("aliases", [])
+        if aliases:
+            alias_str = ", ".join(aliases)
+            aliases_html = f'<div class="aliases">(= {alias_str})</div>'
+
         # AI 해석
         ai_summary_html = ""
         ai_summary = t.get("ai_summary", "")
@@ -196,6 +203,7 @@ def build_html(data, keyword_history=None):
             <span class="score">{t["score"]}</span>
             {verdict_badge(t["verdict"])}
           </div>
+          {aliases_html}
           <div class="card-body">
             {ai_summary_html}
             {parent_html}
@@ -364,6 +372,11 @@ def build_html(data, keyword_history=None):
     padding: 2px 6px;
     border-radius: 4px;
     margin-right: 4px;
+  }}
+  .aliases {{
+    font-size: 12px;
+    color: #8b949e;
+    padding: 0 14px 4px;
   }}
   .ai-summary {{
     font-size: 13px;

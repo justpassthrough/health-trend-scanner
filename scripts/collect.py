@@ -115,7 +115,7 @@ def extract_keywords_from_news():
     for w, c in trending[:20]:
         print(f"    {w}: {c}건")
 
-    return [w for w, c in trending]
+    return trending  # (keyword, news_count) 튜플 리스트 반환
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -123,17 +123,17 @@ def extract_keywords_from_news():
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 def get_search_trend(keyword):
-    """네이버 DataLab API로 최근 2주 검색량 변화율 계산"""
+    """네이버 DataLab API로 최근 검색량 변화율 계산 (일간 단위)"""
     url = "https://openapi.naver.com/v1/datalab/search"
 
     today = datetime.now()
-    start_date = (today - timedelta(days=14)).strftime("%Y-%m-%d")
+    start_date = (today - timedelta(days=30)).strftime("%Y-%m-%d")
     end_date = today.strftime("%Y-%m-%d")
 
     body = {
         "startDate": start_date,
         "endDate": end_date,
-        "timeUnit": "week",
+        "timeUnit": "date",
         "keywordGroups": [
             {"groupName": keyword, "keywords": [keyword]}
         ],
@@ -152,40 +152,55 @@ def get_search_trend(keyword):
             return 0, 0
 
         points = results[0]["data"]
-        if len(points) < 2:
+        if len(points) < 8:
             return 0, 0
 
-        prev_week = points[-2].get("ratio", 0)
-        this_week = points[-1].get("ratio", 0)
+        # 최근 3일 평균 vs 그 전 7일 평균 비교
+        recent = [p.get("ratio", 0) for p in points[-3:]]
+        previous = [p.get("ratio", 0) for p in points[-10:-3]]
 
-        if prev_week == 0:
-            change_rate = 300 if this_week > 0 else 0
+        avg_recent = sum(recent) / len(recent) if recent else 0
+        avg_previous = sum(previous) / len(previous) if previous else 0
+
+        if avg_previous == 0:
+            change_rate = 300 if avg_recent > 0 else 0
         else:
-            change_rate = ((this_week - prev_week) / prev_week) * 100
+            change_rate = ((avg_recent - avg_previous) / avg_previous) * 100
 
-        return change_rate, this_week
+        return change_rate, avg_recent
 
     except Exception as e:
         print(f"  [ERROR] DataLab 실패 ({keyword}): {e}")
         return 0, 0
 
 
-def calc_h_score(change_rate):
-    """변화율 → H 점수 변환"""
+def calc_h_score(change_rate, news_count=0):
+    """변화율 → H 점수 변환. 뉴스 빈도도 보조 반영."""
+    # DataLab 기반 점수
     if change_rate >= 300:
-        return 100
+        h = 100
     elif change_rate >= 200:
-        return 70
+        h = 70
     elif change_rate >= 100:
-        return 50
+        h = 50
     elif change_rate >= 50:
-        return 30
+        h = 30
     elif change_rate >= 20:
-        return 15
+        h = 15
     elif change_rate > 0:
-        return 5
+        h = 5
     else:
-        return 0
+        h = 0
+
+    # 뉴스에 자주 등장하면 최소 점수 보장 (H=0 방지)
+    if h == 0 and news_count >= 5:
+        h = 15
+    elif h == 0 and news_count >= 3:
+        h = 10
+    elif h < 5 and news_count >= 3:
+        h = max(h, 5)
+
+    return h
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -519,15 +534,16 @@ def main():
     print(f"{'#' * 50}\n")
 
     # 1. 키워드 자동 추출
-    keywords = extract_keywords_from_news()
+    keyword_data = extract_keywords_from_news()  # [(keyword, news_count), ...]
 
-    if not keywords:
+    if not keyword_data:
         print("\n[!] 추출된 키워드가 없습니다. 시드 키워드로 대체합니다.")
-        keywords = ["마운자로", "위고비", "오젬픽", "비타민D", "유산균",
-                     "글루타치온", "콜라겐", "오메가3", "NMN", "코엔자임Q10"]
+        keyword_data = [(kw, 5) for kw in
+                        ["마운자로", "위고비", "오젬픽", "비타민D", "유산균",
+                         "글루타치온", "콜라겐", "오메가3", "NMN", "코엔자임Q10"]]
 
     # 상위 30개 키워드만 분석 (API 호출 절약)
-    keywords = keywords[:30]
+    keyword_data = keyword_data[:30]
 
     # 2~5. 각 키워드별 점수 산출
     print("\n" + "=" * 50)
@@ -535,13 +551,13 @@ def main():
     print("=" * 50)
 
     topics = []
-    for i, kw in enumerate(keywords):
-        print(f"\n  [{i+1}/{len(keywords)}] {kw}")
+    for i, (kw, news_count) in enumerate(keyword_data):
+        print(f"\n  [{i+1}/{len(keyword_data)}] {kw} (뉴스 {news_count}건)")
 
         # H — 주제 온도
         change_rate, current_vol = get_search_trend(kw)
-        h = calc_h_score(change_rate)
-        print(f"    H={h} (변화율 {change_rate:+.0f}%)")
+        h = calc_h_score(change_rate, news_count=news_count)
+        print(f"    H={h} (변화율 {change_rate:+.0f}%, 뉴스 {news_count}건)")
         time.sleep(0.15)
 
         if h == 0:

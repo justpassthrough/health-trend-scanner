@@ -1,15 +1,15 @@
 {
   "date": "2026-03-03",
-  "updated_at": "2026-03-03 01:02",
+  "updated_at": "2026-03-03 01:14",
   "topics": [
     {
       "keyword": "백신",
-      "score": 84.5,
+      "score": 89.6,
       "verdict": "now",
       "h": 100,
       "change_rate": 305.6,
-      "i": 1.0,
-      "intent_type": "중립",
+      "i": 1.06,
+      "intent_type": "의심/경고형",
       "p": 1.3,
       "pharma_keywords": [
         "성분",
@@ -19,101 +19,220 @@
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "백신 접종",
       "y": 1.3,
       "yt_videos": [
         {
           "title": "공포에 떠는 국민들 알고도…\"이걸 몸속에?\" 5년 뒤 돌연 / SBS / 모아보는 뉴스",
           "channel": "SBS 뉴스",
-          "views": 578623,
+          "views": 590367,
           "published": "2026-03-01T07:00:44Z",
           "video_id": "qDEWQGrO5ow"
         },
         {
           "title": "[단독] \"나라가 시킨 대로 했더니\"…돌연 구토 후 숨졌다 / SBS 8뉴스",
           "channel": "SBS 뉴스",
-          "views": 356273,
+          "views": 359194,
           "published": "2026-03-02T12:12:26Z",
           "video_id": "rG1RT_SCZcE"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "MSD, 성인 전용 21가 폐렴구균 백신 ‘캡박시브’ 출시",
+          "link": "https://www.yakup.com/news/index.html?mode=view&cat=12&nid=323983"
+        },
+        {
+          "title": "한국MSD, 성인 전용 21가 폐렴구균 백신 '캡박시브' 출시",
+          "link": "https://www.rapportian.com/news/articleView.html?idxno=233001"
+        }
+      ]
+    },
+    {
+      "keyword": "캡박시브",
+      "score": 60.7,
+      "verdict": "good",
+      "h": 50,
+      "change_rate": 107.6,
+      "i": 0.92,
+      "intent_type": "구매/추천형",
+      "p": 1.1,
+      "pharma_keywords": [
+        "처방",
+        "성분"
+      ],
+      "c": 1.2,
+      "blog_count": 3,
+      "c_level": "블루오션",
+      "c_query": "캡박시브 백신",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "MSD, 성인 전용 21가 폐렴구균 백신 ‘캡박시브’ 출시",
+          "link": "https://www.yakup.com/news/index.html?mode=view&cat=12&nid=323983"
+        },
+        {
+          "title": "한국MSD, 성인 전용 21가 폐렴구균 백신 '캡박시브' 출시",
+          "link": "https://www.rapportian.com/news/articleView.html?idxno=233001"
         }
       ]
     },
     {
       "keyword": "올영세일",
-      "score": 17.7,
+      "score": 15.7,
       "verdict": "maybe",
       "h": 50,
       "change_rate": 170.5,
-      "i": 0.78,
+      "i": 0.69,
       "intent_type": "구매/추천형",
       "p": 0.7,
       "pharma_keywords": [],
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "올영세일 올리브영",
       "y": 1.3,
       "yt_videos": [
         {
           "title": "광고❌ 올영 골드등급 코덕의 뽕뽑는 올영세일 추천템 모음!! #올영추천템 #메이크업",
           "channel": "겸다미",
-          "views": 217584,
+          "views": 217697,
           "published": "2026-03-01T09:08:30Z",
           "video_id": "z9edz1RHn1A"
         },
         {
           "title": "{성질 급한 ASMR 클렌징 #2 🧼} 30일 중 20일은 하는 나이트 루틴🚿🫧 #나이트루틴 #클렌징 #무쌍메이크업",
           "channel": "지냐 Jinyaa",
-          "views": 169745,
+          "views": 169997,
           "published": "2026-03-02T04:52:12Z",
           "video_id": "bvXbZ8GcV38"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "KB국민카드, '올영세일' 맞아 청구할인 프로모션 실시",
+          "link": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2400327"
+        },
+        {
+          "title": "&quot;올영세일에 국민카드 더하면 꿀조합&quot; KB국민카드, 오프라인 단독 할인",
+          "link": "https://www.thefairnews.co.kr/news/articleView.html?idxno=70442"
         }
       ]
     },
     {
-      "keyword": "감량",
-      "score": 12.7,
+      "keyword": "논란",
+      "score": 12.2,
       "verdict": "pass",
       "h": 15,
-      "change_rate": 21.7,
-      "i": 1.0,
-      "intent_type": "중립",
+      "change_rate": -0.7,
+      "i": 1.25,
+      "intent_type": "의심/경고형",
       "p": 1.3,
       "pharma_keywords": [
-        "처방",
-        "용량",
-        "함량",
+        "성분",
         "부작용",
-        "대사",
-        "약물"
+        "대사"
       ],
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "논란 사건은",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "트럼프의 '에픽 퓨리'…70년 이란 악연 겨눴다[최종일의 월드 뷰]",
+          "link": "https://n.news.naver.com/mnews/article/421/0008802389?sid=110"
+        },
+        {
+          "title": "이란 공습과 보드리야르: ‘왜곡은 실행으로 이어진다’",
+          "link": "https://newscham.net/articles/115606"
+        }
+      ]
+    },
+    {
+      "keyword": "다이어트",
+      "score": 10.8,
+      "verdict": "pass",
+      "h": 15,
+      "change_rate": -8.5,
+      "i": 0.85,
+      "intent_type": "구매/추천형",
+      "p": 1.3,
+      "pharma_keywords": [
+        "성분",
+        "함량",
+        "부작용",
+        "대사"
+      ],
+      "c": 0.5,
+      "blog_count": 100,
+      "c_level": "레드오션",
+      "c_query": "다이어트 운동",
       "y": 1.3,
       "yt_videos": [
         {
           "title": "80 감량 다이어트 레전드",
           "channel": "야우냐?",
-          "views": 246720,
+          "views": 247012,
           "published": "2026-03-01T12:06:44Z",
           "video_id": "IdU8qTACjMk"
         },
         {
-          "title": "김짬뽕 꼬기다로 -5kg 감량!",
-          "channel": "김짬뽕",
-          "views": 31792,
-          "published": "2026-03-01T09:08:14Z",
-          "video_id": "ZQykl7PrM34"
+          "title": "다이어트하지 말라는 박지훈",
+          "channel": "메이지훈",
+          "views": 192533,
+          "published": "2026-03-01T08:22:47Z",
+          "video_id": "H5ENKOJIc68"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "서울, 시민 쓰레기 줄이기 100일 도전… 감량 아이디어 겨룬다",
+          "link": "https://www.newscj.com/news/articleView.html?idxno=3380332"
+        },
+        {
+          "title": "“6개월만, 7kg 감량” 조혜련, 쌀밥 대신 ‘이것’ 먹었더니 빠졌다",
+          "link": "https://n.news.naver.com/mnews/article/346/0000105567?sid=103"
+        }
+      ]
+    },
+    {
+      "keyword": "삼천당제약",
+      "score": 10.8,
+      "verdict": "pass",
+      "h": 50,
+      "change_rate": 153.3,
+      "i": 0.62,
+      "intent_type": "구매/추천형",
+      "p": 0.7,
+      "pharma_keywords": [],
+      "c": 0.5,
+      "blog_count": 100,
+      "c_level": "레드오션",
+      "c_query": "삼천당제약 바이오",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "코스피,美-이란 전쟁에 2%대 내려 6,100대…환율 급등",
+          "link": "http://www.seouleconews.com/news/articleView.html?idxno=89700"
+        },
+        {
+          "title": "중동 리스크에 코스피 6100선 ‘흔들’⋯개인·기관의 매수세 속 방산주...",
+          "link": "https://www.etoday.co.kr/news/view/2561122"
         }
       ]
     },
     {
       "keyword": "위고비",
-      "score": 11.2,
+      "score": 10.7,
       "verdict": "pass",
       "h": 15,
       "change_rate": -0.3,
-      "i": 1.0,
-      "intent_type": "중립",
+      "i": 0.95,
+      "intent_type": "구매/추천형",
       "p": 1.3,
       "pharma_keywords": [
         "처방",
@@ -125,45 +244,32 @@
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "위고비 마운자로",
       "y": 1.15,
       "yt_videos": [
         {
           "title": "위고비 열풍이 분 스프링필드",
           "channel": "냐옹관",
-          "views": 48443,
+          "views": 49766,
           "published": "2026-03-02T06:15:48Z",
           "video_id": "NW3FdDX5rYg"
         },
         {
           "title": "세상에서 가장 하찮은 고양이를 발견했다👀 | 리터제로, 뽀뽀백번, 위고비, 구독자네 침투2탄",
           "channel": "심소빵 sobbang",
-          "views": 8685,
+          "views": 8715,
           "published": "2026-03-02T04:00:00Z",
           "video_id": "YKUedeqGSnc"
         }
-      ]
-    },
-    {
-      "keyword": "국제약품",
-      "score": 11.1,
-      "verdict": "pass",
-      "h": 30,
-      "change_rate": 92.1,
-      "i": 1.06,
-      "intent_type": "의심/경고형",
-      "p": 0.7,
-      "pharma_keywords": [],
-      "c": 0.5,
-      "blog_count": 59,
-      "c_level": "레드오션",
-      "y": 1.0,
-      "yt_videos": [
+      ],
+      "news_headlines": [
         {
-          "title": "오늘 +20% 급등한 제약주. 근데 매도가 아닌 홀딩?#국제약품#주식단테#주식투자",
-          "channel": "돈이머니?돈이G",
-          "views": 12704,
-          "published": "2026-03-01T07:55:23Z",
-          "video_id": "bvekXlDuzG0"
+          "title": "'미나 시누이' 박수지, 위고비 없이 150kg→80kg 감량…&quot;마음 흔들렸지만...",
+          "link": "https://m.entertain.naver.com/article/311/0001980737"
+        },
+        {
+          "title": "노보 노디스크, 차세대 비만치료제 ‘아미크레틴’ 국내 3상 돌입",
+          "link": "https://mdtoday.co.kr/news/view/1065616011539838"
         }
       ]
     },
@@ -178,6 +284,7 @@
       "p": 1.3,
       "pharma_keywords": [
         "처방",
+        "성분",
         "부작용",
         "대사",
         "약물"
@@ -185,88 +292,228 @@
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "비만치료제 위고비",
       "y": 1.0,
       "yt_videos": [
         {
           "title": "2026년 신약이 판을 바꾼다. 비만·CAR-T·ADC '7대 신약' 지도로 흐름 선점하기",
           "channel": "이해진의 바이오 투자학교",
-          "views": 13324,
+          "views": 13381,
           "published": "2026-03-02T02:00:04Z",
           "video_id": "49g61gmf4rE"
         },
         {
           "title": "[시사이슈] 국내외에서 비만치료제(위고비·마운자로 등)의 가격 차이와 처방 기준, 해외 구매 논란 / 포레온365의원 김지온",
           "channel": "의학채널 비온뒤",
-          "views": 3048,
+          "views": 3065,
           "published": "2026-03-03T00:55:35Z",
           "video_id": "9wbf4esM7mk"
         }
-      ]
-    },
-    {
-      "keyword": "삼천당제약",
-      "score": 10.5,
-      "verdict": "pass",
-      "h": 50,
-      "change_rate": 153.3,
-      "i": 0.6,
-      "intent_type": "구매/추천형",
-      "p": 0.7,
-      "pharma_keywords": [],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
-      "y": 1.0,
-      "yt_videos": [
+      ],
+      "news_headlines": [
         {
-          "title": "[주식] 미국VS이란 중동 전쟁 폭발! 바이오 긴급 대응 전략! 화요일 상한가 급등할 주식 TOP3 비만치료제 종목추천 상한가 주식추천 디에스경제뉴스 또바기 급등주",
-          "channel": "디에스경제뉴스",
-          "views": 12147,
-          "published": "2026-03-01T21:30:11Z",
-          "video_id": "nb3LvJWl6Ok"
+          "title": "한국유나이티드제약-유엔에스바이오, 비만치료제 라인업 강화 협력",
+          "link": "https://n.news.naver.com/mnews/article/092/0002412529?sid=105"
         },
         {
-          "title": "[주식 LIVE🔥] 호르무즈 해협 봉쇄🔥제조업의 위기를 바이오가 방어🔥코스닥의 기회가 높아지는 시기 -  김민성 전문가",
-          "channel": "모아경제TV(김민성의 주식학교)",
-          "views": 9072,
-          "published": "2026-03-01T12:08:40Z",
-          "video_id": "kwlSYnazWUg"
+          "title": "노보 노디스크, 차세대 비만치료제 ‘아미크레틴’ 국내 3상 돌입",
+          "link": "https://mdtoday.co.kr/news/view/1065616011539838"
         }
       ]
     },
     {
-      "keyword": "다이어트",
+      "keyword": "홍현희",
       "score": 10.3,
       "verdict": "pass",
       "h": 15,
-      "change_rate": -8.5,
-      "i": 0.81,
+      "change_rate": -7.7,
+      "i": 0.89,
       "intent_type": "구매/추천형",
+      "p": 1.1,
+      "pharma_keywords": [
+        "성분",
+        "부작용"
+      ],
+      "c": 0.7,
+      "blog_count": 23,
+      "c_level": "경쟁 많음",
+      "c_query": "홍현희 벨베이비",
+      "y": 1.0,
+      "yt_videos": [
+        {
+          "title": "준범이 지아빠랑 똑같네!",
+          "channel": " 쏙마담TV Soak Madame TV ",
+          "views": 24717,
+          "published": "2026-03-01T04:00:10Z",
+          "video_id": "AOhqxmrijmI"
+        },
+        {
+          "title": "의심되는 계약부부 #돌싱포맨 #탁재훈 #홍현희 #제이쓴 #예능 #재미 #유머 #개그 #웃긴영상 #웃긴쇼츠 #웃긴짤",
+          "channel": "예능놀이터",
+          "views": 7242,
+          "published": "2026-03-02T00:00:48Z",
+          "video_id": "lw-yiDsVMUY"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "네고왕, 새MC는 '장윤정'",
+          "link": "https://www.ggilbo.com/news/articleView.html?idxno=1143672"
+        },
+        {
+          "title": "'다이어트 49kg' 홍현희, 조막만한 얼굴…양갈래 머리로 여리여리",
+          "link": "https://m.entertain.naver.com/article/109/0005485703"
+        }
+      ]
+    },
+    {
+      "keyword": "폐렴구균",
+      "score": 10.2,
+      "verdict": "pass",
+      "h": 15,
+      "change_rate": 32.6,
+      "i": 1.05,
+      "intent_type": "의심/경고형",
       "p": 1.3,
       "pharma_keywords": [
-        "처방",
-        "용량",
+        "복용법",
         "성분",
-        "대사"
+        "부작용"
       ],
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "폐렴구균 예방접종",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "MSD, 성인 전용 21가 폐렴구균 백신 ‘캡박시브’ 출시",
+          "link": "https://www.yakup.com/news/index.html?mode=view&cat=12&nid=323983"
+        },
+        {
+          "title": "한국MSD, 성인 전용 21가 폐렴구균 백신 '캡박시브' 출시",
+          "link": "https://www.rapportian.com/news/articleView.html?idxno=233001"
+        }
+      ]
+    },
+    {
+      "keyword": "감량",
+      "score": 9.8,
+      "verdict": "pass",
+      "h": 15,
+      "change_rate": 21.7,
+      "i": 1.0,
+      "intent_type": "중립",
+      "p": 1.3,
+      "pharma_keywords": [
+        "용량",
+        "성분",
+        "부작용",
+        "약물"
+      ],
+      "c": 0.5,
+      "blog_count": 100,
+      "c_level": "레드오션",
+      "c_query": "감량 체중",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "서울, 시민 쓰레기 줄이기 100일 도전… 감량 아이디어 겨룬다",
+          "link": "https://www.newscj.com/news/articleView.html?idxno=3380332"
+        },
+        {
+          "title": "잘 쉬었는데 왜 이렇게 피곤하지?...신진대사 떨어졌다 알리는 신호",
+          "link": "https://n.news.naver.com/mnews/article/296/0000098105?sid=103"
+        }
+      ]
+    },
+    {
+      "keyword": "제이쓴",
+      "score": 9.6,
+      "verdict": "pass",
+      "h": 15,
+      "change_rate": -4.0,
+      "i": 1.0,
+      "intent_type": "중립",
+      "p": 0.7,
+      "pharma_keywords": [],
+      "c": 0.7,
+      "blog_count": 31,
+      "c_level": "경쟁 많음",
+      "c_query": "제이쓴 남편",
       "y": 1.3,
       "yt_videos": [
         {
-          "title": "80 감량 다이어트 레전드",
-          "channel": "야우냐?",
-          "views": 246720,
-          "published": "2026-03-01T12:06:44Z",
-          "video_id": "IdU8qTACjMk"
+          "title": "현희엄마는 녹화 중 #기다리기 힘든 준범이 #제이쓴",
+          "channel": "RARARORORIRI",
+          "views": 184410,
+          "published": "2026-03-02T00:31:46Z",
+          "video_id": "dcSAM12_J9w"
         },
         {
-          "title": "다이어트하지 말라는 박지훈",
-          "channel": "메이지훈",
-          "views": 192369,
-          "published": "2026-03-01T08:22:47Z",
-          "video_id": "H5ENKOJIc68"
+          "title": "의심되는 계약부부 #돌싱포맨 #탁재훈 #홍현희 #제이쓴 #예능 #재미 #유머 #개그 #웃긴영상 #웃긴쇼츠 #웃긴짤",
+          "channel": "예능놀이터",
+          "views": 7242,
+          "published": "2026-03-02T00:00:48Z",
+          "video_id": "lw-yiDsVMUY"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "'다이어트 49kg' 홍현희, 조막만한 얼굴…양갈래 머리로 여리여리",
+          "link": "https://m.entertain.naver.com/article/109/0005485703"
+        },
+        {
+          "title": "“약장사 NO” 해명 홍현희, 얼굴 사라지겠네…동료들도 “미모 성수기...",
+          "link": "https://m.entertain.naver.com/article/609/0001097925"
+        }
+      ]
+    },
+    {
+      "keyword": "약국",
+      "score": 9.1,
+      "verdict": "pass",
+      "h": 15,
+      "change_rate": -30.1,
+      "i": 0.93,
+      "intent_type": "구매/추천형",
+      "p": 1.3,
+      "pharma_keywords": [
+        "처방",
+        "성분",
+        "부작용"
+      ],
+      "c": 0.5,
+      "blog_count": 100,
+      "c_level": "레드오션",
+      "c_query": "약국 병원",
+      "y": 1.0,
+      "yt_videos": [
+        {
+          "title": "“운동하면 최대 5만 원”…튼튼머니, 병원·약국 결제도 가능 [잇슈 머니]  / KBS  2026.03.02.",
+          "channel": "KBS News",
+          "views": 17245,
+          "published": "2026-03-02T09:00:02Z",
+          "video_id": "aP_sShFL6bg"
+        },
+        {
+          "title": "이 네가지를 지키면 집에서 기미잡티 잡습니다/약국템, 홈케어꿀템 백프로 활용하기",
+          "channel": "단이 DANI",
+          "views": 7032,
+          "published": "2026-03-01T11:30:42Z",
+          "video_id": "lJEM8pJO5Ys"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "&quot;약국매출 한계, 정말 상권 때문일까?&quot; 휴베이스 이달 HIC 15일 개최",
+          "link": "https://www.kpanews.co.kr/news/articleView.html?idxno=530195"
+        },
+        {
+          "title": "영천경찰서, 다각적인 약물운전 예방 안전수칙 홍보 실시",
+          "link": "http://www.shinailbo.co.kr/news/articleView.html?idxno=2197762"
         }
       ]
     },
@@ -286,101 +533,27 @@
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "비만약 위고비",
       "y": 1.0,
-      "yt_videos": [
+      "yt_videos": [],
+      "news_headlines": [
         {
-          "title": "[삼천당제약 주가 전망]🔥먹는비만약!유럽계약후!미국추가계약도?외인,기관양매수!무려5천억 #삼천당제약 #삼천당제약주가 #삼천당제약주가전망",
-          "channel": "주식의 수(手)",
-          "views": 2720,
-          "published": "2026-03-02T08:30:05Z",
-          "video_id": "D0UFCI27Esk"
+          "title": "운동 열심히 해서 살 빼기…‘이것’ 때문에 쉽지 않다 [핵잼 사이언스...",
+          "link": "https://n.news.naver.com/mnews/article/081/0003622249?sid=105"
         },
         {
-          "title": "[펩트론 주가전망] 한 달에 한 번 맞는 비만약 PT403의 기적! 글로벌 빅파마가 줄 서는 스마트데포 기술력",
-          "channel": "오름주식TV",
-          "views": 813,
-          "published": "2026-03-01T08:30:02Z",
-          "video_id": "4W4SLtY4dSM"
+          "title": "먹는 당뇨·비만약 임상 결과 잇단 공개… 제약사 간 신약 개발 경쟁 본...",
+          "link": "https://www.pharmnews.com/news/articleView.html?idxno=301762"
         }
       ]
     },
     {
-      "keyword": "약국",
-      "score": 7.6,
-      "verdict": "pass",
-      "h": 15,
-      "change_rate": -30.1,
-      "i": 0.78,
-      "intent_type": "구매/추천형",
-      "p": 1.3,
-      "pharma_keywords": [
-        "처방",
-        "복용법",
-        "용량",
-        "성분",
-        "함량"
-      ],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
-      "y": 1.0,
-      "yt_videos": [
-        {
-          "title": "“운동하면 최대 5만 원”…튼튼머니, 병원·약국 결제도 가능 [잇슈 머니]  / KBS  2026.03.02.",
-          "channel": "KBS News",
-          "views": 16479,
-          "published": "2026-03-02T09:00:02Z",
-          "video_id": "aP_sShFL6bg"
-        },
-        {
-          "title": "이 네가지를 지키면 집에서 기미잡티 잡습니다/약국템, 홈케어꿀템 백프로 활용하기",
-          "channel": "단이 DANI",
-          "views": 7031,
-          "published": "2026-03-01T11:30:42Z",
-          "video_id": "lJEM8pJO5Ys"
-        }
-      ]
-    },
-    {
-      "keyword": "지원",
+      "keyword": "반려동물",
       "score": 7.5,
       "verdict": "pass",
       "h": 15,
-      "change_rate": -3.1,
+      "change_rate": 31.0,
       "i": 0.85,
-      "intent_type": "구매/추천형",
-      "p": 0.9,
-      "pharma_keywords": [
-        "대사"
-      ],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
-      "y": 1.3,
-      "yt_videos": [
-        {
-          "title": "우재 지원 Q&A",
-          "channel": "신우지 SHINWOOJI",
-          "views": 157122,
-          "published": "2026-03-01T02:00:09Z",
-          "video_id": "CD6zgRnJJBg"
-        },
-        {
-          "title": "흔들흔들 열매 능력자 흰지원 #지원 #JEEWON #시그니처 #cignature",
-          "channel": "DaftTaengk",
-          "views": 209135,
-          "published": "2026-03-01T09:00:38Z",
-          "video_id": "RjXWhp49DN8"
-        }
-      ]
-    },
-    {
-      "keyword": "운영",
-      "score": 7.2,
-      "verdict": "pass",
-      "h": 15,
-      "change_rate": 24.7,
-      "i": 0.82,
       "intent_type": "구매/추천형",
       "p": 0.9,
       "pharma_keywords": [
@@ -389,179 +562,176 @@
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
-      "y": 1.3,
-      "yt_videos": [
-        {
-          "title": "⭐국가운영⭐3만원 독채숙소를 아시나요? - 극성수기도 동일금액•예약방법•맛집•풀코스 총정리",
-          "channel": "일짜여행 𝒊𝒍𝒛𝒛𝒂 𝒕𝒓𝒊𝒑",
-          "views": 106116,
-          "published": "2026-03-01T05:30:00Z",
-          "video_id": "xKFILv9Z8BU"
-        },
-        {
-          "title": "돌아온 옛 전남도청‥ 시범운영 첫날 모습은 (2026.02.28/뉴스데스크/광주MBC)",
-          "channel": "MBCNEWS",
-          "views": 15599,
-          "published": "2026-03-01T03:00:01Z",
-          "video_id": "-HSNa_J10-4"
-        }
-      ]
-    },
-    {
-      "keyword": "홍현희",
-      "score": 7.0,
-      "verdict": "pass",
-      "h": 15,
-      "change_rate": -7.7,
-      "i": 0.85,
-      "intent_type": "구매/추천형",
-      "p": 1.1,
-      "pharma_keywords": [
-        "성분",
-        "부작용"
-      ],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
-      "y": 1.0,
-      "yt_videos": [
-        {
-          "title": "준범이 지아빠랑 똑같네!",
-          "channel": " 쏙마담TV Soak Madame TV ",
-          "views": 24650,
-          "published": "2026-03-01T04:00:10Z",
-          "video_id": "AOhqxmrijmI"
-        },
-        {
-          "title": "의심되는 계약부부 #돌싱포맨 #탁재훈 #홍현희 #제이쓴 #예능 #재미 #유머 #개그 #웃긴영상 #웃긴쇼츠 #웃긴짤",
-          "channel": "예능놀이터",
-          "views": 7217,
-          "published": "2026-03-02T00:00:48Z",
-          "video_id": "lw-yiDsVMUY"
-        }
-      ]
-    },
-    {
-      "keyword": "제이쓴",
-      "score": 6.8,
-      "verdict": "pass",
-      "h": 15,
-      "change_rate": -4.0,
-      "i": 1.0,
-      "intent_type": "중립",
-      "p": 0.7,
-      "pharma_keywords": [],
-      "c": 0.5,
-      "blog_count": 53,
-      "c_level": "레드오션",
-      "y": 1.3,
-      "yt_videos": [
-        {
-          "title": "현희엄마는 녹화 중 #기다리기 힘든 준범이 #제이쓴",
-          "channel": "RARARORORIRI",
-          "views": 183926,
-          "published": "2026-03-02T00:31:46Z",
-          "video_id": "dcSAM12_J9w"
-        },
-        {
-          "title": "의심되는 계약부부 #돌싱포맨 #탁재훈 #홍현희 #제이쓴 #예능 #재미 #유머 #개그 #웃긴영상 #웃긴쇼츠 #웃긴짤",
-          "channel": "예능놀이터",
-          "views": 7217,
-          "published": "2026-03-02T00:00:48Z",
-          "video_id": "lw-yiDsVMUY"
-        }
-      ]
-    },
-    {
-      "keyword": "논란",
-      "score": 6.8,
-      "verdict": "pass",
-      "h": 15,
-      "change_rate": -0.7,
-      "i": 1.0,
-      "intent_type": "중립",
-      "p": 0.7,
-      "pharma_keywords": [],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
-      "y": 1.3,
-      "yt_videos": [
-        {
-          "title": "유럽에서 논란이었던 새벽에 혼자 뛰는 여성이 나오는 광고 삼성이 사과했다는 뉴스를 본 외국인 반응",
-          "channel": "한국느낌",
-          "views": 2423299,
-          "published": "2026-03-01T08:00:15Z",
-          "video_id": "E4JTDMffdZQ"
-        },
-        {
-          "title": "논란 종결시킨 성심당의 반응",
-          "channel": "강설화",
-          "views": 824362,
-          "published": "2026-03-01T11:01:04Z",
-          "video_id": "e04JJdkCcYc"
-        }
-      ]
-    },
-    {
-      "keyword": "반려동물",
-      "score": 5.3,
-      "verdict": "pass",
-      "h": 15,
-      "change_rate": 31.0,
-      "i": 0.78,
-      "intent_type": "구매/추천형",
-      "p": 0.7,
-      "pharma_keywords": [],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
+      "c_query": "반려동물 필터",
       "y": 1.3,
       "yt_videos": [
         {
           "title": "독특한 반려동물을 키우는 소녀",
           "channel": "호두지니",
-          "views": 1039576,
+          "views": 1042057,
           "published": "2026-03-01T07:00:00Z",
           "video_id": "-U9uCleZdIM"
         },
         {
           "title": "감히 내 폰을...? (고양이 분노 주의)",
           "channel": "대유잼",
-          "views": 289011,
+          "views": 289305,
           "published": "2026-03-01T15:14:37Z",
           "video_id": "EUf7mxhnRkE"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "조용한 농촌에 켜진 변화 불빛, 구미시 옥성면 달라졌다",
+          "link": "https://www.m-i.kr/news/articleView.html?idxno=1341969"
+        },
+        {
+          "title": "이상아, 애견 카페에 경찰 출동 &quot;법 개정 탓..충분히 예감했던 일&quot; [스타...",
+          "link": "https://m.entertain.naver.com/article/108/0003413038"
         }
       ]
     },
     {
       "keyword": "올리브영",
-      "score": 5.3,
+      "score": 6.8,
       "verdict": "pass",
       "h": 15,
       "change_rate": 38.2,
       "i": 0.78,
       "intent_type": "구매/추천형",
-      "p": 0.7,
-      "pharma_keywords": [],
+      "p": 0.9,
+      "pharma_keywords": [
+        "용량"
+      ],
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "올리브영 바로",
       "y": 1.3,
       "yt_videos": [
         {
           "title": "광고❌ 올영 골드등급 코덕의 뽕뽑는 올영세일 추천템 모음!! #올영추천템 #메이크업",
           "channel": "겸다미",
-          "views": 217584,
+          "views": 217697,
           "published": "2026-03-01T09:08:30Z",
           "video_id": "z9edz1RHn1A"
         },
         {
           "title": "만원이하 3월 올세 꼭사템‼️올영 세일이지만 더더 가성비 있게 소비하자구☺️#유료광고",
           "channel": "럽코",
-          "views": 174793,
+          "views": 174896,
           "published": "2026-03-01T02:07:36Z",
           "video_id": "YcdOqPUwEZ4"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "정관장 '아이패스', 신학기 맞아 신제품 2종 출시",
+          "link": "https://n.news.naver.com/mnews/article/215/0001243613?sid=103"
+        },
+        {
+          "title": "동아제약 오쏘몰, 3월 올영세일 맞아 할인 행사 진행",
+          "link": "http://www.wsobi.com/news/articleView.html?idxno=305921"
+        }
+      ]
+    },
+    {
+      "keyword": "펫쇼",
+      "score": 6.3,
+      "verdict": "pass",
+      "h": 15,
+      "change_rate": -31.4,
+      "i": 0.86,
+      "intent_type": "구매/추천형",
+      "p": 0.7,
+      "pharma_keywords": [],
+      "c": 0.7,
+      "blog_count": 27,
+      "c_level": "경쟁 많음",
+      "c_query": "펫쇼 대구",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "[위클리오늘] &quot;2만1천 명 몰린다&quot;… 역대 최대 규모 '대구 펫쇼' 엑스코...",
+          "link": "http://www.weeklytoday.com/news/articleView.html?idxno=762336"
+        },
+        {
+          "title": "대구시 6∼8일 '제23회 대구 펫쇼'…500부스 참여",
+          "link": "https://n.news.naver.com/mnews/article/001/0015933599?sid=102"
+        }
+      ]
+    },
+    {
+      "keyword": "출시",
+      "score": 5.9,
+      "verdict": "pass",
+      "h": 15,
+      "change_rate": 35.1,
+      "i": 0.67,
+      "intent_type": "구매/추천형",
+      "p": 0.9,
+      "pharma_keywords": [
+        "용량"
+      ],
+      "c": 0.5,
+      "blog_count": 100,
+      "c_level": "레드오션",
+      "c_query": "출시 다양한",
+      "y": 1.3,
+      "yt_videos": [
+        {
+          "title": "바이오하자드9 레퀴엠 정식 출시 풀버전 (BIOHAZARD requiem)",
+          "channel": "수탉",
+          "views": 297185,
+          "published": "2026-03-01T13:05:17Z",
+          "video_id": "rJbG1oq1It8"
+        },
+        {
+          "title": "메가커피에서 출시된다는 충격적인 신메뉴",
+          "channel": "짧주",
+          "views": 212518,
+          "published": "2026-03-02T08:00:12Z",
+          "video_id": "CHNEAYzo-m0"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "한국타이어 라우펜, SUV·픽업트럭 전용 'X FIT AT2' 북미 출시...사계절...",
+          "link": "https://www.livebiz.today/news/articleView.html?idxno=200893"
+        },
+        {
+          "title": "성년 맞은 바디프랜드 &quot;AI헬스케어로봇 글로벌 스탠다드 원년 선언&quot;",
+          "link": "https://www.businessplus.kr/news/articleView.html?idxno=108125"
+        }
+      ]
+    },
+    {
+      "keyword": "운영",
+      "score": 5.5,
+      "verdict": "pass",
+      "h": 15,
+      "change_rate": 24.7,
+      "i": 0.81,
+      "intent_type": "구매/추천형",
+      "p": 0.9,
+      "pharma_keywords": [
+        "용량"
+      ],
+      "c": 0.5,
+      "blog_count": 72,
+      "c_level": "레드오션",
+      "c_query": "운영 맛집",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "롯데호텔, 라세느서 '프리미엄 아트 클래스'…조식·미술 인문학 결합",
+          "link": "https://n.news.naver.com/mnews/article/030/0003403463?sid=101"
+        },
+        {
+          "title": "토스, 첫 사내 어린이집 개원…일·가정 양립 지원 강화",
+          "link": "https://n.news.naver.com/mnews/article/003/0013797396?sid=101"
         }
       ]
     },
@@ -580,78 +750,46 @@
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "창고형 트레이더스",
       "y": 1.0,
-      "yt_videos": [
+      "yt_videos": [],
+      "news_headlines": [
         {
-          "title": "[의류 라이브] 쟁이쟁이옷쟁이 창고형 매장에서 의류 및 잡화 품질 좋은 제품을 소개 합니다",
-          "channel": "쟁이쟁이옷쟁이",
-          "views": 4571,
-          "published": "2026-03-01T04:20:26Z",
-          "video_id": "MQlMLxZGfmY"
+          "title": "전북약사회-메디인폴스, 당뇨소모성 청구 자동화 업무협약",
+          "link": "https://www.yakup.com/news/index.html?mode=view&cat=17&nid=323985"
         },
         {
-          "title": "Shanghai vlog l 중국 코스트코보다 인기 많은 샘스클럽! 회원제 창고형 할인매장 장바구니 물가 ✅",
-          "channel": "Yolmi 욜미",
-          "views": 2245,
-          "published": "2026-03-01T04:24:47Z",
-          "video_id": "RBzKYiHtXp0"
+          "title": "트레이더스, 밥상 물가 안정 ‘푸드 페스티벌’ 개막",
+          "link": "http://www.breaknews.com/1188530"
         }
       ]
     },
     {
-      "keyword": "출시",
-      "score": 5.0,
+      "keyword": "지원",
+      "score": 4.9,
       "verdict": "pass",
       "h": 15,
-      "change_rate": 35.1,
-      "i": 0.57,
+      "change_rate": -3.1,
+      "i": 0.73,
       "intent_type": "구매/추천형",
       "p": 0.9,
       "pharma_keywords": [
-        "성분"
+        "용량"
       ],
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
-      "y": 1.3,
-      "yt_videos": [
+      "c_query": "지원 있습니다",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
         {
-          "title": "바이오하자드9 레퀴엠 정식 출시 풀버전 (BIOHAZARD requiem)",
-          "channel": "수탉",
-          "views": 296431,
-          "published": "2026-03-01T13:05:17Z",
-          "video_id": "rJbG1oq1It8"
+          "title": "전남광주통합교육감 선출… 판도 달라지나",
+          "link": "https://www.hangyo.com/news/article.html?no=106942"
         },
         {
-          "title": "메가커피에서 출시된다는 충격적인 신메뉴",
-          "channel": "짧주",
-          "views": 211429,
-          "published": "2026-03-02T08:00:12Z",
-          "video_id": "CHNEAYzo-m0"
-        }
-      ]
-    },
-    {
-      "keyword": "펫쇼",
-      "score": 4.5,
-      "verdict": "pass",
-      "h": 15,
-      "change_rate": -31.4,
-      "i": 0.86,
-      "intent_type": "구매/추천형",
-      "p": 0.7,
-      "pharma_keywords": [],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
-      "y": 1.0,
-      "yt_videos": [
-        {
-          "title": "펫쇼 사은품 뭐가 있을까~? #펫쇼코리아 #펫쇼 #펫페어 #강아지",
-          "channel": "쭌마치63",
-          "views": 493,
-          "published": "2026-03-01T05:33:49Z",
-          "video_id": "Ua4glFnICfw"
+          "title": "기재차관 &quot;관계기관 간 공조하에 24시간 모니터링...이상징후 발생시 신...",
+          "link": "http://www.efnews.co.kr/news/articleView.html?idxno=127889"
         }
       ]
     },
@@ -673,125 +811,80 @@
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "치료제 임상",
       "y": 1.3,
       "yt_videos": [
         {
           "title": "외국인이 감탄한 한국식 비염 치료제(?)의 위엄",
           "channel": "국뽕바라",
-          "views": 155021,
+          "views": 155066,
           "published": "2026-03-01T10:36:20Z",
           "video_id": "HqR-ehn-eRs"
         },
         {
           "title": "현재 가장 가능성 있는 알츠하이머 치료제 근황 ㄷㄷ..",
           "channel": "풀네임",
-          "views": 136288,
+          "views": 144154,
           "published": "2026-03-02T14:49:20Z",
           "video_id": "dkvpGNLuiac"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "&quot;꾸준히 관리해야 해요&quot;…편의 높인 손발톱 무좀약 출시",
+          "link": "https://www.widedaily.com/news/articleView.html?idxno=289543"
+        },
+        {
+          "title": "&quot;당뇨약 부종 원인 찾았다&quot;…고려대 안암병원 김남훈 교수팀, SGLT2 병용...",
+          "link": "https://www.apsk.co.kr/news/articleView.html?idxno=538764"
         }
       ]
     },
     {
-      "keyword": "영양제",
-      "score": 3.6,
+      "keyword": "임상",
+      "score": 3.2,
       "verdict": "pass",
       "h": 5,
-      "change_rate": 0.3,
-      "i": 0.95,
-      "intent_type": "구매/추천형",
+      "change_rate": 5.4,
+      "i": 1.0,
+      "intent_type": "중립",
       "p": 1.3,
       "pharma_keywords": [
-        "용량",
+        "처방",
         "성분",
         "부작용",
+        "대사",
         "약물"
       ],
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
-      "y": 1.15,
-      "yt_videos": [
-        {
-          "title": "카메라에 포착된 감동적인 순간 #감동 #강아지 #강아지영양제 #ai",
-          "channel": "AUTO AI",
-          "views": 39404,
-          "published": "2026-03-02T10:20:22Z",
-          "video_id": "tF_iTZfAULw"
-        },
-        {
-          "title": "\"아침식사로 딱 좋은 뇌영양제 '계란죽' 만들기\" 밥 대신 달걀죽, 단백질 꽉 채우는 아침식사 루틴. 삶은 계란(달걀)에 콜린·레시틴·오메가3·루테인이 100살 뇌·혈관 지켜줍니다",
-          "channel": "루이빈치과 류지헌",
-          "views": 18865,
-          "published": "2026-03-02T05:30:15Z",
-          "video_id": "FdIdPjjDgtE"
-        }
-      ]
-    },
-    {
-      "keyword": "건기식",
-      "score": 3.4,
-      "verdict": "pass",
-      "h": 5,
-      "change_rate": 14.2,
-      "i": 1.04,
-      "intent_type": "의심/경고형",
-      "p": 1.3,
-      "pharma_keywords": [
-        "처방",
-        "성분",
-        "함량",
-        "부작용",
-        "대사"
-      ],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
+      "c_query": "임상 실제",
       "y": 1.0,
       "yt_videos": [
         {
-          "title": "[오늘 저녁9시 LIVE] 오마주향수💎건강기능식품🔥간식🛒생활용품 특가전 #라이브커머스 #라이브방송 #쇼핑라이브 #실시간방송 #오마주향수 #건강기능식품 #향수추천 #건기식",
-          "channel": "픽언니1",
-          "views": 948,
-          "published": "2026-03-02T03:13:33Z",
-          "video_id": "WHmw08MbGHw"
+          "title": "공동 타켓으로 휴전한 임상과 자경",
+          "channel": "최애드라마",
+          "views": 20402,
+          "published": "2026-03-01T12:39:59Z",
+          "video_id": "iD68WIjqlk0"
         },
         {
-          "title": "다같이 건강하시게 여름준비 하시죠  셉셉이네 #건기식 #간식 #건강기능식품 #다이어트 #세일 #과자 #라이브 #유튜브라이브 #라이브쇼핑 #유튜브 #비타민 #건강",
-          "channel": "셉셉이네",
-          "views": 193,
-          "published": "2026-03-01T17:11:39Z",
-          "video_id": "-m9BwjMAB3k"
+          "title": "현대ADM 주가전망 큰일났다!! 신약 임상 드디어 공개?! 페니트리움 호재까지 주가 급변동 이유 문제 있을까!? #현대ADM주가전망 #현대ADM분석 #현대ADM주가분석",
+          "channel": "주식의고수",
+          "views": 1393,
+          "published": "2026-03-01T14:00:23Z",
+          "video_id": "IUtCbY9s5gI"
         }
-      ]
-    },
-    {
-      "keyword": "해명",
-      "score": 3.2,
-      "verdict": "pass",
-      "h": 5,
-      "change_rate": 1.7,
-      "i": 1.4,
-      "intent_type": "의심/경고형",
-      "p": 0.7,
-      "pharma_keywords": [],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
-      "y": 1.3,
-      "yt_videos": [
+      ],
+      "news_headlines": [
         {
-          "title": "솔로지옥5 김민지 성형 해명",
-          "channel": "그거봄",
-          "views": 1781468,
-          "published": "2026-03-02T01:29:51Z",
-          "video_id": "o55NIDjLLHQ"
+          "title": "&quot;당뇨약 부종 원인 찾았다&quot;…고려대 안암병원 김남훈 교수팀, SGLT2 병용...",
+          "link": "https://www.apsk.co.kr/news/articleView.html?idxno=538764"
         },
         {
-          "title": "[단독] 당당한 해명? 궁색한 변명? 박상규, '편파진행' 논란에 이렇게 답했다 / 박상규 시사평론가 [굿모닝 대한민국]",
-          "channel": "펜앤마이크TV",
-          "views": 52046,
-          "published": "2026-03-02T06:52:58Z",
-          "video_id": "Rex9yBidZX8"
+          "title": "‘K-바이오’ 글로벌 사업화 판 키운다",
+          "link": "https://n.news.naver.com/mnews/article/016/0002607370?sid=105"
         }
       ]
     },
@@ -807,7 +900,6 @@
       "pharma_keywords": [
         "처방",
         "복용법",
-        "용량",
         "성분",
         "함량",
         "부작용"
@@ -815,12 +907,13 @@
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "식약처 인증",
       "y": 1.0,
       "yt_videos": [
         {
           "title": "절대 드시면 안되는 분들 오메가3 부작용 긴급속보 식약처 명령 , 오메가3의 효능 혈관청소부,오메가3",
           "channel": "무조건당신편",
-          "views": 3047,
+          "views": 3082,
           "published": "2026-03-02T13:45:35Z",
           "video_id": "p9IniKMO4Zc"
         },
@@ -831,117 +924,160 @@
           "published": "2026-03-02T01:28:03Z",
           "video_id": "wtvv-taix74"
         }
-      ]
-    },
-    {
-      "keyword": "공개",
-      "score": 2.9,
-      "verdict": "pass",
-      "h": 5,
-      "change_rate": 9.0,
-      "i": 1.0,
-      "intent_type": "중립",
-      "p": 0.9,
-      "pharma_keywords": [
-        "성분"
       ],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
-      "y": 1.3,
-      "yt_videos": [
+      "news_headlines": [
         {
-          "title": "1730만유튜버 집 공개합니다",
-          "channel": "보겸TV",
-          "views": 2005965,
-          "published": "2026-03-01T10:43:08Z",
-          "video_id": "CoWqIWT9EHk"
+          "title": "'왕사남'에 영월 찾는 관광객↑ 식약처, '먹거리 안전' 주시",
+          "link": "https://www.safetynews.co.kr/news/articleView.html?idxno=246370"
         },
         {
-          "title": "800만 찍자마자 박지훈 소속사에서 공개한 왕사남 미공개 비하인드..💕#왕과사는남자",
-          "channel": "뽀잉LoOks",
-          "views": 1140548,
-          "published": "2026-03-01T04:00:35Z",
-          "video_id": "gRJzYmuMRvg"
+          "title": "의료기기 변경허가, 네거티브 전환으로 완화",
+          "link": "https://n.news.naver.com/mnews/article/374/0000495368?sid=101"
         }
       ]
     },
     {
-      "keyword": "임상",
-      "score": 2.8,
+      "keyword": "영양제",
+      "score": 2.9,
       "verdict": "pass",
       "h": 5,
-      "change_rate": 5.4,
-      "i": 0.86,
+      "change_rate": 0.3,
+      "i": 0.88,
       "intent_type": "구매/추천형",
       "p": 1.3,
       "pharma_keywords": [
         "처방",
+        "복용법",
+        "용량",
         "성분",
-        "약물"
+        "함량",
+        "부작용"
       ],
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
+      "c_query": "영양제 비타민",
       "y": 1.0,
-      "yt_videos": [
+      "yt_videos": [],
+      "news_headlines": [
         {
-          "title": "공동 타켓으로 휴전한 임상과 자경",
-          "channel": "최애드라마",
-          "views": 20411,
-          "published": "2026-03-01T12:39:59Z",
-          "video_id": "iD68WIjqlk0"
+          "title": "&quot;탈모 치료는 장기전&quot;… 약물 치료·생활습관 개선 병행해야",
+          "link": "https://news.hidoc.co.kr/news/articleView.html?idxno=59289"
         },
         {
-          "title": "현대ADM 주가전망 큰일났다!! 신약 임상 드디어 공개?! 페니트리움 호재까지 주가 급변동 이유 문제 있을까!? #현대ADM주가전망 #현대ADM분석 #현대ADM주가분석",
-          "channel": "주식의고수",
-          "views": 1398,
-          "published": "2026-03-01T14:00:23Z",
-          "video_id": "IUtCbY9s5gI"
+          "title": "[위클리오늘] &quot;2만1천 명 몰린다&quot;… 역대 최대 규모 '대구 펫쇼' 엑스코...",
+          "link": "http://www.weeklytoday.com/news/articleView.html?idxno=762336"
         }
       ]
     },
     {
       "keyword": "최대",
-      "score": 2.5,
+      "score": 2.8,
       "verdict": "pass",
       "h": 5,
       "change_rate": 8.6,
-      "i": 0.71,
+      "i": 0.96,
       "intent_type": "구매/추천형",
-      "p": 1.1,
+      "p": 0.9,
       "pharma_keywords": [
-        "처방",
-        "함량"
+        "용량"
       ],
       "c": 0.5,
-      "blog_count": 100,
+      "blog_count": 99,
       "c_level": "레드오션",
+      "c_query": "최대 있습니다",
       "y": 1.3,
       "yt_videos": [
         {
           "title": "[속보] 이란 혁명수비대 \"역대 최대 보복\" 천명, 이틀째 미군거점 동시다발 타격 - [MBC뉴스속보] 2026년 03월 01일",
           "channel": "MBCNEWS",
-          "views": 1924536,
+          "views": 1925480,
           "published": "2026-03-02T01:53:51Z",
           "video_id": "JozbZyTcmu0"
         },
         {
           "title": "[속보] 이란 혁명수비대 \"역대 최대 보복\" 천명, 미군거점 동시다발 타격 - [MBC뉴스속보] 2026년 03월 02일",
           "channel": "MBCNEWS",
-          "views": 1729930,
+          "views": 1731949,
           "published": "2026-03-02T16:49:58Z",
           "video_id": "N_W3pXsy3RA"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "롯데온, 리뉴얼 기념 '리스타트 온' 진행",
+          "link": "https://n.news.naver.com/mnews/article/030/0003403457?sid=101"
+        },
+        {
+          "title": "정부 “중동 사태 이상 징후 발생시 ‘100조+α’ 투입해 시장 안정”",
+          "link": "https://n.news.naver.com/mnews/article/081/0003622273?sid=101"
+        }
+      ]
+    },
+    {
+      "keyword": "해명",
+      "score": 2.4,
+      "verdict": "pass",
+      "h": 5,
+      "change_rate": 1.7,
+      "i": 1.38,
+      "intent_type": "의심/경고형",
+      "p": 0.7,
+      "pharma_keywords": [],
+      "c": 0.5,
+      "blog_count": 100,
+      "c_level": "레드오션",
+      "c_query": "해명 동료들의",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "'린샤오쥔에 팀킬까지'... 황대헌, 연이은 논란에 기자회견 예고",
+          "link": "https://m.sports.naver.com/general/article/047/0002506546"
+        },
+        {
+          "title": "'뉴이재명' 현상에, 홍익표 &quot;외연 확장... 주류 다툼 프레임 부적절&quot;",
+          "link": "https://n.news.naver.com/mnews/article/047/0002506547?sid=100"
         }
       ]
     },
     {
       "keyword": "할인",
-      "score": 2.0,
+      "score": 2.1,
       "verdict": "pass",
       "h": 5,
       "change_rate": 6.4,
-      "i": 0.67,
+      "i": 0.75,
+      "intent_type": "구매/추천형",
+      "p": 1.1,
+      "pharma_keywords": [
+        "처방",
+        "용량"
+      ],
+      "c": 0.5,
+      "blog_count": 99,
+      "c_level": "레드오션",
+      "c_query": "할인 가격",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "쉐보레, 트랙스 크로스오버·트레일블레이저 구매 시 할인·저금리 할부...",
+          "link": "https://www.dailycar.co.kr/content/news.html?type=view&autoId=60810"
+        },
+        {
+          "title": "코웨이, 연중 최대 프로모션 '2026 코웨이페스타' 개최",
+          "link": "https://www.newsquest.co.kr/news/articleView.html?idxno=262578"
+        }
+      ]
+    },
+    {
+      "keyword": "대구",
+      "score": 2.0,
+      "verdict": "pass",
+      "h": 5,
+      "change_rate": 17.2,
+      "i": 0.69,
       "intent_type": "구매/추천형",
       "p": 0.9,
       "pharma_keywords": [
@@ -950,57 +1086,85 @@
       "c": 0.5,
       "blog_count": 100,
       "c_level": "레드오션",
-      "y": 1.3,
-      "yt_videos": [
-        {
-          "title": "아빠들의 드림카 26년형 X7 등장! 벌써 미친할인 시작이라니...",
-          "channel": "재뻘TV",
-          "views": 113836,
-          "published": "2026-03-01T10:15:14Z",
-          "video_id": "MpwB03GSlX4"
-        },
-        {
-          "title": "하이퀄리티 여성의류 씬느샵 백화점 납품 의류 최대 80% 할인",
-          "channel": "씬느샵 ♦️루비언니♦️",
-          "views": 35438,
-          "published": "2026-03-02T17:19:17Z",
-          "video_id": "TMxDaEfGzws"
-        }
-      ]
-    },
-    {
-      "keyword": "대구",
-      "score": 1.6,
-      "verdict": "pass",
-      "h": 5,
-      "change_rate": 17.2,
-      "i": 0.71,
-      "intent_type": "구매/추천형",
-      "p": 0.7,
-      "pharma_keywords": [],
-      "c": 0.5,
-      "blog_count": 100,
-      "c_level": "레드오션",
+      "c_query": "대구 근조화환",
       "y": 1.3,
       "yt_videos": [
         {
           "title": "국힘이 대구경북통합법 찬성에 당황해 하는 진짜 이유 #정치뉴스 #정치이슈 #국힘",
           "channel": "열풍TV",
-          "views": 530505,
+          "views": 532082,
           "published": "2026-03-02T03:39:17Z",
           "video_id": "pypUpSY3upM"
         },
         {
           "title": "국힘에서 제명당하고, 대구에서 가장 많이 들은 말   #김종혁",
           "channel": "시민브리핑",
-          "views": 487782,
+          "views": 489207,
           "published": "2026-03-02T07:07:01Z",
           "video_id": "frsahYSFx7E"
+        }
+      ],
+      "news_headlines": [
+        {
+          "title": "'뉴이재명' 현상에, 홍익표 &quot;외연 확장... 주류 다툼 프레임 부적절&quot;",
+          "link": "https://n.news.naver.com/mnews/article/047/0002506547?sid=100"
+        },
+        {
+          "title": "한병도 &quot;野 대구-경북 통합 반대하다 억지 궤변…대미특별법 시급&quot;",
+          "link": "https://n.news.naver.com/mnews/article/018/0006227323?sid=100"
+        }
+      ]
+    },
+    {
+      "keyword": "공개",
+      "score": 1.4,
+      "verdict": "pass",
+      "h": 5,
+      "change_rate": 9.0,
+      "i": 0.79,
+      "intent_type": "구매/추천형",
+      "p": 0.7,
+      "pharma_keywords": [],
+      "c": 0.5,
+      "blog_count": 100,
+      "c_level": "레드오션",
+      "c_query": "공개 비용",
+      "y": 1.0,
+      "yt_videos": [],
+      "news_headlines": [
+        {
+          "title": "한국타이어, 라우펜 엑스 핏 AT2 북미 출시",
+          "link": "https://www.autodaily.co.kr/news/articleView.html?idxno=542021"
+        },
+        {
+          "title": "코스메카코리아, 美 자회사 잉글우드랩 공개매수 추진",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=725829"
         }
       ]
     }
   ],
   "pharma_news": [
+    {
+      "title": "의료기기, 중대 변경 외 사항 자율관리로...회수기준 마련도",
+      "link": "http://www.medisobizanews.com/news/articleView.html?idxno=135239",
+      "pub_date": "Tue, 03 Mar 2026 10:12:00 +0900",
+      "signal": "strong",
+      "trigger": "회수"
+    },
+    {
+      "title": "의료기기 변경허가, 네거티브 전환으로 완화",
+      "link": "https://n.news.naver.com/mnews/article/374/0000495368?sid=101",
+      "pub_date": "Tue, 03 Mar 2026 10:05:00 +0900",
+      "signal": "strong",
+      "trigger": "허가"
+    },
+    {
+      "title": "피씨엘, 식약처 '제조업무·품목허가 정지' 취소 소송 제기",
+      "link": "https://www.ezyeconomy.com/news/articleView.html?idxno=232823",
+      "pub_date": "Tue, 03 Mar 2026 10:02:00 +0900",
+      "signal": "strong",
+      "trigger": "허가"
+    },
     {
       "title": "식약처, 의료기기법 시행규칙 개정안 입법 예고…“의료기기 변경허가...",
       "link": "https://n.news.naver.com/mnews/article/030/0003403430?sid=102",
@@ -1065,13 +1229,6 @@
       "trigger": "규제"
     },
     {
-      "title": "글로벌 규제기관 한자리에…세포·유전자치료제 규제 대전환 조망",
-      "link": "https://www.yakup.com/news/index.html?mode=view&cat=12&nid=323928",
-      "pub_date": "Tue, 03 Mar 2026 06:02:00 +0900",
-      "signal": "normal",
-      "trigger": "규제"
-    },
-    {
       "title": "잔류농약 시래기 3톤 회수, 식자재 공급망 안전성 '경고등'",
       "link": "https://cooknchefnews.com/news/view/1065602161678387",
       "pub_date": "Fri, 27 Feb 2026 20:12:00 +0900",
@@ -1091,78 +1248,7 @@
       "pub_date": "Fri, 27 Feb 2026 05:50:00 +0900",
       "signal": "normal",
       "trigger": "약가"
-    },
-    {
-      "title": "태광-애경, 225억 깎고 한 달 더 끌었다…'2080 리콜'이 바꾼 인수 조건",
-      "link": "https://www.bizhankook.com/bk/article/31545",
-      "pub_date": "Fri, 20 Feb 2026 20:00:00 +0900",
-      "signal": "strong",
-      "trigger": "리콜"
-    },
-    {
-      "title": "태광산업, '치약 리콜 사태' 애경산업 인수가 낮춰",
-      "link": "http://www.newsfc.co.kr/news/articleView.html?idxno=76879",
-      "pub_date": "Fri, 20 Feb 2026 14:42:00 +0900",
-      "signal": "strong",
-      "trigger": "리콜"
     }
   ],
-  "youtube_trends": [
-    {
-      "title": "98년생아니고 98학번인 이승희약사 #최욱 #매불쇼",
-      "channel": "우리는 지금 매불쇼의 시대에 살고 있다",
-      "views": 265263,
-      "published": "2026-03-01T11:20:33Z",
-      "video_id": "DaYLPnlnGMo",
-      "query": "약사"
-    },
-    {
-      "title": "Top 5 Vitamins for Immunity & Energy 💊 | #vitamins #immunity #healthtips #supplements #shortfeed",
-      "channel": "Pharmacist Simranjeet",
-      "views": 91169,
-      "published": "2026-03-01T12:30:54Z",
-      "video_id": "jFHqzVW8ago",
-      "query": "비타민"
-    },
-    {
-      "title": "사랑빈의 비타민 우리 왕자님.  춤도 고마워요 #김용빈 #보고싶어서 #강진청자축제",
-      "channel": "용빈왕자",
-      "views": 75166,
-      "published": "2026-03-01T16:40:29Z",
-      "video_id": "BIPZMXVcBF8",
-      "query": "비타민"
-    },
-    {
-      "title": "방치하면 병 된다! 꼭 알아야 할 내 몸이 보내는 비타민 부족 신호 10",
-      "channel": "시간을 아껴드립니다",
-      "views": 40362,
-      "published": "2026-03-01T09:01:03Z",
-      "video_id": "k_IC969URWw",
-      "query": "비타민"
-    },
-    {
-      "title": "카메라에 포착된 감동적인 순간 #감동 #강아지 #강아지영양제 #ai",
-      "channel": "AUTO AI",
-      "views": 39404,
-      "published": "2026-03-02T10:20:22Z",
-      "video_id": "tF_iTZfAULw",
-      "query": "영양제"
-    },
-    {
-      "title": "영양제 도대체 몇시에 먹어야할까?",
-      "channel": "팔팔시니어",
-      "views": 38679,
-      "published": "2026-03-01T15:07:40Z",
-      "video_id": "13XzWiMW-Zk",
-      "query": "영양제"
-    },
-    {
-      "title": "30일 동안 매일 비타민C를 먹으면 몸속에서 생긴 일",
-      "channel": "황혼멜로디",
-      "views": 31883,
-      "published": "2026-03-01T15:15:01Z",
-      "video_id": "EkPEn2YQQ9Q",
-      "query": "비타민"
-    }
-  ]
+  "youtube_trends": []
 }

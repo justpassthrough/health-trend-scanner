@@ -361,49 +361,42 @@ def calc_g_score(keyword):
 def _is_relevant_yt_video(title, keyword=""):
     """유튜브 영상 제목이 건강/의약 관련인지 검증.
 
-    필터 기준:
-    1. 한국어(한글) 포함 여부 — 러시아어/영어 등 무관한 영상 제거
-    2. 건강/의약 맥락 단어 포함 여부 — 동명이인/비유적 사용 제거
-    3. 검색 키워드가 제목에 실제로 포함되는지 (키워드 지정 시)
+    필터 기준 (순서대로):
+    1. 한글 포함 — 외국어 전용 영상 제거
+    2. 오탐 패턴 차단 — 펫/예능/게임/비유적 사용 제거
+    3. 건강 맥락 확인 — 제목에 건강 단어가 있어야 통과
     """
     # 1) 한글이 하나도 없으면 탈락 (러시아어, 영어 전용 영상 등)
     if not re.search(r"[가-힣]", title):
         return False
 
-    # 2) 제목에서 한글 단어 추출
-    korean_words = re.findall(r"[가-힣]+", title)
-    title_text = " ".join(korean_words)
-
-    # 3) 키워드가 지정된 경우 — 키워드(공백 제거)가 제목에 포함되는지 확인
-    #    예: keyword="비타민D" → "비타민" in title이면 OK
-    if keyword:
-        kw_norm = keyword.replace(" ", "")
-        # 키워드 자체 또는 2글자 이상 부분이 제목에 있으면 통과
-        kw_found = kw_norm in title.replace(" ", "")
-        if not kw_found:
-            # 키워드의 핵심 부분(2글자 이상 한글)이라도 제목에 있는지
-            kw_parts = re.findall(r"[가-힣]{2,}", keyword)
-            kw_found = any(part in title_text for part in kw_parts)
-        if not kw_found:
-            return False
-
-    # 4) 건강/의약 맥락 확인 — 제목에 HEALTH_CONTEXT_WORDS 중 하나라도 있어야 함
-    has_health = any(hw in title_text for hw in HEALTH_CONTEXT_WORDS)
-
-    # 검색 키워드 자체가 건강 단어이면 맥락 체크 생략
-    if not has_health and keyword:
-        has_health = any(hw in keyword for hw in HEALTH_CONTEXT_WORDS)
-
-    # 5) 비건강 오탐 패턴 제거 (예: "비타민 우리 왕자님", 펫/반려동물 전용)
+    # 2) 오탐 패턴 차단 — 건강 단어가 있더라도 이 패턴에 걸리면 탈락
     noise_patterns = [
-        r"왕자", r"공주", r"강아지.*행복", r"행복.*강아지",
-        r"반려[견묘]", r"펫\s*푸드", r"사료", r"애견",
-        r"먹방", r"ASMR", r"asmr", r"언박싱", r"하울",
-        r"게임", r"리그오브레전드", r"롤$", r"피파",
+        # 비유적 사용 (예: "비타민 우리 왕자님", "웃음 비타민")
+        r"왕자", r"공주", r"웃음\s*비타민", r"비타민\s*같은",
+        # 펫/반려동물
+        r"강아지", r"고양이", r"반려[견묘]", r"펫", r"사료", r"애견",
+        # 예능/먹방/언박싱
+        r"먹방", r"ASMR", r"asmr", r"언박싱", r"하울", r"챌린지",
+        # 게임/스포츠/아이돌
+        r"게임", r"리그오브레전드", r"피파", r"아이돌",
+        # 댄스/대결 (예: "비타민vs피어스 댄스 대결")
+        r"댄스\s*대결", r"vs.*댄스", r"댄스.*vs",
     ]
     for pat in noise_patterns:
-        if re.search(pat, title):
+        if re.search(pat, title, re.IGNORECASE):
             return False
+
+    # 3) 건강/의약 맥락 확인
+    # 제목에서 한글 추출
+    title_text = " ".join(re.findall(r"[가-힣]+", title))
+
+    # 제목 자체에 건강 단어가 있으면 통과
+    has_health = any(hw in title_text for hw in HEALTH_CONTEXT_WORDS)
+
+    # 검색 키워드가 건강 단어이면 맥락 체크 생략 (이미 건강 검색임)
+    if not has_health and keyword:
+        has_health = any(hw in keyword for hw in HEALTH_CONTEXT_WORDS)
 
     return has_health
 

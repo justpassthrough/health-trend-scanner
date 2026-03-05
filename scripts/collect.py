@@ -116,6 +116,68 @@ def load_recent_history(days=7):
 # 1단계: 네이버 뉴스에서 급등 키워드 자동 추출
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+# 한국어 조사/어미 패턴 (긴 것부터 매칭해야 "에서는"이 "는"보다 먼저 걸림)
+_JOSA_SUFFIXES = [
+    # 4음절
+    "에서는", "에서의", "으로는", "으로의", "에서도", "이라는", "이라고",
+    # 3음절
+    "에서", "으로", "하여", "하는", "하고", "에게", "한테", "까지",
+    "부터", "처럼", "같이", "보다", "에는", "에도", "라는", "라고",
+    "이라", "만의", "과의", "와의", "로의", "로는",
+    # 2음절
+    "가", "는", "을", "를", "의", "에", "로", "과", "와",
+    "이", "도", "만", "께", "고", "며", "면",
+]
+
+# 1음절 단독 불허 일반명사
+_SINGLE_CHAR_BLOCK = {
+    "수", "것", "때", "중", "등", "내", "더", "및", "각", "간",
+    "약", "말", "위", "후", "전", "용", "형", "량", "제", "법",
+}
+
+# 불용어 (extract_keywords_from_news + get_autocomplete_keywords 공용)
+_STOPWORDS = {
+    "기자", "뉴스", "보도", "관련", "대한", "통해", "위해", "이상",
+    "이하", "최근", "현재", "오늘", "내일", "올해", "지난", "다음",
+    "경우", "가능", "정도", "사진", "제공", "연합", "한겨레", "조선",
+    "중앙", "동아", "매일", "한국", "서울", "국내", "세계", "글로벌",
+    "시장", "업계", "기업", "회사", "사업", "발표", "조사", "연구",
+    "결과", "분석", "전문", "관계", "이번", "표방", "주장", "설명",
+    "확인", "특히", "이후", "대해", "가운데", "통한", "따른", "나온",
+    "개월", "원료", "혼합", "주원료",
+    # 연예/엔터/게임/스포츠/정치
+    "배우", "감독", "영화", "드라마", "출연", "방송", "예능", "아이돌",
+    "콘서트", "앨범", "데뷔", "컴백", "팬미팅",
+    "게임", "하자드", "레퀴엠", "플레이", "업데이트", "시즌",
+    "축구", "야구", "배드민턴", "올림픽", "경기", "우승", "선수",
+    "대통령", "국회", "정부", "총선", "대선", "후보", "탄핵",
+    "주가", "코스피", "코스닥", "투자", "상장", "펀드",
+    "후원", "공식", "운영", "지정", "최대", "진행", "출시",
+    # 연예인/인물명
+    "홍현희", "제이쓴", "박봄", "산다라박", "제시", "화사", "선미",
+    "송지효", "전현무", "김종국", "유재석", "이광수",
+}
+
+
+def _strip_josa(word):
+    """한국어 어절에서 조사/어미를 제거하여 체언(명사)만 반환.
+
+    예: "세포가" → "세포", "원료로" → "원료", "식물성" → "식물성"
+    결과가 1글자이면 원래 단어 반환 (과도한 제거 방지).
+    """
+    for suffix in _JOSA_SUFFIXES:
+        if word.endswith(suffix) and len(word) > len(suffix):
+            stem = word[:-len(suffix)]
+            if len(stem) >= 2:
+                return stem
+    return word
+
+
+def _is_health_title(title):
+    """뉴스 제목이 건강/의약 맥락인지 판별"""
+    return any(hw in title for hw in HEALTH_CONTEXT_WORDS)
+
+
 def fetch_naver_news(query, display=100, sort="date"):
     """네이버 뉴스 검색 API 호출"""
     url = "https://openapi.naver.com/v1/search/news.json"
@@ -130,12 +192,14 @@ def fetch_naver_news(query, display=100, sort="date"):
 
 
 def extract_keywords_from_news():
-    """건강/의약 뉴스 제목에서 키워드 자동 추출"""
+    """건강/의약 뉴스 제목에서 키워드 자동 추출.
+
+    핵심 변경: 건강 기사 필터 → 키워드 추출 (순서 역전)
+    """
     print("=" * 50)
     print("1단계: 네이버 뉴스에서 키워드 추출")
     print("=" * 50)
 
-    # 건강/의약 관련 검색어로 뉴스 수집
     seed_queries = [
         "건강기능식품", "영양제", "비타민", "유산균",
         "다이어트약", "비만치료제", "GLP-1",
@@ -144,73 +208,43 @@ def extract_keywords_from_news():
         "약국", "약사", "의약품 허가",
     ]
 
-    all_titles = []
+    # ── 수집 + 건강 기사 선필터 ──
+    all_titles = []       # 건강 맥락 기사만
+    total_fetched = 0
     for q in seed_queries:
         items = fetch_naver_news(q, display=100)
         for item in items:
             title = re.sub(r"<[^>]+>", "", item.get("title", ""))
-            all_titles.append(title)
+            total_fetched += 1
+            # 건강/의약 맥락이 있는 기사만 통과
+            if _is_health_title(title):
+                all_titles.append(title)
         time.sleep(0.1)
 
-    print(f"  수집된 뉴스 제목: {len(all_titles)}건")
+    print(f"  수집 뉴스: {total_fetched}건 → 건강 맥락 통과: {len(all_titles)}건")
 
-    # 제목에서 명사(2글자 이상 한글 단어) 추출
+    # ── 제목에서 명사 추출 (조사 제거) ──
     word_counter = Counter()
-    # 불용어
-    stopwords = {"기자", "뉴스", "보도", "관련", "대한", "통해", "위해", "이상",
-                 "이하", "최근", "현재", "오늘", "내일", "올해", "지난", "다음",
-                 "경우", "가능", "정도", "사진", "제공", "연합", "한겨레", "조선",
-                 "중앙", "동아", "매일", "한국", "서울", "국내", "세계", "글로벌",
-                 "시장", "업계", "기업", "회사", "사업", "발표", "조사", "연구",
-                 "결과", "분석", "전문", "관계", "이번",
-                 # 연예/엔터/게임/스포츠/정치 — 건강과 무관한 키워드
-                 "배우", "감독", "영화", "드라마", "출연", "방송", "예능", "아이돌",
-                 "콘서트", "앨범", "데뷔", "컴백", "팬미팅",
-                 "게임", "하자드", "레퀴엠", "플레이", "업데이트", "시즌",
-                 "축구", "야구", "배드민턴", "올림픽", "경기", "우승", "선수",
-                 "대통령", "국회", "정부", "총선", "대선", "후보", "탄핵",
-                 "주가", "코스피", "코스닥", "투자", "상장", "펀드",
-                 "후원", "공식", "운영", "지정", "최대", "진행", "출시",
-                 # 연예인/인물명 — 건강 뉴스에 이름만 등장해도 글감 가치 없음
-                 "홍현희", "제이쓴", "박봄", "산다라박", "제시", "화사", "선미",
-                 "송지효", "전현무", "김종국", "유재석", "이광수"}
 
     for title in all_titles:
-        words = re.findall(r"[가-힣]{2,}", title)
-        for w in words:
-            if w not in stopwords and len(w) >= 2:
-                word_counter[w] += 1
+        # 한글 어절 추출
+        raw_words = re.findall(r"[가-힣]{2,}", title)
+        for raw in raw_words:
+            w = _strip_josa(raw)
+            # 1글자 일반명사 차단
+            if len(w) < 2:
+                continue
+            if len(w) == 1 and w in _SINGLE_CHAR_BLOCK:
+                continue
+            if w in _STOPWORDS or w in BLACKLIST:
+                continue
+            word_counter[w] += 1
 
-    # 빈도 3회 이상인 키워드만 (= 여러 기사에서 언급 = 이슈)
-    raw_trending = [(word, count) for word, count in word_counter.most_common(100)
-                    if count >= 3]
+    # 빈도 3회 이상 (여러 기사에서 언급 = 이슈)
+    trending = [(word, count) for word, count in word_counter.most_common(100)
+                if count >= 3]
 
-    # 건강/의약 맥락 필터: 키워드 자체가 건강 단어이거나,
-    # 뉴스 제목에서 건강 단어와 함께 등장해야 통과
-    trending = []
-    filtered_out = []
-    for word, count in raw_trending:
-        # 키워드 자체가 건강 관련 단어면 바로 통과
-        if any(hw in word for hw in HEALTH_CONTEXT_WORDS) or word in HEALTH_CONTEXT_WORDS:
-            trending.append((word, count))
-            continue
-
-        # 뉴스 제목에서 건강 단어와 함께 등장하는지 확인
-        has_health = False
-        for title in all_titles:
-            if word in title and any(hw in title for hw in HEALTH_CONTEXT_WORDS):
-                has_health = True
-                break
-
-        if has_health:
-            trending.append((word, count))
-        else:
-            filtered_out.append(word)
-
-    if filtered_out:
-        print(f"  [필터] 건강 무관 키워드 제외: {', '.join(filtered_out[:10])}")
-
-    print(f"  추출된 트렌딩 키워드: {len(trending)}개 (필터 전 {len(raw_trending)}개)")
+    print(f"  추출된 트렌딩 키워드: {len(trending)}개")
     for w, c in trending[:20]:
         print(f"    {w}: {c}건")
 
@@ -629,6 +663,50 @@ def search_youtube(keyword):
 # 5.5단계: 연관 키워드 확장 (네이버 자동완성)
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+def _clean_compound(combo):
+    """복합 키워드 정제: 각 어절에서 조사 제거, 조사로만 된 어절 삭제.
+
+    예: "세포 재생을" → "세포 재생", "멜라닌 세포가" → "멜라닌 세포"
+    """
+    parts = []
+    for w in combo.split():
+        # 한글 어절만 처리
+        if not re.search(r"[가-힣]", w):
+            parts.append(w)
+            continue
+        cleaned = _strip_josa(w)
+        if len(cleaned) >= 2 and cleaned not in _STOPWORDS:
+            parts.append(cleaned)
+    return " ".join(parts) if parts else ""
+
+
+def _is_valid_compound(combo, parent_keyword):
+    """복합 키워드 품질 검증.
+
+    기준:
+    - 한글 명사가 2개 이상 포함 (parent 포함해서 OK)
+    - 조사/어미로 끝나지 않음
+    - 불용어/블로그 용어 미포함
+    """
+    if not combo or combo == parent_keyword:
+        return False
+
+    # 한글 어절 추출
+    korean_parts = re.findall(r"[가-힣]{2,}", combo)
+    if len(korean_parts) < 1:
+        return False
+
+    # 블로그/불용어 포함 시 탈락
+    blog_noise = {"블로그", "포스팅", "리뷰", "안녕", "여러분", "공유",
+                  "합니다", "있습니다", "입니다", "됩니다", "같습니다",
+                  "이렇게", "그래서", "하지만", "그리고", "때문에"}
+    for part in combo.split():
+        if part in blog_noise or part in _STOPWORDS:
+            return False
+
+    return True
+
+
 def get_autocomplete_keywords(keyword, max_results=5):
     """네이버 블로그 검색 동반 키워드에서 연관 키워드 추출.
 
@@ -642,40 +720,40 @@ def get_autocomplete_keywords(keyword, max_results=5):
         r.raise_for_status()
         items = r.json().get("items", [])
 
-        # 제목+설명에서 키워드 포함 2~5글자 복합어 추출
         compound_counter = Counter()
         for item in items:
             title = re.sub(r"<[^>]+>", "", item.get("title", ""))
             desc = re.sub(r"<[^>]+>", "", item.get("description", ""))
             text = f"{title} {desc}"
-            # "키워드 X" 또는 "X 키워드" 패턴의 2어절 조합 추출
-            # 예: "위고비 부작용", "마운자로 품절"
             words = text.split()
             for j, w in enumerate(words):
                 if keyword in w or w in keyword:
-                    # 앞뒤 단어와 조합
+                    # 앞뒤 단어와 조합 → 조사 정제
                     if j > 0:
-                        combo = f"{words[j-1]} {w}"
-                        if combo != keyword and len(combo) > len(keyword) + 2:
+                        raw_combo = f"{words[j-1]} {w}"
+                        combo = _clean_compound(raw_combo)
+                        if combo and combo != keyword and len(combo) > len(keyword) + 1:
                             compound_counter[combo] += 1
                     if j < len(words) - 1:
-                        combo = f"{w} {words[j+1]}"
-                        if combo != keyword and len(combo) > len(keyword) + 2:
+                        raw_combo = f"{w} {words[j+1]}"
+                        combo = _clean_compound(raw_combo)
+                        if combo and combo != keyword and len(combo) > len(keyword) + 1:
                             compound_counter[combo] += 1
 
-        # 한글 포함 + 빈도 2회 이상 필터
         results = []
-        for combo, count in compound_counter.most_common(20):
-            if count >= 2 and re.search(r"[가-힣]", combo):
-                # 불용어 제거
-                skip = False
-                for sw in ["블로그", "포스팅", "리뷰", "안녕", "여러분", "공유",
-                           "합니다", "있습니다", "입니다", "됩니다", "같습니다"]:
-                    if sw in combo:
-                        skip = True
-                        break
-                if not skip and combo != keyword:
-                    results.append(combo)
+        seen_normalized = set()
+        for combo, count in compound_counter.most_common(30):
+            if count < 2:
+                continue
+            if not _is_valid_compound(combo, keyword):
+                continue
+            # 정규화 중복 체크 (띄어쓰기 무시)
+            norm = combo.replace(" ", "")
+            if norm in seen_normalized:
+                continue
+            seen_normalized.add(norm)
+            results.append(combo)
+
         return results[:max_results]
     except Exception as e:
         print(f"  [ERROR] 연관키워드 추출 실패 ({keyword}): {e}")

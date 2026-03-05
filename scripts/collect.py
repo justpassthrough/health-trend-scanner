@@ -62,6 +62,55 @@ GLOBAL_DRUGS = ["Ozempic", "Wegovy", "Mounjaro", "GLP-1", "Tirzepatide",
                 "Semaglutide", "ozempic", "wegovy", "mounjaro",
                 "위고비", "오젬픽", "마운자로", "삭센다"]
 
+# 일반명사 블랙리스트 — 단독으로 글감 가치 없는 단어
+BLACKLIST = {
+    "논란", "환자", "열풍", "전문가", "효과", "위험",
+    "주의", "경고", "연구", "발표", "결과", "사용", "복용",
+    "치료", "증상", "원인", "방법", "예방", "관리",
+    "식품", "제품", "성분", "골드", "남보라",
+    "셀트리온", "애경산업",
+}
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 0단계: 히스토리 기반 신규성 판단
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def load_recent_history(days=7):
+    """최근 N일 히스토리에서 키워드 등장 횟수 집계.
+
+    반환: (keyword → appearance_count dict, total_scan_count)
+    """
+    history_dir = os.path.join(DATA_DIR, "history")
+    if not os.path.isdir(history_dir):
+        return {}, 0
+
+    import glob as _glob
+    files = sorted(_glob.glob(os.path.join(history_dir, "*.json")))
+    cutoff = datetime.now() - timedelta(days=days)
+
+    counts = Counter()
+    total_scans = 0
+
+    for fpath in files:
+        fname = os.path.basename(fpath).replace(".json", "")
+        try:
+            ts = datetime.strptime(fname, "%Y-%m-%d_%H%M")
+        except ValueError:
+            continue
+        if ts < cutoff:
+            continue
+        total_scans += 1
+        try:
+            with open(fpath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for t in data.get("topics", []):
+                counts[t["keyword"]] += 1
+        except Exception:
+            continue
+
+    return dict(counts), total_scans
+
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 1단계: 네이버 뉴스에서 급등 키워드 자동 추출
@@ -254,7 +303,103 @@ def calc_h_score(change_rate, news_count=0):
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 3단계: I, P — 동반 검색어 분석
+# 2단계 (신규): N, T, W, R 점수 함수
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def calc_novelty(keyword, history_counts, total_scans):
+    """N — 신규성 점수 (0~40). 과거 등장 횟수가 적을수록 높음."""
+    appearances = history_counts.get(keyword, 0)
+    if appearances == 0:
+        return 40
+    elif appearances == 1:
+        return 30
+    elif appearances <= 3:
+        return 15
+    elif total_scans > 0 and appearances <= total_scans * 0.5:
+        return 5
+    else:
+        return 0
+
+
+def calc_trend_momentum(change_rate):
+    """T — 트렌드 모멘텀 (0~30). DataLab 변화율 기반."""
+    if change_rate <= 0:
+        return 0
+    elif change_rate <= 5:
+        return 5
+    elif change_rate <= 15:
+        return 10
+    elif change_rate <= 30:
+        return 15
+    elif change_rate <= 50:
+        return 20
+    elif change_rate <= 100:
+        return 25
+    else:
+        return 30
+
+
+def calc_wave(keyword, news_count, pharma_news):
+    """W — 뉴스 파동 (0~30). 뉴스 등장 횟수 + 약업계 뉴스 매칭."""
+    # 기본 뉴스 빈도 점수
+    if news_count >= 20:
+        w = 20
+    elif news_count >= 10:
+        w = 15
+    elif news_count >= 5:
+        w = 10
+    elif news_count >= 3:
+        w = 5
+    else:
+        w = 0
+
+    # 약업계 뉴스에서 키워드가 제목에 포함되면 +10
+    for item in pharma_news:
+        if keyword in item.get("title", ""):
+            w += 10
+            break
+
+    return min(w, 30)
+
+
+def calc_relevance(keyword, related_text):
+    """R — 적합도 배수 (0.5~1.5). 기존 I, P, G를 통합한 배수."""
+    # Intent 조정 (±0.15)
+    a = sum(1 for w in DOUBT_KEYWORDS if w in related_text)
+    b = sum(1 for w in SHOPPING_KEYWORDS if w in related_text)
+    if a + b == 0:
+        intent_adjust = 0
+    else:
+        intent_adjust = 0.15 * (a - b) / (a + b)
+
+    # Pharma 조정 (0~0.15)
+    pharma_n = sum(1 for w in PHARMA_KEYWORDS if w in related_text)
+    pharma_adjust = 0.15 * min(pharma_n, 3) / 3
+
+    # Gap 조정 (-0.3~+0.2)
+    g_score, g_total, g_expert, g_ratio, g_label = calc_g_score(keyword)
+    if g_label == "전문가 갭 큼":
+        gap_adjust = 0.2
+    elif g_label == "전문가 부족":
+        gap_adjust = 0.1
+    elif g_label == "보통":
+        gap_adjust = 0.0
+    elif g_label == "수요 없음":
+        gap_adjust = -0.2
+    else:  # 전문가 포화
+        gap_adjust = -0.3
+
+    r = 1.0 + intent_adjust + pharma_adjust + gap_adjust
+    r = max(0.5, min(1.5, r))
+
+    intent_type = "의심/경고형" if a > b else ("구매/추천형" if b > a else "중립")
+    pharma_matched = [w for w in PHARMA_KEYWORDS if w in related_text]
+
+    return round(r, 2), intent_type, pharma_matched, g_total, g_expert, g_label
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 3단계: I, P — 동반 검색어 분석 (기존 함수 유지)
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 def get_related_keywords(keyword):
@@ -798,8 +943,8 @@ def generate_interpretations(topics):
     for t in top:
         headlines = " / ".join(nh["title"][:40] for nh in t.get("news_headlines", []))
         keyword_lines.append(
-            f"- {t['keyword']} | 점수:{t['score']} | {t['intent_type']} | "
-            f"급등:{t['change_rate']:+.0f}% | 전문가갭:{t.get('g_label','보통')} | "
+            f"- {t['keyword']} | 점수:{t['score']} (N:{t.get('n',0)} T:{t.get('t',0)} W:{t.get('w',0)} R:{t.get('r',1.0)}) | "
+            f"{t['intent_type']} | 변화율:{t['change_rate']:+.0f}% | 전문가갭:{t.get('g_label','보통')} | "
             f"뉴스: {headlines or '없음'}"
         )
 
@@ -868,28 +1013,44 @@ def generate_interpretations(topics):
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 def judge(score):
-    if score >= 80:
+    if score >= 70:
         return "now"
-    elif score >= 40:
-        return "good"
-    elif score >= 15:
-        return "maybe"
+    elif score >= 45:
+        return "hot"
+    elif score >= 25:
+        return "warm"
     else:
         return "pass"
 
 
-def score_keyword(kw, news_count, skip_youtube, parent=None):
-    """단일 키워드의 H, I, P, G, Y 점수를 산출하고 결과 dict 반환. H=0이면 None 반환."""
+def score_keyword(kw, news_count, skip_youtube, parent=None,
+                  history_counts=None, total_scans=0, pharma_news=None):
+    """단일 키워드의 N, T, W, R 점수를 산출하고 결과 dict 반환."""
+    if history_counts is None:
+        history_counts = {}
+    if pharma_news is None:
+        pharma_news = []
+
     prefix = f"    [{'+' if parent else ''}] " if parent else "    "
 
-    # H — 주제 온도
+    # N — 신규성
+    n = calc_novelty(kw, history_counts, total_scans)
+    print(f"{prefix}N={n} (신규성)")
+
+    # T — 트렌드 모멘텀
     change_rate, current_vol = get_search_trend(kw)
-    h = calc_h_score(change_rate, news_count=news_count)
-    print(f"{prefix}H={h} (변화율 {change_rate:+.0f}%)")
+    t = calc_trend_momentum(change_rate)
+    print(f"{prefix}T={t} (변화율 {change_rate:+.0f}%)")
     time.sleep(0.15)
 
-    if h == 0:
-        print(f"{prefix}→ H=0이므로 스킵")
+    # W — 뉴스 파동
+    w = calc_wave(kw, news_count, pharma_news)
+    print(f"{prefix}W={w} (뉴스 {news_count}건)")
+
+    # N+T+W 합산이 0이면 스킵
+    ntw = n + t + w
+    if ntw == 0:
+        print(f"{prefix}→ N+T+W=0이므로 스킵")
         return None
 
     # 관련 뉴스 헤드라인
@@ -898,45 +1059,29 @@ def score_keyword(kw, news_count, skip_youtube, parent=None):
         print(f"{prefix}📰 {nh['title'][:50]}")
     time.sleep(0.1)
 
-    # I, P — 동반 검색어 분석
+    # R — 적합도 (I, P, G 통합)
     related = get_related_keywords(kw)
     time.sleep(0.15)
-
-    i_score, intent_type, doubt_n, shop_n = calc_i_score(related)
-    print(f"{prefix}I={i_score} ({intent_type})")
-
-    p_score, pharma_matched = calc_p_score(related)
-    print(f"{prefix}P={p_score} (매칭: {', '.join(pharma_matched) if pharma_matched else '없음'})")
-
-    # G — 전문가 갭
-    g_score, g_total, g_expert, g_ratio, g_label = calc_g_score(kw)
-    print(f"{prefix}G={g_score} (전체 {g_total:,}건 / 전문가 {g_expert:,}건 / 비율 {g_ratio:.1f} → {g_label})")
-    print(f"{prefix}  산식: H({h}) × I({i_score}) × P({p_score}) × G({g_score}) = {round(h * i_score * p_score * g_score, 1)}")
+    r, intent_type, pharma_matched, g_total, g_expert, g_label = calc_relevance(kw, related)
+    print(f"{prefix}R={r} ({intent_type}, 갭:{g_label})")
     time.sleep(0.15)
 
-    # Y — 유튜브
-    if skip_youtube:
-        y_score, yt_videos = 1.0, []
-    else:
-        y_score, yt_videos = search_youtube(kw)
-        time.sleep(0.15)
-    print(f"{prefix}Y={y_score}")
-
-    # 최종 점수
-    total = round(h * i_score * p_score * g_score * y_score, 1)
+    # 최종 점수: (N + T + W) × R
+    total = round(ntw * r, 1)
     verdict = judge(total)
-    print(f"{prefix}★ 점수 = {total} → {verdict}")
+    print(f"{prefix}★ ({n}+{t}+{w})×{r} = {total} → {verdict}")
 
     result = {
         "keyword": kw,
         "score": total,
         "verdict": verdict,
-        "h": h, "change_rate": round(change_rate, 1),
-        "i": i_score, "intent_type": intent_type,
-        "p": p_score, "pharma_keywords": pharma_matched,
-        "g": g_score, "g_total": g_total, "g_expert": g_expert,
+        "n": n, "t": t, "w": w, "r": r,
+        "change_rate": round(change_rate, 1),
+        "intent_type": intent_type,
+        "pharma_keywords": pharma_matched,
+        "g_total": g_total, "g_expert": g_expert,
         "g_label": g_label,
-        "y": y_score, "yt_videos": yt_videos[:2],
+        "news_count": news_count,
         "news_headlines": news_headlines,
     }
     if parent:
@@ -948,10 +1093,15 @@ def main():
     skip_youtube = "--skip-youtube" in sys.argv
 
     print(f"\n{'#' * 50}")
-    print(f"  건강·약 트렌드 스캐너 — {datetime.now().strftime('%Y.%m.%d %H:%M')}")
+    print(f"  건강·약 트렌드 스캐너 v2 — {datetime.now().strftime('%Y.%m.%d %H:%M')}")
+    print(f"  점수 공식: (N신규성 + T모멘텀 + W뉴스파동) × R적합도")
     if skip_youtube:
         print(f"  [모드] 실시간 갱신 (유튜브 스킵)")
     print(f"{'#' * 50}\n")
+
+    # 0. 히스토리 로드 (신규성 판단용)
+    history_counts, total_scans = load_recent_history(days=7)
+    print(f"  [히스토리] 최근 7일 스캔 {total_scans}회, 키워드 {len(history_counts)}종 추적 중")
 
     # 1. 키워드 자동 추출
     keyword_data = extract_keywords_from_news()  # [(keyword, news_count), ...]
@@ -962,7 +1112,17 @@ def main():
                         ["마운자로", "위고비", "오젬픽", "비타민D", "유산균",
                          "글루타치온", "콜라겐", "오메가3", "NMN", "코엔자임Q10"]]
 
-    # 1.5. 이전 스캔의 유효 키워드 유지 (점수 15+ = "패스"가 아닌 것만)
+    # BLACKLIST 필터: 단독 일반명사 제거
+    before_bl = len(keyword_data)
+    keyword_data = [(kw, cnt) for kw, cnt in keyword_data if kw not in BLACKLIST]
+    bl_removed = before_bl - len(keyword_data)
+    if bl_removed > 0:
+        print(f"  [블랙리스트] {bl_removed}개 일반명사 제거")
+
+    # 1.5. 약업계 뉴스 먼저 수집 (W 산출에 필요)
+    pharma_news = collect_pharma_news()
+
+    # 1.6. 이전 스캔의 유효 키워드 유지 (점수 25+ = "패스"가 아닌 것만)
     prev_path = os.path.join(DATA_DIR, "latest.json")
     prev_topic_scores = {}  # keyword → previous score
     prev_data = None
@@ -971,7 +1131,7 @@ def main():
             with open(prev_path, "r", encoding="utf-8") as f:
                 prev_data = json.load(f)
             for t in prev_data.get("topics", []):
-                if t.get("score", 0) >= 15:
+                if t.get("score", 0) >= 25:
                     prev_topic_scores[t["keyword"]] = t["score"]
             print(f"\n  [이전 스캔] 유효 키워드 {len(prev_topic_scores)}개 로드")
         except Exception as e:
@@ -982,9 +1142,7 @@ def main():
     new_kw_set = set(kw for kw, _ in new_keywords)
     print(f"  [새 키워드] {len(new_keywords)}개 (전체 추출: {len(keyword_data)}개)")
 
-    # 이월 키워드: 이전 스캔에서 점수 15+ 였지만 이번에 새로 추출되지 않은 것
-    # 건강 필터도 적용: 이전에 AI 해석이 있었던 것만 이월 (건강 관련 확인됨)
-    # 또는 키워드 자체가 건강 단어를 포함하면 통과
+    # 이월 키워드: 이전 스캔에서 점수 25+ 였지만 이번에 새로 추출되지 않은 것
     def is_health_keyword(kw):
         return any(hw in kw for hw in HEALTH_CONTEXT_WORDS)
 
@@ -994,7 +1152,6 @@ def main():
         reverse=True
     ) if kw not in new_kw_set]
 
-    # 건강 관련 키워드만 이월 (이전 AI 해석이 있거나 건강 단어 포함)
     prev_ai = set()
     if prev_data:
         for t in prev_data.get("topics", []):
@@ -1003,6 +1160,8 @@ def main():
 
     carried = []
     for kw in carried_candidates:
+        if kw in BLACKLIST:
+            continue
         if is_health_keyword(kw) or kw in prev_ai:
             carried.append((kw, 3))
         else:
@@ -1021,17 +1180,20 @@ def main():
 
     # 2~5. 각 키워드별 점수 산출
     print("\n" + "=" * 50)
-    print("2~5단계: 키워드별 점수 산출")
+    print("2~5단계: 키워드별 점수 산출 (N+T+W)×R")
     print("=" * 50)
 
     topics = []
-    scored_keywords = set()  # 이미 점수 매긴 키워드 (중복 방지)
+    scored_keywords = set()
 
     for i, (kw, news_count) in enumerate(keyword_data):
         print(f"\n  [{i+1}/{len(keyword_data)}] {kw} (뉴스 {news_count}건)")
         scored_keywords.add(kw)
 
-        result = score_keyword(kw, news_count, skip_youtube)
+        result = score_keyword(kw, news_count, skip_youtube,
+                               history_counts=history_counts,
+                               total_scans=total_scans,
+                               pharma_news=pharma_news)
         if result:
             topics.append(result)
 
@@ -1040,7 +1202,6 @@ def main():
     print("5.5단계: 연관 키워드 확장")
     print("=" * 50)
 
-    # 현재 상위 10개를 parent로 사용
     top_for_expansion = sorted(topics, key=lambda x: x["score"], reverse=True)[:10]
     related_topics = []
 
@@ -1057,13 +1218,17 @@ def main():
         print(f"    자동완성: {suggestions}")
 
         for rel_kw in suggestions:
-            if rel_kw in scored_keywords:
-                print(f"    [{rel_kw}] 이미 분석됨, 스킵")
+            if rel_kw in scored_keywords or rel_kw in BLACKLIST:
+                if rel_kw in scored_keywords:
+                    print(f"    [{rel_kw}] 이미 분석됨, 스킵")
                 continue
             scored_keywords.add(rel_kw)
 
             print(f"\n    + 연관: {rel_kw} (← {parent_kw})")
-            result = score_keyword(rel_kw, 0, skip_youtube, parent=parent_kw)
+            result = score_keyword(rel_kw, 0, skip_youtube, parent=parent_kw,
+                                   history_counts=history_counts,
+                                   total_scans=total_scans,
+                                   pharma_news=pharma_news)
             if result:
                 related_topics.append(result)
 
@@ -1079,11 +1244,7 @@ def main():
     # 8. AI 해석 (블로그 기획 포인트)
     generate_interpretations(topics)
 
-    # 6. 약업계 뉴스
-    pharma_news = collect_pharma_news()
-
     # 7. 유튜브 급등
-    # skip_youtube면 이전 데이터 재사용
     prev_yt_trends = []
     prev_yt_updated = ""
     output_path = os.path.join(DATA_DIR, "latest.json")

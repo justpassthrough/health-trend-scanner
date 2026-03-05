@@ -98,10 +98,10 @@ def trend_badge(trend_type, trend_label):
 def verdict_badge(verdict):
     if verdict == "now":
         return '<span class="badge now">지금 써라</span>'
-    elif verdict == "good":
-        return '<span class="badge good">쓸 만하다</span>'
-    elif verdict == "maybe":
-        return '<span class="badge maybe">앵글 바꾸면</span>'
+    elif verdict == "hot":
+        return '<span class="badge hot">주목!</span>'
+    elif verdict == "warm":
+        return '<span class="badge warm">지켜볼 만</span>'
     else:
         return '<span class="badge skip">패스</span>'
 
@@ -135,9 +135,8 @@ def build_html(data, keyword_history=None):
     # 글감 카드 HTML
     topic_cards = ""
     for i, t in enumerate(topics[:15]):
-        change_sign = "+" if t["change_rate"] > 0 else ""
         pharma_tags = ""
-        if t["pharma_keywords"]:
+        if t.get("pharma_keywords"):
             pharma_tags = " ".join(
                 f'<span class="tag pharma">{k}</span>' for k in t["pharma_keywords"][:3]
             )
@@ -150,8 +149,6 @@ def build_html(data, keyword_history=None):
             news_html += f'<div class="news-context"><a href="{link}" target="_blank">📰 {title}</a></div>'
 
         # 전문가 갭 표시
-        g_total = t.get("g_total", 0)
-        g_expert = t.get("g_expert", 0)
         g_label = t.get("g_label", "보통")
         if g_label == "전문가 갭 큼":
             g_color_cls = "gap-high"
@@ -168,11 +165,6 @@ def build_html(data, keyword_history=None):
         if parent_kw:
             parent_html = f'<div class="parent-note">↑ "{parent_kw}" 연관검색어에서 발견</div>'
 
-        yt_note = ""
-        if t["yt_videos"]:
-            v = t["yt_videos"][0]
-            yt_note = f'<div class="yt-note">🎬 YT: {v["title"][:30]}… ({format_views(v["views"])}회)</div>'
-
         # 중복 병합 표시
         aliases_html = ""
         aliases = t.get("aliases", [])
@@ -184,7 +176,6 @@ def build_html(data, keyword_history=None):
         ai_summary_html = ""
         ai_summary = t.get("ai_summary", "")
         if ai_summary:
-            # HTML 이스케이프
             safe_summary = ai_summary.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
             ai_summary_html = f'<div class="ai-summary"><span class="ai-icon">💡</span>{safe_summary}</div>'
 
@@ -194,6 +185,28 @@ def build_html(data, keyword_history=None):
         if t_scores:
             scores_str = " → ".join(str(s) for s in t_scores)
             trend_html = f'<div class="trend-line">{trend_badge(t_type, t_label)} {scores_str}</div>'
+
+        # N, T, W, R 점수 구성 바
+        n_val = t.get("n", 0)
+        t_val = t.get("t", 0)
+        w_val = t.get("w", 0)
+        r_val = t.get("r", 1.0)
+
+        # NEW 뱃지 (N >= 30)
+        new_badge = ' <span class="badge-new">NEW</span>' if n_val >= 30 else ""
+
+        # 약업계 뉴스 연동 아이콘
+        pharma_icon = " 💊" if w_val >= 15 else ""
+
+        score_bar = (
+            f'<div class="score-bar">'
+            f'<span class="score-n">N:{n_val}</span>'
+            f'<span class="score-t">T:{t_val}</span>'
+            f'<span class="score-w">W:{w_val}{pharma_icon}</span>'
+            f'<span class="score-r">×R:{r_val}</span>'
+            f'{new_badge}'
+            f'</div>'
+        )
 
         topic_cards += f"""
         <div class="card">
@@ -205,17 +218,16 @@ def build_html(data, keyword_history=None):
           </div>
           {aliases_html}
           <div class="card-body">
+            {score_bar}
             {ai_summary_html}
             {parent_html}
             {trend_html}
             {news_html}
             <div class="metrics">
-              <span class="metric">급등 {change_sign}{t["change_rate"]}%</span>
               {intent_badge(t["intent_type"])}
-              <span class="metric {g_color_cls}">후기 {g_total}건 vs 전문가 {g_expert}건 → {g_label}</span>
+              <span class="metric {g_color_cls}">{g_label}</span>
             </div>
             <div class="pharma-tags">{pharma_tags}</div>
-            {yt_note}
           </div>
         </div>"""
 
@@ -256,7 +268,7 @@ def build_html(data, keyword_history=None):
 
     # 통계 요약
     now_count = sum(1 for t in topics if t["verdict"] == "now")
-    good_count = sum(1 for t in topics if t["verdict"] == "good")
+    hot_count = sum(1 for t in topics if t["verdict"] == "hot")
 
     html = f"""<!DOCTYPE html>
 <html lang="ko">
@@ -336,9 +348,34 @@ def build_html(data, keyword_history=None):
     font-weight: 600;
   }}
   .badge.now {{ background: #1a7f37; color: #fff; }}
-  .badge.good {{ background: #9e6a03; color: #fff; }}
-  .badge.maybe {{ background: #333; color: #aaa; }}
+  .badge.hot {{ background: #da3633; color: #fff; }}
+  .badge.warm {{ background: #9e6a03; color: #fff; }}
   .badge.skip {{ background: #21262d; color: #666; }}
+  .score-bar {{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }}
+  .score-bar span {{
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }}
+  .score-n {{ background: #1c3a5e; color: #58a6ff; }}
+  .score-t {{ background: #1a3a1a; color: #3fb950; }}
+  .score-w {{ background: #3a2a0a; color: #d29922; }}
+  .score-r {{ background: #2d1b4e; color: #bc8cff; }}
+  .badge-new {{
+    background: #f85149;
+    color: #fff;
+    font-size: 10px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-weight: 700;
+  }}
   .metrics {{
     display: flex;
     flex-wrap: wrap;
@@ -590,11 +627,11 @@ def build_html(data, keyword_history=None):
 <div class="summary">
   <div class="summary-box">
     <div class="num" style="color:#3fb950">{now_count}</div>
-    <div class="label">지금 써라</div>
+    <div class="label">NOW</div>
   </div>
   <div class="summary-box">
-    <div class="num" style="color:#d29922">{good_count}</div>
-    <div class="label">쓸 만하다</div>
+    <div class="num" style="color:#da3633">{hot_count}</div>
+    <div class="label">HOT</div>
   </div>
   <div class="summary-box">
     <div class="num">{len(topics)}</div>
@@ -613,7 +650,7 @@ def build_html(data, keyword_history=None):
 
 <div class="footer">
   건강·약 트렌드 스캐너 · 매일 07:30 / 13:00 / 19:00 / 00:00 자동 갱신<br>
-  점수 = H(주제온도) × I(검색의도) × P(약사근거) × G(전문가갭) × Y(유튜브)
+  점수 = (N신규성 + T모멘텀 + W뉴스파동) × R적합도
 </div>
 
 <script>

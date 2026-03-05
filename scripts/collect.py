@@ -69,6 +69,11 @@ BLACKLIST = {
     "치료", "증상", "원인", "방법", "예방", "관리",
     "식품", "제품", "성분", "골드", "남보라",
     "셀트리온", "애경산업",
+    # 건강 맥락이지만 단독 글감 가치 없음
+    "건강", "영양", "허가", "변경", "임신", "진단",
+    "유발", "섭취", "권장", "개선", "함유", "표시",
+    "구조", "손상", "재생", "기간", "가능", "필요",
+    "확인", "검사", "투여", "조절", "기능", "작용",
 }
 
 
@@ -118,16 +123,29 @@ def load_recent_history(days=7):
 
 # 한국어 조사/어미 패턴 (긴 것부터 매칭해야 "에서는"이 "는"보다 먼저 걸림)
 _JOSA_SUFFIXES = [
-    # 4음절
-    "에서는", "에서의", "으로는", "으로의", "에서도", "이라는", "이라고",
-    # 3음절
+    # 5음절+
+    "이라는", "이라고", "에서는", "에서의", "으로는", "으로의", "에서도",
+    # 3~4음절
     "에서", "으로", "하여", "하는", "하고", "에게", "한테", "까지",
     "부터", "처럼", "같이", "보다", "에는", "에도", "라는", "라고",
-    "이라", "만의", "과의", "와의", "로의", "로는",
-    # 2음절
-    "가", "는", "을", "를", "의", "에", "로", "과", "와",
-    "이", "도", "만", "께", "고", "며", "면",
+    "이라", "만의", "과의", "와의", "로의", "로는", "이나", "이며",
+    "이고", "이든", "이면", "에의",
+    # 2음절 조사
+    "은", "는", "을", "를", "의", "에", "과", "와",
+    "도", "만", "께", "며", "면",
+    # 1음절 조사 — "로", "가", "이"는 고유명사 손상 위험이 높아 제외
+    # (예: 마운자"로", 남보"라" → 체언이 아니라 이름 일부)
 ]
+
+# "로"로 끝나는 건강 고유명사 보호 (조사 "로"를 떼면 안 되는 단어)
+_PROTECTED_ENDINGS_RO = {
+    "마운자로", "오젬픽", "삭센다", "위고비", "플라자로",
+}
+
+# 동사 어미 패턴 (복합어 끝에서 제거)
+_VERB_ENDINGS = re.compile(
+    r"(할|한|된|된다|하는|하고|하여|했던|하며|이다|된다|인지|인가|일까|라면|라서|해야|해서|해도)$"
+)
 
 # 1음절 단독 불허 일반명사
 _SINGLE_CHAR_BLOCK = {
@@ -164,12 +182,27 @@ def _strip_josa(word):
 
     예: "세포가" → "세포", "원료로" → "원료", "식물성" → "식물성"
     결과가 1글자이면 원래 단어 반환 (과도한 제거 방지).
+    고유명사 보호: "마운자로" 등은 조사 제거하지 않음.
     """
+    # 고유명사 보호
+    if word in _PROTECTED_ENDINGS_RO:
+        return word
+
+    # 마침표/쉼표 등 구두점 먼저 제거
+    word = word.rstrip(".,;:!?…·")
+
     for suffix in _JOSA_SUFFIXES:
         if word.endswith(suffix) and len(word) > len(suffix):
             stem = word[:-len(suffix)]
             if len(stem) >= 2:
                 return stem
+
+    # "로"로 끝나는 단어: 3글자 이상이고 보호 목록에 없으면 조사로 간주
+    if word.endswith("로") and len(word) >= 3 and word not in _PROTECTED_ENDINGS_RO:
+        stem = word[:-1]
+        if len(stem) >= 2:
+            return stem
+
     return word
 
 
@@ -664,20 +697,31 @@ def search_youtube(keyword):
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 def _clean_compound(combo):
-    """복합 키워드 정제: 각 어절에서 조사 제거, 조사로만 된 어절 삭제.
+    """복합 키워드 정제: 각 어절에서 조사/어미 제거, 노이즈 어절 삭제.
 
-    예: "세포 재생을" → "세포 재생", "멜라닌 세포가" → "멜라닌 세포"
+    예: "세포 재생을" → "세포 재생", "손상 유발할" → "손상 유발"
+        "유발 가능성." → "유발 가능성"
     """
     parts = []
     for w in combo.split():
+        # 구두점 제거
+        w = w.rstrip(".,;:!?…·")
+        if not w:
+            continue
         # 한글 어절만 처리
         if not re.search(r"[가-힣]", w):
             parts.append(w)
             continue
         cleaned = _strip_josa(w)
-        if len(cleaned) >= 2 and cleaned not in _STOPWORDS:
+        # 동사 어미 제거 ("유발할" → "유발")
+        cleaned = _VERB_ENDINGS.sub("", cleaned)
+        if len(cleaned) >= 2 and cleaned not in _STOPWORDS and cleaned not in BLACKLIST:
             parts.append(cleaned)
-    return " ".join(parts) if parts else ""
+    result = " ".join(parts) if parts else ""
+    # 최종 결과가 1어절이고 2글자 미만이면 빈 문자열
+    if result and len(result.replace(" ", "")) < 2:
+        return ""
+    return result
 
 
 def _is_valid_compound(combo, parent_keyword):
@@ -687,13 +731,26 @@ def _is_valid_compound(combo, parent_keyword):
     - 한글 명사가 2개 이상 포함 (parent 포함해서 OK)
     - 조사/어미로 끝나지 않음
     - 불용어/블로그 용어 미포함
+    - 구두점 미포함
     """
     if not combo or combo == parent_keyword:
         return False
 
-    # 한글 어절 추출
+    # 구두점이 남아있으면 탈락
+    if re.search(r"[.,;:!?…]", combo):
+        return False
+
+    # 한글 명사(2글자+) 추출
     korean_parts = re.findall(r"[가-힣]{2,}", combo)
-    if len(korean_parts) < 1:
+    if len(korean_parts) < 2:
+        return False
+
+    # 마지막 어절이 조사/어미로 끝나면 탈락
+    last_word = combo.split()[-1]
+    for suffix in _JOSA_SUFFIXES:
+        if last_word.endswith(suffix) and len(last_word) > len(suffix):
+            return False
+    if _VERB_ENDINGS.search(last_word):
         return False
 
     # 블로그/불용어 포함 시 탈락
@@ -701,7 +758,7 @@ def _is_valid_compound(combo, parent_keyword):
                   "합니다", "있습니다", "입니다", "됩니다", "같습니다",
                   "이렇게", "그래서", "하지만", "그리고", "때문에"}
     for part in combo.split():
-        if part in blog_noise or part in _STOPWORDS:
+        if part in blog_noise or part in _STOPWORDS or part in BLACKLIST:
             return False
 
     return True

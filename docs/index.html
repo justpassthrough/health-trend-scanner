@@ -76,9 +76,34 @@
     font-weight: 600;
   }
   .badge.now { background: #1a7f37; color: #fff; }
-  .badge.good { background: #9e6a03; color: #fff; }
-  .badge.maybe { background: #333; color: #aaa; }
+  .badge.hot { background: #da3633; color: #fff; }
+  .badge.warm { background: #9e6a03; color: #fff; }
   .badge.skip { background: #21262d; color: #666; }
+  .score-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .score-bar span {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .score-n { background: #1c3a5e; color: #58a6ff; }
+  .score-t { background: #1a3a1a; color: #3fb950; }
+  .score-w { background: #3a2a0a; color: #d29922; }
+  .score-r { background: #2d1b4e; color: #bc8cff; }
+  .badge-new {
+    background: #f85149;
+    color: #fff;
+    font-size: 10px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
   .metrics {
     display: flex;
     flex-wrap: wrap;
@@ -314,7 +339,7 @@
 
 <div class="refresh-bar">
   <div class="refresh-info">
-    네이버: 2026-03-05 15:41<br>
+    네이버: 2026-03-05 17:53<br>
     유튜브: 2026-03-05 15:41
   </div>
   <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()">실시간 갱신</button>
@@ -329,15 +354,15 @@
 
 <div class="summary">
   <div class="summary-box">
-    <div class="num" style="color:#3fb950">0</div>
-    <div class="label">지금 써라</div>
+    <div class="num" style="color:#3fb950">4</div>
+    <div class="label">NOW</div>
   </div>
   <div class="summary-box">
-    <div class="num" style="color:#d29922">1</div>
-    <div class="label">쓸 만하다</div>
+    <div class="num" style="color:#da3633">35</div>
+    <div class="label">HOT</div>
   </div>
   <div class="summary-box">
-    <div class="num">19</div>
+    <div class="num">53</div>
     <div class="label">분석 키워드</div>
   </div>
 </div>
@@ -347,339 +372,325 @@
         <div class="card">
           <div class="card-header">
             <span class="rank">#1</span>
-            <span class="keyword">환자</span>
-            <span class="score">41.2</span>
-            <span class="badge good">쓸 만하다</span>
+            <span class="keyword">표방</span>
+            <span class="score">108.0</span>
+            <span class="badge now">지금 써라</span>
           </div>
           
           <div class="card-body">
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:15</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.27</span> <span class="badge-new">NEW</span></div>
             
             
-            <div class="trend-line"><span class="trend-up">↑↑ 상승 중</span> 35.6 → 26.6 → 33.0 → 41.2</div>
-            <div class="news-context"><a href="http://www.lawissue.co.kr/view.php?ud=202603050807204621edd30pn2gj_12" target="_blank">📰 진천군, 2025년 보건사업 평가 10관왕 달성</a></div><div class="news-context"><a href="https://www.jeonmae.co.kr/news/articleView.html?idxno=1236037" target="_blank">📰 동대문구, 통합돌봄 '실행 원년' 선언…&quot;살던 곳에서 이어지는 돌봄 체...</a></div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 108.0</div>
+            <div class="news-context"><a href="https://www.topstarnews.net/news/articleView.html?idxno=15992274" target="_blank">📰 '밥상학 개론' 인천 송도 꼬치구이 연구소 &quot;MZ 취향 정조준&quot;…화성 남양...</a></div><div class="news-context"><a href="https://www.newscj.com/news/articleView.html?idxno=3381643" target="_blank">📰 [이슈in] 트럼프의 이란 공격, 숨은 이유는 '선거 카르텔'?</a></div>
             <div class="metrics">
-              <span class="metric">급등 -2.5%</span>
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">후기 17493950건 vs 전문가 208769건 → 전문가 갭 큼</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">상호작용</span> <span class="tag pharma">부작용</span></div>
-            <div class="yt-note">🎬 YT: 당직도 아닌데 밤새 환자 곁을 지킨 인턴… (32.7만회)</div>
+            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#2</span>
-            <span class="keyword">담석증</span>
-            <span class="score">32.7</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">유플라이마</span>
+            <span class="score">101.2</span>
+            <span class="badge now">지금 써라</span>
           </div>
-          
+          <div class="aliases">(= 유플라이마, 베그젤마, 램시마SC와 유플라이마, 유플라이마 같은, 램시마SC와 유플라이마와, ‘유플라이마 20mg’)</div>
           <div class="card-body">
-            <div class="ai-summary"><span class="ai-icon">💡</span>담석증은 나이 많은 사람의 질환이라고 알려졌지만, 다이어트 약제 사용으로 젊은 층에서 급증 중입니다.
-약물 유도 담석증의 메커니즘(GLP-1 제제의 담낭수축 억제)과 예방 가능한 용량/복용 기간을 약사 관점에서 설명하면, 환자 상담 시 신뢰도를 높일 수 있습니다.</div>
+            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:15</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.35</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>생물의약품이라고 하면 주사제만 있다고 알잖아요. 근데 용량 제형화 기술로 20mg 단일제형이 나왔어요.
+약물전달(DDS) 관점에서 보면, 고분자 단백질을 어떻게 안정화하고 용해도를 확보했는지 제약학적 혁신 포인트를 풀어낼 수 있습니다.</div>
             
-            <div class="trend-line"><span class="trend-flat">→ 유지</span> 30.2 → 25.5 → 35.5 → 32.7</div>
-            <div class="news-context"><a href="https://m.entertain.naver.com/article/312/0000750357" target="_blank">📰 눈 퉁퉁 부은 이혜영, 폐암·담석증 이어 림프 부종도 겪었다…&quot;건강 회...</a></div><div class="news-context"><a href="http://www.bokuennews.com/news/article.html?no=274682" target="_blank">📰 '다이어트 주사제' 열풍 속 담석증 주의보… 10년 새 환자 2배 급증</a></div>
+            <div class="trend-line"><span class="trend-up">↑ 상승</span> 8.5 → 101.2</div>
+            <div class="news-context"><a href="http://www.thefirstmedia.net/news/articleView.html?idxno=194827" target="_blank">📰 셀트리온, '유플라이마' 20mg 용량제형 식약처 국내 허가 획득</a></div><div class="news-context"><a href="https://www.geconomy.co.kr/news/article.html?no=316817" target="_blank">📰 셀트리온, ‘유플라이마’ 20mg 용량제형 국내 허가 획득</a></div>
             <div class="metrics">
-              <span class="metric">급등 -12.9%</span>
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">후기 89535건 vs 전문가 1687건 → 전문가 갭 큼</span>
+              <span class="intent neutral">중립</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span> <span class="tag pharma">대사</span></div>
-            <div class="yt-note">🎬 YT: 아직도 단일공 복강경 수술을 모르시나요??  #담석증 … (548회)</div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#3</span>
-            <span class="keyword">위고비</span>
-            <span class="score">31.5</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">원료</span>
+            <span class="score">76.8</span>
+            <span class="badge now">지금 써라</span>
           </div>
-          
+          <div class="aliases">(= 통해 원료의)</div>
           <div class="card-body">
-            <div class="ai-summary"><span class="ai-icon">💡</span>위고비는 마법의 다이어트 약이라고 생각하지만, 식욕억제제일 뿐 신진대사를 바꾸지는 못합니다.
-약효 메커니즘, 내성 발생 시간, 중단 후 요요 현상의 약리학적 원인을 DDS 연구자 관점에서 풀면 현실적인 기대 설정이 가능합니다.</div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:20 💊</span><span class="score-r">×R:1.28</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>천연 원료면 안전하다고 알잖아요. 근데 원료의 안전성은 '추출·정제 방식'과 '표준화 수준'에 달려 있습니다.
+생약 원료와 화학적 성분 확보 기술, 중금속·잔류농약 기준, 제약 등급 vs 식품 등급의 차이를 약사 관점에서 설명할 수 있습니다.</div>
             
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 24.3 → 24.3 → 23.3 → 31.5</div>
-            <div class="news-context"><a href="https://medicalworldnews.co.kr/news/view.php?idx=1510973360" target="_blank">📰 식약처, 3월 5일부터 비만치료제 표방 식품 특별점검</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/076/0004381299" target="_blank">📰 '이지혜♥' 문재완, '위고비' 다이어트 도전 but 식욕은 여전→눈동자 ...</a></div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 76.8</div>
+            <div class="news-context"><a href="https://www.meconomynews.com/news/articleView.html?idxno=128663" target="_blank">📰 대봉엘에스, 코스맥스와 손잡고 '친환경 점증제' 공동 개발</a></div><div class="news-context"><a href="https://www.ekn.kr/web/view.php?key=20260305026355303" target="_blank">📰 세종시, 미·이란 충돌 여파 대응 ‘중소기업 비상대책반’ 가동...세종...</a></div>
             <div class="metrics">
-              <span class="metric">급등 -21.1%</span>
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">후기 120672건 vs 전문가 2909건 → 전문가 갭 큼</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
-            <div class="yt-note">🎬 YT: 사실 다이어트 업계만 바꾼 것이 아닙니다 (위고비 편)… (3.1만회)</div>
+            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">상호작용</span> <span class="tag pharma">성분</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#4</span>
-            <span class="keyword">마운자로</span>
-            <span class="score">28.0</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">치료제</span>
+            <span class="score">71.0</span>
+            <span class="badge now">지금 써라</span>
           </div>
-          <div class="aliases">(= 마운자로 콜레스테롤)</div>
+          <div class="aliases">(= 최고의 치료제랍니다., 비만치료제 표방, 치료제 시장은, 질환 치료제, 비듬 치료제를, 비듬 치료제, 비만치료제)</div>
           <div class="card-body">
-            <div class="ai-summary"><span class="ai-icon">💡</span>마운자로는 단순한 위고비의 대체제라고 알려졌지만, 더블 GLP-1/GIP 수용체 작용제로 약리 프로필이 완전히 다릅니다.
-약물 전달, 투여 빈도, 이상반응 프로파일의 과학적 차이를 약사 해설로 제시하면 선택 기준이 명확해집니다.</div>
+            <div class="score-bar"><span class="score-n">N:15</span><span class="score-t">T:10</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.29</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>'한 번 투여하면 스스로 치료한다'는 건 과학이 아니라 과대광고라고 알잖아요. 근데 살아있는 안약처럼 정말 그런 기술들이 개발 중입니다.
+약사로서 임상 단계별 검증 수준, 생체이용률, 실제 치료 메커니즘을 비판적으로 해석해 줄 수 있습니다.</div>
             
-            <div class="trend-line"><span class="trend-up">↑↑ 상승 중</span> 18.1 → 16.2 → 25.4 → 28.0</div>
-            <div class="news-context"><a href="https://medicalworldnews.co.kr/news/view.php?idx=1510973360" target="_blank">📰 식약처, 3월 5일부터 비만치료제 표방 식품 특별점검</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/016/0002609168?sid=101" target="_blank">📰 “위고비 독점은 끝났다”…‘주사기 대신 알약’ 비만치료제 시장 대전...</a></div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 71.0</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/023/0003962805?sid=105" target="_blank">📰 “한 번만 넣으면 스스로 치료한다”… 피츠버그대, ‘살아있는 안약’...</a></div><div class="news-context"><a href="https://www.newspim.com/news/view/20260306000012" target="_blank">📰 [AI의 종목 이야기] 존슨앤드존슨, 소비자직접판매(DTC) 웹사이트 개설</a></div>
             <div class="metrics">
-              <span class="metric">급등 -22.9%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 60487건 vs 전문가 1526건 → 전문가 갭 큼</span>
+              <span class="intent doubt">의심/경고형</span>
+              <span class="metric gap-mid">전문가 부족</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">부작용</span> <span class="tag pharma">약물</span></div>
-            <div class="yt-note">🎬 YT: 사실 다이어트 업계만 바꾼 것이 아닙니다 (위고비 편)… (3.1만회)</div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#5</span>
-            <span class="keyword">비만약</span>
-            <span class="score">27.6</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">개월</span>
+            <span class="score">69.0</span>
+            <span class="badge hot">주목!</span>
           </div>
           
           <div class="card-body">
-            <div class="ai-summary"><span class="ai-icon">💡</span>비만약은 처방받으면 바로 효과가 나타난다고 예상하지만, 약물 동역학상 정상상태 도달까지 수주가 필요합니다.
-초회 용량, 적정화(titration) 전략, 개인차 발생 원인을 약사가 상세히 설명하면 약물 순응도와 만족도가 크게 올라갑니다.</div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:20 💊</span><span class="score-r">×R:1.15</span> <span class="badge-new">NEW</span></div>
             
-            <div class="trend-line"><span class="trend-flat">→ 유지</span> 26.9 → 25.4 → 29.2 → 27.6</div>
-            <div class="news-context"><a href="http://www.economytalk.kr/news/articleView.html?idxno=418622" target="_blank">📰 [분석] 삼천당제약 주가 '껑충'… 업계 잭팟은 '비만약?'</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/296/0000098212?sid=101" target="_blank">📰 위고비 특허 만료 스타트, 올해 복제약 잇따른다</a></div>
+            
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 69.0</div>
+            <div class="news-context"><a href="https://www.kyeongin.com/article/1759844" target="_blank">📰 휘발윳값 폭등… 이재명 대통령 “최고가격 지정하라”</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/109/0005488233" target="_blank">📰 안성재x손종원, '미슐랭 스타 셰프' 명성 지켰다..2스타 재등극→쌍별 ...</a></div>
             <div class="metrics">
-              <span class="metric">급등 -28.4%</span>
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">후기 47586건 vs 전문가 1180건 → 전문가 갭 큼</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">금기</span> <span class="tag pharma">성분</span></div>
-            <div class="yt-note">🎬 YT: [올릭스 주가 분석] "비만약 임상1상 마무리 임박" … (678회)</div>
+            <div class="pharma-tags"><span class="tag pharma">용량</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#6</span>
-            <span class="keyword">비만치료제</span>
-            <span class="score">23.8</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">세포</span>
+            <span class="score">67.5</span>
+            <span class="badge hot">주목!</span>
           </div>
-          <div class="aliases">(= 치료제)</div>
+          
           <div class="card-body">
-            <div class="ai-summary"><span class="ai-icon">💡</span>비만치료제는 의약품이면 다 같다고 생각하지만, 성분·작용기전·제형에 따라 효과와 부작용이 큽니다.
-경구제 vs 주사제의 생체이용률, 식품 위장 약품의 규제 차이, 복합제 배합의 약물상호작용을 약사 입장에서 비교 분석하면 선택의 근거가 생깁니다.</div>
+            <div class="score-bar"><span class="score-n">N:15</span><span class="score-t">T:15</span><span class="score-w">W:20 💊</span><span class="score-r">×R:1.35</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>재생의학·세포치료제가 신기술이라고만 알잖아요. 근데 세포 자체를 약처럼 전달하는 것은 일반 약물과 완전히 다른 DDS 과제입니다.
+보관·유통·투여 온도, 생존율, 면역거부반응 등 약사가 알아야 할 세포치료제의 약학적 특수성을 풀어낼 수 있습니다.</div>
             
-            <div class="trend-line"><span class="trend-flat">→ 유지</span> 27.4 → 25.4 → 26.4 → 23.8</div>
-            <div class="news-context"><a href="https://medicalworldnews.co.kr/news/view.php?idx=1510973360" target="_blank">📰 식약처, 3월 5일부터 비만치료제 표방 식품 특별점검</a></div><div class="news-context"><a href="https://www.ksmnews.co.kr/news/view.php?idx=593440" target="_blank">📰 서울시醫 전문가평가단, 비윤리 의료행위 2건 윤리위 회부</a></div>
+            <div class="trend-line"><span class="trend-up">↑↑ 상승 중</span> 8.9 → 9.1 → 67.5</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/005/0001835535?sid=103" target="_blank">📰 [200자 읽기] ‘시한부’에서 살아남은 사람들</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/023/0003962805?sid=105" target="_blank">📰 “한 번만 넣으면 스스로 치료한다”… 피츠버그대, ‘살아있는 안약’...</a></div>
             <div class="metrics">
-              <span class="metric">급등 -2.5%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 245005건 vs 전문가 6998건 → 전문가 갭 큼</span>
+              <span class="intent neutral">중립</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
-            <div class="yt-note">🎬 YT: 디카가 말해주는 비만치료제의 치명적인 부작용… (1.5만회)</div>
+            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span> <span class="tag pharma">대사</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#7</span>
-            <span class="keyword">셀트리온</span>
-            <span class="score">20.2</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">임신</span>
+            <span class="score">67.2</span>
+            <span class="badge hot">주목!</span>
           </div>
           
           <div class="card-body">
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:20 💊</span><span class="score-r">×R:1.12</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>임신 중 약물은 무조건 피해야 한다고 알잖아요. 근데 약사가 봐야 할 것은 '어떤 약을' '언제' 복용하는지입니다.
+ FDA 카테고리, 태반 통과율, 임신 주기별 태아 발달 영향 등 근거 기반의 약물 정보를 신뢰성 있게 전달할 수 있습니다.</div>
             
-            
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 23.8 → 12.5 → 20.2</div>
-            <div class="news-context"><a href="https://www.joongangenews.com/news/articleView.html?idxno=499851" target="_blank">📰 중동 전쟁에 금융시장 롤러코스터…코스피 12% 폭락→9.63% 폭등, 시총 상...</a></div><div class="news-context"><a href="https://www.nbntv.co.kr/news/articleView.html?idxno=4019508" target="_blank">📰 '언더커버 미쓰홍' 결말 전 인물관계도 및 지난 줄거리 핵심 정리…몇부...</a></div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 67.2</div>
+            <div class="news-context"><a href="https://m.entertain.naver.com/article/117/0004041031" target="_blank">📰 '애둘맘' 이시영, 출산 4개월만 복근+살크업 선언하더니…저녁은 '항암...</a></div><div class="news-context"><a href="http://www.ccnnews.co.kr/news/articleView.html?idxno=403148" target="_blank">📰 안장헌 아산시장 예비후보, 육아 및 출산 지원 관련 공약 발표</a></div>
             <div class="metrics">
-              <span class="metric">급등 -24.7%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 386860건 vs 전문가 3551건 → 전문가 갭 큼</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">함량</span></div>
-            <div class="yt-note">🎬 YT: [셀트권] 코스피 2일 -20% 급락? 반등 구간? 셀… (4.6천회)</div>
+            <div class="pharma-tags"></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#8</span>
-            <span class="keyword">논란</span>
-            <span class="score">20.0</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">표방 식품</span>
+            <span class="score">63.5</span>
+            <span class="badge hot">주목!</span>
           </div>
           
           <div class="card-body">
-            
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 29.9 → 34.0 → 34.9 → 20.0</div>
-            <div class="news-context"><a href="https://m.sports.naver.com/kfootball/article/411/0000078614" target="_blank">📰 '손흥민급 감차 원더골' 여자 대표팀, 비즈니스석 논란 딛고 있다…'아...</a></div><div class="news-context"><a href="https://m.sports.naver.com/kfootball/article/076/0004381318" target="_blank">📰 '한국전에선 침묵' 이란, 호주전에는 국가 부르고 경례! BBC, 외부 압력 ...</a></div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:10</span><span class="score-r">×R:1.27</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>비만치료제 표방 식품은 그냥 나쁜 제품이라고 알잖아요. 근데 식약처가 특별점검에 나선 이유는 법적 경계선이 모호하기 때문입니다.
+'건강기능식품 vs 의약품' 구분 기준, 성분 함량 기준, 약사법 관점에서 소비자 보호 메시지를 정확히 전달할 수 있습니다.</div>
+            <div class="parent-note">↑ "표방" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 63.5</div>
+            <div class="news-context"><a href="https://medicalworldnews.co.kr/news/view.php?idx=1510973360" target="_blank">📰 식약처, 3월 5일부터 비만치료제 표방 식품 특별점검</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/032/0003431531?sid=102" target="_blank">📰 “팔레스타인 파괴 관여한 기업 참여 취업박람회 거부”</a></div>
             <div class="metrics">
-              <span class="metric">급등 -17.6%</span>
               <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">후기 5398515건 vs 전문가 23801건 → 전문가 갭 큼</span>
+              <span class="metric gap-mid">전문가 부족</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span></div>
-            
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">복용법</span> <span class="tag pharma">성분</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#9</span>
-            <span class="keyword">식품</span>
-            <span class="score">19.5</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">멜라닌 세포가</span>
+            <span class="score">58.0</span>
+            <span class="badge hot">주목!</span>
           </div>
-          
+          <div class="aliases">(= 멜라닌 세포를)</div>
           <div class="card-body">
-            <div class="ai-summary"><span class="ai-icon">💡</span>식품은 약품보다 안전하다고 알려졌지만, 의약품 수준의 효과를 표방하면 불법 의약품입니다.
-식약처 특별점검 배경인 '비만치료제 표방 식품'의 기준, 성분 분석 방법, 소비자 피해 사례를 약사 입장에서 설명하면 현명한 구매 판단을 돕습니다.</div>
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 21.5 → 23.1 → 19.5</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/023/0003962745?sid=101" target="_blank">📰 최악 실적 낸 CJ제일제당, 고강도 체질 개선 나선다</a></div><div class="news-context"><a href="http://www.newstown.co.kr/news/articleView.html?idxno=696073" target="_blank">📰 경기도 특사경, 명절 먹거리 단속 강화…성수식품 취급업소 34건 적발</a></div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.45</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>미백·안티에이징 제품의 성분만 보면 된다고 알잖아요. 근데 피부 투과성, 멜라닌 생성 경로별 타겟, 안전성 기준이 다릅니다.
+피부 장벽 통과 기술, 각질층 도달 농도, 안정성 vs 효능의 약학적 트레이드오프를 깊이 있게 설명할 수 있습니다.</div>
+            <div class="parent-note">↑ "세포" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 58.0</div>
+            <div class="news-context"><a href="http://www.biztribune.co.kr/news/articleView.html?idxno=349914" target="_blank">📰 [브리프]아모레퍼시픽 LG생활건강 한국콜마 LF 무신사 外</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/296/0000098169?sid=103" target="_blank">📰 &quot;트럼프 목에 무슨 문제가?&quot; 의사들, '이 질환' 유력하다 주장</a></div>
             <div class="metrics">
-              <span class="metric">급등 -5.3%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 18486560건 vs 전문가 226376건 → 전문가 갭 큼</span>
+              <span class="intent doubt">의심/경고형</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
-            <div class="yt-note">🎬 YT: 맥주는 건강식품이다… (2.0만회)</div>
+            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">대사</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#10</span>
-            <span class="keyword">식약처</span>
-            <span class="score">18.2</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">피부 세포</span>
+            <span class="score">55.2</span>
+            <span class="badge hot">주목!</span>
           </div>
-          
+          <div class="aliases">(= 피부 세포에)</div>
           <div class="card-body">
-            
-            
-            <div class="trend-line"><span class="trend-flat">→ 유지</span> 15.0 → 19.1 → 20.6 → 18.2</div>
-            <div class="news-context"><a href="https://medicalworldnews.co.kr/news/view.php?idx=1510973355" target="_blank">📰 식약처-지방정부, 의료기관 프로포폴 취급 적정성 특별점검</a></div><div class="news-context"><a href="https://medicalworldnews.co.kr/news/view.php?idx=1510973360" target="_blank">📰 식약처, 3월 5일부터 비만치료제 표방 식품 특별점검</a></div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.38</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>피부 재생·항노화 제품들은 세포 활성화를 직접 한다고 알잖아요. 근데 약사가 봐야 할 것은 '성분이 정말 세포에 도달하는가'입니다.
+비침습적 전달, 진피층 도달 기술, 세포 재생 클레임의 임상 근거 수준을 정확히 검증해서 소비자 신뢰를 높일 수 있습니다.</div>
+            <div class="parent-note">↑ "세포" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 55.2</div>
+            <div class="news-context"><a href="https://www.tokenpost.kr/news/market/336281" target="_blank">📰 메디쿠스 파마, 비침습적 피부암 치료 신기술 2상 임상 성공</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/076/0004381293" target="_blank">📰 '임신' 남보라, '암 세포 수술' 견뎠는데 또 위기...&quot;N번째 코피 익숙&quot;</a></div>
             <div class="metrics">
-              <span class="metric">급등 -16.1%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-mid">후기 1862304건 vs 전문가 66695건 → 전문가 부족</span>
+              <span class="intent doubt">의심/경고형</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
-            <div class="yt-note">🎬 YT: [펩트론] -🌕'긴급' 전쟁 끝?..아직 이죠 하락 가… (602회)</div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#11</span>
-            <span class="keyword">골드</span>
-            <span class="score">17.0</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">세포 재생을</span>
+            <span class="score">55.2</span>
+            <span class="badge hot">주목!</span>
           </div>
           
           <div class="card-body">
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.38</span> <span class="badge-new">NEW</span></div>
             
-            
-            <div class="trend-line"><span class="trend-up">↑↑ 상승 중</span> 18.5 → 11.1 → 14.0 → 17.0</div>
-            <div class="news-context"><a href="https://m.sports.naver.com/kfootball/article/411/0000078614" target="_blank">📰 '손흥민급 감차 원더골' 여자 대표팀, 비즈니스석 논란 딛고 있다…'아...</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/020/0003701766?sid=101" target="_blank">📰 김포 풍무역-사우역 옆 639채 분양</a></div>
+            <div class="parent-note">↑ "세포" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 55.2</div>
+            <div class="news-context"><a href="https://tk.newdaily.co.kr/site/data/html/2026/03/05/2026030500456.html" target="_blank">📰 대구한의대, 국내 최초 ‘동물보건학 박사 1호’ 배출</a></div><div class="news-context"><a href="https://www.ksmnews.co.kr/news/view.php?idx=593514" target="_blank">📰 대구한의대, 일반대학원 동물보건학과 국내 최초 동물보건학 1호 박사 ...</a></div>
             <div class="metrics">
-              <span class="metric">급등 +29.9%</span>
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 8944294건 vs 전문가 23379건 → 전문가 갭 큼</span>
+              <span class="intent doubt">의심/경고형</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">함량</span></div>
-            <div class="yt-note">🎬 YT: 【서든어택 랭크전】 천재림 솔랭 골드구간 구경왔습니다… (8.8만회)</div>
+            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span> <span class="tag pharma">대사</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#12</span>
-            <span class="keyword">아로나민</span>
-            <span class="score">16.6</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">성지 약국</span>
+            <span class="score">54.5</span>
+            <span class="badge hot">주목!</span>
           </div>
           
           <div class="card-body">
-            <div class="ai-summary"><span class="ai-icon">💡</span>아로나민 같은 종합감기약은 모든 증상을 한 번에 완화한다고 알려졌지만, 성분 과다 복합으로 부작용 위험을 높입니다.
-증상별 필요 성분 선택법, 성분 중복 섭취 위험, 약사 상담으로 맞춤형 사용하는 방법을 설명하면 합리적 약물 사용 문화가 정착됩니다.</div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:10</span><span class="score-w">W:0</span><span class="score-r">×R:1.09</span> <span class="badge-new">NEW</span></div>
             
-            <div class="trend-line"><span class="trend-flat">→ 유지</span> 16.6 → 16.6 → 16.6 → 16.6</div>
-            <div class="news-context"><a href="https://dealsite.co.kr/articles/157915" target="_blank">📰 [제약+] 삼성바이오로직스, '세계 여성의 날' 기념 행사 진행 外</a></div><div class="news-context"><a href="http://www.sisaon.co.kr/news/articleView.html?idxno=181093" target="_blank">📰 동아제약, 파우더 감기약 '판피린타임 산제' 선봬…보령, 혈액암 신약 '...</a></div>
+            <div class="parent-note">↑ "약국" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 54.5</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/654/0000169178?sid=102" target="_blank">📰 &quot;원주 인재양성 든든한 버팀목&quot; 촛불장학회 36년째 후원 귀감</a></div><div class="news-context"><a href="http://www.intn.co.kr/news/articleView.html?idxno=2049324" target="_blank">📰 제60회 납세자의 날 모범납세자 포상명단</a></div>
             <div class="metrics">
-              <span class="metric">급등 -16.0%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-normal">후기 18033건 vs 전문가 3124건 → 보통</span>
+              <span class="metric gap-normal">보통</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">복용법</span> <span class="tag pharma">성분</span></div>
-            <div class="yt-note">🎬 YT: [아로나민골드X 류승룡] 대한민국 피로엔 아로나민골드가… (18회)</div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">부작용</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#13</span>
-            <span class="keyword">열풍</span>
-            <span class="score">15.4</span>
-            <span class="badge maybe">앵글 바꾸면</span>
+            <span class="keyword">집중할 수</span>
+            <span class="score">53.6</span>
+            <span class="badge hot">주목!</span>
           </div>
           
           <div class="card-body">
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.34</span> <span class="badge-new">NEW</span></div>
             
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 7.7 → 18.2 → 18.8 → 15.4</div>
-            <div class="news-context"><a href="http://www.finomy.com/news/articleView.html?idxno=250829" target="_blank">📰 2차전지 전고체 관련주, '덩실덩실' 레이크머티리얼즈·SK이노베이션·나...</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/014/0005487045?sid=102" target="_blank">📰 개혁신당 부산 지지율 7.0%..&quot;전국 평균 2배&quot;</a></div>
+            <div class="parent-note">↑ "집중" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 53.6</div>
+            <div class="news-context"><a href="https://www.apnews.kr/news/articleView.html?idxno=3046535" target="_blank">📰 메리츠증권, 국내 최초 미국채 '커버드콜·풋라이트' ETN 상장</a></div><div class="news-context"><a href="https://m.entertain.naver.com/article/144/0001101633" target="_blank">📰 베리베리(VERIVERY) 강민, ‘점프보이 LIVE’ 이온 역 눈도장</a></div>
             <div class="metrics">
-              <span class="metric">급등 -0.9%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 2003724건 vs 전문가 5248건 → 전문가 갭 큼</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">부작용</span></div>
-            
+            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#14</span>
-            <span class="keyword">일동제약</span>
-            <span class="score">14.9</span>
-            <span class="badge skip">패스</span>
+            <span class="keyword">식물성 원료로</span>
+            <span class="score">52.8</span>
+            <span class="badge hot">주목!</span>
           </div>
           
           <div class="card-body">
-            <div class="ai-summary"><span class="ai-icon">💡</span>일동제약의 경구용 비만치료제는 기존 주사제를 단순히 알약으로 만든 것이라고 예상하지만, 경구 약물전달의 기술적 난제(위산 안정성, 생체이용률 확보)가 있습니다.
-경구제 개발 난제, 복제약 vs 신약의 약물동역학 차이, 복합 제형 설계 원리를 연구자 관점에서 미리 설명하면 기대와 현실의 갭을 줄일 수 있습니다.</div>
-            
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 3.3 → 9.9 → 9.9 → 14.9</div>
-            <div class="news-context"><a href="https://www.medipana.com/news/articleView.html?idxno=407772" target="_blank">📰 [주가] 3월 5일 주요 제약바이오 5% 변동 현황 - 93곳 증가</a></div><div class="news-context"><a href="https://www.newsfreezone.co.kr/news/articleView.html?idxno=678107" target="_blank">📰 [K-바이오 도약]⑧임상 2상 앞둔 일동제약 경구용 비만치료제, 앞선 빅파...</a></div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.32</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>식물성이면 순하고 부작용이 적다고 알잖아요. 근데 생약 성분은 오히려 약물상호작용이 더 복잡할 수 있습니다.
+알칼로이드, 글리코사이드 등 활성 성분의 약리 작용, CYP450 억제·유도, 임상 근거 부족의 위험성을 전문가답게 다룰 수 있습니다.</div>
+            <div class="parent-note">↑ "원료" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 52.8</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/015/0005258849?sid=101" target="_blank">📰 '아아' 마시면 밤새 뒤척이는데…직장인 환호한 '이 음료' [트렌드+]</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/029/0003014154?sid=105" target="_blank">📰 [이준기의 D사이언스] 면역기능개선 건기식 ‘3조 잭팟’… “기초연구...</a></div>
             <div class="metrics">
-              <span class="metric">급등 -14.8%</span>
-              <span class="intent neutral">중립</span>
-              <span class="metric gap-mid">후기 100127건 vs 전문가 4811건 → 전문가 부족</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">부작용</span></div>
-            <div class="yt-note">🎬 YT: [주식 LIVE🔥] 폭락 이후 급등하는 증시🔥야간선물 … (7.7천회)</div>
+            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#15</span>
-            <span class="keyword">신제품</span>
-            <span class="score">13.9</span>
-            <span class="badge skip">패스</span>
+            <span class="keyword">주원료로 하여</span>
+            <span class="score">52.4</span>
+            <span class="badge hot">주목!</span>
           </div>
           
           <div class="card-body">
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.31</span> <span class="badge-new">NEW</span></div>
             
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 6.2 → 14.4 → 17.0 → 13.9</div>
-            <div class="news-context"><a href="https://www.apnews.kr/news/articleView.html?idxno=3046519" target="_blank">📰 &quot;내가 옮기면 소리도 따라온다&quot;…'LG 사운드 스위트' 출시</a></div><div class="news-context"><a href="https://www.newspim.com/news/view/20260306000002" target="_blank">📰 [중국증시 데일리 이슈(3.6)] 2026년 정책 모멘텀 테마, 인민은행 171조 ...</a></div>
+            <div class="parent-note">↑ "원료" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 52.4</div>
+            <div class="news-context"><a href="http://www.finomy.com/news/articleView.html?idxno=250826" target="_blank">📰 HBM(고대역폭메모리) 관련주, '함박웃음' 레이저쎌·유니테스트·테크윙...</a></div><div class="news-context"><a href="https://www.newspim.com/news/view/20260305001296" target="_blank">📰 [AI의 종목 이야기] &quot;중동 분쟁 등에 릴라이언스 주가 급락, 조정 과도해...</a></div>
             <div class="metrics">
-              <span class="metric">급등 -1.2%</span>
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">후기 4179380건 vs 전문가 11050건 → 전문가 갭 큼</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
-            
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
           </div>
         </div>
 
@@ -761,7 +772,7 @@
 
 <div class="footer">
   건강·약 트렌드 스캐너 · 매일 07:30 / 13:00 / 19:00 / 00:00 자동 갱신<br>
-  점수 = H(주제온도) × I(검색의도) × P(약사근거) × G(전문가갭) × Y(유튜브)
+  점수 = (N신규성 + T모멘텀 + W뉴스파동) × R적합도
 </div>
 
 <script>

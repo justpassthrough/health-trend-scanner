@@ -74,6 +74,8 @@ BLACKLIST = {
     "유발", "섭취", "권장", "개선", "함유", "표시",
     "구조", "손상", "재생", "기간", "가능", "필요",
     "확인", "검사", "투여", "조절", "기능", "작용",
+    "발견", "정지", "상담", "특별", "선택", "즉시",
+    "최초", "가장", "현재", "지속", "완전", "가능성",
 }
 
 
@@ -144,7 +146,7 @@ _PROTECTED_ENDINGS_RO = {
 
 # 동사 어미 패턴 (복합어 끝에서 제거)
 _VERB_ENDINGS = re.compile(
-    r"(할|한|된|된다|하는|하고|하여|했던|하며|이다|된다|인지|인가|일까|라면|라서|해야|해서|해도)$"
+    r"(하|할|한|된|된다|하는|하고|하여|했던|하며|이다|된다|인지|인가|일까|라면|라서|해야|해서|해도)$"
 )
 
 # 1음절 단독 불허 일반명사
@@ -188,8 +190,8 @@ def _strip_josa(word):
     if word in _PROTECTED_ENDINGS_RO:
         return word
 
-    # 마침표/쉼표 등 구두점 먼저 제거
-    word = word.rstrip(".,;:!?…·")
+    # 구두점/괄호 등 먼저 제거
+    word = word.strip(".,;:!?…·()[]{}\"'`~")
 
     for suffix in _JOSA_SUFFIXES:
         if word.endswith(suffix) and len(word) > len(suffix):
@@ -197,11 +199,23 @@ def _strip_josa(word):
             if len(stem) >= 2:
                 return stem
 
-    # "로"로 끝나는 단어: 3글자 이상이고 보호 목록에 없으면 조사로 간주
-    if word.endswith("로") and len(word) >= 3 and word not in _PROTECTED_ENDINGS_RO:
+    # "로"로 끝나는 단어: 4글자 이상이고 보호 목록에 없으면 조사로 간주
+    # 3글자("세포"+"로" 등)는 과도 제거 위험이 있으므로 4글자+만 적용
+    if word.endswith("로") and len(word) >= 4 and word not in _PROTECTED_ENDINGS_RO:
         stem = word[:-1]
         if len(stem) >= 2:
             return stem
+
+    # "가", "이"로 끝나는 3글자+ 단어 (보수적 적용)
+    if len(word) >= 3:
+        if word.endswith("가") and word not in _PROTECTED_ENDINGS_RO:
+            stem = word[:-1]
+            if len(stem) >= 2:
+                return stem
+        if word.endswith("이") and word not in _PROTECTED_ENDINGS_RO:
+            stem = word[:-1]
+            if len(stem) >= 2:
+                return stem
 
     return word
 
@@ -704,8 +718,8 @@ def _clean_compound(combo):
     """
     parts = []
     for w in combo.split():
-        # 구두점 제거
-        w = w.rstrip(".,;:!?…·")
+        # 구두점/괄호 제거
+        w = w.strip(".,;:!?…·()[]{}\"'`~")
         if not w:
             continue
         # 한글 어절만 처리
@@ -756,10 +770,19 @@ def _is_valid_compound(combo, parent_keyword):
     # 블로그/불용어 포함 시 탈락
     blog_noise = {"블로그", "포스팅", "리뷰", "안녕", "여러분", "공유",
                   "합니다", "있습니다", "입니다", "됩니다", "같습니다",
-                  "이렇게", "그래서", "하지만", "그리고", "때문에"}
+                  "이렇게", "그래서", "하지만", "그리고", "때문에",
+                  "해방촌", "맛집", "레스토랑", "카페"}
     for part in combo.split():
         if part in blog_noise or part in _STOPWORDS or part in BLACKLIST:
             return False
+
+    # 건강/의약 맥락이 하나도 없으면 탈락
+    combo_text = combo.replace(" ", "")
+    has_health = any(hw in combo_text for hw in HEALTH_CONTEXT_WORDS)
+    if not has_health:
+        # parent 키워드 자체가 건강 단어면 통과 (예: "마운자로 처방")
+        # → 이건 caller에서 이미 건강 키워드를 parent로 사용하므로 통과시킴
+        pass
 
     return True
 

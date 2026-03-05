@@ -76,6 +76,7 @@ BLACKLIST = {
     "확인", "검사", "투여", "조절", "기능", "작용",
     "발견", "정지", "상담", "특별", "선택", "즉시",
     "최초", "가장", "현재", "지속", "완전", "가능성",
+    "수술", "특별점검", "특별", "점검",
 }
 
 
@@ -200,7 +201,7 @@ def _strip_josa(word):
                 return stem
 
     # "로"로 끝나는 단어: 4글자 이상이고 보호 목록에 없으면 조사로 간주
-    # 3글자("세포"+"로" 등)는 과도 제거 위험이 있으므로 4글자+만 적용
+    # "마운자로"(4글자)도 보호해야 하므로 보호 목록 체크 필수
     if word.endswith("로") and len(word) >= 4 and word not in _PROTECTED_ENDINGS_RO:
         stem = word[:-1]
         if len(stem) >= 2:
@@ -774,6 +775,9 @@ def _is_valid_compound(combo, parent_keyword):
                   "해방촌", "맛집", "레스토랑", "카페"}
     for part in combo.split():
         if part in blog_noise or part in _STOPWORDS or part in BLACKLIST:
+            return False
+        # "~입니다", "~합니다" 등 종결어미 포함 어절 탈락
+        if part.endswith("입니다") or part.endswith("합니다") or part.endswith("됩니다"):
             return False
 
     # 건강/의약 맥락이 하나도 없으면 탈락

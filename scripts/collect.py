@@ -79,6 +79,11 @@ BLACKLIST = {
     "수술", "특별점검", "특별", "점검",
     "금지", "재배포", "연결", "법적", "주의보",
     "없이", "즉각", "전용", "최신",
+    # 단독 글감 가치 없는 일반 건강 용어
+    "게재", "처방", "임상", "세포",
+    # 건강 무관
+    "말레이시아", "트라우마", "마약류", "마약", "광고",
+    "공개", "기사", "자가", "공공",
 }
 
 
@@ -149,15 +154,20 @@ _PROTECTED_ENDINGS_RO = {
 
 # 동사 어미 패턴 (복합어 끝에서 제거)
 _VERB_ENDINGS = re.compile(
-    r"(하|할|한|된|된다|하는|하고|하여|했던|하며|이다|된다|인지|인가|일까|라면|라서|해야|해서|해도|되어|되는|되면|됩니다|해요|돼요|없이|있어|이어질|이어|않아|살빼|빼는|빼야|빼기|먹는|먹을|먹어|걸릴|걸리|나올|나오|줄이|늘리|줄일|늘릴)$"
+    r"(하|할|한|된|된다|하는|하고|하여|했던|하며|이다|된다|인지|인가|일까|라면|라서|해야|해서|해도|되어|되는|되면|됩니다|해요|돼요|없이|있어|이어질|이어|않아|살빼|빼는|빼야|빼기|먹는|먹을|먹어|걸릴|걸리|나올|나오|줄이|늘리|줄일|늘릴|됐다|됐|했다|났다|왔다|갔다)$"
 )
 
-# 단독 어절로 키워드가 될 수 없는 동사/부사/접속 어절
+# 단독 어절로 키워드가 될 수 없는 동사/부사/접속/절단 어절
 _JUNK_WORDS = {
     "않아", "않은", "않는", "없는", "있는", "없어", "있어",
     "후에", "전에", "때문", "대해", "통해", "위해", "관한",
     "이어", "따라", "인해", "비해", "관련", "최근", "현재",
     "죽자", "살자", "하자", "보자", "알아", "보면", "되면",
+    "수많", "많은", "다양", "실제", "적정", "맞춤", "상승",
+    "풍부", "등에", "생각",
+    # 과거형/완료형 조각
+    "됐다", "했다", "났다", "왔다", "갔다",
+    "게재됐다", "발표됐다", "공개됐다",
 }
 
 # 1음절 단독 불허 일반명사
@@ -827,13 +837,15 @@ def _is_valid_compound(combo, parent_keyword):
     if len(korean_parts) < 2:
         return False
 
-    # 마지막 어절이 조사/어미로 끝나면 탈락
-    last_word = combo.split()[-1]
-    for suffix in _JOSA_SUFFIXES:
-        if last_word.endswith(suffix) and len(last_word) > len(suffix):
+    # 어절별 검사: 조사/어미로 끝나는 어절이 있으면 탈락
+    for word in combo.split():
+        if _VERB_ENDINGS.search(word):
             return False
-    if _VERB_ENDINGS.search(last_word):
-        return False
+        # 마지막 어절이 조사로 끝나면 탈락
+        if word == combo.split()[-1]:
+            for suffix in _JOSA_SUFFIXES:
+                if word.endswith(suffix) and len(word) > len(suffix):
+                    return False
 
     # 블로그/불용어 포함 시 탈락
     blog_noise = {"블로그", "포스팅", "리뷰", "안녕", "여러분", "공유",
@@ -852,6 +864,13 @@ def _is_valid_compound(combo, parent_keyword):
         korean_only = re.sub(r"[^가-힣]", "", part)
         if len(korean_only) >= 7:
             return False
+
+    # 중복 어근 탈락: "비만 비만원인" 같은 반복 패턴
+    parts = combo.split()
+    for i, p1 in enumerate(parts):
+        for j, p2 in enumerate(parts):
+            if i != j and (p1 in p2 or p2 in p1) and len(p1) >= 2 and len(p2) >= 2:
+                return False
 
     return True
 

@@ -721,8 +721,8 @@ def _clean_compound(combo):
     """
     parts = []
     for w in combo.split():
-        # 구두점/괄호 제거
-        w = w.strip(".,;:!?…·()[]{}\"'`~")
+        # 구두점/괄호/해시태그 제거
+        w = w.strip(".,;:!?…·()[]{}\"'`~#@")
         if not w:
             continue
         # 한글 어절만 처리
@@ -753,8 +753,8 @@ def _is_valid_compound(combo, parent_keyword):
     if not combo or combo == parent_keyword:
         return False
 
-    # 구두점이 남아있으면 탈락
-    if re.search(r"[.,;:!?…]", combo):
+    # 구두점/특수문자가 남아있으면 탈락
+    if re.search(r"[.,;:!?…#@()[\]{}]", combo):
         return False
 
     # 한글 명사(2글자+) 추출
@@ -782,13 +782,11 @@ def _is_valid_compound(combo, parent_keyword):
         if part.endswith("입니다") or part.endswith("합니다") or part.endswith("됩니다"):
             return False
 
-    # 건강/의약 맥락이 하나도 없으면 탈락
-    combo_text = combo.replace(" ", "")
-    has_health = any(hw in combo_text for hw in HEALTH_CONTEXT_WORDS)
-    if not has_health:
-        # parent 키워드 자체가 건강 단어면 통과 (예: "마운자로 처방")
-        # → 이건 caller에서 이미 건강 키워드를 parent로 사용하므로 통과시킴
-        pass
+    # SEO 스팸 탈락: 7글자 이상 한글 단일 어절 (예: "부산마운자로가격")
+    for part in combo.split():
+        korean_only = re.sub(r"[^가-힣]", "", part)
+        if len(korean_only) >= 7:
+            return False
 
     return True
 

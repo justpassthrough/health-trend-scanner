@@ -86,6 +86,8 @@ BLACKLIST = {
     "피부", "완화", "대비", "도움", "가치", "성능",
     "병원", "증가", "통증", "감소", "기준", "복합",
     "방문", "구매", "주변", "사건", "마찰",
+    "규제", "기반", "강화", "강력", "성장", "가격",
+    "이상", "이하", "정도", "정보", "수준",
     # 건강 무관
     "말레이시아", "트라우마", "마약류", "마약", "광고",
     "공개", "기사", "자가", "공공", "국제", "정세",
@@ -185,7 +187,9 @@ _JUNK_WORDS = {
     # 시간/장소
     "일요일", "토요일", "월요일", "오전", "오후",
     # 비건강 명사
-    "냉방", "스페이스",
+    "냉방", "스페이스", "금융", "플리츠", "화이트",
+    "인증비", "리스틱", "마지막", "국내산",
+    "복부비", "인천비", "송도비", "이러",
     # 과거형/완료형 조각
     "됐다", "했다", "났다", "왔다", "갔다",
     "게재됐다", "발표됐다", "공개됐다",
@@ -399,9 +403,9 @@ def extract_keywords_from_news():
                 continue
             word_counter[w] += 1
 
-    # 빈도 3회 이상 (여러 기사에서 언급 = 이슈)
+    # 빈도 5회 이상 (여러 기사에서 반복 언급 = 확실한 이슈)
     trending = [(word, count) for word, count in word_counter.most_common(100)
-                if count >= 3]
+                if count >= 5]
 
     print(f"  추출된 트렌딩 키워드: {len(trending)}개")
     for w, c in trending[:20]:
@@ -904,6 +908,20 @@ def _is_valid_compound(combo, parent_keyword):
     for i, p1 in enumerate(parts):
         for j, p2 in enumerate(parts):
             if i != j and (p1 in p2 or p2 in p1) and len(p1) >= 2 and len(p2) >= 2:
+                return False
+
+    # 건강 관련성 검사: 복합어에서 parent 외 단어 중 하나라도 건강 맥락이어야 함
+    non_parent = [p for p in parts if p != parent_keyword]
+    if non_parent:
+        has_health = any(
+            any(hw in p for hw in HEALTH_CONTEXT_WORDS) or
+            any(d in p for d in GLOBAL_DRUGS) or
+            p in PHARMA_KEYWORDS
+            for p in non_parent
+        )
+        if not has_health:
+            # parent가 건강 키워드인 경우만 예외 허용 (비만+체형 등)
+            if not any(hw in parent_keyword for hw in HEALTH_CONTEXT_WORDS):
                 return False
 
     return True

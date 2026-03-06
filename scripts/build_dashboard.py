@@ -179,6 +179,20 @@ def build_html(data, keyword_history=None):
             safe_summary = ai_summary.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
             ai_summary_html = f'<div class="ai-summary"><span class="ai-icon">💡</span>{safe_summary}</div>'
 
+        # AI 추가 정보 (추천 제목, 타깃 독자)
+        ai_extras_html = ""
+        title_idea = t.get("title_idea", "")
+        target_reader = t.get("target_reader", "")
+        if title_idea or target_reader:
+            extras_parts = ""
+            if title_idea:
+                safe_title = title_idea.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                extras_parts += f'<div class="title-idea">📝 {safe_title}</div>'
+            if target_reader:
+                safe_reader = target_reader.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                extras_parts += f'<div class="target-reader">👤 {safe_reader}</div>'
+            ai_extras_html = f'<div class="ai-extras">{extras_parts}</div>'
+
         # 추이 계산
         t_type, t_label, t_scores = calc_trend(t["keyword"], t["score"], keyword_history)
         trend_html = ""
@@ -220,6 +234,7 @@ def build_html(data, keyword_history=None):
           <div class="card-body">
             {score_bar}
             {ai_summary_html}
+            {ai_extras_html}
             {parent_html}
             {trend_html}
             {news_html}
@@ -265,6 +280,34 @@ def build_html(data, keyword_history=None):
     # 데이터 시점
     naver_updated = data.get("naver_updated_at", updated)
     yt_updated = data.get("youtube_updated_at", updated)
+
+    # 종합 브리핑
+    briefing = data.get("briefing")
+    briefing_html = ""
+    if briefing:
+        flow = briefing.get("flow_summary", "")
+        recommended = briefing.get("recommended", [])
+        avoid = briefing.get("avoid", [])
+        one_liner = briefing.get("one_liner", "")
+
+        reco_items = ""
+        for r in recommended:
+            if isinstance(r, dict):
+                reco_items += f'<li><span class="reco-title">{r.get("title", "")}</span><br><span class="reco-reason">{r.get("reason", "")}</span></li>'
+            else:
+                reco_items += f'<li>{r}</li>'
+
+        avoid_str = " / ".join(avoid) if avoid else ""
+
+        briefing_html = f"""
+<div class="briefing-box">
+  <div class="briefing-title">📋 이번 스캔 종합 브리핑</div>
+  <div class="briefing-flow">{flow}</div>
+  <div class="briefing-subtitle">✍️ 추천 글감</div>
+  <ul class="briefing-reco">{reco_items}</ul>
+  {"" if not avoid_str else f'<div class="briefing-avoid">⚠️ 피할 주제: {avoid_str}</div>'}
+  {"" if not one_liner else f'<div class="briefing-oneliner">💡 {one_liner}</div>'}
+</div>"""
 
     # 통계 요약
     now_count = sum(1 for t in topics if t["verdict"] == "now")
@@ -429,6 +472,18 @@ def build_html(data, keyword_history=None):
   .ai-summary .ai-icon {{
     margin-right: 4px;
   }}
+  .ai-extras {{
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }}
+  .title-idea {{
+    color: #58a6ff;
+    margin-bottom: 2px;
+  }}
+  .target-reader {{
+    color: #8b949e;
+  }}
   .parent-note {{
     font-size: 12px;
     color: #58a6ff;
@@ -516,6 +571,57 @@ def build_html(data, keyword_history=None):
     border-radius: 4px;
     color: #8b949e;
     white-space: nowrap;
+  }}
+  .briefing-box {{
+    background: #1a2332;
+    border: 1px solid #3fb950;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 12px 0;
+  }}
+  .briefing-title {{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }}
+  .briefing-flow {{
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: #c9d1d9;
+  }}
+  .briefing-subtitle {{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }}
+  .briefing-reco {{
+    padding-left: 20px;
+    margin: 8px 0;
+    list-style: none;
+  }}
+  .briefing-reco li {{
+    margin: 6px 0;
+  }}
+  .reco-title {{
+    color: #58a6ff;
+    font-weight: bold;
+  }}
+  .reco-reason {{
+    color: #8b949e;
+    font-size: 12px;
+  }}
+  .briefing-avoid {{
+    color: #d29922;
+    font-size: 13px;
+    margin: 8px 0;
+  }}
+  .briefing-oneliner {{
+    background: #1f3a1f;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #3fb950;
   }}
   .empty {{
     text-align: center;
@@ -638,6 +744,8 @@ def build_html(data, keyword_history=None):
     <div class="label">분석 키워드</div>
   </div>
 </div>
+
+{briefing_html}
 
 <div class="section-title">🔥 오늘의 글감 (점수순)</div>
 {topic_cards if topic_cards else '<div class="empty">오늘 분석된 글감 없음</div>'}

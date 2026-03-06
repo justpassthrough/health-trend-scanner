@@ -1265,18 +1265,20 @@ def generate_interpretations(topics):
 
 [출력 규칙]
 - 반드시 JSON 배열로만 응답
-- 각 항목: {{"keyword": "키워드", "summary": "뒤집을 상식 + 약사 앵글 2줄"}}
+- 각 항목: {{"keyword": "키워드", "summary": "뒤집을 상식 + 약사 앵글 2줄", "title_idea": "추천 글 제목안", "target_reader": "타깃 독자 한 줄"}}
 - summary 형식 (줄바꿈 \\n 사용):
   1줄: 뒤집기 — 대중이 믿는 오해와 실제가 다른 포인트 (예: "공복에 먹어야 좋다고 알려졌지만, 균주에 따라 다름")
   2줄: 앵글 — 약사/DDS 연구자로서 다룰 수 있는 차별화 소재 (예: "코팅 기술별 위산 생존율 비교 → 성분표 읽는 법으로 풀면 좋음")
-- 건강/의약과 직접 관련 없는 키워드는 summary를 빈 문자열로
+- title_idea: 블로그에 바로 쓸 수 있는 클릭 유도형 제목 1개 (예: "유산균, 공복에 먹으면 안 되는 이유 — 약사가 알려주는 균주별 복용법")
+- target_reader: 이 글을 가장 필요로 할 독자 유형 한 줄 (예: "유산균 제품 선택에 고민 중인 30~40대 직장인")
+- 건강/의약과 직접 관련 없는 키워드는 summary, title_idea, target_reader를 빈 문자열로
 - 한국어로 작성"""
 
     try:
         client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         response = client.messages.create(
             model="claude-haiku-4-5-20251001",
-            max_tokens=2000,
+            max_tokens=3000,
             messages=[{"role": "user", "content": prompt}],
         )
 
@@ -1290,12 +1292,15 @@ def generate_interpretations(topics):
 
         interpretations = json.loads(raw)
 
-        # topic dict에 ai_summary 필드 추가
-        interp_map = {item["keyword"]: item.get("summary", "") for item in interpretations}
+        # topic dict에 ai_summary, title_idea, target_reader 필드 추가
+        interp_map = {item["keyword"]: item for item in interpretations}
         matched = 0
         for t in topics:
-            summary = interp_map.get(t["keyword"], "")
+            item = interp_map.get(t["keyword"], {})
+            summary = item.get("summary", "")
             t["ai_summary"] = summary
+            t["title_idea"] = item.get("title_idea", "")
+            t["target_reader"] = item.get("target_reader", "")
             if summary:
                 matched += 1
 
@@ -1305,10 +1310,94 @@ def generate_interpretations(topics):
         print(f"  [ERROR] AI 응답 JSON 파싱 실패: {e}")
         for t in topics:
             t["ai_summary"] = ""
+            t["title_idea"] = ""
+            t["target_reader"] = ""
     except Exception as e:
         print(f"  [ERROR] AI 해석 실패: {e}")
         for t in topics:
             t["ai_summary"] = ""
+            t["title_idea"] = ""
+            t["target_reader"] = ""
+
+
+def generate_briefing(topics, pharma_news):
+    """트렌딩 키워드를 종합 분석하여 전체 브리핑 생성"""
+    print("\n" + "=" * 50)
+    print("8-2단계: AI 종합 브리핑")
+    print("=" * 50)
+
+    top = [t for t in topics if t.get("ai_summary")][:15]
+    if not top:
+        print("  AI 해석이 있는 키워드가 없어 브리핑 스킵")
+        return None
+
+    keyword_lines = []
+    for t in top:
+        keyword_lines.append(
+            f"- {t['keyword']} | 점수:{t['score']} | 판정:{t['verdict']} | "
+            f"변화율:{t['change_rate']:+.0f}% | {t.get('ai_summary', '')[:60]}"
+        )
+    keywords_block = "\n".join(keyword_lines)
+
+    news_lines = []
+    for n in (pharma_news or [])[:5]:
+        news_lines.append(f"- [{n.get('signal','')}] {n['title'][:50]}")
+    news_block = "\n".join(news_lines) if news_lines else "없음"
+
+    prompt = f"""당신은 병원 약사이자 약물전달(DDS) 연구자가 운영하는 네이버 건강 블로그의 전략 어드바이저입니다.
+
+아래 이번 스캔의 트렌딩 키워드와 약업계 뉴스를 종합 분석하여 블로그 운영 전략 브리핑을 작성하세요.
+
+[트렌딩 키워드]
+{keywords_block}
+
+[약업계 뉴스]
+{news_block}
+
+[출력 규칙]
+- 반드시 JSON 객체 하나로만 응답
+- 형식:
+{{
+  "flow_summary": "이번 스캔의 전체 흐름 요약 2~3문장",
+  "recommended": [
+    {{"title": "추천 글 제목안", "reason": "왜 지금 써야 하는지 한 줄"}},
+    ...최대 5개
+  ],
+  "avoid": ["지금은 피할 주제 — 이유 한 줄", ...최대 2개],
+  "one_liner": "이번 주는 ___에 집중하세요 형식의 한 줄 전략"
+}}
+- 한국어로 작성
+- flow_summary는 키워드 간의 공통 흐름, 트렌드 방향성 위주
+- recommended는 점수 높고 전문가 갭이 큰 키워드 우선
+- avoid는 이미 포화되었거나 약사 앵글이 약한 주제"""
+
+    try:
+        client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+        response = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=1500,
+            messages=[{"role": "user", "content": prompt}],
+        )
+
+        raw = response.content[0].text.strip()
+
+        if "```" in raw:
+            match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", raw, re.DOTALL)
+            if match:
+                raw = match.group(1)
+
+        briefing = json.loads(raw)
+        print(f"  종합 브리핑 생성 완료")
+        print(f"    추천 글감: {len(briefing.get('recommended', []))}개")
+        print(f"    피할 주제: {len(briefing.get('avoid', []))}개")
+        return briefing
+
+    except json.JSONDecodeError as e:
+        print(f"  [ERROR] 브리핑 JSON 파싱 실패: {e}")
+        return None
+    except Exception as e:
+        print(f"  [ERROR] 브리핑 생성 실패: {e}")
+        return None
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1549,6 +1638,9 @@ def main():
     # 8. AI 해석 (블로그 기획 포인트)
     generate_interpretations(topics)
 
+    # 8-2. AI 종합 브리핑
+    briefing = generate_briefing(topics, pharma_news)
+
     # 7. 유튜브 급등
     prev_yt_trends = []
     prev_yt_updated = ""
@@ -1581,6 +1673,7 @@ def main():
         "topics": topics,
         "pharma_news": pharma_news[:15],
         "youtube_trends": youtube_trends,
+        "briefing": briefing,
     }
 
     output_path = os.path.join(DATA_DIR, "latest.json")

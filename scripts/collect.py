@@ -1326,6 +1326,16 @@ def generate_briefing(topics, pharma_news):
     print("8-2단계: AI 종합 브리핑")
     print("=" * 50)
 
+    if not ANTHROPIC_API_KEY:
+        print("  [SKIP] 브리핑 — ANTHROPIC_API_KEY 없음")
+        return None
+
+    try:
+        import anthropic
+    except ImportError:
+        print("  [SKIP] 브리핑 — anthropic 패키지 미설치")
+        return None
+
     top = [t for t in topics if t.get("ai_summary")][:15]
     if not top:
         print("  AI 해석이 있는 키워드가 없어 브리핑 스킵")

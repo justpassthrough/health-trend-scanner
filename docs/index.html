@@ -157,6 +157,18 @@
   .ai-summary .ai-icon {
     margin-right: 4px;
   }
+  .ai-extras {
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  .title-idea {
+    color: #58a6ff;
+    margin-bottom: 2px;
+  }
+  .target-reader {
+    color: #8b949e;
+  }
   .parent-note {
     font-size: 12px;
     color: #58a6ff;
@@ -244,6 +256,57 @@
     border-radius: 4px;
     color: #8b949e;
     white-space: nowrap;
+  }
+  .briefing-box {
+    background: #1a2332;
+    border: 1px solid #3fb950;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 12px 0;
+  }
+  .briefing-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .briefing-flow {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: #c9d1d9;
+  }
+  .briefing-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .briefing-reco {
+    padding-left: 20px;
+    margin: 8px 0;
+    list-style: none;
+  }
+  .briefing-reco li {
+    margin: 6px 0;
+  }
+  .reco-title {
+    color: #58a6ff;
+    font-weight: bold;
+  }
+  .reco-reason {
+    color: #8b949e;
+    font-size: 12px;
+  }
+  .briefing-avoid {
+    color: #d29922;
+    font-size: 13px;
+    margin: 8px 0;
+  }
+  .briefing-oneliner {
+    background: #1f3a1f;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #3fb950;
   }
   .empty {
     text-align: center;
@@ -339,7 +402,7 @@
 
 <div class="refresh-bar">
   <div class="refresh-info">
-    네이버: 2026-03-06 10:44<br>
+    네이버: 2026-03-06 14:45<br>
     유튜브: 2026-03-06 10:44
   </div>
   <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()">실시간 갱신</button>
@@ -354,81 +417,151 @@
 
 <div class="summary">
   <div class="summary-box">
-    <div class="num" style="color:#3fb950">1</div>
+    <div class="num" style="color:#3fb950">2</div>
     <div class="label">NOW</div>
   </div>
   <div class="summary-box">
-    <div class="num" style="color:#da3633">10</div>
+    <div class="num" style="color:#da3633">8</div>
     <div class="label">HOT</div>
   </div>
   <div class="summary-box">
-    <div class="num">32</div>
+    <div class="num">29</div>
     <div class="label">분석 키워드</div>
   </div>
 </div>
+
+
 
 <div class="section-title">🔥 오늘의 글감 (점수순)</div>
 
         <div class="card">
           <div class="card-header">
             <span class="rank">#1</span>
-            <span class="keyword">중단</span>
-            <span class="score">94.9</span>
+            <span class="keyword">회수</span>
+            <span class="score">83.9</span>
             <span class="badge now">지금 써라</span>
           </div>
           
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:25 💊</span><span class="score-r">×R:1.46</span> <span class="badge-new">NEW</span></div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:25 💊</span><span class="score-r">×R:1.29</span> <span class="badge-new">NEW</span></div>
             
             
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 94.9</div>
-            <div class="news-context"><a href="https://www.tokenpost.kr/news/breaking/336635" target="_blank">📰 바이낸스, FLOW 입출금·상장 상태 정상화…작년 12월 보안 사고 피해 전...</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/056/0012136893?sid=104" target="_blank">📰 사우디, 아시아에 파는 원유 가격 3년 반 만에 최대폭 인상</a></div>
+            
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 83.9</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/437/0000481806?sid=102" target="_blank">📰 구리값 폭등하자 전선 12㎞ 훔친 범인은 '한전 협력업체 출신'</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/006/0000134641?sid=102" target="_blank">📰 기름값 급등에 한겨레·경향 &quot;엄단해야&quot; 중앙일보 &quot;규제 능사 아냐&quo</a></div>
             <div class="metrics">
-              <span class="intent doubt">의심/경고형</span>
+              <span class="intent shop">구매/추천형</span>
               <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">용량</span> <span class="tag pharma">부작용</span></div>
+            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#2</span>
-            <span class="keyword">닥터나우</span>
-            <span class="score">66.0</span>
-            <span class="badge hot">주목!</span>
+            <span class="keyword">중단</span>
+            <span class="score">78.0</span>
+            <span class="badge now">지금 써라</span>
           </div>
-          <div class="aliases">(= 약사 직접, 닥터나우 건강퀴즈)</div>
+          
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:15 💊</span><span class="score-r">×R:1.2</span> <span class="badge-new">NEW</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>원격의료 앱이면 약사 없이도 약을 받을 수 있다고 생각하지만, 실제로는 약사의 복약지도와 전문성이 여전히 필수입니다.
-약사의 '선결제 문제'를 단순 비용 분쟁이 아닌, DDS 관점에서 본 약물전달 체계 붕괴 문제로 설명하면 대중의 이해도가 올라갑니다.</div>
+            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.3</span> <span class="badge-new">NEW</span></div>
             
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 66.0</div>
-            <div class="news-context"><a href="http://www.newsmp.com/news/articleView.html?idxno=251998" target="_blank">📰 서울시약사회, 닥터나우에 일반약 선결제 중단 촉구 外</a></div><div class="news-context"><a href="https://news.mtn.co.kr/news-detail/2026030616363089675" target="_blank">📰 닻 오른 원격의료…약품 배송은 난항</a></div>
+            
+            
+            <div class="trend-line"><span class="trend-down">↓ 하락</span> 94.9 → 78.0</div>
+            <div class="news-context"><a href="https://www.tokenpost.kr/news/briefing/336703" target="_blank">📰 [자정 뉴스브리핑] 이란, 미국과 이스라엘에 광범위한 타격 실시 外</a></div><div class="news-context"><a href="https://www.tokenpost.kr/news/breaking/336700" target="_blank">📰 두바이 규제당국 “쿠코인, 무허가 영업… 즉각 서비스 중단해야”</a></div>
             <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-mid">전문가 부족</span>
+              <span class="intent neutral">중립</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">복용법</span> <span class="tag pharma">용량</span></div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#3</span>
+            <span class="keyword">판매</span>
+            <span class="score">64.9</span>
+            <span class="badge hot">주목!</span>
+          </div>
+          
+          <div class="card-body">
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:15 💊</span><span class="score-r">×R:1.18</span> <span class="badge-new">NEW</span></div>
+            
+            
+            
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 64.9</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/422/0000841335?sid=101" target="_blank">📰 美 2월 고용 9만2천명 감소…실업률 4.4%로 상승</a></div><div class="news-context"><a href="http://www.worktoday.co.kr/news/articleView.html?idxno=82128" target="_blank">📰 시지메드텍, '노보시스 트라우마' 말레이시아 허가… 골절 치료 제품 글...</a></div>
+            <div class="metrics">
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
+            </div>
+            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#4</span>
+            <span class="keyword">다이어트 비만주사</span>
+            <span class="score">55.6</span>
+            <span class="badge hot">주목!</span>
+          </div>
+          <div class="aliases">(= 다이어트)</div>
+          <div class="card-body">
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.39</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>비만주사는 '단순 식욕억제제'라고 알려졌지만, 실제로는 GLP-1 수용체 작용제로 혈당·대사 전반에 영향을 미치는 약물입니다.
+약사 관점에서 약물전달 기술(피하주사 vs 경구제 흡수율), 개인 대사 상태별 약동학 차이, 위험 부작용(췌장염, 갑상선수질암 위험)을 성분 수준에서 분석할 수 있습니다.</div>
+            <div class="ai-extras"><div class="title-idea">📝 위고비·삭센다, 식욕억제제가 아니었다 — 약사가 설명하는 GLP-1의 실제 작동 원리</div><div class="target-reader">👤 비만약 복용을 고려 중이거나 이미 사용 중인 30~50대, 약물의 정확한 원리를 알고 싶은 환자</div></div>
+            <div class="parent-note">↑ "비만" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 55.6</div>
+            <div class="news-context"><a href="https://m.entertain.naver.com/article/009/0005646207" target="_blank">📰 이지혜 남편 문재완, 결국 위고비로 다이어트 시작 “스스로 못 빼서 주...</a></div><div class="news-context"><a href="https://lawtalknews.co.kr/article/8V8UXJFYJTKC" target="_blank">📰 &quot;알약 위고비 주세요&quot; 가짜 다이어트 약 판치는 온라인…식약처 '철퇴'...</a></div>
+            <div class="metrics">
+              <span class="intent doubt">의심/경고형</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
+            </div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">금기</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#5</span>
+            <span class="keyword">닥터나우</span>
+            <span class="score">54.0</span>
+            <span class="badge hot">주목!</span>
+          </div>
+          <div class="aliases">(= 닥터나우 건강퀴즈)</div>
+          <div class="card-body">
+            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:15 💊</span><span class="score-r">×R:1.2</span> <span class="badge-new">NEW</span></div>
+            
+            
+            
+            <div class="trend-line"><span class="trend-down">↓ 하락</span> 66.0 → 54.0</div>
+            <div class="news-context"><a href="http://www.newsmp.com/news/articleView.html?idxno=251998" target="_blank">📰 서울시약사회, 닥터나우에 일반약 선결제 중단 촉구 外</a></div><div class="news-context"><a href="https://news.mtn.co.kr/news-detail/2026030616363089675" target="_blank">📰 닻 오른 원격의료…약품 배송은 난항</a></div>
+            <div class="metrics">
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric gap-mid">전문가 부족</span>
+            </div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#6</span>
             <span class="keyword">선결제</span>
-            <span class="score">65.5</span>
+            <span class="score">54.0</span>
             <span class="badge hot">주목!</span>
           </div>
           <div class="aliases">(= 일반약)</div>
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:15 💊</span><span class="score-r">×R:1.19</span> <span class="badge-new">NEW</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>선결제는 단순히 '돈을 먼저 내는 것'이라고 알려졌지만, 약사가 반대하는 핵심은 환자 안전과 약물 상호작용 검토가 제대로 못 일어난다는 것입니다.
-약학 전문성 침해 vs 환자 안전의 균형을 '약물전달의 질' 개념으로 재프레임하면 설득력 있는 콘텐츠가 됩니다.</div>
+            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:15 💊</span><span class="score-r">×R:1.2</span> <span class="badge-new">NEW</span></div>
             
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 65.5</div>
+            
+            
+            <div class="trend-line"><span class="trend-down">↓ 하락</span> 65.5 → 54.0</div>
             <div class="news-context"><a href="http://www.newsmp.com/news/articleView.html?idxno=251998" target="_blank">📰 서울시약사회, 닥터나우에 일반약 선결제 중단 촉구 外</a></div><div class="news-context"><a href="https://www.pharmnews.com/news/articleView.html?idxno=301889" target="_blank">📰 서울시약사회 &quot;닥터나우 일반약 선결제, 약사 전문권 침해 및 유통 질서...</a></div>
             <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
+              <span class="intent neutral">중립</span>
               <span class="metric gap-high">전문가 갭 큼</span>
             </div>
             <div class="pharma-tags"></div>
@@ -436,39 +569,19 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#4</span>
-            <span class="keyword">약사</span>
-            <span class="score">59.5</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:30 💊</span><span class="score-r">×R:0.85</span> <span class="badge-new">NEW</span></div>
-            
-            
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 59.5</div>
-            <div class="news-context"><a href="https://m.entertain.naver.com/article/144/0001101825" target="_blank">📰 ‘세 개의 시선’ 김석훈, 우울감 원인 파헤친다···“뇌 문제 아냐”</a></div><div class="news-context"><a href="http://www.newsmp.com/news/articleView.html?idxno=251998" target="_blank">📰 서울시약사회, 닥터나우에 일반약 선결제 중단 촉구 外</a></div>
-            <div class="metrics">
-              <span class="intent neutral">중립</span>
-              <span class="metric gap-low">전문가 포화</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">복용법</span> <span class="tag pharma">성분</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#5</span>
+            <span class="rank">#7</span>
             <span class="keyword">황반변성 치료제</span>
-            <span class="score">56.8</span>
+            <span class="score">49.7</span>
             <span class="badge hot">주목!</span>
           </div>
           <div class="aliases">(= 치료제)</div>
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.42</span> <span class="badge-new">NEW</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>황반변성 치료제가 개발되면 당장 눈이 좋아진다고 기대하지만, 약물이 망막까지 도달하는 것 자체가 DDS의 최대 난제입니다.
-망막 혈관 장벽(BRB) 통과 기술, 약물 방출 조절 등을 쉽게 설명하면 '신약이 나왔는데 왜 아직 비싼가'를 이해시킬 수 있습니다.</div>
-            <div class="parent-note">↑ "항체 치료제" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 56.8</div>
+            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:5</span><span class="score-r">×R:1.42</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>황반변성은 '나이가 들면 자연히 진행한다'고 오해받지만, 최근 치료제들은 질병 진행을 멈추거나 역행시킬 수 있습니다.
+약사 관점에서 망막으로의 약물전달 난제(혈액망막장벽 통과), 안약 vs 안구 내 주사 제형 선택 기준, 장기 점안제 사용 시 전신 흡수 위험을 설명할 수 있습니다.</div>
+            <div class="ai-extras"><div class="title-idea">📝 황반변성 '나이 탓'이라 포기했나요? — 약사가 알려주는 최신 치료제와 올바른 점안법</div><div class="target-reader">👤 황반변성 진단을 받았거나 예방하고 싶은 50대 이상 중장년층</div></div>
+            
+            <div class="trend-line"><span class="trend-down">↓ 하락</span> 56.8 → 49.7</div>
             <div class="news-context"><a href="https://n.news.naver.com/mnews/article/018/0006229535?sid=105" target="_blank">📰 이연제약, 충주공장 가동률 제고 '속도'…유용환 대표, 글로벌 확장 '총...</a></div><div class="news-context"><a href="https://www.medicopharma.co.kr/news/articleView.html?idxno=67294" target="_blank">📰 제약바이오 변동성 장세에는 '필수투약 의약품ㆍ플랫폼 기업' 주목</a></div>
             <div class="metrics">
               <span class="intent doubt">의심/경고형</span>
@@ -479,84 +592,20 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#6</span>
-            <span class="keyword">서울시약</span>
-            <span class="score">56.6</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:15 💊</span><span class="score-r">×R:1.03</span> <span class="badge-new">NEW</span></div>
-            
-            
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 56.6</div>
-            <div class="news-context"><a href="http://www.newsmp.com/news/articleView.html?idxno=251998" target="_blank">📰 서울시약사회, 닥터나우에 일반약 선결제 중단 촉구 外</a></div><div class="news-context"><a href="https://www.dailypharm.com/user/news/336283?REFERER=NP" target="_blank">📰 &quot;약사법 위반&quot;…서울시약, 닥터나우 일반약 선결제 중단 촉구</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-normal">보통</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">함량</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#7</span>
-            <span class="keyword">비만 탈출</span>
-            <span class="score">54.0</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.35</span> <span class="badge-new">NEW</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>비만약(GLP-1)을 먹으면 '자동으로' 살이 빠진다고 생각하지만, 약의 작동 원리, 개인차, 약물상호작용을 모르면 역효과가 발생합니다.
- GLP-1의 흡수율, 대사 경로, 약사가 챙겨야 할 약물 병용 금지사항을 실전 가이드로 만들면 차별화됩니다.</div>
-            <div class="parent-note">↑ "비만" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 54.0</div>
-            <div class="news-context"><a href="https://www.tokenpost.kr/news/cryptocurrency/336349" target="_blank">📰 미 정부 압수 비트코인 소액 분할 이체 포착…중동발 변동성 속 ‘다음...</a></div><div class="news-context"><a href="http://www.newsmp.com/news/articleView.html?idxno=251972" target="_blank">📰 서울시의사회 &quot;의료계 신뢰 갉아먹는 비윤리 행위 엄단&quot; 外</a></div>
-            <div class="metrics">
-              <span class="intent neutral">중립</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
             <span class="rank">#8</span>
             <span class="keyword">비만</span>
-            <span class="score">49.7</span>
+            <span class="score">48.3</span>
             <span class="badge hot">주목!</span>
           </div>
           
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:5</span><span class="score-t">T:0</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.42</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>비만은 단순 '열량 문제'라고 알려졌지만, 약리학적으로는 호르몬, 신경전달물질, 장내 미생물 등 복합 메커니즘입니다.
-약물치료와 생활습관 개선의 상호작용을 DDS 관점에서 설명하면, 약사만의 전문성이 두드러집니다.</div>
+            <div class="score-bar"><span class="score-n">N:5</span><span class="score-t">T:0</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.38</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>'비만은 개인의 의지 부족'이라는 인식이 크지만, 실제로는 렙틴 저항성, 장내미생물 조성, 유전적 소인이 주요 원인입니다.
+약사 관점에서 비만 치료제의 약동학(흡수, 분포, 대사), 장내 미생물 변화에 따른 약물 효능 차이, 약물-영양소 상호작용을 종합적으로 분석할 수 있습니다.</div>
+            <div class="ai-extras"><div class="title-idea">📝 비만은 '게으름'이 아니다 — 약사가 설명하는 생물학적 원인과 맞춤형 약물 치료법</div><div class="target-reader">👤 비만으로 고민 중이면서 약물 치료를 진지하게 검토 중인 20~50대</div></div>
             
-            <div class="trend-line"><span class="trend-up">↑ 상승</span> 50.0 → 46.6 → 45.5 → 49.7</div>
-            <div class="news-context"><a href="http://www.newsmp.com/news/articleView.html?idxno=251996" target="_blank">📰 전남대병원, 산하 병원 신임 원장 임명 外</a></div><div class="news-context"><a href="http://www.newsmp.com/news/articleView.html?idxno=251995" target="_blank">📰 바이엘 코리아, 세계 여성의 날 맞아 여성 건강 인식 개선 캠페인 진행...</a></div>
-            <div class="metrics">
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">부작용</span> <span class="tag pharma">대사</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#9</span>
-            <span class="keyword">비만 고혈압</span>
-            <span class="score">49.0</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:5</span><span class="score-r">×R:1.4</span> <span class="badge-new">NEW</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>비만과 고혈압이 연결되어 있다는 것은 알지만, 약물 복용 시 체중 변화가 혈압약 용량을 바꿀 수 있다는 건 대중이 모릅니다.
-약물동역학(PK) 변화에 따른 용량 조정, 약사의 모니터링 역할을 강조하면 원격의료 시대의 약사 가치를 부각할 수 있습니다.</div>
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 56.0 → 49.0</div>
-            <div class="news-context"><a href="http://aftertherain.kr/sub/contents/view.php?seq=96382" target="_blank">📰 대사증후군이 뭐길래.. / 양병원 가정의학과 차현진</a></div><div class="news-context"><a href="https://daily.hankooki.com/news/articleView.html?idxno=1343248" target="_blank">📰 충남도, &quot;비만 관리로 심뇌혈관질환 예방해요&quot;</a></div>
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 46.6 → 45.5 → 49.7 → 48.3</div>
+            <div class="news-context"><a href="https://www.ccdailynews.com/news/articleView.html?idxno=2401463" target="_blank">📰 &quot;비만 관리로 심뇌혈관질환 예방해요&quot;</a></div><div class="news-context"><a href="https://medicalworldnews.co.kr/news/view.php?idx=1510973368" target="_blank">📰 [3월 6일 병원계 이모저모②]중앙대의료원, 이대서울, 서울대치과병원 ...</a></div>
             <div class="metrics">
               <span class="intent doubt">의심/경고형</span>
               <span class="metric gap-high">전문가 갭 큼</span>
@@ -566,108 +615,135 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <span class="rank">#10</span>
-            <span class="keyword">위고비 다이어트</span>
-            <span class="score">48.3</span>
+            <span class="rank">#9</span>
+            <span class="keyword">비만 탈출</span>
+            <span class="score">46.6</span>
             <span class="badge hot">주목!</span>
           </div>
-          <div class="aliases">(= 위고비, 다이어트)</div>
+          
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:5</span><span class="score-r">×R:1.38</span> <span class="badge-new">NEW</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>위고비는 '다이어트 약'이라고만 알려졌지만, 실제로는 당뇨병 치료제이며 용량, 투여 방식, 부작용 모니터링이 매우 복잡합니다.
-자가주사 제형의 DDS 특성(피하주사 흡수 시간, 냉장 보관 필요성 등), 약사 상담의 필수성을 대중 언어로 풀면 신뢰도가 높아집니다.</div>
+            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:5</span><span class="score-r">×R:1.33</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>'단기간 급격한 체중 감량이 성공'이라고 생각하지만, 약물 유무에 관계없이 빠른 감량은 근손실, 담석증, 영양 결핍을 초래합니다.
+약사로서 체중 감량 속도별 신체 대사 변화, 약물(비만약·티라자파마이드)의 투여 속도 최적화, 재감량(rebound) 방지를 위한 장기 약물 관리 전략을 제시할 수 있습니다.</div>
+            <div class="ai-extras"><div class="title-idea">📝 빠를수록 좋은 다이어트? 약사가 경고하는 급격한 체중 감량의 대가</div><div class="target-reader">👤 빠른 결과를 원하는 비만 환자, 약물 치료의 올바른 속도와 기간에 대해 알고 싶은 사람</div></div>
             
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 52.8 → 48.3</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/469/0000917993?sid=105" target="_blank">📰 비만약 이용한 급격한 체중 감량, '이 질병' 위험 높인다</a></div><div class="news-context"><a href="https://www.insight.co.kr/news/545620" target="_blank">📰 '이지혜♥' 문재완, 굳게 다이어트 선언하더니 결국 '위고비' 시작했다</a></div>
+            <div class="trend-line"><span class="trend-down">↓ 하락</span> 54.0 → 46.6</div>
+            <div class="news-context"><a href="https://www.tokenpost.kr/news/cryptocurrency/336349" target="_blank">📰 미 정부 압수 비트코인 소액 분할 이체 포착…중동발 변동성 속 ‘다음...</a></div><div class="news-context"><a href="http://www.newsmp.com/news/articleView.html?idxno=251972" target="_blank">📰 서울시의사회 &quot;의료계 신뢰 갉아먹는 비윤리 행위 엄단&quot; 外</a></div>
             <div class="metrics">
-              <span class="intent doubt">의심/경고형</span>
+              <span class="intent shop">구매/추천형</span>
               <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">복용법</span> <span class="tag pharma">금기</span></div>
+            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="rank">#10</span>
+            <span class="keyword">약사</span>
+            <span class="score">45.1</span>
+            <span class="badge hot">주목!</span>
+          </div>
+          <div class="aliases">(= 의사나 약사)</div>
+          <div class="card-body">
+            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:25 💊</span><span class="score-r">×R:0.82</span> <span class="badge-new">NEW</span></div>
+            
+            
+            
+            <div class="trend-line"><span class="trend-down">↓ 하락</span> 59.5 → 45.1</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/660/0000104762?sid=100" target="_blank">📰 [지방선거 현장]안갯속 장성, 현직 vs 새인물</a></div><div class="news-context"><a href="https://tk.newdaily.co.kr/site/data/html/2026/03/06/2026030600338.html" target="_blank">📰 경산시, 통합지원협의체 위촉식 및 제1차 정기회의 개최</a></div>
+            <div class="metrics">
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric gap-low">전문가 포화</span>
+            </div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#11</span>
-            <span class="keyword">항체 치료제</span>
-            <span class="score">48.3</span>
-            <span class="badge hot">주목!</span>
+            <span class="keyword">위고비</span>
+            <span class="score">40.5</span>
+            <span class="badge warm">지켜볼 만</span>
           </div>
-          
+          <div class="aliases">(= 위고비 다이어트)</div>
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:5</span><span class="score-r">×R:1.38</span> <span class="badge-new">NEW</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>항체 치료제는 '신약'이라고 신비화되지만, 단백질 약물이라 보관, 투여, 약물상호작용이 일반 소분자 약물과 완전히 다릅니다.
-생물의약품의 DDS 특성(냉장체인, 주입 방법, 면역반응)을 약사 입장에서 설명하면 환자 안전교육 콘텐츠가 됩니다.</div>
+            <div class="score-bar"><span class="score-n">N:0</span><span class="score-t">T:0</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.35</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>'빨리 살 빠진다'는 광고 이미지로만 알려졌지만, 약효 발현과 내약성은 개인의 간·신 기능, 위장관 운동성, 기저 질환에 따라 크게 달라집니다.
+ DDS 연구자로서 제형별 생체이용률, 주입 부위별 흡수 속도, 병용 복용 약물과의 상호작용을 임상 데이터로 풀어낼 수 있습니다.</div>
+            <div class="ai-extras"><div class="title-idea">📝 위고비 효과가 남들과 다른 이유 — 약사가 말하는 개인차를 결정하는 약동학 요소들</div><div class="target-reader">👤 위고비 복용 중이면서 기대만큼 효과가 없다고 느끼는 사용자</div></div>
             
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 52.0 → 48.3</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/015/0005259236?sid=105" target="_blank">📰 신약 테스트베드된 韓…글로벌 빅파마 임상시험 14% '쑥'</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/296/0000098251?sid=101" target="_blank">📰 휴온스랩 SC 제형 변경 플랫폼, 시장에서 먹힐까</a></div>
+            <div class="trend-line"><span class="trend-up">↑↑ 상승 중</span> 37.2 → 37.2 → 39.3 → 40.5</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/469/0000917993?sid=105" target="_blank">📰 비만약 이용한 급격한 체중 감량, '이 질병' 위험 높인다</a></div><div class="news-context"><a href="https://www.sisajournal-e.com/news/articleView.html?idxno=419660" target="_blank">📰 위고비 복제약 계약규모 논란 삼천당제약, 지배구조 불안정</a></div>
             <div class="metrics">
-              <span class="intent doubt">의심/경고형</span>
+              <span class="intent neutral">중립</span>
               <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span> <span class="tag pharma">대사</span></div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#12</span>
-            <span class="keyword">비만약 공동개발</span>
-            <span class="score">41.3</span>
+            <span class="keyword">스테키마</span>
+            <span class="score">33.8</span>
             <span class="badge warm">지켜볼 만</span>
           </div>
-          <div class="aliases">(= 비만약)</div>
+          
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:5</span><span class="score-r">×R:1.18</span> <span class="badge-new">NEW</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>비만약 개발을 단순히 '신약 개발'로 보지만, 제형화(formulation), 바이오가용성 향상, 안정성 보증이 얼마나 어려운지는 업계만 압니다.
-로슈·질랜드 임상 데이터를 DDS 관점으로 분석(약물전달 효율, 제형 혁신)하면 차별화된 전문성 콘텐츠가 됩니다.</div>
+            <div class="score-bar"><span class="score-n">N:5</span><span class="score-t">T:0</span><span class="score-w">W:20 💊</span><span class="score-r">×R:1.35</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>스테키마는 '신약'이라고만 알려졌지만, 실제로는 특정 자가면역질환 환자 '맞춤형' 생물의약품으로 모든 염증질환에 효과적이지 않습니다.
+약사·DDS 연구자로서 항체의약품의 약물전달 메커니즘(Fc 수용체 상호작용), 대상 환자의 약물유전체 특성, 장기 투여 시 중화항체 발생 위험을 설명할 수 있습니다.</div>
+            <div class="ai-extras"><div class="title-idea">📝 스테키마, 모든 염증질환에 쓸 수 있을까? — 약사가 말하는 생물의약품의 한계와 맞춤형 투여 조건</div><div class="target-reader">👤 자가면역질환 진단 후 신약 치료를 고려 중인 환자 및 보호자</div></div>
             
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 47.2 → 41.3</div>
-            <div class="news-context"><a href="https://www.pharmnews.com/news/articleView.html?idxno=301886" target="_blank">📰 로슈·질랜드 차세대 비만약 임상 2상 성공… &quot;10.7% 감량에 위장관 부작...</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/277/0005730440?sid=101" target="_blank">📰 기술력만으론 부족…K바이오 '생산능력'이 글로벌 시장 주도권 가른다</a></div>
+            <div class="trend-line"><span class="trend-flat">→ 유지</span> 49.0 → 35.0 → 33.8 → 33.8</div>
+            <div class="news-context"><a href="https://www.dnews.co.kr/uhtml/view.jsp?idxno=202603061349169940144" target="_blank">📰 셀트리온 ‘스테키마’ 52주 임상 결과 “장기 치료 경쟁력 재확인”</a></div><div class="news-context"><a href="https://www.pharmnews.com/news/articleView.html?idxno=301892" target="_blank">📰 셀트리온,자가면역 치료제 '스테키마' 임상결과 국제 학술지 게재</a></div>
             <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-mid">전문가 부족</span>
+              <span class="intent neutral">중립</span>
+              <span class="metric gap-high">전문가 갭 큼</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">대사</span></div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#13</span>
-            <span class="keyword">영양제 알약</span>
-            <span class="score">40.2</span>
+            <span class="keyword">혈관영양제 약사</span>
+            <span class="score">32.8</span>
             <span class="badge warm">지켜볼 만</span>
           </div>
           <div class="aliases">(= 영양제)</div>
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:5</span><span class="score-r">×R:1.15</span> <span class="badge-new">NEW</span></div>
-            <div class="ai-summary"><span class="ai-icon">💡</span>영양제는 알약 형태면 다 같다고 생각하지만, 코팅 기술, 방출 속도, 흡수율이 제품마다 천차만별입니다.
-성분표의 '첨가물'과 '기술'의 관계를 설명하면, 약사만이 할 수 있는 영양제 선택 가이드 콘텐츠가 완성됩니다.</div>
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 48.0 → 40.2</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/053/0000056352?sid=105" target="_blank">📰 위고비 넘어서는 비만약 나온다…근육은 지키고 지방만 쏙</a></div><div class="news-context"><a href="http://www.biztribune.co.kr/news/articleView.html?idxno=349816" target="_blank">📰 [브리프]동아제약 일동제약 GC녹십자웰빙 대원제약 대웅제약 外</a></div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:0.82</span> <span class="badge-new">NEW</span></div>
+            <div class="ai-summary"><span class="ai-icon">💡</span>'혈관 건강을 위해 많이 먹을수록 좋다'고 알려졌지만, 과다 복용 시 산화스트레스가 증가해 혈관 손상을 초래합니다.
+약사로서 지용성 비타민(E, A)의 체내 축적 독성, 항산화제의 'U자형 용량-반응' 곡선, 개인의 영양 상태 진단 후 맞춤형 투여량 결정의 중요성을 강조할 수 있습니다.</div>
+            <div class="ai-extras"><div class="title-idea">📝 혈관영양제 많이 먹을수록 좋다? 약사가 경고하는 과다 복용의 진짜 위험</div><div class="target-reader">👤 영양제를 습관처럼 복용 중인 40~60대, 혈관 건강에 관심 많은 예방의료 고객</div></div>
+            <div class="parent-note">↑ "약사" 연관검색어에서 발견</div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 32.8</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/296/0000098203?sid=103" target="_blank">📰 건강에 필요한 ‘이 영양제’…너무 많이 먹으면 심장, 폐, 신장에 독이...</a></div><div class="news-context"><a href="https://news.hidoc.co.kr/news/articleView.html?idxno=59289" target="_blank">📰 &quot;탈모 치료는 장기전&quot;… 약물 치료·생활습관 개선 병행해야</a></div>
             <div class="metrics">
               <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-mid">전문가 부족</span>
+              <span class="metric gap-low">전문가 포화</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
             <span class="rank">#14</span>
-            <span class="keyword">의사나 약사</span>
-            <span class="score">34.8</span>
+            <span class="keyword">약사 추천</span>
+            <span class="score">31.6</span>
             <span class="badge warm">지켜볼 만</span>
           </div>
           
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:0.87</span> <span class="badge-new">NEW</span></div>
+            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:0.79</span> <span class="badge-new">NEW</span></div>
+            
             
             <div class="parent-note">↑ "약사" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 34.8</div>
-            <div class="news-context"><a href="https://www.yakup.com/news/index.html?mode=view&cat=17&nid=324228" target="_blank">📰 보건약학협회, 'AI 시대 약사 전문성 강화 세미나' 4월 12일 개최</a></div><div class="news-context"><a href="https://www.viva100.com/article/20260306500892" target="_blank">📰 경북 경산시 통합지원협의체 출범</a></div>
+            <div class="trend-line"><span class="trend-new">🆕 신규</span> 31.6</div>
+            <div class="news-context"><a href="http://www.bosa.co.kr/news/articleView.html?idxno=2271237" target="_blank">📰 제약기업인들, 올해 '모범납세자'로 나란히 훈장</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/016/0002609156?sid=102" target="_blank">📰 글로벌 TOP 서울의 원동력, 스마트우먼이 설계한다!</a></div>
             <div class="metrics">
-              <span class="intent doubt">의심/경고형</span>
+              <span class="intent shop">구매/추천형</span>
               <span class="metric gap-low">전문가 포화</span>
             </div>
             <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">복용법</span> <span class="tag pharma">용량</span></div>
@@ -676,22 +752,23 @@
         <div class="card">
           <div class="card-header">
             <span class="rank">#15</span>
-            <span class="keyword">또는 약사</span>
-            <span class="score">34.0</span>
+            <span class="keyword">약국</span>
+            <span class="score">30.9</span>
             <span class="badge warm">지켜볼 만</span>
           </div>
           
           <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:0.85</span> <span class="badge-new">NEW</span></div>
+            <div class="score-bar"><span class="score-n">N:0</span><span class="score-t">T:0</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.03</span></div>
             
-            <div class="parent-note">↑ "약사" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 34.0</div>
-            <div class="news-context"><a href="https://ilyo.co.kr/?ac=article_view&entry_id=509339" target="_blank">📰 [경산시정] '통합지원협의체' 출범, 지역 통합 돌봄 본격 추진 外</a></div><div class="news-context"><a href="https://www.bosa.co.kr/news/articleView.html?idxno=3000060" target="_blank">📰 의약품 도매상·CSO의 병원·약국 우회 지배 금지법안 발의</a></div>
+            
+            
+            <div class="trend-line"><span class="trend-down">↓↓ 하락 중</span> 33.3 → 34.2 → 33.9 → 30.9</div>
+            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/052/0002323803?sid=102" target="_blank">📰 [메디컬 인사이트 126회] 단순 피로로 오해하기 쉬운 '어지럼증'</a></div><div class="news-context"><a href="https://wemakenews.co.kr/news/view.php?no=24740" target="_blank">📰 삼천당제약 점안제 포장 혼입 논란…외부포장과 내용물 달라</a></div>
             <div class="metrics">
-              <span class="intent neutral">중립</span>
-              <span class="metric gap-low">전문가 포화</span>
+              <span class="intent shop">구매/추천형</span>
+              <span class="metric gap-normal">보통</span>
             </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">용량</span> <span class="tag pharma">성분</span></div>
+            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">함량</span></div>
           </div>
         </div>
 

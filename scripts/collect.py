@@ -149,8 +149,16 @@ _PROTECTED_ENDINGS_RO = {
 
 # 동사 어미 패턴 (복합어 끝에서 제거)
 _VERB_ENDINGS = re.compile(
-    r"(하|할|한|된|된다|하는|하고|하여|했던|하며|이다|된다|인지|인가|일까|라면|라서|해야|해서|해도|되어|되는|되면|됩니다|해요|돼요|없이|있어)$"
+    r"(하|할|한|된|된다|하는|하고|하여|했던|하며|이다|된다|인지|인가|일까|라면|라서|해야|해서|해도|되어|되는|되면|됩니다|해요|돼요|없이|있어|이어질|이어|않아|살빼|빼는|빼야|빼기|먹는|먹을|먹어|걸릴|걸리|나올|나오|줄이|늘리|줄일|늘릴)$"
 )
+
+# 단독 어절로 키워드가 될 수 없는 동사/부사/접속 어절
+_JUNK_WORDS = {
+    "않아", "않은", "않는", "없는", "있는", "없어", "있어",
+    "후에", "전에", "때문", "대해", "통해", "위해", "관한",
+    "이어", "따라", "인해", "비해", "관련", "최근", "현재",
+    "죽자", "살자", "하자", "보자", "알아", "보면", "되면",
+}
 
 # 1음절 단독 불허 일반명사
 _SINGLE_CHAR_BLOCK = {
@@ -228,6 +236,54 @@ def _is_health_title(title):
     return any(hw in title for hw in HEALTH_CONTEXT_WORDS)
 
 
+def _is_quality_keyword(kw):
+    """모든 경로의 키워드에 적용하는 범용 품질 게이트.
+
+    메인 파이프라인, 이월 키워드, autocomplete 모두 이 함수를 통과해야 함.
+    Returns True if keyword is acceptable quality.
+    """
+    if not kw or kw in BLACKLIST:
+        return False
+
+    # 구두점/특수문자 포함 시 탈락
+    if re.search(r"[.,;:!?…#@()[\]{}\"'`~]", kw):
+        return False
+
+    parts = kw.split()
+
+    # 각 어절 검사
+    for part in parts:
+        # SEO 스팸: 7글자 이상 한글 단일 어절 (예: "부산마운자로가격")
+        korean_only = re.sub(r"[^가-힣]", "", part)
+        if len(korean_only) >= 7:
+            return False
+        # 쓰레기 어절 포함 시 탈락
+        if part in _JUNK_WORDS:
+            return False
+        # 블랙리스트/불용어 단독 어절
+        if part in _STOPWORDS or part in BLACKLIST:
+            # 복합어에서 전체가 불용어/블랙리스트면 탈락
+            if len(parts) == 1:
+                return False
+
+    # 복합 키워드: 마지막 어절이 동사 어미면 탈락
+    if len(parts) >= 2:
+        last = parts[-1]
+        if _VERB_ENDINGS.search(last):
+            return False
+        # 마지막 어절이 조사로 끝나면 탈락
+        for suffix in _JOSA_SUFFIXES:
+            if last.endswith(suffix) and len(last) > len(suffix):
+                return False
+
+    # 단일 어절 키워드: 동사 어미 검사
+    if len(parts) == 1:
+        if _VERB_ENDINGS.search(kw):
+            return False
+
+    return True
+
+
 def fetch_naver_news(query, display=100, sort="date"):
     """네이버 뉴스 검색 API 호출"""
     url = "https://openapi.naver.com/v1/search/news.json"
@@ -286,7 +342,16 @@ def extract_keywords_from_news():
                 continue
             if len(w) == 1 and w in _SINGLE_CHAR_BLOCK:
                 continue
-            if w in _STOPWORDS or w in BLACKLIST:
+            if w in _STOPWORDS or w in BLACKLIST or w in _JUNK_WORDS:
+                continue
+            # SEO 스팸: 7글자 이상 단일 한글 어절
+            if len(re.sub(r"[^가-힣]", "", w)) >= 7:
+                continue
+            # 동사 어미로 끝나면 제거 시도
+            cleaned = _VERB_ENDINGS.sub("", w)
+            if len(cleaned) >= 2:
+                w = cleaned
+            else:
                 continue
             word_counter[w] += 1
 
@@ -732,7 +797,7 @@ def _clean_compound(combo):
         cleaned = _strip_josa(w)
         # 동사 어미 제거 ("유발할" → "유발")
         cleaned = _VERB_ENDINGS.sub("", cleaned)
-        if len(cleaned) >= 2 and cleaned not in _STOPWORDS and cleaned not in BLACKLIST:
+        if len(cleaned) >= 2 and cleaned not in _STOPWORDS and cleaned not in BLACKLIST and cleaned not in _JUNK_WORDS:
             parts.append(cleaned)
     result = " ".join(parts) if parts else ""
     # 최종 결과가 1어절이고 2글자 미만이면 빈 문자열
@@ -776,7 +841,7 @@ def _is_valid_compound(combo, parent_keyword):
                   "이렇게", "그래서", "하지만", "그리고", "때문에",
                   "해방촌", "맛집", "레스토랑", "카페"}
     for part in combo.split():
-        if part in blog_noise or part in _STOPWORDS or part in BLACKLIST:
+        if part in blog_noise or part in _STOPWORDS or part in BLACKLIST or part in _JUNK_WORDS:
             return False
         # "~입니다", "~합니다" 등 종결어미 포함 어절 탈락
         if part.endswith("입니다") or part.endswith("합니다") or part.endswith("됩니다"):
@@ -1274,12 +1339,12 @@ def main():
                         ["마운자로", "위고비", "오젬픽", "비타민D", "유산균",
                          "글루타치온", "콜라겐", "오메가3", "NMN", "코엔자임Q10"]]
 
-    # BLACKLIST 필터: 단독 일반명사 제거
-    before_bl = len(keyword_data)
-    keyword_data = [(kw, cnt) for kw, cnt in keyword_data if kw not in BLACKLIST]
-    bl_removed = before_bl - len(keyword_data)
-    if bl_removed > 0:
-        print(f"  [블랙리스트] {bl_removed}개 일반명사 제거")
+    # 품질 게이트: 블랙리스트 + SEO 스팸 + 동사어미 + 쓰레기어절 필터
+    before_qc = len(keyword_data)
+    keyword_data = [(kw, cnt) for kw, cnt in keyword_data if _is_quality_keyword(kw)]
+    qc_removed = before_qc - len(keyword_data)
+    if qc_removed > 0:
+        print(f"  [품질필터] {qc_removed}개 제거 (블랙리스트/SEO/동사어미/쓰레기)")
 
     # 1.5. 약업계 뉴스 먼저 수집 (W 산출에 필요)
     pharma_news = collect_pharma_news()
@@ -1322,7 +1387,7 @@ def main():
 
     carried = []
     for kw in carried_candidates:
-        if kw in BLACKLIST:
+        if not _is_quality_keyword(kw):
             continue
         if is_health_keyword(kw) or kw in prev_ai:
             carried.append((kw, 3))
@@ -1380,9 +1445,11 @@ def main():
         print(f"    자동완성: {suggestions}")
 
         for rel_kw in suggestions:
-            if rel_kw in scored_keywords or rel_kw in BLACKLIST:
-                if rel_kw in scored_keywords:
-                    print(f"    [{rel_kw}] 이미 분석됨, 스킵")
+            if rel_kw in scored_keywords:
+                print(f"    [{rel_kw}] 이미 분석됨, 스킵")
+                continue
+            if not _is_quality_keyword(rel_kw):
+                print(f"    [{rel_kw}] 품질필터 탈락")
                 continue
             scored_keywords.add(rel_kw)
 

@@ -370,8 +370,8 @@ def build_html(data, keyword_history=None):
 </div>"""
 
     # 통계 요약
-    now_count = sum(1 for t in topics if t["verdict"] == "now")
-    hot_count = sum(1 for t in topics if t["verdict"] == "hot")
+    now_count = sum(1 for t in glgam_topics if t["verdict"] == "now")
+    hot_count = sum(1 for t in glgam_topics if t["verdict"] == "hot")
     glgam_count = len(glgam_topics)
     reg_count = len(reg_topics)
     misc_count = len(misc_topics)

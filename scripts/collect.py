@@ -98,119 +98,6 @@ BLACKLIST = {
 }
 
 
-# ── 키워드 분류 시스템 (글감 / 규제동향 / 미분류) ──
-
-REGULATORY_TERMS = {
-    # 핵심 규제 액션
-    "회수", "중단", "리콜", "판매중지", "공급중단",
-    "규제", "허가", "승인", "약가", "판매",
-    "선결제",
-    # 확장
-    "인허가", "품목허가", "시판허가", "긴급사용",
-    "제재", "과징금", "행정처분",
-}
-
-DRUG_INGREDIENT_TERMS = {
-    # GLP-1 계열
-    "마운자로", "위고비", "삭센다", "오젬픽", "먼자로",
-    "티르제파타이드", "세마글루타이드", "리라글루타이드",
-    # 영양제/건기식
-    "밀크씨슬", "오메가3", "오메가", "비타민", "마그네슘", "콜라겐",
-    "유산균", "프로바이오틱스", "글루타치온", "NMN", "알부민",
-    "루테인", "코엔자임", "아연", "철분", "엽산", "크레아틴",
-    "프로폴리스", "홍삼", "인삼", "쏘팔메토", "실리마린",
-    # 처방약/전문의약품
-    "스테키마", "키트루다", "옵디보", "렉라자",
-    "아스피린", "메트포르민", "스타틴", "로수바스타틴",
-    "타이레놀", "이부프로펜", "아세트아미노펜",
-    # 항체/바이오의약품
-    "항체", "바이오시밀러", "세포치료제", "유전자치료",
-    # 제형/DDS
-    "리포좀", "나노입자", "패치",
-}
-
-DISEASE_CONDITION_TERMS = {
-    "비만", "탈모", "당뇨", "고혈압", "고지혈증",
-    "황반변성", "알레르기", "아토피", "치매", "우울증",
-    "골다공증", "갑상선", "통풍", "관절염", "불면증",
-    "위염", "역류", "변비", "빈혈", "눈떨림",
-    "암", "종양", "폐렴", "간염", "지방간",
-    "대상포진", "수족냉증", "하지불안",
-    "다이어트",  # 비만 관련 검색의도
-    # 건강 지표/검사 수치
-    "혈당", "혈압", "콜레스테롤", "중성지방", "요산",
-    "간수치", "크레아티닌", "헤모글로빈", "체지방",
-}
-
-PRODUCT_SERVICE_TERMS = {
-    # 헬스케어 플랫폼
-    "닥터나우", "굿닥", "똑닥",
-    # 제품 카테고리
-    "다이소 영양제", "종합비타민",
-}
-
-
-def classify_keyword(keyword, news_headlines=None):
-    """키워드를 글감/규제동향/미분류로 분류.
-
-    Args:
-        keyword: 분류할 키워드 문자열
-        news_headlines: 해당 키워드의 뉴스 헤드라인 리스트 [{"title": ...}, ...]
-
-    Returns:
-        "글감" | "규제동향" | "미분류"
-    """
-    if news_headlines is None:
-        news_headlines = []
-
-    kw_lower = keyword.strip()
-
-    # ── 1단계: 규제 키워드 사전 매칭 ──
-
-    # 조건 A: 키워드 자체가 규제 용어에 정확히 매칭
-    if kw_lower in REGULATORY_TERMS:
-        return "규제동향"
-
-    # 조건 B: 1~2글자 범용어이고, 뉴스 헤드라인 50%+ 가 규제 관련
-    if len(kw_lower.replace(" ", "")) <= 2 and news_headlines:
-        reg_count = sum(
-            1 for nh in news_headlines
-            if any(rt in nh.get("title", "") for rt in REGULATORY_TERMS)
-        )
-        if reg_count >= len(news_headlines) * 0.5:
-            return "규제동향"
-
-    # ── 2단계: 글감 적합성 체크 ──
-
-    # 조건 C: 성분/약물/질환/서비스명 포함 여부
-    for term in DRUG_INGREDIENT_TERMS:
-        if term in kw_lower:
-            return "글감"
-
-    for term in DISEASE_CONDITION_TERMS:
-        if term in kw_lower:
-            return "글감"
-
-    for term in PRODUCT_SERVICE_TERMS:
-        if term in kw_lower:
-            return "글감"
-
-    # 조건 D: 2어절 이상 복합 키워드이고 구체적 건강 주제 단어 포함
-    # (약사/약국/병원 같은 직업·장소명만으로는 글감 불가)
-    GENERIC_HEALTH_ROLES = {"약사", "약국", "병원", "의사", "진료", "처방"}
-    parts = kw_lower.split()
-    if len(parts) >= 2:
-        substantive_health = [
-            hw for hw in HEALTH_CONTEXT_WORDS
-            if hw in kw_lower and hw not in GENERIC_HEALTH_ROLES
-        ]
-        if substantive_health:
-            return "글감"
-
-    # ── 3단계: 나머지 ──
-    return "미분류"
-
-
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 0단계: 히스토리 기반 신규성 판단
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1346,9 +1233,8 @@ def generate_interpretations(topics):
         print("\n  [SKIP] AI 해석 — anthropic 패키지 미설치")
         return
 
-    top = [t for t in topics if t.get("keyword_type") == "글감"][:15]
+    top = topics[:15]
     if not top:
-        print("  글감 타입 키워드가 없어 AI 해석 스킵")
         return
 
     print("\n" + "=" * 50)
@@ -1450,9 +1336,9 @@ def generate_briefing(topics, pharma_news):
         print("  [SKIP] 브리핑 — anthropic 패키지 미설치")
         return None
 
-    top = [t for t in topics if t.get("keyword_type") == "글감" and t.get("ai_summary")][:15]
+    top = [t for t in topics if t.get("ai_summary")][:15]
     if not top:
-        print("  AI 해석이 있는 글감 키워드가 없어 브리핑 스킵")
+        print("  AI 해석이 있는 키워드가 없어 브리핑 스킵")
         return None
 
     keyword_lines = []
@@ -1759,23 +1645,7 @@ def main():
     # 7.5. 중복 키워드 병합
     topics = merge_duplicate_topics(topics)
 
-    # 7.6. 키워드 분류 (글감 / 규제동향 / 미분류)
-    print("\n" + "=" * 50)
-    print("7.6단계: 키워드 분류 (글감/규제동향/미분류)")
-    print("=" * 50)
-
-    type_counts = {"글감": 0, "규제동향": 0, "미분류": 0}
-    for t in topics:
-        ktype = classify_keyword(t["keyword"], t.get("news_headlines", []))
-        t["keyword_type"] = ktype
-        type_counts[ktype] += 1
-        print(f"  [{ktype}] {t['keyword']} ({t['score']})")
-
-    print(f"\n  분류 결과: 글감 {type_counts['글감']}개 / "
-          f"규제동향 {type_counts['규제동향']}개 / "
-          f"미분류 {type_counts['미분류']}개")
-
-    # 8. AI 해석 (블로그 기획 포인트) — 글감 타입만
+    # 8. AI 해석 (블로그 기획 포인트)
     generate_interpretations(topics)
 
     # 8-2. AI 종합 브리핑
@@ -1831,11 +1701,7 @@ def main():
     print(f"\n{'=' * 50}")
     print(f"완료! 결과 저장: {output_path}")
     print(f"히스토리 저장: {history_path}")
-    glgam = sum(1 for t in topics if t.get("keyword_type") == "글감")
-    gyuje = sum(1 for t in topics if t.get("keyword_type") == "규제동향")
-    mibun = sum(1 for t in topics if t.get("keyword_type") == "미분류")
-    print(f"  전체 {len(topics)}개 (글감 {glgam} / 규제동향 {gyuje} / 미분류 {mibun})")
-    print(f"  약업계 뉴스 {len(pharma_news)}건")
+    print(f"  글감 {len(topics)}개 분석, 약업계 뉴스 {len(pharma_news)}건")
     print(f"{'=' * 50}")
 
     return result

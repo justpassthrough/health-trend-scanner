@@ -132,10 +132,9 @@ def build_html(data, keyword_history=None):
     pharma_news = data.get("pharma_news", [])
     youtube_trends = data.get("youtube_trends", [])
 
-    # ── 글감 카드 HTML (keyword_type == "글감"만, 미분류시 기본값 글감) ──
-    glgam_topics = [t for t in topics if t.get("keyword_type", "글감") == "글감"]
+    # 글감 카드 HTML
     topic_cards = ""
-    for i, t in enumerate(glgam_topics[:15]):
+    for i, t in enumerate(topics[:15]):
         pharma_tags = ""
         if t.get("pharma_keywords"):
             pharma_tags = " ".join(
@@ -247,65 +246,6 @@ def build_html(data, keyword_history=None):
           </div>
         </div>"""
 
-    # ── 규제동향 카드 HTML (간소화: 점수 + 뉴스 헤드라인만) ──
-    reg_topics = [t for t in topics if t.get("keyword_type") == "규제동향"]
-    reg_cards = ""
-    for t in reg_topics:
-        # 뉴스 헤드라인
-        news_html = ""
-        for nh in t.get("news_headlines", [])[:3]:
-            title = nh["title"][:55]
-            link = nh.get("link", "#")
-            news_html += f'<div class="news-context"><a href="{link}" target="_blank">📰 {title}</a></div>'
-
-        # 추이
-        t_type, t_label, t_scores = calc_trend(t["keyword"], t["score"], keyword_history)
-        trend_html = ""
-        if t_scores:
-            scores_str = " → ".join(str(s) for s in t_scores)
-            trend_html = f'<div class="trend-line">{trend_badge(t_type, t_label)} {scores_str}</div>'
-
-        reg_cards += f"""
-        <div class="card card-reg">
-          <div class="card-header">
-            <span class="keyword">{t["keyword"]}</span>
-            <span class="score">{t["score"]}</span>
-            {verdict_badge(t["verdict"])}
-          </div>
-          <div class="card-body">
-            {trend_html}
-            {news_html}
-          </div>
-        </div>"""
-
-    # ── 미분류 카드 HTML (최소: 키워드 + 점수 + 연관키워드) ──
-    misc_topics = [t for t in topics if t.get("keyword_type") == "미분류"]
-    misc_cards = ""
-    for t in misc_topics:
-        # 연관 키워드 표시
-        aliases = t.get("aliases", [])
-        aliases_html = ""
-        if aliases:
-            alias_str = ", ".join(aliases)
-            aliases_html = f'<span class="misc-aliases">{alias_str}</span>'
-
-        # 추이
-        t_type, t_label, t_scores = calc_trend(t["keyword"], t["score"], keyword_history)
-        trend_html = ""
-        if t_scores:
-            scores_str = " → ".join(str(s) for s in t_scores)
-            trend_html = f' <span class="misc-trend">{trend_badge(t_type, t_label)} {scores_str}</span>'
-
-        misc_cards += f"""
-        <div class="card card-misc">
-          <div class="card-header">
-            <span class="keyword">{t["keyword"]}</span>
-            <span class="score">{t["score"]}</span>
-            {aliases_html}
-          </div>
-          {f'<div class="card-body">{trend_html}</div>' if trend_html else ''}
-        </div>"""
-
     # 유튜브 급등 HTML
     yt_cards = ""
     for v in youtube_trends[:5]:
@@ -370,11 +310,8 @@ def build_html(data, keyword_history=None):
 </div>"""
 
     # 통계 요약
-    now_count = sum(1 for t in glgam_topics if t["verdict"] == "now")
-    hot_count = sum(1 for t in glgam_topics if t["verdict"] == "hot")
-    glgam_count = len(glgam_topics)
-    reg_count = len(reg_topics)
-    misc_count = len(misc_topics)
+    now_count = sum(1 for t in topics if t["verdict"] == "now")
+    hot_count = sum(1 for t in topics if t["verdict"] == "hot")
 
     html = f"""<!DOCTYPE html>
 <html lang="ko">
@@ -686,43 +623,6 @@ def build_html(data, keyword_history=None):
     font-weight: bold;
     color: #3fb950;
   }}
-  .type-summary {{
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin: 0 0 16px;
-  }}
-  .type-badge {{
-    font-size: 11px;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-weight: 600;
-  }}
-  .type-glgam {{ background: #1a3a1a; color: #3fb950; }}
-  .type-reg {{ background: #3a2a0a; color: #d29922; }}
-  .type-misc {{ background: #21262d; color: #8b949e; }}
-  .card-reg {{
-    border-left: 3px solid #d29922;
-  }}
-  .card-reg .card-body {{
-    padding-top: 4px;
-  }}
-  .card-misc {{
-    border-left: 3px solid #484f58;
-    padding: 10px 14px;
-  }}
-  .card-misc .card-header {{
-    margin-bottom: 2px;
-  }}
-  .misc-aliases {{
-    font-size: 11px;
-    color: #8b949e;
-    margin-left: auto;
-  }}
-  .misc-trend {{
-    font-size: 12px;
-    color: #8b949e;
-  }}
   .empty {{
     text-align: center;
     color: #484f58;
@@ -844,20 +744,11 @@ def build_html(data, keyword_history=None):
     <div class="label">분석 키워드</div>
   </div>
 </div>
-<div class="type-summary">
-  <span class="type-badge type-glgam">글감 {glgam_count}</span>
-  <span class="type-badge type-reg">규제동향 {reg_count}</span>
-  <span class="type-badge type-misc">미분류 {misc_count}</span>
-</div>
 
 {briefing_html}
 
 <div class="section-title">🔥 오늘의 글감 (점수순)</div>
-{topic_cards if topic_cards else '<div class="empty">오늘 글감 타입 키워드 없음</div>'}
-
-{"" if not reg_cards else f'<div class="section-title">⚠️ 규제·업계 동향</div>' + reg_cards}
-
-{"" if not misc_cards else f'<div class="section-title">📌 기타 키워드</div>' + misc_cards}
+{topic_cards if topic_cards else '<div class="empty">오늘 분석된 글감 없음</div>'}
 
 <div class="section-title">🎬 유튜브 급등 (네이버에 아직 안 옴)</div>
 {yt_cards}

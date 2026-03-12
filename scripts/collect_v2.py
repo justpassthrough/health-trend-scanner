@@ -441,15 +441,26 @@ def _extract_core_keyword(keyword):
 
 
 def get_news_count_and_headlines(keyword, count=3):
-    """키워드 관련 뉴스 건수 + 상위 헤드라인 반환"""
-    items = fetch_naver_news(keyword, display=100, sort="sim")
+    """키워드 관련 뉴스 총 건수(API total) + 상위 헤드라인 반환"""
+    url = "https://openapi.naver.com/v1/search/news.json"
+    params = {"query": keyword, "display": count, "sort": "sim"}
+    try:
+        r = requests.get(url, headers=NAVER_HEADERS, params=params, timeout=10)
+        r.raise_for_status()
+        data = r.json()
+        total = data.get("total", 0)
+        items = data.get("items", [])
+    except Exception as e:
+        print(f"    [WARN] 뉴스 건수 조회 실패 ({keyword}): {e}")
+        return 0, []
+
     headlines = []
     for item in items[:count]:
         title = re.sub(r"<[^>]+>", "", item.get("title", "")).strip()
         link = item.get("link", "")
         pub_date = item.get("pubDate", "")
         headlines.append({"title": title, "link": link, "date": pub_date})
-    return len(items), headlines
+    return total, headlines
 
 
 def enrich_candidates(candidates):

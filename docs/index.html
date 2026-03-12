@@ -2,942 +2,493 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>건강·약 트렌드 스캐너</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>건강 트렌드 스캐너 v2</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #0d1117;
-    color: #e6edf3;
-    padding: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-    -webkit-font-smoothing: antialiased;
-  }
-  .header {
-    text-align: center;
-    padding: 20px 0 12px;
-    border-bottom: 1px solid #21262d;
-    margin-bottom: 16px;
-  }
-  .header h1 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-  .header .date { font-size: 13px; color: #8b949e; }
-  .summary {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin: 12px 0 20px;
-  }
-  .summary-box {
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 10px;
-    padding: 10px 18px;
-    text-align: center;
-  }
-  .summary-box .num { font-size: 22px; font-weight: 700; }
-  .summary-box .label { font-size: 11px; color: #8b949e; }
-  .section-title {
-    font-size: 15px;
-    font-weight: 700;
-    margin: 24px 0 12px;
-    padding-left: 4px;
-  }
-  .card {
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 12px;
-    padding: 14px;
-    margin-bottom: 10px;
-  }
-  .card-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-  }
-  .rank { color: #8b949e; font-size: 13px; font-weight: 600; }
-  .keyword { font-size: 15px; font-weight: 700; flex: 1; }
-  .score {
-    font-size: 18px;
-    font-weight: 800;
-    color: #58a6ff;
-  }
-  .badge {
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-weight: 600;
-  }
-  .badge.now { background: #1a7f37; color: #fff; }
-  .badge.hot { background: #da3633; color: #fff; }
-  .badge.warm { background: #9e6a03; color: #fff; }
-  .badge.skip { background: #21262d; color: #666; }
-  .score-bar {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-  }
-  .score-bar span {
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: 600;
-  }
-  .score-n { background: #1c3a5e; color: #58a6ff; }
-  .score-t { background: #1a3a1a; color: #3fb950; }
-  .score-w { background: #3a2a0a; color: #d29922; }
-  .score-r { background: #2d1b4e; color: #bc8cff; }
-  .badge-new {
-    background: #f85149;
-    color: #fff;
-    font-size: 10px;
-    padding: 1px 5px;
-    border-radius: 4px;
-    font-weight: 700;
-  }
-  .metrics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    font-size: 12px;
-  }
-  .metric {
-    background: #21262d;
-    padding: 3px 8px;
-    border-radius: 6px;
-    color: #8b949e;
-  }
-  .intent {
-    padding: 3px 8px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .intent.doubt { background: #1a3a1a; color: #3fb950; }
-  .intent.shop { background: #3a1a1a; color: #f85149; }
-  .intent.neutral { background: #21262d; color: #8b949e; }
-  .gap-high { background: #1a3a1a !important; color: #3fb950 !important; }
-  .gap-mid { background: #3a2a0a !important; color: #d29922 !important; }
-  .gap-low { background: #3a1a1a !important; color: #f85149 !important; }
-  .gap-normal { background: #21262d !important; color: #8b949e !important; }
-  .pharma-tags { margin-top: 6px; }
-  .tag.pharma {
-    font-size: 11px;
-    background: #1c2541;
-    color: #58a6ff;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-right: 4px;
-  }
-  .aliases {
-    font-size: 12px;
-    color: #8b949e;
-    padding: 0 14px 4px;
-  }
-  .ai-summary {
-    font-size: 13px;
-    line-height: 1.6;
-    background: #1a1525;
-    border: 1px solid #2d2640;
-    border-radius: 8px;
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    color: #d4c8ef;
-    white-space: pre-line;
-  }
-  .ai-summary .ai-icon {
-    margin-right: 4px;
-  }
-  .ai-extras {
-    font-size: 12px;
-    margin-top: 4px;
-    margin-bottom: 8px;
-  }
-  .title-idea {
-    color: #58a6ff;
-    margin-bottom: 2px;
-  }
-  .target-reader {
-    color: #8b949e;
-  }
-  .parent-note {
-    font-size: 12px;
-    color: #58a6ff;
-    margin-bottom: 6px;
-    padding: 3px 8px;
-    background: #0d1117;
-    border-radius: 6px;
-    border-left: 3px solid #58a6ff;
-  }
-  .trend-line {
-    font-size: 12px;
-    color: #8b949e;
-    margin-bottom: 6px;
-    padding: 4px 8px;
-    background: #0d1117;
-    border-radius: 6px;
-    border-left: 3px solid #21262d;
-  }
-  .trend-up {
-    color: #3fb950;
-    font-weight: 600;
-    margin-right: 6px;
-  }
-  .trend-down {
-    color: #f85149;
-    font-weight: 600;
-    margin-right: 6px;
-  }
-  .trend-flat {
-    color: #8b949e;
-    font-weight: 600;
-    margin-right: 6px;
-  }
-  .trend-new {
-    color: #58a6ff;
-    font-weight: 600;
-    margin-right: 6px;
-  }
-  .news-context {
-    margin-bottom: 6px;
-  }
-  .news-context a {
-    font-size: 12px;
-    color: #c9d1d9;
-    text-decoration: none;
-    line-height: 1.5;
-  }
-  .news-context a:hover { color: #58a6ff; }
-  .yt-note {
-    font-size: 11px;
-    color: #8b949e;
-    margin-top: 6px;
-    padding: 4px 8px;
-    background: #1a1a2e;
-    border-radius: 6px;
-  }
-  .yt-card {
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 10px;
-    padding: 12px;
-    margin-bottom: 8px;
-  }
-  .yt-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-  .yt-meta { font-size: 11px; color: #8b949e; }
-  .news-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 0;
-    border-bottom: 1px solid #21262d;
-    font-size: 13px;
-  }
-  .news-icon { font-size: 14px; }
-  .news-title {
-    flex: 1;
-    color: #e6edf3;
-    text-decoration: none;
-  }
-  .news-title:hover { color: #58a6ff; }
-  .news-tag {
-    font-size: 10px;
-    background: #21262d;
-    padding: 2px 6px;
-    border-radius: 4px;
-    color: #8b949e;
-    white-space: nowrap;
-  }
-  .briefing-box {
-    background: #1a2332;
-    border: 1px solid #3fb950;
-    border-radius: 10px;
-    padding: 16px;
-    margin: 12px 0;
-  }
-  .briefing-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  .briefing-flow {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 12px;
-    color: #c9d1d9;
-  }
-  .briefing-subtitle {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  .briefing-reco {
-    padding-left: 20px;
-    margin: 8px 0;
-    list-style: none;
-  }
-  .briefing-reco li {
-    margin: 6px 0;
-  }
-  .reco-title {
-    color: #58a6ff;
-    font-weight: bold;
-  }
-  .reco-reason {
-    color: #8b949e;
-    font-size: 12px;
-  }
-  .briefing-avoid {
-    color: #d29922;
-    font-size: 13px;
-    margin: 8px 0;
-  }
-  .briefing-oneliner {
-    background: #1f3a1f;
-    padding: 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    color: #3fb950;
-  }
-  .empty {
-    text-align: center;
-    color: #484f58;
-    padding: 20px;
-    font-size: 13px;
-  }
-  .refresh-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 10px;
-    padding: 10px 14px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .refresh-info {
-    font-size: 11px;
-    color: #8b949e;
-    line-height: 1.6;
-  }
-  .refresh-btn {
-    background: #238636;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  .refresh-btn:hover { background: #2ea043; }
-  .refresh-btn:disabled {
-    background: #21262d;
-    color: #484f58;
-    cursor: not-allowed;
-  }
-  .token-setup {
-    font-size: 11px;
-    color: #484f58;
-    text-align: center;
-    margin-top: 6px;
-  }
-  .token-setup a { color: #58a6ff; text-decoration: none; }
-  .token-input {
-    width: 100%;
-    background: #0d1117;
-    border: 1px solid #21262d;
-    border-radius: 6px;
-    color: #e6edf3;
-    padding: 6px 10px;
-    font-size: 12px;
-    margin-top: 6px;
-  }
-  .token-save-btn {
-    background: #238636;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 6px 14px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  .token-save-btn:hover { background: #2ea043; }
-  .status-msg {
-    font-size: 11px;
-    color: #8b949e;
-    margin-top: 6px;
-    text-align: center;
-  }
-  .footer {
-    text-align: center;
-    font-size: 11px;
-    color: #484f58;
-    margin-top: 30px;
-    padding: 20px 0;
-    border-top: 1px solid #21262d;
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  min-height: 100vh;
+  padding: 16px;
+  padding-bottom: 80px;
+}
+
+/* 헤더 */
+.header {
+  text-align: center;
+  padding: 20px 0 12px;
+}
+.header h1 {
+  font-size: 22px;
+  color: #58a6ff;
+  margin-bottom: 4px;
+}
+.header .subtitle {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+/* 날짜 네비게이터 */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+.nav button {
+  background: #21262d;
+  color: #e6edf3;
+  border: 1px solid #30363d;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.nav button:hover { background: #30363d; }
+.nav button:disabled { opacity: 0.4; cursor: default; }
+.nav select {
+  background: #21262d;
+  color: #e6edf3;
+  border: 1px solid #30363d;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* 통계 바 */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0 20px;
+  flex-wrap: wrap;
+}
+.stat-badge {
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+.stat-badge.new { border-color: #2ea043; color: #3fb950; }
+.stat-badge.existing { border-color: #d29922; color: #e3b341; }
+
+/* 카테고리 필터 */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 0 20px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: #21262d;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  padding: 5px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+.filter-btn:hover { color: #e6edf3; }
+.filter-btn.active {
+  background: #1f6feb33;
+  color: #58a6ff;
+  border-color: #1f6feb;
+}
+
+/* 섹션 */
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 0 8px;
+  border-bottom: 1px solid #21262d;
+  margin-bottom: 12px;
+}
+.section-title.new { color: #3fb950; }
+.section-title.existing { color: #e3b341; }
+
+/* 카드 */
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: #58a6ff44; }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+.card-rank {
+  font-size: 13px;
+  color: #8b949e;
+  min-width: 24px;
+}
+.card-keyword {
+  font-size: 17px;
+  font-weight: 600;
+  flex: 1;
+}
+.card-category {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.cat-supplement { background: #2ea04322; color: #3fb950; border: 1px solid #2ea04366; }
+.cat-pharma { background: #f8514922; color: #f85149; border: 1px solid #f8514966; }
+.cat-disease { background: #58a6ff22; color: #58a6ff; border: 1px solid #58a6ff66; }
+.cat-consumer { background: #d2992222; color: #e3b341; border: 1px solid #d2992266; }
+
+.card-section {
+  margin: 10px 0;
+  padding: 10px 12px;
+  background: #0d111799;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.card-section .label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+.label-why { color: #58a6ff; }
+.label-angle { color: #bc8cff; }
+.label-title { color: #3fb950; }
+
+.card-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #8b949e;
+}
+.meta-tag {
+  background: #21262d;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.meta-tag.rising { color: #3fb950; }
+.meta-tag.falling { color: #f85149; }
+.meta-tag.gap-big { color: #e3b341; }
+
+.covered-badge {
+  display: inline-block;
+  background: #d2992222;
+  color: #e3b341;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+.covered-posts {
+  font-size: 12px;
+  color: #8b949e;
+  margin-top: 6px;
+  padding-left: 12px;
+  border-left: 2px solid #30363d;
+}
+
+.source-headlines {
+  font-size: 12px;
+  color: #8b949e;
+  margin-top: 8px;
+}
+.source-headlines a {
+  color: #8b949e;
+  text-decoration: none;
+}
+.source-headlines a:hover { color: #58a6ff; }
+
+.consecutive-badge {
+  display: inline-block;
+  background: #58a6ff22;
+  color: #58a6ff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+/* 푸터 */
+.footer {
+  text-align: center;
+  color: #484f58;
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+/* 빈 상태 */
+.empty {
+  text-align: center;
+  color: #484f58;
+  padding: 40px;
+  font-size: 14px;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  body { padding: 10px; }
+  .card { padding: 12px; }
+  .card-keyword { font-size: 15px; }
+}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>건강·약 트렌드 스캐너</h1>
-  <div class="date">2026-03-12</div>
+  <h1>건강 트렌드 스캐너 v2</h1>
+  <div class="subtitle">약사 블로거를 위한 AI 글감 발굴기</div>
 </div>
 
-<div class="refresh-bar">
-  <div class="refresh-info">
-    네이버: 2026-03-12 10:48<br>
-    유튜브: 2026-03-12 10:48
-  </div>
-  <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()">실시간 갱신</button>
-</div>
-<div class="token-setup" id="tokenSetup" style="display:none;">
-  <span>GitHub PAT 입력 (최초 1회):</span>
-  <div style="display:flex;gap:6px;margin-top:6px;">
-    <input type="password" class="token-input" id="tokenInput" placeholder="ghp_xxxx 또는 github_pat_xxxx" style="margin-top:0;flex:1;">
-    <button class="token-save-btn" onclick="saveToken(document.getElementById('tokenInput').value)">저장</button>
-  </div>
+<div class="nav">
+  <button id="prevBtn" onclick="navigate(-1)">&#9664; 이전</button>
+  <select id="scanSelect" onchange="loadScan(this.value)"></select>
+  <button id="nextBtn" onclick="navigate(1)">다음 &#9654;</button>
 </div>
 
-<div class="summary">
-  <div class="summary-box">
-    <div class="num" style="color:#3fb950">3</div>
-    <div class="label">NOW</div>
-  </div>
-  <div class="summary-box">
-    <div class="num" style="color:#da3633">23</div>
-    <div class="label">HOT</div>
-  </div>
-  <div class="summary-box">
-    <div class="num">42</div>
-    <div class="label">분석 키워드</div>
-  </div>
-</div>
+<div class="stats" id="statsBar"></div>
 
+<div class="filters" id="filterBar"></div>
 
-
-<div class="section-title">🔥 오늘의 글감 (점수순)</div>
-
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#1</span>
-            <span class="keyword">제약</span>
-            <span class="score">93.1</span>
-            <span class="badge now">지금 써라</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:5</span><span class="score-w">W:25 💊</span><span class="score-r">×R:1.33</span> <span class="badge-new">NEW</span></div>
-            
-            
-            
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 93.1</div>
-            <div class="news-context"><a href="http://www.hansbiz.co.kr/news/articleView.html?idxno=823815" target="_blank">📰 박재현 대표 사의…한미약품 전문경영인 체제 분수령</a></div><div class="news-context"><a href="http://www.00news.co.kr/news/articleView.html?idxno=102552" target="_blank">📰 ['클릭' 증시] '네 마녀의 심술' 잠재운 개인 투자자</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span> <span class="tag pharma">약물</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#2</span>
-            <span class="keyword">부작용</span>
-            <span class="score">87.8</span>
-            <span class="badge now">지금 써라</span>
-          </div>
-          <div class="aliases">(= 양배추즙 부작용, 부작용 초래, 부작용 노화방지, 부작용 발생, 효능 부작용)</div>
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:10</span><span class="score-w">W:15 💊</span><span class="score-r">×R:1.35</span> <span class="badge-new">NEW</span></div>
-            
-            
-            
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 87.8</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/658/0000137808?sid=101" target="_blank">📰 ‘오일 쇼크’ 최소화 초강수…장기화 땐 공급 축소 등 우려</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/011/0004598753?sid=101" target="_blank">📰 주유소 경유값, 1713원 이하로 묶는다</a></div>
-            <div class="metrics">
-              <span class="intent neutral">중립</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#3</span>
-            <span class="keyword">라이프케어</span>
-            <span class="score">80.5</span>
-            <span class="badge now">지금 써라</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:10</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.15</span> <span class="badge-new">NEW</span></div>
-            
-            
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 84.0 → 80.5</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/011/0004598705?sid=101" target="_blank">📰 HLB라이프케어, 초소형 연속혈당측정기 ‘피코링’ 식약처 허가</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/117/0004043367?sid=103" target="_blank">📰 [마이펫] 펫프렌즈, 연매출 1285억·첫 흑자…“펫커머스 1위 굳힌다”</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#4</span>
-            <span class="keyword">초소형</span>
-            <span class="score">69.8</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:25 💊</span><span class="score-r">×R:1.27</span> <span class="badge-new">NEW</span></div>
-            
-            
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 83.3 → 69.8</div>
-            <div class="news-context"><a href="https://www.ggilbo.com/news/articleView.html?idxno=1146431" target="_blank">📰 [주식마감] 중동 긴장에 재생에너지·통신주 들썩... SK이터닉스·에치에...</a></div><div class="news-context"><a href="http://www.finomy.com/news/articleView.html?idxno=251320" target="_blank">📰 양자암호·양자컴퓨팅 관련주, '싱글벙글' 알엔티엑스·쏠리드·큐에스...</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">상호작용</span> <span class="tag pharma">부작용</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#5</span>
-            <span class="keyword">고혈압 당뇨</span>
-            <span class="score">68.5</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:15</span><span class="score-w">W:5</span><span class="score-r">×R:1.37</span> <span class="badge-new">NEW</span></div>
-            
-            
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 77.0 → 68.5</div>
-            <div class="news-context"><a href="https://ilyo.co.kr/?ac=article_view&entry_id=509555" target="_blank">📰 &quot;병원 대신 살던 집에서&quot;...안산시, 초고령사회 '존엄한 노후'의 이정표...</a></div><div class="news-context"><a href="https://www.dkilbo.com/news/articleView.html?idxno=536893" target="_blank">📰 청도군, 보건소·민간병의원 연결…농촌형 스마트 의료 확대</a></div>
-            <div class="metrics">
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">함량</span> <span class="tag pharma">부작용</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#6</span>
-            <span class="keyword">다이어트 식단</span>
-            <span class="score">65.0</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          <div class="aliases">(= 다이어트)</div>
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:10</span><span class="score-w">W:0</span><span class="score-r">×R:1.3</span> <span class="badge-new">NEW</span></div>
-            
-            
-            <div class="parent-note">↑ "다이어트" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 65.0</div>
-            <div class="news-context"><a href="https://m.entertain.naver.com/article/609/0001101959" target="_blank">📰 한혜연, 44kg 비결 “주사 맞고 병원 간 것 아냐”</a></div><div class="news-context"><a href="http://www.economytalk.kr/news/articleView.html?idxno=418956" target="_blank">📰 &quot;컴퓨존 라이브&quot; 캐시닥· 타임스프레드· 지니어트 용돈퀴즈 문제+정답...</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">함량</span> <span class="tag pharma">부작용</span> <span class="tag pharma">대사</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#7</span>
-            <span class="keyword">피코링</span>
-            <span class="score">64.9</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          <div class="aliases">(= 피코링 당뇨)</div>
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:30</span><span class="score-t">T:0</span><span class="score-w">W:25 💊</span><span class="score-r">×R:1.18</span> <span class="badge-new">NEW</span></div>
-            
-            
-            
-            <div class="trend-line"><span class="trend-down">↓ 하락</span> 82.6 → 64.9</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/011/0004598705?sid=101" target="_blank">📰 HLB라이프케어, 초소형 연속혈당측정기 ‘피코링’ 식약처 허가</a></div><div class="news-context"><a href="https://n.news.naver.com/mnews/article/117/0004043362?sid=102" target="_blank">📰 [제약바이오 브리핑] 로킷헬스케어, 차세대 발모 소재 전임상서 ‘모 구...</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#8</span>
-            <span class="keyword">두유 다이어트</span>
-            <span class="score">64.5</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:10</span><span class="score-w">W:0</span><span class="score-r">×R:1.29</span> <span class="badge-new">NEW</span></div>
-            
-            
-            <div class="parent-note">↑ "다이어트" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 64.5</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/346/0000106067?sid=103" target="_blank">📰 검은콩 ‘이렇게’ 먹으면 살 빼는 데 큰 도움</a></div><div class="news-context"><a href="http://www.economytalk.kr/news/articleView.html?idxno=418873" target="_blank">📰 [종합]&quot;우리은행, 듀이셀, 소이비랩&quot; 등 3월 11일 캐시워크 돈버는퀴즈...</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">용량</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#9</span>
-            <span class="keyword">식약처</span>
-            <span class="score">60.5</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          <div class="aliases">(= 식약처 인증, 식약처 기억력·인지력, 인지질 식약처, 식약처 인정, 코큐텐 식약처)</div>
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:0</span><span class="score-t">T:20</span><span class="score-w">W:30 💊</span><span class="score-r">×R:1.21</span></div>
-            
-            
-            
-            <div class="trend-line"><span class="trend-flat">→ 유지</span> 54.9 → 53.5 → 62.0 → 60.5</div>
-            <div class="news-context"><a href="https://medicalworldnews.co.kr/news/view.php?idx=1510973459" target="_blank">📰 낙동강 인근 농산물(쌀, 무, 배추) 녹조독소 불검출</a></div><div class="news-context"><a href="https://www.yakup.com/news/index.html?mode=view&cat=12&nid=324514" target="_blank">📰 식약처 &quot;화장품정책 조율하는 컨트롤타워 역할 할 것&quot;</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-mid">전문가 부족</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">처방</span> <span class="tag pharma">성분</span> <span class="tag pharma">함량</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#10</span>
-            <span class="keyword">알레르기 비염</span>
-            <span class="score">59.9</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          <div class="aliases">(= 알레르기)</div>
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:5</span><span class="score-w">W:0</span><span class="score-r">×R:1.33</span> <span class="badge-new">NEW</span></div>
-            
-            
-            <div class="parent-note">↑ "알레르기" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 59.9</div>
-            <div class="news-context"><a href="https://www.thepublic.kr/news/articleView.html?idxno=297221" target="_blank">📰 &quot;야외 활동 증가하는 봄, 건강 주의하세요&quot;</a></div><div class="news-context"><a href="http://www.bokuennews.com/news/article.html?no=275085" target="_blank">📰 야외 활동 증가하는 봄철, 알레르기 비염·피로 관리 솔루션 제시</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span> <span class="tag pharma">약물</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#11</span>
-            <span class="keyword">알레르기 반응</span>
-            <span class="score">59.4</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:5</span><span class="score-w">W:0</span><span class="score-r">×R:1.32</span> <span class="badge-new">NEW</span></div>
-            
-            
-            <div class="parent-note">↑ "알레르기" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 59.4</div>
-            <div class="news-context"><a href="https://news.hidoc.co.kr/news/articleView.html?idxno=59666" target="_blank">📰 &quot;뚫리면 감염 위험 커진다&quot;… 호흡기 1차 방어선 '코'가 중요한 이유</a></div><div class="news-context"><a href="http://www.docdocdoc.co.kr/news/articleView.html?idxno=3037220" target="_blank">📰 [신간] 우리 아이를 위한 소아응급처치</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">성분</span> <span class="tag pharma">부작용</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#12</span>
-            <span class="keyword">염증 알레르기</span>
-            <span class="score">56.0</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.4</span> <span class="badge-new">NEW</span></div>
-            
-            
-            <div class="parent-note">↑ "알레르기" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 56.0</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/014/0005490738?sid=103" target="_blank">📰 인삼처럼 면역력 강화 돕는 도라지... 환절기에 먹으면 기침감기 줄어들...</a></div><div class="news-context"><a href="http://www.gndomin.com/news/articleView.html?idxno=468257" target="_blank">📰 기획칼럼-진주정신, 다시 천년을 깨우다(10)-미두(米豆), 천년 진주의 밥...</a></div>
-            <div class="metrics">
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">성분</span> <span class="tag pharma">부작용</span> <span class="tag pharma">약물</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#13</span>
-            <span class="keyword">단백질 비타민</span>
-            <span class="score">54.0</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          <div class="aliases">(= 비타민)</div>
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.35</span> <span class="badge-new">NEW</span></div>
-            
-            
-            <div class="parent-note">↑ "비타민" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 54.0</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/346/0000106129?sid=103" target="_blank">📰 새치 갑자기 많아졌다면, 스트레스보다 ‘혈당’ 먼저 확인을</a></div><div class="news-context"><a href="https://www.insight.co.kr/news/546271" target="_blank">📰 눅눅한 김 버리려다 '이 방법' 써보니... &quot;가족들이 고기보다 더 좋아해...</a></div>
-            <div class="metrics">
-              <span class="intent neutral">중립</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">성분</span> <span class="tag pharma">함량</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#14</span>
-            <span class="keyword">비타민 미네랄</span>
-            <span class="score">52.0</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:15</span><span class="score-t">T:25</span><span class="score-w">W:0</span><span class="score-r">×R:1.3</span></div>
-            
-            
-            <div class="parent-note">↑ "비타민" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 52.0</div>
-            <div class="news-context"><a href="https://n.news.naver.com/mnews/article/346/0000106129?sid=103" target="_blank">📰 새치 갑자기 많아졌다면, 스트레스보다 ‘혈당’ 먼저 확인을</a></div><div class="news-context"><a href="https://www.womaneconomy.co.kr/news/articleView.html?idxno=250959" target="_blank">📰 [분석] &quot;장기전 갈수록 美에 불리&quot;···미·이 충돌, 왜 中 희토류 카드...</a></div>
-            <div class="metrics">
-              <span class="intent shop">구매/추천형</span>
-              <span class="metric gap-high">전문가 갭 큼</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">성분</span> <span class="tag pharma">대사</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="rank">#15</span>
-            <span class="keyword">가이드 비타민B12</span>
-            <span class="score">50.8</span>
-            <span class="badge hot">주목!</span>
-          </div>
-          
-          <div class="card-body">
-            <div class="score-bar"><span class="score-n">N:40</span><span class="score-t">T:0</span><span class="score-w">W:0</span><span class="score-r">×R:1.27</span> <span class="badge-new">NEW</span></div>
-            
-            
-            <div class="parent-note">↑ "비타민" 연관검색어에서 발견</div>
-            <div class="trend-line"><span class="trend-new">🆕 신규</span> 50.8</div>
-            <div class="news-context"><a href="https://news.hidoc.co.kr/news/articleView.html?idxno=59394" target="_blank">📰 의지보다 중요한 '뇌 체력'… 새 학기, '비타민 B' 균형 섭취가 중요한...</a></div><div class="news-context"><a href="https://news.hidoc.co.kr/news/articleView.html?idxno=59093" target="_blank">📰 당뇨 환자 절반이 겪는 '말초신경병증'...&quot;발 감각 잃기 전에 혈당 잡아...</a></div>
-            <div class="metrics">
-              <span class="intent doubt">의심/경고형</span>
-              <span class="metric gap-mid">전문가 부족</span>
-            </div>
-            <div class="pharma-tags"><span class="tag pharma">복용법</span> <span class="tag pharma">성분</span> <span class="tag pharma">함량</span></div>
-          </div>
-        </div>
-
-<div class="section-title">🎬 유튜브 급등 (네이버에 아직 안 옴)</div>
-
-        <div class="yt-card">
-          <div class="yt-title">🎬 종합비타민 매일 먹으면, 노화 늦춘다… 50초 안에 설명하기</div>
-          <div class="yt-meta">꽉TV · 29.9만회</div>
-        </div>
-        <div class="yt-card">
-          <div class="yt-title">🎬 비타민C와 혈당</div>
-          <div class="yt-meta">송학운 · 6.3만회</div>
-        </div>
-        <div class="yt-card">
-          <div class="yt-title">🎬 우울할 때 꺼내 보는 '인간 비타민' 아기 웃음 (심장주의)</div>
-          <div class="yt-meta">세상훈훈 · 5.0만회</div>
-        </div>
-
-<div class="section-title">📰 약업계 헤드라인</div>
-
-        <div class="news-item">
-          <span class="news-icon">🔴</span>
-          <a href="https://n.news.naver.com/mnews/article/011/0004598705?sid=101" target="_blank" class="news-title">HLB라이프케어, 초소형 연속혈당측정기 ‘피코링’ 식약처 허가</a>
-          <span class="news-tag">허가</span>
-        </div>
-        <div class="news-item">
-          <span class="news-icon">🔴</span>
-          <a href="http://www.lawissue.co.kr/view.php?ud=202603121712584070f4ab64559d_12" target="_blank" class="news-title">HLB라이프케어, 초소형 스마트 연속혈당측정기 ‘피코링’ 식약처 허가</a>
-          <span class="news-tag">허가</span>
-        </div>
-        <div class="news-item">
-          <span class="news-icon">🔴</span>
-          <a href="https://n.news.naver.com/mnews/article/421/0008822916?sid=103" target="_blank" class="news-title">HLB라이프케어, 초소형 스마트 연속혈당측정기 '피코링' 식약처 허가</a>
-          <span class="news-tag">허가</span>
-        </div>
-        <div class="news-item">
-          <span class="news-icon">🌐</span>
-          <a href="https://n.news.naver.com/mnews/article/032/0003432875?sid=102" target="_blank" class="news-title">정작 필요한 환자는 못 구하는 ‘마운자로’···다이어트 열풍 속 ‘품...</a>
-          <span class="news-tag">마운자로</span>
-        </div>
-        <div class="news-item">
-          <span class="news-icon">🟡</span>
-          <a href="http://www.4th.kr/news/articleView.html?idxno=2108893" target="_blank" class="news-title">[4th-Medi] 약가개편 공방 지속…&quot;건보 재정개혁&quot; vs &quot;제약산업 위축&q</a>
-          <span class="news-tag">약가</span>
-        </div>
-        <div class="news-item">
-          <span class="news-icon">🔴</span>
-          <a href="http://www.newsworker.co.kr/news/articleView.html?idxno=416761" target="_blank" class="news-title">불닭볶음면 벨라루스서 회수된 사연...덴마크 리콜처럼 마케팅 효과로 ...</a>
-          <span class="news-tag">리콜</span>
-        </div>
-        <div class="news-item">
-          <span class="news-icon">🔴</span>
-          <a href="https://mdtoday.co.kr/news/view/1065576202397210" target="_blank" class="news-title">애경산업, 치약 금지 성분 검출에도 회수율 8%에 그쳐</a>
-          <span class="news-tag">회수</span>
-        </div>
-        <div class="news-item">
-          <span class="news-icon">🔴</span>
-          <a href="https://www.insidevina.com/news/articleView.html?idxno=42650" target="_blank" class="news-title">베트남, '금지성분' 함유 화장품 291종 리콜…韓브랜드 포함</a>
-          <span class="news-tag">리콜</span>
-        </div>
-        <div class="news-item">
-          <span class="news-icon">🟡</span>
-          <a href="https://www.medicaltimes.com/Main/News/NewsView.html?ID=1167536&ref=naverpc" target="_blank" class="news-title">스킨부스터 광풍속 환자안전 실종…뚫려버린 규제 사각지대</a>
-          <span class="news-tag">규제</span>
-        </div>
-        <div class="news-item">
-          <span class="news-icon">🔴</span>
-          <a href="https://n.news.naver.com/mnews/article/029/0003013718?sid=101" target="_blank" class="news-title">[단독] 애경 ‘금지성분 중국산 치약’ 회수율 8% 그쳐… 뒷감당은 태광...</a>
-          <span class="news-tag">회수</span>
-        </div>
+<div id="content"></div>
 
 <div class="footer">
-  건강·약 트렌드 스캐너 · 매일 07:30 / 13:00 / 19:00 / 00:00 자동 갱신<br>
-  점수 = (N신규성 + T모멘텀 + W뉴스파동) × R적합도
+  <span id="costInfo"></span><br>
+  건강 트렌드 스캐너 v2 · AI-powered blog topic discovery
 </div>
 
 <script>
-const REPO = 'justpassthrough/health-trend-scanner';
-const WORKFLOW = 'daily_scan.yml';
+// ── 데이터 ──
+const SCAN_LIST = ["latest"];
+const ALL_SCANS = {"latest": {"date": "2026-03-12", "updated_at": "2026-03-12 10:48", "naver_updated_at": "2026-03-12 10:48", "youtube_updated_at": "2026-03-12 10:48", "topics": [{"keyword": "제약", "score": 93.1, "verdict": "now", "n": 40, "t": 5, "w": 25, "r": 1.33, "change_rate": 2.5, "intent_type": "구매/추천형", "pharma_keywords": ["성분", "부작용", "약물"], "g_total": 6977667, "g_expert": 104403, "g_label": "전문가 갭 큼", "news_count": 19, "news_headlines": [{"title": "박재현 대표 사의…한미약품 전문경영인 체제 분수령", "link": "http://www.hansbiz.co.kr/news/articleView.html?idxno=823815"}, {"title": "['클릭' 증시] '네 마녀의 심술' 잠재운 개인 투자자", "link": "http://www.00news.co.kr/news/articleView.html?idxno=102552"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "부작용", "score": 87.8, "verdict": "now", "n": 40, "t": 10, "w": 15, "r": 1.35, "change_rate": 6.4, "intent_type": "중립", "pharma_keywords": ["처방", "성분", "부작용", "약물"], "g_total": 9657609, "g_expert": 226307, "g_label": "전문가 갭 큼", "news_count": 15, "news_headlines": [{"title": "‘오일 쇼크’ 최소화 초강수…장기화 땐 공급 축소 등 우려", "link": "https://n.news.naver.com/mnews/article/658/0000137808?sid=101"}, {"title": "주유소 경유값, 1713원 이하로 묶는다", "link": "https://n.news.naver.com/mnews/article/011/0004598753?sid=101"}], "aliases": ["양배추즙 부작용", "부작용 초래", "부작용 노화방지", "부작용 발생", "효능 부작용"], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "라이프케어", "score": 80.5, "verdict": "now", "n": 30, "t": 10, "w": 30, "r": 1.15, "change_rate": 6.9, "intent_type": "구매/추천형", "pharma_keywords": ["용량"], "g_total": 69447, "g_expert": 704, "g_label": "전문가 갭 큼", "news_count": 21, "news_headlines": [{"title": "HLB라이프케어, 초소형 연속혈당측정기 ‘피코링’ 식약처 허가", "link": "https://n.news.naver.com/mnews/article/011/0004598705?sid=101"}, {"title": "[마이펫] 펫프렌즈, 연매출 1285억·첫 흑자…“펫커머스 1위 굳힌다”", "link": "https://n.news.naver.com/mnews/article/117/0004043367?sid=103"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "초소형", "score": 69.8, "verdict": "hot", "n": 30, "t": 0, "w": 25, "r": 1.27, "change_rate": -5.9, "intent_type": "구매/추천형", "pharma_keywords": ["상호작용", "부작용"], "g_total": 497133, "g_expert": 1528, "g_label": "전문가 갭 큼", "news_count": 15, "news_headlines": [{"title": "[주식마감] 중동 긴장에 재생에너지·통신주 들썩... SK이터닉스·에치에...", "link": "https://www.ggilbo.com/news/articleView.html?idxno=1146431"}, {"title": "양자암호·양자컴퓨팅 관련주, '싱글벙글' 알엔티엑스·쏠리드·큐에스...", "link": "http://www.finomy.com/news/articleView.html?idxno=251320"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "고혈압 당뇨", "score": 68.5, "verdict": "hot", "n": 30, "t": 15, "w": 5, "r": 1.37, "change_rate": 17.8, "intent_type": "의심/경고형", "pharma_keywords": ["처방", "함량", "부작용", "대사", "약물"], "g_total": 369018, "g_expert": 5027, "g_label": "전문가 갭 큼", "news_count": 3, "news_headlines": [{"title": "&quot;병원 대신 살던 집에서&quot;...안산시, 초고령사회 '존엄한 노후'의 이정표...", "link": "https://ilyo.co.kr/?ac=article_view&entry_id=509555"}, {"title": "청도군, 보건소·민간병의원 연결…농촌형 스마트 의료 확대", "link": "https://www.dkilbo.com/news/articleView.html?idxno=536893"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "다이어트 식단", "score": 65.0, "verdict": "hot", "n": 40, "t": 10, "w": 0, "r": 1.3, "change_rate": 12.8, "intent_type": "구매/추천형", "pharma_keywords": ["함량", "부작용", "대사"], "g_total": 1737396, "g_expert": 2273, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "한혜연, 44kg 비결 “주사 맞고 병원 간 것 아냐”", "link": "https://m.entertain.naver.com/article/609/0001101959"}, {"title": "&quot;컴퓨존 라이브&quot; 캐시닥· 타임스프레드· 지니어트 용돈퀴즈 문제+정답...", "link": "http://www.economytalk.kr/news/articleView.html?idxno=418956"}], "parent": "다이어트", "aliases": ["다이어트"], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "피코링", "score": 64.9, "verdict": "hot", "n": 30, "t": 0, "w": 25, "r": 1.18, "change_rate": 0, "intent_type": "구매/추천형", "pharma_keywords": ["성분"], "g_total": 340, "g_expert": 0, "g_label": "전문가 갭 큼", "news_count": 18, "news_headlines": [{"title": "HLB라이프케어, 초소형 연속혈당측정기 ‘피코링’ 식약처 허가", "link": "https://n.news.naver.com/mnews/article/011/0004598705?sid=101"}, {"title": "[제약바이오 브리핑] 로킷헬스케어, 차세대 발모 소재 전임상서 ‘모 구...", "link": "https://n.news.naver.com/mnews/article/117/0004043362?sid=102"}], "aliases": ["피코링 당뇨"], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "두유 다이어트", "score": 64.5, "verdict": "hot", "n": 40, "t": 10, "w": 0, "r": 1.29, "change_rate": 9.3, "intent_type": "구매/추천형", "pharma_keywords": ["용량", "성분", "부작용"], "g_total": 400086, "g_expert": 1659, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "검은콩 ‘이렇게’ 먹으면 살 빼는 데 큰 도움", "link": "https://n.news.naver.com/mnews/article/346/0000106067?sid=103"}, {"title": "[종합]&quot;우리은행, 듀이셀, 소이비랩&quot; 등 3월 11일 캐시워크 돈버는퀴즈...", "link": "http://www.economytalk.kr/news/articleView.html?idxno=418873"}], "parent": "다이어트", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "식약처", "score": 60.5, "verdict": "hot", "n": 0, "t": 20, "w": 30, "r": 1.21, "change_rate": 39.0, "intent_type": "구매/추천형", "pharma_keywords": ["처방", "성분", "함량", "부작용", "약물"], "g_total": 1867068, "g_expert": 66986, "g_label": "전문가 부족", "news_count": 39, "news_headlines": [{"title": "낙동강 인근 농산물(쌀, 무, 배추) 녹조독소 불검출", "link": "https://medicalworldnews.co.kr/news/view.php?idx=1510973459"}, {"title": "식약처 &quot;화장품정책 조율하는 컨트롤타워 역할 할 것&quot;", "link": "https://www.yakup.com/news/index.html?mode=view&cat=12&nid=324514"}], "aliases": ["식약처 인증", "식약처 기억력·인지력", "인지질 식약처", "식약처 인정", "코큐텐 식약처"], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "알레르기 비염", "score": 59.9, "verdict": "hot", "n": 40, "t": 5, "w": 0, "r": 1.33, "change_rate": 0.7, "intent_type": "구매/추천형", "pharma_keywords": ["성분", "부작용", "약물"], "g_total": 633975, "g_expert": 14825, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "&quot;야외 활동 증가하는 봄, 건강 주의하세요&quot;", "link": "https://www.thepublic.kr/news/articleView.html?idxno=297221"}, {"title": "야외 활동 증가하는 봄철, 알레르기 비염·피로 관리 솔루션 제시", "link": "http://www.bokuennews.com/news/article.html?no=275085"}], "parent": "알레르기", "aliases": ["알레르기"], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "알레르기 반응", "score": 59.4, "verdict": "hot", "n": 40, "t": 5, "w": 0, "r": 1.32, "change_rate": 4.3, "intent_type": "구매/추천형", "pharma_keywords": ["복용법", "성분", "부작용", "약물"], "g_total": 2059348, "g_expert": 54937, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "&quot;뚫리면 감염 위험 커진다&quot;… 호흡기 1차 방어선 '코'가 중요한 이유", "link": "https://news.hidoc.co.kr/news/articleView.html?idxno=59666"}, {"title": "[신간] 우리 아이를 위한 소아응급처치", "link": "http://www.docdocdoc.co.kr/news/articleView.html?idxno=3037220"}], "parent": "알레르기", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "염증 알레르기", "score": 56.0, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.4, "change_rate": 0, "intent_type": "의심/경고형", "pharma_keywords": ["성분", "부작용", "약물"], "g_total": 1185255, "g_expert": 30276, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "인삼처럼 면역력 강화 돕는 도라지... 환절기에 먹으면 기침감기 줄어들...", "link": "https://n.news.naver.com/mnews/article/014/0005490738?sid=103"}, {"title": "기획칼럼-진주정신, 다시 천년을 깨우다(10)-미두(米豆), 천년 진주의 밥...", "link": "http://www.gndomin.com/news/articleView.html?idxno=468257"}], "parent": "알레르기", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "단백질 비타민", "score": 54.0, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.35, "change_rate": 0, "intent_type": "중립", "pharma_keywords": ["복용법", "성분", "함량", "대사"], "g_total": 3756914, "g_expert": 43038, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "새치 갑자기 많아졌다면, 스트레스보다 ‘혈당’ 먼저 확인을", "link": "https://n.news.naver.com/mnews/article/346/0000106129?sid=103"}, {"title": "눅눅한 김 버리려다 '이 방법' 써보니... &quot;가족들이 고기보다 더 좋아해...", "link": "https://www.insight.co.kr/news/546271"}], "parent": "비타민", "aliases": ["비타민"], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "비타민 미네랄", "score": 52.0, "verdict": "hot", "n": 15, "t": 25, "w": 0, "r": 1.3, "change_rate": 78.0, "intent_type": "구매/추천형", "pharma_keywords": ["복용법", "성분", "대사", "약물"], "g_total": 3716239, "g_expert": 49461, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "새치 갑자기 많아졌다면, 스트레스보다 ‘혈당’ 먼저 확인을", "link": "https://n.news.naver.com/mnews/article/346/0000106129?sid=103"}, {"title": "[분석] &quot;장기전 갈수록 美에 불리&quot;···미·이 충돌, 왜 中 희토류 카드...", "link": "https://www.womaneconomy.co.kr/news/articleView.html?idxno=250959"}], "parent": "비타민", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "가이드 비타민B12", "score": 50.8, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.27, "change_rate": 0, "intent_type": "의심/경고형", "pharma_keywords": ["복용법", "성분", "함량", "부작용", "대사", "약물"], "g_total": 13761, "g_expert": 1346, "g_label": "전문가 부족", "news_count": 0, "news_headlines": [{"title": "의지보다 중요한 '뇌 체력'… 새 학기, '비타민 B' 균형 섭취가 중요한...", "link": "https://news.hidoc.co.kr/news/articleView.html?idxno=59394"}, {"title": "당뇨 환자 절반이 겪는 '말초신경병증'...&quot;발 감각 잃기 전에 혈당 잡아...", "link": "https://news.hidoc.co.kr/news/articleView.html?idxno=59093"}], "parent": "비타민", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "먼지 알레르기", "score": 50.4, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.26, "change_rate": -13.1, "intent_type": "구매/추천형", "pharma_keywords": ["용량", "성분"], "g_total": 1105695, "g_expert": 8206, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "&quot;야외 활동 증가하는 봄, 건강 주의하세요&quot;", "link": "https://www.thepublic.kr/news/articleView.html?idxno=297221"}, {"title": "&quot;뚫리면 감염 위험 커진다&quot;… 호흡기 1차 방어선 '코'가 중요한 이유", "link": "https://news.hidoc.co.kr/news/articleView.html?idxno=59666"}], "parent": "알레르기", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "다이어트 결심", "score": 50.0, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.25, "change_rate": 0, "intent_type": "중립", "pharma_keywords": ["처방"], "g_total": 604592, "g_expert": 2926, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "'이승진♥' 김종진, 1억 짜리 기타 때문에 마약 언급…&quot;국내 가장 비싸...", "link": "https://m.entertain.naver.com/article/117/0004043242"}, {"title": "'김종진♥' 이승신, 각집 살이?…&quot;복층집, 1, 2층에 따로 있어→부부싸...", "link": "https://m.entertain.naver.com/article/076/0004383685"}], "parent": "다이어트", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "알레르기 걱정", "score": 49.6, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.24, "change_rate": 0, "intent_type": "구매/추천형", "pharma_keywords": ["성분", "대사"], "g_total": 1022259, "g_expert": 15248, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "미추홀구보건소, '임산부 태교·모유 수유 프로그램' 운영", "link": "https://www.gukjenews.com/news/articleView.html?idxno=3526944"}, {"title": "[오늘의 운세] 2026년 3월 12일 띠별 운세", "link": "https://n.news.naver.com/mnews/article/421/0008820637?sid=103"}], "parent": "알레르기", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "다이어트 시작", "score": 49.6, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.24, "change_rate": 0, "intent_type": "구매/추천형", "pharma_keywords": ["성분", "부작용"], "g_total": 6971405, "g_expert": 30077, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "[유통가 뉴스픽] 현대백화점·한국필립모리스·KT&amp;G·농협유통·롯데백화...", "link": "https://www.ajunews.com/view/20260312153148668"}, {"title": "[뷰티 브랜더 윤영희의 The View:ty] 환절기, 피부도 감기에 걸린다", "link": "https://www.bntnews.co.kr/article/view/bnt202603120200"}], "parent": "다이어트", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "비타민B12 신경", "score": 49.2, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.23, "change_rate": 0, "intent_type": "구매/추천형", "pharma_keywords": ["복용법", "성분", "함량", "부작용", "대사"], "g_total": 172681, "g_expert": 9300, "g_label": "전문가 부족", "news_count": 0, "news_headlines": [{"title": "깜빡하는 기억력, 단순 노화일까?…약사가 조언하는 중장년 '뇌 건강'관...", "link": "https://news.hidoc.co.kr/news/articleView.html?idxno=59634"}, {"title": "[TOP's Pick] [제약] 휴온스, 안구건조증 신약 ‘HUC1-394’ 임상 2상 IND ...", "link": "https://www.topdaily.kr/articles/109187"}], "parent": "비타민", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "에너지 비타", "score": 48.0, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.2, "change_rate": 0, "intent_type": "중립", "pharma_keywords": ["성분", "대사"], "g_total": 64886, "g_expert": 2543, "g_label": "전문가 부족", "news_count": 0, "news_headlines": [{"title": "세렌, '올인원 아르기닌 비타 부스터 파인애플' 신제품 출시", "link": "https://www.ajunews.com/view/20260312102951317"}, {"title": "[브리프]롯데백화점 신세계백화점 현대백화점 쿠팡 이마트 홈플러스 外", "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=350282"}], "parent": "비타민", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "비만약", "score": 47.6, "verdict": "hot", "n": 0, "t": 15, "w": 20, "r": 1.36, "change_rate": 28.2, "intent_type": "의심/경고형", "pharma_keywords": ["처방", "성분", "부작용", "대사", "약물"], "g_total": 47590, "g_expert": 1196, "g_label": "전문가 갭 큼", "news_count": 28, "news_headlines": [{"title": "휴온스, '안구건조증'藥 2상 올인···18개월 후 결과 주목", "link": "https://www.sisajournal-e.com/news/articleView.html?idxno=419761"}, {"title": "[코스닥 머니무브] ①케어젠, '먹는 비만약'으로 제약·바이오 대장 등...", "link": "http://www.opinionnews.co.kr/news/articleView.html?idxno=134857"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "공간 제약", "score": 47.2, "verdict": "hot", "n": 40, "t": 0, "w": 0, "r": 1.18, "change_rate": 0, "intent_type": "구매/추천형", "pharma_keywords": ["용량"], "g_total": 1380752, "g_expert": 5537, "g_label": "전문가 갭 큼", "news_count": 0, "news_headlines": [{"title": "반도체 장비 관련주, '덩실덩실' 에이치엠넥스·네오셈·엔투텍·레이저...", "link": "http://www.finomy.com/news/articleView.html?idxno=251319"}, {"title": "경기도교육청중앙도서관, 독서부터 진로까지... 꿈꾸는 미래 ‘배움터’...", "link": "https://n.news.naver.com/mnews/article/666/0000099029?sid=102"}], "parent": "제약", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "성분명처방", "score": 46.0, "verdict": "hot", "n": 5, "t": 30, "w": 5, "r": 1.15, "change_rate": 418.5, "intent_type": "중립", "pharma_keywords": ["처방", "복용법", "용량", "성분", "함량", "부작용", "약물"], "g_total": 24580, "g_expert": 6108, "g_label": "보통", "news_count": 3, "news_headlines": [{"title": "의협 &quot;의료분쟁조정법 환영, 성분명처방법은 폐지돼야&quot;", "link": "https://www.bosa.co.kr/news/articleView.html?idxno=3000551"}, {"title": "장동혁 '징계 중단'발표에도 당내 갈등은 지속...한동훈·오세훈 속내는", "link": "https://n.news.naver.com/mnews/article/008/0005329315?sid=100"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "김치", "score": 45.6, "verdict": "hot", "n": 15, "t": 10, "w": 15, "r": 1.14, "change_rate": 8.1, "intent_type": "구매/추천형", "pharma_keywords": ["성분"], "g_total": 32396813, "g_expert": 27983, "g_label": "전문가 갭 큼", "news_count": 16, "news_headlines": [{"title": "[위클리오늘] 울진 소식(3. 12)", "link": "http://www.weeklytoday.com/news/articleView.html?idxno=764872"}, {"title": "봉화청량산김치, 따뜻한 나눔 실천 김치 5kg 600박스 전달", "link": "https://www.dkilbo.com/news/articleView.html?idxno=536925"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "당뇨 고지혈증", "score": 45.5, "verdict": "hot", "n": 30, "t": 0, "w": 5, "r": 1.3, "change_rate": 0, "intent_type": "구매/추천형", "pharma_keywords": ["처방", "용량", "상호작용", "성분", "대사", "약물"], "g_total": 345080, "g_expert": 6210, "g_label": "전문가 갭 큼", "news_count": 3, "news_headlines": [{"title": "“설탕보다 10배 더 치명적”…의사가 경고하는 췌장을 망치는 음식, 뭐...", "link": "https://n.news.naver.com/mnews/article/030/0003407140?sid=102"}, {"title": "혈당 스파이크와 뱃살 어떤 관계? “내장지방이 문제”…염증 막는 ‘이...", "link": "https://n.news.naver.com/mnews/article/296/0000098463?sid=103"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "갈아먹 다이어트", "score": 42.4, "verdict": "warm", "n": 40, "t": 0, "w": 0, "r": 1.06, "change_rate": 0, "intent_type": "구매/추천형", "pharma_keywords": ["용량"], "g_total": 11, "g_expert": 0, "g_label": "전문가 부족", "news_count": 0, "news_headlines": [], "parent": "다이어트", "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "당뇨", "score": 41.4, "verdict": "warm", "n": 5, "t": 10, "w": 15, "r": 1.38, "change_rate": 11.5, "intent_type": "의심/경고형", "pharma_keywords": ["처방", "성분", "함량", "부작용", "대사", "약물"], "g_total": 3441372, "g_expert": 43037, "g_label": "전문가 갭 큼", "news_count": 16, "news_headlines": [{"title": "“설탕보다 10배 더 치명적”…의사가 경고하는 췌장을 망치는 음식, 뭐...", "link": "https://n.news.naver.com/mnews/article/030/0003407140?sid=102"}, {"title": "&quot;병원 대신 살던 집에서&quot;...안산시, 초고령사회 '존엄한 노후'의 이정표...", "link": "https://ilyo.co.kr/?ac=article_view&entry_id=509555"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "비만", "score": 40.8, "verdict": "warm", "n": 0, "t": 10, "w": 20, "r": 1.36, "change_rate": 7.8, "intent_type": "의심/경고형", "pharma_keywords": ["처방", "성분", "함량", "부작용", "대사", "약물"], "g_total": 5313334, "g_expert": 34352, "g_label": "전문가 갭 큼", "news_count": 36, "news_headlines": [{"title": "박재현 한미약품 대표, &quot;모든 책임은 내가 지고 간다&quot;…임기 후 용퇴 선...", "link": "http://www.press9.kr/news/articleView.html?idxno=73424"}, {"title": "전북 2개 기관, 복지부 '청년사회서비스사업단' 공모 선정", "link": "http://www.jjn.co.kr/news/articleView.html?idxno=1034820"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "유산균", "score": 40.5, "verdict": "warm", "n": 5, "t": 10, "w": 15, "r": 1.35, "change_rate": 7.9, "intent_type": "중립", "pharma_keywords": ["용량", "성분", "부작용"], "g_total": 2741489, "g_expert": 77761, "g_label": "전문가 갭 큼", "news_count": 19, "news_headlines": [{"title": "수원메쎄서 열리는 '수원 코베 베이비페어&amp;유아교육전', 3월 19일부터 나...", "link": "https://www.gokorea.kr/news/articleView.html?idxno=860260"}, {"title": "서울우유 '더 진한' 요거트, 판매 누적 4억5천만개 돌파", "link": "http://www.ikpnews.net/news/articleView.html?idxno=69824"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "신약", "score": 40.5, "verdict": "warm", "n": 5, "t": 10, "w": 15, "r": 1.35, "change_rate": 12.0, "intent_type": "중립", "pharma_keywords": ["처방", "부작용", "약물"], "g_total": 1425744, "g_expert": 25318, "g_label": "전문가 갭 큼", "news_count": 15, "news_headlines": [{"title": "박재현 한미약품 대표, &quot;모든 책임은 내가 지고 간다&quot;…임기 후 용퇴 선...", "link": "http://www.press9.kr/news/articleView.html?idxno=73424"}, {"title": "33년 한미맨 박재현 퇴진 수순 …한미약품, 첫 외부 인사 황상연 시대 열...", "link": "https://www.apsk.co.kr/news/articleView.html?idxno=538852"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "당뇨병", "score": 40.5, "verdict": "warm", "n": 5, "t": 20, "w": 5, "r": 1.35, "change_rate": 40.4, "intent_type": "중립", "pharma_keywords": ["처방", "용량", "성분", "부작용", "대사", "약물"], "g_total": 2908095, "g_expert": 34375, "g_label": "전문가 갭 큼", "news_count": 3, "news_headlines": [{"title": "새치 갑자기 많아졌다면, 스트레스보다 ‘혈당’ 먼저 확인을", "link": "https://n.news.naver.com/mnews/article/346/0000106129?sid=103"}, {"title": "“설탕보다 10배 더 치명적”…의사가 경고하는 췌장을 망치는 음식, 뭐...", "link": "https://n.news.naver.com/mnews/article/030/0003407140?sid=102"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "당뇨 전단계", "score": 40.5, "verdict": "warm", "n": 15, "t": 10, "w": 5, "r": 1.35, "change_rate": 9.8, "intent_type": "중립", "pharma_keywords": ["처방", "성분", "대사", "약물"], "g_total": 74923, "g_expert": 1551, "g_label": "전문가 갭 큼", "news_count": 3, "news_headlines": [{"title": "바늘 끝 통증 사라지나...라메디텍, '레이저 채혈+혈당 측정' 복합기 식...", "link": "https://n.news.naver.com/mnews/article/018/0006233019?sid=101"}, {"title": "커피 ‘이렇게’ 마시면 혈당 스파이크 막는다… 방법은?", "link": "https://n.news.naver.com/mnews/article/346/0000106084?sid=103"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "질환", "score": 39.6, "verdict": "warm", "n": 5, "t": 20, "w": 5, "r": 1.32, "change_rate": 35.3, "intent_type": "의심/경고형", "pharma_keywords": ["부작용", "약물"], "g_total": 23561817, "g_expert": 207730, "g_label": "전문가 갭 큼", "news_count": 3, "news_headlines": [{"title": "'전 국민 산재보험' 제도 개편 논의 본격화", "link": "https://www.labortoday.co.kr/news/articleView.html?idxno=233177"}, {"title": "軍 꾀병 취급한 ‘마음의 병’…세상 등진 15년 만에 명예회복", "link": "https://n.news.naver.com/mnews/article/658/0000137797?sid=102"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "영양제", "score": 36.3, "verdict": "warm", "n": 0, "t": 10, "w": 20, "r": 1.21, "change_rate": 12.6, "intent_type": "구매/추천형", "pharma_keywords": ["성분", "함량", "부작용", "약물"], "g_total": 4844962, "g_expert": 192147, "g_label": "전문가 부족", "news_count": 27, "news_headlines": [{"title": "진주서부농협 '조경수·유실수 묘목 판매장' 개장", "link": "https://www.gnnews.co.kr/news/articleView.html?idxno=632437"}, {"title": "일동후디스, 반려묘 위한 '후디스펫 오메가케어' 출시…&quot;오메가3·타우린...", "link": "https://daily.hankooki.com/news/articleView.html?idxno=1346247"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "치료제", "score": 32.2, "verdict": "warm", "n": 0, "t": 5, "w": 20, "r": 1.29, "change_rate": 2.1, "intent_type": "의심/경고형", "pharma_keywords": ["처방", "용량", "성분", "부작용", "약물"], "g_total": 2080186, "g_expert": 71634, "g_label": "전문가 부족", "news_count": 28, "news_headlines": [{"title": "제약바이오협회, ‘바이오 차이나’서 韓기업 中진출 교두보 마련", "link": "https://www.ekn.kr/web/view.php?key=20260312023027298"}, {"title": "버텍스, IgA 신병증 치료제 임상 3상 성공", "link": "http://www.newsmp.com/news/articleView.html?idxno=252104"}], "aliases": ["비만치료제"], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "약사", "score": 28.7, "verdict": "warm", "n": 5, "t": 10, "w": 20, "r": 0.82, "change_rate": 12.2, "intent_type": "구매/추천형", "pharma_keywords": ["처방", "복용법", "용량", "성분", "함량", "부작용", "대사", "약물"], "g_total": 1323646, "g_expert": 1323646, "g_label": "전문가 포화", "news_count": 25, "news_headlines": [{"title": "포스코이앤씨, 아파트 단지에 'AI 헬스케어 플랫폼' 도입", "link": "https://www.kyongbuk.co.kr/news/articleView.html?idxno=4066774"}, {"title": "&quot;병원 대신 살던 집에서&quot;...안산시, 초고령사회 '존엄한 노후'의 이정표...", "link": "https://ilyo.co.kr/?ac=article_view&entry_id=509555"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "비만 지방간", "score": 28.2, "verdict": "warm", "n": 15, "t": 0, "w": 5, "r": 1.41, "change_rate": 0, "intent_type": "의심/경고형", "pharma_keywords": ["성분", "부작용", "대사", "약물"], "g_total": 140120, "g_expert": 1919, "g_label": "전문가 갭 큼", "news_count": 3, "news_headlines": [{"title": "혈당 스파이크와 뱃살 어떤 관계? “내장지방이 문제”…염증 막는 ‘이...", "link": "https://n.news.naver.com/mnews/article/296/0000098463?sid=103"}, {"title": "性호르몬 낮은 남성, 설탕 많이 먹으면 간 건강에 큰 위협?", "link": "https://n.news.naver.com/mnews/article/296/0000098459?sid=103"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "당뇨나 심혈관", "score": 28.0, "verdict": "warm", "n": 15, "t": 0, "w": 5, "r": 1.4, "change_rate": 0, "intent_type": "의심/경고형", "pharma_keywords": ["복용법", "상호작용", "성분", "함량", "부작용", "대사", "약물"], "g_total": 400663, "g_expert": 6191, "g_label": "전문가 갭 큼", "news_count": 3, "news_headlines": [{"title": "혈당 스파이크와 뱃살 어떤 관계? “내장지방이 문제”…염증 막는 ‘이...", "link": "https://n.news.naver.com/mnews/article/296/0000098463?sid=103"}, {"title": "“근육 빠지면 콩팥도 망가진다”…만성신장병 사망 위험 3.8배 '껑충'", "link": "https://n.news.naver.com/mnews/article/296/0000098461?sid=103"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "딥다홈트 당뇨운동기구", "score": 27.4, "verdict": "warm", "n": 15, "t": 0, "w": 5, "r": 1.37, "change_rate": 0, "intent_type": "의심/경고형", "pharma_keywords": ["처방", "성분", "대사"], "g_total": 1291, "g_expert": 21, "g_label": "전문가 갭 큼", "news_count": 3, "news_headlines": [], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "마운자 성분명", "score": 26.8, "verdict": "warm", "n": 15, "t": 0, "w": 5, "r": 1.34, "change_rate": 0, "intent_type": "구매/추천형", "pharma_keywords": ["처방", "용량", "성분", "부작용", "대사", "약물"], "g_total": 2521, "g_expert": 1, "g_label": "전문가 갭 큼", "news_count": 3, "news_headlines": [{"title": "“새해는 살빼야지”너도 나도 구매…비만약 ‘마운자로’ 품귀 현상", "link": "https://n.news.naver.com/mnews/article/016/0002607395?sid=103"}, {"title": "디앤디파마텍·일동 ‘비만치료제’ 개발에 시총 껑충…기술이전 관심...", "link": "https://n.news.naver.com/mnews/article/029/0002999493?sid=105"}], "ai_summary": "", "title_idea": "", "target_reader": ""}, {"keyword": "약국", "score": 21.4, "verdict": "pass", "n": 0, "t": 0, "w": 20, "r": 1.07, "change_rate": -19.3, "intent_type": "구매/추천형", "pharma_keywords": ["처방", "복용법", "성분", "부작용"], "g_total": 3666351, "g_expert": 460674, "g_label": "보통", "news_count": 47, "news_headlines": [{"title": "헤일리온, 상하이에 구강 건강 제조시설 신설…6500만 파운드 투자", "link": "https://cwn.kr/article/1065602841639363"}, {"title": "소아 응급실 '뺑뺑이' 막는다… 김포시, 어린이 야간 병원 인프라 강화", "link": "https://n.news.naver.com/mnews/article/031/0001012943?sid=102"}], "ai_summary": "", "title_idea": "", "target_reader": ""}], "pharma_news": [{"title": "HLB라이프케어, 초소형 연속혈당측정기 ‘피코링’ 식약처 허가", "link": "https://n.news.naver.com/mnews/article/011/0004598705?sid=101", "pub_date": "Thu, 12 Mar 2026 18:03:00 +0900", "signal": "strong", "trigger": "허가"}, {"title": "HLB라이프케어, 초소형 스마트 연속혈당측정기 ‘피코링’ 식약처 허가", "link": "http://www.lawissue.co.kr/view.php?ud=202603121712584070f4ab64559d_12", "pub_date": "Thu, 12 Mar 2026 17:14:00 +0900", "signal": "strong", "trigger": "허가"}, {"title": "HLB라이프케어, 초소형 스마트 연속혈당측정기 '피코링' 식약처 허가", "link": "https://n.news.naver.com/mnews/article/421/0008822916?sid=103", "pub_date": "Thu, 12 Mar 2026 16:52:00 +0900", "signal": "strong", "trigger": "허가"}, {"title": "정작 필요한 환자는 못 구하는 ‘마운자로’···다이어트 열풍 속 ‘품...", "link": "https://n.news.naver.com/mnews/article/032/0003432875?sid=102", "pub_date": "Thu, 12 Mar 2026 15:14:00 +0900", "signal": "global", "trigger": "마운자로"}, {"title": "[4th-Medi] 약가개편 공방 지속…&quot;건보 재정개혁&quot; vs &quot;제약산업 위축&quot;", "link": "http://www.4th.kr/news/articleView.html?idxno=2108893", "pub_date": "Wed, 11 Mar 2026 14:22:00 +0900", "signal": "normal", "trigger": "약가"}, {"title": "불닭볶음면 벨라루스서 회수된 사연...덴마크 리콜처럼 마케팅 효과로 ...", "link": "http://www.newsworker.co.kr/news/articleView.html?idxno=416761", "pub_date": "Mon, 09 Mar 2026 16:52:00 +0900", "signal": "strong", "trigger": "리콜"}, {"title": "애경산업, 치약 금지 성분 검출에도 회수율 8%에 그쳐", "link": "https://mdtoday.co.kr/news/view/1065576202397210", "pub_date": "Thu, 05 Mar 2026 10:40:00 +0900", "signal": "strong", "trigger": "회수"}, {"title": "베트남, '금지성분' 함유 화장품 291종 리콜…韓브랜드 포함", "link": "https://www.insidevina.com/news/articleView.html?idxno=42650", "pub_date": "Thu, 05 Mar 2026 09:16:00 +0900", "signal": "strong", "trigger": "리콜"}, {"title": "스킨부스터 광풍속 환자안전 실종…뚫려버린 규제 사각지대", "link": "https://www.medicaltimes.com/Main/News/NewsView.html?ID=1167536&ref=naverpc", "pub_date": "Thu, 05 Mar 2026 05:30:00 +0900", "signal": "normal", "trigger": "규제"}, {"title": "[단독] 애경 ‘금지성분 중국산 치약’ 회수율 8% 그쳐… 뒷감당은 태광...", "link": "https://n.news.naver.com/mnews/article/029/0003013718?sid=101", "pub_date": "Wed, 04 Mar 2026 11:31:00 +0900", "signal": "strong", "trigger": "회수"}, {"title": "태광-애경, 225억 깎고 한 달 더 끌었다…'2080 리콜'이 바꾼 인수 조건", "link": "https://www.bizhankook.com/bk/article/31545", "pub_date": "Fri, 20 Feb 2026 20:00:00 +0900", "signal": "strong", "trigger": "리콜"}, {"title": "태광산업, '치약 리콜 사태' 애경산업 인수가 낮춰", "link": "http://www.newsfc.co.kr/news/articleView.html?idxno=76879", "pub_date": "Fri, 20 Feb 2026 14:42:00 +0900", "signal": "strong", "trigger": "리콜"}, {"title": "&quot;압타밀의 역설&quot;…유럽 리콜·직구 사각지대 논란, 강남 분유 신뢰 흔들", "link": "https://www.greened.kr/news/articleView.html?idxno=337045", "pub_date": "Sun, 15 Feb 2026 19:31:00 +0900", "signal": "strong", "trigger": "리콜"}, {"title": "웰리렉 급여 청원 재연장...국회 복지위 3월까지 심사", "link": "https://www.pharmnews.com/news/articleView.html?idxno=301255", "pub_date": "Tue, 03 Feb 2026 05:56:00 +0900", "signal": "normal", "trigger": "급여"}, {"title": "암보다 무서운 약값에 눈물...조기 유방암 환우, 급여화 촉구", "link": "https://www.pharmnews.com/news/articleView.html?idxno=300727", "pub_date": "Wed, 07 Jan 2026 06:00:00 +0900", "signal": "normal", "trigger": "급여"}], "youtube_trends": [{"title": "종합비타민 매일 먹으면, 노화 늦춘다… 50초 안에 설명하기", "channel": "꽉TV", "views": 299277, "published": "2026-03-12T00:00:49Z", "video_id": "fHvwopwcg4I", "query": "비타민"}, {"title": "비타민C와 혈당", "channel": "송학운", "views": 63489, "published": "2026-03-11T05:35:31Z", "video_id": "5HGr4cptJaI", "query": "비타민"}, {"title": "우울할 때 꺼내 보는 '인간 비타민' 아기 웃음 (심장주의)", "channel": "세상훈훈", "views": 50405, "published": "2026-03-11T07:00:44Z", "video_id": "mxk2hQF8tCY", "query": "비타민"}], "briefing": null}};
 
-function getToken() {
-  return localStorage.getItem('ht_github_token') || '';
-}
+let currentIndex = 0;
+let currentFilter = "전체";
 
-function saveToken(val) {
-  if (val && val.trim()) {
-    localStorage.setItem('ht_github_token', val.trim());
-    document.getElementById('tokenSetup').style.display = 'none';
-    document.getElementById('tokenInput').value = '';
-    triggerRefresh();
+// ── 초기화 ──
+function init() {
+  const select = document.getElementById("scanSelect");
+  SCAN_LIST.forEach((id, i) => {
+    const opt = document.createElement("option");
+    opt.value = i;
+    // 표시 형식: "3/13 08:00"
+    const parts = id.split("_");
+    const dateParts = parts[0].split("-");
+    const timePart = parts[1] ? parts[1].slice(0,2) + ":" + parts[1].slice(2) : "";
+    opt.textContent = dateParts[1] + "/" + dateParts[2] + " " + timePart;
+    select.appendChild(opt);
+  });
+  if (SCAN_LIST.length > 0) {
+    loadScan(0);
+  } else {
+    document.getElementById("content").innerHTML = '<div class="empty">아직 스캔 데이터가 없습니다.</div>';
   }
 }
 
-function showStatus(msg) {
-  let el = document.getElementById('statusMsg');
-  if (!el) {
-    el = document.createElement('div');
-    el.id = 'statusMsg';
-    el.className = 'status-msg';
-    document.querySelector('.refresh-bar').after(el);
+// ── 네비게이션 ──
+function navigate(delta) {
+  const newIdx = currentIndex + delta;
+  if (newIdx >= 0 && newIdx < SCAN_LIST.length) {
+    document.getElementById("scanSelect").value = newIdx;
+    loadScan(newIdx);
   }
-  el.textContent = msg;
 }
 
-async function triggerRefresh() {
-  const btn = document.getElementById('refreshBtn');
-  const token = getToken();
-  if (!token) {
-    document.getElementById('tokenSetup').style.display = 'block';
-    showStatus('GitHub PAT를 먼저 입력하세요.');
+function loadScan(idx) {
+  idx = parseInt(idx);
+  currentIndex = idx;
+  const scanId = SCAN_LIST[idx];
+  const data = ALL_SCANS[scanId];
+
+  document.getElementById("prevBtn").disabled = (idx <= 0);
+  document.getElementById("nextBtn").disabled = (idx >= SCAN_LIST.length - 1);
+
+  if (!data) {
+    document.getElementById("content").innerHTML = '<div class="empty">데이터 로드 실패</div>';
     return;
   }
-  btn.disabled = true;
-  btn.textContent = '갱신 중...';
-  showStatus('GitHub Actions 트리거 요청 중...');
 
-  // fine-grained PAT(github_pat_) → Bearer, classic PAT(ghp_) → token
-  const authPrefix = token.startsWith('github_pat_') ? 'Bearer' : 'token';
+  renderStats(data);
+  renderFilters(data);
+  renderTopics(data);
+  renderCost(data);
+}
 
-  try {
-    const resp = await fetch(
-      `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
-      {
-        method: 'POST',
-        headers: {
-          'Authorization': `${authPrefix} ${token}`,
-          'Accept': 'application/vnd.github.v3+json',
-        },
-        body: JSON.stringify({ ref: 'main', inputs: { skip_youtube: 'true' } }),
-      }
-    );
-    if (resp.status === 204) {
-      btn.textContent = '실행됨!';
-      showStatus('Actions 실행 시작됨. 약 3~4분 후 자동 새로고침합니다...');
-      // 데이터 수집 ~3분 + Pages 배포 ~1분 = 약 4분
-      let sec = 240;
-      const timer = setInterval(() => {
-        sec--;
-        if (sec <= 0) {
-          clearInterval(timer);
-          location.reload();
-        } else {
-          showStatus(`새로고침까지 ${sec}초... (수집+배포 진행 중)`);
-        }
-      }, 1000);
-    } else if (resp.status === 401 || resp.status === 403) {
-      localStorage.removeItem('ht_github_token');
-      document.getElementById('tokenSetup').style.display = 'block';
-      btn.textContent = '토큰 오류';
-      btn.disabled = false;
-      const errText = await resp.text().catch(() => '');
-      if (resp.status === 403) {
-        showStatus('권한 부족. PAT에 Actions 읽기/쓰기 권한이 필요합니다.');
-      } else {
-        showStatus('토큰이 유효하지 않습니다. 다시 입력해주세요.');
-      }
-    } else {
-      btn.textContent = '실패 (' + resp.status + ')';
-      showStatus('요청 실패. 상태 코드: ' + resp.status);
-      setTimeout(() => { btn.textContent = '실시간 갱신'; btn.disabled = false; }, 3000);
-    }
-  } catch (e) {
-    btn.textContent = '네트워크 오류';
-    showStatus('네트워크 오류: ' + e.message);
-    setTimeout(() => { btn.textContent = '실시간 갱신'; btn.disabled = false; }, 3000);
+// ── 통계 바 ──
+function renderStats(data) {
+  const s = data.stats || {};
+  document.getElementById("statsBar").innerHTML = `
+    <span class="stat-badge new">🆕 새 글감 ${s.new_topics || 0}개</span>
+    <span class="stat-badge existing">🔥 기존주제 새이슈 ${s.existing_topics_new_issue || 0}개</span>
+    <span class="stat-badge">📰 분석 뉴스 ${s.total_news_collected || 0}건</span>
+  `;
+}
+
+// ── 카테고리 필터 ──
+function renderFilters(data) {
+  const categories = ["전체", "영양제·성분", "약업계·정책", "질환·치료", "소비자건강"];
+  const html = categories.map(c => {
+    const active = c === currentFilter ? "active" : "";
+    return `<button class="filter-btn ${active}" onclick="setFilter('${c}')">${c}</button>`;
+  }).join("");
+  document.getElementById("filterBar").innerHTML = html;
+}
+
+function setFilter(cat) {
+  currentFilter = cat;
+  loadScan(currentIndex);
+}
+
+// ── 카테고리 → CSS 클래스 ──
+function catClass(category) {
+  if (category && category.includes("영양제")) return "cat-supplement";
+  if (category && category.includes("약업계")) return "cat-pharma";
+  if (category && category.includes("질환")) return "cat-disease";
+  if (category && category.includes("소비자")) return "cat-consumer";
+  return "cat-supplement";
+}
+
+// ── 토픽 렌더링 ──
+function renderTopics(data) {
+  const topics = data.topics || [];
+  let filtered = topics;
+  if (currentFilter !== "전체") {
+    filtered = topics.filter(t => t.category === currentFilter);
   }
+
+  const newTopics = filtered.filter(t => t.is_new_topic);
+  const existingTopics = filtered.filter(t => !t.is_new_topic);
+
+  let html = "";
+
+  if (newTopics.length > 0) {
+    html += '<div class="section-title new">🆕 새 글감 발굴</div>';
+    newTopics.forEach(t => { html += renderCard(t); });
+  }
+
+  if (existingTopics.length > 0) {
+    html += '<div class="section-title existing">🔥 기존 주제 — 새 이슈</div>';
+    existingTopics.forEach(t => { html += renderCard(t); });
+  }
+
+  if (filtered.length === 0) {
+    html = '<div class="empty">이 카테고리에 해당하는 글감이 없습니다.</div>';
+  }
+
+  document.getElementById("content").innerHTML = html;
 }
 
-// 토큰이 없으면 안내 표시
-if (!getToken()) {
-  document.getElementById('tokenSetup').style.display = 'block';
-} else {
-  // 토큰이 있으면 저장됨 표시
-  showStatus('');
+function renderCard(t) {
+  const trend = t.search_trend || {};
+  const gap = t.expert_gap || {};
+
+  // 트렌드 태그
+  let trendTag = "";
+  if (trend.change_rate > 50) trendTag = `<span class="meta-tag rising">📈 ${trend.change_rate > 0 ? "+" : ""}${trend.change_rate}%</span>`;
+  else if (trend.change_rate > 10) trendTag = `<span class="meta-tag rising">↑ +${trend.change_rate}%</span>`;
+  else if (trend.change_rate < -10) trendTag = `<span class="meta-tag falling">↓ ${trend.change_rate}%</span>`;
+  else trendTag = `<span class="meta-tag">→ ${trend.change_rate > 0 ? "+" : ""}${trend.change_rate || 0}%</span>`;
+
+  // 전문가갭 태그
+  let gapTag = "";
+  if (gap.label === "전문가 갭 큼" || gap.label === "전문가 부족") {
+    gapTag = `<span class="meta-tag gap-big">🎯 ${gap.label}</span>`;
+  } else if (gap.label) {
+    gapTag = `<span class="meta-tag">${gap.label}</span>`;
+  }
+
+  // 연속 등장
+  let consecBadge = "";
+  if (t.consecutive_days && t.consecutive_days >= 2) {
+    consecBadge = `<span class="consecutive-badge">${t.consecutive_days}일 연속</span>`;
+  }
+
+  // 이미 작성 배지
+  let coveredBadge = "";
+  let coveredPosts = "";
+  if (t.already_covered) {
+    const count = (t.covered_posts || []).length;
+    coveredBadge = `<span class="covered-badge">이미 작성 ${count}편</span>`;
+    if (t.covered_posts && t.covered_posts.length > 0) {
+      coveredPosts = '<div class="covered-posts">' +
+        t.covered_posts.map(p => `· ${escHtml(p)}`).join("<br>") +
+        '</div>';
+    }
+  }
+
+  // 출처 뉴스
+  let sourceHtml = "";
+  if (t.source_headlines && t.source_headlines.length > 0) {
+    sourceHtml = '<div class="source-headlines">📰 ' +
+      t.source_headlines.map(h => escHtml(h)).join(" · ") +
+      '</div>';
+  }
+
+  return `
+    <div class="card" data-category="${t.category || ""}">
+      <div class="card-header">
+        <span class="card-rank">${t.rank}</span>
+        <span class="card-keyword">${escHtml(t.keyword)}${coveredBadge}${consecBadge}</span>
+        <span class="card-category ${catClass(t.category)}">${t.category || ""}</span>
+      </div>
+
+      <div class="card-section">
+        <div class="label label-why">💡 왜 지금?</div>
+        ${escHtml(t.why_now || "")}
+      </div>
+
+      <div class="card-section">
+        <div class="label label-angle">🎯 약사 앵글</div>
+        ${escHtml(t.pharmacist_angle || "")}
+      </div>
+
+      <div class="card-section">
+        <div class="label label-title">📝 제목 아이디어</div>
+        <strong>${escHtml(t.title_idea || "")}</strong>
+      </div>
+
+      ${coveredPosts}
+      ${sourceHtml}
+
+      <div class="card-meta">
+        ${trendTag}
+        ${gapTag}
+      </div>
+    </div>
+  `;
 }
+
+function escHtml(str) {
+  if (!str) return "";
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;");
+}
+
+// ── 비용 ──
+function renderCost(data) {
+  const meta = data.meta || {};
+  const cost = meta.cost_usd || 0;
+  document.getElementById("costInfo").textContent =
+    `이 스캔 비용: $${cost.toFixed(4)} · ${data.date || ""} ${data.time || ""}`;
+}
+
+// 시작
+init();
 </script>
-
 </body>
 </html>

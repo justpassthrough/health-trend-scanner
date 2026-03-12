@@ -552,18 +552,9 @@ function renderCard(t) {{
     }}
   }}
 
-  // 뉴스 헤드라인 (링크 포함)
+  // 뉴스 헤드라인: AI가 근거로 삼은 source_headlines 우선 표시
   let headlinesHtml = "";
-  if (newsHeadlines.length > 0) {{
-    headlinesHtml = '<div class="source-headlines">' +
-      newsHeadlines.map(h => {{
-        const title = escHtml(h.title || "");
-        const link = h.link || "#";
-        return `📰 <a href="${{link}}" target="_blank" rel="noopener">${{title}}</a>`;
-      }}).join("<br>") +
-      '</div>';
-  }} else if (t.source_headlines && t.source_headlines.length > 0) {{
-    // AI가 준 source_headlines 폴백
+  if (t.source_headlines && t.source_headlines.length > 0) {{
     headlinesHtml = '<div class="source-headlines">' +
       t.source_headlines.map(h => `📰 ${{escHtml(h)}}`).join("<br>") +
       '</div>';

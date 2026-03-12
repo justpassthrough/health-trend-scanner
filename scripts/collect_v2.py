@@ -476,8 +476,8 @@ def enrich_candidates(candidates):
         if core_kw != kw:
             print(f"    핵심 키워드: {core_kw}")
 
-        # 뉴스 건수 + 헤드라인
-        news_count, news_headlines = get_news_count_and_headlines(core_kw, count=3)
+        # 뉴스 건수 + 헤드라인 (AI 원본 키워드로 검색 — 맥락 정확도 유지)
+        news_count, news_headlines = get_news_count_and_headlines(kw, count=3)
         time.sleep(0.1)
         c["news_count"] = news_count
         c["news_headlines"] = news_headlines

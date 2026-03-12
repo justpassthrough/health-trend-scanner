@@ -150,7 +150,14 @@ def load_my_posts():
     try:
         r = requests.get(MY_POSTS_URL, timeout=15)
         r.raise_for_status()
-        posts = r.json()
+        data = r.json()
+        # my_posts.json 구조: { "blog_id": ..., "posts": [...] }
+        if isinstance(data, dict):
+            posts = data.get("posts", [])
+        elif isinstance(data, list):
+            posts = data
+        else:
+            posts = []
         print(f"  → {len(posts)}개 글 로드 완료")
         return posts
     except Exception as e:

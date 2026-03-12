@@ -284,7 +284,7 @@ def build_ai_prompt(news_by_category, my_posts):
     news_blocks = {}
     for category, articles in news_by_category.items():
         lines = []
-        for a in articles[:40]:  # 카테고리당 최대 40개 (토큰 절약)
+        for a in articles[:25]:  # 카테고리당 최대 25개 (토큰 절약)
             lines.append(f"- {a['title']}")
             if a["description"]:
                 lines.append(f"  → {a['description'][:100]}")
@@ -366,7 +366,7 @@ def run_ai_analysis(news_by_category, my_posts):
         client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         response = client.messages.create(
             model="claude-haiku-4-5-20251001",
-            max_tokens=4000,
+            max_tokens=8000,
             messages=[{"role": "user", "content": prompt}],
         )
 
@@ -378,14 +378,25 @@ def run_ai_analysis(news_by_category, my_posts):
         cost = (input_tokens * 1 + output_tokens * 5) / 1_000_000
         print(f"  API 사용: 입력 {input_tokens}, 출력 {output_tokens} 토큰")
         print(f"  비용: ${cost:.4f}")
+        print(f"  응답 길이: {len(raw)}자")
+        print(f"  응답 첫 200자: {raw[:200]}")
 
-        # JSON 파싱
-        if "```" in raw:
-            match = re.search(r"```(?:json)?\s*(\[.*?\])\s*```", raw, re.DOTALL)
+        # JSON 파싱 — 여러 형식 대응
+        json_str = raw
+
+        # 1) ```json ... ``` 감싸기
+        if "```" in json_str:
+            match = re.search(r"```(?:json)?\s*(\[[\s\S]*?\])\s*```", json_str)
             if match:
-                raw = match.group(1)
+                json_str = match.group(1)
 
-        candidates = json.loads(raw)
+        # 2) 배열 부분만 추출 (앞뒤 텍스트 제거)
+        if not json_str.startswith("["):
+            match = re.search(r"\[[\s\S]*\]", json_str)
+            if match:
+                json_str = match.group(0)
+
+        candidates = json.loads(json_str)
         print(f"  → AI 추천 글감: {len(candidates)}개")
 
         # 메타 정보 저장용

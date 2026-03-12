@@ -1,11 +1,12 @@
-name: Daily Health Trend Scan
+name: "[v1 비활성화] Daily Health Trend Scan"
 
 on:
-  schedule:
-    - cron: '30 22 * * *'   # 한국시간 07:30 (기상 직후 확인용)
-    - cron: '0 4 * * *'     # 한국시간 13:00 (오전 뉴스 반영)
-    - cron: '0 10 * * *'    # 한국시간 19:00 (저녁 글쓰기 전)
-    - cron: '0 15 * * *'    # 한국시간 00:00 (해외 이슈 반영)
+  # v2로 전환됨 — 스케줄 비활성화
+  # schedule:
+  #   - cron: '30 22 * * *'
+  #   - cron: '0 4 * * *'
+  #   - cron: '0 10 * * *'
+  #   - cron: '0 15 * * *'
   workflow_dispatch:
     inputs:
       skip_youtube:

@@ -422,19 +422,66 @@ def run_ai_analysis(news_by_category, my_posts):
 # 3단계: 보강 데이터
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+def _extract_core_keyword(keyword):
+    """AI 키워드에서 DataLab/뉴스 검색용 핵심 단어 추출.
+
+    예: "벤포티아민 (활성비타민 B1)" → "벤포티아민"
+        "GLP-1 계열 가짜 다이어트 식품 구별법" → "가짜 다이어트 식품"
+        "담석증 - GLP-1 비만치료제 부작용" → "담석증 비만치료제"
+    """
+    # 괄호 안 내용 제거
+    core = re.sub(r"\([^)]*\)", "", keyword).strip()
+    # " - ", " + ", " vs " 등 구분자로 분리 후 첫 부분 사용
+    core = re.split(r"\s*[-+vs]\s*", core)[0].strip()
+    # 너무 길면 앞 4단어만
+    words = core.split()
+    if len(words) > 4:
+        core = " ".join(words[:4])
+    return core if core else keyword
+
+
+def get_news_count_and_headlines(keyword, count=3):
+    """키워드 관련 뉴스 건수 + 상위 헤드라인 반환"""
+    items = fetch_naver_news(keyword, display=100, sort="sim")
+    headlines = []
+    for item in items[:count]:
+        title = re.sub(r"<[^>]+>", "", item.get("title", "")).strip()
+        link = item.get("link", "")
+        pub_date = item.get("pubDate", "")
+        headlines.append({"title": title, "link": link, "date": pub_date})
+    return len(items), headlines
+
+
 def enrich_candidates(candidates):
-    """AI 후보에 검색량 트렌드 + 전문가 갭 데이터 추가"""
+    """AI 후보에 뉴스 건수 + 검색량 트렌드 + 전문가 갭 데이터 추가"""
     print("\n" + "=" * 50)
     print("3단계: 보강 데이터 수집")
     print("=" * 50)
 
     for i, c in enumerate(candidates):
         kw = c.get("keyword", "")
+        core_kw = _extract_core_keyword(kw)
         print(f"  [{i+1}/{len(candidates)}] {kw}")
+        if core_kw != kw:
+            print(f"    핵심 키워드: {core_kw}")
 
-        # 검색량 트렌드
-        change_rate, weekly_avg = get_search_trend(kw)
+        # 뉴스 건수 + 헤드라인
+        news_count, news_headlines = get_news_count_and_headlines(core_kw, count=3)
+        time.sleep(0.1)
+        c["news_count"] = news_count
+        c["news_headlines"] = news_headlines
+        print(f"    뉴스: {news_count}건")
+
+        # 검색량 트렌드 (핵심 키워드로 조회 — DataLab 적중률 향상)
+        change_rate, weekly_avg = get_search_trend(core_kw)
         time.sleep(0.15)
+
+        # 핵심 키워드로도 0이면 원본으로 재시도
+        if weekly_avg == 0 and core_kw != kw:
+            change_rate2, weekly_avg2 = get_search_trend(kw)
+            if weekly_avg2 > weekly_avg:
+                change_rate, weekly_avg = change_rate2, weekly_avg2
+            time.sleep(0.1)
 
         if change_rate > 50:
             direction = "급상승"
@@ -450,10 +497,10 @@ def enrich_candidates(candidates):
             "direction": direction,
             "weekly_avg": weekly_avg,
         }
-        print(f"    검색: {change_rate:+.1f}% ({direction})")
+        print(f"    검색: {change_rate:+.1f}% ({direction}, avg={weekly_avg})")
 
         # 전문가 갭
-        gap = get_expert_gap(kw)
+        gap = get_expert_gap(core_kw)
         time.sleep(0.15)
         c["expert_gap"] = gap
         print(f"    전문가갭: {gap['label']} (비율 {gap['gap_ratio']}:1)")

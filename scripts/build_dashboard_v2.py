@@ -251,16 +251,48 @@ body {{
   border-left: 2px solid #30363d;
 }}
 
+/* 이슈 지표 바 */
+.buzz-bar {{
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+  padding: 8px 12px;
+  background: #21262d;
+  border-radius: 8px;
+  font-size: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}}
+.buzz-item {{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}}
+.buzz-value {{
+  font-weight: 700;
+  font-size: 14px;
+}}
+.buzz-value.hot {{ color: #f85149; }}
+.buzz-value.warm {{ color: #e3b341; }}
+.buzz-value.cool {{ color: #8b949e; }}
+.buzz-label {{
+  color: #8b949e;
+}}
+.buzz-divider {{
+  color: #30363d;
+  margin: 0 2px;
+}}
+
 .source-headlines {{
   font-size: 12px;
   color: #8b949e;
   margin-top: 8px;
 }}
 .source-headlines a {{
-  color: #8b949e;
+  color: #58a6ff;
   text-decoration: none;
 }}
-.source-headlines a:hover {{ color: #58a6ff; }}
+.source-headlines a:hover {{ text-decoration: underline; }}
 
 .consecutive-badge {{
   display: inline-block;
@@ -444,21 +476,62 @@ function renderTopics(data) {{
 function renderCard(t) {{
   const trend = t.search_trend || {{}};
   const gap = t.expert_gap || {{}};
+  const newsCount = t.news_count || 0;
+  const newsHeadlines = t.news_headlines || [];
 
-  // 트렌드 태그
-  let trendTag = "";
-  if (trend.change_rate > 50) trendTag = `<span class="meta-tag rising">📈 ${{trend.change_rate > 0 ? "+" : ""}}${{trend.change_rate}}%</span>`;
-  else if (trend.change_rate > 10) trendTag = `<span class="meta-tag rising">↑ +${{trend.change_rate}}%</span>`;
-  else if (trend.change_rate < -10) trendTag = `<span class="meta-tag falling">↓ ${{trend.change_rate}}%</span>`;
-  else trendTag = `<span class="meta-tag">→ ${{trend.change_rate > 0 ? "+" : ""}}${{trend.change_rate || 0}}%</span>`;
+  // ── 이슈 지표 바 ──
+  // 뉴스 건수
+  let newsClass = "cool";
+  if (newsCount >= 50) newsClass = "hot";
+  else if (newsCount >= 10) newsClass = "warm";
 
-  // 전문가갭 태그
-  let gapTag = "";
-  if (gap.label === "전문가 갭 큼" || gap.label === "전문가 부족") {{
-    gapTag = `<span class="meta-tag gap-big">🎯 ${{gap.label}}</span>`;
-  }} else if (gap.label) {{
-    gapTag = `<span class="meta-tag">${{gap.label}}</span>`;
-  }}
+  // 검색 트렌드
+  let trendText = "";
+  let trendClass = "cool";
+  const cr = trend.change_rate || 0;
+  if (cr > 50) {{ trendText = `+${{cr}}%`; trendClass = "hot"; }}
+  else if (cr > 10) {{ trendText = `+${{cr}}%`; trendClass = "warm"; }}
+  else if (cr < -10) {{ trendText = `${{cr}}%`; trendClass = "cool"; }}
+  else {{ trendText = cr > 0 ? `+${{cr}}%` : `${{cr}}%`; }}
+
+  // 검색량 절대치
+  const avg = trend.weekly_avg || 0;
+  let avgText = "";
+  let avgClass = "cool";
+  if (avg >= 50) {{ avgText = `${{avg.toFixed(0)}}`; avgClass = "hot"; }}
+  else if (avg >= 20) {{ avgText = `${{avg.toFixed(0)}}`; avgClass = "warm"; }}
+  else if (avg > 0) {{ avgText = `${{avg.toFixed(0)}}`; }}
+  else {{ avgText = "-"; }}
+
+  // 전문가갭
+  let gapText = gap.label || "";
+  let gapClass = "cool";
+  if (gap.label === "전문가 갭 큼") gapClass = "warm";
+  else if (gap.label === "전문가 부족") gapClass = "warm";
+
+  const buzzBar = `
+    <div class="buzz-bar">
+      <div class="buzz-item">
+        <span class="buzz-label">뉴스</span>
+        <span class="buzz-value ${{newsClass}}">${{newsCount}}건</span>
+      </div>
+      <span class="buzz-divider">|</span>
+      <div class="buzz-item">
+        <span class="buzz-label">검색량</span>
+        <span class="buzz-value ${{avgClass}}">${{avgText}}</span>
+      </div>
+      <span class="buzz-divider">|</span>
+      <div class="buzz-item">
+        <span class="buzz-label">변화</span>
+        <span class="buzz-value ${{trendClass}}">${{trendText}}</span>
+      </div>
+      <span class="buzz-divider">|</span>
+      <div class="buzz-item">
+        <span class="buzz-label">전문가갭</span>
+        <span class="buzz-value ${{gapClass}}">${{gapText}}</span>
+      </div>
+    </div>
+  `;
 
   // 연속 등장
   let consecBadge = "";
@@ -479,11 +552,20 @@ function renderCard(t) {{
     }}
   }}
 
-  // 출처 뉴스
-  let sourceHtml = "";
-  if (t.source_headlines && t.source_headlines.length > 0) {{
-    sourceHtml = '<div class="source-headlines">📰 ' +
-      t.source_headlines.map(h => escHtml(h)).join(" · ") +
+  // 뉴스 헤드라인 (링크 포함)
+  let headlinesHtml = "";
+  if (newsHeadlines.length > 0) {{
+    headlinesHtml = '<div class="source-headlines">' +
+      newsHeadlines.map(h => {{
+        const title = escHtml(h.title || "");
+        const link = h.link || "#";
+        return `📰 <a href="${{link}}" target="_blank" rel="noopener">${{title}}</a>`;
+      }}).join("<br>") +
+      '</div>';
+  }} else if (t.source_headlines && t.source_headlines.length > 0) {{
+    // AI가 준 source_headlines 폴백
+    headlinesHtml = '<div class="source-headlines">' +
+      t.source_headlines.map(h => `📰 ${{escHtml(h)}}`).join("<br>") +
       '</div>';
   }}
 
@@ -494,6 +576,8 @@ function renderCard(t) {{
         <span class="card-keyword">${{escHtml(t.keyword)}}${{coveredBadge}}${{consecBadge}}</span>
         <span class="card-category ${{catClass(t.category)}}">${{t.category || ""}}</span>
       </div>
+
+      ${{buzzBar}}
 
       <div class="card-section">
         <div class="label label-why">💡 왜 지금?</div>
@@ -511,12 +595,7 @@ function renderCard(t) {{
       </div>
 
       ${{coveredPosts}}
-      ${{sourceHtml}}
-
-      <div class="card-meta">
-        ${{trendTag}}
-        ${{gapTag}}
-      </div>
+      ${{headlinesHtml}}
     </div>
   `;
 }}

@@ -322,6 +322,7 @@ def build_ai_prompt(news_by_category, my_posts):
 각 항목:
 {{
   "keyword": "구체적 키워드 (예: '루테인', '탈모약 건보 적용', '크릴오일 vs 오메가3')",
+  "trend_key": "추이 추적용 핵심 키워드 1~3단어 (예: '벤포티아민', 'GLP-1 담석증', '마운자로 품절'). 같은 성분/개념이면 매번 동일한 trend_key를 사용하세요. 예: '벤포티아민', '활성비타민B1', '아로나민'은 모두 trend_key='벤포티아민'으로 통일.",
   "category": "영양제·성분 | 약업계·정책 | 질환·치료 | 소비자건강",
   "why_now": "왜 지금 이 글을 써야 하는지 2~3문장. 뉴스 맥락과 블로그 확장 가치를 구체적으로 설명.",
   "pharmacist_angle": "약사/DDS 연구자로서 차별화할 수 있는 구체적 앵글 1~2문장",
@@ -519,8 +520,16 @@ def enrich_candidates(candidates):
     return candidates
 
 
+def _get_trend_key(topic):
+    """토픽에서 trend_key 추출. 없으면 _extract_core_keyword로 fallback"""
+    tk = topic.get("trend_key", "").strip()
+    if tk:
+        return tk
+    return _extract_core_keyword(topic.get("keyword", ""))
+
+
 def load_scan_history(days=7):
-    """최근 스캔에서 키워드 연속 등장일수 계산"""
+    """최근 스캔에서 trend_key 기준 연속 등장일수 계산"""
     if not os.path.isdir(SCANS_DIR):
         return {}
 
@@ -528,7 +537,7 @@ def load_scan_history(days=7):
     files = sorted(_glob.glob(os.path.join(SCANS_DIR, "*.json")))
     cutoff = datetime.now() - timedelta(days=days)
 
-    # 날짜별 키워드 집합
+    # 날짜별 trend_key 집합
     date_keywords = {}
     for fpath in files:
         fname = os.path.basename(fpath).replace(".json", "")
@@ -542,19 +551,18 @@ def load_scan_history(days=7):
         try:
             with open(fpath, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            keywords = {t["keyword"] for t in data.get("topics", [])}
+            keys = {_get_trend_key(t) for t in data.get("topics", [])}
             if date_str not in date_keywords:
                 date_keywords[date_str] = set()
-            date_keywords[date_str].update(keywords)
+            date_keywords[date_str].update(keys)
         except Exception:
             continue
 
     # 오늘부터 역순으로 연속일수 계산
     today = datetime.now().date()
     consecutive = {}
-    dates_sorted = sorted(date_keywords.keys(), reverse=True)
 
-    # 모든 키워드 수집
+    # 모든 trend_key 수집
     all_kws = set()
     for kws in date_keywords.values():
         all_kws.update(kws)
@@ -610,10 +618,14 @@ def main():
     # 3단계: 보강 데이터
     candidates = enrich_candidates(candidates)
 
-    # 연속 등장일수 추가
+    # 연속 등장일수 추가 (trend_key 기준)
     consecutive = load_scan_history(days=7)
     for c in candidates:
-        prev = consecutive.get(c["keyword"], 0)
+        tk = _get_trend_key(c)
+        # trend_key가 AI에서 안 나온 경우 fallback으로 생성해서 저장
+        if not c.get("trend_key"):
+            c["trend_key"] = tk
+        prev = consecutive.get(tk, 0)
         c["consecutive_days"] = prev + 1  # 오늘 포함
 
     # 정렬: 새 글감(already_covered=false) 먼저, 그 안에서는 순서 유지

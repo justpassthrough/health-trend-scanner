@@ -602,7 +602,7 @@ def main():
     total_news = sum(len(v) for v in news_by_category.values())
     if total_news == 0:
         print("\n[ERROR] 수집된 뉴스가 없습니다. 종료.")
-        return
+        sys.exit(1)
 
     # 2단계: AI 분석
     result = run_ai_analysis(news_by_category, my_posts)
@@ -613,7 +613,7 @@ def main():
 
     if not candidates:
         print("\n[ERROR] AI 분석 결과가 없습니다. 종료.")
-        return
+        sys.exit(1)
 
     # 3단계: 보강 데이터
     candidates = enrich_candidates(candidates)

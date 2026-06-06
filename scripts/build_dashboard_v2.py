@@ -21,10 +21,10 @@ os.makedirs(DOCS_DIR, exist_ok=True)
 
 
 def load_scan_list():
-    """스캔 파일 목록 (최근 14일)"""
+    """스캔 파일 목록 (최근 90일) — 추이 그래프에서 과거로 탐색 가능하도록"""
     files = sorted(glob.glob(os.path.join(SCANS_DIR, "*.json")), reverse=True)
     scans = []
-    for f in files[:28]:  # 최대 28개 (14일 × 2회)
+    for f in files[:180]:  # 최대 180개 (90일 × 2회)
         name = os.path.basename(f).replace(".json", "")
         scans.append(name)
     return scans
@@ -904,8 +904,14 @@ function buildTrendData() {{
 
 // ── 추이 날짜 네비게이션 ──
 function trendNavigate(delta) {{
-  const newEnd = trendWindowEnd + delta;
-  if (newEnd >= 0 && newEnd < allDates.length) {{
+  // 윈도우 끝(trendWindowEnd)을 [최소끝, 마지막날] 범위로 제한해서
+  // 과거로 가도 항상 14일 폭이 유지되도록 함 (끝에서 줄어들지 않게)
+  const WINDOW_DAYS = 14;
+  const minEnd = Math.min(allDates.length - 1, WINDOW_DAYS - 1);
+  let newEnd = trendWindowEnd + delta;
+  if (newEnd < minEnd) newEnd = minEnd;
+  if (newEnd > allDates.length - 1) newEnd = allDates.length - 1;
+  if (newEnd !== trendWindowEnd) {{
     trendWindowEnd = newEnd;
     renderTrendWindow();
   }}
@@ -918,7 +924,8 @@ function renderTrendWindow() {{
   const windowDates = allDates.slice(winStart, trendWindowEnd + 1);
 
   // 네비게이션 버튼 상태 (상단 + 하단 동기화)
-  const prevDisabled = (trendWindowEnd <= 2);
+  // 가장 오래된 14일 윈도우(winStart=0)에 닿으면 prev 비활성화
+  const prevDisabled = (winStart <= 0);
   const nextDisabled = (trendWindowEnd >= allDates.length - 1);
   document.getElementById("trendPrevBtn").disabled = prevDisabled;
   document.getElementById("trendNextBtn").disabled = nextDisabled;

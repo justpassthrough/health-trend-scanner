@@ -8,7 +8,12 @@ import sys
 import json
 import re
 import time
+import math
+import base64
+import hashlib
+import hmac
 from datetime import datetime, timedelta
+from email.utils import parsedate_to_datetime
 
 import requests
 
@@ -18,10 +23,23 @@ if sys.stdout.encoding != "utf-8":
 if sys.stderr.encoding != "utf-8":
     sys.stderr.reconfigure(encoding="utf-8")
 
+# ── 로컬 테스트용 .env 로드 (있으면) ──
+try:
+    from dotenv import load_dotenv
+    load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env"))
+except Exception:
+    pass
+
 # ── API 키 ──
 NAVER_CLIENT_ID = os.environ.get("NAVER_CLIENT_ID", "")
 NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET", "")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+
+# ── 검색광고 키워드도구 API 키 (월간 절대 검색수 + 경쟁정도) ──
+NAVER_AD_CUSTOMER_ID = os.environ.get("NAVER_AD_CUSTOMER_ID", "")
+NAVER_AD_API_KEY = os.environ.get("NAVER_AD_API_KEY", "")
+NAVER_AD_SECRET_KEY = os.environ.get("NAVER_AD_SECRET_KEY", "")
+SEARCHAD_BASE = "https://api.searchad.naver.com"
 
 NAVER_HEADERS = {
     "X-Naver-Client-Id": NAVER_CLIENT_ID,
@@ -266,6 +284,189 @@ def get_expert_gap(keyword):
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 검색광고 키워드도구 API (월간 절대 검색수 + 경쟁정도)
+#   - 키워드 딥다이브 툴에서 검증된 코드를 이식
+#   - DataLab은 '상대 트렌드'만 주므로, '절대 수요'를 메우는 핵심 보강
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def _searchad_signature(timestamp, method, path):
+    """검색광고 API용 HMAC-SHA256 서명 생성."""
+    message = f"{timestamp}.{method}.{path}"
+    digest = hmac.new(
+        NAVER_AD_SECRET_KEY.encode("utf-8"),
+        message.encode("utf-8"),
+        hashlib.sha256,
+    ).digest()
+    return base64.b64encode(digest).decode("utf-8")
+
+
+def _parse_qc(value):
+    """월간검색수 파싱. '< 10' 같은 문자열 → 정수."""
+    if isinstance(value, int):
+        return value
+    if isinstance(value, str):
+        v = value.replace("<", "").replace(",", "").strip()
+        if v.isdigit():
+            return int(v)
+        return 9  # "< 10" 류는 9로 근사
+    return 0
+
+
+def fetch_search_volume(keywords):
+    """검색광고 API로 키워드들의 월간검색수(PC+모바일)와 경쟁정도 조회.
+    keywords: 문자열 리스트. 반환: {키워드(공백제거,대문자): {pc, mobile, total, comp_idx}}.
+    키가 없으면 빈 dict 반환(있는 기능에 영향 없음)."""
+    result = {}
+    if not (NAVER_AD_CUSTOMER_ID and NAVER_AD_API_KEY and NAVER_AD_SECRET_KEY):
+        print("  [검색광고] 키 없음 — 검색량 조회 스킵 (기회점수는 약사가치 폴백)")
+        return result
+    path = "/keywordstool"
+    # API는 한 번에 hintKeywords 최대 5개 권장 → 5개씩 배치
+    for i in range(0, len(keywords), 5):
+        batch = keywords[i:i + 5]
+        # 검색광고 API는 키워드의 공백을 무시함 → 공백 제거해서 전달
+        hint = ",".join(k.replace(" ", "") for k in batch)
+        timestamp = str(int(time.time() * 1000))
+        headers = {
+            "X-Timestamp": timestamp,
+            "X-API-KEY": NAVER_AD_API_KEY,
+            "X-Customer": str(NAVER_AD_CUSTOMER_ID),
+            "X-Signature": _searchad_signature(timestamp, "GET", path),
+        }
+        try:
+            r = requests.get(
+                SEARCHAD_BASE + path,
+                headers=headers,
+                params={"hintKeywords": hint, "showDetail": "1"},
+                timeout=10,
+            )
+            if r.status_code != 200:
+                print(f"  [검색광고 경고] status {r.status_code}: {r.text[:120]}")
+                time.sleep(0.5)
+                continue
+            for item in r.json().get("keywordList", []):
+                rel = item.get("relKeyword", "")
+                key = rel.replace(" ", "").upper()
+                pc = _parse_qc(item.get("monthlyPcQcCnt", 0))
+                mo = _parse_qc(item.get("monthlyMobileQcCnt", 0))
+                # 같은 배치에서 hint로 넣은 키워드는 정확매칭만 채택(연관어 노이즈 방지)
+                result[key] = {
+                    "pc": pc,
+                    "mobile": mo,
+                    "total": pc + mo,
+                    "comp_idx": item.get("compIdx", ""),
+                }
+        except Exception as e:
+            print(f"  [검색광고 경고] {e}")
+        time.sleep(0.4)  # rate limit 보호
+    return result
+
+
+def lookup_volume(volume_map, keyword):
+    """fetch_search_volume 결과에서 특정 키워드의 지표를 안전하게 꺼냄."""
+    return volume_map.get(keyword.replace(" ", "").upper())
+
+
+# ── 점수 계산 헬퍼 (2트랙) ──
+
+def _expert_gap_mult(gap):
+    """전문가갭 비율 → 배수(0.7~1.3). 약사가 비집고 들어갈 틈이 클수록 높음."""
+    ratio = gap.get("gap_ratio", 0) or 0
+    total = gap.get("total_blogs", 0) or 0
+    if total < 100:
+        return 0.9  # 표본 적음 → 중립 근처
+    if ratio >= 30:
+        return 1.3
+    if ratio >= 10:
+        return 1.1
+    if ratio >= 3:
+        return 1.0
+    return 0.7  # 포화
+
+
+def calc_pharma_value(pharma_value_raw, gap):
+    """약사가치 = AI가 매긴 전문성점수(1~5) × 전문가갭배수. 시점 무관 '적합도'."""
+    pv = pharma_value_raw if isinstance(pharma_value_raw, (int, float)) else 3
+    pv = max(1, min(5, pv))
+    return round(pv * _expert_gap_mult(gap), 2)
+
+
+def calc_opportunity(search_volume, comp_idx, pharma_value):
+    """검색형 기회점수 = 약사가치 × 수요배수(log10 검색량) × 경쟁여유배수.
+    검색량 없으면 None(→ 약사가치로 폴백)."""
+    if search_volume is None:
+        return None
+    # log10(검색량)/2: 100회=1.0, 2500회≈1.7, 1.1만회≈2.0, 23만회≈2.7
+    demand_mult = math.log10(max(search_volume, 10)) / 2
+    comp_mult = {"낮음": 1.2, "중간": 1.0, "높음": 0.8}.get(comp_idx, 1.0)
+    return round(pharma_value * demand_mult * comp_mult, 1)
+
+
+def opportunity_label(search_volume, comp_idx):
+    """검색량·경쟁도 조합을 사람이 읽을 라벨로."""
+    if search_volume is None:
+        return None
+    if search_volume < 100:
+        return "수요 적음"
+    if search_volume >= 1000 and comp_idx == "낮음":
+        return "💎황금(수요多·경쟁低)"
+    if comp_idx == "낮음":
+        return "양호(경쟁 낮음)"
+    if comp_idx == "높음":
+        return "포화(경쟁 높음)"
+    return "보통"
+
+
+def calc_timeliness(pharma_value, recency, change_rate, already_covered,
+                    consecutive_days, news_count):
+    """시의형 시의점수 — '지금 막 뜨는 새 주제'를 최상단으로.
+    1순위 = 신선도(최신 기사 경과시간 + 24h 기사 다발), 그 다음 신규성(이미 쓴 주제 강하게 하향),
+    급등(보조), 뉴스 규모(약한 보조). 뉴스량은 일부러 약하게 둠 — 큰 옛이슈가 위로 가지 않게."""
+    recency = recency or {}
+
+    # ── 신선도 (PRIMARY) ── 최신 기사가 얼마나 최근인가
+    nh = recency.get("newest_hours")
+    if nh is None:
+        fresh = 0.6          # 최근 기사 못 찾음 = 식은 주제
+    elif nh < 24:
+        fresh = 1.6          # 하루 안에 터짐
+    elif nh < 48:
+        fresh = 1.3
+    elif nh < 72:
+        fresh = 1.1
+    elif nh < 168:
+        fresh = 0.9          # 1주일 이내
+    else:
+        fresh = 0.5          # 1주일 넘음 = 식은 떡
+    # 24시간 기사 다발 = 지금 폭발 중
+    c24 = recency.get("count_24h", 0)
+    if c24 >= 10:
+        fresh *= 1.25
+    elif c24 >= 3:
+        fresh *= 1.1
+
+    # ── 신규성 ── 이미 쓴 주제 강하게 하향 / 첫 등장 가산
+    if already_covered:
+        nov = 0.4
+    elif consecutive_days and consecutive_days >= 4:
+        nov = 0.8            # 며칠째 계속 = 신선함 줄어듦
+    elif consecutive_days == 1:
+        nov = 1.15           # 오늘 처음 등장
+    else:
+        nov = 1.0
+
+    # ── 급등 (보조) ──
+    cr = change_rate or 0
+    spike = 1.2 if cr >= 20 else (0.9 if cr <= -20 else 1.0)
+
+    # ── 뉴스 규모 (약한 보조) ── 10건=1.0, 1000건=1.3, 1만건=1.45
+    vol = 1 + (math.log10(max(news_count or 0, 10)) - 1) * 0.15
+
+    base = pharma_value if pharma_value else 3
+    return round(base * fresh * nov * spike * vol, 1)
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 2단계: AI 분석
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -295,12 +496,27 @@ def build_ai_prompt(news_by_category, my_posts):
 [목표]
 아래 오늘의 뉴스를 분석하여, 이 블로거가 새롭게 확장할 수 있는 글감을 찾아주세요.
 
-우선순위:
-1. 내 블로그에 전혀 없는 영양제/성분 이름 → 최우선 (예: 아직 안 다룬 루테인, 크릴오일, 아연, 비타민D 등)
-2. 소비자에게 직접 영향 주는 약업계 뉴스 (건보 적용, 품절, 리콜, 가격 변동) → 높음
-3. 갑자기 검색량이 급등하는 성분이나 건강 이슈 → 높음
-4. 이미 다룬 주제지만 새 이슈가 터진 경우 → 보통 (already_covered=true 표시)
-5. "비만", "건강" 같은 포괄적 키워드는 제외 — 구체적인 성분명/제품명/정책명일수록 좋음
+[가장 중요한 규칙 — 글감을 두 종류(track)로 나눕니다]
+모든 글감은 반드시 둘 중 하나로 분류하세요. 두 종류 모두 골고루 뽑아야 합니다.
+
+① track = "검색형" (에버그린 / 사람들이 검색창에 직접 치는 것)
+   - 성분명·영양제·제품·증상처럼 소비자가 평소에 검색하는 주제
+   - 예: 감마오리자놀, 바나바잎, 리포좀비타민C, 시서스추출물, 루테인, 글루타치온
+   - 이 트랙은 '실제 검색 수요'로 평가되므로 keyword가 **반드시 짧은 실제 검색어**여야 함
+
+② track = "시의형" (지금 막 터진 뉴스 / 산업·정책·신약)
+   - 평소 검색량은 적지만 지금 이슈가 된 약업계·정책·신약·허가·품절·리콜·산업 소식
+   - 예: 탈모약 건강보험, 위고비 품절, 종근당 비만신약, 식약처 리콜
+   - 이 트랙은 '뉴스 규모와 시의성'으로 평가됨. 산업/주식/희귀질환 신약 뉴스도 여기 포함(필터링하지 말 것)
+
+[keyword 작성 규칙 — 매우 중요]
+- keyword는 **네이버 검색창에 그대로 칠 수 있는 짧은 단어/구**여야 합니다 (보통 2~12자).
+- 문장으로 쓰지 마세요. 괄호 설명을 넣지 마세요.
+  - 나쁨: "GLP-1 계열 비만치료제 복용 중 탈모 위험" (← 문장, 검색 안 됨)
+  - 좋음: keyword="비만치료제 탈모", track="검색형"
+  - 나쁨: "경구용 GLP-1 비만치료제 (HK이노엔, 종근당 CKD-514 등)"
+  - 좋음: keyword="먹는 비만약", track="시의형"
+- 길게 설명하고 싶은 내용은 keyword가 아니라 why_now / pharmacist_angle / title_idea 에 쓰세요.
 
 [내 블로그 기존 글 제목]
 {posts_block}
@@ -319,13 +535,16 @@ def build_ai_prompt(news_by_category, my_posts):
 
 [출력 규칙]
 반드시 JSON 배열로만 응답하세요. 최소 8개, 최대 15개 항목.
+검색형과 시의형을 모두 포함하세요 (검색형 최소 4개, 시의형 최소 3개 권장).
 각 항목:
 {{
-  "keyword": "구체적 키워드 (예: '루테인', '탈모약 건보 적용', '크릴오일 vs 오메가3')",
-  "trend_key": "추이 추적용 핵심 키워드 1~3단어 (예: '벤포티아민', 'GLP-1 담석증', '마운자로 품절'). 같은 성분/개념이면 매번 동일한 trend_key를 사용하세요. 예: '벤포티아민', '활성비타민B1', '아로나민'은 모두 trend_key='벤포티아민'으로 통일.",
+  "keyword": "짧은 검색어 (예: '감마오리자놀', '바나바잎', '탈모약 건강보험', '위고비 품절')",
+  "track": "검색형 | 시의형",
   "category": "영양제·성분 | 약업계·정책 | 질환·치료 | 소비자건강",
-  "why_now": "왜 지금 이 글을 써야 하는지 2~3문장. 뉴스 맥락과 블로그 확장 가치를 구체적으로 설명.",
-  "pharmacist_angle": "약사/DDS 연구자로서 차별화할 수 있는 구체적 앵글 1~2문장",
+  "pharma_value": 1~5 정수 (약사/DDS 전문성으로 남들과 차별화할 여지. 5=약사만 쓸 수 있는 깊은 주제, 1=누구나 쓰는 일반 주제),
+  "trend_key": "추이 추적용 핵심어 1~3단어. 같은 성분/개념이면 매번 동일하게. 예: '벤포티아민','활성비타민B1','아로나민' → 모두 '벤포티아민'.",
+  "why_now": "왜 지금 이 글을 써야 하는지 2~3문장. 뉴스 맥락과 확장 가치를 구체적으로.",
+  "pharmacist_angle": "약사/DDS 연구자로서 차별화할 구체적 앵글 1~2문장",
   "title_idea": "블로그 글 제목 아이디어 1개 (클릭 유도형, 약사 전문성 드러나는)",
   "already_covered": false,
   "covered_posts": [],
@@ -335,7 +554,7 @@ def build_ai_prompt(news_by_category, my_posts):
 [중요]
 - already_covered가 true인 경우, covered_posts에 관련된 기존 글 제목을 넣으세요
 - 새 글감(already_covered=false)이 전체의 60% 이상이어야 합니다
-- keyword는 블로그 제목에 쓸 수 있을 정도로 구체적이어야 합니다
+- "비만", "건강" 같은 너무 포괄적인 단어 단독 사용 금지 — 구체적인 성분명/제품명/정책명
 - 한국어로 작성"""
 
     return prompt
@@ -464,20 +683,63 @@ def get_news_count_and_headlines(keyword, count=3):
     return total, headlines
 
 
+def get_news_recency(keyword):
+    """'지금 뜨는가'를 기사 발행일로 측정. sort=date(최신순)로 조회해서
+    가장 최근 기사가 몇 시간 전인지 + 최근 24/48시간 기사 다발 정도를 반환.
+    시의형 글감을 '속보성'으로 줄 세우기 위한 핵심 신호."""
+    url = "https://openapi.naver.com/v1/search/news.json"
+    params = {"query": keyword, "display": 30, "sort": "date"}
+    try:
+        r = requests.get(url, headers=NAVER_HEADERS, params=params, timeout=10)
+        r.raise_for_status()
+        items = r.json().get("items", [])
+    except Exception as e:
+        print(f"    [WARN] 신선도 조회 실패 ({keyword}): {e}")
+        return {"newest_hours": None, "count_24h": 0, "count_48h": 0}
+
+    now = datetime.now().astimezone()
+    dates = []
+    for it in items:
+        try:
+            dates.append(parsedate_to_datetime(it.get("pubDate", "")))
+        except Exception:
+            continue
+    if not dates:
+        return {"newest_hours": None, "count_24h": 0, "count_48h": 0}
+
+    newest = max(dates)
+    newest_hours = (now - newest).total_seconds() / 3600
+    c24 = sum(1 for d in dates if (now - d).total_seconds() <= 86400)
+    c48 = sum(1 for d in dates if (now - d).total_seconds() <= 172800)
+    return {
+        "newest_hours": round(newest_hours, 1),
+        "count_24h": c24,
+        "count_48h": c48,
+    }
+
+
 def enrich_candidates(candidates):
-    """AI 후보에 뉴스 건수 + 검색량 트렌드 + 전문가 갭 데이터 추가"""
+    """AI 후보에 뉴스 건수 + 검색량 트렌드 + 전문가 갭 + 절대 검색량(검색광고) 추가,
+    그리고 트랙별 점수(검색형=기회점수 / 시의형=시의점수)를 계산."""
     print("\n" + "=" * 50)
     print("3단계: 보강 데이터 수집")
     print("=" * 50)
 
+    # ── (a) 검색광고 API로 절대 검색량 일괄 조회 (배치, 비용 저렴) ──
+    #     keyword가 이제 짧은 검색어라 적중률이 높음. 시의형은 대부분 0건이지만
+    #     그 자체로 '검색 수요 없음' 신호라 그대로 둠.
+    kw_list = [c.get("keyword", "") for c in candidates if c.get("keyword")]
+    print(f"  검색광고 절대 검색량 조회: {len(kw_list)}개")
+    volume_map = fetch_search_volume(kw_list)
+    print(f"    → {len(volume_map)}개 키워드 검색량 확보")
+
     for i, c in enumerate(candidates):
         kw = c.get("keyword", "")
         core_kw = _extract_core_keyword(kw)
-        print(f"  [{i+1}/{len(candidates)}] {kw}")
-        if core_kw != kw:
-            print(f"    핵심 키워드: {core_kw}")
+        track = c.get("track", "검색형")
+        print(f"  [{i+1}/{len(candidates)}] ({track}) {kw}")
 
-        # 뉴스 건수 + 헤드라인 (AI 원본 키워드로 검색 — 맥락 정확도 유지)
+        # 뉴스 건수 + 헤드라인
         news_count, news_headlines = get_news_count_and_headlines(kw, count=3)
         time.sleep(0.1)
         c["news_count"] = news_count
@@ -487,8 +749,6 @@ def enrich_candidates(candidates):
         # 검색량 트렌드 (핵심 키워드로 조회 — DataLab 적중률 향상)
         change_rate, weekly_avg = get_search_trend(core_kw)
         time.sleep(0.15)
-
-        # 핵심 키워드로도 0이면 원본으로 재시도
         if weekly_avg == 0 and core_kw != kw:
             change_rate2, weekly_avg2 = get_search_trend(kw)
             if weekly_avg2 > weekly_avg:
@@ -509,13 +769,43 @@ def enrich_candidates(candidates):
             "direction": direction,
             "weekly_avg": weekly_avg,
         }
-        print(f"    검색: {change_rate:+.1f}% ({direction}, avg={weekly_avg})")
+        print(f"    검색트렌드: {change_rate:+.1f}% ({direction})")
 
         # 전문가 갭
         gap = get_expert_gap(core_kw)
         time.sleep(0.15)
         c["expert_gap"] = gap
         print(f"    전문가갭: {gap['label']} (비율 {gap['gap_ratio']}:1)")
+
+        # ── 절대 검색량 (검색광고) ──
+        vol = lookup_volume(volume_map, kw)
+        search_volume = vol["total"] if vol else None
+        comp_idx = vol["comp_idx"] if vol else None
+        c["search_volume"] = search_volume
+        c["comp_idx"] = comp_idx
+        if search_volume is not None:
+            print(f"    월검색수: {search_volume:,} / 경쟁 {comp_idx}")
+
+        # ── 약사가치 + 검색형 기회점수 (시의형 점수는 main에서 신규성 반영 후 계산) ──
+        pharma_value = calc_pharma_value(c.get("pharma_value"), gap)
+        c["pharma_value_calc"] = pharma_value
+
+        opp = calc_opportunity(search_volume, comp_idx, pharma_value)
+        c["opportunity_score"] = opp
+        c["opportunity_label"] = opportunity_label(search_volume, comp_idx)
+
+        if track == "시의형":
+            # 신선도(속보성) 신호 수집 — 기사 발행일 기반
+            recency = get_news_recency(kw)
+            time.sleep(0.1)
+            c["news_recency"] = recency
+            c["score"] = None  # main에서 신규성(이미작성/연속일) 반영해 확정
+            nh = recency.get("newest_hours")
+            print(f"    신선도: 최신기사 {nh}h 전, 24h내 {recency.get('count_24h')}건")
+        else:
+            c["news_recency"] = {}
+            c["score"] = opp if opp is not None else pharma_value
+            print(f"    기회점수: {c['score']} (약사가치 {pharma_value})")
 
     return candidates
 
@@ -628,23 +918,58 @@ def main():
         prev = consecutive.get(tk, 0)
         c["consecutive_days"] = prev + 1  # 오늘 포함
 
-    # 정렬: 새 글감(already_covered=false) 먼저, 그 안에서는 순서 유지
-    new_topics = [c for c in candidates if not c.get("already_covered", False)]
-    existing_topics = [c for c in candidates if c.get("already_covered", False)]
-
-    topics = []
-    for i, c in enumerate(new_topics + existing_topics):
-        c["rank"] = i + 1
+    # 트랙 정규화 (AI가 안 넣었으면 검색형으로 간주) + 시의형 점수 확정
+    #   (시의형은 신규성=이미작성/연속일수를 반영해야 하므로 consecutive_days 계산 후 여기서 산출)
+    for c in candidates:
+        if c.get("track") not in ("검색형", "시의형"):
+            c["track"] = "검색형"
         c["is_new_topic"] = not c.get("already_covered", False)
-        topics.append(c)
+        if c["track"] == "시의형":
+            ts = calc_timeliness(
+                c.get("pharma_value_calc", 3),
+                c.get("news_recency", {}),
+                c.get("search_trend", {}).get("change_rate", 0),
+                c.get("already_covered", False),
+                c.get("consecutive_days", 1),
+                c.get("news_count", 0),
+            )
+            c["timeliness_score"] = ts
+            c["score"] = ts
+
+    # 정렬: 트랙별로 나눠 각자의 score(검색형=기회점수 / 시의형=시의점수) 내림차순
+    search_topics = sorted(
+        [c for c in candidates if c["track"] == "검색형"],
+        key=lambda x: (x.get("score") or 0),
+        reverse=True,
+    )
+    news_topics = sorted(
+        [c for c in candidates if c["track"] == "시의형"],
+        key=lambda x: (x.get("score") or 0),
+        reverse=True,
+    )
+
+    # rank는 트랙 내 순위로 부여
+    for i, c in enumerate(search_topics):
+        c["rank"] = i + 1
+    for i, c in enumerate(news_topics):
+        c["rank"] = i + 1
+
+    topics = search_topics + news_topics
 
     # 통계
+    new_topics = [c for c in candidates if not c.get("already_covered", False)]
+    existing_topics = [c for c in candidates if c.get("already_covered", False)]
+    golden = [c for c in candidates
+              if c.get("opportunity_label") and "황금" in c["opportunity_label"]]
     stats = {
         "total_news_collected": total_news,
         "my_posts_count": len(my_posts),
         "ai_candidates": len(candidates),
         "new_topics": len(new_topics),
         "existing_topics_new_issue": len(existing_topics),
+        "search_topics": len(search_topics),
+        "news_topics": len(news_topics),
+        "golden_topics": len(golden),
     }
 
     # 결과 JSON 구성
@@ -671,8 +996,9 @@ def main():
     print("=" * 50)
     print(f"  스캔 저장: {scan_path}")
     print(f"  최신 저장: {latest_path}")
-    print(f"  새 글감: {len(new_topics)}개")
-    print(f"  기존 주제 새 이슈: {len(existing_topics)}개")
+    print(f"  검색형: {len(search_topics)}개 / 시의형: {len(news_topics)}개")
+    print(f"  새 글감: {len(new_topics)}개 / 기존 주제 새 이슈: {len(existing_topics)}개")
+    print(f"  💎황금 키워드: {len(golden)}개")
     print(f"  API 비용: ${meta.get('cost_usd', 0):.4f}")
 
 

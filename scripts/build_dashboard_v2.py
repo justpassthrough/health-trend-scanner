@@ -161,6 +161,43 @@ body {{
 }}
 .section-title.new {{ color: #3fb950; }}
 .section-title.existing {{ color: #e3b341; }}
+.section-title.search {{ color: #58a6ff; }}
+.section-title.news {{ color: #f0883e; }}
+.section-desc {{
+  font-size: 12px;
+  color: #8b949e;
+  font-weight: 400;
+  margin-left: 6px;
+}}
+
+/* 점수/황금/경쟁도 배지 */
+.score-badge {{
+  display: inline-block;
+  background: #1f6feb22;
+  color: #58a6ff;
+  border: 1px solid #1f6feb55;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}}
+.score-badge.news {{ background: #f0883e22; color: #f0883e; border-color: #f0883e55; }}
+.golden-badge {{
+  display: inline-block;
+  background: #d2992233;
+  color: #f0c000;
+  border: 1px solid #d2992288;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+}}
+.buzz-value.comp-low {{ color: #3fb950; }}
+.buzz-value.comp-mid {{ color: #e3b341; }}
+.buzz-value.comp-high {{ color: #f85149; }}
+.stat-badge.search {{ border-color: #1f6feb; color: #58a6ff; }}
+.stat-badge.news {{ border-color: #f0883e; color: #f0883e; }}
+.stat-badge.golden {{ border-color: #d29922; color: #f0c000; }}
 
 /* 카드 */
 .card {{
@@ -590,10 +627,22 @@ function loadScan(idx) {{
 // ── 통계 바 ──
 function renderStats(data) {{
   const s = data.stats || {{}};
+  // 구버전 스캔(트랙 없음) 대비 fallback 계산
+  const topics = data.topics || [];
+  const searchN = (s.search_topics != null) ? s.search_topics
+    : topics.filter(t => (t.track || "검색형") === "검색형").length;
+  const newsN = (s.news_topics != null) ? s.news_topics
+    : topics.filter(t => t.track === "시의형").length;
+  const goldenN = (s.golden_topics != null) ? s.golden_topics
+    : topics.filter(t => (t.opportunity_label || "").includes("황금")).length;
+  let goldenBadge = goldenN > 0
+    ? `<span class="stat-badge golden">💎 황금 ${{goldenN}}개</span>` : "";
   document.getElementById("statsBar").innerHTML = `
-    <span class="stat-badge new">🆕 새 글감 ${{s.new_topics || 0}}개</span>
-    <span class="stat-badge existing">🔥 기존주제 새이슈 ${{s.existing_topics_new_issue || 0}}개</span>
-    <span class="stat-badge">📰 분석 뉴스 ${{s.total_news_collected || 0}}건</span>
+    <span class="stat-badge search">🔍 검색형 ${{searchN}}개</span>
+    <span class="stat-badge news">📰 시의형 ${{newsN}}개</span>
+    ${{goldenBadge}}
+    <span class="stat-badge">🆕 새 글감 ${{s.new_topics || 0}}개</span>
+    <span class="stat-badge">📑 분석 뉴스 ${{s.total_news_collected || 0}}건</span>
   `;
 }}
 
@@ -629,19 +678,22 @@ function renderTopics(data) {{
     filtered = topics.filter(t => t.category === currentFilter);
   }}
 
-  const newTopics = filtered.filter(t => t.is_new_topic);
-  const existingTopics = filtered.filter(t => !t.is_new_topic);
+  // 트랙으로 1차 분리 (트랙 없는 구버전 데이터는 검색형으로 간주)
+  const searchTopics = filtered.filter(t => (t.track || "검색형") === "검색형");
+  const newsTopics = filtered.filter(t => t.track === "시의형");
 
   let html = "";
 
-  if (newTopics.length > 0) {{
-    html += '<div class="section-title new">🆕 새 글감 발굴</div>';
-    newTopics.forEach(t => {{ html += renderCard(t); }});
+  if (searchTopics.length > 0) {{
+    html += '<div class="section-title search">🔍 검색형 글감'
+      + '<span class="section-desc">사람들이 검색하는 성분·증상 · 실검색량 기준 정렬</span></div>';
+    searchTopics.forEach(t => {{ html += renderCard(t); }});
   }}
 
-  if (existingTopics.length > 0) {{
-    html += '<div class="section-title existing">🔥 기존 주제 — 새 이슈</div>';
-    existingTopics.forEach(t => {{ html += renderCard(t); }});
+  if (newsTopics.length > 0) {{
+    html += '<div class="section-title news">📰 시의형 글감'
+      + '<span class="section-desc">지금 터진 산업·정책·신약 이슈 · 뉴스 규모 기준 정렬</span></div>';
+    newsTopics.forEach(t => {{ html += renderCard(t); }});
   }}
 
   if (filtered.length === 0) {{
@@ -656,60 +708,80 @@ function renderCard(t) {{
   const gap = t.expert_gap || {{}};
   const newsCount = t.news_count || 0;
   const newsHeadlines = t.news_headlines || [];
+  const track = t.track || "검색형";
 
-  // ── 이슈 지표 바 ──
-  // 뉴스 건수
+  // 뉴스 건수 색상
   let newsClass = "cool";
   if (newsCount >= 50) newsClass = "hot";
   else if (newsCount >= 10) newsClass = "warm";
 
-  // 검색 트렌드
-  let trendText = "";
-  let trendClass = "cool";
+  // 검색 트렌드(변화율)
   const cr = trend.change_rate || 0;
-  if (cr > 50) {{ trendText = `+${{cr}}%`; trendClass = "hot"; }}
-  else if (cr > 10) {{ trendText = `+${{cr}}%`; trendClass = "warm"; }}
-  else if (cr < -10) {{ trendText = `${{cr}}%`; trendClass = "cool"; }}
-  else {{ trendText = cr > 0 ? `+${{cr}}%` : `${{cr}}%`; }}
-
-  // 검색량 절대치
-  const avg = trend.weekly_avg || 0;
-  let avgText = "";
-  let avgClass = "cool";
-  if (avg >= 50) {{ avgText = `${{avg.toFixed(0)}}`; avgClass = "hot"; }}
-  else if (avg >= 20) {{ avgText = `${{avg.toFixed(0)}}`; avgClass = "warm"; }}
-  else if (avg > 0) {{ avgText = `${{avg.toFixed(0)}}`; }}
-  else {{ avgText = "-"; }}
+  let trendText = cr > 0 ? `+${{cr}}%` : `${{cr}}%`;
+  let trendClass = "cool";
+  if (cr > 50) trendClass = "hot";
+  else if (cr > 10) trendClass = "warm";
 
   // 전문가갭
-  let gapText = gap.label || "";
+  let gapText = gap.label || "-";
   let gapClass = "cool";
-  if (gap.label === "전문가 갭 큼") gapClass = "warm";
-  else if (gap.label === "전문가 부족") gapClass = "warm";
+  if (gap.label === "전문가 갭 큼" || gap.label === "전문가 부족") gapClass = "warm";
 
-  const buzzBar = `
-    <div class="buzz-bar">
-      <div class="buzz-item">
-        <span class="buzz-label">뉴스</span>
-        <span class="buzz-value ${{newsClass}}">${{newsCount}}건</span>
-      </div>
-      <span class="buzz-divider">|</span>
-      <div class="buzz-item">
-        <span class="buzz-label">검색량</span>
-        <span class="buzz-value ${{avgClass}}">${{avgText}}</span>
-      </div>
-      <span class="buzz-divider">|</span>
-      <div class="buzz-item">
-        <span class="buzz-label">변화</span>
-        <span class="buzz-value ${{trendClass}}">${{trendText}}</span>
-      </div>
-      <span class="buzz-divider">|</span>
-      <div class="buzz-item">
-        <span class="buzz-label">전문가갭</span>
-        <span class="buzz-value ${{gapClass}}">${{gapText}}</span>
-      </div>
-    </div>
-  `;
+  // 절대 월검색수 + 경쟁도
+  const sv = t.search_volume;
+  let svText = (sv == null) ? "-" : sv.toLocaleString();
+  let svClass = "cool";
+  if (sv != null && sv >= 5000) svClass = "hot";
+  else if (sv != null && sv >= 1000) svClass = "warm";
+  const comp = t.comp_idx || "";
+  let compClass = "cool";
+  if (comp === "낮음") compClass = "comp-low";
+  else if (comp === "중간") compClass = "comp-mid";
+  else if (comp === "높음") compClass = "comp-high";
+
+  // 신선도(최신 기사 경과시간) — 시의형 정렬의 핵심 신호
+  const rec = t.news_recency || {{}};
+  const nh = rec.newest_hours;
+  let freshText = "-";
+  let freshClass = "cool";
+  if (nh != null) {{
+    if (nh < 24) {{ freshText = `${{Math.round(nh)}}시간 전`; freshClass = "hot"; }}
+    else if (nh < 72) {{ freshText = `${{Math.round(nh/24)}}일 전`; freshClass = "warm"; }}
+    else {{ freshText = `${{Math.round(nh/24)}}일 전`; }}
+  }}
+  const c24 = rec.count_24h || 0;
+
+  const item = (label, valHtml) =>
+    `<div class="buzz-item"><span class="buzz-label">${{label}}</span>${{valHtml}}</div>`;
+  const div = '<span class="buzz-divider">|</span>';
+  let buzzBar;
+  if (track === "시의형") {{
+    // 시의형: 신선도(최신기사) + 24h 기사다발 + 뉴스규모 + 전문가갭
+    buzzBar = `<div class="buzz-bar">`
+      + item("최신기사", `<span class="buzz-value ${{freshClass}}">${{freshText}}</span>`) + div
+      + item("24h내", `<span class="buzz-value ${{c24>=3?'warm':'cool'}}">${{c24}}건</span>`) + div
+      + item("뉴스", `<span class="buzz-value ${{newsClass}}">${{newsCount}}건</span>`) + div
+      + item("전문가갭", `<span class="buzz-value ${{gapClass}}">${{gapText}}</span>`)
+      + `</div>`;
+  }} else {{
+    // 검색형: 월검색수 + 경쟁 + 변화 + 전문가갭
+    buzzBar = `<div class="buzz-bar">`
+      + item("월검색", `<span class="buzz-value ${{svClass}}">${{svText}}</span>`) + div
+      + item("경쟁", `<span class="buzz-value ${{compClass}}">${{comp || "-"}}</span>`) + div
+      + item("변화", `<span class="buzz-value ${{trendClass}}">${{trendText}}</span>`) + div
+      + item("전문가갭", `<span class="buzz-value ${{gapClass}}">${{gapText}}</span>`)
+      + `</div>`;
+  }}
+
+  // 점수 배지 (검색형=기회점수 / 시의형=시의점수)
+  const scoreVal = (t.score != null) ? t.score : "";
+  const scoreLabel = (track === "시의형") ? "시의점수" : "기회점수";
+  const scoreBadge = (scoreVal !== "")
+    ? `<span class="score-badge ${{track === "시의형" ? "news" : ""}}">${{scoreLabel}} ${{scoreVal}}</span>` : "";
+
+  // 황금 키워드 배지
+  const goldBadge = (t.opportunity_label && t.opportunity_label.includes("황금"))
+    ? `<span class="golden-badge">💎 ${{escHtml(t.opportunity_label)}}</span>` : "";
 
   // 연속 등장
   let consecBadge = "";
@@ -742,10 +814,11 @@ function renderCard(t) {{
     <div class="card" data-category="${{t.category || ""}}">
       <div class="card-header">
         <span class="card-rank">${{t.rank}}</span>
-        <span class="card-keyword">${{escHtml(t.keyword)}}${{coveredBadge}}${{consecBadge}}</span>
+        <span class="card-keyword">${{escHtml(t.keyword)}}${{goldBadge}}${{coveredBadge}}${{consecBadge}}</span>
         <span class="card-category ${{catClass(t.category)}}">${{t.category || ""}}</span>
       </div>
 
+      <div style="margin:6px 0 2px;">${{scoreBadge}}</div>
       ${{buzzBar}}
 
       <div class="card-section">

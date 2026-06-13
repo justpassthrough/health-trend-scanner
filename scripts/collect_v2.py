@@ -408,7 +408,7 @@ def opportunity_label(search_volume, comp_idx):
         return None
     if search_volume < 100:
         return "수요 적음"
-    if search_volume >= 1000 and comp_idx == "낮음":
+    if search_volume >= 500 and comp_idx == "낮음":  # 차트 분할선(DEMAND_SPLIT)과 동일 기준
         return "💎황금(수요多·경쟁低)"
     if comp_idx == "낮음":
         return "양호(경쟁 낮음)"
@@ -924,17 +924,31 @@ def main():
         if c.get("track") not in ("검색형", "시의형"):
             c["track"] = "검색형"
         c["is_new_topic"] = not c.get("already_covered", False)
+        cd = c.get("consecutive_days", 1)
         if c["track"] == "시의형":
             ts = calc_timeliness(
                 c.get("pharma_value_calc", 3),
                 c.get("news_recency", {}),
                 c.get("search_trend", {}).get("change_rate", 0),
                 c.get("already_covered", False),
-                c.get("consecutive_days", 1),
+                cd,
                 c.get("news_count", 0),
             )
             c["timeliness_score"] = ts
             c["score"] = ts
+        else:
+            # 검색형: 기회점수에 '지속 보너스' (며칠째 꾸준히 = 진짜 인기, 사용자 관찰)
+            base = c.get("opportunity_score")
+            if base is None:
+                base = c.get("pharma_value_calc", 3)
+            if cd >= 5:
+                pmult = 1.15
+            elif cd >= 3:
+                pmult = 1.07
+            else:
+                pmult = 1.0
+            c["persistence_mult"] = pmult
+            c["score"] = round(base * pmult, 1)
 
     # 정렬: 트랙별로 나눠 각자의 score(검색형=기회점수 / 시의형=시의점수) 내림차순
     search_topics = sorted(

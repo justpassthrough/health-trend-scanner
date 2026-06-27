@@ -1313,8 +1313,11 @@ function renderTrendWindow() {{
     return mx;
   }};
 
-  const highKeys = newsKeysAll.filter(tk => getMaxNews(tk) >= NEWS_SPLIT);
-  const lowKeys = newsKeysAll.filter(tk => getMaxNews(tk) < NEWS_SPLIT);
+  // 뉴스 건수(최대값) 많은 순으로 정렬 → 범례/색 순서가 큰 것부터 작은 것 순으로 정돈
+  const highKeys = newsKeysAll.filter(tk => getMaxNews(tk) >= NEWS_SPLIT)
+    .sort((a, b) => getMaxNews(b) - getMaxNews(a));
+  const lowKeys = newsKeysAll.filter(tk => getMaxNews(tk) < NEWS_SPLIT)
+    .sort((a, b) => getMaxNews(b) - getMaxNews(a));
 
   // 주요 키워드 차트 (1000건 이상)
   const highContainer = document.getElementById("newsHighContainer");

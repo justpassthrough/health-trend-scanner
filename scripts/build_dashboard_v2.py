@@ -569,16 +569,6 @@ body {{
     <span id="trendDateRange" style="color:#e6edf3;font-size:14px;padding:0 12px;"></span>
     <button id="trendNextBtn" onclick="trendNavigate(1)">1일 후 &#9654;</button>
   </div>
-  <div class="trend-container">
-    <h3>📈 지속 키워드 리더보드 <span style="font-size:12px;color:#8b949e;font-weight:400;">월검색량 많은 순 · 며칠째 뜨는지 + 미니 추이</span></h3>
-    <div id="leaderboard"></div>
-    <div class="trend-info" id="trendInfo"></div>
-  </div>
-  <div class="nav" id="trendNav2">
-    <button id="trendPrevBtn2" onclick="trendNavigate(-1)">&#9664; 1일 전</button>
-    <span id="trendDateRange2" style="color:#e6edf3;font-size:14px;padding:0 12px;"></span>
-    <button id="trendNextBtn2" onclick="trendNavigate(1)">1일 후 &#9654;</button>
-  </div>
   <div class="trend-container" id="newsHighContainer" style="display:none;">
     <h3>📊 뉴스 건수 추이 — 주요 키워드 (1,000건 이상)</h3>
     <div class="trend-chart-wrap">
@@ -591,6 +581,16 @@ body {{
       <canvas id="newsCountLowChart"></canvas>
     </div>
     <div class="trend-info" id="newsCountInfo"></div>
+  </div>
+  <div class="nav" id="trendNav2">
+    <button id="trendPrevBtn2" onclick="trendNavigate(-1)">&#9664; 1일 전</button>
+    <span id="trendDateRange2" style="color:#e6edf3;font-size:14px;padding:0 12px;"></span>
+    <button id="trendNextBtn2" onclick="trendNavigate(1)">1일 후 &#9654;</button>
+  </div>
+  <div class="trend-container">
+    <h3>📈 지속 키워드 리더보드 <span style="font-size:12px;color:#8b949e;font-weight:400;">월검색량 많은 순 · 며칠째 뜨는지 + 미니 추이</span></h3>
+    <div id="leaderboard"></div>
+    <div class="trend-info" id="trendInfo"></div>
   </div>
 </div>
 
@@ -1402,6 +1402,10 @@ function buildNewsChartConfig(labels, datasets) {{
             boxWidth: 12,
             padding: 8,
           }},
+        }},
+        tooltip: {{
+          // 마우스 올린 그 날짜의 실제 건수 기준으로 내림차순 정렬
+          itemSort: function(a, b) {{ return (b.parsed.y || 0) - (a.parsed.y || 0); }},
         }},
       }},
       scales: {{

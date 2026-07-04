@@ -391,6 +391,18 @@ def calc_pharma_value(pharma_value_raw, gap):
     return round(pv * _expert_gap_mult(gap), 2)
 
 
+# 검색형 최소 수요 하한: 월검색량이 이 값 미만이거나 데이터가 없으면
+# '유입 거의 없는 글감'으로 보고 정렬에서 맨 뒤로 밀어냄(제외가 아니라 하향).
+# keyword-deep-dive의 100회 기준과 동일하게 맞춤.
+DEMAND_MIN = 100
+
+
+def has_demand(topic):
+    """검색형 글감이 '실제 검색 수요'가 있는지 판정. 정렬 1차 키로 사용."""
+    sv = topic.get("search_volume")
+    return isinstance(sv, (int, float)) and sv >= DEMAND_MIN
+
+
 def calc_opportunity(search_volume, comp_idx, pharma_value):
     """검색형 기회점수 = 약사가치 × 수요배수(log10 검색량) × 경쟁여유배수.
     검색량 없으면 None(→ 약사가치로 폴백)."""
@@ -951,9 +963,11 @@ def main():
             c["score"] = round(base * pmult, 1)
 
     # 정렬: 트랙별로 나눠 각자의 score(검색형=기회점수 / 시의형=시의점수) 내림차순
+    #   검색형은 '실수요(월검색 DEMAND_MIN 이상) 있는 글감'을 1차 키로 먼저 올림 →
+    #   검색량 없거나 아주 적은(월 20짜리) 키워드가 약사가치만으로 상단 차지하는 것 방지.
     search_topics = sorted(
         [c for c in candidates if c["track"] == "검색형"],
-        key=lambda x: (x.get("score") or 0),
+        key=lambda x: (has_demand(x), x.get("score") or 0),
         reverse=True,
     )
     news_topics = sorted(
@@ -969,6 +983,33 @@ def main():
         c["rank"] = i + 1
 
     topics = search_topics + news_topics
+
+    # ── 오늘의 1픽 ──
+    #   검색형/시의형은 점수 공식이 달라 통합 순위를 못 매김 → 트랙별로 대표 1개씩 뽑아
+    #   "오늘 뭐 쓸까"를 한눈에 보여주는 추천 카드. 대시보드 최상단에 표시.
+    def _pick(topic, reason):
+        return {
+            "keyword": topic.get("keyword"),
+            "track": topic.get("track"),
+            "reason": reason,
+            "why_now": topic.get("why_now"),
+            "pharmacist_angle": topic.get("pharmacist_angle"),
+            "title_idea": topic.get("title_idea"),
+            "score": topic.get("score"),
+            "search_volume": topic.get("search_volume"),
+            "comp_idx": topic.get("comp_idx"),
+            "opportunity_label": topic.get("opportunity_label"),
+        }
+
+    today_pick = []
+    # 검색형 대표 = 실수요 있는 것 중 1위(없으면 그냥 1위)
+    search_best = next((c for c in search_topics if has_demand(c)),
+                       search_topics[0] if search_topics else None)
+    if search_best:
+        today_pick.append(_pick(search_best, "검색형 최고 기회 (꾸준히 검색되는 글감)"))
+    # 시의형 대표 = 1위(가장 신선한 이슈)
+    if news_topics:
+        today_pick.append(_pick(news_topics[0], "시의형 최신 이슈 (지금 막 뜨는 주제)"))
 
     # 통계
     new_topics = [c for c in candidates if not c.get("already_covered", False)]
@@ -991,6 +1032,7 @@ def main():
         "scan_id": scan_id,
         "date": now.strftime("%Y-%m-%d"),
         "time": now.strftime("%H:%M"),
+        "today_pick": today_pick,
         "topics": topics,
         "stats": stats,
         "meta": meta,
@@ -1013,6 +1055,10 @@ def main():
     print(f"  검색형: {len(search_topics)}개 / 시의형: {len(news_topics)}개")
     print(f"  새 글감: {len(new_topics)}개 / 기존 주제 새 이슈: {len(existing_topics)}개")
     print(f"  💎황금 키워드: {len(golden)}개")
+    if today_pick:
+        print("  ⭐ 오늘의 1픽:")
+        for p in today_pick:
+            print(f"     [{p['track']}] {p['keyword']} — {p['reason']}")
     print(f"  API 비용: ${meta.get('cost_usd', 0):.4f}")
 
 

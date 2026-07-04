@@ -170,6 +170,26 @@ body {{
   margin-left: 6px;
 }}
 
+/* 오늘의 1픽 */
+.today-pick {{
+  background: linear-gradient(135deg, #1c2333, #161b22);
+  border: 1px solid #d2992255;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 22px;
+}}
+.today-pick .tp-head {{
+  font-size: 15px; font-weight: 700; color: #f0c000; margin-bottom: 12px;
+}}
+.today-pick .tp-item {{
+  padding: 10px 0; border-top: 1px solid #21262d;
+}}
+.today-pick .tp-item:first-of-type {{ border-top: none; }}
+.today-pick .tp-kw {{ font-size: 15px; font-weight: 600; color: #e6edf3; }}
+.today-pick .tp-reason {{ font-size: 12px; color: #8b949e; margin-left: 8px; }}
+.today-pick .tp-title {{ font-size: 13px; color: #58a6ff; margin-top: 4px; }}
+.today-pick .tp-why {{ font-size: 12px; color: #8b949e; margin-top: 3px; line-height: 1.5; }}
+
 /* 점수/황금/경쟁도 배지 */
 .score-badge {{
   display: inline-block;
@@ -842,6 +862,25 @@ function catClass(category) {{
   return "cat-supplement";
 }}
 
+// ── 오늘의 1픽 ──
+function renderTodayPick(data) {{
+  const picks = data.today_pick || [];
+  if (picks.length === 0) return "";
+  let items = picks.map(p => {{
+    const trk = (p.track === "시의형") ? "n" : "s";
+    const vol = (p.search_volume != null)
+      ? `<span class="tp-reason">· 월 ${{Number(p.search_volume).toLocaleString()}}회</span>` : "";
+    const title = p.title_idea ? `<div class="tp-title">💡 ${{p.title_idea}}</div>` : "";
+    const why = p.why_now ? `<div class="tp-why">${{p.why_now}}</div>` : "";
+    return `<div class="tp-item">`
+      + `<span class="trk ${{trk}}">${{p.track || "검색형"}}</span> `
+      + `<span class="tp-kw">${{p.keyword || ""}}</span>`
+      + `<span class="tp-reason">${{p.reason || ""}}</span>${{vol}}`
+      + title + why + `</div>`;
+  }}).join("");
+  return `<div class="today-pick"><div class="tp-head">⭐ 오늘의 1픽</div>${{items}}</div>`;
+}}
+
 // ── 토픽 렌더링 ──
 function renderTopics(data) {{
   const topics = data.topics || [];
@@ -855,6 +894,11 @@ function renderTopics(data) {{
   const newsTopics = filtered.filter(t => t.track === "시의형");
 
   let html = "";
+
+  // 오늘의 1픽은 전체 보기에서만 (카테고리 필터 시 숨김)
+  if (currentFilter === "전체") {{
+    html += renderTodayPick(data);
+  }}
 
   if (searchTopics.length > 0) {{
     html += '<div class="section-title search">🔍 검색형 글감'

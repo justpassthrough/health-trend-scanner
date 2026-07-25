@@ -572,6 +572,63 @@ def build_ai_prompt(news_by_category, my_posts):
     return prompt
 
 
+def _extract_json_array(raw):
+    """AI 응답에서 JSON 배열 문자열만 뽑아낸다 ( ```json``` 감싸기·앞뒤 잡텍스트 제거 )."""
+    json_str = raw
+    # 1) ```json ... ``` 감싸기
+    if "```" in json_str:
+        match = re.search(r"```(?:json)?\s*(\[[\s\S]*?\])\s*```", json_str)
+        if match:
+            json_str = match.group(1)
+    # 2) 배열 부분만 추출 (앞뒤 텍스트 제거)
+    if not json_str.lstrip().startswith("["):
+        match = re.search(r"\[[\s\S]*\]", json_str)
+        if match:
+            json_str = match.group(0)
+    return json_str
+
+
+def _salvage_json_objects(text):
+    """깨진 JSON 배열에서 온전한 최상위 객체 {..} 만 최대한 건져낸다.
+
+    Haiku가 콤마 하나를 빠뜨려도 그날 스캔 전체를 버리지 않도록,
+    문자열/이스케이프를 존중하며 중괄호 깊이를 추적해 객체 단위로 개별 파싱한다.
+    깨진 객체는 건너뛰고 나머지는 살린다.
+    """
+    objs = []
+    depth = 0
+    start = None
+    in_str = False
+    esc = False
+    for i, ch in enumerate(text):
+        if esc:
+            esc = False
+            continue
+        if ch == "\\":
+            esc = True
+            continue
+        if ch == '"':
+            in_str = not in_str
+            continue
+        if in_str:
+            continue
+        if ch == "{":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == "}":
+            if depth > 0:
+                depth -= 1
+                if depth == 0 and start is not None:
+                    frag = text[start : i + 1]
+                    try:
+                        objs.append(json.loads(frag))
+                    except json.JSONDecodeError:
+                        pass  # 깨진 객체는 버리고 계속
+                    start = None
+    return objs
+
+
 def run_ai_analysis(news_by_category, my_posts):
     """Claude Haiku로 글감 후보 추출"""
     print("\n" + "=" * 50)
@@ -594,60 +651,79 @@ def run_ai_analysis(news_by_category, my_posts):
     est_input_tokens = len(prompt) // 3
     print(f"  프롬프트 길이: {len(prompt)}자 (추정 ~{est_input_tokens} 토큰)")
 
-    try:
-        client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-        response = client.messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=16000,
-            messages=[{"role": "user", "content": prompt}],
-        )
+    model = "claude-haiku-4-5-20251001"
+    max_attempts = 3          # 파싱 깨지면 새로 생성해 재시도 (모델이 가끔 콤마 누락)
+    total_input = 0
+    total_output = 0
+    last_err = None
+    last_raw = ""
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+            response = client.messages.create(
+                model=model,
+                max_tokens=16000,
+                messages=[{"role": "user", "content": prompt}],
+            )
+        except Exception as e:
+            # API 호출 자체 실패(네트워크/일시 오류) — 잠깐 쉬고 재시도
+            last_err = e
+            print(f"  [WARN] API 호출 실패 (시도 {attempt}/{max_attempts}): {e}")
+            if attempt < max_attempts:
+                time.sleep(3 * attempt)
+                continue
+            print(f"  [ERROR] AI 분석 실패: {e}")
+            return [], {"model": model, "error": str(e)}
 
         raw = response.content[0].text.strip()
+        last_raw = raw
         input_tokens = response.usage.input_tokens
         output_tokens = response.usage.output_tokens
+        total_input += input_tokens
+        total_output += output_tokens
 
-        # 비용 계산 (Haiku 4.5: $1/M input, $5/M output)
-        cost = (input_tokens * 1 + output_tokens * 5) / 1_000_000
-        print(f"  API 사용: 입력 {input_tokens}, 출력 {output_tokens} 토큰")
-        print(f"  비용: ${cost:.4f}")
+        cost = (total_input * 1 + total_output * 5) / 1_000_000
+        print(f"  API 사용(누적): 입력 {total_input}, 출력 {total_output} 토큰  (시도 {attempt}/{max_attempts})")
+        print(f"  비용(누적): ${cost:.4f}")
         print(f"  응답 길이: {len(raw)}자")
         print(f"  응답 첫 200자: {raw[:200]}")
 
-        # JSON 파싱 — 여러 형식 대응
-        json_str = raw
+        json_str = _extract_json_array(raw)
 
-        # 1) ```json ... ``` 감싸기
-        if "```" in json_str:
-            match = re.search(r"```(?:json)?\s*(\[[\s\S]*?\])\s*```", json_str)
-            if match:
-                json_str = match.group(1)
+        # 1차: 정상 파싱 시도
+        try:
+            candidates = json.loads(json_str)
+        except json.JSONDecodeError as e:
+            last_err = e
+            print(f"  [WARN] JSON 파싱 실패 (시도 {attempt}/{max_attempts}): {e}")
+            # 2차: 깨진 배열에서 온전한 객체만 건져내기
+            salvaged = _salvage_json_objects(json_str)
+            if salvaged:
+                print(f"  [복구] 깨진 응답에서 온전한 글감 {len(salvaged)}개 건져냄 (일부 손실 가능)")
+                candidates = salvaged
+            else:
+                # 못 건지면 새로 생성해 재시도
+                if attempt < max_attempts:
+                    time.sleep(2)
+                    continue
+                print(f"  [ERROR] AI 응답 JSON 파싱 실패(최종): {e}")
+                print(f"  Raw 응답 첫 500자: {last_raw[:500]}")
+                return [], {"model": model, "error": str(e)}
 
-        # 2) 배열 부분만 추출 (앞뒤 텍스트 제거)
-        if not json_str.startswith("["):
-            match = re.search(r"\[[\s\S]*\]", json_str)
-            if match:
-                json_str = match.group(0)
-
-        candidates = json.loads(json_str)
         print(f"  → AI 추천 글감: {len(candidates)}개")
-
-        # 메타 정보 저장용
         meta = {
-            "model": "claude-haiku-4-5-20251001",
-            "input_tokens": input_tokens,
-            "output_tokens": output_tokens,
+            "model": model,
+            "input_tokens": total_input,
+            "output_tokens": total_output,
             "cost_usd": round(cost, 4),
+            "attempts": attempt,
         }
-
         return candidates, meta
 
-    except json.JSONDecodeError as e:
-        print(f"  [ERROR] AI 응답 JSON 파싱 실패: {e}")
-        print(f"  Raw 응답 첫 500자: {raw[:500]}")
-        return [], {"model": "claude-haiku-4-5-20251001", "error": str(e)}
-    except Exception as e:
-        print(f"  [ERROR] AI 분석 실패: {e}")
-        return [], {"model": "claude-haiku-4-5-20251001", "error": str(e)}
+    # 이론상 도달 불가 (루프 내에서 항상 return) — 방어적 처리
+    print(f"  [ERROR] AI 분석 실패: {last_err}")
+    return [], {"model": model, "error": str(last_err)}
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -839,7 +839,7 @@ def ground_keywords(candidates):
     """AI 가 낸 검색어 후보를 검색광고 API 로 검증해 '사람들이 실제로 치는 검색어'를 대표 keyword 로 고른다.
     (2026-09-17) 예전엔 AI 의 keyword 를 그대로 조회했는데, 최근 14일 주제 391개 중 336개(86%)가 월 100 미만,
     295개가 검색 기록이 없을 때 찍히는 20이었다 — '고단백 다이어트 통풍'처럼 뉴스 단어를 이어 붙인 가짜 검색어라서.
-    고르는 순서: 후보(search_terms·keyword) 중 월 100↑ 에서 가장 구체적인(긴) 것 → 없으면 대상(entity) 단독 → 그래도 없으면 그대로 두고 표시."""
+    고르는 순서: 후보(search_terms·keyword) 중 월 100↑ 에서 검색량이 가장 큰 것(두 단어 이상은 1.5배) → 없으면 대상(entity) 단독 → 그래도 없으면 그대로 두고 표시."""
     hints = []
     for c in candidates:
         for t in [c.get("keyword"), c.get("entity"), *(c.get("search_terms") or [])]:
@@ -857,15 +857,12 @@ def ground_keywords(candidates):
         for t in own:
             v = lookup_volume(volume_map, t)
             if v and v["total"] >= DEMAND_MIN:
-                scored.append((len(_nospace(t)), v["total"], t))
+                # 검색량이 큰 쪽을 고르되, 두 단어 이상(대상+의도)이면 1.5배 쳐준다 — 글 한 편의 주제로는 구체적인 쪽이 낫다.
+                # (첫 시험 2026-09-17: '가장 긴 것' 규칙은 통풍 글감에 월 980 '통풍에 나쁜 음식' 대신 150 '요산 수치 낮추는 법'을 골랐다)
+                scored.append((v["total"] * (1.5 if len(t.split()) >= 2 else 1.0), v["total"], t))
         ent = (c.get("entity") or "").strip()
         if scored:
-            # 구체적인 검색어 우선. 단, 검색량이 10배 넘게 차이 나면 큰 쪽(너무 좁은 롱테일 방지)
-            scored.sort(key=lambda x: (x[0], x[1]), reverse=True)
-            best = scored[0]
-            biggest = max(scored, key=lambda x: x[1])
-            if biggest[1] >= best[1] * 10:
-                best = biggest
+            best = max(scored, key=lambda x: x[0])
             c["keyword"], c["grounded_by"] = best[2], "search_term"
         elif ent and (lookup_volume(volume_map, ent) or {}).get("total", 0) >= DEMAND_MIN:
             c["keyword"], c["grounded_by"] = ent, "entity"

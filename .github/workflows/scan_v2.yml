@@ -1,9 +1,12 @@
 name: Health Trend Scan v2
 
 on:
-  schedule:
-    - cron: '0 23 * * *'    # KST 08:00 (UTC 전날 23:00)
-    - cron: '0 11 * * *'    # KST 20:00 (UTC 11:00)
+  # 2026-09-17: 자동 스케줄은 미니PC 로컬 실행(scripts/run_local.py, 작업 스케줄러 Auto_TrendScan 08:00·20:00)으로 옮김.
+  #   이유: AI 분석을 구독제 Claude CLI(Opus)로 돌려 API 과금을 없애고, 집 IP 에서 실제 검색 화면도 확인하려고.
+  #   여기는 수동 실행용으로만 남긴다(미니PC 가 죽었을 때 비상용 — 이 경우 Anthropic API(Haiku)로 과금되고 검색 화면 확인은 빠진다).
+  # schedule:
+  #   - cron: '0 23 * * *'    # KST 08:00
+  #   - cron: '0 11 * * *'    # KST 20:00
   workflow_dispatch:          # 수동 실행
 
 permissions:

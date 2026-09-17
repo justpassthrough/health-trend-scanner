@@ -496,9 +496,10 @@ def calc_timeliness(pharma_value, recency, change_rate, already_covered,
 # 2단계: AI 분석
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-def build_ai_prompt(news_by_category, my_posts, movers=None, recent_suggestions=None):
+def build_ai_prompt(news_by_category, my_posts, movers=None, recent_suggestions=None, uncovered=None):
     """AI 프롬프트 구성"""
     movers = movers or []
+    uncovered_block = ", ".join(f"{k}({r}위)" for k, r in (uncovered or [])) or "없음"
     movers_block = "\n".join(
         f"- {m['keyword']} ({m['kind']}: 지금 {m['rank']}위" + (f", 전에는 {m['from_rank']}위" if m.get("from_rank") else "") + ")"
         for m in movers) or "수집된 순위 없음"
@@ -563,6 +564,10 @@ def build_ai_prompt(news_by_category, my_posts, movers=None, recent_suggestions=
 - 특정 브랜드·상품명(정관장, 뉴케어, ○○에브리타임), 선물세트·명절 상품, 식품 일반(꿀, 오미자)은 건너뛰세요. 단, 브랜드 이름에서 성분이 드러나면 그 성분을 대상으로 삼을 수 있습니다.
 - 처음 들어 보는 이름이라도 버리지 마세요. 그게 이 도구가 찾는 것입니다. 무엇인지 짐작이 안 되면 pharma_value 를 낮게 주고 why_now 에 "정체 확인 필요"라고 쓰세요.
 {movers_block}
+
+[쇼핑 인기검색어 상위권인데 이 블로그가 아직 한 번도 다루지 않은 것 — 순위가 안 움직여도 '나한테는 새 영역']
+브랜드·선물·일반 식품은 건너뛰고, 성분·원료 이름만 보세요. 여기서도 1~3개 골라 검색형 글감으로 만드세요("source": "shopping").
+{uncovered_block}
 
 [최근 2주 동안 이미 제안했던 대상 — 새 소식(허가·가격·품절·연구 결과)이 없으면 다시 내지 마세요]
 {recent_block}
@@ -712,7 +717,7 @@ def _call_anthropic_api(prompt):
     }
 
 
-def run_ai_analysis(news_by_category, my_posts, movers=None, recent_suggestions=None):
+def run_ai_analysis(news_by_category, my_posts, movers=None, recent_suggestions=None, uncovered=None):
     """Claude 로 글감 후보 추출. 기본은 구독제 CLI(Opus), 없으면 API(Haiku) 폴백."""
     print("\n" + "=" * 50)
     print("2단계: AI 분석")
@@ -726,7 +731,7 @@ def run_ai_analysis(news_by_category, my_posts, movers=None, recent_suggestions=
     backend = f"claude-cli:{CLAUDE_MODEL or 'default'}" if use_cli else "api:claude-haiku-4-5-20251001"
     print(f"  실행 방식: {backend}")
 
-    prompt = build_ai_prompt(news_by_category, my_posts, movers, recent_suggestions)
+    prompt = build_ai_prompt(news_by_category, my_posts, movers, recent_suggestions, uncovered)
     print(f"  프롬프트 길이: {len(prompt)}자")
 
     max_attempts = 3          # 파싱 깨지면 새로 생성해 재시도
@@ -1224,9 +1229,17 @@ def main():
     history_2w = load_scan_history(days=14)
     recent_names = recent_suggested_entities(history_2w)
     print(f"  최근 2주 제안 대상 {len(recent_names)}개")
+    # 상위 150위 안인데 딥다이브 뿌리에도 내 글 제목에도 없는 검색어 = 나한테 새 영역
+    dd_roots = load_deep_dive_roots()
+    my_titles = [_nospace(p.get("title", "")) for p in my_posts]
+    uncovered = [(k, r) for k, r in sorted(rank_today.items(), key=lambda x: x[1])
+                 if r <= 150 and len(k) >= 2
+                 and not any(len(root) >= 2 and root in _nospace(k) for root in dd_roots)
+                 and not any(_nospace(k) in t for t in my_titles)][:50]
+    print(f"  쇼핑 상위 150 중 아직 안 다룬 검색어 {len(uncovered)}개")
 
     # 2단계: AI 분석
-    result = run_ai_analysis(news_by_category, my_posts, movers, recent_names)
+    result = run_ai_analysis(news_by_category, my_posts, movers, recent_names, uncovered)
     if isinstance(result, tuple):
         candidates, meta = result
     else:
@@ -1249,7 +1262,7 @@ def main():
     # 이미 쓴 글 판정(코드) — 15일 규칙
     mark_written(candidates, my_posts)
     # 새로움 판정 + 딥다이브로 넘길 새 대상 장부
-    mark_novelty(candidates, my_posts, load_deep_dive_roots(), history_2w, rank_today)
+    mark_novelty(candidates, my_posts, dd_roots, history_2w, rank_today)
     book = update_new_entities(candidates, movers)
     print(f"  새 영역 글감 {sum(1 for c in candidates if c.get('novelty') == '새 영역')}개 · 새 대상 장부 {len(book)}개")
 

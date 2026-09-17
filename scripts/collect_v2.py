@@ -410,6 +410,8 @@ DEMAND_MIN = 100
 def has_demand(topic):
     """검색형 글감이 '실제 검색 수요'가 있는지 판정. 정렬 1차 키로 사용."""
     sv = topic.get("search_volume")
+    if isinstance(topic.get("shopping_rank"), int) and topic["shopping_rank"] <= 300:
+        return True   # 검색광고의 월 검색량은 지난 30일 평균이라 막 뜬 말은 작게 나온다 — 쇼핑 순위 300위 안이면 수요로 인정
     return isinstance(sv, (int, float)) and sv >= DEMAND_MIN
 
 
@@ -494,8 +496,13 @@ def calc_timeliness(pharma_value, recency, change_rate, already_covered,
 # 2단계: AI 분석
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-def build_ai_prompt(news_by_category, my_posts):
+def build_ai_prompt(news_by_category, my_posts, movers=None, recent_suggestions=None):
     """AI 프롬프트 구성"""
+    movers = movers or []
+    movers_block = "\n".join(
+        f"- {m['keyword']} ({m['kind']}: 지금 {m['rank']}위" + (f", 전에는 {m['from_rank']}위" if m.get("from_rank") else "") + ")"
+        for m in movers) or "수집된 순위 없음"
+    recent_block = ", ".join(recent_suggestions or []) or "없음"
 
     # 내 블로그 글 제목 목록
     post_titles = []
@@ -550,6 +557,16 @@ def build_ai_prompt(news_by_category, my_posts):
   - 좋은 예(고양이 타우린): ["고양이 타우린", "고양이 타우린 영양제", "타우린 고양이 용량"]
   - 코드가 이 후보들의 실제 월 검색량을 조회해 가장 나은 것을 대표 검색어로 씁니다. 자신 없으면 대상 이름에 흔한 의도어(부작용·효능·먹는법·가격·추천·차이)를 붙인 꼴을 넣으세요.
 
+[쇼핑 인기검색어 — 건강식품 분야에서 새로 진입했거나 급상승한 검색어 (소비자가 실제로 찾기 시작한 것)]
+이 목록이 '아예 새로운 글감'의 1순위 재료입니다. 뉴스는 보도자료(제품 홍보)가 많지만 이 목록은 실제 수요입니다.
+- 성분·원료·건강 개념 이름(예: 포스파티딜세린, 매스틱, 하스카프베리, 카무트효소)을 골라 검색형 글감으로 만드세요. 이런 항목은 "source": "shopping".
+- 특정 브랜드·상품명(정관장, 뉴케어, ○○에브리타임), 선물세트·명절 상품, 식품 일반(꿀, 오미자)은 건너뛰세요. 단, 브랜드 이름에서 성분이 드러나면 그 성분을 대상으로 삼을 수 있습니다.
+- 처음 들어 보는 이름이라도 버리지 마세요. 그게 이 도구가 찾는 것입니다. 무엇인지 짐작이 안 되면 pharma_value 를 낮게 주고 why_now 에 "정체 확인 필요"라고 쓰세요.
+{movers_block}
+
+[최근 2주 동안 이미 제안했던 대상 — 새 소식(허가·가격·품절·연구 결과)이 없으면 다시 내지 마세요]
+{recent_block}
+
 [내 블로그 기존 글 제목]
 {posts_block}
 
@@ -567,13 +584,14 @@ def build_ai_prompt(news_by_category, my_posts):
 
 [출력 규칙]
 반드시 JSON 배열로만 응답하세요. 최소 8개, 최대 15개 항목.
-검색형과 시의형을 모두 포함하세요 (검색형 최소 4개, 시의형 최소 3개 권장).
+검색형과 시의형을 모두 포함하세요 (검색형 최소 4개, 시의형 최소 3개 권장). 쇼핑 인기검색어에서 온 글감을 최소 4개 포함하세요(목록이 있을 때).
 각 항목:
 {{
   "keyword": "짧은 검색어 (예: '감마오리자놀', '바나바잎', '탈모약 건강보험', '위고비 품절')",
   "entity": "핵심 대상 하나 (예: '감마오리자놀')",
   "search_terms": ["실제로 칠 법한 검색어 1", "검색어 2", "검색어 3"],
   "track": "검색형 | 시의형",
+  "source": "shopping | news  (쇼핑 인기검색어에서 나온 글감이면 shopping)",
   "category": "영양제·성분 | 약업계·정책 | 질환·치료 | 소비자건강",
   "pharma_value": 1~5 정수 (약사/DDS 전문성으로 남들과 차별화할 여지. 5=약사만 쓸 수 있는 깊은 주제, 1=누구나 쓰는 일반 주제),
   "trend_key": "추이 추적용 핵심어 1~3단어. 같은 성분/개념이면 매번 동일하게. 예: '벤포티아민','활성비타민B1','아로나민' → 모두 '벤포티아민'.",
@@ -694,7 +712,7 @@ def _call_anthropic_api(prompt):
     }
 
 
-def run_ai_analysis(news_by_category, my_posts):
+def run_ai_analysis(news_by_category, my_posts, movers=None, recent_suggestions=None):
     """Claude 로 글감 후보 추출. 기본은 구독제 CLI(Opus), 없으면 API(Haiku) 폴백."""
     print("\n" + "=" * 50)
     print("2단계: AI 분석")
@@ -708,7 +726,7 @@ def run_ai_analysis(news_by_category, my_posts):
     backend = f"claude-cli:{CLAUDE_MODEL or 'default'}" if use_cli else "api:claude-haiku-4-5-20251001"
     print(f"  실행 방식: {backend}")
 
-    prompt = build_ai_prompt(news_by_category, my_posts)
+    prompt = build_ai_prompt(news_by_category, my_posts, movers, recent_suggestions)
     print(f"  프롬프트 길이: {len(prompt)}자")
 
     max_attempts = 3          # 파싱 깨지면 새로 생성해 재시도
@@ -936,6 +954,90 @@ def mark_written(candidates, my_posts):
         c["covered_posts"] = [t for t, _ in hits[:3]]
 
 
+DEEP_DIVE_ROOTS_URL = "https://raw.githubusercontent.com/justpassthrough/keyword-deep-dive/main/data/root_keywords.json"
+NEW_ENTITIES_PATH = os.path.join(DATA_DIR, "new_entities.json")
+
+
+def load_deep_dive_roots():
+    """keyword-deep-dive 가 이미 파고 있는 뿌리 이름(쉬는 것 포함). 실패하면 빈 집합."""
+    try:
+        r = requests.get(DEEP_DIVE_ROOTS_URL, timeout=15)
+        r.raise_for_status()
+        return {_nospace(x.get("keyword")) for x in r.json().get("roots", [])}
+    except Exception as e:
+        print(f"  [WARN] 딥다이브 뿌리 목록 로드 실패: {e}")
+        return set()
+
+
+def recent_suggested_entities(by_date, limit=60):
+    """최근 스캔들이 제안했던 대상 이름(프롬프트에 '이미 제안함'으로 알려 주는 용도)."""
+    seen = []
+    for key in sorted((k for k in by_date if k.endswith("#entities")), reverse=True):
+        for name in by_date[key]:
+            if name and name not in seen:
+                seen.append(name)
+    return seen[:limit]
+
+
+def mark_novelty(candidates, my_posts, roots, by_date, rank_today):
+    """'새로움'을 코드로 판정한다 — 이 도구의 본업은 아예 새 영역을 찾는 것.
+    새 영역 = 딥다이브 뿌리에도 없고, 내 글 제목에 한 번도 안 나왔고, 전에 제안한 적도 없는 대상.
+    검색형 점수 배수: 새 영역 첫 제안 1.15 / 그 밖 1.0 / 최근 2주에 4일 넘게 제안했는데 아직 안 쓴 것 0.85(계속 밀리는 글감)."""
+    titles = [_nospace(p.get("title", "")) for p in my_posts]
+    days = [d for d in by_date if not d.endswith("#entities")]
+    for c in candidates:
+        ent = _nospace(c.get("entity") or "")
+        in_roots = len(ent) >= 2 and any(ent == r or (len(r) >= 2 and r in ent) for r in roots)
+        in_posts = len(ent) >= 2 and any(ent in t for t in titles)
+        suggested_days = sum(1 for d in days if len(ent) >= 2 and any(ent in b for b in by_date[d]))
+        if in_roots or in_posts:
+            c["novelty"] = "기존 영역"
+        elif suggested_days == 0:
+            c["novelty"] = "새 영역"
+        else:
+            c["novelty"] = "새 영역(다시 제안)"
+        c["suggested_days_2w"] = suggested_days
+        c["in_deep_dive_roots"] = in_roots
+        c["shopping_rank"] = rank_today.get((c.get("entity") or "").replace(" ", "")) or rank_today.get(c.get("keyword", "").replace(" ", ""))
+        if c["novelty"] == "새 영역":
+            c["novelty_mult"] = 1.15
+        elif suggested_days >= 4 and not c.get("previously_written"):
+            c["novelty_mult"] = 0.85
+        else:
+            c["novelty_mult"] = 1.0
+
+
+def update_new_entities(candidates, movers):
+    """딥다이브로 넘길 '새 대상' 장부(data/new_entities.json). 딥다이브 주간 발굴(discover_roots.py 소스 D)이 읽어
+    검증(데이터랩 검색량 + 복합 키워드 5종↑) 후 뿌리 후보로 올린다.
+    예전엔 딥다이브가 이 스캐너의 주제 중 known_products 에 '이미 있는 이름'만 받아서, 새 이름은 새롭다는 이유로 버려졌다."""
+    try:
+        with open(NEW_ENTITIES_PATH, "r", encoding="utf-8") as f:
+            book = json.load(f)
+    except (ValueError, OSError):
+        book = {}
+    today = datetime.now().strftime("%Y-%m-%d")
+    mover_by_kw = {m["keyword"]: m for m in movers}
+    for c in candidates:
+        ent = (c.get("entity") or "").strip()
+        if not c.get("novelty", "").startswith("새 영역") or c.get("track") == "시의형" or not (2 <= len(ent) <= 14):
+            continue
+        e = book.setdefault(ent, {"first_seen": today, "seen_days": []})
+        if today not in e["seen_days"]:
+            e["seen_days"].append(today)
+        mv = mover_by_kw.get(ent.replace(" ", "")) or {}
+        e.update({"last_seen": today, "keyword": c.get("keyword"), "search_volume": c.get("search_volume"),
+                  "source": c.get("source") or "news", "shopping_rank": c.get("shopping_rank"),
+                  "shopping_move": mv.get("kind"), "pharma_value": c.get("pharma_value"),
+                  "blog_position_y": (c.get("serp") or {}).get("first_blog_y")})
+    # 60일 넘게 다시 안 보인 것은 정리
+    cutoff = (datetime.now() - timedelta(days=60)).strftime("%Y-%m-%d")
+    book = {k: v for k, v in book.items() if v.get("last_seen", today) >= cutoff}
+    with open(NEW_ENTITIES_PATH, "w", encoding="utf-8") as f:
+        json.dump(book, f, ensure_ascii=False, indent=1)
+    return book
+
+
 def enrich_candidates(candidates):
     """AI 후보에 뉴스 건수 + 검색량 트렌드 + 전문가 갭 + 절대 검색량(검색광고) 추가,
     그리고 트랙별 점수(검색형=기회점수 / 시의형=시의점수)를 계산."""
@@ -1059,9 +1161,14 @@ def load_scan_history(days=7):
                 data = json.load(f)
         except Exception:
             continue
-        blob = by_date.setdefault(ts.strftime("%Y-%m-%d"), [])
+        day = ts.strftime("%Y-%m-%d")
+        blob = by_date.setdefault(day, [])
+        names = by_date.setdefault(day + "#entities", [])
         for t in data.get("topics", []):
             blob.append(_nospace(" ".join(str(t.get(k) or "") for k in ("keyword", "keyword_ai", "trend_key", "entity"))))
+            nm = str(t.get("entity") or t.get("trend_key") or "").strip()
+            if nm and nm not in names:
+                names.append(nm)
     return by_date
 
 
@@ -1105,8 +1212,21 @@ def main():
         print("\n[ERROR] 수집된 뉴스가 없습니다. 종료.")
         sys.exit(1)
 
+    # 1.5단계: 쇼핑 인기검색어(새 진입·급상승) + 제안 이력
+    print("\n" + "=" * 50)
+    print("1.5단계: 쇼핑 인기검색어 · 제안 이력")
+    print("=" * 50)
+    movers, rank_today = ([], {})
+    shopping_on = os.environ.get("TREND_SHOPPING") == "1" or (os.environ.get("TREND_SHOPPING") != "0" and os.name == "nt")
+    if shopping_on:
+        from shopping_rank import collect_movers   # 집 IP(미니PC)에서만. Actions 수동 실행에서는 건너뜀
+        movers, rank_today = collect_movers()
+    history_2w = load_scan_history(days=14)
+    recent_names = recent_suggested_entities(history_2w)
+    print(f"  최근 2주 제안 대상 {len(recent_names)}개")
+
     # 2단계: AI 분석
-    result = run_ai_analysis(news_by_category, my_posts)
+    result = run_ai_analysis(news_by_category, my_posts, movers, recent_names)
     if isinstance(result, tuple):
         candidates, meta = result
     else:
@@ -1128,6 +1248,10 @@ def main():
 
     # 이미 쓴 글 판정(코드) — 15일 규칙
     mark_written(candidates, my_posts)
+    # 새로움 판정 + 딥다이브로 넘길 새 대상 장부
+    mark_novelty(candidates, my_posts, load_deep_dive_roots(), history_2w, rank_today)
+    book = update_new_entities(candidates, movers)
+    print(f"  새 영역 글감 {sum(1 for c in candidates if c.get('novelty') == '새 영역')}개 · 새 대상 장부 {len(book)}개")
 
     # 트랙 정규화 (AI가 안 넣었으면 검색형으로 간주) + 시의형 점수 확정
     #   (시의형은 신규성=이미작성/연속일수를 반영해야 하므로 consecutive_days 계산 후 여기서 산출)
@@ -1159,7 +1283,7 @@ def main():
             else:
                 pmult = 1.0
             c["persistence_mult"] = pmult
-            c["score"] = round(base * pmult, 1)
+            c["score"] = round(base * pmult * c.get("novelty_mult", 1.0), 1)
 
     # 정렬: 트랙별로 나눠 각자의 score(검색형=기회점수 / 시의형=시의점수) 내림차순
     #   검색형은 '실수요(월검색 DEMAND_MIN 이상) 있는 글감'을 1차 키로 먼저 올림 →
@@ -1235,6 +1359,7 @@ def main():
         "topics": topics,
         "stats": stats,
         "meta": meta,
+        "shopping_movers": movers,
     }
 
     # 저장

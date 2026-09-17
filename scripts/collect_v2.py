@@ -929,8 +929,9 @@ def position_mult(serp):
     if not serp:
         return 1.0
     y = serp.get("first_blog_y")
-    pos = 0.7 if not isinstance(y, int) else 1.5 if y < 1000 else 1.25 if y < 2500 else 1.0 if y < 5000 else 0.7
-    return round(pos * (0.85 if serp.get("shop_above_blog") else 1.0), 2)
+    # 비중은 작게(사용자 판단 2026-09-17: 쇼핑이 위를 덮어도 블로그를 찾는 사람은 내려서 본다). keyword-deep-dive 와 같은 값.
+    pos = 0.95 if not isinstance(y, int) else 1.1 if y < 1000 else 1.05 if y < 2500 else 1.0 if y < 5000 else 0.95
+    return round(pos * (0.97 if serp.get("shop_above_blog") else 1.0), 2)
 
 
 def mark_written(candidates, my_posts):

@@ -35,6 +35,16 @@ NAVER_CLIENT_ID = os.environ.get("NAVER_CLIENT_ID", "")
 NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET", "")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
+# ── AI 실행 방식 (2026-09-17) ──
+# 기본은 구독제 Claude Code CLI(`claude -p`, 미니PC에서 로컬 실행 — API 과금 없음, Opus).
+# CLI 가 없을 때만(예: GitHub Actions 수동 실행) ANTHROPIC_API_KEY 로 Haiku API 폴백.
+CLAUDE_BIN = os.environ.get("CLAUDE_BIN", "claude")
+CLAUDE_MODEL = os.environ.get("TREND_CLAUDE_MODEL", "opus")
+CLAUDE_TIMEOUT_SEC = int(os.environ.get("TREND_CLAUDE_TIMEOUT_SEC", "900"))
+# 실제 검색 화면 확인(집 IP 에서만 가능): video-auto 의 serp-check 를 불러 쓴다. 비우면 건너뜀.
+SERP_CHECK_DIR = os.environ.get("SERP_CHECK_DIR", "")
+REWRITE_AFTER_DAYS = 15
+
 # ── 검색광고 키워드도구 API 키 (월간 절대 검색수 + 경쟁정도) ──
 NAVER_AD_CUSTOMER_ID = os.environ.get("NAVER_AD_CUSTOMER_ID", "")
 NAVER_AD_API_KEY = os.environ.get("NAVER_AD_API_KEY", "")
@@ -403,15 +413,17 @@ def has_demand(topic):
     return isinstance(sv, (int, float)) and sv >= DEMAND_MIN
 
 
-def calc_opportunity(search_volume, comp_idx, pharma_value):
-    """검색형 기회점수 = 약사가치 × 수요배수(log10 검색량) × 경쟁여유배수.
+def calc_opportunity(search_volume, comp_idx, pharma_value, position=None):
+    """검색형 기회점수 = 약사가치 × 수요배수(log10 검색량) × 자리배수.
+    자리배수 = 실제 검색 화면에서 블로그 영역 위치·쇼핑 덮임(position_mult). 화면을 못 봤으면(Actions 실행 등)
+    예전처럼 광고 경쟁도로 폴백 — 광고 경쟁도는 광고주 입찰 경쟁이라 상위노출과는 거리가 있다.
     검색량 없으면 None(→ 약사가치로 폴백)."""
     if search_volume is None:
         return None
     # log10(검색량)/2: 100회=1.0, 2500회≈1.7, 1.1만회≈2.0, 23만회≈2.7
     demand_mult = math.log10(max(search_volume, 10)) / 2
-    comp_mult = {"낮음": 1.2, "중간": 1.0, "높음": 0.8}.get(comp_idx, 1.0)
-    return round(pharma_value * demand_mult * comp_mult, 1)
+    spot = position if position is not None else {"낮음": 1.2, "중간": 1.0, "높음": 0.8}.get(comp_idx, 1.0)
+    return round(pharma_value * demand_mult * spot, 1)
 
 
 def opportunity_label(search_volume, comp_idx):
@@ -487,11 +499,11 @@ def build_ai_prompt(news_by_category, my_posts):
 
     # 내 블로그 글 제목 목록
     post_titles = []
-    for p in my_posts:
+    for p in sorted(my_posts, key=lambda x: x.get("date", ""), reverse=True):
         title = p.get("title", "")
         if title:
-            post_titles.append(title)
-    posts_block = "\n".join(f"- {t}" for t in post_titles[:50])  # 최근 50개
+            post_titles.append(f"{p.get('date', '')} {title}".strip())
+    posts_block = "\n".join(f"- {t}" for t in post_titles)  # 전체(예전엔 50개만 넣어 나머지와 겹치는 글감이 나왔다)
 
     # 카테고리별 뉴스 블록
     news_blocks = {}
@@ -530,6 +542,14 @@ def build_ai_prompt(news_by_category, my_posts):
   - 좋음: keyword="먹는 비만약", track="시의형"
 - 길게 설명하고 싶은 내용은 keyword가 아니라 why_now / pharmacist_angle / title_idea 에 쓰세요.
 
+[entity / search_terms — 실제 검색어에 붙이기 위한 필드. 매우 중요]
+- entity: 이 글감의 핵심 대상 **하나**(성분·약·제품·질환·제도 이름). 한 단어 또는 고유 이름. 예: "NMN", "통풍", "미프진", "타우린"
+- search_terms: 일반인이 네이버 검색창에 **실제로 칠 법한** 검색어 후보 3개. 각각 1~2단어(최대 3단어), 조사·문장 금지.
+  - 뉴스에 나온 단어를 이어 붙이지 마세요. "고단백 다이어트 통풍", "음수량 반려묘 식이섬유", "제로 무알코올 맥주 퓨린"은 아무도 검색하지 않습니다.
+  - 좋은 예(통풍 글감): ["통풍에 나쁜 음식", "통풍 단백질", "요산 수치 낮추는 법"]
+  - 좋은 예(고양이 타우린): ["고양이 타우린", "고양이 타우린 영양제", "타우린 고양이 용량"]
+  - 코드가 이 후보들의 실제 월 검색량을 조회해 가장 나은 것을 대표 검색어로 씁니다. 자신 없으면 대상 이름에 흔한 의도어(부작용·효능·먹는법·가격·추천·차이)를 붙인 꼴을 넣으세요.
+
 [내 블로그 기존 글 제목]
 {posts_block}
 
@@ -551,6 +571,8 @@ def build_ai_prompt(news_by_category, my_posts):
 각 항목:
 {{
   "keyword": "짧은 검색어 (예: '감마오리자놀', '바나바잎', '탈모약 건강보험', '위고비 품절')",
+  "entity": "핵심 대상 하나 (예: '감마오리자놀')",
+  "search_terms": ["실제로 칠 법한 검색어 1", "검색어 2", "검색어 3"],
   "track": "검색형 | 시의형",
   "category": "영양제·성분 | 약업계·정책 | 질환·치료 | 소비자건강",
   "pharma_value": 1~5 정수 (약사/DDS 전문성으로 남들과 차별화할 여지. 5=약사만 쓸 수 있는 깊은 주제, 1=누구나 쓰는 일반 주제),
@@ -564,7 +586,7 @@ def build_ai_prompt(news_by_category, my_posts):
 }}
 
 [중요]
-- already_covered가 true인 경우, covered_posts에 관련된 기존 글 제목을 넣으세요
+- already_covered가 true인 경우, covered_posts에 관련된 기존 글 제목을 넣으세요 (최종 판정은 코드가 글 제목·작성일로 다시 합니다. 쓴 지 15일이 지난 주제는 다시 쓸 수 있습니다)
 - 새 글감(already_covered=false)이 전체의 60% 이상이어야 합니다
 - "비만", "건강" 같은 너무 포괄적인 단어 단독 사용 금지 — 구체적인 성분명/제품명/정책명
 - 한국어로 작성"""
@@ -629,101 +651,104 @@ def _salvage_json_objects(text):
     return objs
 
 
+def _call_claude_cli(prompt):
+    """구독제 Claude Code CLI 로 실행. 반환: (텍스트, 메타). 실패하면 예외."""
+    import shutil
+    import subprocess
+    exe = shutil.which(CLAUDE_BIN) or CLAUDE_BIN
+    args = [exe, "-p", "--output-format", "json"]
+    if CLAUDE_MODEL:
+        args += ["--model", CLAUDE_MODEL]
+    # 프롬프트는 stdin 으로(길이·따옴표 문제 회피). cwd 는 저장소 폴더 — 다른 프로젝트의 메모리가 섞이지 않게.
+    started = time.time()
+    proc = subprocess.run(args, input=prompt.encode("utf-8"), capture_output=True,
+                          timeout=CLAUDE_TIMEOUT_SEC, cwd=BASE_DIR)
+    out = proc.stdout.decode("utf-8", errors="replace").strip()
+    if proc.returncode != 0 and not out:
+        raise RuntimeError(f"claude 종료 코드 {proc.returncode}: {proc.stderr.decode('utf-8', errors='replace')[:300]}")
+    try:
+        j = json.loads(out)
+    except json.JSONDecodeError:
+        return out, {"duration_sec": round(time.time() - started)}
+    if j.get("is_error"):
+        raise RuntimeError(str(j.get("result") or j.get("subtype") or "claude 오류")[:300])
+    usage = j.get("usage") or {}
+    return str(j.get("result", "")).strip(), {
+        "duration_sec": round(time.time() - started),
+        "input_tokens": usage.get("input_tokens"),
+        "output_tokens": usage.get("output_tokens"),
+    }
+
+
+def _call_anthropic_api(prompt):
+    """폴백: Anthropic API(Haiku). 과금됨 — CLI 를 쓸 수 없는 환경에서만."""
+    import anthropic
+    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    response = client.messages.create(model="claude-haiku-4-5-20251001", max_tokens=16000,
+                                      messages=[{"role": "user", "content": prompt}])
+    cost = (response.usage.input_tokens * 1 + response.usage.output_tokens * 5) / 1_000_000
+    return response.content[0].text.strip(), {
+        "input_tokens": response.usage.input_tokens,
+        "output_tokens": response.usage.output_tokens,
+        "cost_usd": round(cost, 4),
+    }
+
+
 def run_ai_analysis(news_by_category, my_posts):
-    """Claude Haiku로 글감 후보 추출"""
+    """Claude 로 글감 후보 추출. 기본은 구독제 CLI(Opus), 없으면 API(Haiku) 폴백."""
     print("\n" + "=" * 50)
     print("2단계: AI 분석")
     print("=" * 50)
 
-    if not ANTHROPIC_API_KEY:
-        print("  [ERROR] ANTHROPIC_API_KEY 없음 — AI 분석 스킵")
-        return []
-
-    try:
-        import anthropic
-    except ImportError:
-        print("  [ERROR] anthropic 패키지 미설치")
-        return []
+    import shutil
+    use_cli = bool(shutil.which(CLAUDE_BIN)) and os.environ.get("TREND_AI_BACKEND", "cli") != "api"
+    if not use_cli and not ANTHROPIC_API_KEY:
+        print("  [ERROR] claude CLI 도 없고 ANTHROPIC_API_KEY 도 없음 — AI 분석 불가")
+        return [], {"error": "no ai backend"}
+    backend = f"claude-cli:{CLAUDE_MODEL or 'default'}" if use_cli else "api:claude-haiku-4-5-20251001"
+    print(f"  실행 방식: {backend}")
 
     prompt = build_ai_prompt(news_by_category, my_posts)
+    print(f"  프롬프트 길이: {len(prompt)}자")
 
-    # 토큰 수 추정 (대략 1토큰 = 3.5자 한국어)
-    est_input_tokens = len(prompt) // 3
-    print(f"  프롬프트 길이: {len(prompt)}자 (추정 ~{est_input_tokens} 토큰)")
-
-    model = "claude-haiku-4-5-20251001"
-    max_attempts = 3          # 파싱 깨지면 새로 생성해 재시도 (모델이 가끔 콤마 누락)
-    total_input = 0
-    total_output = 0
+    max_attempts = 3          # 파싱 깨지면 새로 생성해 재시도
     last_err = None
-    last_raw = ""
-
+    cost_total = 0.0
     for attempt in range(1, max_attempts + 1):
         try:
-            client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-            response = client.messages.create(
-                model=model,
-                max_tokens=16000,
-                messages=[{"role": "user", "content": prompt}],
-            )
+            raw, call_meta = _call_claude_cli(prompt) if use_cli else _call_anthropic_api(prompt)
         except Exception as e:
-            # API 호출 자체 실패(네트워크/일시 오류) — 잠깐 쉬고 재시도
             last_err = e
-            print(f"  [WARN] API 호출 실패 (시도 {attempt}/{max_attempts}): {e}")
+            print(f"  [WARN] AI 호출 실패 (시도 {attempt}/{max_attempts}): {e}")
             if attempt < max_attempts:
-                time.sleep(3 * attempt)
+                time.sleep(10 * attempt)   # CLI 자동 업데이트 중이면 몇 초간 실행이 안 된다
                 continue
-            print(f"  [ERROR] AI 분석 실패: {e}")
-            return [], {"model": model, "error": str(e)}
+            return [], {"model": backend, "error": str(e)}
 
-        raw = response.content[0].text.strip()
-        last_raw = raw
-        input_tokens = response.usage.input_tokens
-        output_tokens = response.usage.output_tokens
-        total_input += input_tokens
-        total_output += output_tokens
-
-        cost = (total_input * 1 + total_output * 5) / 1_000_000
-        print(f"  API 사용(누적): 입력 {total_input}, 출력 {total_output} 토큰  (시도 {attempt}/{max_attempts})")
-        print(f"  비용(누적): ${cost:.4f}")
-        print(f"  응답 길이: {len(raw)}자")
-        print(f"  응답 첫 200자: {raw[:200]}")
-
+        cost_total += call_meta.get("cost_usd") or 0
+        print(f"  응답 길이: {len(raw)}자 · {call_meta}")
         json_str = _extract_json_array(raw)
-
-        # 1차: 정상 파싱 시도
         try:
             candidates = json.loads(json_str)
         except json.JSONDecodeError as e:
             last_err = e
             print(f"  [WARN] JSON 파싱 실패 (시도 {attempt}/{max_attempts}): {e}")
-            # 2차: 깨진 배열에서 온전한 객체만 건져내기
-            salvaged = _salvage_json_objects(json_str)
-            if salvaged:
-                print(f"  [복구] 깨진 응답에서 온전한 글감 {len(salvaged)}개 건져냄 (일부 손실 가능)")
-                candidates = salvaged
+            candidates = _salvage_json_objects(json_str)
+            if candidates:
+                print(f"  [복구] 깨진 응답에서 온전한 글감 {len(candidates)}개 건져냄 (일부 손실 가능)")
+            elif attempt < max_attempts:
+                time.sleep(2)
+                continue
             else:
-                # 못 건지면 새로 생성해 재시도
-                if attempt < max_attempts:
-                    time.sleep(2)
-                    continue
-                print(f"  [ERROR] AI 응답 JSON 파싱 실패(최종): {e}")
-                print(f"  Raw 응답 첫 500자: {last_raw[:500]}")
-                return [], {"model": model, "error": str(e)}
+                print(f"  Raw 응답 첫 500자: {raw[:500]}")
+                return [], {"model": backend, "error": str(e)}
 
+        candidates = [c for c in candidates if isinstance(c, dict) and c.get("keyword")]
         print(f"  → AI 추천 글감: {len(candidates)}개")
-        meta = {
-            "model": model,
-            "input_tokens": total_input,
-            "output_tokens": total_output,
-            "cost_usd": round(cost, 4),
-            "attempts": attempt,
-        }
+        meta = {"model": backend, "attempts": attempt, "cost_usd": round(cost_total, 4), **{k: v for k, v in call_meta.items() if k != "cost_usd"}}
         return candidates, meta
 
-    # 이론상 도달 불가 (루프 내에서 항상 return) — 방어적 처리
-    print(f"  [ERROR] AI 분석 실패: {last_err}")
-    return [], {"model": model, "error": str(last_err)}
+    return [], {"model": backend, "error": str(last_err)}
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -740,7 +765,7 @@ def _extract_core_keyword(keyword):
     # 괄호 안 내용 제거
     core = re.sub(r"\([^)]*\)", "", keyword).strip()
     # " - ", " + ", " vs " 등 구분자로 분리 후 첫 부분 사용
-    core = re.split(r"\s*[-+vs]\s*", core)[0].strip()
+    core = re.split(r"\s+(?:-|\+|vs\.?)\s+", core)[0].strip()   # 예전 [-+vs] 는 글자 v·s 에서도 잘랐다
     # 너무 길면 앞 4단어만
     words = core.split()
     if len(words) > 4:
@@ -806,6 +831,114 @@ def get_news_recency(keyword):
     }
 
 
+def _nospace(text):
+    return re.sub(r"\s+", "", str(text or "")).lower()
+
+
+def ground_keywords(candidates):
+    """AI 가 낸 검색어 후보를 검색광고 API 로 검증해 '사람들이 실제로 치는 검색어'를 대표 keyword 로 고른다.
+    (2026-09-17) 예전엔 AI 의 keyword 를 그대로 조회했는데, 최근 14일 주제 391개 중 336개(86%)가 월 100 미만,
+    295개가 검색 기록이 없을 때 찍히는 20이었다 — '고단백 다이어트 통풍'처럼 뉴스 단어를 이어 붙인 가짜 검색어라서.
+    고르는 순서: 후보(search_terms·keyword) 중 월 100↑ 에서 가장 구체적인(긴) 것 → 없으면 대상(entity) 단독 → 그래도 없으면 그대로 두고 표시."""
+    hints = []
+    for c in candidates:
+        for t in [c.get("keyword"), c.get("entity"), *(c.get("search_terms") or [])]:
+            if isinstance(t, str) and t.strip() and t.strip() not in hints:
+                hints.append(t.strip())
+    print(f"  검색광고 절대 검색량 조회: 후보 {len(hints)}개")
+    volume_map = fetch_search_volume(hints)
+    print(f"    → {len(volume_map)}개 키워드 검색량 확보(연관 검색어 포함)")
+
+    grounded = 0
+    for c in candidates:
+        c["keyword_ai"] = c.get("keyword", "")
+        own = [t.strip() for t in [*(c.get("search_terms") or []), c.get("keyword")] if isinstance(t, str) and t.strip()]
+        scored = []
+        for t in own:
+            v = lookup_volume(volume_map, t)
+            if v and v["total"] >= DEMAND_MIN:
+                scored.append((len(_nospace(t)), v["total"], t))
+        ent = (c.get("entity") or "").strip()
+        if scored:
+            # 구체적인 검색어 우선. 단, 검색량이 10배 넘게 차이 나면 큰 쪽(너무 좁은 롱테일 방지)
+            scored.sort(key=lambda x: (x[0], x[1]), reverse=True)
+            best = scored[0]
+            biggest = max(scored, key=lambda x: x[1])
+            if biggest[1] >= best[1] * 10:
+                best = biggest
+            c["keyword"], c["grounded_by"] = best[2], "search_term"
+        elif ent and (lookup_volume(volume_map, ent) or {}).get("total", 0) >= DEMAND_MIN:
+            c["keyword"], c["grounded_by"] = ent, "entity"
+        else:
+            c["grounded_by"] = None   # 실제 검색 수요를 못 찾음 → 검색형이면 정렬에서 뒤로 간다
+        if c["grounded_by"]:
+            grounded += 1
+        c["search_term_volumes"] = {t: (lookup_volume(volume_map, t) or {}).get("total") for t in own[:4]}
+    print(f"    → 실제 검색어에 붙은 글감: {grounded}/{len(candidates)}")
+    return volume_map
+
+
+def run_serp_check(candidates):
+    """실제 네이버 모바일 검색 화면 확인(미니PC 에서 돌 때만). video-auto 의 serp-check 를 그대로 부른다.
+    검색형 글감의 대표 검색어만 본다 — 시의형은 막 나온 말이라 블로그가 아직 없는 게 오히려 기회여서 자리 점수를 안 쓴다."""
+    if not SERP_CHECK_DIR or not os.path.isdir(SERP_CHECK_DIR):
+        return {}
+    import subprocess
+    import tempfile
+    kws = [c["keyword"] for c in candidates if c.get("track") != "시의형" and c.get("grounded_by")][:15]
+    if not kws:
+        return {}
+    tmp = tempfile.mkdtemp(prefix="serp_")
+    list_path, out_path = os.path.join(tmp, "list.json"), os.path.join(tmp, "out.json")
+    with open(list_path, "w", encoding="utf-8") as f:
+        json.dump(kws, f, ensure_ascii=False)
+    print(f"  검색 화면 확인: {len(kws)}개")
+    try:
+        subprocess.run(f'npx.cmd tsx scripts/serp-check.mts --list="{list_path}" --out="{out_path}"' if os.name == "nt"
+                       else ["npx", "tsx", "scripts/serp-check.mts", f"--list={list_path}", f"--out={out_path}"],
+                       cwd=SERP_CHECK_DIR, shell=(os.name == "nt"), timeout=600, capture_output=True)
+        with open(out_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"    [WARN] 검색 화면 확인 실패 — 자리 점수 없이 진행: {e}")
+        return {}
+
+
+def position_mult(serp):
+    """keyword-deep-dive 와 같은 기준. 블로그 영역이 화면 위에서 몇 px 에 나오나 × 쇼핑 블록이 위를 덮나."""
+    if not serp:
+        return 1.0
+    y = serp.get("first_blog_y")
+    pos = 0.7 if not isinstance(y, int) else 1.5 if y < 1000 else 1.25 if y < 2500 else 1.0 if y < 5000 else 0.7
+    return round(pos * (0.85 if serp.get("shop_above_blog") else 1.0), 2)
+
+
+def mark_written(candidates, my_posts):
+    """이미 쓴 글 판정을 코드로: 글 제목에 대상(entity)이 있으면 그 글의 작성일로 판단한다.
+    쓴 지 15일 안이면 already_covered(읽는 쪽이 후보에서 빼는 표시), 그보다 오래됐으면 다시 쓸 수 있는 재작성 후보.
+    대상이 어느 제목에도 없으면 AI 가 짚은 covered_posts 제목이 실제 목록에 있을 때만 그 글로 판단한다."""
+    titles = [(p.get("title", ""), p.get("date", "")) for p in my_posts if p.get("title")]
+    today = datetime.now()
+    for c in candidates:
+        ent = _nospace(c.get("entity") or "")
+        hits = [(t, d) for t, d in titles if len(ent) >= 2 and ent in _nospace(t)]
+        if not hits:
+            claimed = {_nospace(x) for x in (c.get("covered_posts") or []) if isinstance(x, str)}
+            hits = [(t, d) for t, d in titles if _nospace(t) in claimed]
+        if not hits:
+            c["already_covered"], c["previously_written"], c["days_since_written"], c["covered_posts"] = False, False, None, []
+            continue
+        hits.sort(key=lambda x: x[1], reverse=True)
+        try:
+            days = (today - datetime.strptime(hits[0][1][:10], "%Y-%m-%d")).days
+        except ValueError:
+            days = None
+        c["previously_written"] = True
+        c["days_since_written"] = days
+        c["already_covered"] = days is None or days < REWRITE_AFTER_DAYS
+        c["covered_posts"] = [t for t, _ in hits[:3]]
+
+
 def enrich_candidates(candidates):
     """AI 후보에 뉴스 건수 + 검색량 트렌드 + 전문가 갭 + 절대 검색량(검색광고) 추가,
     그리고 트랙별 점수(검색형=기회점수 / 시의형=시의점수)를 계산."""
@@ -816,10 +949,8 @@ def enrich_candidates(candidates):
     # ── (a) 검색광고 API로 절대 검색량 일괄 조회 (배치, 비용 저렴) ──
     #     keyword가 이제 짧은 검색어라 적중률이 높음. 시의형은 대부분 0건이지만
     #     그 자체로 '검색 수요 없음' 신호라 그대로 둠.
-    kw_list = [c.get("keyword", "") for c in candidates if c.get("keyword")]
-    print(f"  검색광고 절대 검색량 조회: {len(kw_list)}개")
-    volume_map = fetch_search_volume(kw_list)
-    print(f"    → {len(volume_map)}개 키워드 검색량 확보")
+    volume_map = ground_keywords(candidates)
+    serp_map = run_serp_check(candidates)
 
     for i, c in enumerate(candidates):
         kw = c.get("keyword", "")
@@ -878,7 +1009,10 @@ def enrich_candidates(candidates):
         pharma_value = calc_pharma_value(c.get("pharma_value"), gap)
         c["pharma_value_calc"] = pharma_value
 
-        opp = calc_opportunity(search_volume, comp_idx, pharma_value)
+        serp = serp_map.get(kw.replace(" ", "").upper()) if track != "시의형" else None
+        c["serp"] = serp
+        c["position_mult"] = position_mult(serp)
+        opp = calc_opportunity(search_volume, comp_idx, pharma_value, c["position_mult"] if serp else None)
         c["opportunity_score"] = opp
         c["opportunity_label"] = opportunity_label(search_volume, comp_idx)
 
@@ -899,63 +1033,55 @@ def enrich_candidates(candidates):
 
 
 def _get_trend_key(topic):
-    """토픽에서 trend_key 추출. 없으면 _extract_core_keyword로 fallback"""
-    tk = topic.get("trend_key", "").strip()
-    if tk:
-        return tk
+    """연속 등장을 셀 때 쓰는 키 = 대상(entity). 없으면 trend_key, 그것도 없으면 핵심 키워드."""
+    for k in ("entity", "trend_key"):
+        v = str(topic.get(k) or "").strip()
+        if v:
+            return v
     return _extract_core_keyword(topic.get("keyword", ""))
 
 
 def load_scan_history(days=7):
-    """최근 스캔에서 trend_key 기준 연속 등장일수 계산"""
+    """날짜별로 그날 스캔에 나온 글감의 글자 뭉치(키워드·trend_key·entity)를 돌려준다.
+    (2026-09-17) 예전엔 AI 가 지은 trend_key 가 '완전히 같을 때'만 같은 주제로 쳤는데, 391개 주제에 키가 334가지라
+    같은 주제가 9번 나와도 매번 1일로 찍혔다(지속 보너스·신규성 감점이 한 번도 안 걸림). 지금은 대상 이름이 그날 글자 뭉치에 들어 있으면 등장으로 센다."""
     if not os.path.isdir(SCANS_DIR):
         return {}
-
     import glob as _glob
-    files = sorted(_glob.glob(os.path.join(SCANS_DIR, "*.json")))
     cutoff = datetime.now() - timedelta(days=days)
-
-    # 날짜별 trend_key 집합
-    date_keywords = {}
-    for fpath in files:
-        fname = os.path.basename(fpath).replace(".json", "")
+    by_date = {}
+    for fpath in sorted(_glob.glob(os.path.join(SCANS_DIR, "*.json"))):
         try:
-            ts = datetime.strptime(fname, "%Y-%m-%d_%H%M")
+            ts = datetime.strptime(os.path.basename(fpath).replace(".json", ""), "%Y-%m-%d_%H%M")
         except ValueError:
             continue
         if ts < cutoff:
             continue
-        date_str = ts.strftime("%Y-%m-%d")
         try:
             with open(fpath, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            keys = {_get_trend_key(t) for t in data.get("topics", [])}
-            if date_str not in date_keywords:
-                date_keywords[date_str] = set()
-            date_keywords[date_str].update(keys)
         except Exception:
             continue
+        blob = by_date.setdefault(ts.strftime("%Y-%m-%d"), [])
+        for t in data.get("topics", []):
+            blob.append(_nospace(" ".join(str(t.get(k) or "") for k in ("keyword", "keyword_ai", "trend_key", "entity"))))
+    return by_date
 
-    # 오늘부터 역순으로 연속일수 계산
+
+def consecutive_days_for(topic, by_date, days=7):
+    """어제부터 거꾸로, 이 글감의 대상이 연속으로 나온 날 수(오늘 제외)."""
+    key = _nospace(_get_trend_key(topic))
+    if len(key) < 2:
+        return 0
     today = datetime.now().date()
-    consecutive = {}
-
-    # 모든 trend_key 수집
-    all_kws = set()
-    for kws in date_keywords.values():
-        all_kws.update(kws)
-
-    for kw in all_kws:
-        count = 0
-        for i in range(days):
-            check_date = (today - timedelta(days=i)).strftime("%Y-%m-%d")
-            if check_date in date_keywords and kw in date_keywords[check_date]:
-                count += 1
-            else:
-                break
-        consecutive[kw] = count
-
-    return consecutive
+    count = 0
+    for i in range(1, days + 1):
+        d = (today - timedelta(days=i)).strftime("%Y-%m-%d")
+        if any(key in b for b in by_date.get(d, [])):
+            count += 1
+        else:
+            break
+    return count
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -997,14 +1123,14 @@ def main():
     candidates = enrich_candidates(candidates)
 
     # 연속 등장일수 추가 (trend_key 기준)
-    consecutive = load_scan_history(days=7)
+    by_date = load_scan_history(days=7)
     for c in candidates:
-        tk = _get_trend_key(c)
-        # trend_key가 AI에서 안 나온 경우 fallback으로 생성해서 저장
         if not c.get("trend_key"):
-            c["trend_key"] = tk
-        prev = consecutive.get(tk, 0)
-        c["consecutive_days"] = prev + 1  # 오늘 포함
+            c["trend_key"] = _get_trend_key(c)
+        c["consecutive_days"] = consecutive_days_for(c, by_date) + 1  # 오늘 포함
+
+    # 이미 쓴 글 판정(코드) — 15일 규칙
+    mark_written(candidates, my_posts)
 
     # 트랙 정규화 (AI가 안 넣었으면 검색형으로 간주) + 시의형 점수 확정
     #   (시의형은 신규성=이미작성/연속일수를 반영해야 하므로 consecutive_days 계산 후 여기서 산출)
@@ -1135,7 +1261,7 @@ def main():
         print("  ⭐ 오늘의 1픽:")
         for p in today_pick:
             print(f"     [{p['track']}] {p['keyword']} — {p['reason']}")
-    print(f"  API 비용: ${meta.get('cost_usd', 0):.4f}")
+    print(f"  AI: {meta.get('model')} · 비용 ${meta.get('cost_usd', 0) or 0:.4f}")
 
 
 if __name__ == "__main__":

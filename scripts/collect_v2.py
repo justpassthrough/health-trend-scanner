@@ -992,7 +992,9 @@ def mark_novelty(candidates, my_posts, roots, by_date, rank_today):
     days = [d for d in by_date if not d.endswith("#entities")]
     for c in candidates:
         ent = _nospace(c.get("entity") or "")
-        in_roots = len(ent) >= 2 and any(ent == r or (len(r) >= 2 and r in ent) for r in roots)
+        # 대상뿐 아니라 대표 검색어에 뿌리 이름이 들어 있어도 기존 영역('위고비 가격'의 대상이 '노보노디스크'로 나와 새 영역이 된 적이 있음)
+        kwn = _nospace(c.get("keyword"))
+        in_roots = any(len(r) >= 2 and ((len(ent) >= 2 and r in ent) or r in kwn) for r in roots)
         in_posts = len(ent) >= 2 and any(ent in t for t in titles)
         suggested_days = sum(1 for d in days if len(ent) >= 2 and any(ent in b for b in by_date[d]))
         if in_roots or in_posts:

@@ -16,44 +16,47 @@
  "매스틱검": {
   "first_seen": "2026-09-17",
   "seen_days": [
-   "2026-09-17"
+   "2026-09-17",
+   "2026-09-19"
   ],
-  "last_seen": "2026-09-17",
+  "last_seen": "2026-09-19",
   "keyword": "매스틱",
-  "search_volume": 45480,
+  "search_volume": 44670,
   "source": "shopping",
-  "shopping_rank": 265,
+  "shopping_rank": 248,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7475
+  "blog_position_y": 8516
  },
  "하스카프베리": {
   "first_seen": "2026-09-17",
   "seen_days": [
-   "2026-09-17"
+   "2026-09-17",
+   "2026-09-19"
   ],
-  "last_seen": "2026-09-17",
+  "last_seen": "2026-09-19",
   "keyword": "하스카프베리",
-  "search_volume": 59310,
+  "search_volume": 63260,
   "source": "shopping",
-  "shopping_rank": 29,
+  "shopping_rank": 19,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6394
+  "pharma_value": 3,
+  "blog_position_y": 8776
  },
  "카무트효소": {
   "first_seen": "2026-09-17",
   "seen_days": [
-   "2026-09-17"
+   "2026-09-17",
+   "2026-09-19"
   ],
-  "last_seen": "2026-09-17",
+  "last_seen": "2026-09-19",
   "keyword": "카무트효소",
-  "search_volume": 84630,
+  "search_volume": 80780,
   "source": "shopping",
-  "shopping_rank": 38,
+  "shopping_rank": 28,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6688
+  "blog_position_y": 7932
  },
  "MBP": {
   "first_seen": "2026-09-17",
@@ -72,30 +75,32 @@
  "장수백정": {
   "first_seen": "2026-09-17",
   "seen_days": [
-   "2026-09-17"
+   "2026-09-17",
+   "2026-09-19"
   ],
-  "last_seen": "2026-09-17",
+  "last_seen": "2026-09-19",
   "keyword": "장수백정",
-  "search_volume": 600,
+  "search_volume": 1270,
   "source": "shopping",
-  "shopping_rank": 122,
-  "shopping_move": "새 진입",
-  "pharma_value": 2,
-  "blog_position_y": 176
+  "shopping_rank": 92,
+  "shopping_move": "최근 진입",
+  "pharma_value": 1,
+  "blog_position_y": 1878
  },
  "PDRN": {
   "first_seen": "2026-09-17",
   "seen_days": [
-   "2026-09-17"
+   "2026-09-17",
+   "2026-09-19"
   ],
-  "last_seen": "2026-09-17",
-  "keyword": "PDRN",
-  "search_volume": 35300,
+  "last_seen": "2026-09-19",
+  "keyword": "PDRN 크림",
+  "search_volume": 17290,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7867
+  "blog_position_y": 6511
  },
  "쿼세틴": {
   "first_seen": "2026-09-17",
@@ -348,5 +353,47 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 6535
+ },
+ "대마종자유": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "대마종자유",
+  "search_volume": 54560,
+  "source": "shopping",
+  "shopping_rank": 72,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8331
+ },
+ "도라지": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "도라지배즙",
+  "search_volume": 12630,
+  "source": "shopping",
+  "shopping_rank": 38,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7866
+ },
+ "쿼르세틴": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "쿼르세틴",
+  "search_volume": 110,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 4035
  }
 }

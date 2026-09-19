@@ -2,16 +2,17 @@
  "멜라토닌": {
   "first_seen": "2026-09-17",
   "seen_days": [
-   "2026-09-17"
+   "2026-09-17",
+   "2026-09-19"
   ],
-  "last_seen": "2026-09-17",
+  "last_seen": "2026-09-19",
   "keyword": "멜라토닌",
-  "search_volume": 151600,
+  "search_volume": 151000,
   "source": "shopping",
-  "shopping_rank": 11,
+  "shopping_rank": 13,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 10416
+  "blog_position_y": 1647
  },
  "매스틱검": {
   "first_seen": "2026-09-17",
@@ -395,5 +396,103 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 4035
+ },
+ "PQQ": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "PQQ 영양제",
+  "search_volume": 1410,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 5641
+ },
+ "테아닌": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "테아닌",
+  "search_volume": 17250,
+  "source": "shopping",
+  "shopping_rank": 111,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 10352
+ },
+ "여주": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "여주",
+  "search_volume": 43790,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 888
+ },
+ "새싹보리": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "새싹보리",
+  "search_volume": 6500,
+  "source": "shopping",
+  "shopping_rank": 264,
+  "shopping_move": "새 진입",
+  "pharma_value": 3,
+  "blog_position_y": 6918
+ },
+ "폴리코사놀": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "폴리코사놀",
+  "search_volume": 23820,
+  "source": "shopping",
+  "shopping_rank": 73,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7606
+ },
+ "맥주효모": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "맥주효모",
+  "search_volume": 18480,
+  "source": "shopping",
+  "shopping_rank": 45,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8443
+ },
+ "벤잘코늄": {
+  "first_seen": "2026-09-19",
+  "seen_days": [
+   "2026-09-19"
+  ],
+  "last_seen": "2026-09-19",
+  "keyword": "렌즈 인공눈물",
+  "search_volume": 1290,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6532
  }
 }

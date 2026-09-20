@@ -275,16 +275,17 @@
  "마누카꿀": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-09-20"
   ],
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-09-20",
   "keyword": "마누카꿀 효능",
-  "search_volume": 10650,
+  "search_volume": 11200,
   "source": "shopping",
   "shopping_rank": 27,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7155
+  "blog_position_y": 7885
  },
  "홍삼": {
   "first_seen": "2026-09-18",
@@ -303,16 +304,17 @@
  "피크노제놀": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-09-20"
   ],
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-09-20",
   "keyword": "피크노제놀",
-  "search_volume": 17800,
+  "search_volume": 18540,
   "source": "shopping",
-  "shopping_rank": 64,
+  "shopping_rank": 49,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7746
+  "blog_position_y": 7067
  },
  "프로폴리스": {
   "first_seen": "2026-09-18",
@@ -607,5 +609,89 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7072
+ },
+ "빌베리": {
+  "first_seen": "2026-09-20",
+  "seen_days": [
+   "2026-09-20"
+  ],
+  "last_seen": "2026-09-20",
+  "keyword": "빌베리",
+  "search_volume": 27140,
+  "source": "shopping",
+  "shopping_rank": 57,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 8255
+ },
+ "구기자": {
+  "first_seen": "2026-09-20",
+  "seen_days": [
+   "2026-09-20"
+  ],
+  "last_seen": "2026-09-20",
+  "keyword": "구기자 효능",
+  "search_volume": 4610,
+  "source": "shopping",
+  "shopping_rank": 56,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 5202
+ },
+ "토사자": {
+  "first_seen": "2026-09-20",
+  "seen_days": [
+   "2026-09-20"
+  ],
+  "last_seen": "2026-09-20",
+  "keyword": "토사자 효능",
+  "search_volume": 3550,
+  "source": "shopping",
+  "shopping_rank": 158,
+  "shopping_move": "최근 진입",
+  "pharma_value": 3,
+  "blog_position_y": 4546
+ },
+ "영지버섯": {
+  "first_seen": "2026-09-20",
+  "seen_days": [
+   "2026-09-20"
+  ],
+  "last_seen": "2026-09-20",
+  "keyword": "영지버섯",
+  "search_volume": 16050,
+  "source": "shopping",
+  "shopping_rank": 172,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 7044
+ },
+ "자보티카바": {
+  "first_seen": "2026-09-20",
+  "seen_days": [
+   "2026-09-20"
+  ],
+  "last_seen": "2026-09-20",
+  "keyword": "자보티카바 효능",
+  "search_volume": 11250,
+  "source": "shopping",
+  "shopping_rank": 281,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 6496
+ },
+ "단백질보충제": {
+  "first_seen": "2026-09-20",
+  "seen_days": [
+   "2026-09-20"
+  ],
+  "last_seen": "2026-09-20",
+  "keyword": "프로틴 신장",
+  "search_volume": 130,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 2809
  }
 }

@@ -121,16 +121,17 @@
  "프리워크아웃": {
   "first_seen": "2026-09-17",
   "seen_days": [
-   "2026-09-17"
+   "2026-09-17",
+   "2026-09-21"
   ],
-  "last_seen": "2026-09-17",
+  "last_seen": "2026-09-21",
   "keyword": "프리워크아웃",
-  "search_volume": 4680,
+  "search_volume": 4570,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 1769
+  "blog_position_y": 1745
  },
  "침향": {
   "first_seen": "2026-09-18",
@@ -163,16 +164,17 @@
  "칼마디": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-09-21"
   ],
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-09-21",
   "keyword": "칼마디",
-  "search_volume": 27000,
+  "search_volume": 26800,
   "source": "shopping",
-  "shopping_rank": 58,
+  "shopping_rank": 39,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6342
+  "pharma_value": 5,
+  "blog_position_y": 6360
  },
  "흑마늘": {
   "first_seen": "2026-09-18",
@@ -319,16 +321,17 @@
  "프로폴리스": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-09-21"
   ],
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-09-21",
   "keyword": "프로폴리스",
-  "search_volume": 41830,
+  "search_volume": 43220,
   "source": "shopping",
-  "shopping_rank": 37,
+  "shopping_rank": 72,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 11136
+  "pharma_value": 4,
+  "blog_position_y": 10158
  },
  "니코틴산아미드": {
   "first_seen": "2026-09-18",
@@ -693,5 +696,75 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 2809
+ },
+ "올리브오일 캡슐": {
+  "first_seen": "2026-09-21",
+  "seen_days": [
+   "2026-09-21"
+  ],
+  "last_seen": "2026-09-21",
+  "keyword": "올리브오일 캡슐",
+  "search_volume": 18290,
+  "source": "shopping",
+  "shopping_rank": 80,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7943
+ },
+ "차가버섯": {
+  "first_seen": "2026-09-21",
+  "seen_days": [
+   "2026-09-21"
+  ],
+  "last_seen": "2026-09-21",
+  "keyword": "차가버섯 효능",
+  "search_volume": 8040,
+  "source": "shopping",
+  "shopping_rank": 485,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 3348
+ },
+ "진세노사이드": {
+  "first_seen": "2026-09-21",
+  "seen_days": [
+   "2026-09-21"
+  ],
+  "last_seen": "2026-09-21",
+  "keyword": "홍삼 효능",
+  "search_volume": 6810,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 4610
+ },
+ "미인빛정": {
+  "first_seen": "2026-09-21",
+  "seen_days": [
+   "2026-09-21"
+  ],
+  "last_seen": "2026-09-21",
+  "keyword": "미인빛정",
+  "search_volume": 1930,
+  "source": "shopping",
+  "shopping_rank": 45,
+  "shopping_move": "최근 진입",
+  "pharma_value": 2,
+  "blog_position_y": null
+ },
+ "나이아신아마이드": {
+  "first_seen": "2026-09-21",
+  "seen_days": [
+   "2026-09-21"
+  ],
+  "last_seen": "2026-09-21",
+  "keyword": "니코틴산아미드 효능",
+  "search_volume": 1270,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 176
  }
 }

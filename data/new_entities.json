@@ -3,16 +3,17 @@
   "first_seen": "2026-09-17",
   "seen_days": [
    "2026-09-17",
-   "2026-09-19"
+   "2026-09-19",
+   "2026-09-22"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-09-22",
   "keyword": "멜라토닌",
-  "search_volume": 151000,
+  "search_volume": 151100,
   "source": "shopping",
-  "shopping_rank": 13,
+  "shopping_rank": 10,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 1647
+  "blog_position_y": 9845
  },
  "매스틱검": {
   "first_seen": "2026-09-17",
@@ -33,16 +34,17 @@
   "first_seen": "2026-09-17",
   "seen_days": [
    "2026-09-17",
-   "2026-09-19"
+   "2026-09-19",
+   "2026-09-22"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-09-22",
   "keyword": "하스카프베리",
-  "search_volume": 63260,
+  "search_volume": 64730,
   "source": "shopping",
-  "shopping_rank": 19,
+  "shopping_rank": 39,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8776
+  "blog_position_y": 8354
  },
  "카무트효소": {
   "first_seen": "2026-09-17",
@@ -337,11 +339,12 @@
  "니코틴산아미드": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-09-22"
   ],
-  "last_seen": "2026-09-18",
-  "keyword": "나이아신아마이드 효과",
-  "search_volume": 3240,
+  "last_seen": "2026-09-22",
+  "keyword": "여드름 연고 추천",
+  "search_volume": 670,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
@@ -365,16 +368,17 @@
  "대마종자유": {
   "first_seen": "2026-09-19",
   "seen_days": [
-   "2026-09-19"
+   "2026-09-19",
+   "2026-09-22"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-09-22",
   "keyword": "대마종자유",
-  "search_volume": 54560,
+  "search_volume": 59850,
   "source": "shopping",
-  "shopping_rank": 72,
+  "shopping_rank": 13,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8331
+  "pharma_value": 5,
+  "blog_position_y": 8214
  },
  "도라지": {
   "first_seen": "2026-09-19",
@@ -825,5 +829,61 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 2346
+ },
+ "아세로라": {
+  "first_seen": "2026-09-22",
+  "seen_days": [
+   "2026-09-22"
+  ],
+  "last_seen": "2026-09-22",
+  "keyword": "그린아세로라",
+  "search_volume": 65740,
+  "source": "shopping",
+  "shopping_rank": 27,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6445
+ },
+ "비타민B": {
+  "first_seen": "2026-09-22",
+  "seen_days": [
+   "2026-09-22"
+  ],
+  "last_seen": "2026-09-22",
+  "keyword": "비타민B 컴플렉스",
+  "search_volume": 6990,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8382
+ },
+ "테라큐민": {
+  "first_seen": "2026-09-22",
+  "seen_days": [
+   "2026-09-22"
+  ],
+  "last_seen": "2026-09-22",
+  "keyword": "테라큐민",
+  "search_volume": 12410,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7400
+ },
+ "MAC 식단": {
+  "first_seen": "2026-09-22",
+  "seen_days": [
+   "2026-09-22"
+  ],
+  "last_seen": "2026-09-22",
+  "keyword": "식이섬유 많은 음식",
+  "search_volume": 16760,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 9379
  }
 }

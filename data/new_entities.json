@@ -136,16 +136,17 @@
  "침향": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-09-21"
   ],
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-09-21",
   "keyword": "침향환",
-  "search_volume": 49170,
+  "search_volume": 54030,
   "source": "shopping",
-  "shopping_rank": 275,
+  "shopping_rank": 382,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8166
+  "pharma_value": 3,
+  "blog_position_y": 8979
  },
  "커큐민": {
   "first_seen": "2026-09-18",
@@ -406,16 +407,17 @@
  "PQQ": {
   "first_seen": "2026-09-19",
   "seen_days": [
-   "2026-09-19"
+   "2026-09-19",
+   "2026-09-21"
   ],
-  "last_seen": "2026-09-19",
-  "keyword": "PQQ 영양제",
-  "search_volume": 1410,
+  "last_seen": "2026-09-21",
+  "keyword": "pqq 영양제",
+  "search_volume": 1300,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 5641
+  "blog_position_y": 5580
  },
  "테아닌": {
   "first_seen": "2026-09-19",
@@ -476,16 +478,17 @@
  "맥주효모": {
   "first_seen": "2026-09-19",
   "seen_days": [
-   "2026-09-19"
+   "2026-09-19",
+   "2026-09-21"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-09-21",
   "keyword": "맥주효모",
-  "search_volume": 18480,
+  "search_volume": 18590,
   "source": "shopping",
-  "shopping_rank": 45,
+  "shopping_rank": 74,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 8443
+  "blog_position_y": 8720
  },
  "벤잘코늄": {
   "first_seen": "2026-09-19",
@@ -766,5 +769,61 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 176
+ },
+ "맥문동": {
+  "first_seen": "2026-09-21",
+  "seen_days": [
+   "2026-09-21"
+  ],
+  "last_seen": "2026-09-21",
+  "keyword": "맥문동",
+  "search_volume": 85350,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 11919
+ },
+ "젤리형 영양제": {
+  "first_seen": "2026-09-21",
+  "seen_days": [
+   "2026-09-21"
+  ],
+  "last_seen": "2026-09-21",
+  "keyword": "비타민 젤리",
+  "search_volume": 4990,
+  "source": "shopping",
+  "shopping_rank": 221,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6990
+ },
+ "인삼다당체": {
+  "first_seen": "2026-09-21",
+  "seen_days": [
+   "2026-09-21"
+  ],
+  "last_seen": "2026-09-21",
+  "keyword": "인삼다당체",
+  "search_volume": 46030,
+  "source": "shopping",
+  "shopping_rank": 49,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 5864
+ },
+ "산후 영양제": {
+  "first_seen": "2026-09-21",
+  "seen_days": [
+   "2026-09-21"
+  ],
+  "last_seen": "2026-09-21",
+  "keyword": "출산 후 영양제",
+  "search_volume": 3420,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 2346
  }
 }

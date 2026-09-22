@@ -50,16 +50,17 @@
   "first_seen": "2026-09-17",
   "seen_days": [
    "2026-09-17",
-   "2026-09-19"
+   "2026-09-19",
+   "2026-09-22"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-09-22",
   "keyword": "카무트효소",
-  "search_volume": 80780,
+  "search_volume": 76440,
   "source": "shopping",
-  "shopping_rank": 28,
+  "shopping_rank": 16,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7932
+  "pharma_value": 5,
+  "blog_position_y": 6369
  },
  "MBP": {
   "first_seen": "2026-09-17",
@@ -310,16 +311,17 @@
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-09-20"
+   "2026-09-20",
+   "2026-09-22"
   ],
-  "last_seen": "2026-09-20",
+  "last_seen": "2026-09-22",
   "keyword": "피크노제놀",
-  "search_volume": 18540,
+  "search_volume": 19850,
   "source": "shopping",
-  "shopping_rank": 49,
+  "shopping_rank": 27,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7067
+  "blog_position_y": 7091
  },
  "프로폴리스": {
   "first_seen": "2026-09-18",
@@ -651,16 +653,17 @@
  "토사자": {
   "first_seen": "2026-09-20",
   "seen_days": [
-   "2026-09-20"
+   "2026-09-20",
+   "2026-09-22"
   ],
-  "last_seen": "2026-09-20",
+  "last_seen": "2026-09-22",
   "keyword": "토사자 효능",
-  "search_volume": 3550,
+  "search_volume": 4090,
   "source": "shopping",
-  "shopping_rank": 158,
+  "shopping_rank": 281,
   "shopping_move": "최근 진입",
   "pharma_value": 3,
-  "blog_position_y": 4546
+  "blog_position_y": 4933
  },
  "영지버섯": {
   "first_seen": "2026-09-20",
@@ -885,5 +888,47 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 9379
+ },
+ "세라마이드": {
+  "first_seen": "2026-09-22",
+  "seen_days": [
+   "2026-09-22"
+  ],
+  "last_seen": "2026-09-22",
+  "keyword": "세라마이드 효능",
+  "search_volume": 2400,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 3693
+ },
+ "매스틱": {
+  "first_seen": "2026-09-22",
+  "seen_days": [
+   "2026-09-22"
+  ],
+  "last_seen": "2026-09-22",
+  "keyword": "매스틱",
+  "search_volume": 49930,
+  "source": "shopping",
+  "shopping_rank": 11,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7893
+ },
+ "공진단": {
+  "first_seen": "2026-09-22",
+  "seen_days": [
+   "2026-09-22"
+  ],
+  "last_seen": "2026-09-22",
+  "keyword": "공진단",
+  "search_volume": 50660,
+  "source": "shopping",
+  "shopping_rank": 19,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 8409
  }
 }

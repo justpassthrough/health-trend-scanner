@@ -199,16 +199,17 @@
  "산삼배양근": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-09-24",
   "keyword": "산삼배양근",
-  "search_volume": 6230,
+  "search_volume": 8400,
   "source": "shopping",
-  "shopping_rank": 118,
-  "shopping_move": "급상승",
+  "shopping_rank": 124,
+  "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 5459
+  "blog_position_y": 4927
  },
  "쿠드로닌": {
   "first_seen": "2026-09-18",
@@ -359,16 +360,17 @@
  "설포라판": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-09-24",
   "keyword": "설포라판",
-  "search_volume": 2290,
+  "search_volume": 2190,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6535
+  "pharma_value": 5,
+  "blog_position_y": 8799
  },
  "대마종자유": {
   "first_seen": "2026-09-19",
@@ -516,16 +518,17 @@
  "녹용": {
   "first_seen": "2026-09-20",
   "seen_days": [
-   "2026-09-20"
+   "2026-09-20",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-20",
+  "last_seen": "2026-09-24",
   "keyword": "녹용",
-  "search_volume": 14510,
+  "search_volume": 15540,
   "source": "shopping",
-  "shopping_rank": 139,
+  "shopping_rank": 135,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6782
+  "blog_position_y": 8614
  },
  "흑염소": {
   "first_seen": "2026-09-20",
@@ -587,16 +590,17 @@
  "삼백초": {
   "first_seen": "2026-09-20",
   "seen_days": [
-   "2026-09-20"
+   "2026-09-20",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-20",
+  "last_seen": "2026-09-24",
   "keyword": "삼백초",
-  "search_volume": 20720,
+  "search_volume": 21740,
   "source": "shopping",
-  "shopping_rank": 82,
+  "shopping_rank": 71,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8252
+  "blog_position_y": 8632
  },
  "통풍": {
   "first_seen": "2026-09-20",
@@ -816,30 +820,32 @@
  "인삼다당체": {
   "first_seen": "2026-09-21",
   "seen_days": [
-   "2026-09-21"
+   "2026-09-21",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-24",
   "keyword": "인삼다당체",
-  "search_volume": 46030,
+  "search_volume": 37790,
   "source": "shopping",
-  "shopping_rank": 49,
+  "shopping_rank": 63,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 5864
+  "blog_position_y": 5257
  },
  "산후 영양제": {
   "first_seen": "2026-09-21",
   "seen_days": [
-   "2026-09-21"
+   "2026-09-21",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-21",
-  "keyword": "출산 후 영양제",
-  "search_volume": 3420,
+  "last_seen": "2026-09-24",
+  "keyword": "산후 영양제",
+  "search_volume": 1720,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 2346
+  "blog_position_y": 7978
  },
  "아세로라": {
   "first_seen": "2026-09-22",
@@ -1022,5 +1028,47 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 7924
+ },
+ "칼덱신": {
+  "first_seen": "2026-09-24",
+  "seen_days": [
+   "2026-09-24"
+  ],
+  "last_seen": "2026-09-24",
+  "keyword": "칼덱신정",
+  "search_volume": 4410,
+  "source": "shopping",
+  "shopping_rank": 292,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 974
+ },
+ "흑염소진액": {
+  "first_seen": "2026-09-24",
+  "seen_days": [
+   "2026-09-24"
+  ],
+  "last_seen": "2026-09-24",
+  "keyword": "흑염소진액",
+  "search_volume": 46280,
+  "source": "shopping",
+  "shopping_rank": 48,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 8069
+ },
+ "반려견 치약": {
+  "first_seen": "2026-09-24",
+  "seen_days": [
+   "2026-09-24"
+  ],
+  "last_seen": "2026-09-24",
+  "keyword": "강아지 치약",
+  "search_volume": 10540,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7812
  }
 }

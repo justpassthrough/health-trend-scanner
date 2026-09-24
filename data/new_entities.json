@@ -171,16 +171,17 @@
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-09-21"
+   "2026-09-21",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-24",
   "keyword": "칼마디",
-  "search_volume": 26800,
+  "search_volume": 27290,
   "source": "shopping",
-  "shopping_rank": 39,
+  "shopping_rank": 54,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 6360
+  "blog_position_y": 6292
  },
  "흑마늘": {
   "first_seen": "2026-09-18",
@@ -300,16 +301,17 @@
  "홍삼": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-18",
-  "keyword": "홍삼 효능",
-  "search_volume": 6510,
+  "last_seen": "2026-09-24",
+  "keyword": "홍삼 진세노사이드",
+  "search_volume": 1500,
   "source": "shopping",
-  "shopping_rank": 10,
+  "shopping_rank": 34,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 4522
+  "pharma_value": 5,
+  "blog_position_y": 6323
  },
  "피크노제놀": {
   "first_seen": "2026-09-18",
@@ -331,16 +333,17 @@
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-09-21"
+   "2026-09-21",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-24",
   "keyword": "프로폴리스",
-  "search_volume": 43220,
+  "search_volume": 44550,
   "source": "shopping",
-  "shopping_rank": 72,
+  "shopping_rank": 38,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 10158
+  "pharma_value": 3,
+  "blog_position_y": 9568
  },
  "니코틴산아미드": {
   "first_seen": "2026-09-18",
@@ -934,16 +937,17 @@
  "공진단": {
   "first_seen": "2026-09-22",
   "seen_days": [
-   "2026-09-22"
+   "2026-09-22",
+   "2026-09-24"
   ],
-  "last_seen": "2026-09-22",
+  "last_seen": "2026-09-24",
   "keyword": "공진단",
-  "search_volume": 50660,
+  "search_volume": 52770,
   "source": "shopping",
-  "shopping_rank": 19,
+  "shopping_rank": 37,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8409
+  "blog_position_y": 7996
  },
  "양배추즙": {
   "first_seen": "2026-09-23",
@@ -1070,5 +1074,47 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7812
+ },
+ "포스트바이오틱스": {
+  "first_seen": "2026-09-24",
+  "seen_days": [
+   "2026-09-24"
+  ],
+  "last_seen": "2026-09-24",
+  "keyword": "포스트바이오틱스",
+  "search_volume": 3940,
+  "source": "shopping",
+  "shopping_rank": 254,
+  "shopping_move": "새 진입",
+  "pharma_value": 4,
+  "blog_position_y": 7954
+ },
+ "베타글루칸": {
+  "first_seen": "2026-09-24",
+  "seen_days": [
+   "2026-09-24"
+  ],
+  "last_seen": "2026-09-24",
+  "keyword": "베타글루칸",
+  "search_volume": 11050,
+  "source": "shopping",
+  "shopping_rank": 192,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 5308
+ },
+ "DEM": {
+  "first_seen": "2026-09-24",
+  "seen_days": [
+   "2026-09-24"
+  ],
+  "last_seen": "2026-09-24",
+  "keyword": "dem영양제",
+  "search_volume": 21210,
+  "source": "shopping",
+  "shopping_rank": 44,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 6724
  }
 }

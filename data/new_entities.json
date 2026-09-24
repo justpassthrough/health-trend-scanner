@@ -51,16 +51,17 @@
   "seen_days": [
    "2026-09-17",
    "2026-09-19",
-   "2026-09-22"
+   "2026-09-22",
+   "2026-09-25"
   ],
-  "last_seen": "2026-09-22",
+  "last_seen": "2026-09-25",
   "keyword": "카무트효소",
-  "search_volume": 76440,
+  "search_volume": 74140,
   "source": "shopping",
-  "shopping_rank": 16,
+  "shopping_rank": 23,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 6369
+  "blog_position_y": 6827
  },
  "MBP": {
   "first_seen": "2026-09-17",
@@ -349,11 +350,12 @@
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-09-22"
+   "2026-09-22",
+   "2026-09-25"
   ],
-  "last_seen": "2026-09-22",
-  "keyword": "여드름 연고 추천",
-  "search_volume": 670,
+  "last_seen": "2026-09-25",
+  "keyword": "나이아신아마이드 효과",
+  "search_volume": 4730,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
@@ -923,16 +925,17 @@
  "매스틱": {
   "first_seen": "2026-09-22",
   "seen_days": [
-   "2026-09-22"
+   "2026-09-22",
+   "2026-09-25"
   ],
-  "last_seen": "2026-09-22",
+  "last_seen": "2026-09-25",
   "keyword": "매스틱",
-  "search_volume": 49930,
+  "search_volume": 52490,
   "source": "shopping",
-  "shopping_rank": 11,
+  "shopping_rank": 19,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7893
+  "blog_position_y": 7672
  },
  "공진단": {
   "first_seen": "2026-09-22",
@@ -1116,5 +1119,75 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 6724
+ },
+ "올리브오일캡슐": {
+  "first_seen": "2026-09-25",
+  "seen_days": [
+   "2026-09-25"
+  ],
+  "last_seen": "2026-09-25",
+  "keyword": "올리브오일 캡슐",
+  "search_volume": 17580,
+  "source": "shopping",
+  "shopping_rank": 75,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6807
+ },
+ "리포좀비타민C": {
+  "first_seen": "2026-09-25",
+  "seen_days": [
+   "2026-09-25"
+  ],
+  "last_seen": "2026-09-25",
+  "keyword": "리포좀 비타민c",
+  "search_volume": 33290,
+  "source": "shopping",
+  "shopping_rank": 66,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7585
+ },
+ "퀘르세틴": {
+  "first_seen": "2026-09-25",
+  "seen_days": [
+   "2026-09-25"
+  ],
+  "last_seen": "2026-09-25",
+  "keyword": "퀘르세틴",
+  "search_volume": 11790,
+  "source": "shopping",
+  "shopping_rank": 352,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7286
+ },
+ "디스레놀": {
+  "first_seen": "2026-09-25",
+  "seen_days": [
+   "2026-09-25"
+  ],
+  "last_seen": "2026-09-25",
+  "keyword": "디스레놀",
+  "search_volume": 1030,
+  "source": "shopping",
+  "shopping_rank": 244,
+  "shopping_move": "최근 진입",
+  "pharma_value": 2,
+  "blog_position_y": 2885
+ },
+ "MAC": {
+  "first_seen": "2026-09-25",
+  "seen_days": [
+   "2026-09-25"
+  ],
+  "last_seen": "2026-09-25",
+  "keyword": "수용성 식이섬유",
+  "search_volume": 2140,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 2164
  }
 }

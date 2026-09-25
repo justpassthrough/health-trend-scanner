@@ -68,16 +68,17 @@
   "seen_days": [
    "2026-09-17",
    "2026-09-20",
-   "2026-09-23"
+   "2026-09-23",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-09-26",
   "keyword": "MBP",
-  "search_volume": 12330,
+  "search_volume": 12140,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6766
+  "blog_position_y": 6748
  },
  "장수백정": {
   "first_seen": "2026-09-17",
@@ -143,16 +144,17 @@
   "seen_days": [
    "2026-09-18",
    "2026-09-21",
-   "2026-09-23"
+   "2026-09-23",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-09-26",
   "keyword": "침향환",
-  "search_volume": 58170,
+  "search_volume": 61890,
   "source": "shopping",
-  "shopping_rank": 100,
+  "shopping_rank": 213,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7426
+  "pharma_value": 4,
+  "blog_position_y": 7557
  },
  "커큐민": {
   "first_seen": "2026-09-18",
@@ -556,16 +558,17 @@
   "first_seen": "2026-09-20",
   "seen_days": [
    "2026-09-20",
-   "2026-09-23"
+   "2026-09-23",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-09-26",
   "keyword": "경옥고",
-  "search_volume": 56140,
+  "search_volume": 61120,
   "source": "shopping",
-  "shopping_rank": 11,
+  "shopping_rank": 24,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 8262
+  "pharma_value": 4,
+  "blog_position_y": 8384
  },
  "장뇌삼": {
   "first_seen": "2026-09-20",
@@ -859,16 +862,17 @@
  "아세로라": {
   "first_seen": "2026-09-22",
   "seen_days": [
-   "2026-09-22"
+   "2026-09-22",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-22",
-  "keyword": "그린아세로라",
-  "search_volume": 65740,
+  "last_seen": "2026-09-26",
+  "keyword": "아세로라",
+  "search_volume": 6350,
   "source": "shopping",
-  "shopping_rank": 27,
+  "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6445
+  "pharma_value": 3,
+  "blog_position_y": 6589
  },
  "비타민B": {
   "first_seen": "2026-09-22",
@@ -1001,16 +1005,17 @@
  "어린이 영양제": {
   "first_seen": "2026-09-23",
   "seen_days": [
-   "2026-09-23"
+   "2026-09-23",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-09-26",
   "keyword": "어린이 영양제",
-  "search_volume": 4590,
+  "search_volume": 4340,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8182
+  "pharma_value": 3,
+  "blog_position_y": 7453
  },
  "칼륨": {
   "first_seen": "2026-09-23",
@@ -1249,5 +1254,75 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 10507
+ },
+ "식물성 멜라토닌": {
+  "first_seen": "2026-09-26",
+  "seen_days": [
+   "2026-09-26"
+  ],
+  "last_seen": "2026-09-26",
+  "keyword": "식물성 멜라토닌",
+  "search_volume": 17990,
+  "source": "shopping",
+  "shopping_rank": 165,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7418
+ },
+ "전립선영양제": {
+  "first_seen": "2026-09-26",
+  "seen_days": [
+   "2026-09-26"
+  ],
+  "last_seen": "2026-09-26",
+  "keyword": "전립선 영양제",
+  "search_volume": 10040,
+  "source": "shopping",
+  "shopping_rank": 246,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 8866
+ },
+ "옵티스텝": {
+  "first_seen": "2026-09-26",
+  "seen_days": [
+   "2026-09-26"
+  ],
+  "last_seen": "2026-09-26",
+  "keyword": "옵티스텝",
+  "search_volume": 11060,
+  "source": "shopping",
+  "shopping_rank": 64,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 3911
+ },
+ "엑소좀": {
+  "first_seen": "2026-09-26",
+  "seen_days": [
+   "2026-09-26"
+  ],
+  "last_seen": "2026-09-26",
+  "keyword": "엑소좀",
+  "search_volume": 9890,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 1504
+ },
+ "헤어볼": {
+  "first_seen": "2026-09-26",
+  "seen_days": [
+   "2026-09-26"
+  ],
+  "last_seen": "2026-09-26",
+  "keyword": "고양이 헤어볼",
+  "search_volume": 1310,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 1791
  }
 }

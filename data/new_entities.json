@@ -319,16 +319,17 @@
   "seen_days": [
    "2026-09-18",
    "2026-09-20",
-   "2026-09-22"
+   "2026-09-22",
+   "2026-09-25"
   ],
-  "last_seen": "2026-09-22",
+  "last_seen": "2026-09-25",
   "keyword": "피크노제놀",
-  "search_volume": 19850,
+  "search_volume": 20310,
   "source": "shopping",
-  "shopping_rank": 27,
+  "shopping_rank": 53,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7091
+  "blog_position_y": 6961
  },
  "프로폴리스": {
   "first_seen": "2026-09-18",
@@ -424,16 +425,17 @@
   "first_seen": "2026-09-19",
   "seen_days": [
    "2026-09-19",
-   "2026-09-21"
+   "2026-09-21",
+   "2026-09-25"
   ],
-  "last_seen": "2026-09-21",
-  "keyword": "pqq 영양제",
-  "search_volume": 1300,
+  "last_seen": "2026-09-25",
+  "keyword": "PQQ",
+  "search_volume": 1700,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 5580
+  "blog_position_y": 6624
  },
  "테아닌": {
   "first_seen": "2026-09-19",
@@ -495,16 +497,17 @@
   "first_seen": "2026-09-19",
   "seen_days": [
    "2026-09-19",
-   "2026-09-21"
+   "2026-09-21",
+   "2026-09-25"
   ],
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-09-25",
   "keyword": "맥주효모",
-  "search_volume": 18590,
+  "search_volume": 16770,
   "source": "shopping",
-  "shopping_rank": 74,
+  "shopping_rank": 45,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 8720
+  "blog_position_y": 7420
  },
  "벤잘코늄": {
   "first_seen": "2026-09-19",
@@ -655,16 +658,17 @@
  "구기자": {
   "first_seen": "2026-09-20",
   "seen_days": [
-   "2026-09-20"
+   "2026-09-20",
+   "2026-09-25"
   ],
-  "last_seen": "2026-09-20",
-  "keyword": "구기자 효능",
-  "search_volume": 4610,
+  "last_seen": "2026-09-25",
+  "keyword": "구기자",
+  "search_volume": 14740,
   "source": "shopping",
-  "shopping_rank": 56,
-  "shopping_move": "급상승",
+  "shopping_rank": 52,
+  "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 5202
+  "blog_position_y": 7432
  },
  "토사자": {
   "first_seen": "2026-09-20",
@@ -1189,5 +1193,61 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 2164
+ },
+ "브로멜라인": {
+  "first_seen": "2026-09-25",
+  "seen_days": [
+   "2026-09-25"
+  ],
+  "last_seen": "2026-09-25",
+  "keyword": "브로멜라인",
+  "search_volume": 16690,
+  "source": "shopping",
+  "shopping_rank": 307,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8552
+ },
+ "임산부영양제": {
+  "first_seen": "2026-09-25",
+  "seen_days": [
+   "2026-09-25"
+  ],
+  "last_seen": "2026-09-25",
+  "keyword": "임산부 영양제",
+  "search_volume": 12790,
+  "source": "shopping",
+  "shopping_rank": 258,
+  "shopping_move": "최근 진입",
+  "pharma_value": 5,
+  "blog_position_y": 10399
+ },
+ "벤포티아민": {
+  "first_seen": "2026-09-25",
+  "seen_days": [
+   "2026-09-25"
+  ],
+  "last_seen": "2026-09-25",
+  "keyword": "아로나민 골드 효능",
+  "search_volume": 4880,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6086
+ },
+ "고양이 요로": {
+  "first_seen": "2026-09-25",
+  "seen_days": [
+   "2026-09-25"
+  ],
+  "last_seen": "2026-09-25",
+  "keyword": "고양이 방광염",
+  "search_volume": 1250,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 10507
  }
 }

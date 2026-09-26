@@ -175,16 +175,17 @@
   "seen_days": [
    "2026-09-18",
    "2026-09-21",
-   "2026-09-24"
+   "2026-09-24",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-09-27",
   "keyword": "칼마디",
-  "search_volume": 27290,
+  "search_volume": 26260,
   "source": "shopping",
-  "shopping_rank": 54,
+  "shopping_rank": 37,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6292
+  "pharma_value": 4,
+  "blog_position_y": 6441
  },
  "흑마늘": {
   "first_seen": "2026-09-18",
@@ -338,16 +339,17 @@
   "seen_days": [
    "2026-09-18",
    "2026-09-21",
-   "2026-09-24"
+   "2026-09-24",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-09-27",
   "keyword": "프로폴리스",
-  "search_volume": 44550,
+  "search_volume": 44010,
   "source": "shopping",
-  "shopping_rank": 38,
+  "shopping_rank": 35,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 9568
+  "pharma_value": 4,
+  "blog_position_y": 9435
  },
  "니코틴산아미드": {
   "first_seen": "2026-09-18",
@@ -604,16 +606,17 @@
   "first_seen": "2026-09-20",
   "seen_days": [
    "2026-09-20",
-   "2026-09-24"
+   "2026-09-24",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-09-27",
   "keyword": "삼백초",
-  "search_volume": 21740,
+  "search_volume": 22390,
   "source": "shopping",
-  "shopping_rank": 71,
+  "shopping_rank": 72,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8632
+  "blog_position_y": 8555
  },
  "통풍": {
   "first_seen": "2026-09-20",
@@ -853,16 +856,17 @@
   "first_seen": "2026-09-21",
   "seen_days": [
    "2026-09-21",
-   "2026-09-24"
+   "2026-09-24",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-09-27",
   "keyword": "산후 영양제",
-  "search_volume": 1720,
+  "search_volume": 1650,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7978
+  "blog_position_y": 7797
  },
  "아세로라": {
   "first_seen": "2026-09-22",
@@ -954,16 +958,17 @@
   "first_seen": "2026-09-22",
   "seen_days": [
    "2026-09-22",
-   "2026-09-24"
+   "2026-09-24",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-09-27",
   "keyword": "공진단",
-  "search_volume": 52770,
+  "search_volume": 53390,
   "source": "shopping",
-  "shopping_rank": 37,
+  "shopping_rank": 31,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7996
+  "blog_position_y": 9773
  },
  "양배추즙": {
   "first_seen": "2026-09-23",
@@ -1109,16 +1114,17 @@
  "베타글루칸": {
   "first_seen": "2026-09-24",
   "seen_days": [
-   "2026-09-24"
+   "2026-09-24",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-09-27",
   "keyword": "베타글루칸",
-  "search_volume": 11050,
+  "search_volume": 11920,
   "source": "shopping",
-  "shopping_rank": 192,
+  "shopping_rank": 210,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 5308
+  "blog_position_y": 8175
  },
  "DEM": {
   "first_seen": "2026-09-24",
@@ -1385,5 +1391,33 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 2770
+ },
+ "탱자": {
+  "first_seen": "2026-09-27",
+  "seen_days": [
+   "2026-09-27"
+  ],
+  "last_seen": "2026-09-27",
+  "keyword": "탱자 효능",
+  "search_volume": 5510,
+  "source": "shopping",
+  "shopping_rank": 221,
+  "shopping_move": "최근 진입",
+  "pharma_value": 2,
+  "blog_position_y": 1922
+ },
+ "라이코펜": {
+  "first_seen": "2026-09-27",
+  "seen_days": [
+   "2026-09-27"
+  ],
+  "last_seen": "2026-09-27",
+  "keyword": "라이코펜",
+  "search_volume": 48580,
+  "source": "news",
+  "shopping_rank": 259,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 8160
  }
 }

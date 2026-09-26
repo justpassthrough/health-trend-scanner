@@ -384,16 +384,17 @@
   "first_seen": "2026-09-19",
   "seen_days": [
    "2026-09-19",
-   "2026-09-22"
+   "2026-09-22",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-22",
+  "last_seen": "2026-09-26",
   "keyword": "대마종자유",
-  "search_volume": 59850,
+  "search_volume": 54590,
   "source": "shopping",
-  "shopping_rank": 13,
+  "shopping_rank": 47,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 8214
+  "pharma_value": 3,
+  "blog_position_y": 7281
  },
  "도라지": {
   "first_seen": "2026-09-19",
@@ -484,16 +485,17 @@
  "폴리코사놀": {
   "first_seen": "2026-09-19",
   "seen_days": [
-   "2026-09-19"
+   "2026-09-19",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-09-26",
   "keyword": "폴리코사놀",
-  "search_volume": 23820,
+  "search_volume": 23080,
   "source": "shopping",
-  "shopping_rank": 73,
+  "shopping_rank": 207,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7606
+  "blog_position_y": 6486
  },
  "맥주효모": {
   "first_seen": "2026-09-19",
@@ -617,31 +619,33 @@
   "first_seen": "2026-09-20",
   "seen_days": [
    "2026-09-20",
-   "2026-09-23"
+   "2026-09-23",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-23",
-  "keyword": "통풍",
-  "search_volume": 35580,
+  "last_seen": "2026-09-26",
+  "keyword": "무알콜맥주 통풍",
+  "search_volume": 1040,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 1550
+  "pharma_value": 3,
+  "blog_position_y": 176
  },
  "사과초모식초": {
   "first_seen": "2026-09-20",
   "seen_days": [
    "2026-09-20",
-   "2026-09-23"
+   "2026-09-23",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-09-26",
   "keyword": "애사비",
-  "search_volume": 44380,
+  "search_volume": 42360,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7133
+  "pharma_value": 3,
+  "blog_position_y": 7913
  },
  "빌베리": {
   "first_seen": "2026-09-20",
@@ -692,16 +696,17 @@
   "first_seen": "2026-09-20",
   "seen_days": [
    "2026-09-20",
-   "2026-09-23"
+   "2026-09-23",
+   "2026-09-26"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-09-26",
   "keyword": "영지버섯",
-  "search_volume": 17240,
+  "search_volume": 19010,
   "source": "shopping",
-  "shopping_rank": 187,
+  "shopping_rank": 90,
   "shopping_move": "급상승",
-  "pharma_value": 4,
-  "blog_position_y": 6728
+  "pharma_value": 3,
+  "blog_position_y": 6722
  },
  "자보티카바": {
   "first_seen": "2026-09-20",
@@ -1324,5 +1329,61 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 1791
+ },
+ "나토키나제": {
+  "first_seen": "2026-09-26",
+  "seen_days": [
+   "2026-09-26"
+  ],
+  "last_seen": "2026-09-26",
+  "keyword": "나토키나제",
+  "search_volume": 6340,
+  "source": "shopping",
+  "shopping_rank": 249,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": 6118
+ },
+ "푸룬": {
+  "first_seen": "2026-09-26",
+  "seen_days": [
+   "2026-09-26"
+  ],
+  "last_seen": "2026-09-26",
+  "keyword": "푸룬주스",
+  "search_volume": 35380,
+  "source": "shopping",
+  "shopping_rank": 88,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7848
+ },
+ "마가목": {
+  "first_seen": "2026-09-26",
+  "seen_days": [
+   "2026-09-26"
+  ],
+  "last_seen": "2026-09-26",
+  "keyword": "마가목 효능",
+  "search_volume": 27320,
+  "source": "shopping",
+  "shopping_rank": 224,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 9113
+ },
+ "꾸지뽕": {
+  "first_seen": "2026-09-26",
+  "seen_days": [
+   "2026-09-26"
+  ],
+  "last_seen": "2026-09-26",
+  "keyword": "꾸지뽕 효능",
+  "search_volume": 12360,
+  "source": "shopping",
+  "shopping_rank": 59,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 2770
  }
 }

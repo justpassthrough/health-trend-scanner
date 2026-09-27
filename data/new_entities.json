@@ -432,16 +432,17 @@
   "seen_days": [
    "2026-09-19",
    "2026-09-21",
-   "2026-09-25"
+   "2026-09-25",
+   "2026-09-28"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-09-28",
   "keyword": "PQQ",
-  "search_volume": 1700,
+  "search_volume": 1960,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6624
+  "blog_position_y": 6710
  },
  "테아닌": {
   "first_seen": "2026-09-19",
@@ -506,16 +507,17 @@
   "seen_days": [
    "2026-09-19",
    "2026-09-21",
-   "2026-09-25"
+   "2026-09-25",
+   "2026-09-28"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-09-28",
   "keyword": "맥주효모",
-  "search_volume": 16770,
+  "search_volume": 17260,
   "source": "shopping",
-  "shopping_rank": 45,
+  "shopping_rank": 41,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7420
+  "pharma_value": 3,
+  "blog_position_y": 8343
  },
  "벤잘코늄": {
   "first_seen": "2026-09-19",
@@ -593,16 +595,17 @@
  "양배추": {
   "first_seen": "2026-09-20",
   "seen_days": [
-   "2026-09-20"
+   "2026-09-20",
+   "2026-09-28"
   ],
-  "last_seen": "2026-09-20",
+  "last_seen": "2026-09-28",
   "keyword": "양배추즙",
-  "search_volume": 27910,
+  "search_volume": 26870,
   "source": "shopping",
-  "shopping_rank": 49,
+  "shopping_rank": 70,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6579
+  "blog_position_y": 6902
  },
  "삼백초": {
   "first_seen": "2026-09-20",
@@ -1132,16 +1135,17 @@
  "DEM": {
   "first_seen": "2026-09-24",
   "seen_days": [
-   "2026-09-24"
+   "2026-09-24",
+   "2026-09-28"
   ],
-  "last_seen": "2026-09-24",
-  "keyword": "dem영양제",
-  "search_volume": 21210,
+  "last_seen": "2026-09-28",
+  "keyword": "dem 영양제",
+  "search_volume": 22850,
   "source": "shopping",
-  "shopping_rank": 44,
+  "shopping_rank": 99,
   "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 6724
+  "blog_position_y": 6014
  },
  "올리브오일캡슐": {
   "first_seen": "2026-09-25",
@@ -1216,16 +1220,17 @@
  "브로멜라인": {
   "first_seen": "2026-09-25",
   "seen_days": [
-   "2026-09-25"
+   "2026-09-25",
+   "2026-09-28"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-09-28",
   "keyword": "브로멜라인",
-  "search_volume": 16690,
+  "search_volume": 16150,
   "source": "shopping",
-  "shopping_rank": 307,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8552
+  "shopping_rank": 159,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": 7783
  },
  "임산부영양제": {
   "first_seen": "2026-09-25",
@@ -1493,5 +1498,61 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 6627
+ },
+ "캡슐레이션효소": {
+  "first_seen": "2026-09-28",
+  "seen_days": [
+   "2026-09-28"
+  ],
+  "last_seen": "2026-09-28",
+  "keyword": "캡슐레이션효소",
+  "search_volume": 72840,
+  "source": "shopping",
+  "shopping_rank": 10,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": 5761
+ },
+ "감마리놀렌산": {
+  "first_seen": "2026-09-28",
+  "seen_days": [
+   "2026-09-28"
+  ],
+  "last_seen": "2026-09-28",
+  "keyword": "달맞이꽃종자유",
+  "search_volume": 10140,
+  "source": "shopping",
+  "shopping_rank": 236,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 7785
+ },
+ "황기": {
+  "first_seen": "2026-09-28",
+  "seen_days": [
+   "2026-09-28"
+  ],
+  "last_seen": "2026-09-28",
+  "keyword": "황기 효능",
+  "search_volume": 8130,
+  "source": "shopping",
+  "shopping_rank": 224,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 4546
+ },
+ "아세트아미노펜": {
+  "first_seen": "2026-09-28",
+  "seen_days": [
+   "2026-09-28"
+  ],
+  "last_seen": "2026-09-28",
+  "keyword": "아세트아미노펜",
+  "search_volume": 29510,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6090
  }
 }

@@ -35,16 +35,17 @@
   "seen_days": [
    "2026-09-17",
    "2026-09-19",
-   "2026-09-22"
+   "2026-09-22",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-22",
+  "last_seen": "2026-09-27",
   "keyword": "하스카프베리",
-  "search_volume": 64730,
+  "search_volume": 65230,
   "source": "shopping",
-  "shopping_rank": 39,
+  "shopping_rank": 14,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8354
+  "blog_position_y": 7494
  },
  "카무트효소": {
   "first_seen": "2026-09-17",
@@ -459,15 +460,16 @@
  "여주": {
   "first_seen": "2026-09-19",
   "seen_days": [
-   "2026-09-19"
+   "2026-09-19",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-09-27",
   "keyword": "여주",
-  "search_volume": 43790,
+  "search_volume": 44410,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
+  "pharma_value": 5,
   "blog_position_y": 888
  },
  "새싹보리": {
@@ -841,16 +843,17 @@
   "first_seen": "2026-09-21",
   "seen_days": [
    "2026-09-21",
-   "2026-09-24"
+   "2026-09-24",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-09-27",
   "keyword": "인삼다당체",
-  "search_volume": 37790,
+  "search_volume": 38310,
   "source": "shopping",
-  "shopping_rank": 63,
+  "shopping_rank": 29,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 5257
+  "pharma_value": 3,
+  "blog_position_y": 4776
  },
  "산후 영양제": {
   "first_seen": "2026-09-21",
@@ -1241,16 +1244,17 @@
  "벤포티아민": {
   "first_seen": "2026-09-25",
   "seen_days": [
-   "2026-09-25"
+   "2026-09-25",
+   "2026-09-27"
   ],
-  "last_seen": "2026-09-25",
-  "keyword": "아로나민 골드 효능",
-  "search_volume": 4880,
+  "last_seen": "2026-09-27",
+  "keyword": "아로나민 골드",
+  "search_volume": 39630,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6086
+  "pharma_value": 4,
+  "blog_position_y": 3751
  },
  "고양이 요로": {
   "first_seen": "2026-09-25",
@@ -1419,5 +1423,75 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 8160
+ },
+ "상황버섯": {
+  "first_seen": "2026-09-27",
+  "seen_days": [
+   "2026-09-27"
+  ],
+  "last_seen": "2026-09-27",
+  "keyword": "상황버섯",
+  "search_volume": 27870,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7929
+ },
+ "하수오": {
+  "first_seen": "2026-09-27",
+  "seen_days": [
+   "2026-09-27"
+  ],
+  "last_seen": "2026-09-27",
+  "keyword": "하수오",
+  "search_volume": 10870,
+  "source": "shopping",
+  "shopping_rank": 257,
+  "shopping_move": "최근 진입",
+  "pharma_value": 5,
+  "blog_position_y": 1300
+ },
+ "우슬": {
+  "first_seen": "2026-09-27",
+  "seen_days": [
+   "2026-09-27"
+  ],
+  "last_seen": "2026-09-27",
+  "keyword": "우슬",
+  "search_volume": 10970,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8573
+ },
+ "은행잎추출물": {
+  "first_seen": "2026-09-27",
+  "seen_days": [
+   "2026-09-27"
+  ],
+  "last_seen": "2026-09-27",
+  "keyword": "포스파티딜세린 징코",
+  "search_volume": 950,
+  "source": "shopping",
+  "shopping_rank": 281,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6845
+ },
+ "마이크로니들": {
+  "first_seen": "2026-09-27",
+  "seen_days": [
+   "2026-09-27"
+  ],
+  "last_seen": "2026-09-27",
+  "keyword": "마이크로니들 패치",
+  "search_volume": 640,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6627
  }
 }

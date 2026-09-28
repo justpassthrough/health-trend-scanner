@@ -53,16 +53,17 @@
    "2026-09-17",
    "2026-09-19",
    "2026-09-22",
-   "2026-09-25"
+   "2026-09-25",
+   "2026-09-29"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-09-29",
   "keyword": "카무트효소",
-  "search_volume": 74140,
+  "search_volume": 77910,
   "source": "shopping",
-  "shopping_rank": 23,
+  "shopping_rank": 17,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6827
+  "pharma_value": 4,
+  "blog_position_y": 7165
  },
  "MBP": {
   "first_seen": "2026-09-17",
@@ -388,16 +389,17 @@
   "seen_days": [
    "2026-09-19",
    "2026-09-22",
-   "2026-09-26"
+   "2026-09-26",
+   "2026-09-29"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-09-29",
   "keyword": "대마종자유",
-  "search_volume": 54590,
+  "search_volume": 53270,
   "source": "shopping",
-  "shopping_rank": 47,
+  "shopping_rank": 67,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7281
+  "blog_position_y": 7340
  },
  "도라지": {
   "first_seen": "2026-09-19",
@@ -491,16 +493,17 @@
   "first_seen": "2026-09-19",
   "seen_days": [
    "2026-09-19",
-   "2026-09-26"
+   "2026-09-26",
+   "2026-09-29"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-09-29",
   "keyword": "폴리코사놀",
-  "search_volume": 23080,
+  "search_volume": 27300,
   "source": "shopping",
-  "shopping_rank": 207,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6486
+  "shopping_rank": 8,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": 6399
  },
  "맥주효모": {
   "first_seen": "2026-09-19",
@@ -1600,5 +1603,61 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 176
+ },
+ "비타민C": {
+  "first_seen": "2026-09-29",
+  "seen_days": [
+   "2026-09-29"
+  ],
+  "last_seen": "2026-09-29",
+  "keyword": "비타민c 효능",
+  "search_volume": 13020,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6839
+ },
+ "인사돌": {
+  "first_seen": "2026-09-29",
+  "seen_days": [
+   "2026-09-29"
+  ],
+  "last_seen": "2026-09-29",
+  "keyword": "인사돌",
+  "search_volume": 14500,
+  "source": "shopping",
+  "shopping_rank": 111,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": 7226
+ },
+ "퀘르포민정": {
+  "first_seen": "2026-09-29",
+  "seen_days": [
+   "2026-09-29"
+  ],
+  "last_seen": "2026-09-29",
+  "keyword": "퀘르포민정",
+  "search_volume": 21620,
+  "source": "shopping",
+  "shopping_rank": 56,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 176
+ },
+ "몰약": {
+  "first_seen": "2026-09-29",
+  "seen_days": [
+   "2026-09-29"
+  ],
+  "last_seen": "2026-09-29",
+  "keyword": "잇몸 치약 추천",
+  "search_volume": 1140,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6590
  }
 }

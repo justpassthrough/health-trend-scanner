@@ -628,32 +628,34 @@
   "seen_days": [
    "2026-09-20",
    "2026-09-23",
-   "2026-09-26"
+   "2026-09-26",
+   "2026-09-28"
   ],
-  "last_seen": "2026-09-26",
-  "keyword": "무알콜맥주 통풍",
-  "search_volume": 1040,
+  "last_seen": "2026-09-28",
+  "keyword": "통풍에 나쁜 음식",
+  "search_volume": 850,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 176
+  "pharma_value": 4,
+  "blog_position_y": 5876
  },
  "사과초모식초": {
   "first_seen": "2026-09-20",
   "seen_days": [
    "2026-09-20",
    "2026-09-23",
-   "2026-09-26"
+   "2026-09-26",
+   "2026-09-28"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-09-28",
   "keyword": "애사비",
-  "search_volume": 42360,
+  "search_volume": 41570,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7913
+  "pharma_value": 4,
+  "blog_position_y": 6990
  },
  "빌베리": {
   "first_seen": "2026-09-20",
@@ -674,16 +676,17 @@
   "first_seen": "2026-09-20",
   "seen_days": [
    "2026-09-20",
-   "2026-09-25"
+   "2026-09-25",
+   "2026-09-28"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-09-28",
   "keyword": "구기자",
-  "search_volume": 14740,
+  "search_volume": 16650,
   "source": "shopping",
-  "shopping_rank": 52,
+  "shopping_rank": 47,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7432
+  "pharma_value": 4,
+  "blog_position_y": 6821
  },
  "토사자": {
   "first_seen": "2026-09-20",
@@ -949,16 +952,17 @@
   "first_seen": "2026-09-22",
   "seen_days": [
    "2026-09-22",
-   "2026-09-25"
+   "2026-09-25",
+   "2026-09-28"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-09-28",
   "keyword": "매스틱",
-  "search_volume": 52490,
+  "search_volume": 55250,
   "source": "shopping",
-  "shopping_rank": 19,
+  "shopping_rank": 15,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7672
+  "blog_position_y": 7377
  },
  "공진단": {
   "first_seen": "2026-09-22",
@@ -1554,5 +1558,47 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 6090
+ },
+ "돈태반": {
+  "first_seen": "2026-09-28",
+  "seen_days": [
+   "2026-09-28"
+  ],
+  "last_seen": "2026-09-28",
+  "keyword": "돈태반",
+  "search_volume": 2650,
+  "source": "shopping",
+  "shopping_rank": 216,
+  "shopping_move": "새 진입",
+  "pharma_value": 4,
+  "blog_position_y": 6691
+ },
+ "비타민B 컴플렉스": {
+  "first_seen": "2026-09-28",
+  "seen_days": [
+   "2026-09-28"
+  ],
+  "last_seen": "2026-09-28",
+  "keyword": "비타민b 컴플렉스",
+  "search_volume": 7450,
+  "source": "shopping",
+  "shopping_rank": 110,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6545
+ },
+ "니코틴아미드": {
+  "first_seen": "2026-09-28",
+  "seen_days": [
+   "2026-09-28"
+  ],
+  "last_seen": "2026-09-28",
+  "keyword": "애크린비타겔",
+  "search_volume": 1140,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 176
  }
 }

@@ -36,16 +36,17 @@
    "2026-09-17",
    "2026-09-19",
    "2026-09-22",
-   "2026-09-27"
+   "2026-09-27",
+   "2026-09-29"
   ],
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-09-29",
   "keyword": "하스카프베리",
-  "search_volume": 65230,
+  "search_volume": 66320,
   "source": "shopping",
-  "shopping_rank": 14,
+  "shopping_rank": 79,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7494
+  "blog_position_y": 8561
  },
  "카무트효소": {
   "first_seen": "2026-09-17",
@@ -71,16 +72,17 @@
    "2026-09-17",
    "2026-09-20",
    "2026-09-23",
-   "2026-09-26"
+   "2026-09-26",
+   "2026-09-29"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-09-29",
   "keyword": "MBP",
-  "search_volume": 12140,
+  "search_volume": 11150,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6748
+  "blog_position_y": 6037
  },
  "장수백정": {
   "first_seen": "2026-09-17",
@@ -1481,16 +1483,17 @@
  "은행잎추출물": {
   "first_seen": "2026-09-27",
   "seen_days": [
-   "2026-09-27"
+   "2026-09-27",
+   "2026-09-29"
   ],
-  "last_seen": "2026-09-27",
-  "keyword": "포스파티딜세린 징코",
-  "search_volume": 950,
+  "last_seen": "2026-09-29",
+  "keyword": "은행잎추출물",
+  "search_volume": 3140,
   "source": "shopping",
-  "shopping_rank": 281,
+  "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 6845
+  "blog_position_y": 6147
  },
  "마이크로니들": {
   "first_seen": "2026-09-27",
@@ -1659,5 +1662,47 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 6590
+ },
+ "스피루리나": {
+  "first_seen": "2026-09-29",
+  "seen_days": [
+   "2026-09-29"
+  ],
+  "last_seen": "2026-09-29",
+  "keyword": "스피루리나",
+  "search_volume": 7570,
+  "source": "shopping",
+  "shopping_rank": 203,
+  "shopping_move": "새 진입",
+  "pharma_value": 3,
+  "blog_position_y": 8871
+ },
+ "비타민K2": {
+  "first_seen": "2026-09-29",
+  "seen_days": [
+   "2026-09-29"
+  ],
+  "last_seen": "2026-09-29",
+  "keyword": "비타민K2",
+  "search_volume": 6190,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 8096
+ },
+ "리노이드 EA 포뮬라": {
+  "first_seen": "2026-09-29",
+  "seen_days": [
+   "2026-09-29"
+  ],
+  "last_seen": "2026-09-29",
+  "keyword": "리노이드 효과",
+  "search_volume": 330,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 1094
  }
 }

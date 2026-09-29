@@ -149,16 +149,17 @@
    "2026-09-18",
    "2026-09-21",
    "2026-09-23",
-   "2026-09-26"
+   "2026-09-26",
+   "2026-09-30"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-09-30",
   "keyword": "침향환",
-  "search_volume": 61890,
+  "search_volume": 64110,
   "source": "shopping",
-  "shopping_rank": 213,
+  "shopping_rank": 334,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7557
+  "pharma_value": 3,
+  "blog_position_y": 7463
  },
  "커큐민": {
   "first_seen": "2026-09-18",
@@ -572,16 +573,17 @@
   "seen_days": [
    "2026-09-20",
    "2026-09-23",
-   "2026-09-26"
+   "2026-09-26",
+   "2026-09-30"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-09-30",
   "keyword": "경옥고",
-  "search_volume": 61120,
+  "search_volume": 63120,
   "source": "shopping",
-  "shopping_rank": 24,
+  "shopping_rank": 63,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8384
+  "pharma_value": 3,
+  "blog_position_y": 8571
  },
  "장뇌삼": {
   "first_seen": "2026-09-20",
@@ -886,16 +888,17 @@
   "first_seen": "2026-09-22",
   "seen_days": [
    "2026-09-22",
-   "2026-09-26"
+   "2026-09-26",
+   "2026-09-30"
   ],
-  "last_seen": "2026-09-26",
-  "keyword": "아세로라",
-  "search_volume": 6350,
+  "last_seen": "2026-09-30",
+  "keyword": "그린아세로라",
+  "search_volume": 49680,
   "source": "shopping",
-  "shopping_rank": null,
+  "shopping_rank": 49,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6589
+  "pharma_value": 4,
+  "blog_position_y": 5240
  },
  "비타민B": {
   "first_seen": "2026-09-22",
@@ -1704,5 +1707,61 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 1094
+ },
+ "자보티바": {
+  "first_seen": "2026-09-30",
+  "seen_days": [
+   "2026-09-30"
+  ],
+  "last_seen": "2026-09-30",
+  "keyword": "자보티바",
+  "search_volume": 22750,
+  "source": "shopping",
+  "shopping_rank": 85,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 7270
+ },
+ "푸르설티아민": {
+  "first_seen": "2026-09-30",
+  "seen_days": [
+   "2026-09-30"
+  ],
+  "last_seen": "2026-09-30",
+  "keyword": "아로나민 골드",
+  "search_volume": 39690,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 3749
+ },
+ "츄어블 영양제": {
+  "first_seen": "2026-09-30",
+  "seen_days": [
+   "2026-09-30"
+  ],
+  "last_seen": "2026-09-30",
+  "keyword": "다이소 영양제",
+  "search_volume": 4180,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 4674
+ },
+ "생식": {
+  "first_seen": "2026-09-30",
+  "seen_days": [
+   "2026-09-30"
+  ],
+  "last_seen": "2026-09-30",
+  "keyword": "생식",
+  "search_volume": 7240,
+  "source": "shopping",
+  "shopping_rank": 129,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 10321
  }
 }

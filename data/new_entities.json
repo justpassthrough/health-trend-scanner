@@ -253,16 +253,17 @@
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-09-23"
+   "2026-09-23",
+   "2026-09-30"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-09-30",
   "keyword": "여성 탈모약",
-  "search_volume": 7020,
+  "search_volume": 7240,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 3757
+  "blog_position_y": 3607
  },
  "렌즈세정액": {
   "first_seen": "2026-09-18",
@@ -619,16 +620,17 @@
   "seen_days": [
    "2026-09-20",
    "2026-09-24",
-   "2026-09-27"
+   "2026-09-27",
+   "2026-09-30"
   ],
-  "last_seen": "2026-09-27",
-  "keyword": "삼백초",
-  "search_volume": 22390,
+  "last_seen": "2026-09-30",
+  "keyword": "삼백초 추출물",
+  "search_volume": 26420,
   "source": "shopping",
-  "shopping_rank": 72,
+  "shopping_rank": 69,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8555
+  "blog_position_y": 6987
  },
  "통풍": {
   "first_seen": "2026-09-20",
@@ -636,16 +638,17 @@
    "2026-09-20",
    "2026-09-23",
    "2026-09-26",
-   "2026-09-28"
+   "2026-09-28",
+   "2026-09-30"
   ],
-  "last_seen": "2026-09-28",
-  "keyword": "통풍에 나쁜 음식",
-  "search_volume": 850,
+  "last_seen": "2026-09-30",
+  "keyword": "통풍 음식",
+  "search_volume": 3920,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 5876
+  "blog_position_y": 2288
  },
  "사과초모식초": {
   "first_seen": "2026-09-20",
@@ -1430,16 +1433,17 @@
  "라이코펜": {
   "first_seen": "2026-09-27",
   "seen_days": [
-   "2026-09-27"
+   "2026-09-27",
+   "2026-09-30"
   ],
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-09-30",
   "keyword": "라이코펜",
-  "search_volume": 48580,
-  "source": "news",
-  "shopping_rank": 259,
-  "shopping_move": null,
+  "search_volume": 49230,
+  "source": "shopping",
+  "shopping_rank": 174,
+  "shopping_move": "급상승",
   "pharma_value": 5,
-  "blog_position_y": 8160
+  "blog_position_y": 7269
  },
  "상황버섯": {
   "first_seen": "2026-09-27",
@@ -1763,5 +1767,47 @@
   "shopping_move": "급상승",
   "pharma_value": 2,
   "blog_position_y": 10321
+ },
+ "파랙틴": {
+  "first_seen": "2026-09-30",
+  "seen_days": [
+   "2026-09-30"
+  ],
+  "last_seen": "2026-09-30",
+  "keyword": "파랙틴",
+  "search_volume": 8130,
+  "source": "shopping",
+  "shopping_rank": 29,
+  "shopping_move": "새 진입",
+  "pharma_value": 4,
+  "blog_position_y": 7289
+ },
+ "한삼덩굴": {
+  "first_seen": "2026-09-30",
+  "seen_days": [
+   "2026-09-30"
+  ],
+  "last_seen": "2026-09-30",
+  "keyword": "한삼덩굴",
+  "search_volume": 7360,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6263
+ },
+ "뮤코다당단백": {
+  "first_seen": "2026-09-30",
+  "seen_days": [
+   "2026-09-30"
+  ],
+  "last_seen": "2026-09-30",
+  "keyword": "뮤코다당단백",
+  "search_volume": 2150,
+  "source": "shopping",
+  "shopping_rank": 289,
+  "shopping_move": "새 진입",
+  "pharma_value": 4,
+  "blog_position_y": 8323
  }
 }

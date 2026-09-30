@@ -346,16 +346,17 @@
    "2026-09-18",
    "2026-09-21",
    "2026-09-24",
-   "2026-09-27"
+   "2026-09-27",
+   "2026-10-01"
   ],
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-10-01",
   "keyword": "프로폴리스",
-  "search_volume": 44010,
+  "search_volume": 45910,
   "source": "shopping",
-  "shopping_rank": 35,
+  "shopping_rank": 25,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 9435
+  "pharma_value": 3,
+  "blog_position_y": 9562
  },
  "니코틴산아미드": {
   "first_seen": "2026-09-18",
@@ -377,16 +378,17 @@
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-09-24"
+   "2026-09-24",
+   "2026-10-01"
   ],
-  "last_seen": "2026-09-24",
-  "keyword": "설포라판",
-  "search_volume": 2190,
+  "last_seen": "2026-10-01",
+  "keyword": "양배추즙 효능",
+  "search_volume": 8170,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 8799
+  "blog_position_y": 9732
  },
  "대마종자유": {
   "first_seen": "2026-09-19",
@@ -515,16 +517,17 @@
    "2026-09-19",
    "2026-09-21",
    "2026-09-25",
-   "2026-09-28"
+   "2026-09-28",
+   "2026-10-01"
   ],
-  "last_seen": "2026-09-28",
+  "last_seen": "2026-10-01",
   "keyword": "맥주효모",
-  "search_volume": 17260,
+  "search_volume": 16750,
   "source": "shopping",
-  "shopping_rank": 41,
+  "shopping_rank": 72,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8343
+  "blog_position_y": 8454
  },
  "벤잘코늄": {
   "first_seen": "2026-09-19",
@@ -656,16 +659,17 @@
    "2026-09-20",
    "2026-09-23",
    "2026-09-26",
-   "2026-09-28"
+   "2026-09-28",
+   "2026-10-01"
   ],
-  "last_seen": "2026-09-28",
+  "last_seen": "2026-10-01",
   "keyword": "애사비",
-  "search_volume": 41570,
+  "search_volume": 41450,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6990
+  "blog_position_y": 7352
  },
  "빌베리": {
   "first_seen": "2026-09-20",
@@ -964,16 +968,17 @@
   "seen_days": [
    "2026-09-22",
    "2026-09-25",
-   "2026-09-28"
+   "2026-09-28",
+   "2026-10-01"
   ],
-  "last_seen": "2026-09-28",
+  "last_seen": "2026-10-01",
   "keyword": "매스틱",
-  "search_volume": 55250,
+  "search_volume": 53500,
   "source": "shopping",
-  "shopping_rank": 15,
+  "shopping_rank": 35,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7377
+  "blog_position_y": 7914
  },
  "공진단": {
   "first_seen": "2026-09-22",
@@ -1809,5 +1814,33 @@
   "shopping_move": "새 진입",
   "pharma_value": 4,
   "blog_position_y": 8323
+ },
+ "크레노필": {
+  "first_seen": "2026-10-01",
+  "seen_days": [
+   "2026-10-01"
+  ],
+  "last_seen": "2026-10-01",
+  "keyword": "크레노필",
+  "search_volume": 3890,
+  "source": "shopping",
+  "shopping_rank": 158,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 5302
+ },
+ "고양이 헤어볼": {
+  "first_seen": "2026-10-01",
+  "seen_days": [
+   "2026-10-01"
+  ],
+  "last_seen": "2026-10-01",
+  "keyword": "고양이 헤어볼",
+  "search_volume": 1340,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 1998
  }
 }

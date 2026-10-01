@@ -561,16 +561,17 @@
  "흑염소": {
   "first_seen": "2026-09-20",
   "seen_days": [
-   "2026-09-20"
+   "2026-09-20",
+   "2026-10-02"
   ],
-  "last_seen": "2026-09-20",
+  "last_seen": "2026-10-02",
   "keyword": "흑염소진액",
-  "search_volume": 44780,
+  "search_volume": 48560,
   "source": "shopping",
-  "shopping_rank": 446,
+  "shopping_rank": 298,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7661
+  "blog_position_y": 7533
  },
  "경옥고": {
   "first_seen": "2026-09-20",
@@ -1199,16 +1200,17 @@
  "퀘르세틴": {
   "first_seen": "2026-09-25",
   "seen_days": [
-   "2026-09-25"
+   "2026-09-25",
+   "2026-10-02"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-10-02",
   "keyword": "퀘르세틴",
-  "search_volume": 11790,
+  "search_volume": 12410,
   "source": "shopping",
-  "shopping_rank": 352,
+  "shopping_rank": 229,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7286
+  "pharma_value": 2,
+  "blog_position_y": 6271
  },
  "디스레놀": {
   "first_seen": "2026-09-25",
@@ -1928,5 +1930,61 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 10933
+ },
+ "옥수수불검화정량추출물": {
+  "first_seen": "2026-10-02",
+  "seen_days": [
+   "2026-10-02"
+  ],
+  "last_seen": "2026-10-02",
+  "keyword": "인사돌",
+  "search_volume": 14590,
+  "source": "shopping",
+  "shopping_rank": 82,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6273
+ },
+ "산양삼": {
+  "first_seen": "2026-10-02",
+  "seen_days": [
+   "2026-10-02"
+  ],
+  "last_seen": "2026-10-02",
+  "keyword": "산양삼",
+  "search_volume": 14990,
+  "source": "shopping",
+  "shopping_rank": 61,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 6496
+ },
+ "석류": {
+  "first_seen": "2026-10-02",
+  "seen_days": [
+   "2026-10-02"
+  ],
+  "last_seen": "2026-10-02",
+  "keyword": "석류 효능",
+  "search_volume": 6090,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 3375
+ },
+ "어린이 홍삼": {
+  "first_seen": "2026-10-02",
+  "seen_days": [
+   "2026-10-02"
+  ],
+  "last_seen": "2026-10-02",
+  "keyword": "어린이 홍삼",
+  "search_volume": 3340,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6876
  }
 }

@@ -910,16 +910,17 @@
  "비타민B": {
   "first_seen": "2026-09-22",
   "seen_days": [
-   "2026-09-22"
+   "2026-09-22",
+   "2026-10-01"
   ],
-  "last_seen": "2026-09-22",
+  "last_seen": "2026-10-01",
   "keyword": "비타민B 컴플렉스",
-  "search_volume": 6990,
+  "search_volume": 7850,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8382
+  "pharma_value": 3,
+  "blog_position_y": 6883
  },
  "테라큐민": {
   "first_seen": "2026-09-22",
@@ -1524,16 +1525,17 @@
  "캡슐레이션효소": {
   "first_seen": "2026-09-28",
   "seen_days": [
-   "2026-09-28"
+   "2026-09-28",
+   "2026-10-01"
   ],
-  "last_seen": "2026-09-28",
-  "keyword": "캡슐레이션효소",
-  "search_volume": 72840,
+  "last_seen": "2026-10-01",
+  "keyword": "캡슐레이션 효소",
+  "search_volume": 91540,
   "source": "shopping",
-  "shopping_rank": 10,
-  "shopping_move": "급상승",
+  "shopping_rank": 9,
+  "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 5761
+  "blog_position_y": 6223
  },
  "감마리놀렌산": {
   "first_seen": "2026-09-28",
@@ -1842,5 +1844,89 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 1998
+ },
+ "파로효소": {
+  "first_seen": "2026-10-01",
+  "seen_days": [
+   "2026-10-01"
+  ],
+  "last_seen": "2026-10-01",
+  "keyword": "파로효소",
+  "search_volume": 11770,
+  "source": "shopping",
+  "shopping_rank": 118,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 7297
+ },
+ "소화효소": {
+  "first_seen": "2026-10-01",
+  "seen_days": [
+   "2026-10-01"
+  ],
+  "last_seen": "2026-10-01",
+  "keyword": "소화효소",
+  "search_volume": 10710,
+  "source": "shopping",
+  "shopping_rank": 171,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 7254
+ },
+ "난각막": {
+  "first_seen": "2026-10-01",
+  "seen_days": [
+   "2026-10-01"
+  ],
+  "last_seen": "2026-10-01",
+  "keyword": "난각막",
+  "search_volume": 3920,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6561
+ },
+ "헛개나무": {
+  "first_seen": "2026-10-01",
+  "seen_days": [
+   "2026-10-01"
+  ],
+  "last_seen": "2026-10-01",
+  "keyword": "헛개나무 열매",
+  "search_volume": 3450,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7568
+ },
+ "프리바이오틱스": {
+  "first_seen": "2026-10-01",
+  "seen_days": [
+   "2026-10-01"
+  ],
+  "last_seen": "2026-10-01",
+  "keyword": "프리바이오틱스",
+  "search_volume": 14320,
+  "source": "shopping",
+  "shopping_rank": 83,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 6354
+ },
+ "고양이 하부요로질환": {
+  "first_seen": "2026-10-01",
+  "seen_days": [
+   "2026-10-01"
+  ],
+  "last_seen": "2026-10-01",
+  "keyword": "고양이 방광염",
+  "search_volume": 1320,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 10933
  }
 }

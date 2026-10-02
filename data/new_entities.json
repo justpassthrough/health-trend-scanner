@@ -625,16 +625,17 @@
    "2026-09-20",
    "2026-09-24",
    "2026-09-27",
-   "2026-09-30"
+   "2026-09-30",
+   "2026-10-02"
   ],
-  "last_seen": "2026-09-30",
-  "keyword": "삼백초 추출물",
-  "search_volume": 26420,
+  "last_seen": "2026-10-02",
+  "keyword": "삼백초",
+  "search_volume": 22220,
   "source": "shopping",
-  "shopping_rank": 69,
+  "shopping_rank": 105,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6987
+  "blog_position_y": 7809
  },
  "통풍": {
   "first_seen": "2026-09-20",
@@ -643,16 +644,17 @@
    "2026-09-23",
    "2026-09-26",
    "2026-09-28",
-   "2026-09-30"
+   "2026-09-30",
+   "2026-10-02"
   ],
-  "last_seen": "2026-09-30",
-  "keyword": "통풍 음식",
-  "search_volume": 3920,
+  "last_seen": "2026-10-02",
+  "keyword": "통풍에 나쁜 음식",
+  "search_volume": 830,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 2288
+  "blog_position_y": 7400
  },
  "사과초모식초": {
   "first_seen": "2026-09-20",
@@ -1986,5 +1988,47 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 6876
+ },
+ "올리브오일": {
+  "first_seen": "2026-10-02",
+  "seen_days": [
+   "2026-10-02"
+  ],
+  "last_seen": "2026-10-02",
+  "keyword": "올리브오일 효능",
+  "search_volume": 24340,
+  "source": "shopping",
+  "shopping_rank": 414,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 9620
+ },
+ "혈당 영양제": {
+  "first_seen": "2026-10-02",
+  "seen_days": [
+   "2026-10-02"
+  ],
+  "last_seen": "2026-10-02",
+  "keyword": "혈당 영양제",
+  "search_volume": 6500,
+  "source": "shopping",
+  "shopping_rank": 211,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 7602
+ },
+ "실온 보관": {
+  "first_seen": "2026-10-02",
+  "seen_days": [
+   "2026-10-02"
+  ],
+  "last_seen": "2026-10-02",
+  "keyword": "실온 보관",
+  "search_volume": 2770,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 176
  }
 }

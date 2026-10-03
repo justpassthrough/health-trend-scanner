@@ -410,16 +410,17 @@
  "도라지": {
   "first_seen": "2026-09-19",
   "seen_days": [
-   "2026-09-19"
+   "2026-09-19",
+   "2026-10-04"
   ],
-  "last_seen": "2026-09-19",
-  "keyword": "도라지배즙",
-  "search_volume": 12630,
+  "last_seen": "2026-10-04",
+  "keyword": "도라지청",
+  "search_volume": 27170,
   "source": "shopping",
-  "shopping_rank": 38,
+  "shopping_rank": 90,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7866
+  "blog_position_y": 9251
  },
  "쿼르세틴": {
   "first_seen": "2026-09-19",
@@ -885,16 +886,17 @@
   "seen_days": [
    "2026-09-21",
    "2026-09-24",
-   "2026-09-27"
+   "2026-09-27",
+   "2026-10-04"
   ],
-  "last_seen": "2026-09-27",
-  "keyword": "산후 영양제",
-  "search_volume": 1650,
+  "last_seen": "2026-10-04",
+  "keyword": "출산 후 영양제",
+  "search_volume": 3170,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7797
+  "blog_position_y": 3903
  },
  "아세로라": {
   "first_seen": "2026-09-22",
@@ -991,16 +993,17 @@
   "seen_days": [
    "2026-09-22",
    "2026-09-24",
-   "2026-09-27"
+   "2026-09-27",
+   "2026-10-04"
   ],
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-10-04",
   "keyword": "공진단",
-  "search_volume": 53390,
+  "search_volume": 53260,
   "source": "shopping",
-  "shopping_rank": 31,
+  "shopping_rank": 83,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 9773
+  "blog_position_y": 7828
  },
  "양배추즙": {
   "first_seen": "2026-09-23",
@@ -1277,30 +1280,32 @@
   "first_seen": "2026-09-25",
   "seen_days": [
    "2026-09-25",
-   "2026-09-27"
+   "2026-09-27",
+   "2026-10-04"
   ],
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-10-04",
   "keyword": "아로나민 골드",
-  "search_volume": 39630,
+  "search_volume": 39330,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 3751
+  "pharma_value": 5,
+  "blog_position_y": 2515
  },
  "고양이 요로": {
   "first_seen": "2026-09-25",
   "seen_days": [
-   "2026-09-25"
+   "2026-09-25",
+   "2026-10-04"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-10-04",
   "keyword": "고양이 방광염",
-  "search_volume": 1250,
+  "search_volume": 1350,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 10507
+  "blog_position_y": 11109
  },
  "식물성 멜라토닌": {
   "first_seen": "2026-09-26",
@@ -2120,5 +2125,47 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 7793
+ },
+ "인삼": {
+  "first_seen": "2026-10-04",
+  "seen_days": [
+   "2026-10-04"
+  ],
+  "last_seen": "2026-10-04",
+  "keyword": "진세노사이드",
+  "search_volume": 4020,
+  "source": "shopping",
+  "shopping_rank": 39,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7885
+ },
+ "개구리즙": {
+  "first_seen": "2026-10-04",
+  "seen_days": [
+   "2026-10-04"
+  ],
+  "last_seen": "2026-10-04",
+  "keyword": "개구리즙",
+  "search_volume": 2560,
+  "source": "shopping",
+  "shopping_rank": 233,
+  "shopping_move": "새 진입",
+  "pharma_value": 2,
+  "blog_position_y": 6025
+ },
+ "LF300": {
+  "first_seen": "2026-10-04",
+  "seen_days": [
+   "2026-10-04"
+  ],
+  "last_seen": "2026-10-04",
+  "keyword": "lf300 영양제",
+  "search_volume": 6150,
+  "source": "shopping",
+  "shopping_rank": 47,
+  "shopping_move": null,
+  "pharma_value": 1,
+  "blog_position_y": 6865
  }
 }

@@ -470,15 +470,16 @@
   "first_seen": "2026-09-19",
   "seen_days": [
    "2026-09-19",
-   "2026-09-27"
+   "2026-09-27",
+   "2026-10-03"
   ],
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-10-03",
   "keyword": "여주",
-  "search_volume": 44410,
+  "search_volume": 44170,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 5,
+  "pharma_value": 4,
   "blog_position_y": 888
  },
  "새싹보리": {
@@ -1785,16 +1786,17 @@
  "파랙틴": {
   "first_seen": "2026-09-30",
   "seen_days": [
-   "2026-09-30"
+   "2026-09-30",
+   "2026-10-03"
   ],
-  "last_seen": "2026-09-30",
+  "last_seen": "2026-10-03",
   "keyword": "파랙틴",
-  "search_volume": 8130,
+  "search_volume": 9700,
   "source": "shopping",
-  "shopping_rank": 29,
-  "shopping_move": "새 진입",
-  "pharma_value": 4,
-  "blog_position_y": 7289
+  "shopping_rank": 65,
+  "shopping_move": "최근 진입",
+  "pharma_value": 2,
+  "blog_position_y": 7735
  },
  "한삼덩굴": {
   "first_seen": "2026-09-30",
@@ -1883,16 +1885,17 @@
  "난각막": {
   "first_seen": "2026-10-01",
   "seen_days": [
-   "2026-10-01"
+   "2026-10-01",
+   "2026-10-03"
   ],
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-03",
   "keyword": "난각막",
   "search_volume": 3920,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6561
+  "pharma_value": 3,
+  "blog_position_y": 6599
  },
  "헛개나무": {
   "first_seen": "2026-10-01",
@@ -2075,5 +2078,47 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 1395
+ },
+ "마이오카인": {
+  "first_seen": "2026-10-03",
+  "seen_days": [
+   "2026-10-03"
+  ],
+  "last_seen": "2026-10-03",
+  "keyword": "마이오카인",
+  "search_volume": 1670,
+  "source": "shopping",
+  "shopping_rank": 158,
+  "shopping_move": "새 진입",
+  "pharma_value": 4,
+  "blog_position_y": 3687
+ },
+ "아누카사과": {
+  "first_seen": "2026-10-03",
+  "seen_days": [
+   "2026-10-03"
+  ],
+  "last_seen": "2026-10-03",
+  "keyword": "아누카사과",
+  "search_volume": 1100,
+  "source": "shopping",
+  "shopping_rank": 270,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 6433
+ },
+ "천연비타민C": {
+  "first_seen": "2026-10-03",
+  "seen_days": [
+   "2026-10-03"
+  ],
+  "last_seen": "2026-10-03",
+  "keyword": "천연비타민C",
+  "search_volume": 3650,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7793
  }
 }

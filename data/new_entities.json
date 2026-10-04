@@ -19,16 +19,17 @@
   "first_seen": "2026-09-17",
   "seen_days": [
    "2026-09-17",
-   "2026-09-19"
+   "2026-09-19",
+   "2026-10-04"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-10-04",
   "keyword": "매스틱",
-  "search_volume": 44670,
+  "search_volume": 52840,
   "source": "shopping",
-  "shopping_rank": 248,
+  "shopping_rank": 158,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 8516
+  "blog_position_y": 8073
  },
  "하스카프베리": {
   "first_seen": "2026-09-17",
@@ -648,16 +649,17 @@
    "2026-09-26",
    "2026-09-28",
    "2026-09-30",
-   "2026-10-02"
+   "2026-10-02",
+   "2026-10-04"
   ],
-  "last_seen": "2026-10-02",
-  "keyword": "통풍에 나쁜 음식",
-  "search_volume": 830,
+  "last_seen": "2026-10-04",
+  "keyword": "통풍 음식",
+  "search_volume": 3800,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7400
+  "blog_position_y": 2840
  },
  "사과초모식초": {
   "first_seen": "2026-09-20",
@@ -666,16 +668,17 @@
    "2026-09-23",
    "2026-09-26",
    "2026-09-28",
-   "2026-10-01"
+   "2026-10-01",
+   "2026-10-04"
   ],
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-04",
   "keyword": "애사비",
-  "search_volume": 41450,
+  "search_volume": 39960,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7352
+  "pharma_value": 3,
+  "blog_position_y": 7345
  },
  "빌베리": {
   "first_seen": "2026-09-20",
@@ -1366,16 +1369,17 @@
  "헤어볼": {
   "first_seen": "2026-09-26",
   "seen_days": [
-   "2026-09-26"
+   "2026-09-26",
+   "2026-10-04"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-10-04",
   "keyword": "고양이 헤어볼",
-  "search_volume": 1310,
+  "search_volume": 1360,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 1791
+  "blog_position_y": 1469
  },
  "나토키나제": {
   "first_seen": "2026-09-26",
@@ -1509,16 +1513,17 @@
   "first_seen": "2026-09-27",
   "seen_days": [
    "2026-09-27",
-   "2026-09-29"
+   "2026-09-29",
+   "2026-10-04"
   ],
-  "last_seen": "2026-09-29",
-  "keyword": "은행잎추출물",
-  "search_volume": 3140,
+  "last_seen": "2026-10-04",
+  "keyword": "은행잎추출물 효능",
+  "search_volume": 1860,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 6147
+  "blog_position_y": 1646
  },
  "마이크로니들": {
   "first_seen": "2026-09-27",
@@ -2167,5 +2172,47 @@
   "shopping_move": null,
   "pharma_value": 1,
   "blog_position_y": 6865
+ },
+ "낙산균": {
+  "first_seen": "2026-10-04",
+  "seen_days": [
+   "2026-10-04"
+  ],
+  "last_seen": "2026-10-04",
+  "keyword": "낙산균",
+  "search_volume": 15630,
+  "source": "shopping",
+  "shopping_rank": 82,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 1535
+ },
+ "비타민B군": {
+  "first_seen": "2026-10-04",
+  "seen_days": [
+   "2026-10-04"
+  ],
+  "last_seen": "2026-10-04",
+  "keyword": "비타민b 컴플렉스",
+  "search_volume": 7910,
+  "source": "shopping",
+  "shopping_rank": 87,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7196
+ },
+ "지리델피아": {
+  "first_seen": "2026-10-04",
+  "seen_days": [
+   "2026-10-04"
+  ],
+  "last_seen": "2026-10-04",
+  "keyword": "지리델피아",
+  "search_volume": 1790,
+  "source": "shopping",
+  "shopping_rank": 203,
+  "shopping_move": "새 진입",
+  "pharma_value": 2,
+  "blog_position_y": 4154
  }
 }

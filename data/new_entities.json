@@ -630,16 +630,17 @@
    "2026-09-24",
    "2026-09-27",
    "2026-09-30",
-   "2026-10-02"
+   "2026-10-02",
+   "2026-10-05"
   ],
-  "last_seen": "2026-10-02",
+  "last_seen": "2026-10-05",
   "keyword": "삼백초",
-  "search_volume": 22220,
+  "search_volume": 22260,
   "source": "shopping",
-  "shopping_rank": 105,
+  "shopping_rank": 98,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7809
+  "blog_position_y": 7697
  },
  "통풍": {
   "first_seen": "2026-09-20",
@@ -773,16 +774,17 @@
  "올리브오일 캡슐": {
   "first_seen": "2026-09-21",
   "seen_days": [
-   "2026-09-21"
+   "2026-09-21",
+   "2026-10-05"
   ],
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-10-05",
   "keyword": "올리브오일 캡슐",
-  "search_volume": 18290,
+  "search_volume": 15620,
   "source": "shopping",
-  "shopping_rank": 80,
+  "shopping_rank": 81,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7943
+  "blog_position_y": 6332
  },
  "차가버섯": {
   "first_seen": "2026-09-21",
@@ -1054,16 +1056,17 @@
   "first_seen": "2026-09-23",
   "seen_days": [
    "2026-09-23",
-   "2026-09-26"
+   "2026-09-26",
+   "2026-10-05"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-10-05",
   "keyword": "어린이 영양제",
-  "search_volume": 4340,
+  "search_volume": 4240,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7453
+  "pharma_value": 4,
+  "blog_position_y": 8694
  },
  "칼륨": {
   "first_seen": "2026-09-23",
@@ -1924,16 +1927,17 @@
  "프리바이오틱스": {
   "first_seen": "2026-10-01",
   "seen_days": [
-   "2026-10-01"
+   "2026-10-01",
+   "2026-10-05"
   ],
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-05",
   "keyword": "프리바이오틱스",
-  "search_volume": 14320,
+  "search_volume": 13700,
   "source": "shopping",
-  "shopping_rank": 83,
+  "shopping_rank": 122,
   "shopping_move": "급상승",
   "pharma_value": 3,
-  "blog_position_y": 6354
+  "blog_position_y": 6447
  },
  "고양이 하부요로질환": {
   "first_seen": "2026-10-01",
@@ -2214,5 +2218,61 @@
   "shopping_move": "새 진입",
   "pharma_value": 2,
   "blog_position_y": 4154
+ },
+ "타마플렉스": {
+  "first_seen": "2026-10-05",
+  "seen_days": [
+   "2026-10-05"
+  ],
+  "last_seen": "2026-10-05",
+  "keyword": "타마플렉스",
+  "search_volume": 2540,
+  "source": "shopping",
+  "shopping_rank": 166,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 6627
+ },
+ "캡슐레이션 효소": {
+  "first_seen": "2026-10-05",
+  "seen_days": [
+   "2026-10-05"
+  ],
+  "last_seen": "2026-10-05",
+  "keyword": "캡슐레이션효소",
+  "search_volume": 96650,
+  "source": "shopping",
+  "shopping_rank": 10,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7240
+ },
+ "야채수": {
+  "first_seen": "2026-10-05",
+  "seen_days": [
+   "2026-10-05"
+  ],
+  "last_seen": "2026-10-05",
+  "keyword": "야채수",
+  "search_volume": 3750,
+  "source": "shopping",
+  "shopping_rank": 159,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 6322
+ },
+ "의약품 보관": {
+  "first_seen": "2026-10-05",
+  "seen_days": [
+   "2026-10-05"
+  ],
+  "last_seen": "2026-10-05",
+  "keyword": "약 보관 온도",
+  "search_volume": 20,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": null
  }
 }

@@ -474,16 +474,17 @@
   "seen_days": [
    "2026-09-19",
    "2026-09-27",
-   "2026-10-03"
+   "2026-10-03",
+   "2026-10-06"
   ],
-  "last_seen": "2026-10-03",
-  "keyword": "여주",
-  "search_volume": 44170,
+  "last_seen": "2026-10-06",
+  "keyword": "여주 효능",
+  "search_volume": 16610,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 888
+  "blog_position_y": null
  },
  "새싹보리": {
   "first_seen": "2026-09-19",
@@ -911,16 +912,17 @@
   "seen_days": [
    "2026-09-22",
    "2026-09-26",
-   "2026-09-30"
+   "2026-09-30",
+   "2026-10-06"
   ],
-  "last_seen": "2026-09-30",
+  "last_seen": "2026-10-06",
   "keyword": "그린아세로라",
-  "search_volume": 49680,
+  "search_volume": 50650,
   "source": "shopping",
-  "shopping_rank": 49,
+  "shopping_rank": 7,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 5240
+  "blog_position_y": null
  },
  "비타민B": {
   "first_seen": "2026-09-22",
@@ -1433,16 +1435,17 @@
  "꾸지뽕": {
   "first_seen": "2026-09-26",
   "seen_days": [
-   "2026-09-26"
+   "2026-09-26",
+   "2026-10-06"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-10-06",
   "keyword": "꾸지뽕 효능",
-  "search_volume": 12360,
+  "search_volume": 13680,
   "source": "shopping",
-  "shopping_rank": 59,
+  "shopping_rank": 72,
   "shopping_move": null,
-  "pharma_value": 2,
-  "blog_position_y": 2770
+  "pharma_value": 3,
+  "blog_position_y": null
  },
  "탱자": {
   "first_seen": "2026-09-27",
@@ -2115,16 +2118,17 @@
  "아누카사과": {
   "first_seen": "2026-10-03",
   "seen_days": [
-   "2026-10-03"
+   "2026-10-03",
+   "2026-10-06"
   ],
-  "last_seen": "2026-10-03",
+  "last_seen": "2026-10-06",
   "keyword": "아누카사과",
-  "search_volume": 1100,
+  "search_volume": 1050,
   "source": "shopping",
-  "shopping_rank": 270,
+  "shopping_rank": 213,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 6433
+  "blog_position_y": null
  },
  "천연비타민C": {
   "first_seen": "2026-10-03",
@@ -2335,5 +2339,61 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 2102
+ },
+ "락토바실러스 루테리": {
+  "first_seen": "2026-10-06",
+  "seen_days": [
+   "2026-10-06"
+  ],
+  "last_seen": "2026-10-06",
+  "keyword": "바이오가이아",
+  "search_volume": 17100,
+  "source": "shopping",
+  "shopping_rank": 267,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": null
+ },
+ "아젤라산": {
+  "first_seen": "2026-10-06",
+  "seen_days": [
+   "2026-10-06"
+  ],
+  "last_seen": "2026-10-06",
+  "keyword": "아젤리아 크림",
+  "search_volume": 123350,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": null
+ },
+ "포비돈요오드": {
+  "first_seen": "2026-10-06",
+  "seen_days": [
+   "2026-10-06"
+  ],
+  "last_seen": "2026-10-06",
+  "keyword": "목 스프레이",
+  "search_volume": 1130,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": null
+ },
+ "젤리 영양제": {
+  "first_seen": "2026-10-06",
+  "seen_days": [
+   "2026-10-06"
+  ],
+  "last_seen": "2026-10-06",
+  "keyword": "다이소 영양제",
+  "search_volume": 4230,
+  "source": "news",
+  "shopping_rank": 475,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": null
  }
 }

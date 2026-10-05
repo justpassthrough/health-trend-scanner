@@ -211,16 +211,17 @@
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-09-24"
+   "2026-09-24",
+   "2026-10-05"
   ],
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-10-05",
   "keyword": "산삼배양근",
-  "search_volume": 8400,
+  "search_volume": 9750,
   "source": "shopping",
-  "shopping_rank": 124,
+  "shopping_rank": 182,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 4927
+  "blog_position_y": 5141
  },
  "쿠드로닌": {
   "first_seen": "2026-09-18",
@@ -565,16 +566,17 @@
   "first_seen": "2026-09-20",
   "seen_days": [
    "2026-09-20",
-   "2026-10-02"
+   "2026-10-02",
+   "2026-10-05"
   ],
-  "last_seen": "2026-10-02",
+  "last_seen": "2026-10-05",
   "keyword": "흑염소진액",
-  "search_volume": 48560,
+  "search_volume": 46680,
   "source": "shopping",
-  "shopping_rank": 298,
+  "shopping_rank": 231,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7533
+  "pharma_value": 2,
+  "blog_position_y": 7409
  },
  "경옥고": {
   "first_seen": "2026-09-20",
@@ -845,16 +847,17 @@
  "맥문동": {
   "first_seen": "2026-09-21",
   "seen_days": [
-   "2026-09-21"
+   "2026-09-21",
+   "2026-10-05"
   ],
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-10-05",
   "keyword": "맥문동",
-  "search_volume": 85350,
+  "search_volume": 70550,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 11919
+  "pharma_value": 4,
+  "blog_position_y": 8909
  },
  "젤리형 영양제": {
   "first_seen": "2026-09-21",
@@ -1257,16 +1260,17 @@
   "first_seen": "2026-09-25",
   "seen_days": [
    "2026-09-25",
-   "2026-09-28"
+   "2026-09-28",
+   "2026-10-05"
   ],
-  "last_seen": "2026-09-28",
-  "keyword": "브로멜라인",
-  "search_volume": 16150,
+  "last_seen": "2026-10-05",
+  "keyword": "브로멜라인 효능",
+  "search_volume": 6530,
   "source": "shopping",
-  "shopping_rank": 159,
-  "shopping_move": "급상승",
-  "pharma_value": 5,
-  "blog_position_y": 7783
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 9478
  },
  "임산부영양제": {
   "first_seen": "2026-09-25",
@@ -1714,16 +1718,17 @@
  "비타민K2": {
   "first_seen": "2026-09-29",
   "seen_days": [
-   "2026-09-29"
+   "2026-09-29",
+   "2026-10-05"
   ],
-  "last_seen": "2026-09-29",
+  "last_seen": "2026-10-05",
   "keyword": "비타민K2",
-  "search_volume": 6190,
+  "search_volume": 6280,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 8096
+  "blog_position_y": 8120
  },
  "리노이드 EA 포뮬라": {
   "first_seen": "2026-09-29",
@@ -2274,5 +2279,61 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": null
+ },
+ "비타민나무": {
+  "first_seen": "2026-10-05",
+  "seen_days": [
+   "2026-10-05"
+  ],
+  "last_seen": "2026-10-05",
+  "keyword": "씨베리",
+  "search_volume": 1180,
+  "source": "shopping",
+  "shopping_rank": 176,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 3061
+ },
+ "솔잎": {
+  "first_seen": "2026-10-05",
+  "seen_days": [
+   "2026-10-05"
+  ],
+  "last_seen": "2026-10-05",
+  "keyword": "솔잎 효능",
+  "search_volume": 8470,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 8223
+ },
+ "루마큐라": {
+  "first_seen": "2026-10-05",
+  "seen_days": [
+   "2026-10-05"
+  ],
+  "last_seen": "2026-10-05",
+  "keyword": "루마큐라",
+  "search_volume": 3670,
+  "source": "shopping",
+  "shopping_rank": 58,
+  "shopping_move": "최근 진입",
+  "pharma_value": 2,
+  "blog_position_y": 5495
+ },
+ "트로키제": {
+  "first_seen": "2026-10-05",
+  "seen_days": [
+   "2026-10-05"
+  ],
+  "last_seen": "2026-10-05",
+  "keyword": "목 아플때 약",
+  "search_volume": 1370,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 2102
  }
 }

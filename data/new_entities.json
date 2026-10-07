@@ -212,16 +212,17 @@
   "seen_days": [
    "2026-09-18",
    "2026-09-24",
-   "2026-10-05"
+   "2026-10-05",
+   "2026-10-08"
   ],
-  "last_seen": "2026-10-05",
+  "last_seen": "2026-10-08",
   "keyword": "산삼배양근",
-  "search_volume": 9750,
+  "search_volume": 9570,
   "source": "shopping",
-  "shopping_rank": 182,
+  "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 5141
+  "blog_position_y": 5904
  },
  "쿠드로닌": {
   "first_seen": "2026-09-18",
@@ -571,16 +572,17 @@
   "seen_days": [
    "2026-09-20",
    "2026-10-02",
-   "2026-10-05"
+   "2026-10-05",
+   "2026-10-08"
   ],
-  "last_seen": "2026-10-05",
+  "last_seen": "2026-10-08",
   "keyword": "흑염소진액",
-  "search_volume": 46680,
+  "search_volume": 43870,
   "source": "shopping",
-  "shopping_rank": 231,
+  "shopping_rank": 377,
   "shopping_move": null,
-  "pharma_value": 2,
-  "blog_position_y": 7409
+  "pharma_value": 3,
+  "blog_position_y": 7890
  },
  "경옥고": {
   "first_seen": "2026-09-20",
@@ -1054,16 +1056,17 @@
  "헤모힘": {
   "first_seen": "2026-09-23",
   "seen_days": [
-   "2026-09-23"
+   "2026-09-23",
+   "2026-10-08"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-10-08",
   "keyword": "헤모힘",
-  "search_volume": 9880,
+  "search_volume": 9970,
   "source": "shopping",
-  "shopping_rank": 210,
+  "shopping_rank": 153,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6502
+  "pharma_value": 4,
+  "blog_position_y": 6151
  },
  "어린이 영양제": {
   "first_seen": "2026-09-23",
@@ -1876,16 +1879,17 @@
  "고양이 헤어볼": {
   "first_seen": "2026-10-01",
   "seen_days": [
-   "2026-10-01"
+   "2026-10-01",
+   "2026-10-08"
   ],
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-08",
   "keyword": "고양이 헤어볼",
-  "search_volume": 1340,
+  "search_volume": 1360,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 1998
+  "blog_position_y": 1417
  },
  "파로효소": {
   "first_seen": "2026-10-01",
@@ -2231,16 +2235,17 @@
  "지리델피아": {
   "first_seen": "2026-10-04",
   "seen_days": [
-   "2026-10-04"
+   "2026-10-04",
+   "2026-10-08"
   ],
-  "last_seen": "2026-10-04",
+  "last_seen": "2026-10-08",
   "keyword": "지리델피아",
-  "search_volume": 1790,
+  "search_volume": 2460,
   "source": "shopping",
-  "shopping_rank": 203,
-  "shopping_move": "새 진입",
+  "shopping_rank": 195,
+  "shopping_move": "최근 진입",
   "pharma_value": 2,
-  "blog_position_y": 4154
+  "blog_position_y": 4155
  },
  "타마플렉스": {
   "first_seen": "2026-10-05",
@@ -2329,16 +2334,17 @@
  "루마큐라": {
   "first_seen": "2026-10-05",
   "seen_days": [
-   "2026-10-05"
+   "2026-10-05",
+   "2026-10-08"
   ],
-  "last_seen": "2026-10-05",
+  "last_seen": "2026-10-08",
   "keyword": "루마큐라",
-  "search_volume": 3670,
+  "search_volume": 6600,
   "source": "shopping",
-  "shopping_rank": 58,
+  "shopping_rank": 207,
   "shopping_move": "최근 진입",
   "pharma_value": 2,
-  "blog_position_y": 5495
+  "blog_position_y": 5421
  },
  "트로키제": {
   "first_seen": "2026-10-05",
@@ -2549,5 +2555,33 @@
   "shopping_move": "급상승",
   "pharma_value": 2,
   "blog_position_y": 3812
+ },
+ "당뇨식": {
+  "first_seen": "2026-10-08",
+  "seen_days": [
+   "2026-10-08"
+  ],
+  "last_seen": "2026-10-08",
+  "keyword": "당뇨 환자 음료",
+  "search_volume": 150,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 1297
+ },
+ "강아지 기관지": {
+  "first_seen": "2026-10-08",
+  "seen_days": [
+   "2026-10-08"
+  ],
+  "last_seen": "2026-10-08",
+  "keyword": "강아지 기관지 영양제",
+  "search_volume": 4310,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7450
  }
 }

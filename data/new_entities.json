@@ -299,31 +299,33 @@
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-09-20"
+   "2026-09-20",
+   "2026-10-07"
   ],
-  "last_seen": "2026-09-20",
-  "keyword": "마누카꿀 효능",
-  "search_volume": 11200,
+  "last_seen": "2026-10-07",
+  "keyword": "마누카꿀",
+  "search_volume": 51670,
   "source": "shopping",
-  "shopping_rank": 27,
+  "shopping_rank": 72,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7885
+  "pharma_value": 3,
+  "blog_position_y": 7116
  },
  "홍삼": {
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-09-24"
+   "2026-09-24",
+   "2026-10-07"
   ],
-  "last_seen": "2026-09-24",
-  "keyword": "홍삼 진세노사이드",
-  "search_volume": 1500,
+  "last_seen": "2026-10-07",
+  "keyword": "홍삼 효능",
+  "search_volume": 8910,
   "source": "shopping",
-  "shopping_rank": 34,
+  "shopping_rank": 60,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6323
+  "pharma_value": 4,
+  "blog_position_y": 4393
  },
  "피크노제놀": {
   "first_seen": "2026-09-18",
@@ -1414,16 +1416,17 @@
  "푸룬": {
   "first_seen": "2026-09-26",
   "seen_days": [
-   "2026-09-26"
+   "2026-09-26",
+   "2026-10-07"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-10-07",
   "keyword": "푸룬주스",
-  "search_volume": 35380,
+  "search_volume": 31050,
   "source": "shopping",
-  "shopping_rank": 88,
+  "shopping_rank": 101,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7848
+  "blog_position_y": 7468
  },
  "마가목": {
   "first_seen": "2026-09-26",
@@ -1987,16 +1990,17 @@
  "산양삼": {
   "first_seen": "2026-10-02",
   "seen_days": [
-   "2026-10-02"
+   "2026-10-02",
+   "2026-10-07"
   ],
-  "last_seen": "2026-10-02",
+  "last_seen": "2026-10-07",
   "keyword": "산양삼",
-  "search_volume": 14990,
+  "search_volume": 15920,
   "source": "shopping",
-  "shopping_rank": 61,
-  "shopping_move": "급상승",
+  "shopping_rank": 10,
+  "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6496
+  "blog_position_y": 7813
  },
  "석류": {
   "first_seen": "2026-10-02",
@@ -2461,5 +2465,89 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7694
+ },
+ "새싹삼": {
+  "first_seen": "2026-10-07",
+  "seen_days": [
+   "2026-10-07"
+  ],
+  "last_seen": "2026-10-07",
+  "keyword": "새싹삼",
+  "search_volume": 3550,
+  "source": "shopping",
+  "shopping_rank": 299,
+  "shopping_move": "새 진입",
+  "pharma_value": 3,
+  "blog_position_y": 5713
+ },
+ "멀티팩": {
+  "first_seen": "2026-10-07",
+  "seen_days": [
+   "2026-10-07"
+  ],
+  "last_seen": "2026-10-07",
+  "keyword": "멀티팩",
+  "search_volume": 560,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6980
+ },
+ "사우어크라우트": {
+  "first_seen": "2026-10-07",
+  "seen_days": [
+   "2026-10-07"
+  ],
+  "last_seen": "2026-10-07",
+  "keyword": "사우어크라우트",
+  "search_volume": 2880,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 3851
+ },
+ "리포좀 비타민C": {
+  "first_seen": "2026-10-07",
+  "seen_days": [
+   "2026-10-07"
+  ],
+  "last_seen": "2026-10-07",
+  "keyword": "리포좀 비타민C",
+  "search_volume": 31020,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7079
+ },
+ "포뉴": {
+  "first_seen": "2026-10-07",
+  "seen_days": [
+   "2026-10-07"
+  ],
+  "last_seen": "2026-10-07",
+  "keyword": "포뉴",
+  "search_volume": 1550,
+  "source": "shopping",
+  "shopping_rank": 34,
+  "shopping_move": "최근 진입",
+  "pharma_value": 2,
+  "blog_position_y": 4506
+ },
+ "케토놀": {
+  "first_seen": "2026-10-07",
+  "seen_days": [
+   "2026-10-07"
+  ],
+  "last_seen": "2026-10-07",
+  "keyword": "케토놀",
+  "search_volume": 9640,
+  "source": "shopping",
+  "shopping_rank": 191,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 3812
  }
 }

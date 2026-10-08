@@ -1231,16 +1231,17 @@
   "seen_days": [
    "2026-09-25",
    "2026-10-02",
-   "2026-10-06"
+   "2026-10-06",
+   "2026-10-09"
   ],
-  "last_seen": "2026-10-06",
+  "last_seen": "2026-10-09",
   "keyword": "퀘르세틴",
-  "search_volume": 12900,
+  "search_volume": 12830,
   "source": "shopping",
-  "shopping_rank": 476,
+  "shopping_rank": 380,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7119
+  "blog_position_y": 6762
  },
  "디스레놀": {
   "first_seen": "2026-09-25",
@@ -2322,16 +2323,17 @@
  "솔잎": {
   "first_seen": "2026-10-05",
   "seen_days": [
-   "2026-10-05"
+   "2026-10-05",
+   "2026-10-09"
   ],
-  "last_seen": "2026-10-05",
+  "last_seen": "2026-10-09",
   "keyword": "솔잎 효능",
-  "search_volume": 8470,
+  "search_volume": 8380,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 8223
+  "pharma_value": 2,
+  "blog_position_y": 3207
  },
  "루마큐라": {
   "first_seen": "2026-10-05",
@@ -2435,16 +2437,17 @@
  "우로비콘": {
   "first_seen": "2026-10-06",
   "seen_days": [
-   "2026-10-06"
+   "2026-10-06",
+   "2026-10-09"
   ],
-  "last_seen": "2026-10-06",
+  "last_seen": "2026-10-09",
   "keyword": "우로비콘",
-  "search_volume": 6480,
+  "search_volume": 7950,
   "source": "shopping",
-  "shopping_rank": 94,
+  "shopping_rank": 161,
   "shopping_move": "급상승",
-  "pharma_value": 2,
-  "blog_position_y": 5210
+  "pharma_value": 3,
+  "blog_position_y": 5198
  },
  "헬리코박터": {
   "first_seen": "2026-10-06",
@@ -2613,5 +2616,47 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 5798
+ },
+ "젤라토닌": {
+  "first_seen": "2026-10-09",
+  "seen_days": [
+   "2026-10-09"
+  ],
+  "last_seen": "2026-10-09",
+  "keyword": "젤라토닌",
+  "search_volume": 9960,
+  "source": "shopping",
+  "shopping_rank": 82,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 4541
+ },
+ "인지력 영양제": {
+  "first_seen": "2026-10-09",
+  "seen_days": [
+   "2026-10-09"
+  ],
+  "last_seen": "2026-10-09",
+  "keyword": "기억력 영양제",
+  "search_volume": 3520,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8134
+ },
+ "종합비타민": {
+  "first_seen": "2026-10-09",
+  "seen_days": [
+   "2026-10-09"
+  ],
+  "last_seen": "2026-10-09",
+  "keyword": "종합비타민",
+  "search_volume": 42400,
+  "source": "shopping",
+  "shopping_rank": 68,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7228
  }
 }

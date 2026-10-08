@@ -2037,16 +2037,17 @@
  "올리브오일": {
   "first_seen": "2026-10-02",
   "seen_days": [
-   "2026-10-02"
+   "2026-10-02",
+   "2026-10-08"
   ],
-  "last_seen": "2026-10-02",
-  "keyword": "올리브오일 효능",
-  "search_volume": 24340,
+  "last_seen": "2026-10-08",
+  "keyword": "올리브오일 캡슐",
+  "search_volume": 14730,
   "source": "shopping",
-  "shopping_rank": 414,
+  "shopping_rank": 111,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 9620
+  "pharma_value": 3,
+  "blog_position_y": 5953
  },
  "혈당 영양제": {
   "first_seen": "2026-10-02",
@@ -2178,16 +2179,17 @@
  "개구리즙": {
   "first_seen": "2026-10-04",
   "seen_days": [
-   "2026-10-04"
+   "2026-10-04",
+   "2026-10-08"
   ],
-  "last_seen": "2026-10-04",
+  "last_seen": "2026-10-08",
   "keyword": "개구리즙",
-  "search_volume": 2560,
+  "search_volume": 3690,
   "source": "shopping",
-  "shopping_rank": 233,
-  "shopping_move": "새 진입",
+  "shopping_rank": 120,
+  "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 6025
+  "blog_position_y": 5789
  },
  "LF300": {
   "first_seen": "2026-10-04",
@@ -2583,5 +2585,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7450
+ },
+ "효소 영양제": {
+  "first_seen": "2026-10-08",
+  "seen_days": [
+   "2026-10-08"
+  ],
+  "last_seen": "2026-10-08",
+  "keyword": "캡슐레이션 효소",
+  "search_volume": 99640,
+  "source": "shopping",
+  "shopping_rank": 14,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6424
+ },
+ "루버스오일": {
+  "first_seen": "2026-10-08",
+  "seen_days": [
+   "2026-10-08"
+  ],
+  "last_seen": "2026-10-08",
+  "keyword": "루버스 오일",
+  "search_volume": 7760,
+  "source": "shopping",
+  "shopping_rank": 324,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 5798
  }
 }

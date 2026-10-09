@@ -1014,16 +1014,17 @@
    "2026-09-22",
    "2026-09-24",
    "2026-09-27",
-   "2026-10-04"
+   "2026-10-04",
+   "2026-10-10"
   ],
-  "last_seen": "2026-10-04",
+  "last_seen": "2026-10-10",
   "keyword": "공진단",
-  "search_volume": 53260,
+  "search_volume": 48950,
   "source": "shopping",
-  "shopping_rank": 83,
+  "shopping_rank": 110,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7828
+  "blog_position_y": 7943
  },
  "양배추즙": {
   "first_seen": "2026-09-23",
@@ -1825,16 +1826,17 @@
   "first_seen": "2026-09-30",
   "seen_days": [
    "2026-09-30",
-   "2026-10-03"
+   "2026-10-03",
+   "2026-10-10"
   ],
-  "last_seen": "2026-10-03",
+  "last_seen": "2026-10-10",
   "keyword": "파랙틴",
-  "search_volume": 9700,
+  "search_volume": 9720,
   "source": "shopping",
-  "shopping_rank": 65,
-  "shopping_move": "최근 진입",
+  "shopping_rank": 57,
+  "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 7735
+  "blog_position_y": 7360
  },
  "한삼덩굴": {
   "first_seen": "2026-09-30",
@@ -1999,16 +2001,17 @@
   "first_seen": "2026-10-02",
   "seen_days": [
    "2026-10-02",
-   "2026-10-07"
+   "2026-10-07",
+   "2026-10-10"
   ],
-  "last_seen": "2026-10-07",
+  "last_seen": "2026-10-10",
   "keyword": "산양삼",
-  "search_volume": 15920,
+  "search_volume": 15430,
   "source": "shopping",
-  "shopping_rank": 10,
+  "shopping_rank": 17,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7813
+  "blog_position_y": 7839
  },
  "석류": {
   "first_seen": "2026-10-02",
@@ -2511,16 +2514,17 @@
  "사우어크라우트": {
   "first_seen": "2026-10-07",
   "seen_days": [
-   "2026-10-07"
+   "2026-10-07",
+   "2026-10-10"
   ],
-  "last_seen": "2026-10-07",
+  "last_seen": "2026-10-10",
   "keyword": "사우어크라우트",
-  "search_volume": 2880,
+  "search_volume": 2720,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 3851
+  "blog_position_y": 1383
  },
  "리포좀 비타민C": {
   "first_seen": "2026-10-07",
@@ -2661,5 +2665,47 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7228
+ },
+ "새싹인삼": {
+  "first_seen": "2026-10-10",
+  "seen_days": [
+   "2026-10-10"
+  ],
+  "last_seen": "2026-10-10",
+  "keyword": "새싹인삼",
+  "search_volume": 710,
+  "source": "shopping",
+  "shopping_rank": 275,
+  "shopping_move": "새 진입",
+  "pharma_value": 3,
+  "blog_position_y": 7057
+ },
+ "솔리논필": {
+  "first_seen": "2026-10-10",
+  "seen_days": [
+   "2026-10-10"
+  ],
+  "last_seen": "2026-10-10",
+  "keyword": "솔리논필",
+  "search_volume": 14720,
+  "source": "shopping",
+  "shopping_rank": 95,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 4699
+ },
+ "고양이 영양제": {
+  "first_seen": "2026-10-10",
+  "seen_days": [
+   "2026-10-10"
+  ],
+  "last_seen": "2026-10-10",
+  "keyword": "고양이 영양제",
+  "search_volume": 3080,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7537
  }
 }

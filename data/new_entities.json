@@ -317,16 +317,17 @@
   "seen_days": [
    "2026-09-18",
    "2026-09-24",
-   "2026-10-07"
+   "2026-10-07",
+   "2026-10-11"
   ],
-  "last_seen": "2026-10-07",
-  "keyword": "홍삼 효능",
-  "search_volume": 8910,
+  "last_seen": "2026-10-11",
+  "keyword": "홍삼 먹으면 안되는 사람",
+  "search_volume": 300,
   "source": "shopping",
-  "shopping_rank": 60,
+  "shopping_rank": 84,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 4393
+  "blog_position_y": 176
  },
  "피크노제놀": {
   "first_seen": "2026-09-18",
@@ -557,16 +558,17 @@
   "seen_days": [
    "2026-09-20",
    "2026-09-24",
-   "2026-10-07"
+   "2026-10-07",
+   "2026-10-11"
   ],
-  "last_seen": "2026-10-07",
-  "keyword": "녹용",
-  "search_volume": 17560,
+  "last_seen": "2026-10-11",
+  "keyword": "녹용 효능",
+  "search_volume": 7870,
   "source": "shopping",
-  "shopping_rank": 86,
+  "shopping_rank": 81,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6521
+  "blog_position_y": 7554
  },
  "흑염소": {
   "first_seen": "2026-09-20",
@@ -939,16 +941,17 @@
   "first_seen": "2026-09-22",
   "seen_days": [
    "2026-09-22",
-   "2026-10-01"
+   "2026-10-01",
+   "2026-10-11"
   ],
-  "last_seen": "2026-10-01",
-  "keyword": "비타민B 컴플렉스",
-  "search_volume": 7850,
+  "last_seen": "2026-10-11",
+  "keyword": "비타민b 효능",
+  "search_volume": 5170,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6883
+  "pharma_value": 4,
+  "blog_position_y": 6914
  },
  "테라큐민": {
   "first_seen": "2026-09-22",
@@ -1219,16 +1222,17 @@
  "리포좀비타민C": {
   "first_seen": "2026-09-25",
   "seen_days": [
-   "2026-09-25"
+   "2026-09-25",
+   "2026-10-11"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-10-11",
   "keyword": "리포좀 비타민c",
-  "search_volume": 33290,
+  "search_volume": 28710,
   "source": "shopping",
-  "shopping_rank": 66,
+  "shopping_rank": 54,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7585
+  "blog_position_y": 6834
  },
  "퀘르세틴": {
   "first_seen": "2026-09-25",
@@ -2049,16 +2053,17 @@
   "first_seen": "2026-10-02",
   "seen_days": [
    "2026-10-02",
-   "2026-10-08"
+   "2026-10-08",
+   "2026-10-11"
   ],
-  "last_seen": "2026-10-08",
+  "last_seen": "2026-10-11",
   "keyword": "올리브오일 캡슐",
-  "search_volume": 14730,
+  "search_volume": 13780,
   "source": "shopping",
-  "shopping_rank": 111,
+  "shopping_rank": 290,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 5953
+  "blog_position_y": 6097
  },
  "혈당 영양제": {
   "first_seen": "2026-10-02",
@@ -2726,5 +2731,19 @@
   "shopping_move": "최근 진입",
   "pharma_value": 4,
   "blog_position_y": 1475
+ },
+ "강아지 눈물자국": {
+  "first_seen": "2026-10-11",
+  "seen_days": [
+   "2026-10-11"
+  ],
+  "last_seen": "2026-10-11",
+  "keyword": "강아지 눈물자국",
+  "search_volume": 3310,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 9019
  }
 }

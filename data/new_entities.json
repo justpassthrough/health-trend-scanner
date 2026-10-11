@@ -804,16 +804,17 @@
  "차가버섯": {
   "first_seen": "2026-09-21",
   "seen_days": [
-   "2026-09-21"
+   "2026-09-21",
+   "2026-10-12"
   ],
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-10-12",
   "keyword": "차가버섯 효능",
-  "search_volume": 8040,
+  "search_volume": 8290,
   "source": "shopping",
-  "shopping_rank": 485,
+  "shopping_rank": 465,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 3348
+  "pharma_value": 4,
+  "blog_position_y": 2815
  },
  "진세노사이드": {
   "first_seen": "2026-09-21",
@@ -1194,16 +1195,17 @@
   "first_seen": "2026-09-24",
   "seen_days": [
    "2026-09-24",
-   "2026-09-28"
+   "2026-09-28",
+   "2026-10-12"
   ],
-  "last_seen": "2026-09-28",
+  "last_seen": "2026-10-12",
   "keyword": "dem 영양제",
-  "search_volume": 22850,
+  "search_volume": 23820,
   "source": "shopping",
-  "shopping_rank": 99,
+  "shopping_rank": 29,
   "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 6014
+  "blog_position_y": 6412
  },
  "올리브오일캡슐": {
   "first_seen": "2026-09-25",
@@ -2284,16 +2286,17 @@
  "캡슐레이션 효소": {
   "first_seen": "2026-10-05",
   "seen_days": [
-   "2026-10-05"
+   "2026-10-05",
+   "2026-10-12"
   ],
-  "last_seen": "2026-10-05",
-  "keyword": "캡슐레이션효소",
-  "search_volume": 96650,
+  "last_seen": "2026-10-12",
+  "keyword": "캡슐레이션 효소",
+  "search_volume": 114730,
   "source": "shopping",
-  "shopping_rank": 10,
+  "shopping_rank": 33,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7240
+  "blog_position_y": 7123
  },
  "야채수": {
   "first_seen": "2026-10-05",
@@ -2341,16 +2344,17 @@
   "first_seen": "2026-10-05",
   "seen_days": [
    "2026-10-05",
-   "2026-10-09"
+   "2026-10-09",
+   "2026-10-12"
   ],
-  "last_seen": "2026-10-09",
-  "keyword": "솔잎 효능",
-  "search_volume": 8380,
+  "last_seen": "2026-10-12",
+  "keyword": "솔잎농축액",
+  "search_volume": 5470,
   "source": "shopping",
-  "shopping_rank": null,
+  "shopping_rank": 74,
   "shopping_move": null,
-  "pharma_value": 2,
-  "blog_position_y": 3207
+  "pharma_value": 3,
+  "blog_position_y": 6439
  },
  "루마큐라": {
   "first_seen": "2026-10-05",
@@ -2788,5 +2792,33 @@
   "shopping_move": "최근 진입",
   "pharma_value": 2,
   "blog_position_y": 1360
+ },
+ "크랜베리": {
+  "first_seen": "2026-10-12",
+  "seen_days": [
+   "2026-10-12"
+  ],
+  "last_seen": "2026-10-12",
+  "keyword": "크랜베리 효능",
+  "search_volume": 3810,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 1353
+ },
+ "펠루비프로펜": {
+  "first_seen": "2026-10-12",
+  "seen_days": [
+   "2026-10-12"
+  ],
+  "last_seen": "2026-10-12",
+  "keyword": "펠루비정",
+  "search_volume": 14920,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 1934
  }
 }

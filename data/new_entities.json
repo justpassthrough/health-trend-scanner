@@ -1878,16 +1878,17 @@
   "first_seen": "2026-10-01",
   "seen_days": [
    "2026-10-01",
-   "2026-10-09"
+   "2026-10-09",
+   "2026-10-11"
   ],
-  "last_seen": "2026-10-09",
-  "keyword": "솔리논필",
-  "search_volume": 14850,
+  "last_seen": "2026-10-11",
+  "keyword": "크레노필",
+  "search_volume": 6370,
   "source": "shopping",
-  "shopping_rank": 105,
+  "shopping_rank": 108,
   "shopping_move": "급상승",
   "pharma_value": 2,
-  "blog_position_y": 4723
+  "blog_position_y": 5651
  },
  "고양이 헤어볼": {
   "first_seen": "2026-10-01",
@@ -2745,5 +2746,47 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 9019
+ },
+ "숙취해소제": {
+  "first_seen": "2026-10-11",
+  "seen_days": [
+   "2026-10-11"
+  ],
+  "last_seen": "2026-10-11",
+  "keyword": "숙취해소제",
+  "search_volume": 20430,
+  "source": "shopping",
+  "shopping_rank": 110,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 7316
+ },
+ "마카": {
+  "first_seen": "2026-10-11",
+  "seen_days": [
+   "2026-10-11"
+  ],
+  "last_seen": "2026-10-11",
+  "keyword": "블랙마카",
+  "search_volume": 9620,
+  "source": "shopping",
+  "shopping_rank": 115,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7342
+ },
+ "천년초": {
+  "first_seen": "2026-10-11",
+  "seen_days": [
+   "2026-10-11"
+  ],
+  "last_seen": "2026-10-11",
+  "keyword": "천년초",
+  "search_volume": 3380,
+  "source": "shopping",
+  "shopping_rank": 298,
+  "shopping_move": "최근 진입",
+  "pharma_value": 2,
+  "blog_position_y": 1360
  }
 }

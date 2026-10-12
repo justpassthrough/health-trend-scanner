@@ -301,16 +301,17 @@
   "seen_days": [
    "2026-09-18",
    "2026-09-20",
-   "2026-10-07"
+   "2026-10-07",
+   "2026-10-13"
   ],
-  "last_seen": "2026-10-07",
-  "keyword": "마누카꿀",
-  "search_volume": 51670,
+  "last_seen": "2026-10-13",
+  "keyword": "마누카꿀 효능",
+  "search_volume": 10740,
   "source": "shopping",
-  "shopping_rank": 72,
+  "shopping_rank": 115,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7116
+  "pharma_value": 4,
+  "blog_position_y": 7207
  },
  "홍삼": {
   "first_seen": "2026-09-18",
@@ -480,16 +481,17 @@
    "2026-09-27",
    "2026-10-03",
    "2026-10-06",
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-13"
   ],
-  "last_seen": "2026-10-10",
+  "last_seen": "2026-10-13",
   "keyword": "여주 효능",
-  "search_volume": 15740,
+  "search_volume": 15470,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6799
+  "blog_position_y": 6442
  },
  "새싹보리": {
   "first_seen": "2026-09-19",
@@ -717,16 +719,17 @@
    "2026-09-20",
    "2026-09-25",
    "2026-09-28",
-   "2026-10-07"
+   "2026-10-07",
+   "2026-10-13"
   ],
-  "last_seen": "2026-10-07",
-  "keyword": "구기자",
-  "search_volume": 17730,
+  "last_seen": "2026-10-13",
+  "keyword": "구기자 효능",
+  "search_volume": 5230,
   "source": "shopping",
-  "shopping_rank": 80,
+  "shopping_rank": 74,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7329
+  "blog_position_y": 1700
  },
  "토사자": {
   "first_seen": "2026-09-20",
@@ -1066,16 +1069,17 @@
   "first_seen": "2026-09-23",
   "seen_days": [
    "2026-09-23",
-   "2026-10-08"
+   "2026-10-08",
+   "2026-10-13"
   ],
-  "last_seen": "2026-10-08",
+  "last_seen": "2026-10-13",
   "keyword": "헤모힘",
-  "search_volume": 9970,
+  "search_volume": 9710,
   "source": "shopping",
-  "shopping_rank": 153,
+  "shopping_rank": 114,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6151
+  "blog_position_y": 6400
  },
  "어린이 영양제": {
   "first_seen": "2026-09-23",
@@ -1463,16 +1467,17 @@
   "first_seen": "2026-09-26",
   "seen_days": [
    "2026-09-26",
-   "2026-10-06"
+   "2026-10-06",
+   "2026-10-13"
   ],
-  "last_seen": "2026-10-06",
+  "last_seen": "2026-10-13",
   "keyword": "꾸지뽕 효능",
-  "search_volume": 13680,
+  "search_volume": 14340,
   "source": "shopping",
-  "shopping_rank": 72,
+  "shopping_rank": 81,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": null
+  "blog_position_y": 2780
  },
  "탱자": {
   "first_seen": "2026-09-27",
@@ -2850,5 +2855,47 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 8654
+ },
+ "폴리토린": {
+  "first_seen": "2026-10-13",
+  "seen_days": [
+   "2026-10-13"
+  ],
+  "last_seen": "2026-10-13",
+  "keyword": "폴리토린",
+  "search_volume": 11180,
+  "source": "shopping",
+  "shopping_rank": 478,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 1030
+ },
+ "구미 영양제": {
+  "first_seen": "2026-10-13",
+  "seen_days": [
+   "2026-10-13"
+  ],
+  "last_seen": "2026-10-13",
+  "keyword": "젤리 비타민",
+  "search_volume": 740,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 5429
+ },
+ "강아지 기관지협착": {
+  "first_seen": "2026-10-13",
+  "seen_days": [
+   "2026-10-13"
+  ],
+  "last_seen": "2026-10-13",
+  "keyword": "강아지 기관지 영양제",
+  "search_volume": 4040,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7182
  }
 }

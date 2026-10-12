@@ -576,16 +576,17 @@
    "2026-09-20",
    "2026-10-02",
    "2026-10-05",
-   "2026-10-08"
+   "2026-10-08",
+   "2026-10-12"
   ],
-  "last_seen": "2026-10-08",
+  "last_seen": "2026-10-12",
   "keyword": "흑염소진액",
-  "search_volume": 43870,
+  "search_volume": 41030,
   "source": "shopping",
-  "shopping_rank": 377,
+  "shopping_rank": 344,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7890
+  "blog_position_y": 7729
  },
  "경옥고": {
   "first_seen": "2026-09-20",
@@ -1242,16 +1243,17 @@
    "2026-09-25",
    "2026-10-02",
    "2026-10-06",
-   "2026-10-09"
+   "2026-10-09",
+   "2026-10-12"
   ],
-  "last_seen": "2026-10-09",
+  "last_seen": "2026-10-12",
   "keyword": "퀘르세틴",
-  "search_volume": 12830,
+  "search_volume": 12610,
   "source": "shopping",
-  "shopping_rank": 380,
+  "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6762
+  "pharma_value": 4,
+  "blog_position_y": 7203
  },
  "디스레놀": {
   "first_seen": "2026-09-25",
@@ -2820,5 +2822,33 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 1934
+ },
+ "장용캡슐": {
+  "first_seen": "2026-10-12",
+  "seen_days": [
+   "2026-10-12"
+  ],
+  "last_seen": "2026-10-12",
+  "keyword": "자로우 도피러스",
+  "search_volume": 450,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 5818
+ },
+ "고용량 비타민C": {
+  "first_seen": "2026-10-12",
+  "seen_days": [
+   "2026-10-12"
+  ],
+  "last_seen": "2026-10-12",
+  "keyword": "비타민C 메가도스",
+  "search_volume": 10840,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8654
  }
 }

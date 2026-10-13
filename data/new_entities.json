@@ -2235,16 +2235,17 @@
   "first_seen": "2026-10-04",
   "seen_days": [
    "2026-10-04",
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-13"
   ],
-  "last_seen": "2026-10-10",
+  "last_seen": "2026-10-13",
   "keyword": "낙산균",
-  "search_volume": 15900,
+  "search_volume": 16040,
   "source": "shopping",
-  "shopping_rank": 85,
+  "shopping_rank": 112,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 1511
+  "pharma_value": 4,
+  "blog_position_y": 1503
  },
  "비타민B군": {
   "first_seen": "2026-10-04",
@@ -2537,16 +2538,17 @@
   "first_seen": "2026-10-07",
   "seen_days": [
    "2026-10-07",
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-13"
   ],
-  "last_seen": "2026-10-10",
+  "last_seen": "2026-10-13",
   "keyword": "사우어크라우트",
-  "search_volume": 2720,
+  "search_volume": 2560,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 1383
+  "pharma_value": 2,
+  "blog_position_y": 1395
  },
  "리포좀 비타민C": {
   "first_seen": "2026-10-07",
@@ -2733,16 +2735,17 @@
  "레시틴": {
   "first_seen": "2026-10-10",
   "seen_days": [
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-13"
   ],
-  "last_seen": "2026-10-10",
+  "last_seen": "2026-10-13",
   "keyword": "레시틴",
-  "search_volume": 4570,
+  "search_volume": 4840,
   "source": "shopping",
-  "shopping_rank": 296,
-  "shopping_move": "최근 진입",
-  "pharma_value": 4,
-  "blog_position_y": 1475
+  "shopping_rank": 187,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": 1427
  },
  "강아지 눈물자국": {
   "first_seen": "2026-10-11",
@@ -2897,5 +2900,61 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7182
+ },
+ "비타민B12": {
+  "first_seen": "2026-10-13",
+  "seen_days": [
+   "2026-10-13"
+  ],
+  "last_seen": "2026-10-13",
+  "keyword": "비타민B12",
+  "search_volume": 13220,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 9684
+ },
+ "아스코르브산 분말": {
+  "first_seen": "2026-10-13",
+  "seen_days": [
+   "2026-10-13"
+  ],
+  "last_seen": "2026-10-13",
+  "keyword": "비타민c 가루",
+  "search_volume": 3760,
+  "source": "shopping",
+  "shopping_rank": 285,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6433
+ },
+ "숨채움": {
+  "first_seen": "2026-10-13",
+  "seen_days": [
+   "2026-10-13"
+  ],
+  "last_seen": "2026-10-13",
+  "keyword": "숨채움",
+  "search_volume": 6590,
+  "source": "shopping",
+  "shopping_rank": 195,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 6421
+ },
+ "여정자": {
+  "first_seen": "2026-10-13",
+  "seen_days": [
+   "2026-10-13"
+  ],
+  "last_seen": "2026-10-13",
+  "keyword": "광나무 열매",
+  "search_volume": 300,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 1888
  }
 }

@@ -319,16 +319,17 @@
    "2026-09-18",
    "2026-09-24",
    "2026-10-07",
-   "2026-10-11"
+   "2026-10-11",
+   "2026-10-15"
   ],
-  "last_seen": "2026-10-11",
-  "keyword": "홍삼 먹으면 안되는 사람",
-  "search_volume": 300,
+  "last_seen": "2026-10-15",
+  "keyword": "홍삼 효능",
+  "search_volume": 9390,
   "source": "shopping",
-  "shopping_rank": 84,
+  "shopping_rank": 73,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 176
+  "pharma_value": 5,
+  "blog_position_y": 7370
  },
  "피크노제놀": {
   "first_seen": "2026-09-18",
@@ -418,16 +419,17 @@
   "first_seen": "2026-09-19",
   "seen_days": [
    "2026-09-19",
-   "2026-10-04"
+   "2026-10-04",
+   "2026-10-15"
   ],
-  "last_seen": "2026-10-04",
+  "last_seen": "2026-10-15",
   "keyword": "도라지청",
-  "search_volume": 27170,
+  "search_volume": 26960,
   "source": "shopping",
-  "shopping_rank": 90,
+  "shopping_rank": 65,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 9251
+  "pharma_value": 4,
+  "blog_position_y": 9186
  },
  "쿼르세틴": {
   "first_seen": "2026-09-19",
@@ -580,16 +582,17 @@
    "2026-10-02",
    "2026-10-05",
    "2026-10-08",
-   "2026-10-12"
+   "2026-10-12",
+   "2026-10-15"
   ],
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-10-15",
   "keyword": "흑염소진액",
-  "search_volume": 41030,
+  "search_volume": 38990,
   "source": "shopping",
-  "shopping_rank": 344,
+  "shopping_rank": 289,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7729
+  "blog_position_y": 7762
  },
  "경옥고": {
   "first_seen": "2026-09-20",
@@ -2213,16 +2216,17 @@
   "first_seen": "2026-10-04",
   "seen_days": [
    "2026-10-04",
-   "2026-10-08"
+   "2026-10-08",
+   "2026-10-15"
   ],
-  "last_seen": "2026-10-08",
+  "last_seen": "2026-10-15",
   "keyword": "개구리즙",
-  "search_volume": 3690,
+  "search_volume": 5730,
   "source": "shopping",
-  "shopping_rank": 120,
+  "shopping_rank": 105,
   "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 5789
+  "blog_position_y": 5829
  },
  "LF300": {
   "first_seen": "2026-10-04",
@@ -3007,5 +3011,33 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 1247
+ },
+ "어린이 비타민": {
+  "first_seen": "2026-10-15",
+  "seen_days": [
+   "2026-10-15"
+  ],
+  "last_seen": "2026-10-15",
+  "keyword": "어린이 비타민",
+  "search_volume": 3490,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7649
+ },
+ "덴티오클린": {
+  "first_seen": "2026-10-15",
+  "seen_days": [
+   "2026-10-15"
+  ],
+  "last_seen": "2026-10-15",
+  "keyword": "잇몸 영양제",
+  "search_volume": 12480,
+  "source": "shopping",
+  "shopping_rank": 157,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 7561
  }
 }

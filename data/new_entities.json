@@ -613,16 +613,17 @@
  "장뇌삼": {
   "first_seen": "2026-09-20",
   "seen_days": [
-   "2026-09-20"
+   "2026-09-20",
+   "2026-10-14"
   ],
-  "last_seen": "2026-09-20",
+  "last_seen": "2026-10-14",
   "keyword": "장뇌삼",
-  "search_volume": 8080,
+  "search_volume": 9270,
   "source": "shopping",
-  "shopping_rank": 110,
+  "shopping_rank": 64,
   "shopping_move": "급상승",
   "pharma_value": 3,
-  "blog_position_y": 7117
+  "blog_position_y": 7710
  },
  "양배추": {
   "first_seen": "2026-09-20",
@@ -703,16 +704,17 @@
   "first_seen": "2026-09-20",
   "seen_days": [
    "2026-09-20",
-   "2026-09-23"
+   "2026-09-23",
+   "2026-10-14"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-10-14",
   "keyword": "빌베리",
-  "search_volume": 26930,
+  "search_volume": 23420,
   "source": "shopping",
-  "shopping_rank": 70,
+  "shopping_rank": 109,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 1681
+  "pharma_value": 3,
+  "blog_position_y": 1565
  },
  "구기자": {
   "first_seen": "2026-09-20",
@@ -2991,5 +2993,19 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 1197
+ },
+ "오가피": {
+  "first_seen": "2026-10-14",
+  "seen_days": [
+   "2026-10-14"
+  ],
+  "last_seen": "2026-10-14",
+  "keyword": "오가피 효능",
+  "search_volume": 3470,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 1247
  }
 }

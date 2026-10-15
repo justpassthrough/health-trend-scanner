@@ -937,16 +937,17 @@
    "2026-09-26",
    "2026-09-30",
    "2026-10-06",
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-15"
   ],
-  "last_seen": "2026-10-10",
+  "last_seen": "2026-10-15",
   "keyword": "아세로라",
-  "search_volume": 6410,
+  "search_volume": 5990,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7043
+  "blog_position_y": 7044
  },
  "비타민B": {
   "first_seen": "2026-09-22",
@@ -1765,16 +1766,17 @@
   "first_seen": "2026-09-29",
   "seen_days": [
    "2026-09-29",
-   "2026-10-05"
+   "2026-10-05",
+   "2026-10-15"
   ],
-  "last_seen": "2026-10-05",
+  "last_seen": "2026-10-15",
   "keyword": "비타민K2",
-  "search_volume": 6280,
+  "search_volume": 6440,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 8120
+  "blog_position_y": 8150
  },
  "리노이드 EA 포뮬라": {
   "first_seen": "2026-09-29",
@@ -2116,16 +2118,17 @@
  "비타민B3": {
   "first_seen": "2026-10-03",
   "seen_days": [
-   "2026-10-03"
+   "2026-10-03",
+   "2026-10-15"
   ],
-  "last_seen": "2026-10-03",
+  "last_seen": "2026-10-15",
   "keyword": "나이아신",
-  "search_volume": 6700,
+  "search_volume": 6930,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 1484
+  "pharma_value": 4,
+  "blog_position_y": 1562
  },
  "오쏘몰 이뮨": {
   "first_seen": "2026-10-03",
@@ -2959,16 +2962,17 @@
  "여정자": {
   "first_seen": "2026-10-13",
   "seen_days": [
-   "2026-10-13"
+   "2026-10-13",
+   "2026-10-15"
   ],
-  "last_seen": "2026-10-13",
+  "last_seen": "2026-10-15",
   "keyword": "광나무 열매",
-  "search_volume": 300,
+  "search_volume": 310,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 1888
+  "blog_position_y": 2140
  },
  "뉴케어": {
   "first_seen": "2026-10-14",
@@ -3039,5 +3043,61 @@
   "shopping_move": "급상승",
   "pharma_value": 2,
   "blog_position_y": 7561
+ },
+ "L-테아닌": {
+  "first_seen": "2026-10-15",
+  "seen_days": [
+   "2026-10-15"
+  ],
+  "last_seen": "2026-10-15",
+  "keyword": "테아닌",
+  "search_volume": 18640,
+  "source": "shopping",
+  "shopping_rank": 99,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7428
+ },
+ "몰리브덴": {
+  "first_seen": "2026-10-15",
+  "seen_days": [
+   "2026-10-15"
+  ],
+  "last_seen": "2026-10-15",
+  "keyword": "몰리브덴",
+  "search_volume": 1610,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6833
+ },
+ "함초": {
+  "first_seen": "2026-10-15",
+  "seen_days": [
+   "2026-10-15"
+  ],
+  "last_seen": "2026-10-15",
+  "keyword": "함초",
+  "search_volume": 4470,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 5719
+ },
+ "아보다필": {
+  "first_seen": "2026-10-15",
+  "seen_days": [
+   "2026-10-15"
+  ],
+  "last_seen": "2026-10-15",
+  "keyword": "아보다필",
+  "search_volume": 14980,
+  "source": "shopping",
+  "shopping_rank": 259,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 6440
  }
 }

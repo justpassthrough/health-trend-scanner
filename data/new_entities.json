@@ -1257,16 +1257,17 @@
    "2026-10-02",
    "2026-10-06",
    "2026-10-09",
-   "2026-10-12"
+   "2026-10-12",
+   "2026-10-16"
   ],
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-10-16",
   "keyword": "퀘르세틴",
-  "search_volume": 12610,
+  "search_volume": 12670,
   "source": "shopping",
-  "shopping_rank": null,
+  "shopping_rank": 273,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7203
+  "pharma_value": 5,
+  "blog_position_y": 7755
  },
  "디스레놀": {
   "first_seen": "2026-09-25",
@@ -3099,5 +3100,47 @@
   "shopping_move": "급상승",
   "pharma_value": 2,
   "blog_position_y": 6440
+ },
+ "홍화씨": {
+  "first_seen": "2026-10-16",
+  "seen_days": [
+   "2026-10-16"
+  ],
+  "last_seen": "2026-10-16",
+  "keyword": "홍화씨 효능",
+  "search_volume": 5900,
+  "source": "shopping",
+  "shopping_rank": 222,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 4284
+ },
+ "블랙커민": {
+  "first_seen": "2026-10-16",
+  "seen_days": [
+   "2026-10-16"
+  ],
+  "last_seen": "2026-10-16",
+  "keyword": "블랙커민",
+  "search_volume": 24790,
+  "source": "shopping",
+  "shopping_rank": 82,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 8091
+ },
+ "가네톡톡": {
+  "first_seen": "2026-10-16",
+  "seen_days": [
+   "2026-10-16"
+  ],
+  "last_seen": "2026-10-16",
+  "keyword": "가네톡톡",
+  "search_volume": 2080,
+  "source": "shopping",
+  "shopping_rank": 30,
+  "shopping_move": "새 진입",
+  "pharma_value": 2,
+  "blog_position_y": 1623
  }
 }

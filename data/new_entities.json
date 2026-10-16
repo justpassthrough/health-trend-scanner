@@ -302,16 +302,17 @@
    "2026-09-18",
    "2026-09-20",
    "2026-10-07",
-   "2026-10-13"
+   "2026-10-13",
+   "2026-10-16"
   ],
-  "last_seen": "2026-10-13",
-  "keyword": "마누카꿀 효능",
-  "search_volume": 10740,
+  "last_seen": "2026-10-16",
+  "keyword": "마누카꿀",
+  "search_volume": 42950,
   "source": "shopping",
-  "shopping_rank": 115,
+  "shopping_rank": 59,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7207
+  "blog_position_y": 8930
  },
  "홍삼": {
   "first_seen": "2026-09-18",
@@ -1930,16 +1931,17 @@
  "파로효소": {
   "first_seen": "2026-10-01",
   "seen_days": [
-   "2026-10-01"
+   "2026-10-01",
+   "2026-10-16"
   ],
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-16",
   "keyword": "파로효소",
-  "search_volume": 11770,
+  "search_volume": 11620,
   "source": "shopping",
-  "shopping_rank": 118,
+  "shopping_rank": 156,
   "shopping_move": "급상승",
-  "pharma_value": 3,
-  "blog_position_y": 7297
+  "pharma_value": 4,
+  "blog_position_y": 6807
  },
  "소화효소": {
   "first_seen": "2026-10-01",
@@ -2496,16 +2498,17 @@
  "헬리코박터": {
   "first_seen": "2026-10-06",
   "seen_days": [
-   "2026-10-06"
+   "2026-10-06",
+   "2026-10-16"
   ],
-  "last_seen": "2026-10-06",
-  "keyword": "헬리코박터 증상",
-  "search_volume": 330,
+  "last_seen": "2026-10-16",
+  "keyword": "헬리코박터 제균",
+  "search_volume": 550,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6495
+  "blog_position_y": 5970
  },
  "아이클리어 올인원": {
   "first_seen": "2026-10-06",
@@ -2568,16 +2571,17 @@
  "리포좀 비타민C": {
   "first_seen": "2026-10-07",
   "seen_days": [
-   "2026-10-07"
+   "2026-10-07",
+   "2026-10-16"
   ],
-  "last_seen": "2026-10-07",
+  "last_seen": "2026-10-16",
   "keyword": "리포좀 비타민C",
-  "search_volume": 31020,
+  "search_volume": 32320,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7079
+  "blog_position_y": 7457
  },
  "포뉴": {
   "first_seen": "2026-10-07",
@@ -2795,16 +2799,17 @@
  "마카": {
   "first_seen": "2026-10-11",
   "seen_days": [
-   "2026-10-11"
+   "2026-10-11",
+   "2026-10-16"
   ],
-  "last_seen": "2026-10-11",
+  "last_seen": "2026-10-16",
   "keyword": "블랙마카",
-  "search_volume": 9620,
+  "search_volume": 9800,
   "source": "shopping",
-  "shopping_rank": 115,
+  "shopping_rank": 118,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7342
+  "blog_position_y": 7642
  },
  "천년초": {
   "first_seen": "2026-10-11",
@@ -3142,5 +3147,33 @@
   "shopping_move": "새 진입",
   "pharma_value": 2,
   "blog_position_y": 1623
+ },
+ "비트": {
+  "first_seen": "2026-10-16",
+  "seen_days": [
+   "2026-10-16"
+  ],
+  "last_seen": "2026-10-16",
+  "keyword": "비트즙",
+  "search_volume": 5090,
+  "source": "shopping",
+  "shopping_rank": 119,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6827
+ },
+ "반려동물 관절 영양제": {
+  "first_seen": "2026-10-16",
+  "seen_days": [
+   "2026-10-16"
+  ],
+  "last_seen": "2026-10-16",
+  "keyword": "고양이 관절 영양제",
+  "search_volume": 1100,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7779
  }
 }

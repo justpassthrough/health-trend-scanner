@@ -903,16 +903,17 @@
   "seen_days": [
    "2026-09-21",
    "2026-09-24",
-   "2026-09-27"
+   "2026-09-27",
+   "2026-10-18"
   ],
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-10-18",
   "keyword": "인삼다당체",
-  "search_volume": 38310,
+  "search_volume": 16820,
   "source": "shopping",
-  "shopping_rank": 29,
+  "shopping_rank": 87,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 4776
+  "pharma_value": 4,
+  "blog_position_y": 6257
  },
  "산후 영양제": {
   "first_seen": "2026-09-21",
@@ -939,16 +940,17 @@
    "2026-09-30",
    "2026-10-06",
    "2026-10-10",
-   "2026-10-15"
+   "2026-10-15",
+   "2026-10-18"
   ],
-  "last_seen": "2026-10-15",
+  "last_seen": "2026-10-18",
   "keyword": "아세로라",
-  "search_volume": 5990,
+  "search_volume": 5860,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7044
+  "blog_position_y": 6406
  },
  "비타민B": {
   "first_seen": "2026-09-22",
@@ -2317,16 +2319,17 @@
   "first_seen": "2026-10-05",
   "seen_days": [
    "2026-10-05",
-   "2026-10-12"
+   "2026-10-12",
+   "2026-10-18"
   ],
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-10-18",
   "keyword": "캡슐레이션 효소",
-  "search_volume": 114730,
+  "search_volume": 125100,
   "source": "shopping",
-  "shopping_rank": 33,
+  "shopping_rank": 36,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7123
+  "blog_position_y": 7958
  },
  "야채수": {
   "first_seen": "2026-10-05",
@@ -3074,16 +3077,17 @@
  "몰리브덴": {
   "first_seen": "2026-10-15",
   "seen_days": [
-   "2026-10-15"
+   "2026-10-15",
+   "2026-10-18"
   ],
-  "last_seen": "2026-10-15",
+  "last_seen": "2026-10-18",
   "keyword": "몰리브덴",
-  "search_volume": 1610,
+  "search_volume": 1630,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6833
+  "pharma_value": 4,
+  "blog_position_y": 6617
  },
  "함초": {
   "first_seen": "2026-10-15",
@@ -3238,5 +3242,89 @@
   "shopping_move": "급상승",
   "pharma_value": 5,
   "blog_position_y": 6890
+ },
+ "나이아신": {
+  "first_seen": "2026-10-18",
+  "seen_days": [
+   "2026-10-18"
+  ],
+  "last_seen": "2026-10-18",
+  "keyword": "나이아신",
+  "search_volume": 6900,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 1700
+ },
+ "록피드": {
+  "first_seen": "2026-10-18",
+  "seen_days": [
+   "2026-10-18"
+  ],
+  "last_seen": "2026-10-18",
+  "keyword": "록피드",
+  "search_volume": 990,
+  "source": "shopping",
+  "shopping_rank": 131,
+  "shopping_move": "새 진입",
+  "pharma_value": 1,
+  "blog_position_y": 5667
+ },
+ "원더씬": {
+  "first_seen": "2026-10-18",
+  "seen_days": [
+   "2026-10-18"
+  ],
+  "last_seen": "2026-10-18",
+  "keyword": "원더씬",
+  "search_volume": 700,
+  "source": "shopping",
+  "shopping_rank": 289,
+  "shopping_move": "새 진입",
+  "pharma_value": 1,
+  "blog_position_y": 4419
+ },
+ "돌외잎": {
+  "first_seen": "2026-10-18",
+  "seen_days": [
+   "2026-10-18"
+  ],
+  "last_seen": "2026-10-18",
+  "keyword": "돌외잎 효능",
+  "search_volume": 1710,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 1596
+ },
+ "메코발라민": {
+  "first_seen": "2026-10-18",
+  "seen_days": [
+   "2026-10-18"
+  ],
+  "last_seen": "2026-10-18",
+  "keyword": "비타민B12 영양제",
+  "search_volume": 2600,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 9096
+ },
+ "탐폰": {
+  "first_seen": "2026-10-18",
+  "seen_days": [
+   "2026-10-18"
+  ],
+  "last_seen": "2026-10-18",
+  "keyword": "탐폰 교체시간",
+  "search_volume": 350,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 1181
  }
 }

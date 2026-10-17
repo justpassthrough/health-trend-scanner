@@ -1480,16 +1480,17 @@
   "seen_days": [
    "2026-09-26",
    "2026-10-06",
-   "2026-10-13"
+   "2026-10-13",
+   "2026-10-17"
   ],
-  "last_seen": "2026-10-13",
-  "keyword": "꾸지뽕 효능",
-  "search_volume": 14340,
+  "last_seen": "2026-10-17",
+  "keyword": "꾸지뽕",
+  "search_volume": 24880,
   "source": "shopping",
-  "shopping_rank": 81,
+  "shopping_rank": 63,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 2780
+  "blog_position_y": 6328
  },
  "탱자": {
   "first_seen": "2026-09-27",
@@ -2256,16 +2257,17 @@
   "seen_days": [
    "2026-10-04",
    "2026-10-10",
-   "2026-10-13"
+   "2026-10-13",
+   "2026-10-17"
   ],
-  "last_seen": "2026-10-13",
+  "last_seen": "2026-10-17",
   "keyword": "낙산균",
-  "search_volume": 16040,
+  "search_volume": 16200,
   "source": "shopping",
-  "shopping_rank": 112,
+  "shopping_rank": 92,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 1503
+  "pharma_value": 5,
+  "blog_position_y": 1511
  },
  "비타민B군": {
   "first_seen": "2026-10-04",
@@ -2560,16 +2562,17 @@
   "seen_days": [
    "2026-10-07",
    "2026-10-10",
-   "2026-10-13"
+   "2026-10-13",
+   "2026-10-17"
   ],
-  "last_seen": "2026-10-13",
+  "last_seen": "2026-10-17",
   "keyword": "사우어크라우트",
-  "search_volume": 2560,
+  "search_volume": 2440,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 2,
-  "blog_position_y": 1395
+  "pharma_value": 3,
+  "blog_position_y": 1407
  },
  "리포좀 비타민C": {
   "first_seen": "2026-10-07",
@@ -3193,5 +3196,47 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 7049
+ },
+ "황칠나무": {
+  "first_seen": "2026-10-17",
+  "seen_days": [
+   "2026-10-17"
+  ],
+  "last_seen": "2026-10-17",
+  "keyword": "황칠나무 효능",
+  "search_volume": 9950,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 9697
+ },
+ "환삼덩굴": {
+  "first_seen": "2026-10-17",
+  "seen_days": [
+   "2026-10-17"
+  ],
+  "last_seen": "2026-10-17",
+  "keyword": "환삼덩굴",
+  "search_volume": 12130,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6998
+ },
+ "피세틴": {
+  "first_seen": "2026-10-17",
+  "seen_days": [
+   "2026-10-17"
+  ],
+  "last_seen": "2026-10-17",
+  "keyword": "피세틴",
+  "search_volume": 2860,
+  "source": "shopping",
+  "shopping_rank": 261,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": 6890
  }
 }

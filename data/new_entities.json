@@ -1773,16 +1773,17 @@
   "seen_days": [
    "2026-09-29",
    "2026-10-05",
-   "2026-10-15"
+   "2026-10-15",
+   "2026-10-18"
   ],
-  "last_seen": "2026-10-15",
+  "last_seen": "2026-10-18",
   "keyword": "비타민K2",
-  "search_volume": 6440,
+  "search_volume": 6300,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 8150
+  "blog_position_y": 7840
  },
  "리노이드 EA 포뮬라": {
   "first_seen": "2026-09-29",
@@ -2507,16 +2508,17 @@
   "first_seen": "2026-10-06",
   "seen_days": [
    "2026-10-06",
-   "2026-10-16"
+   "2026-10-16",
+   "2026-10-18"
   ],
-  "last_seen": "2026-10-16",
+  "last_seen": "2026-10-18",
   "keyword": "헬리코박터 제균",
-  "search_volume": 550,
+  "search_volume": 530,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 5970
+  "pharma_value": 5,
+  "blog_position_y": 5656
  },
  "아이클리어 올인원": {
   "first_seen": "2026-10-06",
@@ -3326,5 +3328,47 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 1181
+ },
+ "아커만시아": {
+  "first_seen": "2026-10-18",
+  "seen_days": [
+   "2026-10-18"
+  ],
+  "last_seen": "2026-10-18",
+  "keyword": "아커만시아",
+  "search_volume": 3710,
+  "source": "shopping",
+  "shopping_rank": 140,
+  "shopping_move": "새 진입",
+  "pharma_value": 5,
+  "blog_position_y": 2346
+ },
+ "쇠비름": {
+  "first_seen": "2026-10-18",
+  "seen_days": [
+   "2026-10-18"
+  ],
+  "last_seen": "2026-10-18",
+  "keyword": "쇠비름 효능",
+  "search_volume": 7620,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 5435
+ },
+ "달맞이꽃종자유": {
+  "first_seen": "2026-10-18",
+  "seen_days": [
+   "2026-10-18"
+  ],
+  "last_seen": "2026-10-18",
+  "keyword": "달맞이꽃종자유",
+  "search_volume": 9350,
+  "source": "shopping",
+  "shopping_rank": 132,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 8327
  }
 }

@@ -303,16 +303,17 @@
    "2026-09-20",
    "2026-10-07",
    "2026-10-13",
-   "2026-10-16"
+   "2026-10-16",
+   "2026-10-19"
   ],
-  "last_seen": "2026-10-16",
-  "keyword": "마누카꿀",
-  "search_volume": 42950,
+  "last_seen": "2026-10-19",
+  "keyword": "마누카꿀 효능",
+  "search_volume": 9840,
   "source": "shopping",
-  "shopping_rank": 59,
+  "shopping_rank": 76,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8930
+  "pharma_value": 3,
+  "blog_position_y": 6870
  },
  "홍삼": {
   "first_seen": "2026-09-18",
@@ -1275,16 +1276,17 @@
  "디스레놀": {
   "first_seen": "2026-09-25",
   "seen_days": [
-   "2026-09-25"
+   "2026-09-25",
+   "2026-10-19"
   ],
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-10-19",
   "keyword": "디스레놀",
-  "search_volume": 1030,
+  "search_volume": 1880,
   "source": "shopping",
-  "shopping_rank": 244,
-  "shopping_move": "최근 진입",
+  "shopping_rank": 294,
+  "shopping_move": "새 진입",
   "pharma_value": 2,
-  "blog_position_y": 2885
+  "blog_position_y": 781
  },
  "MAC": {
   "first_seen": "2026-09-25",
@@ -2811,16 +2813,17 @@
   "first_seen": "2026-10-11",
   "seen_days": [
    "2026-10-11",
-   "2026-10-16"
+   "2026-10-16",
+   "2026-10-19"
   ],
-  "last_seen": "2026-10-16",
+  "last_seen": "2026-10-19",
   "keyword": "블랙마카",
-  "search_volume": 9800,
+  "search_volume": 9840,
   "source": "shopping",
-  "shopping_rank": 118,
+  "shopping_rank": 106,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7642
+  "blog_position_y": 8727
  },
  "천년초": {
   "first_seen": "2026-10-11",
@@ -2981,16 +2984,17 @@
   "first_seen": "2026-10-13",
   "seen_days": [
    "2026-10-13",
-   "2026-10-15"
+   "2026-10-15",
+   "2026-10-19"
   ],
-  "last_seen": "2026-10-15",
+  "last_seen": "2026-10-19",
   "keyword": "광나무 열매",
   "search_volume": 310,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 2140
+  "pharma_value": 2,
+  "blog_position_y": 2834
  },
  "뉴케어": {
   "first_seen": "2026-10-14",
@@ -3370,5 +3374,19 @@
   "shopping_move": "급상승",
   "pharma_value": 4,
   "blog_position_y": 8327
+ },
+ "초석잠": {
+  "first_seen": "2026-10-19",
+  "seen_days": [
+   "2026-10-19"
+  ],
+  "last_seen": "2026-10-19",
+  "keyword": "초석잠",
+  "search_volume": 12610,
+  "source": "shopping",
+  "shopping_rank": 278,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 5758
  }
 }

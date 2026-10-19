@@ -710,16 +710,17 @@
   "seen_days": [
    "2026-09-20",
    "2026-09-23",
-   "2026-10-14"
+   "2026-10-14",
+   "2026-10-19"
   ],
-  "last_seen": "2026-10-14",
+  "last_seen": "2026-10-19",
   "keyword": "빌베리",
-  "search_volume": 23420,
+  "search_volume": 23580,
   "source": "shopping",
-  "shopping_rank": 109,
+  "shopping_rank": 125,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 1565
+  "pharma_value": 4,
+  "blog_position_y": 6835
  },
  "구기자": {
   "first_seen": "2026-09-20",
@@ -1468,16 +1469,17 @@
  "마가목": {
   "first_seen": "2026-09-26",
   "seen_days": [
-   "2026-09-26"
+   "2026-09-26",
+   "2026-10-19"
   ],
-  "last_seen": "2026-09-26",
+  "last_seen": "2026-10-19",
   "keyword": "마가목 효능",
-  "search_volume": 27320,
+  "search_volume": 32950,
   "source": "shopping",
-  "shopping_rank": 224,
+  "shopping_rank": 154,
   "shopping_move": "급상승",
-  "pharma_value": 2,
-  "blog_position_y": 9113
+  "pharma_value": 3,
+  "blog_position_y": 3503
  },
  "꾸지뽕": {
   "first_seen": "2026-09-26",
@@ -1969,16 +1971,17 @@
   "first_seen": "2026-10-01",
   "seen_days": [
    "2026-10-01",
-   "2026-10-03"
+   "2026-10-03",
+   "2026-10-19"
   ],
-  "last_seen": "2026-10-03",
+  "last_seen": "2026-10-19",
   "keyword": "난각막",
-  "search_volume": 3920,
+  "search_volume": 4300,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6599
+  "pharma_value": 4,
+  "blog_position_y": 7115
  },
  "헛개나무": {
   "first_seen": "2026-10-01",
@@ -3168,16 +3171,17 @@
  "비트": {
   "first_seen": "2026-10-16",
   "seen_days": [
-   "2026-10-16"
+   "2026-10-16",
+   "2026-10-19"
   ],
-  "last_seen": "2026-10-16",
+  "last_seen": "2026-10-19",
   "keyword": "비트즙",
-  "search_volume": 5090,
+  "search_volume": 5120,
   "source": "shopping",
-  "shopping_rank": 119,
+  "shopping_rank": 116,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6827
+  "blog_position_y": 6773
  },
  "반려동물 관절 영양제": {
   "first_seen": "2026-10-16",
@@ -3388,5 +3392,19 @@
   "shopping_move": "급상승",
   "pharma_value": 3,
   "blog_position_y": 5758
+ },
+ "코로솔산": {
+  "first_seen": "2026-10-19",
+  "seen_days": [
+   "2026-10-19"
+  ],
+  "last_seen": "2026-10-19",
+  "keyword": "코로솔산",
+  "search_volume": 1310,
+  "source": "shopping",
+  "shopping_rank": 249,
+  "shopping_move": "새 진입",
+  "pharma_value": 4,
+  "blog_position_y": 6849
  }
 }

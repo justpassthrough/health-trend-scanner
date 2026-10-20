@@ -1455,16 +1455,17 @@
   "seen_days": [
    "2026-09-26",
    "2026-10-07",
-   "2026-10-14"
+   "2026-10-14",
+   "2026-10-20"
   ],
-  "last_seen": "2026-10-14",
+  "last_seen": "2026-10-20",
   "keyword": "푸룬주스",
-  "search_volume": 28890,
-  "source": "news",
-  "shopping_rank": 175,
+  "search_volume": 27050,
+  "source": "shopping",
+  "shopping_rank": 112,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7501
+  "pharma_value": 2,
+  "blog_position_y": 8100
  },
  "마가목": {
   "first_seen": "2026-09-26",
@@ -2515,16 +2516,17 @@
   "seen_days": [
    "2026-10-06",
    "2026-10-16",
-   "2026-10-18"
+   "2026-10-18",
+   "2026-10-20"
   ],
-  "last_seen": "2026-10-18",
+  "last_seen": "2026-10-20",
   "keyword": "헬리코박터 제균",
   "search_volume": 530,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 5656
+  "blog_position_y": 5990
  },
  "아이클리어 올인원": {
   "first_seen": "2026-10-06",
@@ -3144,16 +3146,17 @@
  "블랙커민": {
   "first_seen": "2026-10-16",
   "seen_days": [
-   "2026-10-16"
+   "2026-10-16",
+   "2026-10-20"
   ],
-  "last_seen": "2026-10-16",
+  "last_seen": "2026-10-20",
   "keyword": "블랙커민",
-  "search_volume": 24790,
+  "search_volume": 24450,
   "source": "shopping",
-  "shopping_rank": 82,
-  "shopping_move": "급상승",
-  "pharma_value": 4,
-  "blog_position_y": 8091
+  "shopping_rank": 85,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 8521
  },
  "가네톡톡": {
   "first_seen": "2026-10-16",
@@ -3450,5 +3453,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": null
+ },
+ "칼슘": {
+  "first_seen": "2026-10-20",
+  "seen_days": [
+   "2026-10-20"
+  ],
+  "last_seen": "2026-10-20",
+  "keyword": "칼슘 영양제",
+  "search_volume": 11670,
+  "source": "shopping",
+  "shopping_rank": 72,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 9208
+ },
+ "레스메티롬": {
+  "first_seen": "2026-10-20",
+  "seen_days": [
+   "2026-10-20"
+  ],
+  "last_seen": "2026-10-20",
+  "keyword": "지방간 약",
+  "search_volume": 730,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 9392
  }
 }

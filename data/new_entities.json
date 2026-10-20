@@ -943,16 +943,17 @@
    "2026-10-06",
    "2026-10-10",
    "2026-10-15",
-   "2026-10-18"
+   "2026-10-18",
+   "2026-10-21"
   ],
-  "last_seen": "2026-10-18",
+  "last_seen": "2026-10-21",
   "keyword": "아세로라",
-  "search_volume": 5860,
+  "search_volume": 5600,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6406
+  "pharma_value": 4,
+  "blog_position_y": 5987
  },
  "비타민B": {
   "first_seen": "2026-09-22",
@@ -1263,16 +1264,17 @@
    "2026-10-06",
    "2026-10-09",
    "2026-10-12",
-   "2026-10-16"
+   "2026-10-16",
+   "2026-10-21"
   ],
-  "last_seen": "2026-10-16",
+  "last_seen": "2026-10-21",
   "keyword": "퀘르세틴",
-  "search_volume": 12670,
-  "source": "shopping",
-  "shopping_rank": 273,
+  "search_volume": 12410,
+  "source": "news",
+  "shopping_rank": 257,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 7755
+  "pharma_value": 4,
+  "blog_position_y": 6938
  },
  "디스레놀": {
   "first_seen": "2026-09-25",
@@ -1339,16 +1341,17 @@
   "seen_days": [
    "2026-09-25",
    "2026-09-27",
-   "2026-10-04"
+   "2026-10-04",
+   "2026-10-21"
   ],
-  "last_seen": "2026-10-04",
-  "keyword": "아로나민 골드",
-  "search_volume": 39330,
+  "last_seen": "2026-10-21",
+  "keyword": "벤포티아민",
+  "search_volume": 1500,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 2515
+  "blog_position_y": 3063
  },
  "고양이 요로": {
   "first_seen": "2026-09-25",
@@ -1852,16 +1855,17 @@
  "생식": {
   "first_seen": "2026-09-30",
   "seen_days": [
-   "2026-09-30"
+   "2026-09-30",
+   "2026-10-21"
   ],
-  "last_seen": "2026-09-30",
+  "last_seen": "2026-10-21",
   "keyword": "생식",
-  "search_volume": 7240,
+  "search_volume": 5320,
   "source": "shopping",
-  "shopping_rank": 129,
+  "shopping_rank": 96,
   "shopping_move": "급상승",
   "pharma_value": 2,
-  "blog_position_y": 10321
+  "blog_position_y": 9463
  },
  "파랙틴": {
   "first_seen": "2026-09-30",
@@ -2048,16 +2052,17 @@
   "seen_days": [
    "2026-10-02",
    "2026-10-07",
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-21"
   ],
-  "last_seen": "2026-10-10",
+  "last_seen": "2026-10-21",
   "keyword": "산양삼",
-  "search_volume": 15430,
+  "search_volume": 11430,
   "source": "shopping",
-  "shopping_rank": 17,
+  "shopping_rank": 118,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7839
+  "blog_position_y": 7717
  },
  "석류": {
   "first_seen": "2026-10-02",
@@ -3481,5 +3486,75 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 9392
+ },
+ "돌외": {
+  "first_seen": "2026-10-21",
+  "seen_days": [
+   "2026-10-21"
+  ],
+  "last_seen": "2026-10-21",
+  "keyword": "돌외잎 효능",
+  "search_volume": 1740,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 1594
+ },
+ "초록입홍합": {
+  "first_seen": "2026-10-21",
+  "seen_days": [
+   "2026-10-21"
+  ],
+  "last_seen": "2026-10-21",
+  "keyword": "초록입홍합",
+  "search_volume": 3070,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 5977
+ },
+ "우르소데옥시콜산": {
+  "first_seen": "2026-10-21",
+  "seen_days": [
+   "2026-10-21"
+  ],
+  "last_seen": "2026-10-21",
+  "keyword": "우루사",
+  "search_volume": 28920,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 3618
+ },
+ "셀티아이": {
+  "first_seen": "2026-10-21",
+  "seen_days": [
+   "2026-10-21"
+  ],
+  "last_seen": "2026-10-21",
+  "keyword": "셀티아이",
+  "search_volume": 7100,
+  "source": "shopping",
+  "shopping_rank": 284,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 6195
+ },
+ "바이오렉트라": {
+  "first_seen": "2026-10-21",
+  "seen_days": [
+   "2026-10-21"
+  ],
+  "last_seen": "2026-10-21",
+  "keyword": "바이오렉트라",
+  "search_volume": 13160,
+  "source": "shopping",
+  "shopping_rank": 244,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 5315
  }
 }

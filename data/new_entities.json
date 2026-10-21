@@ -467,16 +467,17 @@
  "테아닌": {
   "first_seen": "2026-09-19",
   "seen_days": [
-   "2026-09-19"
+   "2026-09-19",
+   "2026-10-21"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-10-21",
   "keyword": "테아닌",
-  "search_volume": 17250,
+  "search_volume": 19240,
   "source": "shopping",
-  "shopping_rank": 111,
+  "shopping_rank": 47,
   "shopping_move": "급상승",
-  "pharma_value": 3,
-  "blog_position_y": 10352
+  "pharma_value": 4,
+  "blog_position_y": 7734
  },
  "여주": {
   "first_seen": "2026-09-19",
@@ -1311,16 +1312,17 @@
    "2026-09-25",
    "2026-09-28",
    "2026-10-05",
-   "2026-10-09"
+   "2026-10-09",
+   "2026-10-21"
   ],
-  "last_seen": "2026-10-09",
+  "last_seen": "2026-10-21",
   "keyword": "브로멜라인",
-  "search_volume": 15540,
+  "search_volume": 13810,
   "source": "shopping",
-  "shopping_rank": null,
-  "shopping_move": null,
+  "shopping_rank": 295,
+  "shopping_move": "최근 진입",
   "pharma_value": 4,
-  "blog_position_y": 9036
+  "blog_position_y": 9230
  },
  "임산부영양제": {
   "first_seen": "2026-09-25",
@@ -2198,16 +2200,17 @@
   "first_seen": "2026-10-03",
   "seen_days": [
    "2026-10-03",
-   "2026-10-06"
+   "2026-10-06",
+   "2026-10-21"
   ],
-  "last_seen": "2026-10-06",
-  "keyword": "아누카사과",
-  "search_volume": 1050,
+  "last_seen": "2026-10-21",
+  "keyword": "아누카 사과",
+  "search_volume": 1110,
   "source": "shopping",
-  "shopping_rank": 213,
+  "shopping_rank": 224,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": null
+  "blog_position_y": 6072
  },
  "천연비타민C": {
   "first_seen": "2026-10-03",
@@ -2273,16 +2276,17 @@
    "2026-10-04",
    "2026-10-10",
    "2026-10-13",
-   "2026-10-17"
+   "2026-10-17",
+   "2026-10-21"
   ],
-  "last_seen": "2026-10-17",
+  "last_seen": "2026-10-21",
   "keyword": "낙산균",
-  "search_volume": 16200,
+  "search_volume": 16650,
   "source": "shopping",
-  "shopping_rank": 92,
+  "shopping_rank": 74,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 1511
+  "blog_position_y": 1537
  },
  "비타민B군": {
   "first_seen": "2026-10-04",
@@ -3181,16 +3185,17 @@
   "first_seen": "2026-10-16",
   "seen_days": [
    "2026-10-16",
-   "2026-10-19"
+   "2026-10-19",
+   "2026-10-21"
   ],
-  "last_seen": "2026-10-19",
+  "last_seen": "2026-10-21",
   "keyword": "비트즙",
-  "search_volume": 5120,
+  "search_volume": 5140,
   "source": "shopping",
-  "shopping_rank": 116,
+  "shopping_rank": 88,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6773
+  "blog_position_y": 6849
  },
  "반려동물 관절 영양제": {
   "first_seen": "2026-10-16",
@@ -3556,5 +3561,19 @@
   "shopping_move": "급상승",
   "pharma_value": 2,
   "blog_position_y": 5315
+ },
+ "비스글리시네이트": {
+  "first_seen": "2026-10-21",
+  "seen_days": [
+   "2026-10-21"
+  ],
+  "last_seen": "2026-10-21",
+  "keyword": "비스글리시네이트",
+  "search_volume": 1220,
+  "source": "shopping",
+  "shopping_rank": 209,
+  "shopping_move": "새 진입",
+  "pharma_value": 5,
+  "blog_position_y": 5940
  }
 }

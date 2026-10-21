@@ -422,16 +422,17 @@
   "seen_days": [
    "2026-09-19",
    "2026-10-04",
-   "2026-10-15"
+   "2026-10-15",
+   "2026-10-22"
   ],
-  "last_seen": "2026-10-15",
-  "keyword": "도라지청",
-  "search_volume": 26960,
+  "last_seen": "2026-10-22",
+  "keyword": "도라지 효능",
+  "search_volume": 10150,
   "source": "shopping",
-  "shopping_rank": 65,
+  "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 9186
+  "pharma_value": 3,
+  "blog_position_y": 5840
  },
  "쿼르세틴": {
   "first_seen": "2026-09-19",
@@ -1493,16 +1494,17 @@
    "2026-09-26",
    "2026-10-06",
    "2026-10-13",
-   "2026-10-17"
+   "2026-10-17",
+   "2026-10-22"
   ],
-  "last_seen": "2026-10-17",
+  "last_seen": "2026-10-22",
   "keyword": "꾸지뽕",
-  "search_volume": 24880,
+  "search_volume": 24250,
   "source": "shopping",
-  "shopping_rank": 63,
+  "shopping_rank": 111,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6328
+  "pharma_value": 2,
+  "blog_position_y": 7787
  },
  "탱자": {
   "first_seen": "2026-09-27",
@@ -1964,16 +1966,17 @@
  "소화효소": {
   "first_seen": "2026-10-01",
   "seen_days": [
-   "2026-10-01"
+   "2026-10-01",
+   "2026-10-22"
   ],
-  "last_seen": "2026-10-01",
-  "keyword": "소화효소",
-  "search_volume": 10710,
+  "last_seen": "2026-10-22",
+  "keyword": "캡슐레이션 효소",
+  "search_volume": 135420,
   "source": "shopping",
-  "shopping_rank": 171,
-  "shopping_move": "급상승",
-  "pharma_value": 4,
-  "blog_position_y": 7254
+  "shopping_rank": 433,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6059
  },
  "난각막": {
   "first_seen": "2026-10-01",
@@ -2142,16 +2145,17 @@
   "first_seen": "2026-10-03",
   "seen_days": [
    "2026-10-03",
-   "2026-10-15"
+   "2026-10-15",
+   "2026-10-22"
   ],
-  "last_seen": "2026-10-15",
+  "last_seen": "2026-10-22",
   "keyword": "나이아신",
-  "search_volume": 6930,
+  "search_volume": 7110,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 1562
+  "pharma_value": 5,
+  "blog_position_y": 1598
  },
  "오쏘몰 이뮨": {
   "first_seen": "2026-10-03",
@@ -2229,16 +2233,17 @@
  "인삼": {
   "first_seen": "2026-10-04",
   "seen_days": [
-   "2026-10-04"
+   "2026-10-04",
+   "2026-10-22"
   ],
-  "last_seen": "2026-10-04",
-  "keyword": "진세노사이드",
-  "search_volume": 4020,
+  "last_seen": "2026-10-22",
+  "keyword": "인삼 효능",
+  "search_volume": 3810,
   "source": "shopping",
-  "shopping_rank": 39,
+  "shopping_rank": 35,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 7885
+  "pharma_value": 4,
+  "blog_position_y": 9355
  },
  "개구리즙": {
   "first_seen": "2026-10-04",
@@ -3575,5 +3580,33 @@
   "shopping_move": "새 진입",
   "pharma_value": 5,
   "blog_position_y": 5940
+ },
+ "활성형 비타민B12": {
+  "first_seen": "2026-10-22",
+  "seen_days": [
+   "2026-10-22"
+  ],
+  "last_seen": "2026-10-22",
+  "keyword": "비타민b12 효능",
+  "search_volume": 6760,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 9026
+ },
+ "알룰로스": {
+  "first_seen": "2026-10-22",
+  "seen_days": [
+   "2026-10-22"
+  ],
+  "last_seen": "2026-10-22",
+  "keyword": "알룰로스",
+  "search_volume": 37250,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7257
  }
 }

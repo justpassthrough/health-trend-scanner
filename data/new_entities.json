@@ -2534,16 +2534,17 @@
    "2026-10-06",
    "2026-10-16",
    "2026-10-18",
-   "2026-10-20"
+   "2026-10-20",
+   "2026-10-23"
   ],
-  "last_seen": "2026-10-20",
-  "keyword": "헬리코박터 제균",
-  "search_volume": 530,
+  "last_seen": "2026-10-23",
+  "keyword": "헬리코박터 제균치료",
+  "search_volume": 3840,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 5990
+  "blog_position_y": 7971
  },
  "아이클리어 올인원": {
   "first_seen": "2026-10-06",
@@ -3164,16 +3165,17 @@
   "first_seen": "2026-10-16",
   "seen_days": [
    "2026-10-16",
-   "2026-10-20"
+   "2026-10-20",
+   "2026-10-23"
   ],
-  "last_seen": "2026-10-20",
+  "last_seen": "2026-10-23",
   "keyword": "블랙커민",
-  "search_volume": 24450,
+  "search_volume": 24170,
   "source": "shopping",
-  "shopping_rank": 85,
+  "shopping_rank": 49,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 8521
+  "pharma_value": 4,
+  "blog_position_y": 7914
  },
  "가네톡톡": {
   "first_seen": "2026-10-16",
@@ -3653,5 +3655,61 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 4972
+ },
+ "고함량 비타민C": {
+  "first_seen": "2026-10-23",
+  "seen_days": [
+   "2026-10-23"
+  ],
+  "last_seen": "2026-10-23",
+  "keyword": "비타민C 3000",
+  "search_volume": 6630,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7903
+ },
+ "키성장 영양제": {
+  "first_seen": "2026-10-23",
+  "seen_days": [
+   "2026-10-23"
+  ],
+  "last_seen": "2026-10-23",
+  "keyword": "키크는 영양제",
+  "search_volume": 9530,
+  "source": "shopping",
+  "shopping_rank": 362,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8041
+ },
+ "항히스타민제": {
+  "first_seen": "2026-10-23",
+  "seen_days": [
+   "2026-10-23"
+  ],
+  "last_seen": "2026-10-23",
+  "keyword": "항히스타민제",
+  "search_volume": 22580,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7604
+ },
+ "보청기": {
+  "first_seen": "2026-10-23",
+  "seen_days": [
+   "2026-10-23"
+  ],
+  "last_seen": "2026-10-23",
+  "keyword": "보청기 지원금",
+  "search_volume": 1740,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 2277
  }
 }

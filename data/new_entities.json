@@ -1685,16 +1685,17 @@
  "비타민B 컴플렉스": {
   "first_seen": "2026-09-28",
   "seen_days": [
-   "2026-09-28"
+   "2026-09-28",
+   "2026-10-23"
   ],
-  "last_seen": "2026-09-28",
-  "keyword": "비타민b 컴플렉스",
-  "search_volume": 7450,
+  "last_seen": "2026-10-23",
+  "keyword": "비타민B 컴플렉스",
+  "search_volume": 6920,
   "source": "shopping",
-  "shopping_rank": 110,
+  "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6545
+  "blog_position_y": 7173
  },
  "니코틴아미드": {
   "first_seen": "2026-09-28",
@@ -1893,16 +1894,17 @@
   "first_seen": "2026-09-30",
   "seen_days": [
    "2026-09-30",
-   "2026-10-20"
+   "2026-10-20",
+   "2026-10-23"
   ],
-  "last_seen": "2026-10-20",
-  "keyword": "한삼덩굴 효능",
-  "search_volume": null,
+  "last_seen": "2026-10-23",
+  "keyword": "한삼덩굴",
+  "search_volume": 4870,
   "source": "shopping",
-  "shopping_rank": 439,
+  "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": null
+  "pharma_value": 3,
+  "blog_position_y": 8496
  },
  "뮤코다당단백": {
   "first_seen": "2026-09-30",
@@ -2359,16 +2361,17 @@
  "야채수": {
   "first_seen": "2026-10-05",
   "seen_days": [
-   "2026-10-05"
+   "2026-10-05",
+   "2026-10-23"
   ],
-  "last_seen": "2026-10-05",
+  "last_seen": "2026-10-23",
   "keyword": "야채수",
-  "search_volume": 3750,
+  "search_volume": 3130,
   "source": "shopping",
-  "shopping_rank": 159,
+  "shopping_rank": 121,
   "shopping_move": "급상승",
-  "pharma_value": 3,
-  "blog_position_y": 6322
+  "pharma_value": 4,
+  "blog_position_y": 6938
  },
  "의약품 보관": {
   "first_seen": "2026-10-05",
@@ -2838,16 +2841,17 @@
   "seen_days": [
    "2026-10-11",
    "2026-10-16",
-   "2026-10-19"
+   "2026-10-19",
+   "2026-10-23"
   ],
-  "last_seen": "2026-10-19",
+  "last_seen": "2026-10-23",
   "keyword": "블랙마카",
-  "search_volume": 9840,
+  "search_volume": 10110,
   "source": "shopping",
-  "shopping_rank": 106,
+  "shopping_rank": 84,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8727
+  "blog_position_y": 8133
  },
  "천년초": {
   "first_seen": "2026-10-11",
@@ -3711,5 +3715,33 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 2277
+ },
+ "비타민 구미": {
+  "first_seen": "2026-10-23",
+  "seen_days": [
+   "2026-10-23"
+  ],
+  "last_seen": "2026-10-23",
+  "keyword": "비타민 구미",
+  "search_volume": 1960,
+  "source": "shopping",
+  "shopping_rank": 287,
+  "shopping_move": "새 진입",
+  "pharma_value": 5,
+  "blog_position_y": 6889
+ },
+ "외용제 제형": {
+  "first_seen": "2026-10-23",
+  "seen_days": [
+   "2026-10-23"
+  ],
+  "last_seen": "2026-10-23",
+  "keyword": "연고 크림 차이",
+  "search_volume": 20,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": null
  }
 }

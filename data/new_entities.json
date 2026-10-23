@@ -979,16 +979,17 @@
   "first_seen": "2026-09-22",
   "seen_days": [
    "2026-09-22",
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-24"
   ],
-  "last_seen": "2026-10-10",
+  "last_seen": "2026-10-24",
   "keyword": "테라큐민",
-  "search_volume": 10860,
+  "search_volume": 11250,
   "source": "shopping",
-  "shopping_rank": 165,
+  "shopping_rank": 130,
   "shopping_move": "급상승",
   "pharma_value": 5,
-  "blog_position_y": 7015
+  "blog_position_y": 7091
  },
  "MAC 식단": {
   "first_seen": "2026-09-22",
@@ -1346,16 +1347,17 @@
    "2026-09-25",
    "2026-09-27",
    "2026-10-04",
-   "2026-10-21"
+   "2026-10-21",
+   "2026-10-24"
   ],
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-10-24",
   "keyword": "벤포티아민",
-  "search_volume": 1500,
-  "source": "news",
+  "search_volume": 1510,
+  "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 3063
+  "blog_position_y": 3309
  },
  "고양이 요로": {
   "first_seen": "2026-09-25",
@@ -3743,5 +3745,47 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": null
+ },
+ "상어연골": {
+  "first_seen": "2026-10-24",
+  "seen_days": [
+   "2026-10-24"
+  ],
+  "last_seen": "2026-10-24",
+  "keyword": "상어연골 콘드로이친",
+  "search_volume": 3110,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7198
+ },
+ "곡물발효효소": {
+  "first_seen": "2026-10-24",
+  "seen_days": [
+   "2026-10-24"
+  ],
+  "last_seen": "2026-10-24",
+  "keyword": "효소 효능",
+  "search_volume": 3540,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 10405
+ },
+ "돌외잎추출물": {
+  "first_seen": "2026-10-24",
+  "seen_days": [
+   "2026-10-24"
+  ],
+  "last_seen": "2026-10-24",
+  "keyword": "돌외잎 효능",
+  "search_volume": 1790,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 1626
  }
 }

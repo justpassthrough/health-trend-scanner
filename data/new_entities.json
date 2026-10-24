@@ -2289,16 +2289,17 @@
    "2026-10-10",
    "2026-10-13",
    "2026-10-17",
-   "2026-10-21"
+   "2026-10-21",
+   "2026-10-24"
   ],
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-10-24",
   "keyword": "낙산균",
-  "search_volume": 16650,
+  "search_volume": 17110,
   "source": "shopping",
-  "shopping_rank": 74,
+  "shopping_rank": 58,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 1537
+  "blog_position_y": 1403
  },
  "비타민B군": {
   "first_seen": "2026-10-04",
@@ -2568,16 +2569,17 @@
  "새싹삼": {
   "first_seen": "2026-10-07",
   "seen_days": [
-   "2026-10-07"
+   "2026-10-07",
+   "2026-10-24"
   ],
-  "last_seen": "2026-10-07",
+  "last_seen": "2026-10-24",
   "keyword": "새싹삼",
-  "search_volume": 3550,
+  "search_volume": 2450,
   "source": "shopping",
-  "shopping_rank": 299,
+  "shopping_rank": 278,
   "shopping_move": "새 진입",
   "pharma_value": 3,
-  "blog_position_y": 5713
+  "blog_position_y": 5781
  },
  "멀티팩": {
   "first_seen": "2026-10-07",
@@ -3202,16 +3204,17 @@
   "seen_days": [
    "2026-10-16",
    "2026-10-19",
-   "2026-10-21"
+   "2026-10-21",
+   "2026-10-24"
   ],
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-10-24",
   "keyword": "비트즙",
-  "search_volume": 5140,
+  "search_volume": 5120,
   "source": "shopping",
-  "shopping_rank": 88,
+  "shopping_rank": 81,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6849
+  "pharma_value": 4,
+  "blog_position_y": 6964
  },
  "반려동물 관절 영양제": {
   "first_seen": "2026-10-16",
@@ -3787,5 +3790,61 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 1626
+ },
+ "누에": {
+  "first_seen": "2026-10-24",
+  "seen_days": [
+   "2026-10-24"
+  ],
+  "last_seen": "2026-10-24",
+  "keyword": "누에가루 효능",
+  "search_volume": 790,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 1261
+ },
+ "연잎": {
+  "first_seen": "2026-10-24",
+  "seen_days": [
+   "2026-10-24"
+  ],
+  "last_seen": "2026-10-24",
+  "keyword": "연잎차 효능",
+  "search_volume": 1600,
+  "source": "shopping",
+  "shopping_rank": 193,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 1371
+ },
+ "판토텐산": {
+  "first_seen": "2026-10-24",
+  "seen_days": [
+   "2026-10-24"
+  ],
+  "last_seen": "2026-10-24",
+  "keyword": "판토텐산 효능",
+  "search_volume": 2290,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 10338
+ },
+ "남성호르몬 영양제": {
+  "first_seen": "2026-10-24",
+  "seen_days": [
+   "2026-10-24"
+  ],
+  "last_seen": "2026-10-24",
+  "keyword": "테스토라",
+  "search_volume": 3180,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 1621
  }
 }

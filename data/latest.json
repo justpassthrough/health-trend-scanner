@@ -1,758 +1,751 @@
 {
-  "scan_id": "2026-10-24_0515",
+  "scan_id": "2026-10-24_1800",
   "date": "2026-10-24",
-  "time": "05:15",
+  "time": "18:00",
   "today_pick": [
     {
-      "keyword": "강아지 오메가3",
+      "keyword": "낙산균",
       "track": "검색형",
       "reason": "검색형 최고 기회 (꾸준히 검색되는 글감)",
-      "why_now": "데이바이펫(rTG 오메가3), 유한양행, 유유제약 등 반려동물 영양제 출시가 몰리고 있습니다. 블로그의 오메가3 글(rTG·EE)이 강하고 반려동물 글도 반응이 있었으니 둘을 합치기 좋은 주제입니다.",
-      "pharmacist_angle": "사람용 오메가3를 나눠 먹여도 되는지 설명합니다. 체중당 EPA·DHA 용량을 계산하고, 제형(rTG·EE)과 산패 관리를 짚고, 고양이에게 주의할 점을 정리합니다.",
-      "title_idea": "강아지 오메가3, 사람 캡슐 터뜨려 먹이기 전에 체중부터 곱해 보세요",
-      "score": 9.8,
-      "search_volume": 12240,
-      "comp_idx": "높음",
-      "opportunity_label": "포화(경쟁 높음)"
+      "why_now": "쇼핑 인기검색어 58위인데 블로그에서 한 번도 다루지 않았습니다. 일본 미야리산(클로스트리디움 부티리쿰)이 알려지면서 유산균과 다른 '낙산균'을 찾는 사람이 늘었습니다. 포자를 만드는 균이라 제형 이야기를 하기 좋습니다.",
+      "pharmacist_angle": "포자형 균이 위산을 어떻게 견디는지, 항생제와 함께 먹어도 되는지(유산균과 다른 점), 부티르산을 직접 먹는 제품과 무엇이 다른지 DDS 관점으로 풀어 줍니다.",
+      "title_idea": "낙산균, 유산균이랑 같이 드시고 계셨다면 항생제 먹는 날이 다릅니다",
+      "score": 12.2,
+      "search_volume": 17110,
+      "comp_idx": "중간",
+      "opportunity_label": "보통"
     },
     {
-      "keyword": "면역세포치료",
+      "keyword": "노안 안약",
       "track": "시의형",
       "reason": "시의형 최신 이슈 (지금 막 뜨는 주제)",
-      "why_now": "정부가 첨단재생의료 규제를 풀어 해외에 가지 않아도 국내에서 자가 면역세포 암치료를 받을 수 있게 됐습니다. 암 환자 가족의 검색이 늘 시점입니다. 허가 의약품과 첨단재생의료 치료가 다르다는 점도 기사에 나와 있습니다.",
-      "pharmacist_angle": "식약처 허가 의약품(CAR-T 등)과 첨단재생의료 '치료'가 무엇이 다른지 설명합니다. 근거 수준과 비용을 구분하고, 표준 항암치료와 같이 받을 때 확인할 점을 병원 약사 시각으로 정리합니다. 상황버섯 글과도 연결됩니다.",
-      "title_idea": "면역세포치료 국내 허용, 항암 주사를 쉬고 받아도 되는 치료일까",
-      "score": 15.0,
-      "search_volume": 80,
+      "why_now": "한 번 넣으면 10시간 가는 이중 성분 노안 점안제가 FDA 승인을 받았고 국내에서도 식약처 심사가 진행 중입니다. 40~50대 독자층이 넓고 '돋보기 대신 안약' 검색이 늘어날 주제입니다.",
+      "pharmacist_angle": "동공을 좁혀(핀홀 효과) 가까운 것을 보게 하는 원리, 어두운 곳 운전과 망막박리 위험, 녹내장약과 함께 쓸 때를 약리로 설명합니다.",
+      "title_idea": "노안 안약 나온다는데, 돋보기를 버리기 전에 밤 운전부터 생각하세요",
+      "score": 15.2,
+      "search_volume": 12690,
       "comp_idx": "높음",
-      "opportunity_label": "수요 적음"
+      "opportunity_label": "포화(경쟁 높음)"
     }
   ],
   "topics": [
     {
-      "keyword": "강아지 오메가3",
-      "entity": "반려동물 오메가3",
+      "keyword": "낙산균",
+      "entity": "낙산균",
       "search_terms": [
-        "강아지 오메가3",
-        "고양이 오메가3",
-        "강아지 오메가3 용량"
+        "낙산균 효능",
+        "낙산균 유산균 차이",
+        "부티르산"
       ],
       "track": "검색형",
-      "source": "news",
+      "source": "shopping",
       "category": "영양제·성분",
-      "pharma_value": 4,
-      "trend_key": "반려동물 오메가3",
-      "why_now": "데이바이펫(rTG 오메가3), 유한양행, 유유제약 등 반려동물 영양제 출시가 몰리고 있습니다. 블로그의 오메가3 글(rTG·EE)이 강하고 반려동물 글도 반응이 있었으니 둘을 합치기 좋은 주제입니다.",
-      "pharmacist_angle": "사람용 오메가3를 나눠 먹여도 되는지 설명합니다. 체중당 EPA·DHA 용량을 계산하고, 제형(rTG·EE)과 산패 관리를 짚고, 고양이에게 주의할 점을 정리합니다.",
-      "title_idea": "강아지 오메가3, 사람 캡슐 터뜨려 먹이기 전에 체중부터 곱해 보세요",
+      "pharma_value": 5,
+      "trend_key": "낙산균",
+      "why_now": "쇼핑 인기검색어 58위인데 블로그에서 한 번도 다루지 않았습니다. 일본 미야리산(클로스트리디움 부티리쿰)이 알려지면서 유산균과 다른 '낙산균'을 찾는 사람이 늘었습니다. 포자를 만드는 균이라 제형 이야기를 하기 좋습니다.",
+      "pharmacist_angle": "포자형 균이 위산을 어떻게 견디는지, 항생제와 함께 먹어도 되는지(유산균과 다른 점), 부티르산을 직접 먹는 제품과 무엇이 다른지 DDS 관점으로 풀어 줍니다.",
+      "title_idea": "낙산균, 유산균이랑 같이 드시고 계셨다면 항생제 먹는 날이 다릅니다",
       "already_covered": false,
       "covered_posts": [],
-      "source_headlines": [
-        "‘노견·묘르신’ 위한 영양제… 데이바이펫, ‘펫 오메가-3 트리플렉스...",
-        "유유제약, 고양이 영양제로 '북미 시장' 조준"
-      ],
-      "keyword_ai": "강아지 오메가3",
+      "source_headlines": [],
+      "keyword_ai": "낙산균",
       "grounded_by": "search_term",
       "search_term_volumes": {
-        "강아지 오메가3": 12240,
-        "고양이 오메가3": 2380,
-        "강아지 오메가3 용량": 50
+        "낙산균 효능": 2430,
+        "낙산균 유산균 차이": 60,
+        "부티르산": 890,
+        "낙산균": 17110
       },
-      "news_count": 1103,
+      "news_count": 2197,
       "news_headlines": [
         {
-          "title": "“강아지에게 생선을” 낯선 발상…동해어촌서 만든 펫푸드 세계로",
-          "link": "https://n.news.naver.com/mnews/article/011/0004672849?sid=101",
-          "date": "Mon, 19 Oct 2026 17:58:00 +0900"
+          "title": "대장내시경 검사 후 무너진 장내 미생물 환경... &quot;낙산균으로 잡는다&quot;",
+          "link": "https://news.hidoc.co.kr/news/articleView.html?idxno=69067",
+          "date": "Fri, 23 Oct 2026 12:00:00 +0900"
         },
         {
-          "title": "[반려동물 20세 시대] 우리 강아지가 치매래요. 앞으로 어떡하죠?",
-          "link": "https://n.news.naver.com/mnews/article/020/0003753760?sid=103",
-          "date": "Thu, 08 Oct 2026 17:50:00 +0900"
+          "title": "K-낙산균 기술로 세계시장 공략하는 호주 웰니스 브랜드 '비보이'",
+          "link": "https://www.dongponews.net/news/articleView.html?idxno=61162",
+          "date": "Tue, 20 Oct 2026 17:14:00 +0900"
         },
         {
-          "title": "샤랩바이오, 슈퍼독 캠페인 전개...영양제 구매 고객 혜택 강화",
-          "link": "https://www.thebigdata.co.kr/view.php?ud=20261020151248309aeda69934_23",
-          "date": "Tue, 20 Oct 2026 15:16:00 +0900"
+          "title": "&quot;고온생존 낙산균, 따뜻한물에 타도 OK&quot; 일동헬스케어, 베이비페어서 비...",
+          "link": "https://www.catchnews.kr/news/articleView.html?idxno=128421",
+          "date": "Mon, 14 Sep 2026 17:11:00 +0900"
         }
       ],
       "search_trend": {
-        "change_rate": 5.4,
-        "direction": "유지",
-        "weekly_avg": 76.5
+        "change_rate": 10.5,
+        "direction": "상승",
+        "weekly_avg": 68.3
       },
       "expert_gap": {
-        "total_blogs": 172048,
-        "expert_blogs": 2092,
-        "gap_ratio": 82.2,
-        "label": "전문가 갭 큼"
+        "total_blogs": 18197,
+        "expert_blogs": 1574,
+        "gap_ratio": 11.6,
+        "label": "전문가 부족"
       },
-      "search_volume": 12240,
-      "comp_idx": "높음",
-      "pharma_value_calc": 5.2,
+      "search_volume": 17110,
+      "comp_idx": "중간",
+      "pharma_value_calc": 5.5,
       "serp": {
-        "checked_at": "2026-10-23T20:17:48.923Z",
+        "checked_at": "2026-10-24T09:02:38.784Z",
         "status": 200,
         "blog_top": [
           {
-            "blog": "cwkg1234",
-            "age_days": 5,
-            "title": "강아지 오메가3 비중 높인 깨방정 사료 강아지 변비 고민 된다면?"
+            "blog": "7678ymym",
+            "age_days": null,
+            "title": "유산균만 먹고 있나요? 낙산균과 차이, 효능 복용법 알아보기앵미스타일네이버 블로그"
           },
           {
-            "blog": "hj12165445",
-            "age_days": 28,
-            "title": "노견 강아지오메가3 항산화제 기력저하 걱정될 때"
+            "blog": "oia_87",
+            "age_days": null,
+            "title": "낙산균 효능 및 부작용느낌네이버 블로그"
           },
           {
-            "blog": "kl1106",
+            "blog": "chicaso1",
             "age_days": 14,
-            "title": "강아지 오메가3 사료 국내산 들깨로 만든 깨방정 사료"
+            "title": "신신제약 미야리산U｜11가지 장 트러블에 도움을 주는 낙산균 프로바이오틱스"
           },
           {
-            "blog": "bichon-haru",
-            "age_days": 21,
-            "title": "강아지 오메가3 부드러운 남극크릴 오메가 바 노견 애견간식"
-          },
-          {
-            "blog": "rosl5524",
-            "age_days": 21,
-            "title": "허글 킵잇 루테인&오메가3 강아지영양제 강아지눈영양제 강아지눈물관리 3살 푸들 급여 후기"
-          },
-          {
-            "blog": "limjongna",
-            "age_days": 21,
-            "title": "강아지 고양이 오메가3 메이드인랩 알가트리움 DHA 애견 눈물 영양제 급여 후기"
-          },
-          {
-            "blog": "kskr3105",
+            "blog": "pharmafafa",
             "age_days": 28,
-            "title": "강아지 영양제 항산화제 오메가3 동시에 설채현영양제"
+            "title": "낙산균 효능, 장 건강에 어떤 도움을 줄까?"
+          },
+          {
+            "blog": "anarche69",
+            "age_days": 14,
+            "title": "낙산균 추천 장 건강을 위해 선택한 메디트리 프로바이오틱스"
+          },
+          {
+            "blog": "ifdream01",
+            "age_days": 28,
+            "title": "낙산균 효능, 유산균과 어떻게 다를까? 차이와 섭취 전 주의사항"
+          },
+          {
+            "blog": "rlagmlrn1q",
+            "age_days": 14,
+            "title": "낙산균 유산균 차이점과 효과까지 한 번에 정리했어요"
           }
         ],
-        "median_age_days": 21,
-        "fresh_30d": 5,
+        "median_age_days": 14,
+        "fresh_30d": 3,
         "my_rank": null,
-        "first_blog_y": 6736,
-        "shop_y": 1633,
-        "ad_y": 120,
-        "shop_above_blog": true
+        "first_blog_y": 1403,
+        "shop_y": 2996,
+        "ad_y": 3403,
+        "shop_above_blog": false
       },
-      "position_mult": 0.92,
-      "opportunity_score": 9.8,
-      "opportunity_label": "포화(경쟁 높음)",
+      "position_mult": 1.05,
+      "opportunity_score": 12.2,
+      "opportunity_label": "보통",
       "news_recency": {},
-      "score": 9.8,
+      "score": 12.2,
       "consecutive_days": 1,
       "previously_written": false,
       "days_since_written": null,
-      "novelty": "기존 영역",
-      "suggested_days_2w": 1,
-      "in_deep_dive_roots": true,
-      "shopping_rank": null,
+      "novelty": "새 영역(다시 제안)",
+      "suggested_days_2w": 3,
+      "in_deep_dive_roots": false,
+      "shopping_rank": 58,
       "novelty_mult": 1.0,
       "is_new_topic": true,
       "persistence_mult": 1.0,
       "rank": 1
     },
     {
-      "keyword": "테라큐민",
-      "entity": "테라큐민",
+      "keyword": "누에가루 효능",
+      "entity": "누에",
       "search_terms": [
-        "테라큐민",
-        "테라큐민 효능",
-        "테라큐민 커큐민 차이"
+        "누에가루 효능",
+        "누에환 혈당",
+        "누에 부작용"
       ],
       "track": "검색형",
       "source": "shopping",
       "category": "영양제·성분",
-      "pharma_value": 5,
-      "trend_key": "테라큐민",
-      "why_now": "쇼핑 인기검색어에서 192위에서 130위로 올랐습니다. 커큐민 글은 이미 썼지만 '테라큐민'이라는 제품 원료명으로 찾는 사람이 따로 생겼습니다. 기존 글이 다룬 '흡수 몇 배' 논리를 특정 제형에 붙여 보여 줄 수 있습니다.",
-      "pharmacist_angle": "테라큐민은 커큐민을 아주 작은 입자로 만들고 검류(gum ghatti)로 감싼 제형입니다. DDS 연구자가 이 제형이 피 속 농도(AUC)를 얼마나 올리는지와 그게 효과의 배수가 아니라는 점을 나눠서 설명할 수 있습니다.",
-      "title_idea": "테라큐민, 강황 가루와 뭐가 달라서 몇 배나 비쌀까",
+      "pharma_value": 4,
+      "trend_key": "누에",
+      "why_now": "'당당한누에환'이 쇼핑 인기검색어에 새로 들어왔고(245위) '혈당영양제'도 322위에서 150위로 올랐습니다. 누에의 DNJ(1-데옥시노지리마이신)는 당뇨약 아카보스처럼 당 흡수를 늦추는 성분입니다.",
+      "pharmacist_angle": "DNJ와 아카보스·보글리보스의 작용 방식이 같다는 점, 그래서 당뇨약과 겹치면 생길 수 있는 저혈당·가스 문제를 처방전 기준으로 짚어 줍니다.",
+      "title_idea": "누에환, 식후 혈당약이랑 같이 드시면 작용이 겹칩니다",
       "already_covered": false,
       "covered_posts": [],
       "source_headlines": [],
-      "keyword_ai": "테라큐민",
+      "keyword_ai": "누에가루",
       "grounded_by": "search_term",
       "search_term_volumes": {
-        "테라큐민": 11250,
-        "테라큐민 효능": 1300,
-        "테라큐민 커큐민 차이": 20
+        "누에가루 효능": 790,
+        "누에환 혈당": 20,
+        "누에 부작용": 20,
+        "누에가루": 700
       },
-      "news_count": 1219,
+      "news_count": 265,
       "news_headlines": [
         {
-          "title": "한독헬스케어, '테라큐민 액티브 SOD 효소' 선봬",
-          "link": "http://www.bizwnews.com/news/articleView.html?idxno=144957",
-          "date": "Wed, 02 Sep 2026 11:16:00 +0900"
+          "title": "당뇨병과 정력증강에 좋은 뽕잎·누에가루·누에나방·번데기",
+          "link": "https://n.news.naver.com/mnews/article/123/0002011279?sid=103",
+          "date": "Fri, 04 Jan 2013 19:33:00 +0900"
         },
         {
-          "title": "한독헬스케어, '테라큐민 액티브 SOD 효소' 출시",
-          "link": "https://weekly.hankooki.com/news/articleView.html?idxno=7181673",
-          "date": "Tue, 01 Sep 2026 09:46:00 +0900"
+          "title": "［건강보조식품 알고 먹자］‘혈당잡는 누에’개인차 있다",
+          "link": "https://n.news.naver.com/mnews/article/032/0000046966?sid=103",
+          "date": "Mon, 29 Dec 2003 16:00:00 +0900"
         },
         {
-          "title": "한독헬스케어, 커큐민·SOD 배합 '테라큐민 액티브 SOD 효소' 출시",
-          "link": "https://www.pharmnews.com/news/articleView.html?idxno=305969",
-          "date": "Tue, 01 Sep 2026 09:38:00 +0900"
+          "title": "양잠은 사양산업? 누에·동충하초 만나 비단길 인생",
+          "link": "http://www.idaegu.com?c=3&uid=390650",
+          "date": "Tue, 03 Jul 2018 20:29:00 +0900"
         }
       ],
       "search_trend": {
-        "change_rate": 4.0,
+        "change_rate": -9.4,
         "direction": "유지",
-        "weekly_avg": 80.4
+        "weekly_avg": 47.1
       },
       "expert_gap": {
-        "total_blogs": 3537,
-        "expert_blogs": 371,
-        "gap_ratio": 9.5,
-        "label": "보통"
+        "total_blogs": 8617,
+        "expert_blogs": 127,
+        "gap_ratio": 67.3,
+        "label": "전문가 갭 큼"
       },
-      "search_volume": 11250,
-      "comp_idx": "중간",
-      "pharma_value_calc": 5.0,
+      "search_volume": 790,
+      "comp_idx": "높음",
+      "pharma_value_calc": 5.2,
       "serp": {
-        "checked_at": "2026-10-23T20:17:06.996Z",
+        "checked_at": "2026-10-24T09:02:52.345Z",
         "status": 200,
         "blog_top": [
           {
-            "blog": "chicaso1",
-            "age_days": 28,
-            "title": "[커큐민 100mg] 테라큐민 - 만성염증 항산화 영양제, 그 이상일까?"
+            "blog": "dlwjdwn1101",
+            "age_days": null,
+            "title": "누에가루효능 5가지 및 누에가루 먹는법, 부작용교연이네이버 블로그"
           },
           {
-            "blog": "dreamy35",
-            "age_days": 5,
-            "title": "국내최초 커큐민 효소 + 소화 효소 + SOD 효소가 만났다! 고 역가수치 활력 효소 테라큐민 SOD 효소 "
+            "blog": "holy2799",
+            "age_days": 6,
+            "title": "진잠원 가격 효능 성분 할인 구매 후기 비교 총정리! (누에가루, 혈당케어, 공복혈당, 식후혈당)"
           },
           {
-            "blog": "primp",
-            "age_days": 7,
-            "title": "국내 최초 커큐민효소, 소화 효소 강황의 효능 항산화 활력 효소 추천 테라큐민 액티브 SOD 효소"
+            "blog": "eprime007",
+            "age_days": 69,
+            "title": "누에가루 VS 홍잠분말 뭐가 다를까?"
           },
           {
-            "blog": "stdpayments",
-            "age_days": 47,
-            "title": "커큐민 효능, 카레로는 거의 안 됩니다 (수용성 테라큐민 두 달째)"
+            "blog": "rldhrl23",
+            "age_days": 64,
+            "title": "누에가루 먹는법 효능 및 분말 섭취방법 보관 기준 총정리"
           },
           {
-            "blog": "gpal0404",
-            "age_days": 4,
-            "title": "테라큐민 효과 있을까? 커큐민 효능·부작용·주의사항 총정리"
+            "blog": "happylife6899",
+            "age_days": 14,
+            "title": "진잠원 혈당 혈당케어 국내산 누에가루 복용법 구매방법"
           },
           {
-            "blog": "soohoya0320",
-            "age_days": 4,
-            "title": "유명한 테라큐민, 무작정 사기 전에 실제 커큐민 함량 확인하세요"
+            "blog": "jnm319",
+            "age_days": 14,
+            "title": "누에가루효능 분말 골든실크홍잠 천수복 가격까지 알아본 후기"
           },
           {
-            "blog": "nicejerryjjang",
-            "age_days": 28,
-            "title": "커큐민 효능 제대로 알기: 테라큐민·롱비다·메리바 커큐민 어떤 특허 원료를 고르면 좋을까요?"
+            "blog": "aerrocha",
+            "age_days": 54,
+            "title": "누에가루 효능 4가지｜혈당 관리부터 먹는 법·부작용·섭취 주의사항까지 총정리"
           }
         ],
-        "median_age_days": 7,
-        "fresh_30d": 4,
+        "median_age_days": 64,
+        "fresh_30d": 2,
         "my_rank": null,
-        "first_blog_y": 7091,
-        "shop_y": 1950,
-        "ad_y": 2274,
-        "shop_above_blog": true
+        "first_blog_y": 1261,
+        "shop_y": 2984,
+        "ad_y": 3225,
+        "shop_above_blog": false
       },
-      "position_mult": 0.92,
-      "opportunity_score": 9.3,
-      "opportunity_label": "보통",
+      "position_mult": 1.05,
+      "opportunity_score": 7.9,
+      "opportunity_label": "포화(경쟁 높음)",
       "news_recency": {},
-      "score": 9.3,
+      "score": 9.1,
       "consecutive_days": 1,
       "previously_written": false,
       "days_since_written": null,
-      "novelty": "새 영역(다시 제안)",
-      "suggested_days_2w": 1,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
       "in_deep_dive_roots": false,
-      "shopping_rank": 130,
-      "novelty_mult": 1.0,
+      "shopping_rank": null,
+      "novelty_mult": 1.15,
       "is_new_topic": true,
       "persistence_mult": 1.0,
       "rank": 2
     },
     {
-      "keyword": "효소 효능",
-      "entity": "곡물발효효소",
+      "keyword": "비트즙",
+      "entity": "비트",
       "search_terms": [
-        "효소 효능",
-        "곡물효소 효과",
-        "효소 다이어트"
+        "비트즙 효능",
+        "비트 혈압",
+        "비트즙 부작용"
       ],
       "track": "검색형",
       "source": "shopping",
       "category": "영양제·성분",
       "pharma_value": 4,
-      "trend_key": "곡물효소",
-      "why_now": "쇼핑 인기검색어에 '흑임자효소'(198위)가 새로 들어왔고 '캡슐레이션효소'(57위)도 상위권입니다. 카무트효소 글 이후 다른 효소 제품으로 수요가 옮겨 가고 있습니다.",
-      "pharmacist_angle": "먹은 효소는 단백질이라 위산과 소화효소에 분해된다는 점을 설명합니다. 캡슐레이션처럼 효소를 감싸는 기술이 위를 통과하는 것과 몸에 작용하는 것을 혼동하게 만든다는 점은 DDS 관점에서 짚을 수 있습니다.",
-      "title_idea": "흑임자효소·캡슐 효소, 감싸서 위를 지나도 몸에서 일하지 않는 이유",
+      "trend_key": "비트",
+      "why_now": "쇼핑 인기검색어 81위인데 블로그에서 다룬 적이 없습니다. 질산염 때문에 '혈압 내리는 즙'으로 팔리고, 운동하는 사람들의 부스터로도 퍼지고 있습니다.",
+      "pharmacist_angle": "질산염이 입안 세균을 거쳐 일산화질소가 되는 과정(가글하면 효과가 줄어드는 이유), 혈압약·발기부전약·협심증 질산제와 함께 먹을 때의 위험을 약사 눈으로 풉니다.",
+      "title_idea": "비트즙, 아침 가글 직후에 마시면 혈압 효과가 사라지는 이유",
       "already_covered": false,
       "covered_posts": [],
       "source_headlines": [],
-      "keyword_ai": "곡물효소",
+      "keyword_ai": "비트즙",
       "grounded_by": "search_term",
       "search_term_volumes": {
-        "효소 효능": 3540,
-        "곡물효소 효과": 30,
-        "효소 다이어트": 920,
-        "곡물효소": 1460
+        "비트즙 효능": 1070,
+        "비트 혈압": 30,
+        "비트즙 부작용": 20,
+        "비트즙": 5120
       },
-      "news_count": 41099,
+      "news_count": 860,
       "news_headlines": [
         {
-          "title": "효능 발표는 ‘답정너’?…“원하는 방향 나온 지표 있다”",
-          "link": "https://n.news.naver.com/mnews/article/018/0006394603?sid=101",
-          "date": "Fri, 23 Oct 2026 12:02:00 +0900"
+          "title": "비트즙, 단순 건강식품인 줄 알았는데… 이런 효과가?",
+          "link": "https://www.kpanews.co.kr/news/articleView.html?idxno=529929",
+          "date": "Wed, 25 Feb 2026 06:38:00 +0900"
         },
         {
-          "title": "큐리언트 항암 신약, 임상서 효능 확인",
-          "link": "https://n.news.naver.com/mnews/article/015/0005344134?sid=105",
-          "date": "Mon, 19 Oct 2026 18:06:00 +0900"
+          "title": "“입속 건강 무너지면 전신 건강도 악영향”…‘구강 유익균’ 지키기...",
+          "link": "https://n.news.naver.com/mnews/article/662/0000105829?sid=103",
+          "date": "Sun, 11 Oct 2026 05:00:00 +0900"
         },
         {
-          "title": "삼진제약, 장용성 췌장효소제 출시…췌장질환 환자 복용 부담 덜어",
-          "link": "http://www.rightknow.co.kr/news/articleView.html?idxno=35249",
-          "date": "Fri, 23 Oct 2026 16:56:00 +0900"
+          "title": "[원용철 목사의 세상보기] 비트즙을 판매합니다",
+          "link": "http://www.newstnt.com/news/articleView.html?idxno=284417",
+          "date": "Fri, 23 Jun 2023 10:36:00 +0900"
         }
       ],
       "search_trend": {
-        "change_rate": -9.0,
+        "change_rate": 4.6,
         "direction": "유지",
-        "weekly_avg": 70.3
+        "weekly_avg": 72.7
       },
       "expert_gap": {
-        "total_blogs": 1037831,
-        "expert_blogs": 43104,
-        "gap_ratio": 24.1,
-        "label": "전문가 부족"
+        "total_blogs": 113183,
+        "expert_blogs": 910,
+        "gap_ratio": 124.2,
+        "label": "전문가 갭 큼"
       },
-      "search_volume": 3540,
-      "comp_idx": "높음",
-      "pharma_value_calc": 4.4,
+      "search_volume": 5120,
+      "comp_idx": "중간",
+      "pharma_value_calc": 5.2,
       "serp": {
-        "checked_at": "2026-10-23T20:17:27.741Z",
+        "checked_at": "2026-10-24T09:02:59.297Z",
         "status": 200,
         "blog_top": [
           {
-            "blog": "multizzang2",
+            "blog": "sul_hwa",
             "age_days": 21,
-            "title": "카무트효능 TOP4, 카무트효소 그냥 먹으면 될까?"
+            "title": "비트효능, 부작용 & 비트즙 만들기"
           },
           {
-            "blog": "oia_87",
-            "age_days": 21,
-            "title": "효소찜질 효능 효과 주의할점 체크"
+            "blog": "hohos87",
+            "age_days": 52,
+            "title": "비트 효능 레드비트 먹는법, 사과 비트즙 만들기"
           },
           {
-            "blog": "line_jjin",
+            "blog": "fall_boy",
             "age_days": 21,
-            "title": "카무트효소 효능과 복용방법, 제품 선택 기준"
+            "title": "비트즙의효능 올바르게 알아보고 나에게 맞는 제품 추천받는 방법"
           },
           {
             "blog": "anarche69",
-            "age_days": 28,
-            "title": "카무트효소 효능 역가수치부터 효소 구성, 섭취 방법까지"
+            "age_days": 47,
+            "title": "비트즙 효능 부작용 및 잘 고르는 방법 기준 섭취방법"
           },
           {
-            "blog": "qsssc",
+            "blog": "slle8n8k5k1po2",
+            "age_days": 14,
+            "title": "100포 유기농 레드비트즙 직접 마셔보니 이 점이 놀라워요"
+          },
+          {
+            "blog": "jae5482",
+            "age_days": 14,
+            "title": "비트 효능 총정리, 레드비트·비트즙·부작용까지 알아보기"
+          },
+          {
+            "blog": "agehzzv75695_rc",
             "age_days": 21,
-            "title": "여주효소 여주 효능 섭취시 주의점"
-          },
-          {
-            "blog": "joy61062",
-            "age_days": 28,
-            "title": "카무트효소효능 제대로 보려면? 선택 기준 5가지와 먹는 법"
+            "title": "물없이 통째로 갈아만든 착즙 비트즙 100ml 30포 진액 엑기스"
           }
         ],
         "median_age_days": 21,
-        "fresh_30d": 5,
+        "fresh_30d": 3,
         "my_rank": null,
-        "first_blog_y": 10405,
-        "shop_y": 6303,
-        "ad_y": 6562,
+        "first_blog_y": 6964,
+        "shop_y": 1336,
+        "ad_y": 1701,
         "shop_above_blog": true
       },
       "position_mult": 0.92,
-      "opportunity_score": 7.2,
-      "opportunity_label": "포화(경쟁 높음)",
+      "opportunity_score": 8.9,
+      "opportunity_label": "보통",
       "news_recency": {},
-      "score": 8.3,
+      "score": 8.9,
       "consecutive_days": 1,
       "previously_written": false,
       "days_since_written": null,
-      "novelty": "새 영역",
-      "suggested_days_2w": 0,
+      "novelty": "새 영역(다시 제안)",
+      "suggested_days_2w": 3,
       "in_deep_dive_roots": false,
-      "shopping_rank": null,
-      "novelty_mult": 1.15,
+      "shopping_rank": 81,
+      "novelty_mult": 1.0,
       "is_new_topic": true,
       "persistence_mult": 1.0,
       "rank": 3
     },
     {
-      "keyword": "상어연골 콘드로이친",
-      "entity": "상어연골",
+      "keyword": "액상 마그네슘",
+      "entity": "액상 마그네슘",
       "search_terms": [
-        "상어연골 효능",
-        "상어연골 콘드로이친",
-        "상어연골 부작용"
+        "액상 마그네슘",
+        "마그네슘 액상 효과",
+        "마그네슘 흡수율"
       ],
       "track": "검색형",
-      "source": "shopping",
+      "source": "news",
       "category": "영양제·성분",
-      "pharma_value": 4,
-      "trend_key": "상어연골",
-      "why_now": "'건강에상어연골환'이 쇼핑 인기검색어 102위에 있고, 콘드로이친1200(26위)도 상위권입니다. 부모님 관절 선물 시즌에 '상어연골'이라는 원료명이 따로 검색됩니다.",
-      "pharmacist_angle": "상어연골은 콘드로이친의 원료 공급원일 뿐입니다. 환 제품은 콘드로이친 함량이 얼마나 표기돼 있는지가 핵심이고, 경구 흡수율이 낮다는 점과 와파린 병용 주의를 짚을 수 있습니다.",
-      "title_idea": "상어연골환, 부모님 관절 선물이라면 뒷면에서 콘드로이친 숫자부터",
+      "pharma_value": 5,
+      "trend_key": "마그네슘 제형",
+      "why_now": "액상 마그네슘 '마그네슘킹'이 출시 한 달 만에 5만 병이 팔렸다는 기사가 나왔고, 쇼핑에서도 '젖산마그네슘'(오타 '적산·젓산' 포함)이 계속 오르고 있습니다. 젖산마그네슘 성분 글감과 겹치지 않게 '액상 제형' 자체를 다룹니다.",
+      "pharmacist_angle": "이미 녹아 있는 액상이 알약보다 흡수가 빠른 것은 맞지만 하루 흡수 총량은 마그네슘 염의 종류와 양에 달렸다는 점, 앰플 속 당·감미료와 신장 기능을 DDS 관점에서 짚습니다.",
+      "title_idea": "액상 마그네슘, 녹아 있어서 더 빠르다는 말과 더 많이 들어온다는 말은 다릅니다",
       "already_covered": false,
       "covered_posts": [],
-      "source_headlines": [],
-      "keyword_ai": "상어연골",
+      "source_headlines": [
+        "[제약+] 일동제약, 신규 비타민제 브랜드 '슈퍼라민' 출시 外",
+        "[제약업계 소식] 10월 14일"
+      ],
+      "keyword_ai": "액상 마그네슘",
       "grounded_by": "search_term",
       "search_term_volumes": {
-        "상어연골 효능": 110,
-        "상어연골 콘드로이친": 3110,
-        "상어연골 부작용": 20,
-        "상어연골": 1970
+        "액상 마그네슘": 13380,
+        "마그네슘 액상 효과": 20,
+        "마그네슘 흡수율": 210
       },
-      "news_count": 595,
+      "news_count": 4993,
       "news_headlines": [
         {
-          "title": "관절 건기식도 1200mg 전쟁…풀무원·유한·대원·동원, 액티브 시니어 ...",
-          "link": "https://n.news.naver.com/mnews/article/022/0004165572?sid=101",
-          "date": "Sun, 11 Oct 2026 07:22:00 +0900"
+          "title": "대원제약 &quot;마그네슘킹, 출시 한달만 5만병 판매&quot;",
+          "link": "https://n.news.naver.com/mnews/article/003/0014252085?sid=102",
+          "date": "Wed, 14 Oct 2026 10:55:00 +0900"
         },
         {
-          "title": "닥터린 철갑상어 연골콜라겐 함유 ‘콘드로이친 1200맥스’ 누적 판매 ...",
-          "link": "https://www.geconomy.co.kr/news/article.html?no=319977",
-          "date": "Wed, 29 Apr 2026 15:44:00 +0900"
+          "title": "앨리스랩, 테니스 국가대표 신우빈 효과… '액상 젖산마그네슘 ' 약국가...",
+          "link": "http://www.hortitimes.com/news/articleView.html?idxno=34462",
+          "date": "Tue, 20 Oct 2026 10:22:00 +0900"
         },
         {
-          "title": "닥터린, 철갑상어 연골콜라겐 함유 '콘드로이친 1200맥스' 누적판매 1000...",
-          "link": "http://www.medisobizanews.com/news/articleView.html?idxno=137989",
-          "date": "Wed, 29 Apr 2026 12:18:00 +0900"
+          "title": "테니스 국가대표 신우빈, 앨리스랩 '액상 젖산마그네슘 315 샷'으로 영양...",
+          "link": "https://www.geconomy.co.kr/news/article.html?no=324596",
+          "date": "Tue, 20 Oct 2026 10:36:00 +0900"
         }
       ],
       "search_trend": {
-        "change_rate": -15.7,
-        "direction": "하락",
-        "weekly_avg": 65.6
+        "change_rate": 1.2,
+        "direction": "유지",
+        "weekly_avg": 75.7
       },
       "expert_gap": {
-        "total_blogs": 41387,
-        "expert_blogs": 2683,
-        "gap_ratio": 15.4,
-        "label": "전문가 부족"
+        "total_blogs": 78296,
+        "expert_blogs": 9520,
+        "gap_ratio": 8.2,
+        "label": "보통"
       },
-      "search_volume": 3110,
-      "comp_idx": "높음",
-      "pharma_value_calc": 4.4,
+      "search_volume": 13380,
+      "comp_idx": "중간",
+      "pharma_value_calc": 5.0,
       "serp": {
-        "checked_at": "2026-10-23T20:17:20.845Z",
+        "checked_at": "2026-10-24T09:03:26.280Z",
         "status": 200,
         "blog_top": [
           {
-            "blog": "joy61062",
-            "age_days": 14,
-            "title": "관절엔 콘드로이친 효능 철갑상어 연골 고르는 이유"
-          },
-          {
-            "blog": "3jeong",
-            "age_days": 14,
-            "title": "소연골 콘드로이친 1200mg이면 충분할까? 철갑상어 연골도 비교해야 하는 이유"
-          },
-          {
-            "blog": "healthbody0",
-            "age_days": 21,
-            "title": "상어연골 콘드로이친 소연골 비교 성분 선택방법 추천 효능 정리"
-          },
-          {
-            "blog": "duzo328",
-            "age_days": 14,
-            "title": "상어연골 콘드로이친 철갑상어 소연골 종류 차이 비교 선택 이유까지 정리"
-          },
-          {
             "blog": "yaboo_171022",
-            "age_days": 14,
-            "title": "콘드로이친 추천 이유, 철갑상어 소연골 차이 비교 및 제품 선택 방법"
+            "age_days": 21,
+            "title": "젖산 마그네슘 효능과 액상형 추천 이유, 영양제 선택 기준까지"
           },
           {
-            "blog": "alsyffl2",
+            "blog": "anarche69",
             "age_days": 14,
-            "title": "상어연골 콘드로이친 확인 및 섭취 요령"
+            "title": "마그네슘 효능과 액상 마그네슘 추천 이유, 제품 선택 후기"
+          },
+          {
+            "blog": "ssoonssu",
+            "age_days": 14,
+            "title": "젖산마그네슘 안국건강 하이퍼 액상 마그네슘 에너지샷 간편한 영양 관리"
+          },
+          {
+            "blog": "lwr0509",
+            "age_days": 28,
+            "title": "액상마그네슘 동국제약 마그네슘 스피드샷, 젖산 마그네슘 먹어본 찐후기"
           },
           {
             "blog": "sunlightyoung",
+            "age_days": 14,
+            "title": "액상 마그네슘 효능 및 복용법"
+          },
+          {
+            "blog": "potenpop",
+            "age_days": 14,
+            "title": "젖산 마그네슘 효능과 하루 섭취량, 액상 추천 이유 먹는법까지 정리"
+          },
+          {
+            "blog": "llszllnu012",
             "age_days": 21,
-            "title": "소연골 콘드로이친 효능 철갑상어연골과 차이는? 관절 영양제 선택 기준"
+            "title": "젖산마그네슘 액상 추천 이유 올바른 선택 기준까지"
           }
         ],
         "median_age_days": 14,
         "fresh_30d": 5,
         "my_rank": null,
-        "first_blog_y": 7198,
-        "shop_y": 1559,
-        "ad_y": 1946,
+        "first_blog_y": 7663,
+        "shop_y": 1266,
+        "ad_y": 1653,
         "shop_above_blog": true
       },
       "position_mult": 0.92,
-      "opportunity_score": 7.1,
-      "opportunity_label": "포화(경쟁 높음)",
-      "news_recency": {},
-      "score": 8.2,
-      "consecutive_days": 1,
-      "previously_written": false,
-      "days_since_written": null,
-      "novelty": "새 영역",
-      "suggested_days_2w": 0,
-      "in_deep_dive_roots": false,
-      "shopping_rank": null,
-      "novelty_mult": 1.15,
-      "is_new_topic": true,
-      "persistence_mult": 1.0,
-      "rank": 4
-    },
-    {
-      "keyword": "마누카꿀",
-      "entity": "마누카꿀",
-      "search_terms": [
-        "마누카꿀 효능",
-        "마누카꿀 MGO",
-        "마누카꿀 UMF 차이"
-      ],
-      "track": "검색형",
-      "source": "shopping",
-      "category": "영양제·성분",
-      "pharma_value": 3,
-      "trend_key": "마누카꿀",
-      "why_now": "'아라타키마누카꿀'이 쇼핑 인기검색어 171위로 새로 들어왔습니다. 환절기 목 관리용으로 수요가 늘어나는 시기입니다. 라벨의 MGO·UMF 숫자 때문에 헷갈리는 소비자가 많습니다.",
-      "pharmacist_angle": "MGO(메틸글리옥살)가 실제 항균 성분이라는 점과 UMF 등급을 MGO로 바꿔 읽는 법을 설명합니다. 바르는 상처 드레싱 근거와 먹는 근거를 구분하고, 당뇨 환자와 돌 전 아기에게 주의할 점을 짚습니다.",
-      "title_idea": "마누카꿀 MGO 숫자, 높을수록 목감기에 잘 듣는 걸까",
-      "already_covered": false,
-      "covered_posts": [],
-      "source_headlines": [],
-      "keyword_ai": "마누카꿀",
-      "grounded_by": "search_term",
-      "search_term_volumes": {
-        "마누카꿀 효능": 8880,
-        "마누카꿀 MGO": 350,
-        "마누카꿀 UMF 차이": 20,
-        "마누카꿀": 34280
-      },
-      "news_count": 5232,
-      "news_headlines": [
-        {
-          "title": "콤비타 UMF™ 12+ 마누카꿀, 22일 현대홈쇼핑 생방송 진행",
-          "link": "https://www.ksilbo.co.kr/news/articleView.html?idxno=1070043",
-          "date": "Wed, 21 Oct 2026 14:00:00 +0900"
-        },
-        {
-          "title": "콤비타, 22일 현대홈쇼핑서 'UMF 12+ 마누카꿀' 선봬...UMF 인증 체계도...",
-          "link": "https://www.hinews.co.kr/view.php?ud=2026102015464454719284fa285d_48",
-          "date": "Wed, 21 Oct 2026 14:00:00 +0900"
-        },
-        {
-          "title": "올림플래닛, 휴대성 높인 마누카꿀 제품 '더마누' 출시",
-          "link": "https://www.nbntv.co.kr/news/articleView.html?idxno=4026057",
-          "date": "Fri, 16 Oct 2026 09:00:00 +0900"
-        }
-      ],
-      "search_trend": {
-        "change_rate": 21.7,
-        "direction": "상승",
-        "weekly_avg": 38.8
-      },
-      "expert_gap": {
-        "total_blogs": 88580,
-        "expert_blogs": 1103,
-        "gap_ratio": 80.2,
-        "label": "전문가 갭 큼"
-      },
-      "search_volume": 34280,
-      "comp_idx": "높음",
-      "pharma_value_calc": 3.9,
-      "serp": {
-        "checked_at": "2026-10-23T20:17:13.897Z",
-        "status": 200,
-        "blog_top": [
-          {
-            "blog": "cococo93",
-            "age_days": 14,
-            "title": "마누카꿀 효능, 일반 꿀 효능 차이 알아봐요"
-          },
-          {
-            "blog": "gkdl2242",
-            "age_days": 14,
-            "title": "마누카꿀 효능 일반 꿀이랑 무슨 차이가 있을까?"
-          },
-          {
-            "blog": "jung71999",
-            "age_days": 28,
-            "title": "마누카꿀 효능 먹기 전 알아둘 부작용 위염 환자 주목"
-          },
-          {
-            "blog": "tmishaha",
-            "age_days": 14,
-            "title": "마누카꿀 효능, 먹는법, 일반꿀 호주꿀 차이 비교, UMF MGO 등급 뜻, 뉴질랜드 마누카 고르는법, 꿀효"
-          },
-          {
-            "blog": "plus4979",
-            "age_days": 14,
-            "title": "하이웰 마누카꿀 UMF 15+ 20+ 25+ 차이점, 데일리 관리용부터 선물용까지"
-          },
-          {
-            "blog": "yeswest_",
-            "age_days": 28,
-            "title": "마누카꿀 효능 7가지 종류 등급 먹는 법 UMF MGO 부작용"
-          },
-          {
-            "blog": "pull_kim",
-            "age_days": 14,
-            "title": "[공구오픈] 콤비타 마누카꿀 싸게사는 법 (인스타 공구)"
-          }
-        ],
-        "median_age_days": 14,
-        "fresh_30d": 5,
-        "my_rank": null,
-        "first_blog_y": 8738,
-        "shop_y": 1340,
-        "ad_y": 1765,
-        "shop_above_blog": true
-      },
-      "position_mult": 0.92,
-      "opportunity_score": 8.1,
-      "opportunity_label": "포화(경쟁 높음)",
+      "opportunity_score": 9.5,
+      "opportunity_label": "보통",
       "news_recency": {},
       "score": 8.1,
       "consecutive_days": 1,
       "previously_written": false,
       "days_since_written": null,
       "novelty": "기존 영역",
-      "suggested_days_2w": 3,
+      "suggested_days_2w": 4,
       "in_deep_dive_roots": true,
-      "shopping_rank": 22,
+      "shopping_rank": 112,
+      "novelty_mult": 0.85,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 4
+    },
+    {
+      "keyword": "이노시톨 효능",
+      "entity": "미오이노시톨",
+      "search_terms": [
+        "이노시톨 효능",
+        "미오이노시톨 다낭성",
+        "이노시톨 부작용"
+      ],
+      "track": "검색형",
+      "source": "shopping",
+      "category": "영양제·성분",
+      "pharma_value": 4,
+      "trend_key": "이노시톨",
+      "why_now": "'여성이노시톨'이 쇼핑 인기검색어 440위에서 123위로 올랐습니다. 임신 준비용으로만 알려졌던 이노시톨이 다낭성난소·생리불순·혈당 쪽 영양제로 넓게 팔리고 있습니다. 3월 임신준비 글 뒤로 7개월이 지나서, 다낭성·인슐린저항성 쪽으로 새로 쓸 수 있습니다.",
+      "pharmacist_angle": "미오이노시톨과 D-카이로이노시톨 40:1 비율 근거가 어디까지 나왔는지, 메트포르민과 함께 먹을 때 무엇을 확인해야 하는지 처방을 보는 약사 눈으로 정리합니다.",
+      "title_idea": "여성 이노시톨, 다낭성이라 사셨다면 40:1 비율보다 먼저 볼 숫자",
+      "already_covered": false,
+      "covered_posts": [
+        "미오이노시톨 임신준비, 병원 약사가 \"다 드세요\"라고 못 하는 진짜 이유"
+      ],
+      "source_headlines": [],
+      "keyword_ai": "여성 이노시톨",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "이노시톨 효능": 18920,
+        "미오이노시톨 다낭성": 20,
+        "이노시톨 부작용": 20,
+        "여성 이노시톨": 90
+      },
+      "news_count": 686,
+      "news_headlines": [
+        {
+          "title": "닥터린 ‘40:1 이노시톨’, 누적 판매 9만 박스 돌파",
+          "link": "https://www.vegannews.co.kr/news/article.html?no=299566",
+          "date": "Fri, 26 Sep 2025 16:18:00 +0900"
+        },
+        {
+          "title": "자궁 건강의 게임 체인저, ‘이노시톨’에 주목해야 할 이유",
+          "link": "https://www.vogue.co.kr/2025/03/14/%ec%9e%90%ea%b6%81-%ea%b1%b4%ea%b0%95%ec%9d%98-%ea%b2%8c%ec%9e%84-%ec%b2%b4%ec%9d%b8%ec%a0%80-%ec%9d%b4%eb%85%b8%ec%8b%9c%ed%86%a8%ec%97%90-%ec%a3%bc%eb%aa%a9%ed%95%b4%ec%95%bc/?utm_source=naver&utm_medium=partnership",
+          "date": "Fri, 14 Mar 2025 12:54:00 +0900"
+        },
+        {
+          "title": "이노시톨, 현대인의 건강 동반자에서 암 치료 가능성까지",
+          "link": "https://www.stardailynews.co.kr/news/articleView.html?idxno=471532",
+          "date": "Sat, 25 Jan 2025 17:36:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": -4.5,
+        "direction": "유지",
+        "weekly_avg": 68.7
+      },
+      "expert_gap": {
+        "total_blogs": 45250,
+        "expert_blogs": 5770,
+        "gap_ratio": 7.8,
+        "label": "보통"
+      },
+      "search_volume": 18920,
+      "comp_idx": "높음",
+      "pharma_value_calc": 4.0,
+      "serp": {
+        "checked_at": "2026-10-24T09:02:31.809Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "lovelymmmmee",
+            "age_days": 6,
+            "title": "이노시톨효능, 다낭성난소증후군과 복용 전 확인할 점"
+          },
+          {
+            "blog": "el512",
+            "age_days": 14,
+            "title": "이노시톨 효능, 여성들이 챙기는 이유"
+          },
+          {
+            "blog": "stylelistoday",
+            "age_days": 21,
+            "title": "이노시톨효능섭취시주의사항및건강에도움되는지확인"
+          },
+          {
+            "blog": "dlwjdwn1101",
+            "age_days": 14,
+            "title": "이노시톨효능 4가지 알기쉽게 정리"
+          },
+          {
+            "blog": "goodjoyful",
+            "age_days": 28,
+            "title": "이노시톨 효능, 식단 관리 방법!"
+          },
+          {
+            "blog": "ddoni_mom",
+            "age_days": 14,
+            "title": "임신 준비할 때 챙겨야 할 영양제! 이노시톨효능 난자 질과 배란까지 연결되는 이유"
+          },
+          {
+            "blog": "cococo93",
+            "age_days": 21,
+            "title": "이노시톨 효능 부작용, 복용 방법은?"
+          }
+        ],
+        "median_age_days": 14,
+        "fresh_30d": 5,
+        "my_rank": null,
+        "first_blog_y": 9120,
+        "shop_y": 1092,
+        "ad_y": 4088,
+        "shop_above_blog": true
+      },
+      "position_mult": 0.92,
+      "opportunity_score": 7.9,
+      "opportunity_label": "포화(경쟁 높음)",
+      "news_recency": {},
+      "score": 7.9,
+      "consecutive_days": 1,
+      "previously_written": true,
+      "days_since_written": 215,
+      "novelty": "기존 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
       "novelty_mult": 1.0,
       "is_new_topic": true,
       "persistence_mult": 1.0,
       "rank": 5
     },
     {
-      "keyword": "돌외잎 효능",
-      "entity": "돌외잎추출물",
+      "keyword": "판토텐산 효능",
+      "entity": "판토텐산",
       "search_terms": [
-        "돌외잎",
-        "돌외잎 효능",
-        "돌외잎 부작용"
+        "판토텐산 효능",
+        "판토텐산 비오틴",
+        "판토텐산 탈모"
       ],
       "track": "검색형",
-      "source": "news",
-      "category": "소비자건강",
-      "pharma_value": 3,
-      "trend_key": "돌외잎",
-      "why_now": "박한별이 다이어트 비결로 '부기 빠지는 차'를 소개하면서 돌외(사포닌)가 기사에 언급됐습니다. 돌외잎주정추출분말은 체지방 감소 기능성을 인정받은 원료라서 연예인 이슈와 건기식 수요가 겹칩니다.",
-      "pharmacist_angle": "기능성으로 인정된 '추출물'과 시중의 '차'는 다르다는 점을 설명합니다. 인정 용량, 임상에서 실제로 줄어든 체지방량, 이뇨로 빠지는 '부기'를 구분해 줄 수 있습니다.",
-      "title_idea": "돌외잎 차, 박한별 부기 차를 마셔도 체지방 기능성 그 원료는 아닙니다",
+      "source": "shopping",
+      "category": "영양제·성분",
+      "pharma_value": 4,
+      "trend_key": "판토텐산",
+      "why_now": "'판토오틴'(판토텐산+비오틴 계열로 보임)이 쇼핑 인기검색어에 새로 들어왔습니다(211위). 탈모 신약 뉴스가 쏟아지는 동안 먹는 탈모 영양제 수요도 같이 커지고 있습니다. 약용효모 글과 이어 쓸 수 있습니다.",
+      "pharmacist_angle": "판토텐산·비오틴이 결핍이 아닌 사람의 탈모에는 근거가 약하다는 점, 비오틴 고용량이 갑상선·트로포닌 피검사 수치를 흔든다는 점을 병원 약사로서 경고합니다.",
+      "title_idea": "판토텐산 비오틴, 탈모약 대신 드시고 계셨다면 피검사 전날은 쉬세요",
       "already_covered": false,
       "covered_posts": [],
       "source_headlines": [
-        "박한별, 40대에도 늘씬한 실루엣…다이어트 비결은 \"부기 빠지는 차\""
+        "[파이프라인 점검-탈모] '주사제 경쟁' 종근당·대웅, '신약 도전장' 내..."
       ],
-      "keyword_ai": "돌외잎",
+      "keyword_ai": "판토텐산 탈모",
       "grounded_by": "search_term",
       "search_term_volumes": {
-        "돌외잎": 1200,
-        "돌외잎 효능": 1790,
-        "돌외잎 부작용": 20
+        "판토텐산 효능": 2290,
+        "판토텐산 비오틴": 200,
+        "판토텐산 탈모": 150
       },
-      "news_count": 25,
+      "news_count": 1006,
       "news_headlines": [
         {
-          "title": "오다다, 신제품 '울트라' 출시…돌외잎·흑보리로 더 강력하게 업그레이...",
-          "link": "https://www.it-b.co.kr/news/articleView.html?idxno=84783",
-          "date": "Fri, 24 Oct 2025 09:04:00 +0900"
+          "title": "&quot;건강에 좋다지만 살찔까 걱정?&quot;… 그래도 주목해야 할 아보카도 효능 ...",
+          "link": "https://news.hidoc.co.kr/news/articleView.html?idxno=68539",
+          "date": "Tue, 13 Oct 2026 06:00:00 +0900"
         },
         {
-          "title": "다이어트에 좋은 음식",
-          "link": "http://www.mdtoday.co.kr/mdtoday/index.html?no=416723",
-          "date": "Wed, 24 Mar 2021 10:43:00 +0900"
+          "title": "캐슈넛 효능, 비타민K 판토텐산 등 함유...다이어트+피부미용 &quot;여성 필수...",
+          "link": "http://www.mediapen.com/news/articleView.html?idxno=52843",
+          "date": "Sat, 01 Nov 2014 03:45:00 +0900"
         },
         {
-          "title": "콜레스테롤 수치 낮추고 체지방 감소에 효과적인 ‘돌외잎 추출물’",
-          "link": "http://www.hidoc.co.kr/healthstory/news/C0000684281",
-          "date": "Mon, 04 Apr 2022 15:34:00 +0900"
+          "title": "천연비타민 판토텐산, 여드름 완화에도 ‘효과적’",
+          "link": "https://n.news.naver.com/mnews/article/004/0002203646?sid=101",
+          "date": "Wed, 19 Jun 2013 15:28:00 +0900"
         }
       ],
       "search_trend": {
-        "change_rate": -40.6,
-        "direction": "하락",
-        "weekly_avg": 28.1
+        "change_rate": 1.3,
+        "direction": "유지",
+        "weekly_avg": 66.9
       },
       "expert_gap": {
-        "total_blogs": 4664,
-        "expert_blogs": 181,
-        "gap_ratio": 25.6,
+        "total_blogs": 87500,
+        "expert_blogs": 6458,
+        "gap_ratio": 13.5,
         "label": "전문가 부족"
       },
-      "search_volume": 1790,
+      "search_volume": 2290,
       "comp_idx": "높음",
-      "pharma_value_calc": 3.3,
+      "pharma_value_calc": 4.4,
       "serp": {
-        "checked_at": "2026-10-23T20:17:41.287Z",
+        "checked_at": "2026-10-24T09:03:12.870Z",
         "status": 200,
         "blog_top": [
           {
-            "blog": "limhyun314",
-            "age_days": null,
-            "title": "돌외잎차 다이어트 효능, 매일 마셔도 괜찮을까?건강맨네이버 블로그"
+            "blog": "moregen",
+            "age_days": 14,
+            "title": "놓치기 아까운 판토텐산 효능 부작용 탈모 영양제 고르는법 정리"
           },
           {
-            "blog": "yunbo9802",
-            "age_days": 7,
-            "title": "단기간 살빼는법과 늘어난 뱃살 빼는 방법 극복기: 베라핏 다이어트 가격 및 솔직 후기 비교, 돌외...."
-          },
-          {
-            "blog": "petitam80",
+            "blog": "manetteshoes",
             "age_days": 28,
-            "title": "다이어트에 도움을 주는 돌외잎 섭취 법과 주의사항"
+            "title": "비타민b5 판토텐산 효능과 부작용, skinb5 여드름영양제 알아보기"
           },
           {
-            "blog": "yeswest_",
-            "age_days": 70,
-            "title": "돌외잎 효능 7가지 임산부 다이어트 부작용"
-          },
-          {
-            "blog": "ariix1",
-            "age_days": 21,
-            "title": "신장디톡스? 더클라세움의 신제품 '셀비움'!!"
-          },
-          {
-            "blog": "dreamerluna_",
-            "age_days": 28,
-            "title": "라이프익스텐션 ampk 효능 3가지,부작용, 복용법"
+            "blog": "ddoni_mom",
+            "age_days": 38,
+            "title": "피부부터 에너지까지! 판토텐산 효능 부족 증상 비타민B5 음식"
           }
         ],
         "median_age_days": 28,
-        "fresh_30d": 3,
+        "fresh_30d": 2,
         "my_rank": null,
-        "first_blog_y": 1626,
-        "shop_y": 5087,
-        "ad_y": 5343,
-        "shop_above_blog": false
+        "first_blog_y": 10338,
+        "shop_y": 6786,
+        "ad_y": 7128,
+        "shop_above_blog": true
       },
-      "position_mult": 1.05,
-      "opportunity_score": 5.6,
+      "position_mult": 0.92,
+      "opportunity_score": 6.8,
       "opportunity_label": "포화(경쟁 높음)",
       "news_recency": {},
-      "score": 6.4,
+      "score": 7.8,
       "consecutive_days": 1,
       "previously_written": false,
       "days_since_written": null,
@@ -766,275 +759,231 @@
       "rank": 6
     },
     {
-      "keyword": "벤포티아민",
-      "entity": "벤포티아민",
+      "keyword": "새싹삼",
+      "entity": "새싹삼",
       "search_terms": [
-        "활성비타민",
-        "벤포티아민 효능",
-        "활성비타민 차이"
+        "새싹삼 효능",
+        "새싹삼 부작용",
+        "새싹삼 먹는법"
       ],
       "track": "검색형",
       "source": "shopping",
       "category": "영양제·성분",
-      "pharma_value": 5,
-      "trend_key": "벤포티아민",
-      "why_now": "쇼핑 인기검색어에서 '활력비타민b'가 478위에서 275위로 급상승했습니다. 같은 시기에 일동제약이 활성형 B1 3종을 넣은 '슈퍼라민'을 출시했다는 기사가 쏟아졌습니다. 활성형 B1의 종류(벤포티아민·푸르설티아민·비스벤티아민)를 구분해 주는 글은 드뭅니다.",
-      "pharmacist_angle": "B1 유도체마다 지용성 구조와 흡수 경로가 다르다는 점을 설명합니다. 피로회복제 광고의 '활성형'이 실제로 무엇을 뜻하는지와 하루 함량을 비교하는 법도 정리할 수 있습니다.",
-      "title_idea": "활성비타민, 벤포티아민과 푸르설티아민은 같은 B1이 아닙니다",
+      "pharma_value": 3,
+      "trend_key": "새싹삼",
+      "why_now": "쇼핑 인기검색어에 새로 들어왔습니다(278위). 잎과 뿌리를 통째로 먹는 인삼이라 '사포닌이 더 많다'는 광고가 따라붙습니다. 인삼은 최근에 제안했지만 새싹삼은 대상도, 주장도 따로입니다.",
+      "pharmacist_angle": "잎에 많은 진세노사이드 종류가 뿌리와 어떻게 다른지, 와파린·당뇨약 먹는 부모님이 생으로 갈아 드실 때 무엇을 조심할지 정리합니다.",
+      "title_idea": "새싹삼, 잎까지 갈아 매일 드시는 부모님이 혈당약을 드신다면",
       "already_covered": false,
       "covered_posts": [],
-      "source_headlines": [
-        "일동제약, 새 비타민 브랜드 '슈퍼라민' 론칭…신제품 2종 출시",
-        "활성비타민·복합 성분으로 제품 차별화…일동제약, 슈퍼라민 론칭"
-      ],
-      "keyword_ai": "벤포티아민",
+      "source_headlines": [],
+      "keyword_ai": "새싹삼",
       "grounded_by": "search_term",
       "search_term_volumes": {
-        "활성비타민": 750,
-        "벤포티아민 효능": 530,
-        "활성비타민 차이": 20,
-        "벤포티아민": 1510
+        "새싹삼 효능": 310,
+        "새싹삼 부작용": 20,
+        "새싹삼 먹는법": 20,
+        "새싹삼": 2450
       },
-      "news_count": 5306,
+      "news_count": 4087,
       "news_headlines": [
         {
-          "title": "일동제약, 신규 비타민제 브랜드 '슈퍼라민' 론칭",
-          "link": "https://n.news.naver.com/mnews/article/003/0014253175?sid=102",
-          "date": "Wed, 14 Oct 2026 15:02:00 +0900"
+          "title": "한국가스기술공사 대전충청지사, 발달장애인 일자리 사업에 200만원 후원",
+          "link": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5072717",
+          "date": "Sun, 18 Oct 2026 08:52:00 +0900"
         },
         {
-          "title": "일동제약, 비타민제 브랜드 ‘슈퍼라민’ 출시",
-          "link": "https://n.news.naver.com/mnews/article/366/0001197893?sid=101",
-          "date": "Wed, 14 Oct 2026 13:43:00 +0900"
+          "title": "가스기술공사 대전충청지사, 발달장애인 일자리 지원에 200만 원 후원",
+          "link": "http://www.chungnamilbo.co.kr/news/articleView.html?idxno=915191",
+          "date": "Fri, 16 Oct 2026 16:58:00 +0900"
         },
         {
-          "title": "일동제약, 비타민제 브랜드 '슈퍼라민' 출시…신제품 2종 선봬",
-          "link": "https://n.news.naver.com/mnews/article/421/0009226649?sid=103",
-          "date": "Wed, 14 Oct 2026 11:14:00 +0900"
+          "title": "매헌1935, 강화 지역 식재료 활용한 한식 메뉴 선봬",
+          "link": "https://www.enetnews.co.kr/news/articleView.html?idxno=55225",
+          "date": "Tue, 13 Oct 2026 12:38:00 +0900"
         }
       ],
       "search_trend": {
-        "change_rate": -2.7,
-        "direction": "유지",
-        "weekly_avg": 56.9
+        "change_rate": 12.7,
+        "direction": "상승",
+        "weekly_avg": 78.0
       },
       "expert_gap": {
-        "total_blogs": 16003,
-        "expert_blogs": 6618,
-        "gap_ratio": 2.4,
-        "label": "전문가 포화"
+        "total_blogs": 119433,
+        "expert_blogs": 403,
+        "gap_ratio": 295.6,
+        "label": "전문가 갭 큼"
       },
-      "search_volume": 1510,
-      "comp_idx": "높음",
-      "pharma_value_calc": 3.5,
+      "search_volume": 2450,
+      "comp_idx": "중간",
+      "pharma_value_calc": 3.9,
       "serp": {
-        "checked_at": "2026-10-23T20:17:34.470Z",
+        "checked_at": "2026-10-24T09:02:45.621Z",
         "status": 200,
         "blog_top": [
           {
-            "blog": "sjch481",
-            "age_days": 28,
-            "title": "활성비타민 벤포티아민 푸르설티아민 차이, 피로 영양제 성분별 장단점"
+            "blog": "usujung",
+            "age_days": 37,
+            "title": "선물로 온 새싹삼 심기"
           },
           {
-            "blog": "shoppingpickkr",
+            "blog": "mygomi99",
+            "age_days": 74,
+            "title": "통째로 먹는 인삼이라고? 놀라운 새싹삼 효능과 효과"
+          },
+          {
+            "blog": "chaeum0821_",
             "age_days": 14,
-            "title": "투엑스비디큐정 가격 및 복용법, 벤포티아민과 비타민D·코큐텐 시너지 팩트 체크"
+            "title": "새싹인삼 재배와 땅콩새싹 비교, 고부가 새싹 작물 고를 때 볼 것"
           },
           {
-            "blog": "erer555555",
+            "blog": "comzirak",
             "age_days": 21,
-            "title": "[비타민B 피로회복] 비타민B 먹어도 소변만 샛노랗고 피곤한 이유? 흡수율 8배 지용성 벤포티아민...."
+            "title": "새싹삼 비빔밥을..."
           },
           {
-            "blog": "baekjaepharm",
-            "age_days": 21,
-            "title": "벤포티아민 135mg 비타민B 보령 쎈비큐정 성분·효능·복용법 - 종로백제약국"
-          },
-          {
-            "blog": "happylifeforever1004",
+            "blog": "heesookim1",
             "age_days": 14,
-            "title": "쎈비큐정 효능과 부작용 복용법, 성분과 주의사항"
+            "title": "새싹삼 식재 현장261014, 261015"
           }
         ],
         "median_age_days": 21,
-        "fresh_30d": 5,
+        "fresh_30d": 3,
         "my_rank": null,
-        "first_blog_y": 3309,
-        "shop_y": 3515,
-        "ad_y": 3818,
-        "shop_above_blog": false
+        "first_blog_y": 5781,
+        "shop_y": 1250,
+        "ad_y": 1534,
+        "shop_above_blog": true
       },
-      "position_mult": 1.0,
-      "opportunity_score": 5.6,
-      "opportunity_label": "포화(경쟁 높음)",
+      "position_mult": 0.92,
+      "opportunity_score": 6.1,
+      "opportunity_label": "보통",
       "news_recency": {},
-      "score": 5.6,
+      "score": 7.0,
       "consecutive_days": 1,
       "previously_written": false,
       "days_since_written": null,
-      "novelty": "새 영역(다시 제안)",
-      "suggested_days_2w": 3,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
       "in_deep_dive_roots": false,
-      "shopping_rank": null,
-      "novelty_mult": 1.0,
+      "shopping_rank": 278,
+      "novelty_mult": 1.15,
       "is_new_topic": true,
       "persistence_mult": 1.0,
       "rank": 7
     },
     {
-      "keyword": "면역세포치료",
-      "entity": "자가 면역세포치료",
+      "keyword": "테스토라",
+      "entity": "남성호르몬 영양제",
       "search_terms": [
-        "면역세포치료",
-        "면역세포치료 비용",
-        "NK세포 치료"
+        "남성호르몬 영양제",
+        "테스토스테론 영양제",
+        "남성갱년기 영양제"
       ],
-      "track": "시의형",
-      "source": "news",
-      "category": "약업계·정책",
+      "track": "검색형",
+      "source": "shopping",
+      "category": "영양제·성분",
       "pharma_value": 3,
-      "trend_key": "면역세포치료",
-      "why_now": "정부가 첨단재생의료 규제를 풀어 해외에 가지 않아도 국내에서 자가 면역세포 암치료를 받을 수 있게 됐습니다. 암 환자 가족의 검색이 늘 시점입니다. 허가 의약품과 첨단재생의료 치료가 다르다는 점도 기사에 나와 있습니다.",
-      "pharmacist_angle": "식약처 허가 의약품(CAR-T 등)과 첨단재생의료 '치료'가 무엇이 다른지 설명합니다. 근거 수준과 비용을 구분하고, 표준 항암치료와 같이 받을 때 확인할 점을 병원 약사 시각으로 정리합니다. 상황버섯 글과도 연결됩니다.",
-      "title_idea": "면역세포치료 국내 허용, 항암 주사를 쉬고 받아도 되는 치료일까",
+      "trend_key": "남성호르몬 영양제",
+      "why_now": "'테스토라영양제'가 쇼핑 인기검색어에 새로 들어왔습니다(117위). 이름으로 보아 남성호르몬·남성갱년기를 노린 제품으로 보이지만 정체 확인이 필요합니다. 남성 갱년기는 블로그에 아직 없는 영역입니다.",
+      "pharmacist_angle": "'테스토스테론 부스터'에 흔히 들어가는 성분(아연·통캇알리·호로파 등)의 사람 근거와, 전립선비대증약·혈압약 복용자가 확인할 점을 정리합니다.",
+      "title_idea": "남성호르몬 영양제, 피곤한 40대가 사기 전에 피검사로 먼저 볼 한 줄",
       "already_covered": false,
       "covered_posts": [],
-      "source_headlines": [
-        "해외 안 가도 국내서 자가 면역세포 암치료",
-        "의료데이터 빗장 풀고…자가면역세포 치료 쉬워진다"
-      ],
-      "keyword_ai": "면역세포치료",
-      "grounded_by": null,
-      "search_term_volumes": {
-        "면역세포치료": 80,
-        "면역세포치료 비용": 20,
-        "NK세포 치료": 70
-      },
-      "news_count": 280161,
-      "news_headlines": [
-        {
-          "title": "치료제 없는 말기 대장암, '맞춤형 면역세포' 임상 길 열렸다",
-          "link": "https://n.news.naver.com/mnews/article/003/0014273709?sid=102",
-          "date": "Fri, 23 Oct 2026 10:51:00 +0900"
-        },
-        {
-          "title": "“일본 안가도 돼”…암·난치병 환자, 자가면역세포 치료 국내서 바로...",
-          "link": "https://n.news.naver.com/mnews/article/009/0005753222?sid=103",
-          "date": "Fri, 23 Oct 2026 16:57:00 +0900"
-        },
-        {
-          "title": "자가면역세포 치료 쉬워진다…정부 주도 '자가줄기세포' 임상 추진",
-          "link": "https://n.news.naver.com/mnews/article/008/0005430744?sid=101",
-          "date": "Fri, 23 Oct 2026 14:00:00 +0900"
-        }
-      ],
-      "search_trend": {
-        "change_rate": 0.0,
-        "direction": "유지",
-        "weekly_avg": 0.0
-      },
-      "expert_gap": {
-        "total_blogs": 2029684,
-        "expert_blogs": 45054,
-        "gap_ratio": 45.0,
-        "label": "전문가 갭 큼"
-      },
-      "search_volume": 80,
-      "comp_idx": "높음",
-      "pharma_value_calc": 3.9,
-      "serp": null,
-      "position_mult": 1.0,
-      "opportunity_score": 3.0,
-      "opportunity_label": "수요 적음",
-      "news_recency": {
-        "newest_hours": 1.5,
-        "count_24h": 30,
-        "count_48h": 30
-      },
-      "score": 15.0,
-      "consecutive_days": 1,
-      "previously_written": false,
-      "days_since_written": null,
-      "novelty": "새 영역",
-      "suggested_days_2w": 0,
-      "in_deep_dive_roots": false,
-      "shopping_rank": null,
-      "novelty_mult": 1.15,
-      "is_new_topic": true,
-      "timeliness_score": 15.0,
-      "rank": 1
-    },
-    {
-      "keyword": "청소년 다이어트",
-      "entity": "청소년 다이어트 보조제",
-      "search_terms": [
-        "청소년 다이어트약",
-        "중학생 다이어트 보조제",
-        "청소년 다이어트"
-      ],
-      "track": "시의형",
-      "source": "news",
-      "category": "소비자건강",
-      "pharma_value": 3,
-      "trend_key": "청소년 다이어트 보조제",
-      "why_now": "'청소년 감량 식단, 유행보다 성장 상태가 먼저' 기사에서 청소년에게 검증된 다이어트 보조제 성분은 없다고 밝혔습니다. 식약처의 청소년 프로프라놀롤 오남용 경고와 함께 '청소년 약 오남용' 이슈가 이어지고 있습니다.",
-      "pharmacist_angle": "카페인·이뇨제·변비약 성분이 섞인 보조제가 성장기에 미치는 영향과 성인용 비만약(GLP-1)의 청소년 허가 범위를 정리합니다. 부모가 확인할 기준도 함께 짚습니다.",
-      "title_idea": "청소년 다이어트약, 아이 가방에서 발견했다면 성분표부터 같이 보세요",
-      "already_covered": false,
-      "covered_posts": [],
-      "source_headlines": [
-        "청소년 감량 식단, 유행보다 성장 상태가 먼저"
-      ],
-      "keyword_ai": "청소년 다이어트약",
+      "source_headlines": [],
+      "keyword_ai": "테스토라",
       "grounded_by": "search_term",
       "search_term_volumes": {
-        "청소년 다이어트약": 160,
-        "중학생 다이어트 보조제": 50,
-        "청소년 다이어트": 320
+        "남성호르몬 영양제": 1940,
+        "테스토스테론 영양제": 810,
+        "남성갱년기 영양제": 1340,
+        "테스토라": 3180
       },
-      "news_count": 17885,
+      "news_count": 3,
       "news_headlines": [
         {
-          "title": "“정상 체중인 아이까지”…비만치료제 오남용 위험 청소년도 덮쳐",
-          "link": "https://n.news.naver.com/mnews/article/028/0002828165?sid=102",
-          "date": "Mon, 19 Oct 2026 19:54:00 +0900"
+          "title": "테스토라 걱올리브 오일, 판매량 증가…일일 한정수량 판매 전환",
+          "link": "http://www.segyebiz.com/newsView/20260224513623?OutUrl=naver",
+          "date": "Wed, 25 Feb 2026 07:12:00 +0900"
         },
         {
-          "title": "&quot;살 빼려고 굶었는데 오히려 독?&quot;…나이·체형별 다이어트의 반전",
-          "link": "https://n.news.naver.com/mnews/article/008/0005427776?sid=103",
-          "date": "Sat, 17 Oct 2026 20:56:00 +0900"
+          "title": "테스토라, 공식몰서 '테스토라 걱올리브오일' 할인쿠폰·무료배송 프로...",
+          "link": "http://www.jeonmin.co.kr/news/articleView.html?idxno=432287",
+          "date": "Mon, 19 Jan 2026 10:18:00 +0900"
         },
         {
-          "title": "&quot;무조건 굶는다고 살 빠질까?&quot;…한의사가 추천한 체형별 다이어트",
-          "link": "https://n.news.naver.com/mnews/article/003/0014259806?sid=102",
-          "date": "Sat, 17 Oct 2026 15:41:00 +0900"
+          "title": "테스토라 걱올리브 오일, 공식몰 고객 감사 이벤트 진행",
+          "link": "https://www.businesskorea.co.kr/news/articleView.html?idxno=265033",
+          "date": "Thu, 12 Mar 2026 13:44:00 +0900"
         }
       ],
       "search_trend": {
-        "change_rate": -16.4,
-        "direction": "하락",
-        "weekly_avg": 48.4
+        "change_rate": 58.1,
+        "direction": "급상승",
+        "weekly_avg": 22.8
       },
       "expert_gap": {
-        "total_blogs": 460865,
-        "expert_blogs": 5269,
-        "gap_ratio": 87.5,
-        "label": "전문가 갭 큼"
+        "total_blogs": 1,
+        "expert_blogs": 120,
+        "gap_ratio": 0.0,
+        "label": "수요 적음"
       },
-      "search_volume": 320,
-      "comp_idx": "높음",
-      "pharma_value_calc": 3.9,
-      "serp": null,
-      "position_mult": 1.0,
-      "opportunity_score": 3.9,
-      "opportunity_label": "포화(경쟁 높음)",
-      "news_recency": {
-        "newest_hours": 1.8,
-        "count_24h": 3,
-        "count_48h": 9
+      "search_volume": 3180,
+      "comp_idx": "중간",
+      "pharma_value_calc": 2.7,
+      "serp": {
+        "checked_at": "2026-10-24T09:03:19.480Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "testokr",
+            "age_days": null,
+            "title": "테스토코리아네이버 블로그에어컨 진공 펌프 원리와 CFM 뜻 | testo 565i 7CFM vs 10CFM "
+          },
+          {
+            "blog": "tamtec",
+            "age_days": null,
+            "title": "탐텍씨엔에스네이버 블로그탐텍씨엔에스, testo 열화상 카메라 딜러 세미나 개최"
+          },
+          {
+            "blog": "rs-korea1",
+            "age_days": null,
+            "title": "알에스코리아네이버 블로그회사소식] 테스토 열화상 카메라 세미나"
+          },
+          {
+            "blog": "testokr",
+            "age_days": 28,
+            "title": "올해 단 한 번! 테스토코리아 가을 감사제｜현장 필수 계측기 50종 20% 할인 (~10/23)"
+          },
+          {
+            "blog": "arinluv",
+            "age_days": 165,
+            "title": "혈당영양제 테스토라 걱올리브 오일로 시작한 혈당조절 혈당관리"
+          },
+          {
+            "blog": "jjhh0906",
+            "age_days": 67,
+            "title": "[혈당 관리] 식후 혈당 관리에 좋은 테스토라 걱올리브 오일 추천해요!!"
+          },
+          {
+            "blog": "iu_news",
+            "age_days": 28,
+            "title": "[인더스트리투데이] 반도체 현장 가까이로 간 계측기술… 테스토코리아, 평택서 ‘측정 체험’"
+          }
+        ],
+        "median_age_days": 165,
+        "fresh_30d": 1,
+        "my_rank": null,
+        "first_blog_y": 1621,
+        "shop_y": null,
+        "ad_y": null,
+        "shop_above_blog": false
       },
-      "score": 11.7,
+      "position_mult": 1.05,
+      "opportunity_score": 5.0,
+      "opportunity_label": "보통",
+      "news_recency": {},
+      "score": 5.8,
       "consecutive_days": 1,
       "previously_written": false,
       "days_since_written": null,
@@ -1044,41 +993,243 @@
       "shopping_rank": null,
       "novelty_mult": 1.15,
       "is_new_topic": true,
-      "timeliness_score": 11.7,
-      "rank": 2
+      "persistence_mult": 1.0,
+      "rank": 8
     },
     {
-      "keyword": "에페 가격",
-      "entity": "에페글레나타이드",
+      "keyword": "연잎차 효능",
+      "entity": "연잎",
       "search_terms": [
-        "에페 가격",
-        "에페 비만약",
-        "에페 위고비 차이"
+        "연잎 효능",
+        "연잎차 효능",
+        "연잎차 부작용"
+      ],
+      "track": "검색형",
+      "source": "shopping",
+      "category": "소비자건강",
+      "pharma_value": 2,
+      "trend_key": "연잎",
+      "why_now": "'연잎'이 쇼핑 인기검색어 282위에서 193위로 올랐습니다. 다이어트차·부기차로 팔리는데, 블로그에서 써 온 '다이어트 차는 물이 빠지는 것' 흐름과 이어집니다.",
+      "pharmacist_angle": "연잎 알칼로이드(누시페린)의 근거가 동물실험 수준이라는 점, 이뇨 효과를 기대하고 마실 때 이뇨제·리튬 복용자가 주의할 점을 짚습니다.",
+      "title_idea": "연잎차, 부기 빠진 아침 체중이 지방이 아닌 이유",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [],
+      "keyword_ai": "연잎차",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "연잎 효능": 270,
+        "연잎차 효능": 1600,
+        "연잎차 부작용": 20,
+        "연잎차": 1270
+      },
+      "news_count": 149,
+      "news_headlines": [
+        {
+          "title": "연잎차, 치매예방에 도움…치매에 좋은 음식 선택법",
+          "link": "http://www.econovill.com/news/articleView.html?idxno=274552",
+          "date": "Fri, 18 Dec 2015 13:55:00 +0900"
+        },
+        {
+          "title": "오가뷰, 연잎차 출시",
+          "link": "http://www.enewstoday.co.kr/news/articleView.html?idxno=432394",
+          "date": "Tue, 27 Oct 2015 17:35:00 +0900"
+        },
+        {
+          "title": "환절기 건강, '약선차'로 잡으세요",
+          "link": "https://n.news.naver.com/mnews/article/422/0000033619?sid=102",
+          "date": "Sat, 02 Nov 2013 12:58:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 1.8,
+        "direction": "유지",
+        "weekly_avg": 66.6
+      },
+      "expert_gap": {
+        "total_blogs": 18573,
+        "expert_blogs": 97,
+        "gap_ratio": 189.5,
+        "label": "전문가 갭 큼"
+      },
+      "search_volume": 1600,
+      "comp_idx": "높음",
+      "pharma_value_calc": 2.6,
+      "serp": {
+        "checked_at": "2026-10-24T09:03:06.113Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "seo07031",
+            "age_days": null,
+            "title": "연잎차 효능 붓기 관리부터 항산화 작용까지 먹는법과 부작용미소왕비네이버 블로그"
+          },
+          {
+            "blog": "miyeonkim2",
+            "age_days": null,
+            "title": "연잎차 효능과 일상 속 올바른 섭취 관리 방법마음밭네이버 블로그"
+          },
+          {
+            "blog": "jonathan1201",
+            "age_days": 36,
+            "title": "[동의보감] 8.차로 많이 활용된 약재 - (5) 연잎의 복용방법, 효능 및 부작용"
+          },
+          {
+            "blog": "tgetea",
+            "age_days": 85,
+            "title": "티지이글로벌과 연잎차"
+          },
+          {
+            "blog": "mikako7119",
+            "age_days": 21,
+            "title": "40대 순환 돕는 연잎차 효능과 연근차 비교 먹는법"
+          },
+          {
+            "blog": "h2dpri",
+            "age_days": 45,
+            "title": "연잎효능과 부작용, 연잎차·연잎밥으로 먹을 때 알아둘 점"
+          }
+        ],
+        "median_age_days": 36,
+        "fresh_30d": 1,
+        "my_rank": null,
+        "first_blog_y": 1371,
+        "shop_y": 3333,
+        "ad_y": 3728,
+        "shop_above_blog": false
+      },
+      "position_mult": 1.05,
+      "opportunity_score": 4.4,
+      "opportunity_label": "포화(경쟁 높음)",
+      "news_recency": {},
+      "score": 5.1,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": false,
+      "shopping_rank": 193,
+      "novelty_mult": 1.15,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 9
+    },
+    {
+      "keyword": "노안 안약",
+      "entity": "유베지",
+      "search_terms": [
+        "노안 안약",
+        "노안 치료제",
+        "필로카르핀 안약"
       ],
       "track": "시의형",
       "source": "news",
       "category": "질환·치료",
       "pharma_value": 4,
+      "trend_key": "노안 안약",
+      "why_now": "한 번 넣으면 10시간 가는 이중 성분 노안 점안제가 FDA 승인을 받았고 국내에서도 식약처 심사가 진행 중입니다. 40~50대 독자층이 넓고 '돋보기 대신 안약' 검색이 늘어날 주제입니다.",
+      "pharmacist_angle": "동공을 좁혀(핀홀 효과) 가까운 것을 보게 하는 원리, 어두운 곳 운전과 망막박리 위험, 녹내장약과 함께 쓸 때를 약리로 설명합니다.",
+      "title_idea": "노안 안약 나온다는데, 돋보기를 버리기 전에 밤 운전부터 생각하세요",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [
+        "한 번 점안으로 10시간…노안 신약 내년에 나오나"
+      ],
+      "keyword_ai": "노안 안약",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "노안 안약": 12690,
+        "노안 치료제": 260,
+        "필로카르핀 안약": 200
+      },
+      "news_count": 1429,
+      "news_headlines": [
+        {
+          "title": "한 번 점안으로 10시간…노안 신약 내년에 나오나",
+          "link": "https://n.news.naver.com/mnews/article/079/0004202275?sid=101",
+          "date": "Sat, 24 Oct 2026 06:01:00 +0900"
+        },
+        {
+          "title": "67세 이문세 “백내장·노안 수술하니 너무 잘 보여”…두 질환 함께 교...",
+          "link": "https://n.news.naver.com/mnews/article/016/0002713566?sid=103",
+          "date": "Fri, 23 Oct 2026 12:21:00 +0900"
+        },
+        {
+          "title": "'명의' 최철영 교수가 알려주는 노년기 안질환과 노안 안약",
+          "link": "https://enter.etoday.co.kr/news/view/303830",
+          "date": "Fri, 16 Oct 2026 21:52:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 104.7,
+        "direction": "급상승",
+        "weekly_avg": 41.2
+      },
+      "expert_gap": {
+        "total_blogs": 43316,
+        "expert_blogs": 468,
+        "gap_ratio": 92.4,
+        "label": "전문가 갭 큼"
+      },
+      "search_volume": 12690,
+      "comp_idx": "높음",
+      "pharma_value_calc": 5.2,
+      "serp": null,
+      "position_mult": 1.0,
+      "opportunity_score": 8.5,
+      "opportunity_label": "포화(경쟁 높음)",
+      "news_recency": {
+        "newest_hours": 12.0,
+        "count_24h": 1,
+        "count_48h": 4
+      },
+      "score": 15.2,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 1.15,
+      "is_new_topic": true,
+      "timeliness_score": 15.2,
+      "rank": 1
+    },
+    {
+      "keyword": "에페 가격",
+      "entity": "에페",
+      "search_terms": [
+        "에페 비만",
+        "에페 가격",
+        "에페 위고비 차이"
+      ],
+      "track": "시의형",
+      "source": "news",
+      "category": "약업계·정책",
+      "pharma_value": 5,
       "trend_key": "에페글레나타이드",
-      "why_now": "기존 제안 이후 새 소식이 나왔습니다. 29일께 출시되고, 초기 2mg은 경쟁약의 절반 가격이지만 유지용량 10mg은 4주에 약 30만원이며 투여 대상도 한정된다는 가격 정보가 공개됐습니다. 출시 주간에 '가격' 검색이 몰립니다.",
-      "pharmacist_angle": "위고비 가격 글처럼 시작 용량 값이 아니라 유지용량까지 올렸을 때의 한 달 비용으로 비교해 줍니다. 허가 임상의 9% 감량 수치를 위고비·마운자로와 같은 기준으로 놓고 읽는 법도 정리할 수 있습니다.",
-      "title_idea": "에페 가격, 첫 달이 위고비의 반값이어도 석 달째부터 계산이 달라집니다",
+      "why_now": "29일 처방이 시작된다는 새 소식이 나왔습니다(허가 뒤 실제 출시). 위고비·마운자로·에페가 맞붙는 3파전이 시작되고, 임상 3상 40주 체중 9.02% 감소라는 숫자도 공개됐습니다. 블로그의 GLP-1 독자층에 바로 닿는 시점입니다.",
+      "pharmacist_angle": "40주 9%를 위고비·마운자로 임상과 같은 기준으로 비교하고, 바꿔 탈 때 용량을 어떻게 맞추는지와 월 1회 주사인 장기지속형 제형의 DDS 원리를 풀어 줍니다.",
+      "title_idea": "에페 29일 처방 시작, 위고비에서 바꿀까 고민이라면 9%라는 숫자부터",
       "already_covered": false,
       "covered_posts": [
         "에페글레나타이드, 알약 기대하고 오신 분들께 약국에서 꼭 드리는 말"
       ],
       "source_headlines": [
-        "국산 비만 신약 ‘에페’, 유지용량 30만원·투여 대상도 한정",
+        "한미약품 '에페' 29일 처방 개시…비만약 시장 3파전 본격화",
         "한미약품 국산 비만약 '에페' 이달 출격…삼성바이오 3분기 수익성 둔화..."
       ],
-      "keyword_ai": "에페 가격",
+      "keyword_ai": "에페 처방",
       "grounded_by": "search_term",
       "search_term_volumes": {
+        "에페 비만": 60,
         "에페 가격": 32420,
-        "에페 비만약": 260,
-        "에페 위고비 차이": 80
+        "에페 위고비 차이": 80,
+        "에페 처방": 1280
       },
-      "news_count": 2159,
+      "news_count": 2165,
       "news_headlines": [
         {
           "title": "한국판 위고비…첫 국산 비만약 ‘에페’ 29일께 처방 시작",
@@ -1086,40 +1237,40 @@
           "date": "Thu, 22 Oct 2026 22:07:00 +0900"
         },
         {
+          "title": "반값 비만약 임박…먹고 붙이는 것도 나온다",
+          "link": "https://n.news.naver.com/mnews/article/374/0000539558?sid=101",
+          "date": "Sat, 24 Oct 2026 07:00:00 +0900"
+        },
+        {
           "title": "K-비만약 '에페' 29일부터 처방 … 첫 달 13만원 가격 전략 통할까",
           "link": "https://biz.newdaily.co.kr/site/data/html/2026/10/23/2026102300282.html",
           "date": "Fri, 23 Oct 2026 17:38:00 +0900"
-        },
-        {
-          "title": "'에페' 출시…비만약 가격경쟁 시작",
-          "link": "http://www.smedaily.co.kr/news/articleView.html?idxno=365094",
-          "date": "Fri, 23 Oct 2026 15:12:00 +0900"
         }
       ],
       "search_trend": {
-        "change_rate": -33.1,
+        "change_rate": -33.9,
         "direction": "하락",
-        "weekly_avg": 37.9
+        "weekly_avg": 37.5
       },
       "expert_gap": {
-        "total_blogs": 39460,
-        "expert_blogs": 565,
-        "gap_ratio": 69.7,
+        "total_blogs": 39626,
+        "expert_blogs": 575,
+        "gap_ratio": 68.8,
         "label": "전문가 갭 큼"
       },
       "search_volume": 32420,
       "comp_idx": "낮음",
-      "pharma_value_calc": 5.2,
+      "pharma_value_calc": 6.5,
       "serp": null,
       "position_mult": 1.0,
-      "opportunity_score": 14.1,
+      "opportunity_score": 17.6,
       "opportunity_label": "💎황금(수요多·경쟁低)",
       "news_recency": {
-        "newest_hours": 8.3,
-        "count_24h": 20,
-        "count_48h": 29
+        "newest_hours": 3.9,
+        "count_24h": 8,
+        "count_48h": 30
       },
-      "score": 10.1,
+      "score": 11.1,
       "consecutive_days": 7,
       "previously_written": true,
       "days_since_written": 42,
@@ -1129,79 +1280,163 @@
       "shopping_rank": null,
       "novelty_mult": 1.0,
       "is_new_topic": true,
-      "timeliness_score": 10.1,
-      "rank": 3
+      "timeliness_score": 11.1,
+      "rank": 2
     },
     {
-      "keyword": "다이소 영양제 추천",
-      "entity": "건강기능식품 유통채널",
+      "keyword": "에파미뉴라드",
+      "entity": "에파미뉴라드",
       "search_terms": [
-        "편의점 영양제",
-        "올리브영 영양제",
-        "다이소 영양제 추천"
+        "통풍 신약",
+        "에파미뉴라드",
+        "요산 배출 약"
       ],
       "track": "시의형",
       "source": "news",
-      "category": "소비자건강",
-      "pharma_value": 3,
-      "trend_key": "편의점 영양제",
-      "why_now": "올리브영·다이소·편의점이 약국 대신 건기식 구매처가 되고 있다는 기사가 나왔습니다. '다이소 영양제' 글을 쓴 지 반년이 넘어 채널이 넓어진 지금 다시 다룰 만합니다.",
-      "pharmacist_angle": "어디서 사든 같은 것과 다른 것을 나눠 설명합니다. 건기식과 일반의약품의 차이, 1일 함량 대비 가격 계산법, 약국에서만 받을 수 있는 복용약 상호작용 확인을 정리합니다.",
-      "title_idea": "편의점 영양제, 약국 것과 성분은 같아도 놓치는 한 가지",
+      "category": "질환·치료",
+      "pharma_value": 5,
+      "trend_key": "에파미뉴라드",
+      "why_now": "임상 3상을 마치고 2027년 허가를 목표로 하는 국산 통풍 신약입니다. 2030 통풍 환자가 4년 새 13% 늘었다는 기사와 겹칩니다. 통풍은 최근 제안했지만 이번은 신약이라 대상이 다릅니다.",
+      "pharmacist_angle": "알로푸리놀·페북소스타트(요산 생성 억제)와 URAT1 억제제(요산 배출 촉진)의 차이, 신장결석 위험과 물 섭취를 블로그의 알로푸리놀 글과 이어 설명합니다.",
+      "title_idea": "통풍 신약 에파미뉴라드, 알로푸리놀과 요산을 내리는 길이 다릅니다",
       "already_covered": false,
       "covered_posts": [],
       "source_headlines": [
-        "건기식 '3파전', 약국 대신 올리브영·다이소·편의점 간다"
+        "[2026 제약바이오 대해부] 쥐약 접던 창업정신···이제 실적으로 증명...",
+        "\"굶는 다이어트 하다가 날벼락\"…2030 통풍 환자 4년 새 13% 급증"
       ],
-      "keyword_ai": "편의점 영양제",
-      "grounded_by": "search_term",
+      "keyword_ai": "에파미뉴라드",
+      "grounded_by": null,
       "search_term_volumes": {
-        "편의점 영양제": 200,
-        "올리브영 영양제": 610,
-        "다이소 영양제 추천": 2630
+        "통풍 신약": 70,
+        "에파미뉴라드": 30,
+        "요산 배출 약": 70
       },
-      "news_count": 188,
+      "news_count": 1678,
       "news_headlines": [
         {
-          "title": "건기식 '3파전', 약국 대신 올리브영·다이소·편의점 간다",
-          "link": "https://www.koreareport.co.kr/news/articleView.html?idxno=53908",
-          "date": "Fri, 23 Oct 2026 08:42:00 +0900"
+          "title": "[2026 제약바이오 대해부] 쥐약 접던 창업정신···이제 실적으로 증명...",
+          "link": "https://www.smartbizn.com/news/articleView.html?idxno=156969",
+          "date": "Fri, 23 Oct 2026 15:10:00 +0900"
         },
         {
-          "title": "[카드뉴스]다이소 영양제, 추천 제품과 비추천 제품 정리",
-          "link": "https://www.newsway.co.kr/news/view?ud=2025032613530347873",
-          "date": "Wed, 26 Mar 2025 13:54:00 +0900"
+          "title": "임상신청 반려에 올릭스 14% 급락·로킷헬스케어는 52주 신저가[바이오...",
+          "link": "https://n.news.naver.com/mnews/article/018/0006388188?sid=101",
+          "date": "Thu, 15 Oct 2026 07:03:00 +0900"
         },
         {
-          "title": "&quot;이 제품은 추천&quot; 다이소 영양제, 약사 유튜버 분석은",
-          "link": "https://n.news.naver.com/mnews/article/053/0000048602?sid=102",
-          "date": "Mon, 10 Mar 2025 17:12:00 +0900"
+          "title": "[JW그룹 인사 전망] 차성남·김용관 재선임 대상",
+          "link": "https://www.newsclaim.co.kr/news/articleView.html?idxno=3078791",
+          "date": "Fri, 16 Oct 2026 09:50:00 +0900"
         }
       ],
       "search_trend": {
-        "change_rate": -21.8,
-        "direction": "하락",
-        "weekly_avg": 62.2
+        "change_rate": 0.0,
+        "direction": "유지",
+        "weekly_avg": 0.0
       },
       "expert_gap": {
-        "total_blogs": 79940,
-        "expert_blogs": 4311,
-        "gap_ratio": 18.5,
+        "total_blogs": 452,
+        "expert_blogs": 31,
+        "gap_ratio": 14.1,
         "label": "전문가 부족"
       },
-      "search_volume": 2630,
-      "comp_idx": "중간",
-      "pharma_value_calc": 3.3,
+      "search_volume": 30,
+      "comp_idx": "낮음",
+      "pharma_value_calc": 5.5,
       "serp": null,
       "position_mult": 1.0,
-      "opportunity_score": 5.6,
-      "opportunity_label": "보통",
+      "opportunity_score": 4.9,
+      "opportunity_label": "수요 적음",
       "news_recency": {
-        "newest_hours": 20.6,
-        "count_24h": 1,
+        "newest_hours": 26.9,
+        "count_24h": 0,
         "count_48h": 1
       },
-      "score": 6.5,
+      "score": 11.0,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역(다시 제안)",
+      "suggested_days_2w": 1,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 1.0,
+      "is_new_topic": true,
+      "timeliness_score": 11.0,
+      "rank": 3
+    },
+    {
+      "keyword": "허가 전 생산 의약품",
+      "entity": "허가 전 제조 의약품 판매",
+      "search_terms": [
+        "식약처 규제 개선",
+        "허가 전 생산 의약품",
+        "신약 출시 앞당겨"
+      ],
+      "track": "시의형",
+      "source": "news",
+      "category": "약업계·정책",
+      "pharma_value": 3,
+      "trend_key": "허가 전 제조 판매",
+      "why_now": "식약처가 23일 규제합리화위원회에서 GMP를 지켜 허가 전에 만든 의약품의 판매를 허용하기로 했습니다. 신약 발매가 몇 달 앞당겨질 수 있어 품절 약 공급과도 이어지는 정책 뉴스입니다.",
+      "pharmacist_angle": "허가 전 생산분의 품질을 어떻게 확인하는지(공정 밸리데이션, 안정성 자료), 환자가 받는 약이 허가 뒤 제품과 같은지를 병원 약제부 입장에서 설명합니다.",
+      "title_idea": "허가 전에 만든 약도 팔 수 있게 됐다는데, 병원 약사가 확인할 한 줄",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [
+        "식약처, 허가 이전 생산품도 판매 허용 등 규제 합리화",
+        "[HIT 포커스] 허가 전 생산 의약품 판매 허용, 발매까지 앞당겨"
+      ],
+      "keyword_ai": "허가 전 생산 의약품",
+      "grounded_by": null,
+      "search_term_volumes": {
+        "식약처 규제 개선": 20,
+        "허가 전 생산 의약품": 20,
+        "신약 출시 앞당겨": 20
+      },
+      "news_count": 60649,
+      "news_headlines": [
+        {
+          "title": "&quot;K-바이오 성장 속도&quot;…식약처, 규제 합리화 발표",
+          "link": "https://n.news.naver.com/mnews/article/003/0014274353?sid=102",
+          "date": "Fri, 23 Oct 2026 14:00:00 +0900"
+        },
+        {
+          "title": "허가 전 생산 의약품도 판매 허용…식약처, 바이오 규제 완화",
+          "link": "https://n.news.naver.com/mnews/article/008/0005430745?sid=101",
+          "date": "Fri, 23 Oct 2026 14:00:00 +0900"
+        },
+        {
+          "title": "허가 전 만든 의약품도 판매…식약처, 바이오 규제 6개 손질",
+          "link": "https://n.news.naver.com/mnews/article/011/0004674473?sid=103",
+          "date": "Fri, 23 Oct 2026 14:01:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 0.0,
+        "direction": "유지",
+        "weekly_avg": 0.0
+      },
+      "expert_gap": {
+        "total_blogs": 82499,
+        "expert_blogs": 9674,
+        "gap_ratio": 8.5,
+        "label": "보통"
+      },
+      "search_volume": 20,
+      "comp_idx": "낮음",
+      "pharma_value_calc": 3.0,
+      "serp": null,
+      "position_mult": 1.0,
+      "opportunity_score": 2.3,
+      "opportunity_label": "수요 적음",
+      "news_recency": {
+        "newest_hours": 3.9,
+        "count_24h": 10,
+        "count_48h": 30
+      },
+      "score": 10.8,
       "consecutive_days": 1,
       "previously_written": false,
       "days_since_written": null,
@@ -1211,25 +1446,108 @@
       "shopping_rank": null,
       "novelty_mult": 1.15,
       "is_new_topic": true,
-      "timeliness_score": 6.5,
+      "timeliness_score": 10.8,
       "rank": 4
     },
     {
-      "keyword": "아트로핀 안약",
-      "entity": "저농도 아트로핀",
+      "keyword": "천연 위고비",
+      "entity": "GLP-1 음식",
       "search_terms": [
-        "마이오클리어",
+        "천연 위고비",
+        "GLP-1 음식",
+        "계란 다이어트"
+      ],
+      "track": "시의형",
+      "source": "news",
+      "category": "소비자건강",
+      "pharma_value": 4,
+      "trend_key": "천연 위고비",
+      "why_now": "아이유·박지윤의 계란 식단이 '천연 위고비'로 퍼지고 있고 의사 유튜버의 해설 기사도 나왔습니다. 에페 출시와 겹쳐 GLP-1 관심이 최고조인 시점입니다. 7월 베르베린 글 뒤로 3달이 지났습니다.",
+      "pharmacist_angle": "음식이 늘리는 내 몸의 GLP-1은 몇 분 만에 분해되지만 세마글루타이드는 반감기가 일주일이라는 차이를 숫자로 보여 줍니다.",
+      "title_idea": "천연 위고비 계란 식단, 몸속 GLP-1은 2분이면 사라집니다",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [
+        "아이유 계란 식단에 박지윤도 동참 '위고비-마운자로 위기'",
+        "우창윤이 밝힌 천연 위고비 정체-달걀보다 중요한 것"
+      ],
+      "keyword_ai": "천연 위고비",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "천연 위고비": 5570,
+        "GLP-1 음식": 20,
+        "계란 다이어트": 1770
+      },
+      "news_count": 587,
+      "news_headlines": [
+        {
+          "title": "‘40kg 감량’ 장형우 교수, “뜯어말리고 싶다”… ‘헛돈’ 쓰는 다이...",
+          "link": "https://n.news.naver.com/mnews/article/346/0000117482?sid=103",
+          "date": "Sun, 18 Oct 2026 01:01:00 +0900"
+        },
+        {
+          "title": "아이유 천연 위고비, 177㎝·54㎏ 톱모델 이현이도 살 뺄 때 달걀 시작 ...",
+          "link": "https://m.entertain.naver.com/article/609/0001178520",
+          "date": "Thu, 15 Oct 2026 13:57:00 +0900"
+        },
+        {
+          "title": "특정 의사 앞세운 '천연 위고비' 난리…아산병원 &quot;허위 광고 주의&quot;",
+          "link": "https://n.news.naver.com/mnews/article/057/0001970631?sid=102",
+          "date": "Thu, 24 Sep 2026 15:19:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": -21.4,
+        "direction": "하락",
+        "weekly_avg": 53.2
+      },
+      "expert_gap": {
+        "total_blogs": 20294,
+        "expert_blogs": 719,
+        "gap_ratio": 28.2,
+        "label": "전문가 부족"
+      },
+      "search_volume": 5570,
+      "comp_idx": "낮음",
+      "pharma_value_calc": 4.4,
+      "serp": null,
+      "position_mult": 1.0,
+      "opportunity_score": 9.9,
+      "opportunity_label": "💎황금(수요多·경쟁低)",
+      "news_recency": {
+        "newest_hours": 34.2,
+        "count_24h": 0,
+        "count_48h": 1
+      },
+      "score": 7.5,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "기존 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": true,
+      "shopping_rank": null,
+      "novelty_mult": 1.0,
+      "is_new_topic": true,
+      "timeliness_score": 7.5,
+      "rank": 5
+    },
+    {
+      "keyword": "아트로핀 안약",
+      "entity": "마이오클리어",
+      "search_terms": [
+        "소아 근시 안약",
         "아트로핀 안약",
-        "소아 근시 안약"
+        "근시 진행 억제"
       ],
       "track": "시의형",
       "source": "news",
       "category": "약업계·정책",
       "pharma_value": 5,
       "trend_key": "저농도 아트로핀",
-      "why_now": "10월 23일 라이트팜텍의 아트로핀 0.025% 점안액 '마이오클리어'가 국내 최초 소아 근시 진행 억제제로 허가받았습니다. 그동안 병원에서 조제해 쓰던 저농도 아트로핀이 정식 제품이 된 것이라, 학부모 검색이 바로 늘어날 시점입니다.",
-      "pharmacist_angle": "병원 약제부에서 아트로핀을 희석 조제해 온 실무 경험을 살릴 수 있습니다. 농도별 효과와 눈부심 부작용, 시력을 좋게 하는 약이 아니라 근시 진행을 늦추는 약이라는 점, 드림렌즈와 함께 쓰는 문제를 정리합니다.",
-      "title_idea": "마이오클리어, 우리 아이 안경 도수를 낮춰 주는 안약은 아닙니다",
+      "why_now": "23일 국내 첫 소아 근시 진행 억제제로 허가됐습니다(새 소식). 지금까지는 조제나 오프라벨로 쓰던 저농도 아트로핀(0.025%)이 정식 허가 의약품이 된 셈이라 부모들의 검색이 몰릴 것입니다.",
+      "pharmacist_angle": "0.01%·0.025%·0.05% 농도별 효과와 눈부심 차이, 무보존제 1회용 제형, 렌즈(드림렌즈)와 함께 쓸 때 어떤 순서로 넣는지 병원 약사 시각으로 풉니다.",
+      "title_idea": "마이오클리어 허가, 아이 근시 안약 시작 전에 0.025%를 고른 이유",
       "already_covered": false,
       "covered_posts": [],
       "source_headlines": [
@@ -1239,9 +1557,10 @@
       "keyword_ai": "마이오클리어",
       "grounded_by": "search_term",
       "search_term_volumes": {
-        "마이오클리어": 20,
+        "소아 근시 안약": 20,
         "아트로핀 안약": 810,
-        "소아 근시 안약": 20
+        "근시 진행 억제": 20,
+        "마이오클리어": 20
       },
       "news_count": 279,
       "news_headlines": [
@@ -1262,12 +1581,12 @@
         }
       ],
       "search_trend": {
-        "change_rate": -11.3,
+        "change_rate": -10.7,
         "direction": "하락",
-        "weekly_avg": 49.7
+        "weekly_avg": 52.7
       },
       "expert_gap": {
-        "total_blogs": 4902,
+        "total_blogs": 4906,
         "expert_blogs": 95,
         "gap_ratio": 51.1,
         "label": "전문가 갭 큼"
@@ -1280,7 +1599,7 @@
       "opportunity_score": 7.6,
       "opportunity_label": "포화(경쟁 높음)",
       "news_recency": {
-        "newest_hours": 374.2,
+        "newest_hours": 386.9,
         "count_24h": 0,
         "count_48h": 0
       },
@@ -1288,307 +1607,293 @@
       "consecutive_days": 1,
       "previously_written": false,
       "days_since_written": null,
-      "novelty": "새 영역",
-      "suggested_days_2w": 0,
+      "novelty": "새 영역(다시 제안)",
+      "suggested_days_2w": 1,
       "in_deep_dive_roots": false,
       "shopping_rank": null,
-      "novelty_mult": 1.15,
+      "novelty_mult": 1.0,
       "is_new_topic": true,
       "timeliness_score": 4.5,
-      "rank": 5
+      "rank": 6
     }
   ],
   "stats": {
-    "total_news_collected": 941,
-    "my_posts_count": 199,
-    "ai_candidates": 12,
-    "new_topics": 12,
+    "total_news_collected": 930,
+    "my_posts_count": 203,
+    "ai_candidates": 15,
+    "new_topics": 15,
     "existing_topics_new_issue": 0,
-    "search_topics": 7,
-    "news_topics": 5,
-    "golden_topics": 1
+    "search_topics": 9,
+    "news_topics": 6,
+    "golden_topics": 2
   },
   "meta": {
     "model": "claude-cli:opus",
     "attempts": 1,
     "cost_usd": 0.0,
-    "duration_sec": 80,
+    "duration_sec": 88,
     "input_tokens": 2,
-    "output_tokens": 8436
+    "output_tokens": 8944
   },
   "shopping_movers": [
     {
-      "keyword": "함량의꿈",
-      "rank": 97,
+      "keyword": "임팩타민시그니처",
+      "rank": 7,
       "kind": "새 진입",
       "from_rank": null,
-      "gain": 403
+      "gain": 493
     },
     {
-      "keyword": "푸드버킷",
-      "rank": 131,
+      "keyword": "쏜리서치베이직",
+      "rank": 89,
       "kind": "새 진입",
       "from_rank": null,
-      "gain": 369
+      "gain": 411
+    },
+    {
+      "keyword": "함량의꿈",
+      "rank": 91,
+      "kind": "최근 진입",
+      "from_rank": 97,
+      "gain": 409
+    },
+    {
+      "keyword": "비타라온프로폴리스",
+      "rank": 106,
+      "kind": "최근 진입",
+      "from_rank": 127,
+      "gain": 394
+    },
+    {
+      "keyword": "테스토라영양제",
+      "rank": 117,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 383
+    },
+    {
+      "keyword": "여성이노시톨",
+      "rank": 123,
+      "kind": "최근 진입",
+      "from_rank": 440,
+      "gain": 377
     },
     {
       "keyword": "맥스올바른3개",
-      "rank": 141,
+      "rank": 152,
       "kind": "최근 진입",
-      "from_rank": 144,
-      "gain": 359
+      "from_rank": 141,
+      "gain": 348
     },
     {
       "keyword": "피에이치365",
-      "rank": 167,
+      "rank": 159,
       "kind": "최근 진입",
-      "from_rank": 412,
-      "gain": 333
+      "from_rank": 167,
+      "gain": 341
     },
     {
-      "keyword": "아라타키마누카꿀",
-      "rank": 171,
+      "keyword": "빌모어",
+      "rank": 122,
+      "kind": "급상승",
+      "from_rank": 462,
+      "gain": 340
+    },
+    {
+      "keyword": "오라씨엠유유산균",
+      "rank": 168,
       "kind": "새 진입",
       "from_rank": null,
-      "gain": 329
+      "gain": 332
     },
     {
-      "keyword": "흑임자효소",
+      "keyword": "천호엔케어",
+      "rank": 185,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 315
+    },
+    {
+      "keyword": "뉴데이라이프",
       "rank": 198,
       "kind": "새 진입",
       "from_rank": null,
       "gain": 302
     },
     {
-      "keyword": "순수식품",
-      "rank": 207,
-      "kind": "최근 진입",
-      "from_rank": 404,
-      "gain": 293
-    },
-    {
-      "keyword": "한미케어미",
-      "rank": 224,
-      "kind": "새 진입",
-      "from_rank": null,
-      "gain": 276
-    },
-    {
-      "keyword": "수유부액상6개",
-      "rank": 228,
-      "kind": "최근 진입",
-      "from_rank": 235,
-      "gain": 272
-    },
-    {
-      "keyword": "혈당유산균haco1",
-      "rank": 157,
-      "kind": "급상승",
-      "from_rank": 420,
-      "gain": 263
-    },
-    {
-      "keyword": "빌모어",
-      "rank": 206,
-      "kind": "급상승",
-      "from_rank": 462,
-      "gain": 256
-    },
-    {
-      "keyword": "키즈텐",
-      "rank": 252,
-      "kind": "최근 진입",
-      "from_rank": 439,
-      "gain": 248
-    },
-    {
-      "keyword": "펠로디",
-      "rank": 259,
-      "kind": "새 진입",
-      "from_rank": null,
-      "gain": 241
-    },
-    {
       "keyword": "뉴센트리스토어",
-      "rank": 169,
+      "rank": 98,
       "kind": "급상승",
       "from_rank": 393,
-      "gain": 224
+      "gain": 295
     },
     {
-      "keyword": "비타민구미",
-      "rank": 287,
+      "keyword": "판토오틴3개추천",
+      "rank": 211,
       "kind": "새 진입",
       "from_rank": null,
-      "gain": 213
+      "gain": 289
     },
     {
-      "keyword": "이뮨비타민",
-      "rank": 218,
-      "kind": "급상승",
-      "from_rank": 428,
-      "gain": 210
+      "keyword": "임펙타민",
+      "rank": 243,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 257
     },
     {
-      "keyword": "락토핏맥스19",
-      "rank": 103,
-      "kind": "급상승",
-      "from_rank": 308,
-      "gain": 205
+      "keyword": "당당한누에환",
+      "rank": 245,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 255
     },
     {
-      "keyword": "활력비타민b",
-      "rank": 275,
-      "kind": "급상승",
-      "from_rank": 478,
-      "gain": 203
+      "keyword": "컨디션",
+      "rank": 253,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 247
     },
     {
-      "keyword": "mbp영양제",
-      "rank": 260,
-      "kind": "급상승",
-      "from_rank": 441,
-      "gain": 181
+      "keyword": "mbp철갑상어",
+      "rank": 257,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 243
     },
     {
-      "keyword": "무브프리",
-      "rank": 227,
-      "kind": "급상승",
-      "from_rank": 406,
-      "gain": 179
+      "keyword": "푸드버킷",
+      "rank": 262,
+      "kind": "최근 진입",
+      "from_rank": 131,
+      "gain": 238
     },
     {
-      "keyword": "조말비타민c락티브",
-      "rank": 109,
+      "keyword": "새싹삼",
+      "rank": 278,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 222
+    },
+    {
+      "keyword": "삼육케어",
+      "rank": 288,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 212
+    },
+    {
+      "keyword": "여에스더블루베리",
+      "rank": 289,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 211
+    },
+    {
+      "keyword": "고려은단",
+      "rank": 134,
       "kind": "급상승",
-      "from_rank": 279,
-      "gain": 170
+      "from_rank": 335,
+      "gain": 201
     },
     {
       "keyword": "채움매스틱",
-      "rank": 129,
+      "rank": 93,
       "kind": "급상승",
       "from_rank": 291,
-      "gain": 162
+      "gain": 198
     },
     {
       "keyword": "뉴트리디데이",
-      "rank": 67,
+      "rank": 50,
       "kind": "급상승",
       "from_rank": 224,
-      "gain": 157
+      "gain": 174
     },
     {
-      "keyword": "젓산마그네슘액체가격",
-      "rank": 264,
+      "keyword": "혈당영양제",
+      "rank": 150,
       "kind": "급상승",
-      "from_rank": 405,
-      "gain": 141
-    },
-    {
-      "keyword": "적산마그네슘",
-      "rank": 142,
-      "kind": "급상승",
-      "from_rank": 278,
-      "gain": 136
-    },
-    {
-      "keyword": "그린아세로라1000",
-      "rank": 47,
-      "kind": "급상승",
-      "from_rank": 180,
-      "gain": 133
-    },
-    {
-      "keyword": "바나바잎추출물",
-      "rank": 279,
-      "kind": "급상승",
-      "from_rank": 405,
-      "gain": 126
-    },
-    {
-      "keyword": "여에스더포스파티딜",
-      "rank": 202,
-      "kind": "급상승",
-      "from_rank": 326,
-      "gain": 124
-    },
-    {
-      "keyword": "뉴트원마그네슘",
-      "rank": 253,
-      "kind": "급상승",
-      "from_rank": 367,
-      "gain": 114
-    },
-    {
-      "keyword": "정성양봉아카시아꿀",
-      "rank": 174,
-      "kind": "급상승",
-      "from_rank": 277,
-      "gain": 103
-    },
-    {
-      "keyword": "사양벌꿀",
-      "rank": 160,
-      "kind": "급상승",
-      "from_rank": 256,
-      "gain": 96
-    },
-    {
-      "keyword": "자연바름",
-      "rank": 44,
-      "kind": "급상승",
-      "from_rank": 139,
-      "gain": 95
+      "from_rank": 322,
+      "gain": 172
     },
     {
       "keyword": "한삼덩굴추출물30정",
-      "rank": 182,
+      "rank": 124,
       "kind": "급상승",
       "from_rank": 265,
-      "gain": 83
+      "gain": 141
     },
     {
-      "keyword": "구강유산균m18",
+      "keyword": "정성양봉아카시아꿀",
+      "rank": 149,
+      "kind": "급상승",
+      "from_rank": 277,
+      "gain": 128
+    },
+    {
+      "keyword": "그린아세로라1000",
       "rank": 59,
       "kind": "급상승",
+      "from_rank": 180,
+      "gain": 121
+    },
+    {
+      "keyword": "멀티23뉴네이처",
+      "rank": 215,
+      "kind": "급상승",
+      "from_rank": 333,
+      "gain": 118
+    },
+    {
+      "keyword": "임팩타민",
+      "rank": 127,
+      "kind": "급상승",
+      "from_rank": 234,
+      "gain": 107
+    },
+    {
+      "keyword": "적산마그네슘",
+      "rank": 181,
+      "kind": "급상승",
+      "from_rank": 278,
+      "gain": 97
+    },
+    {
+      "keyword": "석류담다",
+      "rank": 131,
+      "kind": "급상승",
+      "from_rank": 224,
+      "gain": 93
+    },
+    {
+      "keyword": "연잎",
+      "rank": 193,
+      "kind": "급상승",
+      "from_rank": 282,
+      "gain": 89
+    },
+    {
+      "keyword": "자연바름",
+      "rank": 51,
+      "kind": "급상승",
       "from_rank": 139,
-      "gain": 80
+      "gain": 88
+    },
+    {
+      "keyword": "프롬바이오매스틱",
+      "rank": 164,
+      "kind": "급상승",
+      "from_rank": 251,
+      "gain": 87
     },
     {
       "keyword": "영화식품",
-      "rank": 24,
+      "rank": 27,
       "kind": "급상승",
       "from_rank": 100,
-      "gain": 76
-    },
-    {
-      "keyword": "비타민b컴플렉스",
-      "rank": 115,
-      "kind": "급상승",
-      "from_rank": 181,
-      "gain": 66
-    },
-    {
-      "keyword": "테라큐민",
-      "rank": 130,
-      "kind": "급상승",
-      "from_rank": 192,
-      "gain": 62
-    },
-    {
-      "keyword": "여에스더마그네슘",
-      "rank": 90,
-      "kind": "급상승",
-      "from_rank": 144,
-      "gain": 54
-    },
-    {
-      "keyword": "야채수",
-      "rank": 121,
-      "kind": "급상승",
-      "from_rank": 175,
-      "gain": 54
+      "gain": 73
     }
   ]
 }

@@ -1434,16 +1434,17 @@
   "first_seen": "2026-09-26",
   "seen_days": [
    "2026-09-26",
-   "2026-10-04"
+   "2026-10-04",
+   "2026-10-25"
   ],
-  "last_seen": "2026-10-04",
+  "last_seen": "2026-10-25",
   "keyword": "고양이 헤어볼",
-  "search_volume": 1360,
+  "search_volume": 1610,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 1469
+  "blog_position_y": 1525
  },
  "나토키나제": {
   "first_seen": "2026-09-26",
@@ -1480,16 +1481,17 @@
   "first_seen": "2026-09-26",
   "seen_days": [
    "2026-09-26",
-   "2026-10-19"
+   "2026-10-19",
+   "2026-10-25"
   ],
-  "last_seen": "2026-10-19",
+  "last_seen": "2026-10-25",
   "keyword": "마가목 효능",
-  "search_volume": 32950,
+  "search_volume": 34560,
   "source": "shopping",
-  "shopping_rank": 154,
-  "shopping_move": "급상승",
-  "pharma_value": 3,
-  "blog_position_y": 3503
+  "shopping_rank": 277,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 5295
  },
  "꾸지뽕": {
   "first_seen": "2026-09-26",
@@ -3276,16 +3278,17 @@
  "피세틴": {
   "first_seen": "2026-10-17",
   "seen_days": [
-   "2026-10-17"
+   "2026-10-17",
+   "2026-10-25"
   ],
-  "last_seen": "2026-10-17",
+  "last_seen": "2026-10-25",
   "keyword": "피세틴",
-  "search_volume": 2860,
+  "search_volume": 2840,
   "source": "shopping",
-  "shopping_rank": 261,
+  "shopping_rank": 88,
   "shopping_move": "급상승",
   "pharma_value": 5,
-  "blog_position_y": 6890
+  "blog_position_y": 7836
  },
  "나이아신": {
   "first_seen": "2026-10-18",
@@ -3846,5 +3849,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 1621
+ },
+ "실론계피": {
+  "first_seen": "2026-10-25",
+  "seen_days": [
+   "2026-10-25"
+  ],
+  "last_seen": "2026-10-25",
+  "keyword": "실론계피",
+  "search_volume": 1140,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7063
+ },
+ "산배근": {
+  "first_seen": "2026-10-25",
+  "seen_days": [
+   "2026-10-25"
+  ],
+  "last_seen": "2026-10-25",
+  "keyword": "산배근진액",
+  "search_volume": 7290,
+  "source": "shopping",
+  "shopping_rank": 99,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 4305
  }
 }

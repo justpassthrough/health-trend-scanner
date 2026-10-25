@@ -196,16 +196,17 @@
  "흑마늘": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-10-26"
   ],
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-10-26",
   "keyword": "흑마늘 효능",
-  "search_volume": 6010,
+  "search_volume": 5130,
   "source": "shopping",
-  "shopping_rank": 142,
-  "shopping_move": "급상승",
+  "shopping_rank": 268,
+  "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8371
+  "blog_position_y": 1177
  },
  "산삼배양근": {
   "first_seen": "2026-09-18",
@@ -1992,16 +1993,17 @@
    "2026-10-01",
    "2026-10-03",
    "2026-10-19",
-   "2026-10-22"
+   "2026-10-22",
+   "2026-10-26"
   ],
-  "last_seen": "2026-10-22",
+  "last_seen": "2026-10-26",
   "keyword": "난각막",
-  "search_volume": 4520,
+  "search_volume": 4730,
   "source": "shopping",
-  "shopping_rank": 162,
-  "shopping_move": "급상승",
+  "shopping_rank": 229,
+  "shopping_move": "최근 진입",
   "pharma_value": 4,
-  "blog_position_y": 7068
+  "blog_position_y": 7003
  },
  "헛개나무": {
   "first_seen": "2026-10-01",
@@ -2848,16 +2850,17 @@
    "2026-10-11",
    "2026-10-16",
    "2026-10-19",
-   "2026-10-23"
+   "2026-10-23",
+   "2026-10-26"
   ],
-  "last_seen": "2026-10-23",
-  "keyword": "블랙마카",
-  "search_volume": 10110,
+  "last_seen": "2026-10-26",
+  "keyword": "블랙마카 효능",
+  "search_volume": 5910,
   "source": "shopping",
-  "shopping_rank": 84,
+  "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8133
+  "blog_position_y": 10122
  },
  "천년초": {
   "first_seen": "2026-10-11",
@@ -3293,16 +3296,17 @@
  "나이아신": {
   "first_seen": "2026-10-18",
   "seen_days": [
-   "2026-10-18"
+   "2026-10-18",
+   "2026-10-26"
   ],
-  "last_seen": "2026-10-18",
-  "keyword": "나이아신",
-  "search_volume": 6900,
+  "last_seen": "2026-10-26",
+  "keyword": "비타민B3",
+  "search_volume": 13230,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 1700
+  "blog_position_y": 8294
  },
  "록피드": {
   "first_seen": "2026-10-18",
@@ -3877,5 +3881,33 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 4305
+ },
+ "안토시아닌": {
+  "first_seen": "2026-10-26",
+  "seen_days": [
+   "2026-10-26"
+  ],
+  "last_seen": "2026-10-26",
+  "keyword": "블루베리 효능",
+  "search_volume": 11680,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6760
+ },
+ "고양이 방광염": {
+  "first_seen": "2026-10-26",
+  "seen_days": [
+   "2026-10-26"
+  ],
+  "last_seen": "2026-10-26",
+  "keyword": "고양이 방광염",
+  "search_volume": 1410,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 10790
  }
 }

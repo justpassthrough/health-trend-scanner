@@ -879,16 +879,17 @@
   "first_seen": "2026-09-21",
   "seen_days": [
    "2026-09-21",
-   "2026-10-05"
+   "2026-10-05",
+   "2026-10-26"
   ],
-  "last_seen": "2026-10-05",
+  "last_seen": "2026-10-26",
   "keyword": "맥문동",
-  "search_volume": 70550,
+  "search_volume": 41680,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8909
+  "pharma_value": 3,
+  "blog_position_y": 10704
  },
  "젤리형 영양제": {
   "first_seen": "2026-09-21",
@@ -1900,16 +1901,17 @@
   "seen_days": [
    "2026-09-30",
    "2026-10-20",
-   "2026-10-23"
+   "2026-10-23",
+   "2026-10-26"
   ],
-  "last_seen": "2026-10-23",
-  "keyword": "한삼덩굴",
-  "search_volume": 4870,
+  "last_seen": "2026-10-26",
+  "keyword": "한삼덩굴 추출물",
+  "search_volume": 1960,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8496
+  "blog_position_y": 6876
  },
  "뮤코다당단백": {
   "first_seen": "2026-09-30",
@@ -3909,5 +3911,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 10790
+ },
+ "호로파": {
+  "first_seen": "2026-10-26",
+  "seen_days": [
+   "2026-10-26"
+  ],
+  "last_seen": "2026-10-26",
+  "keyword": "호로파",
+  "search_volume": 1900,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8984
+ },
+ "비타민젤리": {
+  "first_seen": "2026-10-26",
+  "seen_days": [
+   "2026-10-26"
+  ],
+  "last_seen": "2026-10-26",
+  "keyword": "비타민젤리",
+  "search_volume": 5170,
+  "source": "shopping",
+  "shopping_rank": 75,
+  "shopping_move": "최근 진입",
+  "pharma_value": 4,
+  "blog_position_y": 6031
  }
 }

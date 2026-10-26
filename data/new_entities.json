@@ -1222,16 +1222,17 @@
   "seen_days": [
    "2026-09-24",
    "2026-09-28",
-   "2026-10-12"
+   "2026-10-12",
+   "2026-10-27"
   ],
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-10-27",
   "keyword": "dem 영양제",
-  "search_volume": 23820,
+  "search_volume": 25850,
   "source": "shopping",
-  "shopping_rank": 29,
+  "shopping_rank": 78,
   "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 6412
+  "blog_position_y": 6539
  },
  "올리브오일캡슐": {
   "first_seen": "2026-09-25",
@@ -2980,16 +2981,17 @@
  "비타민B12": {
   "first_seen": "2026-10-13",
   "seen_days": [
-   "2026-10-13"
+   "2026-10-13",
+   "2026-10-27"
   ],
-  "last_seen": "2026-10-13",
+  "last_seen": "2026-10-27",
   "keyword": "비타민B12",
-  "search_volume": 13220,
+  "search_volume": 13840,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 9684
+  "blog_position_y": 8068
  },
  "아스코르브산 분말": {
   "first_seen": "2026-10-13",
@@ -3181,16 +3183,17 @@
   "seen_days": [
    "2026-10-16",
    "2026-10-20",
-   "2026-10-23"
+   "2026-10-23",
+   "2026-10-27"
   ],
-  "last_seen": "2026-10-23",
+  "last_seen": "2026-10-27",
   "keyword": "블랙커민",
-  "search_volume": 24170,
+  "search_volume": 24840,
   "source": "shopping",
-  "shopping_rank": 49,
+  "shopping_rank": 66,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7914
+  "blog_position_y": 6698
  },
  "가네톡톡": {
   "first_seen": "2026-10-16",
@@ -3939,5 +3942,19 @@
   "shopping_move": "최근 진입",
   "pharma_value": 4,
   "blog_position_y": 6031
+ },
+ "저항성 전분": {
+  "first_seen": "2026-10-27",
+  "seen_days": [
+   "2026-10-27"
+  ],
+  "last_seen": "2026-10-27",
+  "keyword": "저항성 전분",
+  "search_volume": 630,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 1257
  }
 }

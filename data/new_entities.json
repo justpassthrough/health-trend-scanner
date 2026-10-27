@@ -1886,16 +1886,17 @@
   "seen_days": [
    "2026-09-30",
    "2026-10-03",
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-27"
   ],
-  "last_seen": "2026-10-10",
+  "last_seen": "2026-10-27",
   "keyword": "파랙틴",
-  "search_volume": 9720,
+  "search_volume": 9230,
   "source": "shopping",
-  "shopping_rank": 57,
-  "shopping_move": null,
+  "shopping_rank": 66,
+  "shopping_move": "급상승",
   "pharma_value": 2,
-  "blog_position_y": 7360
+  "blog_position_y": 7522
  },
  "한삼덩굴": {
   "first_seen": "2026-09-30",
@@ -3215,16 +3216,17 @@
    "2026-10-16",
    "2026-10-19",
    "2026-10-21",
-   "2026-10-24"
+   "2026-10-24",
+   "2026-10-27"
   ],
-  "last_seen": "2026-10-24",
+  "last_seen": "2026-10-27",
   "keyword": "비트즙",
   "search_volume": 5120,
   "source": "shopping",
-  "shopping_rank": 81,
+  "shopping_rank": 123,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6964
+  "blog_position_y": 7224
  },
  "반려동물 관절 영양제": {
   "first_seen": "2026-10-16",
@@ -3526,16 +3528,17 @@
  "돌외": {
   "first_seen": "2026-10-21",
   "seen_days": [
-   "2026-10-21"
+   "2026-10-21",
+   "2026-10-27"
   ],
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-10-27",
   "keyword": "돌외잎 효능",
-  "search_volume": 1740,
+  "search_volume": 1830,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 1594
+  "pharma_value": 3,
+  "blog_position_y": 3752
  },
  "초록입홍합": {
   "first_seen": "2026-10-21",
@@ -3806,16 +3809,17 @@
  "누에": {
   "first_seen": "2026-10-24",
   "seen_days": [
-   "2026-10-24"
+   "2026-10-24",
+   "2026-10-27"
   ],
-  "last_seen": "2026-10-24",
+  "last_seen": "2026-10-27",
   "keyword": "누에가루 효능",
   "search_volume": 790,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 1261
+  "blog_position_y": 1117
  },
  "연잎": {
   "first_seen": "2026-10-24",
@@ -3834,16 +3838,17 @@
  "판토텐산": {
   "first_seen": "2026-10-24",
   "seen_days": [
-   "2026-10-24"
+   "2026-10-24",
+   "2026-10-27"
   ],
-  "last_seen": "2026-10-24",
-  "keyword": "판토텐산 효능",
-  "search_volume": 2290,
+  "last_seen": "2026-10-27",
+  "keyword": "판토텐산",
+  "search_volume": 9610,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 10338
+  "blog_position_y": 6855
  },
  "남성호르몬 영양제": {
   "first_seen": "2026-10-24",
@@ -3956,5 +3961,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 1257
+ },
+ "아밀라아제": {
+  "first_seen": "2026-10-27",
+  "seen_days": [
+   "2026-10-27"
+  ],
+  "last_seen": "2026-10-27",
+  "keyword": "탄수화물 분해효소",
+  "search_volume": 330,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7201
+ },
+ "활성비타민B": {
+  "first_seen": "2026-10-27",
+  "seen_days": [
+   "2026-10-27"
+  ],
+  "last_seen": "2026-10-27",
+  "keyword": "활성형 비타민B",
+  "search_volume": 740,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6657
  }
 }

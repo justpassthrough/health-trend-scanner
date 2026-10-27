@@ -424,16 +424,17 @@
    "2026-09-19",
    "2026-10-04",
    "2026-10-15",
-   "2026-10-22"
+   "2026-10-22",
+   "2026-10-28"
   ],
-  "last_seen": "2026-10-22",
+  "last_seen": "2026-10-28",
   "keyword": "도라지 효능",
-  "search_volume": 10150,
+  "search_volume": 9950,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 5840
+  "blog_position_y": 5783
  },
  "쿼르세틴": {
   "first_seen": "2026-09-19",
@@ -1091,16 +1092,17 @@
   "seen_days": [
    "2026-09-23",
    "2026-10-08",
-   "2026-10-13"
+   "2026-10-13",
+   "2026-10-28"
   ],
-  "last_seen": "2026-10-13",
-  "keyword": "헤모힘",
-  "search_volume": 9710,
+  "last_seen": "2026-10-28",
+  "keyword": "당귀 효능",
+  "search_volume": 9900,
   "source": "shopping",
-  "shopping_rank": 114,
+  "shopping_rank": 132,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6400
+  "blog_position_y": null
  },
  "어린이 영양제": {
   "first_seen": "2026-09-23",
@@ -2358,16 +2360,17 @@
   "seen_days": [
    "2026-10-05",
    "2026-10-12",
-   "2026-10-18"
+   "2026-10-18",
+   "2026-10-28"
   ],
-  "last_seen": "2026-10-18",
+  "last_seen": "2026-10-28",
   "keyword": "캡슐레이션 효소",
-  "search_volume": 125100,
+  "search_volume": 133040,
   "source": "shopping",
-  "shopping_rank": 36,
+  "shopping_rank": 29,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7958
+  "blog_position_y": 5709
  },
  "야채수": {
   "first_seen": "2026-10-05",
@@ -3543,16 +3546,17 @@
  "초록입홍합": {
   "first_seen": "2026-10-21",
   "seen_days": [
-   "2026-10-21"
+   "2026-10-21",
+   "2026-10-28"
   ],
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-10-28",
   "keyword": "초록입홍합",
-  "search_volume": 3070,
+  "search_volume": 2770,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 5977
+  "blog_position_y": 5971
  },
  "우르소데옥시콜산": {
   "first_seen": "2026-10-21",
@@ -3989,5 +3993,19 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 6657
+ },
+ "어린이 종합비타민": {
+  "first_seen": "2026-10-28",
+  "seen_days": [
+   "2026-10-28"
+  ],
+  "last_seen": "2026-10-28",
+  "keyword": "초등학생 영양제",
+  "search_volume": 2050,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 8159
  }
 }

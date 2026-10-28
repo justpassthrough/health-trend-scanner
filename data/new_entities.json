@@ -228,16 +228,17 @@
  "쿠드로닌": {
   "first_seen": "2026-09-18",
   "seen_days": [
-   "2026-09-18"
+   "2026-09-18",
+   "2026-10-28"
   ],
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-10-28",
   "keyword": "쿠드로닌",
-  "search_volume": 2450,
+  "search_volume": 5090,
   "source": "shopping",
-  "shopping_rank": 239,
+  "shopping_rank": 91,
   "shopping_move": "급상승",
   "pharma_value": 2,
-  "blog_position_y": 4299
+  "blog_position_y": 4827
  },
  "환자용 영양식": {
   "first_seen": "2026-09-18",
@@ -504,16 +505,17 @@
  "새싹보리": {
   "first_seen": "2026-09-19",
   "seen_days": [
-   "2026-09-19"
+   "2026-09-19",
+   "2026-10-28"
   ],
-  "last_seen": "2026-09-19",
+  "last_seen": "2026-10-28",
   "keyword": "새싹보리",
-  "search_volume": 6500,
+  "search_volume": 4000,
   "source": "shopping",
-  "shopping_rank": 264,
-  "shopping_move": "새 진입",
+  "shopping_rank": 256,
+  "shopping_move": "급상승",
   "pharma_value": 3,
-  "blog_position_y": 6918
+  "blog_position_y": 7461
  },
  "폴리코사놀": {
   "first_seen": "2026-09-19",
@@ -1906,16 +1908,17 @@
    "2026-09-30",
    "2026-10-20",
    "2026-10-23",
-   "2026-10-26"
+   "2026-10-26",
+   "2026-10-28"
   ],
-  "last_seen": "2026-10-26",
-  "keyword": "한삼덩굴 추출물",
-  "search_volume": 1960,
+  "last_seen": "2026-10-28",
+  "keyword": "한삼덩굴추출물",
+  "search_volume": 1980,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6876
+  "pharma_value": 4,
+  "blog_position_y": 6193
  },
  "뮤코다당단백": {
   "first_seen": "2026-09-30",
@@ -4007,5 +4010,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 8159
+ },
+ "보라지오일": {
+  "first_seen": "2026-10-28",
+  "seen_days": [
+   "2026-10-28"
+  ],
+  "last_seen": "2026-10-28",
+  "keyword": "보라지유",
+  "search_volume": 6830,
+  "source": "shopping",
+  "shopping_rank": 233,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6274
+ },
+ "비피더스균": {
+  "first_seen": "2026-10-28",
+  "seen_days": [
+   "2026-10-28"
+  ],
+  "last_seen": "2026-10-28",
+  "keyword": "비피더스균",
+  "search_volume": 7640,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7072
  }
 }

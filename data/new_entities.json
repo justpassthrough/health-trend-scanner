@@ -867,16 +867,17 @@
  "나이아신아마이드": {
   "first_seen": "2026-09-21",
   "seen_days": [
-   "2026-09-21"
+   "2026-09-21",
+   "2026-10-29"
   ],
-  "last_seen": "2026-09-21",
-  "keyword": "니코틴산아미드 효능",
-  "search_volume": 1270,
-  "source": "news",
+  "last_seen": "2026-10-29",
+  "keyword": "나이아신아마이드 영양제",
+  "search_volume": 680,
+  "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 176
+  "blog_position_y": 7560
  },
  "맥문동": {
   "first_seen": "2026-09-21",
@@ -2078,16 +2079,17 @@
    "2026-10-02",
    "2026-10-07",
    "2026-10-10",
-   "2026-10-21"
+   "2026-10-21",
+   "2026-10-29"
   ],
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-10-29",
   "keyword": "산양삼",
-  "search_volume": 11430,
+  "search_volume": 10270,
   "source": "shopping",
-  "shopping_rank": 118,
+  "shopping_rank": 80,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7717
+  "pharma_value": 2,
+  "blog_position_y": 7833
  },
  "석류": {
   "first_seen": "2026-10-02",
@@ -3916,16 +3918,17 @@
  "고양이 방광염": {
   "first_seen": "2026-10-26",
   "seen_days": [
-   "2026-10-26"
+   "2026-10-26",
+   "2026-10-29"
   ],
-  "last_seen": "2026-10-26",
+  "last_seen": "2026-10-29",
   "keyword": "고양이 방광염",
   "search_volume": 1410,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 10790
+  "blog_position_y": 9784
  },
  "호로파": {
   "first_seen": "2026-10-26",
@@ -3944,16 +3947,17 @@
  "비타민젤리": {
   "first_seen": "2026-10-26",
   "seen_days": [
-   "2026-10-26"
+   "2026-10-26",
+   "2026-10-29"
   ],
-  "last_seen": "2026-10-26",
+  "last_seen": "2026-10-29",
   "keyword": "비타민젤리",
-  "search_volume": 5170,
+  "search_volume": 6020,
   "source": "shopping",
-  "shopping_rank": 75,
-  "shopping_move": "최근 진입",
-  "pharma_value": 4,
-  "blog_position_y": 6031
+  "shopping_rank": 246,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 5725
  },
  "저항성 전분": {
   "first_seen": "2026-10-27",
@@ -4038,5 +4042,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7072
+ },
+ "지속형 비타민C": {
+  "first_seen": "2026-10-29",
+  "seen_days": [
+   "2026-10-29"
+  ],
+  "last_seen": "2026-10-29",
+  "keyword": "오쏘몰 비타민C 디포",
+  "search_volume": 1280,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 4774
+ },
+ "호박즙": {
+  "first_seen": "2026-10-29",
+  "seen_days": [
+   "2026-10-29"
+  ],
+  "last_seen": "2026-10-29",
+  "keyword": "호박즙",
+  "search_volume": 6670,
+  "source": "shopping",
+  "shopping_rank": 92,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6500
  }
 }

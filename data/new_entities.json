@@ -2383,16 +2383,17 @@
   "first_seen": "2026-10-05",
   "seen_days": [
    "2026-10-05",
-   "2026-10-23"
+   "2026-10-23",
+   "2026-10-30"
   ],
-  "last_seen": "2026-10-23",
+  "last_seen": "2026-10-30",
   "keyword": "야채수",
-  "search_volume": 3130,
+  "search_volume": 3410,
   "source": "shopping",
-  "shopping_rank": 121,
-  "shopping_move": "급상승",
+  "shopping_rank": 113,
+  "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6938
+  "blog_position_y": 6970
  },
  "의약품 보관": {
   "first_seen": "2026-10-05",
@@ -2894,16 +2895,17 @@
  "크랜베리": {
   "first_seen": "2026-10-12",
   "seen_days": [
-   "2026-10-12"
+   "2026-10-12",
+   "2026-10-30"
   ],
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-10-30",
   "keyword": "크랜베리 효능",
-  "search_volume": 3810,
+  "search_volume": 3790,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 1353
+  "blog_position_y": 1608
  },
  "펠루비프로펜": {
   "first_seen": "2026-10-12",
@@ -3228,16 +3230,17 @@
    "2026-10-19",
    "2026-10-21",
    "2026-10-24",
-   "2026-10-27"
+   "2026-10-27",
+   "2026-10-30"
   ],
-  "last_seen": "2026-10-27",
+  "last_seen": "2026-10-30",
   "keyword": "비트즙",
-  "search_volume": 5120,
+  "search_volume": 4940,
   "source": "shopping",
-  "shopping_rank": 123,
+  "shopping_rank": 105,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7224
+  "blog_position_y": 6701
  },
  "반려동물 관절 영양제": {
   "first_seen": "2026-10-16",
@@ -4074,5 +4077,19 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 6500
+ },
+ "레티놀": {
+  "first_seen": "2026-10-30",
+  "seen_days": [
+   "2026-10-30"
+  ],
+  "last_seen": "2026-10-30",
+  "keyword": "먹는 레티놀",
+  "search_volume": 580,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6663
  }
 }

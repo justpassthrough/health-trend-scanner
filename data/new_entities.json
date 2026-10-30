@@ -1785,16 +1785,17 @@
  "스피루리나": {
   "first_seen": "2026-09-29",
   "seen_days": [
-   "2026-09-29"
+   "2026-09-29",
+   "2026-10-30"
   ],
-  "last_seen": "2026-09-29",
+  "last_seen": "2026-10-30",
   "keyword": "스피루리나",
-  "search_volume": 7570,
+  "search_volume": 7540,
   "source": "shopping",
-  "shopping_rank": 203,
-  "shopping_move": "새 진입",
+  "shopping_rank": 295,
+  "shopping_move": "급상승",
   "pharma_value": 3,
-  "blog_position_y": 8871
+  "blog_position_y": 7386
  },
  "비타민K2": {
   "first_seen": "2026-09-29",
@@ -1803,16 +1804,17 @@
    "2026-10-05",
    "2026-10-15",
    "2026-10-18",
-   "2026-10-22"
+   "2026-10-22",
+   "2026-10-30"
   ],
-  "last_seen": "2026-10-22",
+  "last_seen": "2026-10-30",
   "keyword": "비타민K2",
-  "search_volume": 6680,
+  "search_volume": 7390,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 8490
+  "blog_position_y": 7452
  },
  "리노이드 EA 포뮬라": {
   "first_seen": "2026-09-29",
@@ -2471,16 +2473,17 @@
  "락토바실러스 루테리": {
   "first_seen": "2026-10-06",
   "seen_days": [
-   "2026-10-06"
+   "2026-10-06",
+   "2026-10-30"
   ],
-  "last_seen": "2026-10-06",
+  "last_seen": "2026-10-30",
   "keyword": "바이오가이아",
-  "search_volume": 17100,
+  "search_volume": 18420,
   "source": "shopping",
-  "shopping_rank": 267,
+  "shopping_rank": 85,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": null
+  "blog_position_y": 7032
  },
  "아젤라산": {
   "first_seen": "2026-10-06",
@@ -2996,16 +2999,17 @@
   "first_seen": "2026-10-13",
   "seen_days": [
    "2026-10-13",
-   "2026-10-27"
+   "2026-10-27",
+   "2026-10-30"
   ],
-  "last_seen": "2026-10-27",
+  "last_seen": "2026-10-30",
   "keyword": "비타민B12",
-  "search_volume": 13840,
+  "search_volume": 14520,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 8068
+  "blog_position_y": 9539
  },
  "아스코르브산 분말": {
   "first_seen": "2026-10-13",
@@ -3303,16 +3307,17 @@
   "first_seen": "2026-10-17",
   "seen_days": [
    "2026-10-17",
-   "2026-10-25"
+   "2026-10-25",
+   "2026-10-30"
   ],
-  "last_seen": "2026-10-25",
+  "last_seen": "2026-10-30",
   "keyword": "피세틴",
-  "search_volume": 2840,
+  "search_volume": 2790,
   "source": "shopping",
-  "shopping_rank": 88,
-  "shopping_move": "급상승",
+  "shopping_rank": 393,
+  "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7836
+  "blog_position_y": 6495
  },
  "나이아신": {
   "first_seen": "2026-10-18",
@@ -4091,5 +4096,33 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 6663
+ },
+ "락티움": {
+  "first_seen": "2026-10-30",
+  "seen_days": [
+   "2026-10-30"
+  ],
+  "last_seen": "2026-10-30",
+  "keyword": "락티움",
+  "search_volume": 2380,
+  "source": "shopping",
+  "shopping_rank": 185,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 5928
+ },
+ "스페르미딘": {
+  "first_seen": "2026-10-30",
+  "seen_days": [
+   "2026-10-30"
+  ],
+  "last_seen": "2026-10-30",
+  "keyword": "스페르미딘",
+  "search_volume": 2270,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7274
  }
 }

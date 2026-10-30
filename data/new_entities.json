@@ -3506,16 +3506,17 @@
  "근육이완제": {
   "first_seen": "2026-10-20",
   "seen_days": [
-   "2026-10-20"
+   "2026-10-20",
+   "2026-10-31"
   ],
-  "last_seen": "2026-10-20",
+  "last_seen": "2026-10-31",
   "keyword": "근육이완제",
-  "search_volume": null,
+  "search_volume": 13340,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": null
+  "pharma_value": 4,
+  "blog_position_y": 7642
  },
  "칼슘": {
   "first_seen": "2026-10-20",
@@ -4124,5 +4125,47 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 7274
+ },
+ "사과식초": {
+  "first_seen": "2026-10-31",
+  "seen_days": [
+   "2026-10-31"
+  ],
+  "last_seen": "2026-10-31",
+  "keyword": "애사비",
+  "search_volume": 36340,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7219
+ },
+ "판토오틴": {
+  "first_seen": "2026-10-31",
+  "seen_days": [
+   "2026-10-31"
+  ],
+  "last_seen": "2026-10-31",
+  "keyword": "판토오틴",
+  "search_volume": 420,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 5828
+ },
+ "파이토케미컬": {
+  "first_seen": "2026-10-31",
+  "seen_days": [
+   "2026-10-31"
+  ],
+  "last_seen": "2026-10-31",
+  "keyword": "파이토케미컬",
+  "search_volume": 6440,
+  "source": "shopping",
+  "shopping_rank": 184,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 9487
  }
 }

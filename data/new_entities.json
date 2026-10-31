@@ -198,16 +198,17 @@
   "seen_days": [
    "2026-09-18",
    "2026-10-26",
-   "2026-10-29"
+   "2026-10-29",
+   "2026-11-01"
   ],
-  "last_seen": "2026-10-29",
+  "last_seen": "2026-11-01",
   "keyword": "흑마늘 효능",
-  "search_volume": 4880,
+  "search_volume": 4700,
   "source": "shopping",
-  "shopping_rank": 195,
+  "shopping_rank": 202,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 1463
+  "pharma_value": 4,
+  "blog_position_y": 7139
  },
  "산삼배양근": {
   "first_seen": "2026-09-18",
@@ -2371,16 +2372,17 @@
    "2026-10-05",
    "2026-10-12",
    "2026-10-18",
-   "2026-10-28"
+   "2026-10-28",
+   "2026-11-01"
   ],
-  "last_seen": "2026-10-28",
-  "keyword": "캡슐레이션 효소",
-  "search_volume": 133040,
+  "last_seen": "2026-11-01",
+  "keyword": "캡슐레이션효소",
+  "search_volume": 114410,
   "source": "shopping",
-  "shopping_rank": 29,
+  "shopping_rank": 40,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 5709
+  "blog_position_y": 6078
  },
  "야채수": {
   "first_seen": "2026-10-05",
@@ -3523,16 +3525,17 @@
  "칼슘": {
   "first_seen": "2026-10-20",
   "seen_days": [
-   "2026-10-20"
+   "2026-10-20",
+   "2026-11-01"
   ],
-  "last_seen": "2026-10-20",
+  "last_seen": "2026-11-01",
   "keyword": "칼슘 영양제",
-  "search_volume": 11670,
+  "search_volume": 11860,
   "source": "shopping",
-  "shopping_rank": 72,
-  "shopping_move": "급상승",
-  "pharma_value": 4,
-  "blog_position_y": 9208
+  "shopping_rank": 215,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7113
  },
  "레스메티롬": {
   "first_seen": "2026-10-20",
@@ -4185,5 +4188,33 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 1253
+ },
+ "환자용 균형영양식": {
+  "first_seen": "2026-11-01",
+  "seen_days": [
+   "2026-11-01"
+  ],
+  "last_seen": "2026-11-01",
+  "keyword": "뉴케어 당플랜",
+  "search_volume": 22280,
+  "source": "shopping",
+  "shopping_rank": 60,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7183
+ },
+ "건강기능식품 간손상": {
+  "first_seen": "2026-11-01",
+  "seen_days": [
+   "2026-11-01"
+  ],
+  "last_seen": "2026-11-01",
+  "keyword": "간에 안좋은 영양제",
+  "search_volume": 200,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 2248
  }
 }

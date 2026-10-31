@@ -1914,16 +1914,17 @@
    "2026-10-20",
    "2026-10-23",
    "2026-10-26",
-   "2026-10-28"
+   "2026-10-28",
+   "2026-10-31"
   ],
-  "last_seen": "2026-10-28",
-  "keyword": "한삼덩굴추출물",
-  "search_volume": 1980,
+  "last_seen": "2026-10-31",
+  "keyword": "한삼덩굴",
+  "search_volume": 4430,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6193
+  "pharma_value": 3,
+  "blog_position_y": 6600
  },
  "뮤코다당단백": {
   "first_seen": "2026-09-30",
@@ -3202,16 +3203,17 @@
    "2026-10-16",
    "2026-10-20",
    "2026-10-23",
-   "2026-10-27"
+   "2026-10-27",
+   "2026-10-31"
   ],
-  "last_seen": "2026-10-27",
+  "last_seen": "2026-10-31",
   "keyword": "블랙커민",
-  "search_volume": 24840,
+  "search_volume": 24320,
   "source": "shopping",
-  "shopping_rank": 66,
+  "shopping_rank": 121,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6698
+  "blog_position_y": 6658
  },
  "가네톡톡": {
   "first_seen": "2026-10-16",
@@ -3550,31 +3552,33 @@
   "first_seen": "2026-10-21",
   "seen_days": [
    "2026-10-21",
-   "2026-10-27"
+   "2026-10-27",
+   "2026-10-31"
   ],
-  "last_seen": "2026-10-27",
+  "last_seen": "2026-10-31",
   "keyword": "돌외잎 효능",
-  "search_volume": 1830,
+  "search_volume": 1970,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 3752
+  "pharma_value": 4,
+  "blog_position_y": 4666
  },
  "초록입홍합": {
   "first_seen": "2026-10-21",
   "seen_days": [
    "2026-10-21",
-   "2026-10-28"
+   "2026-10-28",
+   "2026-10-31"
   ],
-  "last_seen": "2026-10-28",
+  "last_seen": "2026-10-31",
   "keyword": "초록입홍합",
-  "search_volume": 2770,
+  "search_volume": 2700,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 5971
+  "pharma_value": 3,
+  "blog_position_y": 5755
  },
  "우르소데옥시콜산": {
   "first_seen": "2026-10-21",
@@ -4167,5 +4171,19 @@
   "shopping_move": "급상승",
   "pharma_value": 3,
   "blog_position_y": 9487
+ },
+ "겨우살이": {
+  "first_seen": "2026-10-31",
+  "seen_days": [
+   "2026-10-31"
+  ],
+  "last_seen": "2026-10-31",
+  "keyword": "겨우살이 효능",
+  "search_volume": 3330,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 1253
  }
 }

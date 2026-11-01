@@ -231,16 +231,17 @@
   "first_seen": "2026-09-18",
   "seen_days": [
    "2026-09-18",
-   "2026-10-28"
+   "2026-10-28",
+   "2026-11-01"
   ],
-  "last_seen": "2026-10-28",
+  "last_seen": "2026-11-01",
   "keyword": "쿠드로닌",
-  "search_volume": 5090,
+  "search_volume": 5360,
   "source": "shopping",
-  "shopping_rank": 91,
-  "shopping_move": "급상승",
-  "pharma_value": 2,
-  "blog_position_y": 4827
+  "shopping_rank": 123,
+  "shopping_move": null,
+  "pharma_value": 1,
+  "blog_position_y": 4681
  },
  "환자용 영양식": {
   "first_seen": "2026-09-18",
@@ -3939,16 +3940,17 @@
   "first_seen": "2026-10-26",
   "seen_days": [
    "2026-10-26",
-   "2026-10-29"
+   "2026-10-29",
+   "2026-11-01"
   ],
-  "last_seen": "2026-10-29",
+  "last_seen": "2026-11-01",
   "keyword": "고양이 방광염",
   "search_volume": 1410,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 9784
+  "blog_position_y": 2628
  },
  "호로파": {
   "first_seen": "2026-10-26",
@@ -4066,16 +4068,17 @@
  "지속형 비타민C": {
   "first_seen": "2026-10-29",
   "seen_days": [
-   "2026-10-29"
+   "2026-10-29",
+   "2026-11-01"
   ],
-  "last_seen": "2026-10-29",
-  "keyword": "오쏘몰 비타민C 디포",
-  "search_volume": 1280,
-  "source": "news",
-  "shopping_rank": null,
+  "last_seen": "2026-11-01",
+  "keyword": "오쏘몰 이뮨",
+  "search_volume": 29680,
+  "source": "shopping",
+  "shopping_rank": 104,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 4774
+  "blog_position_y": 6878
  },
  "호박즙": {
   "first_seen": "2026-10-29",
@@ -4216,5 +4219,19 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 2248
+ },
+ "세비감": {
+  "first_seen": "2026-11-01",
+  "seen_days": [
+   "2026-11-01"
+  ],
+  "last_seen": "2026-11-01",
+  "keyword": "세비감",
+  "search_volume": 500,
+  "source": "shopping",
+  "shopping_rank": 99,
+  "shopping_move": "새 진입",
+  "pharma_value": 1,
+  "blog_position_y": 2222
  }
 }

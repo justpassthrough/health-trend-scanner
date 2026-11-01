@@ -1807,16 +1807,17 @@
    "2026-10-15",
    "2026-10-18",
    "2026-10-22",
-   "2026-10-30"
+   "2026-10-30",
+   "2026-11-02"
   ],
-  "last_seen": "2026-10-30",
+  "last_seen": "2026-11-02",
   "keyword": "비타민K2",
-  "search_volume": 7390,
+  "search_volume": 7220,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7452
+  "blog_position_y": 9020
  },
  "리노이드 EA 포뮬라": {
   "first_seen": "2026-09-29",
@@ -3313,16 +3314,17 @@
   "seen_days": [
    "2026-10-17",
    "2026-10-25",
-   "2026-10-30"
+   "2026-10-30",
+   "2026-11-02"
   ],
-  "last_seen": "2026-10-30",
+  "last_seen": "2026-11-02",
   "keyword": "피세틴",
-  "search_volume": 2790,
+  "search_volume": 2930,
   "source": "shopping",
-  "shopping_rank": 393,
+  "shopping_rank": 415,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6495
+  "pharma_value": 4,
+  "blog_position_y": 6088
  },
  "나이아신": {
   "first_seen": "2026-10-18",
@@ -4083,16 +4085,17 @@
  "호박즙": {
   "first_seen": "2026-10-29",
   "seen_days": [
-   "2026-10-29"
+   "2026-10-29",
+   "2026-11-02"
   ],
-  "last_seen": "2026-10-29",
+  "last_seen": "2026-11-02",
   "keyword": "호박즙",
-  "search_volume": 6670,
+  "search_volume": 6660,
   "source": "shopping",
-  "shopping_rank": 92,
+  "shopping_rank": 43,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6500
+  "blog_position_y": 6992
  },
  "레티놀": {
   "first_seen": "2026-10-30",
@@ -4125,16 +4128,17 @@
  "스페르미딘": {
   "first_seen": "2026-10-30",
   "seen_days": [
-   "2026-10-30"
+   "2026-10-30",
+   "2026-11-02"
   ],
-  "last_seen": "2026-10-30",
+  "last_seen": "2026-11-02",
   "keyword": "스페르미딘",
-  "search_volume": 2270,
+  "search_volume": 2290,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7274
+  "blog_position_y": 7521
  },
  "사과식초": {
   "first_seen": "2026-10-31",
@@ -4233,5 +4237,47 @@
   "shopping_move": "새 진입",
   "pharma_value": 1,
   "blog_position_y": 2222
+ },
+ "자색양파": {
+  "first_seen": "2026-11-02",
+  "seen_days": [
+   "2026-11-02"
+  ],
+  "last_seen": "2026-11-02",
+  "keyword": "자색양파즙",
+  "search_volume": 2630,
+  "source": "shopping",
+  "shopping_rank": 159,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 8399
+ },
+ "케일": {
+  "first_seen": "2026-11-02",
+  "seen_days": [
+   "2026-11-02"
+  ],
+  "last_seen": "2026-11-02",
+  "keyword": "케일즙",
+  "search_volume": 460,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6182
+ },
+ "메디슨벨": {
+  "first_seen": "2026-11-02",
+  "seen_days": [
+   "2026-11-02"
+  ],
+  "last_seen": "2026-11-02",
+  "keyword": "메디슨벨 샐러드",
+  "search_volume": 12220,
+  "source": "shopping",
+  "shopping_rank": 248,
+  "shopping_move": "새 진입",
+  "pharma_value": 1,
+  "blog_position_y": 7553
  }
 }

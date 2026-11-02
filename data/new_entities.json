@@ -2357,16 +2357,17 @@
  "타마플렉스": {
   "first_seen": "2026-10-05",
   "seen_days": [
-   "2026-10-05"
+   "2026-10-05",
+   "2026-11-02"
   ],
-  "last_seen": "2026-10-05",
+  "last_seen": "2026-11-02",
   "keyword": "타마플렉스",
-  "search_volume": 2540,
+  "search_volume": 4200,
   "source": "shopping",
-  "shopping_rank": 166,
+  "shopping_rank": 196,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 6627
+  "blog_position_y": 6050
  },
  "캡슐레이션 효소": {
   "first_seen": "2026-10-05",
@@ -2643,16 +2644,17 @@
   "first_seen": "2026-10-07",
   "seen_days": [
    "2026-10-07",
-   "2026-10-16"
+   "2026-10-16",
+   "2026-11-02"
   ],
-  "last_seen": "2026-10-16",
+  "last_seen": "2026-11-02",
   "keyword": "리포좀 비타민C",
-  "search_volume": 32320,
+  "search_volume": 31450,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7457
+  "blog_position_y": 7302
  },
  "포뉴": {
   "first_seen": "2026-10-07",
@@ -3241,15 +3243,16 @@
    "2026-10-21",
    "2026-10-24",
    "2026-10-27",
-   "2026-10-30"
+   "2026-10-30",
+   "2026-11-02"
   ],
-  "last_seen": "2026-10-30",
+  "last_seen": "2026-11-02",
   "keyword": "비트즙",
-  "search_volume": 4940,
+  "search_volume": 4790,
   "source": "shopping",
-  "shopping_rank": 105,
+  "shopping_rank": 86,
   "shopping_move": null,
-  "pharma_value": 4,
+  "pharma_value": 3,
   "blog_position_y": 6701
  },
  "반려동물 관절 영양제": {
@@ -3415,16 +3418,17 @@
  "아커만시아": {
   "first_seen": "2026-10-18",
   "seen_days": [
-   "2026-10-18"
+   "2026-10-18",
+   "2026-11-02"
   ],
-  "last_seen": "2026-10-18",
+  "last_seen": "2026-11-02",
   "keyword": "아커만시아",
-  "search_volume": 3710,
+  "search_volume": 7380,
   "source": "shopping",
-  "shopping_rank": 140,
-  "shopping_move": "새 진입",
-  "pharma_value": 5,
-  "blog_position_y": 2346
+  "shopping_rank": 61,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 1453
  },
  "쇠비름": {
   "first_seen": "2026-10-18",
@@ -4279,5 +4283,19 @@
   "shopping_move": "새 진입",
   "pharma_value": 1,
   "blog_position_y": 7553
+ },
+ "라이락틴": {
+  "first_seen": "2026-11-02",
+  "seen_days": [
+   "2026-11-02"
+  ],
+  "last_seen": "2026-11-02",
+  "keyword": "라이락틴",
+  "search_volume": 5490,
+  "source": "shopping",
+  "shopping_rank": 295,
+  "shopping_move": "새 진입",
+  "pharma_value": 2,
+  "blog_position_y": 1669
  }
 }

@@ -887,16 +887,17 @@
   "seen_days": [
    "2026-09-21",
    "2026-10-05",
-   "2026-10-26"
+   "2026-10-26",
+   "2026-11-03"
   ],
-  "last_seen": "2026-10-26",
+  "last_seen": "2026-11-03",
   "keyword": "맥문동",
-  "search_volume": 41680,
+  "search_volume": 40730,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 10704
+  "blog_position_y": 9554
  },
  "젤리형 영양제": {
   "first_seen": "2026-09-21",
@@ -1130,16 +1131,17 @@
  "칼륨": {
   "first_seen": "2026-09-23",
   "seen_days": [
-   "2026-09-23"
+   "2026-09-23",
+   "2026-11-03"
   ],
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-11-03",
   "keyword": "칼륨 많은 음식",
-  "search_volume": 14930,
+  "search_volume": 14430,
   "source": "shopping",
-  "shopping_rank": 238,
-  "shopping_move": "새 진입",
+  "shopping_rank": null,
+  "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7428
+  "blog_position_y": 3284
  },
  "흑삼": {
   "first_seen": "2026-09-23",
@@ -2966,16 +2968,17 @@
  "폴리토린": {
   "first_seen": "2026-10-13",
   "seen_days": [
-   "2026-10-13"
+   "2026-10-13",
+   "2026-11-03"
   ],
-  "last_seen": "2026-10-13",
+  "last_seen": "2026-11-03",
   "keyword": "폴리토린",
-  "search_volume": 11180,
+  "search_volume": 8300,
   "source": "shopping",
-  "shopping_rank": 478,
-  "shopping_move": null,
+  "shopping_rank": 260,
+  "shopping_move": "급상승",
   "pharma_value": 2,
-  "blog_position_y": 1030
+  "blog_position_y": 5170
  },
  "구미 영양제": {
   "first_seen": "2026-10-13",
@@ -4331,5 +4334,19 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": null
+ },
+ "레스큐민": {
+  "first_seen": "2026-11-03",
+  "seen_days": [
+   "2026-11-03"
+  ],
+  "last_seen": "2026-11-03",
+  "keyword": "레스큐민",
+  "search_volume": 4210,
+  "source": "shopping",
+  "shopping_rank": 290,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 2080
  }
 }

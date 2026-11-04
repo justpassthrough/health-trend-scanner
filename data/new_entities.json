@@ -1006,16 +1006,17 @@
   "first_seen": "2026-09-22",
   "seen_days": [
    "2026-09-22",
-   "2026-10-14"
+   "2026-10-14",
+   "2026-11-05"
   ],
-  "last_seen": "2026-10-14",
-  "keyword": "수용성 식이섬유",
-  "search_volume": 3100,
+  "last_seen": "2026-11-05",
+  "keyword": "MAC 식단",
+  "search_volume": 90,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 2367
+  "blog_position_y": null
  },
  "세라마이드": {
   "first_seen": "2026-09-22",
@@ -2386,16 +2387,17 @@
    "2026-10-12",
    "2026-10-18",
    "2026-10-28",
-   "2026-11-01"
+   "2026-11-01",
+   "2026-11-05"
   ],
-  "last_seen": "2026-11-01",
-  "keyword": "캡슐레이션효소",
-  "search_volume": 114410,
+  "last_seen": "2026-11-05",
+  "keyword": "캡슐레이션 효소",
+  "search_volume": 108990,
   "source": "shopping",
-  "shopping_rank": 40,
+  "shopping_rank": 26,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 6078
+  "blog_position_y": 7255
  },
  "야채수": {
   "first_seen": "2026-10-05",
@@ -3434,16 +3436,17 @@
   "first_seen": "2026-10-18",
   "seen_days": [
    "2026-10-18",
-   "2026-11-02"
+   "2026-11-02",
+   "2026-11-05"
   ],
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-05",
   "keyword": "아커만시아",
-  "search_volume": 7380,
+  "search_volume": 10420,
   "source": "shopping",
-  "shopping_rank": 61,
+  "shopping_rank": 144,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 1453
+  "blog_position_y": 1443
  },
  "쇠비름": {
   "first_seen": "2026-10-18",
@@ -4385,5 +4388,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 10583
+ },
+ "니프젠": {
+  "first_seen": "2026-11-05",
+  "seen_days": [
+   "2026-11-05"
+  ],
+  "last_seen": "2026-11-05",
+  "keyword": "니프젠",
+  "search_volume": 14950,
+  "source": "shopping",
+  "shopping_rank": 123,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 7040
+ },
+ "P-CAB": {
+  "first_seen": "2026-11-05",
+  "seen_days": [
+   "2026-11-05"
+  ],
+  "last_seen": "2026-11-05",
+  "keyword": "P-CAB",
+  "search_volume": 260,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 1130
  }
 }

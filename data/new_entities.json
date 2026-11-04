@@ -1905,16 +1905,17 @@
    "2026-09-30",
    "2026-10-03",
    "2026-10-10",
-   "2026-10-27"
+   "2026-10-27",
+   "2026-11-04"
   ],
-  "last_seen": "2026-10-27",
+  "last_seen": "2026-11-04",
   "keyword": "파랙틴",
-  "search_volume": 9230,
+  "search_volume": 4720,
   "source": "shopping",
-  "shopping_rank": 66,
-  "shopping_move": "급상승",
+  "shopping_rank": 40,
+  "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 7522
+  "blog_position_y": 7789
  },
  "한삼덩굴": {
   "first_seen": "2026-09-30",
@@ -2140,16 +2141,17 @@
   "seen_days": [
    "2026-10-02",
    "2026-10-08",
-   "2026-10-11"
+   "2026-10-11",
+   "2026-11-04"
   ],
-  "last_seen": "2026-10-11",
+  "last_seen": "2026-11-04",
   "keyword": "올리브오일 캡슐",
-  "search_volume": 13780,
+  "search_volume": 9770,
   "source": "shopping",
-  "shopping_rank": 290,
+  "shopping_rank": 124,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6097
+  "pharma_value": 4,
+  "blog_position_y": 7911
  },
  "혈당 영양제": {
   "first_seen": "2026-10-02",
@@ -3254,16 +3256,17 @@
    "2026-10-24",
    "2026-10-27",
    "2026-10-30",
-   "2026-11-02"
+   "2026-11-02",
+   "2026-11-04"
   ],
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-04",
   "keyword": "비트즙",
-  "search_volume": 4790,
+  "search_volume": 4800,
   "source": "shopping",
-  "shopping_rank": 86,
+  "shopping_rank": 112,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6701
+  "pharma_value": 4,
+  "blog_position_y": 7143
  },
  "반려동물 관절 영양제": {
   "first_seen": "2026-10-16",
@@ -4354,5 +4357,33 @@
   "shopping_move": "급상승",
   "pharma_value": 2,
   "blog_position_y": 2080
+ },
+ "계피": {
+  "first_seen": "2026-11-04",
+  "seen_days": [
+   "2026-11-04"
+  ],
+  "last_seen": "2026-11-04",
+  "keyword": "시나몬 효능",
+  "search_volume": 1700,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 4871
+ },
+ "천마": {
+  "first_seen": "2026-11-04",
+  "seen_days": [
+   "2026-11-04"
+  ],
+  "last_seen": "2026-11-04",
+  "keyword": "천마",
+  "search_volume": 14220,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 10583
  }
 }

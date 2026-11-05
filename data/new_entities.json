@@ -1220,16 +1220,17 @@
   "first_seen": "2026-09-24",
   "seen_days": [
    "2026-09-24",
-   "2026-09-27"
+   "2026-09-27",
+   "2026-11-05"
   ],
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-11-05",
   "keyword": "베타글루칸",
-  "search_volume": 11920,
+  "search_volume": 9110,
   "source": "shopping",
-  "shopping_rank": 210,
-  "shopping_move": "급상승",
+  "shopping_rank": 276,
+  "shopping_move": "새 진입",
   "pharma_value": 4,
-  "blog_position_y": 8175
+  "blog_position_y": 9034
  },
  "DEM": {
   "first_seen": "2026-09-24",
@@ -4416,5 +4417,33 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 1130
+ },
+ "헛개나무열매": {
+  "first_seen": "2026-11-05",
+  "seen_days": [
+   "2026-11-05"
+  ],
+  "last_seen": "2026-11-05",
+  "keyword": "헛개즙",
+  "search_volume": 400,
+  "source": "shopping",
+  "shopping_rank": 143,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7824
+ },
+ "영양제 간손상": {
+  "first_seen": "2026-11-05",
+  "seen_days": [
+   "2026-11-05"
+  ],
+  "last_seen": "2026-11-05",
+  "keyword": "영양제 간수치",
+  "search_volume": 150,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 176
  }
 }

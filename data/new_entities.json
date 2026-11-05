@@ -889,16 +889,17 @@
    "2026-09-21",
    "2026-10-05",
    "2026-10-26",
-   "2026-11-03"
+   "2026-11-03",
+   "2026-11-06"
   ],
-  "last_seen": "2026-11-03",
+  "last_seen": "2026-11-06",
   "keyword": "맥문동",
-  "search_volume": 40730,
+  "search_volume": 40180,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 9554
+  "blog_position_y": 9705
  },
  "젤리형 영양제": {
   "first_seen": "2026-09-21",
@@ -2370,16 +2371,17 @@
   "first_seen": "2026-10-05",
   "seen_days": [
    "2026-10-05",
-   "2026-11-02"
+   "2026-11-02",
+   "2026-11-06"
   ],
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-06",
   "keyword": "타마플렉스",
-  "search_volume": 4200,
+  "search_volume": 4660,
   "source": "shopping",
-  "shopping_rank": 196,
+  "shopping_rank": 190,
   "shopping_move": "급상승",
-  "pharma_value": 4,
-  "blog_position_y": 6050
+  "pharma_value": 2,
+  "blog_position_y": 7249
  },
  "캡슐레이션 효소": {
   "first_seen": "2026-10-05",
@@ -2890,16 +2892,17 @@
    "2026-10-19",
    "2026-10-23",
    "2026-10-26",
-   "2026-10-29"
+   "2026-10-29",
+   "2026-11-06"
   ],
-  "last_seen": "2026-10-29",
+  "last_seen": "2026-11-06",
   "keyword": "블랙마카",
-  "search_volume": 10710,
+  "search_volume": 10930,
   "source": "shopping",
-  "shopping_rank": 103,
+  "shopping_rank": 106,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8035
+  "blog_position_y": 7783
  },
  "천년초": {
   "first_seen": "2026-10-11",
@@ -3582,16 +3585,17 @@
   "seen_days": [
    "2026-10-21",
    "2026-10-27",
-   "2026-10-31"
+   "2026-10-31",
+   "2026-11-06"
   ],
-  "last_seen": "2026-10-31",
+  "last_seen": "2026-11-06",
   "keyword": "돌외잎 효능",
-  "search_volume": 1970,
+  "search_volume": 2070,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 4666
+  "pharma_value": 3,
+  "blog_position_y": 3940
  },
  "초록입홍합": {
   "first_seen": "2026-10-21",
@@ -4445,5 +4449,61 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 176
+ },
+ "벌나무": {
+  "first_seen": "2026-11-06",
+  "seen_days": [
+   "2026-11-06"
+  ],
+  "last_seen": "2026-11-06",
+  "keyword": "벌나무 효능",
+  "search_volume": 4580,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 2423
+ },
+ "야관문": {
+  "first_seen": "2026-11-06",
+  "seen_days": [
+   "2026-11-06"
+  ],
+  "last_seen": "2026-11-06",
+  "keyword": "야관문",
+  "search_volume": 6430,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 1619
+ },
+ "다슬기": {
+  "first_seen": "2026-11-06",
+  "seen_days": [
+   "2026-11-06"
+  ],
+  "last_seen": "2026-11-06",
+  "keyword": "다슬기즙",
+  "search_volume": 2210,
+  "source": "shopping",
+  "shopping_rank": 220,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 7235
+ },
+ "단백질 보충제": {
+  "first_seen": "2026-11-06",
+  "seen_days": [
+   "2026-11-06"
+  ],
+  "last_seen": "2026-11-06",
+  "keyword": "단백질 보충제",
+  "search_volume": 28070,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 10556
  }
 }

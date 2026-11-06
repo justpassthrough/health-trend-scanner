@@ -829,16 +829,17 @@
   "first_seen": "2026-09-21",
   "seen_days": [
    "2026-09-21",
-   "2026-10-12"
+   "2026-10-12",
+   "2026-11-06"
   ],
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-11-06",
   "keyword": "차가버섯 효능",
-  "search_volume": 8290,
+  "search_volume": 5850,
   "source": "shopping",
-  "shopping_rank": 465,
+  "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 2815
+  "pharma_value": 5,
+  "blog_position_y": 2722
  },
  "진세노사이드": {
   "first_seen": "2026-09-21",
@@ -1486,16 +1487,17 @@
    "2026-10-07",
    "2026-10-14",
    "2026-10-20",
-   "2026-11-03"
+   "2026-11-03",
+   "2026-11-06"
   ],
-  "last_seen": "2026-11-03",
+  "last_seen": "2026-11-06",
   "keyword": "푸룬주스",
-  "search_volume": 23160,
+  "search_volume": 23210,
   "source": "shopping",
-  "shopping_rank": 131,
+  "shopping_rank": 102,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7489
+  "blog_position_y": 8235
  },
  "마가목": {
   "first_seen": "2026-09-26",
@@ -2965,16 +2967,17 @@
   "first_seen": "2026-10-12",
   "seen_days": [
    "2026-10-12",
-   "2026-10-17"
+   "2026-10-17",
+   "2026-11-06"
   ],
-  "last_seen": "2026-10-17",
-  "keyword": "비타민C 3000",
-  "search_volume": 6620,
+  "last_seen": "2026-11-06",
+  "keyword": "비타민C 메가도스",
+  "search_volume": 10120,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 7509
+  "pharma_value": 4,
+  "blog_position_y": 9026
  },
  "폴리토린": {
   "first_seen": "2026-10-13",
@@ -3603,16 +3606,17 @@
    "2026-10-21",
    "2026-10-28",
    "2026-10-31",
-   "2026-11-03"
+   "2026-11-03",
+   "2026-11-06"
   ],
-  "last_seen": "2026-11-03",
-  "keyword": "초록입홍합",
-  "search_volume": 2640,
+  "last_seen": "2026-11-06",
+  "keyword": "초록입홍합 효능",
+  "search_volume": 240,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6403
+  "pharma_value": 3,
+  "blog_position_y": 7337
  },
  "우르소데옥시콜산": {
   "first_seen": "2026-10-21",
@@ -4116,16 +4120,17 @@
   "first_seen": "2026-10-29",
   "seen_days": [
    "2026-10-29",
-   "2026-11-02"
+   "2026-11-02",
+   "2026-11-06"
   ],
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-06",
   "keyword": "호박즙",
-  "search_volume": 6660,
+  "search_volume": 6940,
   "source": "shopping",
-  "shopping_rank": 43,
+  "shopping_rank": 37,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6992
+  "pharma_value": 4,
+  "blog_position_y": 7389
  },
  "레티놀": {
   "first_seen": "2026-10-30",
@@ -4505,5 +4510,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 10556
+ },
+ "엉겅퀴": {
+  "first_seen": "2026-11-06",
+  "seen_days": [
+   "2026-11-06"
+  ],
+  "last_seen": "2026-11-06",
+  "keyword": "엉겅퀴즙",
+  "search_volume": 1870,
+  "source": "shopping",
+  "shopping_rank": 233,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6843
+ },
+ "NAD+": {
+  "first_seen": "2026-11-06",
+  "seen_days": [
+   "2026-11-06"
+  ],
+  "last_seen": "2026-11-06",
+  "keyword": "NAD+ 화장품",
+  "search_volume": 130,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 5163
  }
 }

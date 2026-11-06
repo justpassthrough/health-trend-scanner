@@ -200,16 +200,17 @@
    "2026-10-26",
    "2026-10-29",
    "2026-11-01",
-   "2026-11-04"
+   "2026-11-04",
+   "2026-11-07"
   ],
-  "last_seen": "2026-11-04",
-  "keyword": "흑마늘 효능",
-  "search_volume": 4700,
+  "last_seen": "2026-11-07",
+  "keyword": "흑마늘즙",
+  "search_volume": 3230,
   "source": "shopping",
-  "shopping_rank": 263,
+  "shopping_rank": 110,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 8118
+  "pharma_value": 4,
+  "blog_position_y": 6945
  },
  "산삼배양근": {
   "first_seen": "2026-09-18",
@@ -3719,16 +3720,17 @@
  "장어즙": {
   "first_seen": "2026-10-22",
   "seen_days": [
-   "2026-10-22"
+   "2026-10-22",
+   "2026-11-07"
   ],
-  "last_seen": "2026-10-22",
+  "last_seen": "2026-11-07",
   "keyword": "장어즙",
-  "search_volume": 5840,
+  "search_volume": 5700,
   "source": "shopping",
-  "shopping_rank": 214,
-  "shopping_move": "급상승",
-  "pharma_value": 2,
-  "blog_position_y": 6595
+  "shopping_rank": 68,
+  "shopping_move": "최근 진입",
+  "pharma_value": 3,
+  "blog_position_y": 6671
  },
  "구충제": {
   "first_seen": "2026-10-22",
@@ -4538,5 +4540,33 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 5163
+ },
+ "가물치": {
+  "first_seen": "2026-11-07",
+  "seen_days": [
+   "2026-11-07"
+  ],
+  "last_seen": "2026-11-07",
+  "keyword": "가물치즙",
+  "search_volume": 760,
+  "source": "shopping",
+  "shopping_rank": 278,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6651
+ },
+ "미나리": {
+  "first_seen": "2026-11-07",
+  "seen_days": [
+   "2026-11-07"
+  ],
+  "last_seen": "2026-11-07",
+  "keyword": "미나리즙",
+  "search_volume": 840,
+  "source": "shopping",
+  "shopping_rank": 299,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7547
  }
 }

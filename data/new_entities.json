@@ -2148,16 +2148,17 @@
    "2026-10-02",
    "2026-10-08",
    "2026-10-11",
-   "2026-11-04"
+   "2026-11-04",
+   "2026-11-08"
   ],
-  "last_seen": "2026-11-04",
-  "keyword": "올리브오일 캡슐",
-  "search_volume": 9770,
+  "last_seen": "2026-11-08",
+  "keyword": "올리브오일 효능",
+  "search_volume": 14410,
   "source": "shopping",
-  "shopping_rank": 124,
+  "shopping_rank": 359,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7911
+  "pharma_value": 3,
+  "blog_position_y": 8673
  },
  "혈당 영양제": {
   "first_seen": "2026-10-02",
@@ -2207,16 +2208,17 @@
   "first_seen": "2026-10-03",
   "seen_days": [
    "2026-10-03",
-   "2026-10-17"
+   "2026-10-17",
+   "2026-11-08"
   ],
-  "last_seen": "2026-10-17",
+  "last_seen": "2026-11-08",
   "keyword": "오쏘몰 이뮨",
-  "search_volume": 36970,
+  "search_volume": 29610,
   "source": "shopping",
-  "shopping_rank": 61,
+  "shopping_rank": 64,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8689
+  "pharma_value": 5,
+  "blog_position_y": 8732
  },
  "사워크라우트": {
   "first_seen": "2026-10-03",
@@ -2280,16 +2282,17 @@
   "first_seen": "2026-10-04",
   "seen_days": [
    "2026-10-04",
-   "2026-10-22"
+   "2026-10-22",
+   "2026-11-08"
   ],
-  "last_seen": "2026-10-22",
+  "last_seen": "2026-11-08",
   "keyword": "인삼 효능",
-  "search_volume": 3810,
+  "search_volume": 3310,
   "source": "shopping",
-  "shopping_rank": 35,
+  "shopping_rank": 41,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 9355
+  "pharma_value": 3,
+  "blog_position_y": 8266
  },
  "개구리즙": {
   "first_seen": "2026-10-04",
@@ -4406,16 +4409,17 @@
  "니프젠": {
   "first_seen": "2026-11-05",
   "seen_days": [
-   "2026-11-05"
+   "2026-11-05",
+   "2026-11-08"
   ],
-  "last_seen": "2026-11-05",
+  "last_seen": "2026-11-08",
   "keyword": "니프젠",
-  "search_volume": 14950,
+  "search_volume": 14640,
   "source": "shopping",
-  "shopping_rank": 123,
+  "shopping_rank": 100,
   "shopping_move": "급상승",
   "pharma_value": 2,
-  "blog_position_y": 7040
+  "blog_position_y": 7525
  },
  "P-CAB": {
   "first_seen": "2026-11-05",
@@ -4598,5 +4602,33 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 8573
+ },
+ "갈근탕": {
+  "first_seen": "2026-11-08",
+  "seen_days": [
+   "2026-11-08"
+  ],
+  "last_seen": "2026-11-08",
+  "keyword": "갈근탕 효능",
+  "search_volume": 3890,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 2923
+ },
+ "러닝 영양제": {
+  "first_seen": "2026-11-08",
+  "seen_days": [
+   "2026-11-08"
+  ],
+  "last_seen": "2026-11-08",
+  "keyword": "러닝 영양제",
+  "search_volume": 170,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6101
  }
 }

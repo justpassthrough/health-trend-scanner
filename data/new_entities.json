@@ -3501,16 +3501,17 @@
  "코로솔산": {
   "first_seen": "2026-10-19",
   "seen_days": [
-   "2026-10-19"
+   "2026-10-19",
+   "2026-11-07"
   ],
-  "last_seen": "2026-10-19",
+  "last_seen": "2026-11-07",
   "keyword": "코로솔산",
-  "search_volume": 1310,
+  "search_volume": 1390,
   "source": "shopping",
-  "shopping_rank": 249,
+  "shopping_rank": 105,
   "shopping_move": "새 진입",
   "pharma_value": 4,
-  "blog_position_y": 6849
+  "blog_position_y": 6962
  },
  "대추": {
   "first_seen": "2026-10-20",
@@ -3559,16 +3560,17 @@
   "first_seen": "2026-10-20",
   "seen_days": [
    "2026-10-20",
-   "2026-11-01"
+   "2026-11-01",
+   "2026-11-07"
   ],
-  "last_seen": "2026-11-01",
+  "last_seen": "2026-11-07",
   "keyword": "칼슘 영양제",
-  "search_volume": 11860,
+  "search_volume": 11920,
   "source": "shopping",
-  "shopping_rank": 215,
+  "shopping_rank": 102,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7113
+  "blog_position_y": 8294
  },
  "레스메티롬": {
   "first_seen": "2026-10-20",
@@ -4568,5 +4570,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7547
+ },
+ "잇몸영양제": {
+  "first_seen": "2026-11-07",
+  "seen_days": [
+   "2026-11-07"
+  ],
+  "last_seen": "2026-11-07",
+  "keyword": "잇몸영양제",
+  "search_volume": 12020,
+  "source": "shopping",
+  "shopping_rank": 258,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6348
+ },
+ "식물성 에스트로겐": {
+  "first_seen": "2026-11-07",
+  "seen_days": [
+   "2026-11-07"
+  ],
+  "last_seen": "2026-11-07",
+  "keyword": "여성호르몬 영양제",
+  "search_volume": 6250,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8573
  }
 }

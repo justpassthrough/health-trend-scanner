@@ -923,16 +923,17 @@
    "2026-09-21",
    "2026-09-24",
    "2026-09-27",
-   "2026-10-18"
+   "2026-10-18",
+   "2026-11-08"
   ],
-  "last_seen": "2026-10-18",
+  "last_seen": "2026-11-08",
   "keyword": "인삼다당체",
-  "search_volume": 16820,
+  "search_volume": 7380,
   "source": "shopping",
-  "shopping_rank": 87,
-  "shopping_move": null,
+  "shopping_rank": 19,
+  "shopping_move": "새 진입",
   "pharma_value": 4,
-  "blog_position_y": 6257
+  "blog_position_y": 6049
  },
  "산후 영양제": {
   "first_seen": "2026-09-21",
@@ -3031,16 +3032,17 @@
   "seen_days": [
    "2026-10-13",
    "2026-10-27",
-   "2026-10-30"
+   "2026-10-30",
+   "2026-11-08"
   ],
-  "last_seen": "2026-10-30",
+  "last_seen": "2026-11-08",
   "keyword": "비타민B12",
-  "search_volume": 14520,
+  "search_volume": 14750,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 9539
+  "blog_position_y": 10471
  },
  "아스코르브산 분말": {
   "first_seen": "2026-10-13",
@@ -4630,5 +4632,19 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 6101
+ },
+ "폴리페놀": {
+  "first_seen": "2026-11-08",
+  "seen_days": [
+   "2026-11-08"
+  ],
+  "last_seen": "2026-11-08",
+  "keyword": "폴리페놀 효능",
+  "search_volume": 4710,
+  "source": "shopping",
+  "shopping_rank": 272,
+  "shopping_move": "최근 진입",
+  "pharma_value": 3,
+  "blog_position_y": 8217
  }
 }

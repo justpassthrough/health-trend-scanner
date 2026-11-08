@@ -831,16 +831,17 @@
   "seen_days": [
    "2026-09-21",
    "2026-10-12",
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-09"
   ],
-  "last_seen": "2026-11-06",
+  "last_seen": "2026-11-09",
   "keyword": "차가버섯 효능",
-  "search_volume": 5850,
+  "search_volume": 5670,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 2722
+  "pharma_value": 4,
+  "blog_position_y": 2959
  },
  "진세노사이드": {
   "first_seen": "2026-09-21",
@@ -2502,16 +2503,17 @@
   "first_seen": "2026-10-06",
   "seen_days": [
    "2026-10-06",
-   "2026-10-30"
+   "2026-10-30",
+   "2026-11-09"
   ],
-  "last_seen": "2026-10-30",
+  "last_seen": "2026-11-09",
   "keyword": "바이오가이아",
-  "search_volume": 18420,
+  "search_volume": 19000,
   "source": "shopping",
-  "shopping_rank": 85,
+  "shopping_rank": 79,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7032
+  "blog_position_y": 7441
  },
  "아젤라산": {
   "first_seen": "2026-10-06",
@@ -2667,16 +2669,17 @@
   "seen_days": [
    "2026-10-07",
    "2026-10-16",
-   "2026-11-02"
+   "2026-11-02",
+   "2026-11-09"
   ],
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-09",
   "keyword": "리포좀 비타민C",
-  "search_volume": 31450,
+  "search_volume": 32310,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7302
+  "blog_position_y": 8434
  },
  "포뉴": {
   "first_seen": "2026-10-07",
@@ -4538,16 +4541,17 @@
  "NAD+": {
   "first_seen": "2026-11-06",
   "seen_days": [
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-09"
   ],
-  "last_seen": "2026-11-06",
-  "keyword": "NAD+ 화장품",
-  "search_volume": 130,
+  "last_seen": "2026-11-09",
+  "keyword": "NAD 화장품",
+  "search_volume": 140,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 5163
+  "blog_position_y": 5582
  },
  "가물치": {
   "first_seen": "2026-11-07",
@@ -4646,5 +4650,33 @@
   "shopping_move": "최근 진입",
   "pharma_value": 3,
   "blog_position_y": 8217
+ },
+ "실리움": {
+  "first_seen": "2026-11-09",
+  "seen_days": [
+   "2026-11-09"
+  ],
+  "last_seen": "2026-11-09",
+  "keyword": "차전자피 효능",
+  "search_volume": 10790,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8271
+ },
+ "은교산": {
+  "first_seen": "2026-11-09",
+  "seen_days": [
+   "2026-11-09"
+  ],
+  "last_seen": "2026-11-09",
+  "keyword": "은교산",
+  "search_volume": 9120,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 2682
  }
 }

@@ -2459,16 +2459,17 @@
   "seen_days": [
    "2026-10-05",
    "2026-10-09",
-   "2026-10-12"
+   "2026-10-12",
+   "2026-11-09"
   ],
-  "last_seen": "2026-10-12",
-  "keyword": "솔잎농축액",
-  "search_volume": 5470,
+  "last_seen": "2026-11-09",
+  "keyword": "솔잎 효능",
+  "search_volume": 7340,
   "source": "shopping",
-  "shopping_rank": 74,
+  "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6439
+  "blog_position_y": 7937
  },
  "루마큐라": {
   "first_seen": "2026-10-05",
@@ -3495,16 +3496,17 @@
  "초석잠": {
   "first_seen": "2026-10-19",
   "seen_days": [
-   "2026-10-19"
+   "2026-10-19",
+   "2026-11-09"
   ],
-  "last_seen": "2026-10-19",
-  "keyword": "초석잠",
-  "search_volume": 12610,
+  "last_seen": "2026-11-09",
+  "keyword": "초석잠 효능",
+  "search_volume": 2170,
   "source": "shopping",
-  "shopping_rank": 278,
+  "shopping_rank": 197,
   "shopping_move": "급상승",
   "pharma_value": 3,
-  "blog_position_y": 5758
+  "blog_position_y": 4010
  },
  "코로솔산": {
   "first_seen": "2026-10-19",
@@ -3600,16 +3602,17 @@
    "2026-10-21",
    "2026-10-27",
    "2026-10-31",
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-09"
   ],
-  "last_seen": "2026-11-06",
+  "last_seen": "2026-11-09",
   "keyword": "돌외잎 효능",
-  "search_volume": 2070,
+  "search_volume": 1800,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 3940
+  "pharma_value": 4,
+  "blog_position_y": 4432
  },
  "초록입홍합": {
   "first_seen": "2026-10-21",
@@ -3716,16 +3719,17 @@
  "아티초크": {
   "first_seen": "2026-10-22",
   "seen_days": [
-   "2026-10-22"
+   "2026-10-22",
+   "2026-11-09"
   ],
-  "last_seen": "2026-10-22",
-  "keyword": "아티초크",
-  "search_volume": 16000,
+  "last_seen": "2026-11-09",
+  "keyword": "아티초크 효능",
+  "search_volume": 5020,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 9461
+  "blog_position_y": 3953
  },
  "장어즙": {
   "first_seen": "2026-10-22",
@@ -4513,16 +4517,17 @@
  "단백질 보충제": {
   "first_seen": "2026-11-06",
   "seen_days": [
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-09"
   ],
-  "last_seen": "2026-11-06",
-  "keyword": "단백질 보충제",
-  "search_volume": 28070,
+  "last_seen": "2026-11-09",
+  "keyword": "청소년 단백질",
+  "search_volume": 110,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 10556
+  "blog_position_y": 5774
  },
  "엉겅퀴": {
   "first_seen": "2026-11-06",
@@ -4678,5 +4683,33 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 2682
+ },
+ "예덕나무껍질": {
+  "first_seen": "2026-11-09",
+  "seen_days": [
+   "2026-11-09"
+  ],
+  "last_seen": "2026-11-09",
+  "keyword": "예덕나무",
+  "search_volume": 3370,
+  "source": "shopping",
+  "shopping_rank": 249,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 4783
+ },
+ "아스코르빈산": {
+  "first_seen": "2026-11-09",
+  "seen_days": [
+   "2026-11-09"
+  ],
+  "last_seen": "2026-11-09",
+  "keyword": "아스코르빈산",
+  "search_volume": 1040,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7941
  }
 }

@@ -893,16 +893,17 @@
    "2026-10-05",
    "2026-10-26",
    "2026-11-03",
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-10"
   ],
-  "last_seen": "2026-11-06",
-  "keyword": "맥문동",
-  "search_volume": 40180,
+  "last_seen": "2026-11-10",
+  "keyword": "맥문동 효능",
+  "search_volume": 25500,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 9705
+  "blog_position_y": 4328
  },
  "젤리형 영양제": {
   "first_seen": "2026-09-21",
@@ -2992,16 +2993,17 @@
   "first_seen": "2026-10-13",
   "seen_days": [
    "2026-10-13",
-   "2026-11-03"
+   "2026-11-03",
+   "2026-11-10"
   ],
-  "last_seen": "2026-11-03",
+  "last_seen": "2026-11-10",
   "keyword": "폴리토린",
-  "search_volume": 8300,
+  "search_volume": 7650,
   "source": "shopping",
-  "shopping_rank": 260,
+  "shopping_rank": 166,
   "shopping_move": "급상승",
-  "pharma_value": 2,
-  "blog_position_y": 5170
+  "pharma_value": 4,
+  "blog_position_y": 4212
  },
  "구미 영양제": {
   "first_seen": "2026-10-13",
@@ -3540,16 +3542,17 @@
  "퀘르포민": {
   "first_seen": "2026-10-20",
   "seen_days": [
-   "2026-10-20"
+   "2026-10-20",
+   "2026-11-10"
   ],
-  "last_seen": "2026-10-20",
-  "keyword": "퀘르포민",
-  "search_volume": null,
+  "last_seen": "2026-11-10",
+  "keyword": "퀘르포민정",
+  "search_volume": 16110,
   "source": "shopping",
-  "shopping_rank": null,
+  "shopping_rank": 63,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": null
+  "pharma_value": 4,
+  "blog_position_y": 6643
  },
  "근육이완제": {
   "first_seen": "2026-10-20",
@@ -3621,16 +3624,17 @@
    "2026-10-28",
    "2026-10-31",
    "2026-11-03",
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-10"
   ],
-  "last_seen": "2026-11-06",
-  "keyword": "초록입홍합 효능",
-  "search_volume": 240,
+  "last_seen": "2026-11-10",
+  "keyword": "강아지 관절 영양제",
+  "search_volume": 9620,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7337
+  "blog_position_y": 9482
  },
  "우르소데옥시콜산": {
   "first_seen": "2026-10-21",
@@ -4711,5 +4715,19 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 7941
+ },
+ "씨커트": {
+  "first_seen": "2026-11-10",
+  "seen_days": [
+   "2026-11-10"
+  ],
+  "last_seen": "2026-11-10",
+  "keyword": "씨커트",
+  "search_volume": 6530,
+  "source": "shopping",
+  "shopping_rank": 99,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 8991
  }
 }

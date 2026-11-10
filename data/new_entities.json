@@ -1759,16 +1759,17 @@
  "인사돌": {
   "first_seen": "2026-09-29",
   "seen_days": [
-   "2026-09-29"
+   "2026-09-29",
+   "2026-11-10"
   ],
-  "last_seen": "2026-09-29",
+  "last_seen": "2026-11-10",
   "keyword": "인사돌",
-  "search_volume": 14500,
+  "search_volume": 15570,
   "source": "shopping",
-  "shopping_rank": 111,
+  "shopping_rank": 185,
   "shopping_move": "급상승",
-  "pharma_value": 5,
-  "blog_position_y": 7226
+  "pharma_value": 4,
+  "blog_position_y": 6239
  },
  "퀘르포민정": {
   "first_seen": "2026-09-29",
@@ -2905,16 +2906,17 @@
    "2026-10-23",
    "2026-10-26",
    "2026-10-29",
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-10"
   ],
-  "last_seen": "2026-11-06",
+  "last_seen": "2026-11-10",
   "keyword": "블랙마카",
-  "search_volume": 10930,
+  "search_volume": 11350,
   "source": "shopping",
-  "shopping_rank": 106,
+  "shopping_rank": 115,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7783
+  "blog_position_y": 8555
  },
  "천년초": {
   "first_seen": "2026-10-11",
@@ -3574,16 +3576,17 @@
   "seen_days": [
    "2026-10-20",
    "2026-11-01",
-   "2026-11-07"
+   "2026-11-07",
+   "2026-11-10"
   ],
-  "last_seen": "2026-11-07",
+  "last_seen": "2026-11-10",
   "keyword": "칼슘 영양제",
-  "search_volume": 11920,
+  "search_volume": 11870,
   "source": "shopping",
-  "shopping_rank": 102,
+  "shopping_rank": 124,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 8294
+  "pharma_value": 4,
+  "blog_position_y": 9940
  },
  "레스메티롬": {
   "first_seen": "2026-10-20",
@@ -4729,5 +4732,33 @@
   "shopping_move": "급상승",
   "pharma_value": 2,
   "blog_position_y": 8991
+ },
+ "야생블루베리": {
+  "first_seen": "2026-11-10",
+  "seen_days": [
+   "2026-11-10"
+  ],
+  "last_seen": "2026-11-10",
+  "keyword": "야생블루베리",
+  "search_volume": 650,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 5592
+ },
+ "트루락": {
+  "first_seen": "2026-11-10",
+  "seen_days": [
+   "2026-11-10"
+  ],
+  "last_seen": "2026-11-10",
+  "keyword": "트루락",
+  "search_volume": 220,
+  "source": "shopping",
+  "shopping_rank": 286,
+  "shopping_move": "새 진입",
+  "pharma_value": 2,
+  "blog_position_y": 5501
  }
 }

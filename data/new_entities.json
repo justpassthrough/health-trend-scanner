@@ -3494,16 +3494,17 @@
  "달맞이꽃종자유": {
   "first_seen": "2026-10-18",
   "seen_days": [
-   "2026-10-18"
+   "2026-10-18",
+   "2026-11-12"
   ],
-  "last_seen": "2026-10-18",
+  "last_seen": "2026-11-12",
   "keyword": "달맞이꽃종자유",
-  "search_volume": 9350,
+  "search_volume": 9900,
   "source": "shopping",
-  "shopping_rank": 132,
+  "shopping_rank": 229,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 8327
+  "blog_position_y": 6542
  },
  "초석잠": {
   "first_seen": "2026-10-19",
@@ -4565,16 +4566,17 @@
   "first_seen": "2026-11-06",
   "seen_days": [
    "2026-11-06",
-   "2026-11-09"
+   "2026-11-09",
+   "2026-11-12"
   ],
-  "last_seen": "2026-11-09",
-  "keyword": "NAD 화장품",
-  "search_volume": 140,
+  "last_seen": "2026-11-12",
+  "keyword": "NAD+ 화장품",
+  "search_volume": 130,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 5582
+  "pharma_value": 4,
+  "blog_position_y": 5232
  },
  "가물치": {
   "first_seen": "2026-11-07",
@@ -4827,5 +4829,33 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 6620
+ },
+ "비타민C 메가도스": {
+  "first_seen": "2026-11-12",
+  "seen_days": [
+   "2026-11-12"
+  ],
+  "last_seen": "2026-11-12",
+  "keyword": "메가도스 비타민C",
+  "search_volume": 29910,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6961
+ },
+ "참당귀": {
+  "first_seen": "2026-11-12",
+  "seen_days": [
+   "2026-11-12"
+  ],
+  "last_seen": "2026-11-12",
+  "keyword": "황기 효능",
+  "search_volume": 7260,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 4592
  }
 }

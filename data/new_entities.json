@@ -3587,16 +3587,17 @@
    "2026-10-20",
    "2026-11-01",
    "2026-11-07",
-   "2026-11-10"
+   "2026-11-10",
+   "2026-11-13"
   ],
-  "last_seen": "2026-11-10",
+  "last_seen": "2026-11-13",
   "keyword": "칼슘 영양제",
-  "search_volume": 11870,
+  "search_volume": 11850,
   "source": "shopping",
-  "shopping_rank": 124,
+  "shopping_rank": 140,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 9940
+  "blog_position_y": 8296
  },
  "레스메티롬": {
   "first_seen": "2026-10-20",
@@ -4857,5 +4858,47 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 4592
+ },
+ "디톡스": {
+  "first_seen": "2026-11-13",
+  "seen_days": [
+   "2026-11-13"
+  ],
+  "last_seen": "2026-11-13",
+  "keyword": "해독주스",
+  "search_volume": 7070,
+  "source": "shopping",
+  "shopping_rank": 157,
+  "shopping_move": "새 진입",
+  "pharma_value": 3,
+  "blog_position_y": 8760
+ },
+ "하이크니": {
+  "first_seen": "2026-11-13",
+  "seen_days": [
+   "2026-11-13"
+  ],
+  "last_seen": "2026-11-13",
+  "keyword": "하이크니",
+  "search_volume": 390,
+  "source": "shopping",
+  "shopping_rank": 235,
+  "shopping_move": "새 진입",
+  "pharma_value": 1,
+  "blog_position_y": 3362
+ },
+ "동전파스": {
+  "first_seen": "2026-11-13",
+  "seen_days": [
+   "2026-11-13"
+  ],
+  "last_seen": "2026-11-13",
+  "keyword": "동전파스",
+  "search_volume": 14780,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 2163
  }
 }

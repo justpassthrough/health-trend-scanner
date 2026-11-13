@@ -4538,16 +4538,17 @@
   "first_seen": "2026-11-06",
   "seen_days": [
    "2026-11-06",
-   "2026-11-09"
+   "2026-11-09",
+   "2026-11-13"
   ],
-  "last_seen": "2026-11-09",
+  "last_seen": "2026-11-13",
   "keyword": "청소년 단백질",
-  "search_volume": 110,
+  "search_volume": 100,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 5774
+  "blog_position_y": 5986
  },
  "엉겅퀴": {
   "first_seen": "2026-11-06",
@@ -4900,5 +4901,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 2163
+ },
+ "단단환": {
+  "first_seen": "2026-11-13",
+  "seen_days": [
+   "2026-11-13"
+  ],
+  "last_seen": "2026-11-13",
+  "keyword": "단단환",
+  "search_volume": 1700,
+  "source": "shopping",
+  "shopping_rank": 99,
+  "shopping_move": "새 진입",
+  "pharma_value": 2,
+  "blog_position_y": 1730
+ },
+ "라세카도트릴": {
+  "first_seen": "2026-11-13",
+  "seen_days": [
+   "2026-11-13"
+  ],
+  "last_seen": "2026-11-13",
+  "keyword": "하이드라섹산",
+  "search_volume": 4570,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 2373
  }
 }

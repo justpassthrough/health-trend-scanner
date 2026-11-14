@@ -477,16 +477,17 @@
   "first_seen": "2026-09-19",
   "seen_days": [
    "2026-09-19",
-   "2026-10-21"
+   "2026-10-21",
+   "2026-11-14"
   ],
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-11-14",
   "keyword": "테아닌",
-  "search_volume": 19240,
+  "search_volume": 17540,
   "source": "shopping",
-  "shopping_rank": 47,
+  "shopping_rank": 84,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 7734
+  "blog_position_y": 8445
  },
  "여주": {
   "first_seen": "2026-09-19",
@@ -833,16 +834,17 @@
    "2026-09-21",
    "2026-10-12",
    "2026-11-06",
-   "2026-11-09"
+   "2026-11-09",
+   "2026-11-14"
   ],
-  "last_seen": "2026-11-09",
+  "last_seen": "2026-11-14",
   "keyword": "차가버섯 효능",
-  "search_volume": 5670,
+  "search_volume": 5380,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 2959
+  "blog_position_y": 3554
  },
  "진세노사이드": {
   "first_seen": "2026-09-21",
@@ -3049,16 +3051,17 @@
    "2026-10-27",
    "2026-10-30",
    "2026-11-08",
-   "2026-11-11"
+   "2026-11-11",
+   "2026-11-14"
   ],
-  "last_seen": "2026-11-11",
+  "last_seen": "2026-11-14",
   "keyword": "비타민B12",
-  "search_volume": 15020,
+  "search_volume": 14900,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 9349
+  "blog_position_y": 9555
  },
  "아스코르브산 분말": {
   "first_seen": "2026-10-13",
@@ -4999,5 +5002,61 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 4740
+ },
+ "혈당 발포정": {
+  "first_seen": "2026-11-14",
+  "seen_days": [
+   "2026-11-14"
+  ],
+  "last_seen": "2026-11-14",
+  "keyword": "혈당 발포정",
+  "search_volume": 2090,
+  "source": "shopping",
+  "shopping_rank": 87,
+  "shopping_move": "새 진입",
+  "pharma_value": 4,
+  "blog_position_y": 1832
+ },
+ "차즈기": {
+  "first_seen": "2026-11-14",
+  "seen_days": [
+   "2026-11-14"
+  ],
+  "last_seen": "2026-11-14",
+  "keyword": "자소엽 효능",
+  "search_volume": 920,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 5098
+ },
+ "알로에": {
+  "first_seen": "2026-11-14",
+  "seen_days": [
+   "2026-11-14"
+  ],
+  "last_seen": "2026-11-14",
+  "keyword": "알로에 효능",
+  "search_volume": 1140,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 3184
+ },
+ "애플사이다비니거": {
+  "first_seen": "2026-11-14",
+  "seen_days": [
+   "2026-11-14"
+  ],
+  "last_seen": "2026-11-14",
+  "keyword": "애사비",
+  "search_volume": 35500,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7476
  }
 }

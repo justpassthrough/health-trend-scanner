@@ -1957,16 +1957,17 @@
  "뮤코다당단백": {
   "first_seen": "2026-09-30",
   "seen_days": [
-   "2026-09-30"
+   "2026-09-30",
+   "2026-11-15"
   ],
-  "last_seen": "2026-09-30",
+  "last_seen": "2026-11-15",
   "keyword": "뮤코다당단백",
-  "search_volume": 2150,
+  "search_volume": 2890,
   "source": "shopping",
-  "shopping_rank": 289,
-  "shopping_move": "새 진입",
+  "shopping_rank": null,
+  "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 8323
+  "blog_position_y": 8317
  },
  "크레노필": {
   "first_seen": "2026-10-01",
@@ -5061,5 +5062,61 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7476
+ },
+ "밀배유": {
+  "first_seen": "2026-11-15",
+  "seen_days": [
+   "2026-11-15"
+  ],
+  "last_seen": "2026-11-15",
+  "keyword": "옥타코사놀",
+  "search_volume": 2580,
+  "source": "shopping",
+  "shopping_rank": 203,
+  "shopping_move": "새 진입",
+  "pharma_value": 3,
+  "blog_position_y": 8374
+ },
+ "송침유": {
+  "first_seen": "2026-11-15",
+  "seen_days": [
+   "2026-11-15"
+  ],
+  "last_seen": "2026-11-15",
+  "keyword": "송침유",
+  "search_volume": 3850,
+  "source": "shopping",
+  "shopping_rank": 246,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 7151
+ },
+ "펜트로반": {
+  "first_seen": "2026-11-15",
+  "seen_days": [
+   "2026-11-15"
+  ],
+  "last_seen": "2026-11-15",
+  "keyword": "펜트로반",
+  "search_volume": 3780,
+  "source": "shopping",
+  "shopping_rank": 255,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 6940
+ },
+ "청소년 프로틴": {
+  "first_seen": "2026-11-15",
+  "seen_days": [
+   "2026-11-15"
+  ],
+  "last_seen": "2026-11-15",
+  "keyword": "청소년 단백질 보충제",
+  "search_volume": 60,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": null
  }
 }

@@ -1250,16 +1250,17 @@
    "2026-09-24",
    "2026-09-28",
    "2026-10-12",
-   "2026-10-27"
+   "2026-10-27",
+   "2026-11-16"
   ],
-  "last_seen": "2026-10-27",
+  "last_seen": "2026-11-16",
   "keyword": "dem 영양제",
-  "search_volume": 25850,
+  "search_volume": 18630,
   "source": "shopping",
-  "shopping_rank": 78,
+  "shopping_rank": 97,
   "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 6539
+  "blog_position_y": 5917
  },
  "올리브오일캡슐": {
   "first_seen": "2026-09-25",
@@ -5118,5 +5119,19 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": null
+ },
+ "레몬즙": {
+  "first_seen": "2026-11-16",
+  "seen_days": [
+   "2026-11-16"
+  ],
+  "last_seen": "2026-11-16",
+  "keyword": "레몬즙 효능",
+  "search_volume": 6670,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7605
  }
 }

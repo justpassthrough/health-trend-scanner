@@ -115,20 +115,6 @@
   "pharma_value": 5,
   "blog_position_y": 6511
  },
- "쿼세틴": {
-  "first_seen": "2026-09-17",
-  "seen_days": [
-   "2026-09-17"
-  ],
-  "last_seen": "2026-09-17",
-  "keyword": "쿼세틴",
-  "search_volume": 40,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": null
- },
  "프리워크아웃": {
   "first_seen": "2026-09-17",
   "seen_days": [
@@ -478,16 +464,17 @@
   "seen_days": [
    "2026-09-19",
    "2026-10-21",
-   "2026-11-14"
+   "2026-11-14",
+   "2026-11-17"
   ],
-  "last_seen": "2026-11-14",
+  "last_seen": "2026-11-17",
   "keyword": "테아닌",
-  "search_volume": 17540,
+  "search_volume": 17290,
   "source": "shopping",
-  "shopping_rank": 84,
+  "shopping_rank": 72,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 8445
+  "blog_position_y": 9481
  },
  "여주": {
   "first_seen": "2026-09-19",
@@ -835,16 +822,17 @@
    "2026-10-12",
    "2026-11-06",
    "2026-11-09",
-   "2026-11-14"
+   "2026-11-14",
+   "2026-11-17"
   ],
-  "last_seen": "2026-11-14",
+  "last_seen": "2026-11-17",
   "keyword": "차가버섯 효능",
-  "search_volume": 5380,
+  "search_volume": 5340,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 3554
+  "pharma_value": 5,
+  "blog_position_y": 3457
  },
  "진세노사이드": {
   "first_seen": "2026-09-21",
@@ -4579,16 +4567,17 @@
   "seen_days": [
    "2026-11-06",
    "2026-11-09",
-   "2026-11-12"
+   "2026-11-12",
+   "2026-11-17"
   ],
-  "last_seen": "2026-11-12",
-  "keyword": "NAD+ 화장품",
+  "last_seen": "2026-11-17",
+  "keyword": "NAD 화장품",
   "search_volume": 130,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 5232
+  "pharma_value": 5,
+  "blog_position_y": 5402
  },
  "가물치": {
   "first_seen": "2026-11-07",
@@ -5056,16 +5045,17 @@
  "애플사이다비니거": {
   "first_seen": "2026-11-14",
   "seen_days": [
-   "2026-11-14"
+   "2026-11-14",
+   "2026-11-17"
   ],
-  "last_seen": "2026-11-14",
+  "last_seen": "2026-11-17",
   "keyword": "애사비",
-  "search_volume": 35500,
+  "search_volume": 35320,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7476
+  "blog_position_y": 8593
  },
  "밀배유": {
   "first_seen": "2026-11-15",
@@ -5150,5 +5140,19 @@
   "shopping_move": "새 진입",
   "pharma_value": 2,
   "blog_position_y": 7558
+ },
+ "리프틴": {
+  "first_seen": "2026-11-17",
+  "seen_days": [
+   "2026-11-17"
+  ],
+  "last_seen": "2026-11-17",
+  "keyword": "리프틴정",
+  "search_volume": 8040,
+  "source": "shopping",
+  "shopping_rank": 278,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 5861
  }
 }

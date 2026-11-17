@@ -148,20 +148,6 @@
   "pharma_value": 3,
   "blog_position_y": 7463
  },
- "커큐민": {
-  "first_seen": "2026-09-18",
-  "seen_days": [
-   "2026-09-18"
-  ],
-  "last_seen": "2026-09-18",
-  "keyword": "커큐민",
-  "search_volume": 58700,
-  "source": "shopping",
-  "shopping_rank": 28,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6933
- },
  "칼마디": {
   "first_seen": "2026-09-18",
   "seen_days": [
@@ -231,20 +217,6 @@
   "pharma_value": 1,
   "blog_position_y": 4681
  },
- "환자용 영양식": {
-  "first_seen": "2026-09-18",
-  "seen_days": [
-   "2026-09-18"
-  ],
-  "last_seen": "2026-09-18",
-  "keyword": "뉴케어 효능",
-  "search_volume": 2190,
-  "source": "shopping",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 5339
- },
  "여성 탈모": {
   "first_seen": "2026-09-18",
   "seen_days": [
@@ -260,34 +232,6 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 3607
- },
- "렌즈세정액": {
-  "first_seen": "2026-09-18",
-  "seen_days": [
-   "2026-09-18"
-  ],
-  "last_seen": "2026-09-18",
-  "keyword": "렌즈세정액",
-  "search_volume": 500,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6073
- },
- "잇몸 영양제": {
-  "first_seen": "2026-09-18",
-  "seen_days": [
-   "2026-09-18"
-  ],
-  "last_seen": "2026-09-18",
-  "keyword": "잇몸 영양제",
-  "search_volume": 14540,
-  "source": "shopping",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 8599
  },
  "마누카꿀": {
   "first_seen": "2026-09-18",
@@ -2059,16 +2003,17 @@
   "first_seen": "2026-10-01",
   "seen_days": [
    "2026-10-01",
-   "2026-10-05"
+   "2026-10-05",
+   "2026-11-18"
   ],
-  "last_seen": "2026-10-05",
+  "last_seen": "2026-11-18",
   "keyword": "프리바이오틱스",
-  "search_volume": 13700,
+  "search_volume": 7980,
   "source": "shopping",
-  "shopping_rank": 122,
+  "shopping_rank": 134,
   "shopping_move": "급상승",
   "pharma_value": 3,
-  "blog_position_y": 6447
+  "blog_position_y": 9029
  },
  "고양이 하부요로질환": {
   "first_seen": "2026-10-01",
@@ -2167,16 +2112,17 @@
  "혈당 영양제": {
   "first_seen": "2026-10-02",
   "seen_days": [
-   "2026-10-02"
+   "2026-10-02",
+   "2026-11-18"
   ],
-  "last_seen": "2026-10-02",
+  "last_seen": "2026-11-18",
   "keyword": "혈당 영양제",
-  "search_volume": 6500,
+  "search_volume": 5620,
   "source": "shopping",
-  "shopping_rank": 211,
-  "shopping_move": "급상승",
+  "shopping_rank": null,
+  "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7602
+  "blog_position_y": 9143
  },
  "실온 보관": {
   "first_seen": "2026-10-02",
@@ -3046,16 +2992,17 @@
    "2026-10-30",
    "2026-11-08",
    "2026-11-11",
-   "2026-11-14"
+   "2026-11-14",
+   "2026-11-18"
   ],
-  "last_seen": "2026-11-14",
+  "last_seen": "2026-11-18",
   "keyword": "비타민B12",
-  "search_volume": 14900,
+  "search_volume": 15140,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 9555
+  "blog_position_y": 10750
  },
  "아스코르브산 분말": {
   "first_seen": "2026-10-13",
@@ -3587,16 +3534,17 @@
    "2026-11-01",
    "2026-11-07",
    "2026-11-10",
-   "2026-11-13"
+   "2026-11-13",
+   "2026-11-18"
   ],
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-18",
   "keyword": "칼슘 영양제",
-  "search_volume": 11850,
+  "search_volume": 11760,
   "source": "shopping",
-  "shopping_rank": 140,
+  "shopping_rank": 109,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 8296
+  "blog_position_y": 9443
  },
  "레스메티롬": {
   "first_seen": "2026-10-20",
@@ -5198,5 +5146,33 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 2211
+ },
+ "알파리포산": {
+  "first_seen": "2026-11-18",
+  "seen_days": [
+   "2026-11-18"
+  ],
+  "last_seen": "2026-11-18",
+  "keyword": "알파리포산",
+  "search_volume": 3690,
+  "source": "shopping",
+  "shopping_rank": 421,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 9103
+ },
+ "밀배유추출물": {
+  "first_seen": "2026-11-18",
+  "seen_days": [
+   "2026-11-18"
+  ],
+  "last_seen": "2026-11-18",
+  "keyword": "밀배유추출물",
+  "search_volume": 3200,
+  "source": "shopping",
+  "shopping_rank": 64,
+  "shopping_move": "최근 진입",
+  "pharma_value": 4,
+  "blog_position_y": 7382
  }
 }

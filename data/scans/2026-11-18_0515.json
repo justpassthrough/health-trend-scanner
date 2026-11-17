@@ -1,0 +1,1772 @@
+{
+  "scan_id": "2026-11-18_0515",
+  "date": "2026-11-18",
+  "time": "05:15",
+  "today_pick": [
+    {
+      "keyword": "비타민B12",
+      "track": "검색형",
+      "reason": "검색형 최고 기회 (꾸준히 검색되는 글감)",
+      "why_now": "쇼핑 상위 111위인데 블로그에서는 한 번도 단독으로 다룬 적이 없습니다. 혈당 영양제·당뇨약 글 독자와 바로 이어지는 성분입니다.",
+      "pharmacist_angle": "메트포르민·위산억제제(PPI) 장기 복용자가 실제 결핍 위험군이라는 점, 시아노·메틸코발라민 형태 차이가 흡수보다 마케팅에 가깝다는 점을 처방전 경험으로 풀 수 있습니다.",
+      "title_idea": "비타민B12, 당뇨약 몇 년째 드시는 부모님이 손발 저리다면 먼저 볼 수치",
+      "score": 10.6,
+      "search_volume": 15140,
+      "comp_idx": "중간",
+      "opportunity_label": "보통"
+    },
+    {
+      "keyword": "MC4R 비만",
+      "track": "시의형",
+      "reason": "시의형 최신 이슈 (지금 막 뜨는 주제)",
+      "why_now": "휴온스가 경구 MC4R 작용제(HUC1-622) 비임상 결과를 미국비만학회에서 냈습니다. GLP-1만 다루던 비만약 글을 '어릴 때부터 배고픔이 멈추지 않는 유전성 비만'으로 넓힐 수 있습니다.",
+      "pharmacist_angle": "MC4R 경로와 기존 주사제(세트멜라노타이드)가 매일 주사라는 한계, 펩타이드를 먹는 약 저분자로 바꾸는 이유를 DDS 연구자 관점에서 설명합니다.",
+      "title_idea": "희귀비만, 위고비로 안 빠지는 배고픔은 뇌의 다른 스위치 문제입니다",
+      "score": 16.6,
+      "search_volume": 20,
+      "comp_idx": "낮음",
+      "opportunity_label": "수요 적음"
+    }
+  ],
+  "topics": [
+    {
+      "keyword": "비타민B12",
+      "entity": "비타민B12",
+      "search_terms": [
+        "비타민B12 효능",
+        "비타민b12 결핍 증상",
+        "메트포르민 비타민b12"
+      ],
+      "track": "검색형",
+      "source": "shopping",
+      "category": "영양제·성분",
+      "pharma_value": 5,
+      "trend_key": "비타민B12",
+      "why_now": "쇼핑 상위 111위인데 블로그에서는 한 번도 단독으로 다룬 적이 없습니다. 혈당 영양제·당뇨약 글 독자와 바로 이어지는 성분입니다.",
+      "pharmacist_angle": "메트포르민·위산억제제(PPI) 장기 복용자가 실제 결핍 위험군이라는 점, 시아노·메틸코발라민 형태 차이가 흡수보다 마케팅에 가깝다는 점을 처방전 경험으로 풀 수 있습니다.",
+      "title_idea": "비타민B12, 당뇨약 몇 년째 드시는 부모님이 손발 저리다면 먼저 볼 수치",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [],
+      "keyword_ai": "비타민B12",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "비타민B12 효능": 7630,
+        "비타민b12 결핍 증상": 50,
+        "메트포르민 비타민b12": 20,
+        "비타민B12": 15140
+      },
+      "news_count": 17998,
+      "news_headlines": [
+        {
+          "title": "비타민 B12, 희귀 유전질환 치료의 새로운 가능성",
+          "link": "https://www.voakorea.com/a/vitamin-b12-and-rare-genetic-disorder-111626/8224296.html",
+          "date": "Tue, 17 Nov 2026 04:34:00 +0900"
+        },
+        {
+          "title": "비타민, 많이 먹으면 더 좋을까? [젊어지는 이야기]",
+          "link": "https://n.news.naver.com/mnews/article/082/0001407427?sid=103",
+          "date": "Mon, 16 Nov 2026 17:56:00 +0900"
+        },
+        {
+          "title": "종근당, 벤포벨 최상위 제품 '벤포벨알파정' 출시",
+          "link": "https://n.news.naver.com/mnews/article/003/0014314745?sid=102",
+          "date": "Wed, 11 Nov 2026 09:47:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 8.6,
+        "direction": "유지",
+        "weekly_avg": 73.8
+      },
+      "expert_gap": {
+        "total_blogs": 568470,
+        "expert_blogs": 34469,
+        "gap_ratio": 16.5,
+        "label": "전문가 부족"
+      },
+      "search_volume": 15140,
+      "comp_idx": "중간",
+      "pharma_value_calc": 5.5,
+      "serp": {
+        "checked_at": "2026-11-17T20:17:49.083Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "sorak123",
+            "age_days": 1,
+            "title": "비타민 B12 효능, 부족할 때 나타나는 증상과 음식·영양제 고르는 법"
+          },
+          {
+            "blog": "jongha3846",
+            "age_days": 21,
+            "title": "\"마늘의 27배..\" 심혈관질환 예방하는 비타민B12 풍부한 음식"
+          },
+          {
+            "blog": "sunlightyoung",
+            "age_days": 21,
+            "title": "비타민B12 효능 효과, 섭취방법 및 영양제 비교 기준"
+          },
+          {
+            "blog": "09discovery",
+            "age_days": 1,
+            "title": "시아노코발라민·메틸코발라민 차이, 비타민B12 원료 선택법"
+          },
+          {
+            "blog": "p5_z1aur",
+            "age_days": 0,
+            "title": "네이처메이드 비타민B12 구미 120구미 2개 가격 비교하고 직접 챙겨 먹어본 후기"
+          },
+          {
+            "blog": "rk950i48uke",
+            "age_days": 0,
+            "title": "네이처메이드 비타민B12 구미 120구미 매일 챙기기 편한 이유 솔직 후기"
+          },
+          {
+            "blog": "katc2000",
+            "age_days": 1,
+            "title": "비타민 B12 부족 증상 7가지와 검사 방법! 손발 저림과 피로가 계속된다면?"
+          }
+        ],
+        "median_age_days": 1,
+        "fresh_30d": 5,
+        "my_rank": null,
+        "first_blog_y": 10750,
+        "shop_y": 1898,
+        "ad_y": 2178,
+        "shop_above_blog": true
+      },
+      "position_mult": 0.92,
+      "opportunity_score": 10.6,
+      "opportunity_label": "보통",
+      "news_recency": {},
+      "score": 10.6,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역(다시 제안)",
+      "suggested_days_2w": 3,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 1.0,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 1
+    },
+    {
+      "keyword": "알파리포산",
+      "entity": "알파리포산",
+      "search_terms": [
+        "알파리포산 효능",
+        "알파리포산 부작용",
+        "알파리포산 먹는법"
+      ],
+      "track": "검색형",
+      "source": "shopping",
+      "category": "영양제·성분",
+      "pharma_value": 5,
+      "trend_key": "알파리포산",
+      "why_now": "쇼핑 인기검색어 188위로 '알리포산'이 새로 들어왔습니다. 블로그에서 한 번도 다룬 적 없는 성분이고, 혈당·다이어트 영양제 붐과 함께 소비자가 찾기 시작한 단계입니다.",
+      "pharmacist_angle": "국내에서는 당뇨병성 신경병증 전문의약품(티옥트산 600mg)과 건기식이 같은 성분입니다. 이 점과 빈속 복용 때 흡수가 갈리는 R형·라세믹 제형 차이, 당뇨약과 같이 먹을 때의 저혈당 가능성을 DDS 관점에서 짚을 수 있습니다.",
+      "title_idea": "알파리포산, 병원에선 신경병증 처방약인데 다이어트 영양제로 드시고 계셨다면",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [],
+      "keyword_ai": "알파리포산",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "알파리포산 효능": 1340,
+        "알파리포산 부작용": 130,
+        "알파리포산 먹는법": 20,
+        "알파리포산": 3690
+      },
+      "news_count": 761,
+      "news_headlines": [
+        {
+          "title": "[의학칼럼] 증상 완화와 수분·영양 보충을 위한 맞춤형 수액 치료",
+          "link": "https://gg.newdaily.co.kr/site/data/html/2026/11/16/2026111650193.html",
+          "date": "Mon, 16 Nov 2026 14:12:00 +0900"
+        },
+        {
+          "title": "부광약품, '알파리포산 개량신약' 덱시드로 동남아 당뇨 합병증 시장 공...",
+          "link": "https://www.e-science.co.kr/news/articleView.html?idxno=132930",
+          "date": "Tue, 04 Aug 2026 14:08:00 +0900"
+        },
+        {
+          "title": "'세 개의 시선', '황'의 비밀 조명…글루타치온·알파리포산 연관성 집...",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=596031",
+          "date": "Sat, 08 Aug 2026 20:36:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 11.4,
+        "direction": "상승",
+        "weekly_avg": 37.6
+      },
+      "expert_gap": {
+        "total_blogs": 27269,
+        "expert_blogs": 1743,
+        "gap_ratio": 15.6,
+        "label": "전문가 부족"
+      },
+      "search_volume": 3690,
+      "comp_idx": "높음",
+      "pharma_value_calc": 5.5,
+      "serp": {
+        "checked_at": "2026-11-17T20:17:21.870Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "wim3vide",
+            "age_days": 1,
+            "title": "알파리포산 식사 전후 물과 함께 챙겨본 솔직 후기"
+          },
+          {
+            "blog": "taelang20",
+            "age_days": 3,
+            "title": "알파리포산 효능과 부작용, 매일 챙기기 전 알아야 할 사실들"
+          },
+          {
+            "blog": "jkwiwon",
+            "age_days": 5,
+            "title": "대사·인슐린 올인원 5종 보조제(베르베린, 핑거루트, 코엔자임Q10, 알파리포산, 크롬 피콜리네이트...."
+          },
+          {
+            "blog": "asmrart",
+            "age_days": 4,
+            "title": "알파리포산이란? 체내에서 만들어지는 항산화 성분의 정체와 주요 역할"
+          },
+          {
+            "blog": "starstar2574",
+            "age_days": 7,
+            "title": "당독소 영양제 효과 있을까? 카르노신·벤포티아민·알파리포산 알아보기"
+          },
+          {
+            "blog": "choc1928",
+            "age_days": 28,
+            "title": "후기 | 꾸준히 먹고 있는 알파리포산 , 항산화제 성분 비교 메타제닉스 vs 쏜 리서치 아이허브 영양...."
+          },
+          {
+            "blog": "kbgjang",
+            "age_days": 21,
+            "title": "[자폐 생의학 치료] 알파리포산, 항산화와 킬레이션 사이"
+          }
+        ],
+        "median_age_days": 4,
+        "fresh_30d": 5,
+        "my_rank": null,
+        "first_blog_y": 9103,
+        "shop_y": 1671,
+        "ad_y": 2036,
+        "shop_above_blog": true
+      },
+      "position_mult": 0.92,
+      "opportunity_score": 9.0,
+      "opportunity_label": "포화(경쟁 높음)",
+      "news_recency": {},
+      "score": 10.3,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": false,
+      "shopping_rank": 421,
+      "novelty_mult": 1.15,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 2
+    },
+    {
+      "keyword": "혈당 영양제",
+      "entity": "혈당 영양제",
+      "search_terms": [
+        "혈당 영양제",
+        "혈당 낮추는 영양제",
+        "혈당영양제 추천"
+      ],
+      "track": "검색형",
+      "source": "shopping",
+      "category": "영양제·성분",
+      "pharma_value": 4,
+      "trend_key": "혈당영양제",
+      "why_now": "'올인원혈당영양제'(235위)와 '저스트글로우베르베린'(237위)이 함께 새로 들어왔습니다. 베르베린·바나바잎·크롬을 한 알에 넣은 복합제 수요가 생기고 있습니다.",
+      "pharmacist_angle": "기능성이 인정된 성분과 들러리로 넣은 성분을 뒷면 함량으로 가르는 법을 보여 줍니다. 베르베린이 당뇨약과 겹치면 저혈당과 약물 상호작용(CYP)이 생길 수 있다는 점을 다룹니다.",
+      "title_idea": "올인원 혈당 영양제, 뒷면 성분 다섯 개 중 인정받은 건 몇 개일까요",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [],
+      "keyword_ai": "혈당 영양제",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "혈당 영양제": 5620,
+        "혈당 낮추는 영양제": 570,
+        "혈당영양제 추천": 230
+      },
+      "news_count": 4958,
+      "news_headlines": [
+        {
+          "title": "공복에 ‘이 영양제’ 많이 먹었더니…콩팥, 심장, 간 망가질 수도",
+          "link": "https://n.news.naver.com/mnews/article/296/0000107281?sid=103",
+          "date": "Fri, 13 Nov 2026 14:02:00 +0900"
+        },
+        {
+          "title": "영양제 아무때나 먹지 마세요... 시간표 잘 맞추면 같은 돈으로 흡수율...",
+          "link": "https://www.insight.co.kr/news/581997",
+          "date": "Fri, 13 Nov 2026 17:54:00 +0900"
+        },
+        {
+          "title": "“채소ㆍ과일, 영양제보다 식품 그대로 먹어야”…학계, ‘로우코어 뉴...",
+          "link": "https://n.news.naver.com/mnews/article/144/0001148717?sid=103",
+          "date": "Mon, 09 Nov 2026 09:24:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 3.7,
+        "direction": "유지",
+        "weekly_avg": 81.0
+      },
+      "expert_gap": {
+        "total_blogs": 1080245,
+        "expert_blogs": 46427,
+        "gap_ratio": 23.3,
+        "label": "전문가 부족"
+      },
+      "search_volume": 5620,
+      "comp_idx": "중간",
+      "pharma_value_calc": 4.4,
+      "serp": {
+        "checked_at": "2026-11-17T20:17:56.032Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "chic7272",
+            "age_days": 1,
+            "title": "혈당영양제 당쉼 혈당컷 스틱타입 오리지널 레몬 2종 후기"
+          },
+          {
+            "blog": "y940124",
+            "age_days": 1,
+            "title": "혈당영양제 영롱 트리플씬 콜레바나킨 체지방과 콜레스테롤 함께 챙기기!"
+          },
+          {
+            "blog": "pke9892",
+            "age_days": 14,
+            "title": "혈당케어영양제 ::식후 혈당 상승 억제와 혈행개선영양제:: 닥터엣 혈당청춘"
+          },
+          {
+            "blog": "wlwn111",
+            "age_days": 6,
+            "title": "혈당케어영양제 추천 닥터엣 혈당청춘으로 콜레스테롤 관리 후기"
+          },
+          {
+            "blog": "new_up_j",
+            "age_days": 1,
+            "title": "혈당영양제 영롱 트리플씬 콜레바나킨 후기｜식후에 챙기는 건강관리 루틴!"
+          },
+          {
+            "blog": "khn7029",
+            "age_days": 1,
+            "title": "당뇨 영양제 추천만 찾아보다. 친정 부엌 찬장부터 정리했습니다."
+          },
+          {
+            "blog": "miya_87",
+            "age_days": 1,
+            "title": "뉴칸 우먼맥스팩 40대 여성 식후혈당·뼈영양제 챙기는 올인원 영양제 후기"
+          }
+        ],
+        "median_age_days": 1,
+        "fresh_30d": 5,
+        "my_rank": null,
+        "first_blog_y": 9143,
+        "shop_y": 376,
+        "ad_y": 1708,
+        "shop_above_blog": true
+      },
+      "position_mult": 0.92,
+      "opportunity_score": 7.6,
+      "opportunity_label": "보통",
+      "news_recency": {},
+      "score": 8.7,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 1.15,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 3
+    },
+    {
+      "keyword": "밀배유추출물",
+      "entity": "밀배유추출물",
+      "search_terms": [
+        "밀배유추출물 효능",
+        "먹는 세라마이드",
+        "피부 보습 영양제"
+      ],
+      "track": "검색형",
+      "source": "shopping",
+      "category": "영양제·성분",
+      "pharma_value": 4,
+      "trend_key": "밀배유추출물",
+      "why_now": "'밀배유추출물'(64위)과 오타인 '밀베유추출물'(240위)이 동시에 올라왔습니다. 철자를 틀려 가며 검색할 만큼 수요가 막 생겼다는 신호입니다. 피부 보습 개별인정형 원료(밀 유래 세라마이드 계열)로 보이지만 정체 확인이 필요합니다.",
+      "pharmacist_angle": "먹은 세라마이드가 장에서 분해된 뒤 어떻게 피부 지표로 이어진다고 주장하는지, 인정받은 기능성 문구 범위와 하루 섭취량이 실제 시험 용량과 맞는지 따져 볼 수 있습니다.",
+      "title_idea": "밀배유추출물, 먹는 세라마이드라는데 장을 지나면 무엇이 남을까요",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [],
+      "keyword_ai": "밀배유추출물",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "밀배유추출물 효능": 70,
+        "먹는 세라마이드": 500,
+        "피부 보습 영양제": 60,
+        "밀배유추출물": 3200
+      },
+      "news_count": 72,
+      "news_headlines": [
+        {
+          "title": "시나몬랩, 씹어 먹는 이너뷰티 건기식 '세라모사이드' 선보여···해외...",
+          "link": "https://www.enetnews.co.kr/news/articleView.html?idxno=56414",
+          "date": "Tue, 17 Nov 2026 09:58:00 +0900"
+        },
+        {
+          "title": "밀배유추출물, 탈모 개선 효과 확인…남녀 모두 적용 가능성",
+          "link": "https://www.kukinews.com/article/view/kuk202604160052",
+          "date": "Thu, 16 Apr 2026 10:38:00 +0900"
+        },
+        {
+          "title": "시나몬랩, 씹어 먹는 이너뷰티 건기식 ‘세라모사이드’ 출시… 해외 수...",
+          "link": "https://n.news.naver.com/mnews/article/366/0001205294?sid=101",
+          "date": "Tue, 17 Nov 2026 10:01:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 0.0,
+        "direction": "유지",
+        "weekly_avg": 0.0
+      },
+      "expert_gap": {
+        "total_blogs": 316,
+        "expert_blogs": 17,
+        "gap_ratio": 17.6,
+        "label": "전문가 부족"
+      },
+      "search_volume": 3200,
+      "comp_idx": "높음",
+      "pharma_value_calc": 4.4,
+      "serp": {
+        "checked_at": "2026-11-17T20:17:28.715Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "kanran12",
+            "age_days": 1,
+            "title": "이알하나 피부건강 밀배유추출물 후기 - 먹는세라마이드 초소형정제로 시작하는 이너뷰티"
+          },
+          {
+            "blog": "aqa365",
+            "age_days": null,
+            "title": "밀배유추출물 효능, 피부 보습과 하루 30mg·글루코실세라마이드 확인법"
+          },
+          {
+            "blog": "bbyong12",
+            "age_days": 2,
+            "title": "이알하나 피부건강, 먹는세라마이드 밀배유추출물로 속건조 관리하는 이너뷰티 추천"
+          },
+          {
+            "blog": "hsi86no1",
+            "age_days": 2,
+            "title": "이알하나 피부건강 밀배유추출물 겨울철 피부 보습"
+          },
+          {
+            "blog": "qkfalfl0207",
+            "age_days": 2,
+            "title": "이알하나 피부건강 밀배유추출물｜초소형정제로 간편하게 챙기는 이너뷰티 후기"
+          },
+          {
+            "blog": "smsky82",
+            "age_days": 1,
+            "title": "먹바속촉 세라모사이드 후기｜하루 두 알로 챙기는 40대 피부보습 이너뷰티 루틴"
+          },
+          {
+            "blog": "sun810323",
+            "age_days": 2,
+            "title": "속건조 해결템 이알하나 피부건강, 밀배유추출물 먹는세라마이드로 환절기 이너뷰티"
+          }
+        ],
+        "median_age_days": 2,
+        "fresh_30d": 4,
+        "my_rank": null,
+        "first_blog_y": 7382,
+        "shop_y": 1332,
+        "ad_y": 1793,
+        "shop_above_blog": true
+      },
+      "position_mult": 0.92,
+      "opportunity_score": 7.1,
+      "opportunity_label": "포화(경쟁 높음)",
+      "news_recency": {},
+      "score": 8.2,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": false,
+      "shopping_rank": 64,
+      "novelty_mult": 1.15,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 4
+    },
+    {
+      "keyword": "칼슘 영양제",
+      "entity": "칼슘",
+      "search_terms": [
+        "칼슘 영양제",
+        "칼슘 부작용",
+        "칼슘 마그네슘 같이"
+      ],
+      "track": "검색형",
+      "source": "shopping",
+      "category": "영양제·성분",
+      "pharma_value": 4,
+      "trend_key": "칼슘",
+      "why_now": "쇼핑 상위 109위인데 블로그에서 다룬 적 없는 기본 성분입니다. '칼마디' 묶음도 367위에서 222위로 올라, 칼슘·마그네슘·비타민D 복합제 수요가 보입니다.",
+      "pharmacist_angle": "탄산칼슘은 식후, 구연산칼슘은 상관없이 먹는다는 차이를 다룹니다. 갑상선약·항생제·골다공증약과는 몇 시간 띄워야 하는지가 약사만 정확히 쓸 수 있는 부분입니다.",
+      "title_idea": "칼슘 영양제, 아침 갑상선약과 같이 삼키고 계셨다면 4시간을 띄우세요",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [],
+      "keyword_ai": "칼슘 영양제",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "칼슘 영양제": 11760,
+        "칼슘 부작용": 20,
+        "칼슘 마그네슘 같이": 60
+      },
+      "news_count": 13255,
+      "news_headlines": [
+        {
+          "title": "폭염·공급과잉 파고 넘은 포도 농가…30년 노하우 담긴 '품질 생존법'",
+          "link": "http://www.newsfarm.co.kr/news/articleView.html?idxno=102971",
+          "date": "Tue, 17 Nov 2026 16:04:00 +0900"
+        },
+        {
+          "title": "약은 챙기면서 영양제는 따로 생각하고 있지 않나요",
+          "link": "https://www.ccdailynews.com/news/articleView.html?idxno=2451933",
+          "date": "Tue, 17 Nov 2026 16:40:00 +0900"
+        },
+        {
+          "title": "“비싼 영양제 ‘이렇게’ 먹으면 헛수고?”… 흡수 방해하는 조합 3가...",
+          "link": "https://n.news.naver.com/mnews/article/296/0000107328?sid=103",
+          "date": "Sat, 14 Nov 2026 22:06:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": -2.8,
+        "direction": "유지",
+        "weekly_avg": 70.2
+      },
+      "expert_gap": {
+        "total_blogs": 1795849,
+        "expert_blogs": 84762,
+        "gap_ratio": 21.2,
+        "label": "전문가 부족"
+      },
+      "search_volume": 11760,
+      "comp_idx": "높음",
+      "pharma_value_calc": 4.4,
+      "serp": {
+        "checked_at": "2026-11-17T20:18:03.889Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "joy61062",
+            "age_days": 5,
+            "title": "칼마디로 칼슘 마그네슘 같이 먹는 이유와 칼슘 영양제 고르는 법"
+          },
+          {
+            "blog": "m_l_93",
+            "age_days": 7,
+            "title": "칼슘 영양제 고르는 기준 여섯 가지와 주의사항"
+          },
+          {
+            "blog": "ksj720508",
+            "age_days": 6,
+            "title": "칼슘 마그네슘 영양제 효능 알아보고 제품 추천기준 확인"
+          },
+          {
+            "blog": "julietmeeso",
+            "age_days": 14,
+            "title": "골다공증에좋은 칼슘영양제 종근당 뼈건강 칼마디아 K 추천"
+          },
+          {
+            "blog": "sunlightyoung",
+            "age_days": 14,
+            "title": "부모님칼슘영양제 선물 칼마디 고른 이유와 선택기준 정리"
+          },
+          {
+            "blog": "wmji91",
+            "age_days": 1,
+            "title": "키즈텐 칼슘업 열대과일 맛, 5세 9세 형제가 먼저 찾는 어린이 칼슘 키즈칼슘 영양제"
+          },
+          {
+            "blog": "taengooworld",
+            "age_days": 1,
+            "title": "어린이칼슘영양제 추천 | 키즈칼슘 젤리스틱 키즈텐 칼슘업 사과맛 5살 섭취 후기"
+          }
+        ],
+        "median_age_days": 7,
+        "fresh_30d": 5,
+        "my_rank": null,
+        "first_blog_y": 9443,
+        "shop_y": 369,
+        "ad_y": 120,
+        "shop_above_blog": true
+      },
+      "position_mult": 0.92,
+      "opportunity_score": 8.2,
+      "opportunity_label": "포화(경쟁 높음)",
+      "news_recency": {},
+      "score": 8.2,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역(다시 제안)",
+      "suggested_days_2w": 3,
+      "in_deep_dive_roots": false,
+      "shopping_rank": 109,
+      "novelty_mult": 1.0,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 5
+    },
+    {
+      "keyword": "비오틴 효능",
+      "entity": "비오틴",
+      "search_terms": [
+        "비오틴 효능",
+        "비오틴 탈모",
+        "비오틴 부작용"
+      ],
+      "track": "검색형",
+      "source": "shopping",
+      "category": "영양제·성분",
+      "pharma_value": 4,
+      "trend_key": "비오틴",
+      "why_now": "쇼핑 순위가 58위에서 8위로 뛰어 상위 10위 안에 들었고, 'b발라민비오틴'도 273위에서 94위로 급상승했습니다. 10월 27일에 쓴 글(검사 수치 간섭)과 다르게 이번엔 탈모 목적 복용을 다루면 됩니다.",
+      "pharmacist_angle": "결핍이 없는 사람에게 고용량 비오틴이 모발에 듣는다는 근거가 거의 없다는 점과 B12를 섞은 복합제의 함량 구조를 짚습니다. 갑상선·트로포닌 검사 전에 끊어야 하는 기간은 짧게 덧붙입니다.",
+      "title_idea": "비오틴, 머리 빠져서 1만μg 고르셨다면 결핍 아닌 사람에겐 숫자값입니다",
+      "already_covered": false,
+      "covered_posts": [
+        "비오틴, 고용량 먹는 중 피검사하면 심장 수치가 낮게 나올 수 있습니다"
+      ],
+      "source_headlines": [],
+      "keyword_ai": "비오틴 탈모",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "비오틴 효능": 4120,
+        "비오틴 탈모": 2000,
+        "비오틴 부작용": 20
+      },
+      "news_count": 2215,
+      "news_headlines": [
+        {
+          "title": "바르는 화장품 넘어 ‘먹는 뷰티’로… 독일 이너뷰티 시장의 기회",
+          "link": "http://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?SITE_NO=3&MENU_ID=180&CONTENTS_NO=1&bbsGbn=243&bbsSn=243&pNttSn=244777",
+          "date": "Thu, 29 Oct 2026 13:58:00 +0900"
+        },
+        {
+          "title": "고용량 비오틴, 머리카락 잘 자라게 해줄까?",
+          "link": "https://n.news.naver.com/mnews/article/346/0000103737?sid=110",
+          "date": "Mon, 26 Jan 2026 06:21:00 +0900"
+        },
+        {
+          "title": "‘비오틴’ 먹으면 진짜 ‘풍성’해져요?[건강의피셜]",
+          "link": "https://n.news.naver.com/mnews/article/145/0000022777?sid=103",
+          "date": "Tue, 02 Dec 2025 17:08:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": -7.9,
+        "direction": "유지",
+        "weekly_avg": 65.1
+      },
+      "expert_gap": {
+        "total_blogs": 217062,
+        "expert_blogs": 13976,
+        "gap_ratio": 15.5,
+        "label": "전문가 부족"
+      },
+      "search_volume": 4120,
+      "comp_idx": "높음",
+      "pharma_value_calc": 4.4,
+      "serp": {
+        "checked_at": "2026-11-17T20:17:35.348Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "phytonutri",
+            "age_days": 1,
+            "title": "비오틴 콜라겐 많이 먹을수록 좋다고 보면 안 되는 이유"
+          },
+          {
+            "blog": "el512",
+            "age_days": 14,
+            "title": "비오틴 효과 부작용, 모르면 손해"
+          },
+          {
+            "blog": "kyung9770",
+            "age_days": 21,
+            "title": "비오틴 효과 살리고! 부작용 피하는 법, 콜라겐까지 챙겨야 하는 이유는?"
+          },
+          {
+            "blog": "alswldi57",
+            "age_days": 14,
+            "title": "비오틴 효능 음식, 머리카락 손톱 피부에 좋을까?"
+          },
+          {
+            "blog": "zzzbina",
+            "age_days": 21,
+            "title": "잘 챙기는 마음에 더할 한 가지,비오틴 부작용 체크"
+          },
+          {
+            "blog": "ksmiksmi",
+            "age_days": 6,
+            "title": "비오틴 효능 손톱과 피부에도 있을까? 추천 제품 구입할 때 체크할 사항"
+          },
+          {
+            "blog": "3jeong",
+            "age_days": 7,
+            "title": "유기농 비오틴 효능, 모발 관리 위한 원료 배합 선택 방법"
+          }
+        ],
+        "median_age_days": 14,
+        "fresh_30d": 5,
+        "my_rank": null,
+        "first_blog_y": 4190,
+        "shop_y": null,
+        "ad_y": null,
+        "shop_above_blog": false
+      },
+      "position_mult": 1.0,
+      "opportunity_score": 8.0,
+      "opportunity_label": "포화(경쟁 높음)",
+      "news_recency": {},
+      "score": 8.0,
+      "consecutive_days": 1,
+      "previously_written": true,
+      "days_since_written": 22,
+      "novelty": "기존 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": true,
+      "shopping_rank": 8,
+      "novelty_mult": 1.0,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 6
+    },
+    {
+      "keyword": "프리바이오틱스",
+      "entity": "프리바이오틱스",
+      "search_terms": [
+        "프리바이오틱스 효능",
+        "프리바이오틱스 유산균 차이",
+        "프리바이오틱스 부작용"
+      ],
+      "track": "검색형",
+      "source": "shopping",
+      "category": "영양제·성분",
+      "pharma_value": 3,
+      "trend_key": "프리바이오틱스",
+      "why_now": "쇼핑 순위가 203위에서 134위로 올랐고, 독감 확산과 함께 유산균 시장 기사도 나왔습니다. 유산균 글은 많지만 프리바이오틱스 단독 글은 없습니다.",
+      "pharmacist_angle": "프락토올리고당과 이눌린은 과민성대장증후군 환자에게 가스·복부팽만을 늘릴 수 있다는 점(포드맵)을 짚습니다. 기존 과민성대장 글과 이어지는 '안 맞는 사람' 중심 앵글입니다.",
+      "title_idea": "프리바이오틱스, 유산균 먹이라고 챙겼는데 배가 더 빵빵해졌다면",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [
+        "독감 다시 확산하자 유산균도 달라졌다…6000억원대 시장, 균수보다 생..."
+      ],
+      "keyword_ai": "프리바이오틱스",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "프리바이오틱스 효능": 990,
+        "프리바이오틱스 유산균 차이": 20,
+        "프리바이오틱스 부작용": 20,
+        "프리바이오틱스": 7980
+      },
+      "news_count": 29951,
+      "news_headlines": [
+        {
+          "title": "일동바이오사이언스, 가톨릭대와 AI 활용 프로바이오틱스 제조공정 연구",
+          "link": "https://www.cnbizm.com/news/articleView.html?idxno=321782",
+          "date": "Tue, 17 Nov 2026 14:24:00 +0900"
+        },
+        {
+          "title": "락피도, 프로바이오틱스·프리바이오틱스 결합 신제품 선보여",
+          "link": "https://www.lawissue.co.kr/view.php?ud=202611161942237692204ead0791_12",
+          "date": "Mon, 16 Nov 2026 19:44:00 +0900"
+        },
+        {
+          "title": "락피도, 프로바이오틱스·프리바이오틱스 담은 신제품 출시",
+          "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=362604",
+          "date": "Mon, 16 Nov 2026 17:22:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 66.1,
+        "direction": "급상승",
+        "weekly_avg": 73.1
+      },
+      "expert_gap": {
+        "total_blogs": 442270,
+        "expert_blogs": 16736,
+        "gap_ratio": 26.4,
+        "label": "전문가 부족"
+      },
+      "search_volume": 7980,
+      "comp_idx": "중간",
+      "pharma_value_calc": 3.3,
+      "serp": {
+        "checked_at": "2026-11-17T20:17:42.194Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "ap_mi",
+            "age_days": 1,
+            "title": "프리바이오틱스 유산균, 프로바이오틱스와 무엇이 다를까요? 고르는 법"
+          },
+          {
+            "blog": "duzo328",
+            "age_days": 14,
+            "title": "프로바이오틱스유산균 프리바이오틱스 식이섬유 한 번에 성인 장 건강 유산균추천"
+          },
+          {
+            "blog": "ssun3535",
+            "age_days": 14,
+            "title": "다이소 유산균 후기 프리바이오틱스 프로바이오틱스 프락토올리고당"
+          },
+          {
+            "blog": "im67775",
+            "age_days": 4,
+            "title": "직장인유산균 추천 낙산균 프리바이오틱스 솔루션으로 시작하는 장 건강 루틴"
+          },
+          {
+            "blog": "stella6050",
+            "age_days": 28,
+            "title": "프리바이오틱스유산균, 이미 유익한 균을 먹고 있는데 꼭 같이 챙겨야 할까?"
+          },
+          {
+            "blog": "leeajinterrier",
+            "age_days": 0,
+            "title": "프리바이오틱스 추천 식이섬유 추천 하나마이 프리벤티 아가베 이눌린 프리바이오틱스 40포 후기"
+          },
+          {
+            "blog": "09discovery",
+            "age_days": 0,
+            "title": "프리바이오틱스·프로바이오틱스 차이, 유산균 제품 고르는 법"
+          }
+        ],
+        "median_age_days": 14,
+        "fresh_30d": 5,
+        "my_rank": null,
+        "first_blog_y": 9029,
+        "shop_y": 1428,
+        "ad_y": 1835,
+        "shop_above_blog": true
+      },
+      "position_mult": 0.92,
+      "opportunity_score": 5.9,
+      "opportunity_label": "보통",
+      "news_recency": {},
+      "score": 6.8,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": false,
+      "shopping_rank": 134,
+      "novelty_mult": 1.15,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 7
+    },
+    {
+      "keyword": "통풍에 나쁜 음식",
+      "entity": "통풍",
+      "search_terms": [
+        "통풍에 나쁜 음식",
+        "통풍 단백질",
+        "요산 수치 낮추는 법"
+      ],
+      "track": "검색형",
+      "source": "news",
+      "category": "질환·치료",
+      "pharma_value": 3,
+      "trend_key": "통풍",
+      "why_now": "2030 통풍 환자가 4년 새 13% 늘었고, 원인으로 굶는 다이어트와 고단백 식단을 짚은 기사가 연달아 나왔습니다. 10월 14일 글(요산 수치)과 다르게 식단 앵글로 다시 쓸 수 있습니다.",
+      "pharmacist_angle": "단백질 파우더(유청)와 육류·내장의 퓨린 차이, 급격한 감량이 요산을 일시적으로 올리는 기전, 비만약으로 빠르게 뺄 때의 통풍 발작 위험을 짚습니다.",
+      "title_idea": "통풍 단백질, 프로틴 쉐이크 끊기 전에 먼저 줄일 건 다른 데 있습니다",
+      "already_covered": false,
+      "covered_posts": [
+        "통풍 증상, 아플 때 잰 요산이 정상이라 안심하셨다면"
+      ],
+      "source_headlines": [
+        "\"굶는 다이어트 하다가 날벼락\"…2030 통풍 환자 4년 새 13% 급증",
+        "2030 통풍 부르는 뜻밖의 습관"
+      ],
+      "keyword_ai": "통풍 단백질",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "통풍에 나쁜 음식": 670,
+        "통풍 단백질": 20,
+        "요산 수치 낮추는 법": 150
+      },
+      "news_count": 752,
+      "news_headlines": [
+        {
+          "title": "당뇨-고지혈증 관리 돕는 ‘착한 탄수화물’ 4가지[정세연의 음식처방]",
+          "link": "https://n.news.naver.com/mnews/article/020/0003757444?sid=110",
+          "date": "Sun, 25 Oct 2026 23:01:00 +0900"
+        },
+        {
+          "title": "통풍에 좋은 음식 vs 나쁜 음식은?",
+          "link": "https://www.hidoc.co.kr/healthstory/news/C0000880371",
+          "date": "Fri, 12 Apr 2024 15:32:00 +0900"
+        },
+        {
+          "title": "단백질 파우더를 많이 먹으면 통풍에 걸린다, 진짜일까?",
+          "link": "https://www.gqkorea.co.kr/2026/08/19/%eb%8b%a8%eb%b0%b1%ec%a7%88-%ed%8c%8c%ec%9a%b0%eb%8d%94%eb%a5%bc-%eb%a7%8e%ec%9d%b4-%eb%a8%b9%ec%9c%bc%eb%a9%b4-%ed%86%b5%ed%92%8d%ec%97%90-%ea%b1%b8%eb%a6%b0%eb%8b%a4-%ec%a7%84%ec%a7%9c%ec%9d%bc/?utm_source=naver&utm_medium=partnership",
+          "date": "Wed, 19 Aug 2026 14:15:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 8.8,
+        "direction": "유지",
+        "weekly_avg": 52.1
+      },
+      "expert_gap": {
+        "total_blogs": 52294,
+        "expert_blogs": 1173,
+        "gap_ratio": 44.5,
+        "label": "전문가 갭 큼"
+      },
+      "search_volume": 670,
+      "comp_idx": "높음",
+      "pharma_value_calc": 3.9,
+      "serp": {
+        "checked_at": "2026-11-17T20:18:10.562Z",
+        "status": 200,
+        "blog_top": [
+          {
+            "blog": "2331827",
+            "age_days": 14,
+            "title": "“고기만 끊으면 괜찮을 줄 알았는데!” 통풍에 안 좋은 음식, 술자리에서 놓치기 쉬운 두 번째 복...."
+          },
+          {
+            "blog": "csrak45",
+            "age_days": 14,
+            "title": "\"통풍 발작 일으키는 최악의 요산 폭탄 음식..\" 요산 수치 높다면 반드시 조심해야 할 음식 4가지"
+          },
+          {
+            "blog": "ays3258",
+            "age_days": 21,
+            "title": "“통풍에 좋은 음식” 내장·고기는 빼라면서 우유는 챙기라고? 요산 관리의 의외의 반전"
+          },
+          {
+            "blog": "phytonutri",
+            "age_days": 21,
+            "title": "50대 이상 남성 통풍 전조증상, 퓨린 줄이기만으로 충분할까"
+          },
+          {
+            "blog": "originutri",
+            "age_days": 60,
+            "title": "2026.09.19."
+          },
+          {
+            "blog": "lavujuni",
+            "age_days": 2,
+            "title": "통풍에 안좋은 음식 5가지 순위, 주의해야 할 영양제까지"
+          },
+          {
+            "blog": "jdzgeevxl",
+            "age_days": 1,
+            "title": "요산 수치 높다면? 통풍 기준과 피해야 할 음식 총정리"
+          }
+        ],
+        "median_age_days": 21,
+        "fresh_30d": 4,
+        "my_rank": null,
+        "first_blog_y": 4358,
+        "shop_y": null,
+        "ad_y": null,
+        "shop_above_blog": false
+      },
+      "position_mult": 1.0,
+      "opportunity_score": 5.5,
+      "opportunity_label": "포화(경쟁 높음)",
+      "news_recency": {},
+      "score": 5.5,
+      "consecutive_days": 1,
+      "previously_written": true,
+      "days_since_written": 35,
+      "novelty": "기존 영역",
+      "suggested_days_2w": 5,
+      "in_deep_dive_roots": true,
+      "shopping_rank": null,
+      "novelty_mult": 1.0,
+      "is_new_topic": true,
+      "persistence_mult": 1.0,
+      "rank": 8
+    },
+    {
+      "keyword": "MC4R 비만",
+      "entity": "MC4R",
+      "search_terms": [
+        "희귀비만",
+        "유전성 비만",
+        "MC4R"
+      ],
+      "track": "시의형",
+      "source": "news",
+      "category": "질환·치료",
+      "pharma_value": 5,
+      "trend_key": "MC4R",
+      "why_now": "휴온스가 경구 MC4R 작용제(HUC1-622) 비임상 결과를 미국비만학회에서 냈습니다. GLP-1만 다루던 비만약 글을 '어릴 때부터 배고픔이 멈추지 않는 유전성 비만'으로 넓힐 수 있습니다.",
+      "pharmacist_angle": "MC4R 경로와 기존 주사제(세트멜라노타이드)가 매일 주사라는 한계, 펩타이드를 먹는 약 저분자로 바꾸는 이유를 DDS 연구자 관점에서 설명합니다.",
+      "title_idea": "희귀비만, 위고비로 안 빠지는 배고픔은 뇌의 다른 스위치 문제입니다",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [
+        "휴온스, 경구용 MC4R 작용제 'HUC1-622' 비임상 결과 발표",
+        "휴온스, 경구용 희귀비만 신약 비임상서 체중 감소 효과 확인"
+      ],
+      "keyword_ai": "MC4R 비만",
+      "grounded_by": null,
+      "search_term_volumes": {
+        "희귀비만": 20,
+        "유전성 비만": 20,
+        "MC4R": 20,
+        "MC4R 비만": 20
+      },
+      "news_count": 1231,
+      "news_headlines": [
+        {
+          "title": "휴온스, 美비만학회서 경구용MC4R 작용제 'HUC1-622' 비임상 결과 발표",
+          "link": "http://www.biztribune.co.kr/news/articleView.html?idxno=362672",
+          "date": "Tue, 17 Nov 2026 22:18:00 +0900"
+        },
+        {
+          "title": "휴온스 먹는 비만약, 동물실험서 체중·체지방 감소 확인",
+          "link": "https://n.news.naver.com/mnews/article/015/0005354779?sid=105",
+          "date": "Tue, 17 Nov 2026 14:58:00 +0900"
+        },
+        {
+          "title": "휴온스, 먹는 희귀비만 신약 개발 속도…美 학회서 비임상 연구 성과 공...",
+          "link": "https://daily.hankooki.com/news/articleView.html?idxno=1425933",
+          "date": "Tue, 17 Nov 2026 11:58:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 0.0,
+        "direction": "유지",
+        "weekly_avg": 0.0
+      },
+      "expert_gap": {
+        "total_blogs": 1230,
+        "expert_blogs": 42,
+        "gap_ratio": 28.6,
+        "label": "전문가 부족"
+      },
+      "search_volume": 20,
+      "comp_idx": "낮음",
+      "pharma_value_calc": 5.5,
+      "serp": null,
+      "position_mult": 1.0,
+      "opportunity_score": 4.3,
+      "opportunity_label": "수요 적음",
+      "news_recency": {
+        "newest_hours": 7.0,
+        "count_24h": 30,
+        "count_48h": 30
+      },
+      "score": 16.6,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역(다시 제안)",
+      "suggested_days_2w": 2,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 1.0,
+      "is_new_topic": true,
+      "timeliness_score": 16.6,
+      "rank": 1
+    },
+    {
+      "keyword": "치매 신약",
+      "entity": "먹는 치매 치료제",
+      "search_terms": [
+        "먹는 치매약",
+        "치매 신약",
+        "알츠하이머 신약"
+      ],
+      "track": "시의형",
+      "source": "news",
+      "category": "약업계·정책",
+      "pharma_value": 4,
+      "trend_key": "먹는치매약",
+      "why_now": "삼진제약이 '먹는 치매 치료제' 국내 첫 사례를 허가 신청 단계로 밀고 있다는 기사가 나왔습니다. 레켐비 같은 주사형 항체 치료제와 비교하려는 수요가 생길 시점입니다.",
+      "pharmacist_angle": "기존 도네페질은 증상 완화제이고 항체 주사는 원인 단백질을 겨냥한다는 차이, 경구 신약이 어느 쪽인지, 허가 심사가 실제로 얼마나 걸리는지를 짚습니다.",
+      "title_idea": "먹는 치매약, 기사 보고 부모님 약 바꿀 수 있나 물으신다면",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [
+        "'플래리스' 약가인하 앞둔 삼진제약···'먹는 치매약' 돌파구 될까"
+      ],
+      "keyword_ai": "먹는 치매약",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "먹는 치매약": 110,
+        "치매 신약": 610,
+        "알츠하이머 신약": 100
+      },
+      "news_count": 37694,
+      "news_headlines": [
+        {
+          "title": "아리바이오, 치매신약 15년 뚝심 통했다…남은 과제는",
+          "link": "https://n.news.naver.com/mnews/article/008/0005442177?sid=101",
+          "date": "Tue, 17 Nov 2026 10:35:00 +0900"
+        },
+        {
+          "title": "아리바이오 치매약 효능 엇갈려",
+          "link": "https://n.news.naver.com/mnews/article/015/0005354879?sid=105",
+          "date": "Tue, 17 Nov 2026 17:26:00 +0900"
+        },
+        {
+          "title": "아리바이오 &quot;치매신약 3상서 단독요법 효과 확인&quot;",
+          "link": "https://n.news.naver.com/mnews/article/003/0014326085?sid=102",
+          "date": "Tue, 17 Nov 2026 08:26:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": -6.4,
+        "direction": "유지",
+        "weekly_avg": 55.7
+      },
+      "expert_gap": {
+        "total_blogs": 63364,
+        "expert_blogs": 3154,
+        "gap_ratio": 20.1,
+        "label": "전문가 부족"
+      },
+      "search_volume": 610,
+      "comp_idx": "중간",
+      "pharma_value_calc": 4.4,
+      "serp": null,
+      "position_mult": 1.0,
+      "opportunity_score": 6.1,
+      "opportunity_label": "보통",
+      "news_recency": {
+        "newest_hours": 0.3,
+        "count_24h": 30,
+        "count_48h": 30
+      },
+      "score": 15.5,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 1.15,
+      "is_new_topic": true,
+      "timeliness_score": 15.5,
+      "rank": 2
+    },
+    {
+      "keyword": "레타트루타이드",
+      "entity": "레타트루타이드",
+      "search_terms": [
+        "레타트루타이드",
+        "레타트루타이드 출시",
+        "레타트루타이드 마운자로 차이"
+      ],
+      "track": "시의형",
+      "source": "news",
+      "category": "질환·치료",
+      "pharma_value": 5,
+      "trend_key": "레타트루타이드",
+      "why_now": "미국비만학회(ObesityWeek 2026)에서 동아ST DA-1726의 비교 대상으로 레타트루타이드가 기사 수십 건에 나왔습니다. 마운자로 다음 약을 궁금해하는 독자층이 블로그에 이미 두껍게 있습니다.",
+      "pharmacist_angle": "GLP-1 하나(위고비), 둘(마운자로), 셋(레타트루타이드)으로 작용하는 수용체가 늘어날 때 무엇이 달라지는지 정리합니다. 아직 허가 전이라 국내 출시 시점을 냉정하게 짚습니다.",
+      "title_idea": "레타트루타이드, 마운자로 다음이라는 3중 작용 주사는 언제 한국에 올까",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [
+        "동아ST·메타비아, DA-1726·레타트루타이드 비교 전임상 결과 발표",
+        "동아에스티 비만신약 물질, 릴리와 감량 '비슷'"
+      ],
+      "keyword_ai": "레타트루타이드",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "레타트루타이드": 7350,
+        "레타트루타이드 출시": 270,
+        "레타트루타이드 마운자로 차이": 20
+      },
+      "news_count": 1257,
+      "news_headlines": [
+        {
+          "title": "동아ST·메타비아 &quot;비만치료제 전임상 연구 발표&quot;",
+          "link": "https://n.news.naver.com/mnews/article/003/0014327860?sid=102",
+          "date": "Tue, 17 Nov 2026 15:47:00 +0900"
+        },
+        {
+          "title": "동아ST 비만약 후보, 레타트루타이드보다 혈당 개선 효과 우위",
+          "link": "https://n.news.naver.com/mnews/article/421/0009293758?sid=103",
+          "date": "Tue, 17 Nov 2026 14:19:00 +0900"
+        },
+        {
+          "title": "동아ST &quot;DA-1726, 레타트루타이드 대비 큰 혈당·유사 체중 감소 효과 확...",
+          "link": "https://n.news.naver.com/mnews/article/008/0005442383?sid=101",
+          "date": "Tue, 17 Nov 2026 15:41:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": -14.5,
+        "direction": "하락",
+        "weekly_avg": 11.5
+      },
+      "expert_gap": {
+        "total_blogs": 3497,
+        "expert_blogs": 149,
+        "gap_ratio": 23.3,
+        "label": "전문가 부족"
+      },
+      "search_volume": 7350,
+      "comp_idx": "낮음",
+      "pharma_value_calc": 5.5,
+      "serp": null,
+      "position_mult": 1.0,
+      "opportunity_score": 12.8,
+      "opportunity_label": "💎황금(수요多·경쟁低)",
+      "news_recency": {
+        "newest_hours": 0.4,
+        "count_24h": 30,
+        "count_48h": 30
+      },
+      "score": 14.5,
+      "consecutive_days": 2,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역(다시 제안)",
+      "suggested_days_2w": 2,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 1.0,
+      "is_new_topic": true,
+      "timeliness_score": 14.5,
+      "rank": 3
+    },
+    {
+      "keyword": "에페 효과",
+      "entity": "에페글레나타이드",
+      "search_terms": [
+        "에페 효과",
+        "에페 비만치료제",
+        "에페 위고비 차이"
+      ],
+      "track": "시의형",
+      "source": "news",
+      "category": "약업계·정책",
+      "pharma_value": 4,
+      "trend_key": "에페글레나타이드",
+      "why_now": "한미약품이 국내 환자 대상 64주 체중 감량률 10.56%를 새로 발표했습니다. 최근 제안 목록에 있었지만 장기 결과라는 새 소식이 나와 다시 다룰 만합니다. 11월 1일 가격 글의 후속입니다.",
+      "pharmacist_angle": "10.56%가 위고비·마운자로 임상의 몇 %와 같은 조건(기간·위약 보정·대상)에서 나온 숫자인지 나란히 놓고 비교합니다.",
+      "title_idea": "에페 64주 10.56%, 위고비 15%와 바로 비교하면 안 되는 이유",
+      "already_covered": false,
+      "covered_posts": [
+        "에페글레나타이드, 알약 기대하고 오신 분들께 약국에서 꼭 드리는 말"
+      ],
+      "source_headlines": [
+        "한미약품 \"에페, 64주 체중 감량률 10.56%\""
+      ],
+      "keyword_ai": "에페 효과",
+      "grounded_by": "search_term",
+      "search_term_volumes": {
+        "에페 효과": 22250,
+        "에페 비만치료제": 1060,
+        "에페 위고비 차이": 180
+      },
+      "news_count": 8101,
+      "news_headlines": [
+        {
+          "title": "한미약품 &quot;에페, 64주 체중 감량률 10.56%&quot;",
+          "link": "https://www.dailymedi.com/news/news_view.php?wr_id=942692",
+          "date": "Tue, 17 Nov 2026 15:02:00 +0900"
+        },
+        {
+          "title": "6만원 싼 국산 비만약 '에페' 가성비 없다?…아구통 교수 &quot;노관심&quot;",
+          "link": "https://n.news.naver.com/mnews/article/008/0005440676?sid=102",
+          "date": "Fri, 13 Nov 2026 08:31:00 +0900"
+        },
+        {
+          "title": "&quot;국산으로 환승&quot;…에페, 위고비·마운자로 '맹추격'",
+          "link": "https://n.news.naver.com/mnews/article/003/0014321915?sid=102",
+          "date": "Sat, 14 Nov 2026 11:01:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 10.4,
+        "direction": "상승",
+        "weekly_avg": 83.0
+      },
+      "expert_gap": {
+        "total_blogs": 26876,
+        "expert_blogs": 1200,
+        "gap_ratio": 22.4,
+        "label": "전문가 부족"
+      },
+      "search_volume": 22250,
+      "comp_idx": "중간",
+      "pharma_value_calc": 4.4,
+      "serp": null,
+      "position_mult": 1.0,
+      "opportunity_score": 9.6,
+      "opportunity_label": "보통",
+      "news_recency": {
+        "newest_hours": 0.4,
+        "count_24h": 10,
+        "count_48h": 18
+      },
+      "score": 12.6,
+      "consecutive_days": 2,
+      "previously_written": true,
+      "days_since_written": 67,
+      "novelty": "기존 영역",
+      "suggested_days_2w": 4,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 1.0,
+      "is_new_topic": true,
+      "timeliness_score": 12.6,
+      "rank": 4
+    },
+    {
+      "keyword": "NK/T세포림프종",
+      "entity": "VT-EBV-N",
+      "search_terms": [
+        "NK/T세포림프종",
+        "NK T세포 림프종 치료",
+        "림프종 신약"
+      ],
+      "track": "시의형",
+      "source": "news",
+      "category": "약업계·정책",
+      "pharma_value": 3,
+      "trend_key": "VT-EBV-N",
+      "why_now": "바이젠셀의 VT-EBV-N이 식약처 첨단바이오의약품 신속처리대상으로 지정돼 조건부 허가를 준비 중입니다. 11월 13일 '치료목적 사용승인' 글 독자에게 이어 줄 수 있는 희귀질환 신약 소식입니다.",
+      "pharmacist_angle": "신속처리·조건부 허가가 환자 손에 약이 오기까지 실제로 얼마나 시간을 줄이는지, 세포치료제가 병원에서 어떻게 조제·투여되는지를 병원 약사 시점에서 풉니다.",
+      "title_idea": "신속처리 지정, 희귀암 환자 가족이 뉴스에서 바로 기대하면 안 되는 한 가지",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [
+        "바이젠셀, 'VT-EBV-N' 식약처 신속처리대상 첨단바이오의약품 지정",
+        "바이젠셀 NK/T세포림프종 치료제, 식약처 신속심사 대상 지정"
+      ],
+      "keyword_ai": "NK/T세포림프종",
+      "grounded_by": null,
+      "search_term_volumes": {
+        "NK/T세포림프종": 40,
+        "NK T세포 림프종 치료": 20,
+        "림프종 신약": 20
+      },
+      "news_count": 4377,
+      "news_headlines": [
+        {
+          "title": "바이젠셀 NK/T세포림프종 치료제, 식약처 신속심사 대상 지정",
+          "link": "https://n.news.naver.com/mnews/article/421/0009293110?sid=103",
+          "date": "Tue, 17 Nov 2026 10:30:00 +0900"
+        },
+        {
+          "title": "바이젠셀 NK/T세포림프종 치료제, 식약처 신속심사 대상 지정",
+          "link": "https://n.news.naver.com/mnews/article/014/0005605556?sid=103",
+          "date": "Tue, 17 Nov 2026 15:02:00 +0900"
+        },
+        {
+          "title": "바이젠셀, NK/T세포림프종 치료제 신속처리 의약품에",
+          "link": "https://n.news.naver.com/mnews/article/016/0002724692?sid=101",
+          "date": "Tue, 17 Nov 2026 17:01:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 0.0,
+        "direction": "유지",
+        "weekly_avg": 0.0
+      },
+      "expert_gap": {
+        "total_blogs": 5972,
+        "expert_blogs": 163,
+        "gap_ratio": 36.4,
+        "label": "전문가 갭 큼"
+      },
+      "search_volume": 40,
+      "comp_idx": "낮음",
+      "pharma_value_calc": 3.9,
+      "serp": null,
+      "position_mult": 1.0,
+      "opportunity_score": 3.7,
+      "opportunity_label": "수요 적음",
+      "news_recency": {
+        "newest_hours": 12.3,
+        "count_24h": 13,
+        "count_48h": 14
+      },
+      "score": 12.5,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역",
+      "suggested_days_2w": 0,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 1.15,
+      "is_new_topic": true,
+      "timeliness_score": 12.5,
+      "rank": 5
+    },
+    {
+      "keyword": "기생충 클렌즈",
+      "entity": "기생충 클렌즈",
+      "search_terms": [
+        "기생충 클렌즈",
+        "기생충 다이어트",
+        "구충제 다이어트"
+      ],
+      "track": "시의형",
+      "source": "news",
+      "category": "소비자건강",
+      "pharma_value": 3,
+      "trend_key": "기생충클렌즈",
+      "why_now": "해외발 '장 기생충 제거' 다이어트 유행 기사가 나왔습니다. 허브 클렌즈 제품이 직구로 들어오기 쉬운 주제이고, 기존 구충제 글과 이어집니다.",
+      "pharmacist_angle": "변에 나오는 '기생충'이라는 덩어리의 정체(장 점막·섬유질)와 허브 제품 성분의 간 독성 가능성, 진짜 구충제 복용 기준을 대비합니다.",
+      "title_idea": "기생충 클렌즈, 변기에 나온 그 덩어리는 기생충이 아닙니다",
+      "already_covered": false,
+      "covered_posts": [],
+      "source_headlines": [
+        "별 게 다 유행, '장 기생충 제거' 다이어트가 난리! 그 효과는?"
+      ],
+      "keyword_ai": "기생충 클렌즈",
+      "grounded_by": null,
+      "search_term_volumes": {
+        "기생충 클렌즈": 20,
+        "기생충 다이어트": 20,
+        "구충제 다이어트": 30
+      },
+      "news_count": 10,
+      "news_headlines": [
+        {
+          "title": "별 게 다 유행, ‘장 기생충 제거’ 다이어트가 난리! 그 효과는?",
+          "link": "https://www.gqkorea.co.kr/2026/10/21/%eb%b3%84-%ea%b2%8c-%eb%8b%a4-%ec%9c%a0%ed%96%89-%ec%9e%a5-%ea%b8%b0%ec%83%9d%ec%b6%a9-%ec%a0%9c%ea%b1%b0-%eb%8b%a4%ec%9d%b4%ec%96%b4%ed%8a%b8%ea%b0%80-%eb%82%9c%eb%a6%ac-%ea%b7%b8-%ed%9a%a8/?utm_source=naver&utm_medium=partnership",
+          "date": "Wed, 21 Oct 2026 22:56:00 +0900"
+        },
+        {
+          "title": "‘기생충 클렌즈’로 틱톡서 인기 끌던 ‘이 과일’… 실은 콜레스테롤...",
+          "link": "https://n.news.naver.com/mnews/article/346/0000105693?sid=103",
+          "date": "Thu, 05 Mar 2026 06:21:00 +0900"
+        },
+        {
+          "title": "집에서 셀프로 기생충 없앤다? 유명 모델도 ‘기생충 클렌즈’…의사들...",
+          "link": "https://n.news.naver.com/mnews/article/296/0000092030?sid=103",
+          "date": "Tue, 12 Aug 2025 16:10:00 +0900"
+        }
+      ],
+      "search_trend": {
+        "change_rate": 0.0,
+        "direction": "유지",
+        "weekly_avg": 0.0
+      },
+      "expert_gap": {
+        "total_blogs": 194,
+        "expert_blogs": 13,
+        "gap_ratio": 13.9,
+        "label": "전문가 부족"
+      },
+      "search_volume": 20,
+      "comp_idx": "낮음",
+      "pharma_value_calc": 3.3,
+      "serp": null,
+      "position_mult": 1.0,
+      "opportunity_score": 2.6,
+      "opportunity_label": "수요 적음",
+      "news_recency": {
+        "newest_hours": 654.4,
+        "count_24h": 0,
+        "count_48h": 0
+      },
+      "score": 1.9,
+      "consecutive_days": 1,
+      "previously_written": false,
+      "days_since_written": null,
+      "novelty": "새 영역(다시 제안)",
+      "suggested_days_2w": 4,
+      "in_deep_dive_roots": false,
+      "shopping_rank": null,
+      "novelty_mult": 0.85,
+      "is_new_topic": true,
+      "timeliness_score": 1.9,
+      "rank": 6
+    }
+  ],
+  "stats": {
+    "total_news_collected": 950,
+    "my_posts_count": 289,
+    "ai_candidates": 14,
+    "new_topics": 14,
+    "existing_topics_new_issue": 0,
+    "search_topics": 8,
+    "news_topics": 6,
+    "golden_topics": 1
+  },
+  "meta": {
+    "model": "claude-cli:opus",
+    "attempts": 1,
+    "cost_usd": 0.0,
+    "duration_sec": 82,
+    "input_tokens": 2,
+    "output_tokens": 8073
+  },
+  "shopping_movers": [
+    {
+      "keyword": "밀배유추출물",
+      "rank": 64,
+      "kind": "최근 진입",
+      "from_rank": 42,
+      "gain": 436
+    },
+    {
+      "keyword": "랩온랩",
+      "rank": 88,
+      "kind": "급상승",
+      "from_rank": 492,
+      "gain": 404
+    },
+    {
+      "keyword": "천연벌꿀2.4kg아카시아꿀",
+      "rank": 96,
+      "kind": "최근 진입",
+      "from_rank": 130,
+      "gain": 404
+    },
+    {
+      "keyword": "엠프로",
+      "rank": 114,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 386
+    },
+    {
+      "keyword": "엠프로유산균",
+      "rank": 155,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 345
+    },
+    {
+      "keyword": "마테판",
+      "rank": 182,
+      "kind": "최근 진입",
+      "from_rank": 472,
+      "gain": 318
+    },
+    {
+      "keyword": "알리포산",
+      "rank": 188,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 312
+    },
+    {
+      "keyword": "퓨어뉴질랜드세계",
+      "rank": 198,
+      "kind": "최근 진입",
+      "from_rank": 176,
+      "gain": 302
+    },
+    {
+      "keyword": "오쏘몰이뮨30",
+      "rank": 226,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 274
+    },
+    {
+      "keyword": "올인원혈당영양제",
+      "rank": 235,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 265
+    },
+    {
+      "keyword": "저스트글로우베르베린",
+      "rank": 237,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 263
+    },
+    {
+      "keyword": "1개베베초등학생",
+      "rank": 239,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 261
+    },
+    {
+      "keyword": "밀베유추출물",
+      "rank": 240,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 260
+    },
+    {
+      "keyword": "4개맘스비교",
+      "rank": 249,
+      "kind": "최근 진입",
+      "from_rank": 349,
+      "gain": 251
+    },
+    {
+      "keyword": "마오리꿀",
+      "rank": 260,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 240
+    },
+    {
+      "keyword": "센트룸실버",
+      "rank": 268,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 232
+    },
+    {
+      "keyword": "카무트6박스비교",
+      "rank": 270,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 230
+    },
+    {
+      "keyword": "3000헬로바이오비타민c",
+      "rank": 284,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 216
+    },
+    {
+      "keyword": "판토모나",
+      "rank": 207,
+      "kind": "급상승",
+      "from_rank": 419,
+      "gain": 212
+    },
+    {
+      "keyword": "좋은상황버섯액기스",
+      "rank": 291,
+      "kind": "새 진입",
+      "from_rank": null,
+      "gain": 209
+    },
+    {
+      "keyword": "타겟퓨어항산화",
+      "rank": 295,
+      "kind": "최근 진입",
+      "from_rank": 287,
+      "gain": 205
+    },
+    {
+      "keyword": "b발라민비오틴",
+      "rank": 94,
+      "kind": "급상승",
+      "from_rank": 273,
+      "gain": 179
+    },
+    {
+      "keyword": "상황버섯",
+      "rank": 231,
+      "kind": "급상승",
+      "from_rank": 407,
+      "gain": 176
+    },
+    {
+      "keyword": "칼마디6개수유부",
+      "rank": 222,
+      "kind": "급상승",
+      "from_rank": 367,
+      "gain": 145
+    },
+    {
+      "keyword": "키즈텐아기유산균",
+      "rank": 185,
+      "kind": "급상승",
+      "from_rank": 326,
+      "gain": 141
+    },
+    {
+      "keyword": "정관장천녹톤",
+      "rank": 213,
+      "kind": "급상승",
+      "from_rank": 346,
+      "gain": 133
+    },
+    {
+      "keyword": "테아닌",
+      "rank": 60,
+      "kind": "급상승",
+      "from_rank": 159,
+      "gain": 99
+    },
+    {
+      "keyword": "침향환",
+      "rank": 87,
+      "kind": "급상승",
+      "from_rank": 170,
+      "gain": 83
+    },
+    {
+      "keyword": "이시형마그네슘",
+      "rank": 161,
+      "kind": "급상승",
+      "from_rank": 239,
+      "gain": 78
+    },
+    {
+      "keyword": "프리바이오틱스",
+      "rank": 134,
+      "kind": "급상승",
+      "from_rank": 203,
+      "gain": 69
+    },
+    {
+      "keyword": "멀티비타민뉴트리디데이",
+      "rank": 123,
+      "kind": "급상승",
+      "from_rank": 181,
+      "gain": 58
+    },
+    {
+      "keyword": "비오틴",
+      "rank": 8,
+      "kind": "급상승",
+      "from_rank": 58,
+      "gain": 50
+    }
+  ]
+}

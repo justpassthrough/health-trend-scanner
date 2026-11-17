@@ -1772,16 +1772,17 @@
   "first_seen": "2026-09-29",
   "seen_days": [
    "2026-09-29",
-   "2026-10-17"
+   "2026-10-17",
+   "2026-11-17"
   ],
-  "last_seen": "2026-10-17",
+  "last_seen": "2026-11-17",
   "keyword": "퀘르포민정",
-  "search_volume": 21040,
+  "search_volume": 15550,
   "source": "shopping",
-  "shopping_rank": 127,
+  "shopping_rank": 51,
   "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 176
+  "blog_position_y": 6104
  },
  "몰약": {
   "first_seen": "2026-09-29",
@@ -2212,16 +2213,17 @@
   "seen_days": [
    "2026-10-03",
    "2026-10-17",
-   "2026-11-08"
+   "2026-11-08",
+   "2026-11-17"
   ],
-  "last_seen": "2026-11-08",
+  "last_seen": "2026-11-17",
   "keyword": "오쏘몰 이뮨",
-  "search_volume": 29610,
+  "search_volume": 29720,
   "source": "shopping",
-  "shopping_rank": 64,
+  "shopping_rank": 70,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 8732
+  "blog_position_y": 9211
  },
  "사워크라우트": {
   "first_seen": "2026-10-03",
@@ -5154,5 +5156,47 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 5861
+ },
+ "텐텐": {
+  "first_seen": "2026-11-17",
+  "seen_days": [
+   "2026-11-17"
+  ],
+  "last_seen": "2026-11-17",
+  "keyword": "텐텐",
+  "search_volume": 49320,
+  "source": "shopping",
+  "shopping_rank": 118,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 6644
+ },
+ "올리브잎추출물": {
+  "first_seen": "2026-11-17",
+  "seen_days": [
+   "2026-11-17"
+  ],
+  "last_seen": "2026-11-17",
+  "keyword": "올리브잎추출물",
+  "search_volume": 240,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6788
+ },
+ "제네릭": {
+  "first_seen": "2026-11-17",
+  "seen_days": [
+   "2026-11-17"
+  ],
+  "last_seen": "2026-11-17",
+  "keyword": "제네릭 뜻",
+  "search_volume": 500,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 2211
  }
 }

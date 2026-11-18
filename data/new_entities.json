@@ -85,36 +85,6 @@
   "pharma_value": 4,
   "blog_position_y": 6037
  },
- "장수백정": {
-  "first_seen": "2026-09-17",
-  "seen_days": [
-   "2026-09-17",
-   "2026-09-19"
-  ],
-  "last_seen": "2026-09-19",
-  "keyword": "장수백정",
-  "search_volume": 1270,
-  "source": "shopping",
-  "shopping_rank": 92,
-  "shopping_move": "최근 진입",
-  "pharma_value": 1,
-  "blog_position_y": 1878
- },
- "PDRN": {
-  "first_seen": "2026-09-17",
-  "seen_days": [
-   "2026-09-17",
-   "2026-09-19"
-  ],
-  "last_seen": "2026-09-19",
-  "keyword": "PDRN 크림",
-  "search_volume": 17290,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6511
- },
  "프리워크아웃": {
   "first_seen": "2026-09-17",
   "seen_days": [
@@ -372,20 +342,6 @@
   "pharma_value": 3,
   "blog_position_y": 5783
  },
- "쿼르세틴": {
-  "first_seen": "2026-09-19",
-  "seen_days": [
-   "2026-09-19"
-  ],
-  "last_seen": "2026-09-19",
-  "keyword": "쿼르세틴",
-  "search_volume": 110,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 4035
- },
  "PQQ": {
   "first_seen": "2026-09-19",
   "seen_days": [
@@ -487,20 +443,6 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 8454
- },
- "벤잘코늄": {
-  "first_seen": "2026-09-19",
-  "seen_days": [
-   "2026-09-19"
-  ],
-  "last_seen": "2026-09-19",
-  "keyword": "렌즈 인공눈물",
-  "search_volume": 1290,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6532
  },
  "녹용": {
   "first_seen": "2026-09-20",
@@ -1643,16 +1585,17 @@
  "돈태반": {
   "first_seen": "2026-09-28",
   "seen_days": [
-   "2026-09-28"
+   "2026-09-28",
+   "2026-11-19"
   ],
-  "last_seen": "2026-09-28",
-  "keyword": "돈태반",
-  "search_volume": 2650,
-  "source": "shopping",
-  "shopping_rank": 216,
-  "shopping_move": "새 진입",
+  "last_seen": "2026-11-19",
+  "keyword": "태반 영양제",
+  "search_volume": 870,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6691
+  "blog_position_y": 5756
  },
  "비타민B 컴플렉스": {
   "first_seen": "2026-09-28",
@@ -3589,16 +3532,17 @@
    "2026-10-31",
    "2026-11-03",
    "2026-11-06",
-   "2026-11-10"
+   "2026-11-10",
+   "2026-11-19"
   ],
-  "last_seen": "2026-11-10",
-  "keyword": "강아지 관절 영양제",
-  "search_volume": 9620,
+  "last_seen": "2026-11-19",
+  "keyword": "안티놀",
+  "search_volume": 3930,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 9482
+  "pharma_value": 4,
+  "blog_position_y": 8011
  },
  "우르소데옥시콜산": {
   "first_seen": "2026-10-21",
@@ -3703,16 +3647,17 @@
   "first_seen": "2026-10-22",
   "seen_days": [
    "2026-10-22",
-   "2026-11-07"
+   "2026-11-07",
+   "2026-11-19"
   ],
-  "last_seen": "2026-11-07",
+  "last_seen": "2026-11-19",
   "keyword": "장어즙",
-  "search_volume": 5700,
+  "search_volume": 7380,
   "source": "shopping",
-  "shopping_rank": 68,
-  "shopping_move": "최근 진입",
+  "shopping_rank": 70,
+  "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6671
+  "blog_position_y": 7402
  },
  "구충제": {
   "first_seen": "2026-10-22",
@@ -5205,5 +5150,61 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7429
+ },
+ "마가목열매": {
+  "first_seen": "2026-11-19",
+  "seen_days": [
+   "2026-11-19"
+  ],
+  "last_seen": "2026-11-19",
+  "keyword": "마가목열매",
+  "search_volume": 10130,
+  "source": "shopping",
+  "shopping_rank": 148,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 7966
+ },
+ "레모나": {
+  "first_seen": "2026-11-19",
+  "seen_days": [
+   "2026-11-19"
+  ],
+  "last_seen": "2026-11-19",
+  "keyword": "레모나",
+  "search_volume": 10300,
+  "source": "shopping",
+  "shopping_rank": 178,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 9348
+ },
+ "쾌변팡팡": {
+  "first_seen": "2026-11-19",
+  "seen_days": [
+   "2026-11-19"
+  ],
+  "last_seen": "2026-11-19",
+  "keyword": "쾌변팡팡",
+  "search_volume": 2200,
+  "source": "shopping",
+  "shopping_rank": 90,
+  "shopping_move": "새 진입",
+  "pharma_value": 2,
+  "blog_position_y": 6627
+ },
+ "속눈썹영양제": {
+  "first_seen": "2026-11-19",
+  "seen_days": [
+   "2026-11-19"
+  ],
+  "last_seen": "2026-11-19",
+  "keyword": "속눈썹영양제",
+  "search_volume": 20290,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8752
  }
 }

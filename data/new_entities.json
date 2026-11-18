@@ -2706,16 +2706,17 @@
  "루버스오일": {
   "first_seen": "2026-10-08",
   "seen_days": [
-   "2026-10-08"
+   "2026-10-08",
+   "2026-11-18"
   ],
-  "last_seen": "2026-10-08",
-  "keyword": "루버스 오일",
-  "search_volume": 7760,
+  "last_seen": "2026-11-18",
+  "keyword": "루버스오일",
+  "search_volume": 7000,
   "source": "shopping",
-  "shopping_rank": 324,
-  "shopping_move": null,
+  "shopping_rank": 290,
+  "shopping_move": "최근 진입",
   "pharma_value": 2,
-  "blog_position_y": 5798
+  "blog_position_y": 6006
  },
  "젤라토닌": {
   "first_seen": "2026-10-09",
@@ -3568,16 +3569,17 @@
    "2026-10-31",
    "2026-11-06",
    "2026-11-09",
-   "2026-11-12"
+   "2026-11-12",
+   "2026-11-18"
   ],
-  "last_seen": "2026-11-12",
-  "keyword": "돌외잎 효능",
-  "search_volume": 1620,
+  "last_seen": "2026-11-18",
+  "keyword": "돌외잎 차",
+  "search_volume": 2110,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6956
+  "pharma_value": 4,
+  "blog_position_y": 7157
  },
  "초록입홍합": {
   "first_seen": "2026-10-21",
@@ -3885,16 +3887,17 @@
   "first_seen": "2026-10-24",
   "seen_days": [
    "2026-10-24",
-   "2026-10-27"
+   "2026-10-27",
+   "2026-11-18"
   ],
-  "last_seen": "2026-10-27",
+  "last_seen": "2026-11-18",
   "keyword": "판토텐산",
-  "search_volume": 9610,
+  "search_volume": 7960,
   "source": "shopping",
-  "shopping_rank": null,
-  "shopping_move": null,
+  "shopping_rank": 233,
+  "shopping_move": "새 진입",
   "pharma_value": 4,
-  "blog_position_y": 6855
+  "blog_position_y": 9254
  },
  "남성호르몬 영양제": {
   "first_seen": "2026-10-24",
@@ -5174,5 +5177,33 @@
   "shopping_move": "최근 진입",
   "pharma_value": 4,
   "blog_position_y": 7382
+ },
+ "흰민들레": {
+  "first_seen": "2026-11-18",
+  "seen_days": [
+   "2026-11-18"
+  ],
+  "last_seen": "2026-11-18",
+  "keyword": "흰민들레 효능",
+  "search_volume": 950,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 5470
+ },
+ "마테": {
+  "first_seen": "2026-11-18",
+  "seen_days": [
+   "2026-11-18"
+  ],
+  "last_seen": "2026-11-18",
+  "keyword": "마테차",
+  "search_volume": 5330,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 7429
  }
 }

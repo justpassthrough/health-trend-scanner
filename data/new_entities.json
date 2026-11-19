@@ -658,34 +658,6 @@
   "pharma_value": 3,
   "blog_position_y": 6722
  },
- "자보티카바": {
-  "first_seen": "2026-09-20",
-  "seen_days": [
-   "2026-09-20"
-  ],
-  "last_seen": "2026-09-20",
-  "keyword": "자보티카바 효능",
-  "search_volume": 11250,
-  "source": "shopping",
-  "shopping_rank": 281,
-  "shopping_move": "급상승",
-  "pharma_value": 2,
-  "blog_position_y": 6496
- },
- "단백질보충제": {
-  "first_seen": "2026-09-20",
-  "seen_days": [
-   "2026-09-20"
-  ],
-  "last_seen": "2026-09-20",
-  "keyword": "프로틴 신장",
-  "search_volume": 130,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 2809
- },
  "올리브오일 캡슐": {
   "first_seen": "2026-09-21",
   "seen_days": [
@@ -4423,16 +4395,17 @@
  "다슬기": {
   "first_seen": "2026-11-06",
   "seen_days": [
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-20"
   ],
-  "last_seen": "2026-11-06",
+  "last_seen": "2026-11-20",
   "keyword": "다슬기즙",
-  "search_volume": 2210,
+  "search_volume": 1930,
   "source": "shopping",
-  "shopping_rank": 220,
+  "shopping_rank": 237,
   "shopping_move": null,
-  "pharma_value": 2,
-  "blog_position_y": 7235
+  "pharma_value": 4,
+  "blog_position_y": 7066
  },
  "단백질 보충제": {
   "first_seen": "2026-11-06",
@@ -4498,16 +4471,17 @@
  "미나리": {
   "first_seen": "2026-11-07",
   "seen_days": [
-   "2026-11-07"
+   "2026-11-07",
+   "2026-11-20"
   ],
-  "last_seen": "2026-11-07",
+  "last_seen": "2026-11-20",
   "keyword": "미나리즙",
-  "search_volume": 840,
+  "search_volume": 890,
   "source": "shopping",
-  "shopping_rank": 299,
+  "shopping_rank": 279,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7547
+  "blog_position_y": 6424
  },
  "잇몸영양제": {
   "first_seen": "2026-11-07",
@@ -4948,16 +4922,17 @@
   "first_seen": "2026-11-14",
   "seen_days": [
    "2026-11-14",
-   "2026-11-17"
+   "2026-11-17",
+   "2026-11-20"
   ],
-  "last_seen": "2026-11-17",
-  "keyword": "애사비",
-  "search_volume": 35320,
+  "last_seen": "2026-11-20",
+  "keyword": "애사비 효능",
+  "search_volume": 11870,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 8593
+  "blog_position_y": 7706
  },
  "밀배유": {
   "first_seen": "2026-11-15",
@@ -5224,5 +5199,19 @@
   "shopping_move": "새 진입",
   "pharma_value": 3,
   "blog_position_y": 4530
+ },
+ "PM쥬스": {
+  "first_seen": "2026-11-20",
+  "seen_days": [
+   "2026-11-20"
+  ],
+  "last_seen": "2026-11-20",
+  "keyword": "pm쥬스",
+  "search_volume": 11460,
+  "source": "shopping",
+  "shopping_rank": 109,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7535
  }
 }

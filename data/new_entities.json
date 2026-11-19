@@ -1543,16 +1543,17 @@
   "first_seen": "2026-09-28",
   "seen_days": [
    "2026-09-28",
-   "2026-10-29"
+   "2026-10-29",
+   "2026-11-19"
   ],
-  "last_seen": "2026-10-29",
+  "last_seen": "2026-11-19",
   "keyword": "감마리놀렌산",
-  "search_volume": 7810,
+  "search_volume": 7380,
   "source": "shopping",
-  "shopping_rank": 104,
+  "shopping_rank": 110,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 6455
+  "blog_position_y": 7851
  },
  "황기": {
   "first_seen": "2026-09-28",
@@ -1660,16 +1661,17 @@
   "seen_days": [
    "2026-09-29",
    "2026-10-17",
-   "2026-11-17"
+   "2026-11-17",
+   "2026-11-19"
   ],
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-19",
   "keyword": "퀘르포민정",
-  "search_volume": 15550,
+  "search_volume": 15200,
   "source": "shopping",
-  "shopping_rank": 51,
+  "shopping_rank": 33,
   "shopping_move": null,
   "pharma_value": 2,
-  "blog_position_y": 6104
+  "blog_position_y": 6169
  },
  "몰약": {
   "first_seen": "2026-09-29",
@@ -2352,16 +2354,17 @@
    "2026-10-05",
    "2026-10-09",
    "2026-10-12",
-   "2026-11-09"
+   "2026-11-09",
+   "2026-11-19"
   ],
-  "last_seen": "2026-11-09",
-  "keyword": "솔잎 효능",
-  "search_volume": 7340,
+  "last_seen": "2026-11-19",
+  "keyword": "솔잎농축액",
+  "search_volume": 6790,
   "source": "shopping",
-  "shopping_rank": null,
+  "shopping_rank": 117,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7937
+  "blog_position_y": 9261
  },
  "루마큐라": {
   "first_seen": "2026-10-05",
@@ -2750,16 +2753,17 @@
   "first_seen": "2026-10-10",
   "seen_days": [
    "2026-10-10",
-   "2026-10-13"
+   "2026-10-13",
+   "2026-11-19"
   ],
-  "last_seen": "2026-10-13",
+  "last_seen": "2026-11-19",
   "keyword": "레시틴",
-  "search_volume": 4840,
+  "search_volume": 5180,
   "source": "shopping",
-  "shopping_rank": 187,
+  "shopping_rank": 215,
   "shopping_move": "급상승",
   "pharma_value": 5,
-  "blog_position_y": 1427
+  "blog_position_y": 7315
  },
  "강아지 눈물자국": {
   "first_seen": "2026-10-11",
@@ -5206,5 +5210,19 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 8752
+ },
+ "유근피": {
+  "first_seen": "2026-11-19",
+  "seen_days": [
+   "2026-11-19"
+  ],
+  "last_seen": "2026-11-19",
+  "keyword": "유근피 효능",
+  "search_volume": 4850,
+  "source": "shopping",
+  "shopping_rank": 283,
+  "shopping_move": "새 진입",
+  "pharma_value": 3,
+  "blog_position_y": 4530
  }
 }

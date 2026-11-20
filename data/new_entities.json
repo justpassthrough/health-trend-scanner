@@ -85,21 +85,6 @@
   "pharma_value": 4,
   "blog_position_y": 6037
  },
- "프리워크아웃": {
-  "first_seen": "2026-09-17",
-  "seen_days": [
-   "2026-09-17",
-   "2026-09-21"
-  ],
-  "last_seen": "2026-09-21",
-  "keyword": "프리워크아웃",
-  "search_volume": 4570,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 1745
- },
  "침향": {
   "first_seen": "2026-09-18",
   "seen_days": [
@@ -692,34 +677,6 @@
   "pharma_value": 5,
   "blog_position_y": 3457
  },
- "진세노사이드": {
-  "first_seen": "2026-09-21",
-  "seen_days": [
-   "2026-09-21"
-  ],
-  "last_seen": "2026-09-21",
-  "keyword": "홍삼 효능",
-  "search_volume": 6810,
-  "source": "shopping",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 4610
- },
- "미인빛정": {
-  "first_seen": "2026-09-21",
-  "seen_days": [
-   "2026-09-21"
-  ],
-  "last_seen": "2026-09-21",
-  "keyword": "미인빛정",
-  "search_volume": 1930,
-  "source": "shopping",
-  "shopping_rank": 45,
-  "shopping_move": "최근 진입",
-  "pharma_value": 2,
-  "blog_position_y": null
- },
  "나이아신아마이드": {
   "first_seen": "2026-09-21",
   "seen_days": [
@@ -753,20 +710,6 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 4328
- },
- "젤리형 영양제": {
-  "first_seen": "2026-09-21",
-  "seen_days": [
-   "2026-09-21"
-  ],
-  "last_seen": "2026-09-21",
-  "keyword": "비타민 젤리",
-  "search_volume": 4990,
-  "source": "shopping",
-  "shopping_rank": 221,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6990
  },
  "인삼다당체": {
   "first_seen": "2026-09-21",
@@ -1530,16 +1473,17 @@
  "황기": {
   "first_seen": "2026-09-28",
   "seen_days": [
-   "2026-09-28"
+   "2026-09-28",
+   "2026-11-21"
   ],
-  "last_seen": "2026-09-28",
+  "last_seen": "2026-11-21",
   "keyword": "황기 효능",
-  "search_volume": 8130,
+  "search_volume": 7290,
   "source": "shopping",
-  "shopping_rank": 224,
+  "shopping_rank": 250,
   "shopping_move": "급상승",
   "pharma_value": 3,
-  "blog_position_y": 4546
+  "blog_position_y": 5811
  },
  "아세트아미노펜": {
   "first_seen": "2026-09-28",
@@ -2493,16 +2437,17 @@
   "first_seen": "2026-10-07",
   "seen_days": [
    "2026-10-07",
-   "2026-10-24"
+   "2026-10-24",
+   "2026-11-21"
   ],
-  "last_seen": "2026-10-24",
+  "last_seen": "2026-11-21",
   "keyword": "새싹삼",
-  "search_volume": 2450,
+  "search_volume": 2240,
   "source": "shopping",
-  "shopping_rank": 278,
+  "shopping_rank": 286,
   "shopping_move": "새 진입",
-  "pharma_value": 3,
-  "blog_position_y": 5781
+  "pharma_value": 2,
+  "blog_position_y": 6226
  },
  "멀티팩": {
   "first_seen": "2026-10-07",
@@ -3229,16 +3174,17 @@
    "2026-10-17",
    "2026-10-25",
    "2026-10-30",
-   "2026-11-02"
+   "2026-11-02",
+   "2026-11-21"
   ],
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-21",
   "keyword": "피세틴",
-  "search_volume": 2930,
+  "search_volume": 3790,
   "source": "shopping",
-  "shopping_rank": 415,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6088
+  "shopping_rank": 210,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": 5796
  },
  "나이아신": {
   "first_seen": "2026-10-18",
@@ -5121,16 +5067,17 @@
  "마테": {
   "first_seen": "2026-11-18",
   "seen_days": [
-   "2026-11-18"
+   "2026-11-18",
+   "2026-11-21"
   ],
-  "last_seen": "2026-11-18",
+  "last_seen": "2026-11-21",
   "keyword": "마테차",
-  "search_volume": 5330,
+  "search_volume": 3880,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7429
+  "blog_position_y": 7326
  },
  "마가목열매": {
   "first_seen": "2026-11-19",
@@ -5243,5 +5190,19 @@
   "shopping_move": null,
   "pharma_value": 2,
   "blog_position_y": 901
+ },
+ "피소젠": {
+  "first_seen": "2026-11-21",
+  "seen_days": [
+   "2026-11-21"
+  ],
+  "last_seen": "2026-11-21",
+  "keyword": "피소젠",
+  "search_volume": 1890,
+  "source": "shopping",
+  "shopping_rank": 93,
+  "shopping_move": "새 진입",
+  "pharma_value": 1,
+  "blog_position_y": 4134
  }
 }

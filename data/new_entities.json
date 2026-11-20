@@ -1891,16 +1891,17 @@
    "2026-10-03",
    "2026-10-19",
    "2026-10-22",
-   "2026-10-26"
+   "2026-10-26",
+   "2026-11-20"
   ],
-  "last_seen": "2026-10-26",
+  "last_seen": "2026-11-20",
   "keyword": "난각막",
-  "search_volume": 4730,
+  "search_volume": 4070,
   "source": "shopping",
-  "shopping_rank": 229,
-  "shopping_move": "최근 진입",
+  "shopping_rank": 189,
+  "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 7003
+  "blog_position_y": 8395
  },
  "헛개나무": {
   "first_seen": "2026-10-01",
@@ -3489,16 +3490,17 @@
    "2026-11-06",
    "2026-11-09",
    "2026-11-12",
-   "2026-11-18"
+   "2026-11-18",
+   "2026-11-20"
   ],
-  "last_seen": "2026-11-18",
-  "keyword": "돌외잎 차",
-  "search_volume": 2110,
+  "last_seen": "2026-11-20",
+  "keyword": "돌외잎 효능",
+  "search_volume": 1480,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7157
+  "pharma_value": 3,
+  "blog_position_y": 4215
  },
  "초록입홍합": {
   "first_seen": "2026-10-21",
@@ -5213,5 +5215,33 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 7535
+ },
+ "베르가못": {
+  "first_seen": "2026-11-20",
+  "seen_days": [
+   "2026-11-20"
+  ],
+  "last_seen": "2026-11-20",
+  "keyword": "베르가못",
+  "search_volume": 22490,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 7717
+ },
+ "쿠코아민B": {
+  "first_seen": "2026-11-20",
+  "seen_days": [
+   "2026-11-20"
+  ],
+  "last_seen": "2026-11-20",
+  "keyword": "쿠코아민b",
+  "search_volume": 2880,
+  "source": "shopping",
+  "shopping_rank": 83,
+  "shopping_move": null,
+  "pharma_value": 2,
+  "blog_position_y": 901
  }
 }

@@ -1,20 +1,4 @@
 {
- "멜라토닌": {
-  "first_seen": "2026-09-17",
-  "seen_days": [
-   "2026-09-17",
-   "2026-09-19",
-   "2026-09-22"
-  ],
-  "last_seen": "2026-09-22",
-  "keyword": "멜라토닌",
-  "search_volume": 151100,
-  "source": "shopping",
-  "shopping_rank": 10,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 9845
- },
  "매스틱검": {
   "first_seen": "2026-09-17",
   "seen_days": [
@@ -612,21 +596,6 @@
   "pharma_value": 4,
   "blog_position_y": 1700
  },
- "토사자": {
-  "first_seen": "2026-09-20",
-  "seen_days": [
-   "2026-09-20",
-   "2026-09-22"
-  ],
-  "last_seen": "2026-09-22",
-  "keyword": "토사자 효능",
-  "search_volume": 4090,
-  "source": "shopping",
-  "shopping_rank": 281,
-  "shopping_move": "최근 진입",
-  "pharma_value": 3,
-  "blog_position_y": 4933
- },
  "영지버섯": {
   "first_seen": "2026-09-20",
   "seen_days": [
@@ -817,20 +786,6 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": null
- },
- "세라마이드": {
-  "first_seen": "2026-09-22",
-  "seen_days": [
-   "2026-09-22"
-  ],
-  "last_seen": "2026-09-22",
-  "keyword": "세라마이드 효능",
-  "search_volume": 2400,
-  "source": "shopping",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 3693
  },
  "매스틱": {
   "first_seen": "2026-09-22",
@@ -4290,16 +4245,17 @@
  "헛개나무열매": {
   "first_seen": "2026-11-05",
   "seen_days": [
-   "2026-11-05"
+   "2026-11-05",
+   "2026-11-22"
   ],
-  "last_seen": "2026-11-05",
+  "last_seen": "2026-11-22",
   "keyword": "헛개즙",
-  "search_volume": 400,
+  "search_volume": 580,
   "source": "shopping",
-  "shopping_rank": 143,
+  "shopping_rank": 233,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7824
+  "blog_position_y": 7648
  },
  "영양제 간손상": {
   "first_seen": "2026-11-05",
@@ -4318,16 +4274,17 @@
  "벌나무": {
   "first_seen": "2026-11-06",
   "seen_days": [
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-22"
   ],
-  "last_seen": "2026-11-06",
+  "last_seen": "2026-11-22",
   "keyword": "벌나무 효능",
-  "search_volume": 4580,
+  "search_volume": 4480,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 2423
+  "blog_position_y": 5362
  },
  "야관문": {
   "first_seen": "2026-11-06",
@@ -4931,9 +4888,10 @@
  "청소년 프로틴": {
   "first_seen": "2026-11-15",
   "seen_days": [
-   "2026-11-15"
+   "2026-11-15",
+   "2026-11-22"
   ],
-  "last_seen": "2026-11-15",
+  "last_seen": "2026-11-22",
   "keyword": "청소년 단백질 보충제",
   "search_volume": 60,
   "source": "news",
@@ -5236,5 +5194,61 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 5431
+ },
+ "잉어즙": {
+  "first_seen": "2026-11-22",
+  "seen_days": [
+   "2026-11-22"
+  ],
+  "last_seen": "2026-11-22",
+  "keyword": "잉어즙",
+  "search_volume": 620,
+  "source": "shopping",
+  "shopping_rank": 142,
+  "shopping_move": "최근 진입",
+  "pharma_value": 3,
+  "blog_position_y": 6148
+ },
+ "리포좀 비타민B": {
+  "first_seen": "2026-11-22",
+  "seen_days": [
+   "2026-11-22"
+  ],
+  "last_seen": "2026-11-22",
+  "keyword": "리포좀 비타민B",
+  "search_volume": 140,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 6514
+ },
+ "혈당영양제": {
+  "first_seen": "2026-11-22",
+  "seen_days": [
+   "2026-11-22"
+  ],
+  "last_seen": "2026-11-22",
+  "keyword": "혈당영양제",
+  "search_volume": 5600,
+  "source": "shopping",
+  "shopping_rank": 196,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 8809
+ },
+ "아나파랙틴": {
+  "first_seen": "2026-11-22",
+  "seen_days": [
+   "2026-11-22"
+  ],
+  "last_seen": "2026-11-22",
+  "keyword": "아나파랙틴",
+  "search_volume": 3520,
+  "source": "shopping",
+  "shopping_rank": 220,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": 8370
  }
 }

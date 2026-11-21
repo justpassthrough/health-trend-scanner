@@ -3279,16 +3279,17 @@
   "seen_days": [
    "2026-10-18",
    "2026-11-02",
-   "2026-11-05"
+   "2026-11-05",
+   "2026-11-21"
   ],
-  "last_seen": "2026-11-05",
+  "last_seen": "2026-11-21",
   "keyword": "아커만시아",
-  "search_volume": 10420,
+  "search_volume": 10070,
   "source": "shopping",
-  "shopping_rank": 144,
-  "shopping_move": "급상승",
+  "shopping_rank": 286,
+  "shopping_move": "새 진입",
   "pharma_value": 4,
-  "blog_position_y": 1443
+  "blog_position_y": 7267
  },
  "쇠비름": {
   "first_seen": "2026-10-18",
@@ -3813,16 +3814,17 @@
  "안토시아닌": {
   "first_seen": "2026-10-26",
   "seen_days": [
-   "2026-10-26"
+   "2026-10-26",
+   "2026-11-21"
   ],
-  "last_seen": "2026-10-26",
-  "keyword": "블루베리 효능",
-  "search_volume": 11680,
+  "last_seen": "2026-11-21",
+  "keyword": "블루베리즙",
+  "search_volume": 9020,
   "source": "shopping",
-  "shopping_rank": null,
+  "shopping_rank": 45,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6760
+  "pharma_value": 2,
+  "blog_position_y": 8695
  },
  "고양이 방광염": {
   "first_seen": "2026-10-26",
@@ -4202,15 +4204,16 @@
   "seen_days": [
    "2026-11-03",
    "2026-11-12",
-   "2026-11-15"
+   "2026-11-15",
+   "2026-11-21"
   ],
-  "last_seen": "2026-11-15",
+  "last_seen": "2026-11-21",
   "keyword": "기생충 클렌즈",
   "search_volume": 20,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
+  "pharma_value": 3,
   "blog_position_y": null
  },
  "레스큐민": {
@@ -4329,16 +4332,17 @@
  "야관문": {
   "first_seen": "2026-11-06",
   "seen_days": [
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-21"
   ],
-  "last_seen": "2026-11-06",
+  "last_seen": "2026-11-21",
   "keyword": "야관문",
-  "search_volume": 6430,
+  "search_volume": 5300,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 1619
+  "blog_position_y": 2105
  },
  "다슬기": {
   "first_seen": "2026-11-06",
@@ -5204,5 +5208,33 @@
   "shopping_move": "새 진입",
   "pharma_value": 1,
   "blog_position_y": 4134
+ },
+ "치매예방약": {
+  "first_seen": "2026-11-21",
+  "seen_days": [
+   "2026-11-21"
+  ],
+  "last_seen": "2026-11-21",
+  "keyword": "치매예방약",
+  "search_volume": 7630,
+  "source": "shopping",
+  "shopping_rank": 255,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": 8400
+ },
+ "오르리스타트": {
+  "first_seen": "2026-11-21",
+  "seen_days": [
+   "2026-11-21"
+  ],
+  "last_seen": "2026-11-21",
+  "keyword": "제니칼",
+  "search_volume": 1580,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 5431
  }
 }

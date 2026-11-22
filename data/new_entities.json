@@ -823,20 +823,6 @@
   "pharma_value": 3,
   "blog_position_y": 7943
  },
- "양배추즙": {
-  "first_seen": "2026-09-23",
-  "seen_days": [
-   "2026-09-23"
-  ],
-  "last_seen": "2026-09-23",
-  "keyword": "양배추즙",
-  "search_volume": 28010,
-  "source": "shopping",
-  "shopping_rank": 25,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7010
- },
  "뇌영양제": {
   "first_seen": "2026-09-23",
   "seen_days": [
@@ -902,20 +888,6 @@
   "shopping_move": "급상승",
   "pharma_value": 5,
   "blog_position_y": 4933
- },
- "흑삼": {
-  "first_seen": "2026-09-23",
-  "seen_days": [
-   "2026-09-23"
-  ],
-  "last_seen": "2026-09-23",
-  "keyword": "흑삼",
-  "search_volume": 2630,
-  "source": "shopping",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7924
  },
  "칼덱신": {
   "first_seen": "2026-09-24",
@@ -2183,16 +2155,17 @@
   "seen_days": [
    "2026-10-05",
    "2026-10-23",
-   "2026-10-30"
+   "2026-10-30",
+   "2026-11-23"
   ],
-  "last_seen": "2026-10-30",
+  "last_seen": "2026-11-23",
   "keyword": "야채수",
-  "search_volume": 3410,
+  "search_volume": 3910,
   "source": "shopping",
-  "shopping_rank": 113,
+  "shopping_rank": 116,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6970
+  "blog_position_y": 7040
  },
  "의약품 보관": {
   "first_seen": "2026-10-05",
@@ -3326,16 +3299,17 @@
   "first_seen": "2026-10-20",
   "seen_days": [
    "2026-10-20",
-   "2026-11-10"
+   "2026-11-10",
+   "2026-11-23"
   ],
-  "last_seen": "2026-11-10",
+  "last_seen": "2026-11-23",
   "keyword": "퀘르포민정",
-  "search_volume": 16110,
+  "search_volume": 15420,
   "source": "shopping",
-  "shopping_rank": 63,
+  "shopping_rank": 66,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6643
+  "pharma_value": 2,
+  "blog_position_y": 6283
  },
  "근육이완제": {
   "first_seen": "2026-10-20",
@@ -3416,16 +3390,17 @@
    "2026-11-03",
    "2026-11-06",
    "2026-11-10",
-   "2026-11-19"
+   "2026-11-19",
+   "2026-11-23"
   ],
-  "last_seen": "2026-11-19",
-  "keyword": "안티놀",
-  "search_volume": 3930,
+  "last_seen": "2026-11-23",
+  "keyword": "안티놀 래피드",
+  "search_volume": 5210,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8011
+  "pharma_value": 3,
+  "blog_position_y": 8455
  },
  "우르소데옥시콜산": {
   "first_seen": "2026-10-21",
@@ -4680,16 +4655,17 @@
  "동전파스": {
   "first_seen": "2026-11-13",
   "seen_days": [
-   "2026-11-13"
+   "2026-11-13",
+   "2026-11-23"
   ],
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-23",
   "keyword": "동전파스",
-  "search_volume": 14780,
+  "search_volume": 13570,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 2163
+  "pharma_value": 4,
+  "blog_position_y": 1163
  },
  "단단환": {
   "first_seen": "2026-11-13",
@@ -5296,5 +5272,33 @@
   "shopping_move": "급상승",
   "pharma_value": 3,
   "blog_position_y": 8733
+ },
+ "사과즙": {
+  "first_seen": "2026-11-23",
+  "seen_days": [
+   "2026-11-23"
+  ],
+  "last_seen": "2026-11-23",
+  "keyword": "사과즙 효능",
+  "search_volume": 1210,
+  "source": "shopping",
+  "shopping_rank": 88,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 7543
+ },
+ "약인성 간손상": {
+  "first_seen": "2026-11-23",
+  "seen_days": [
+   "2026-11-23"
+  ],
+  "last_seen": "2026-11-23",
+  "keyword": "영양제 간손상",
+  "search_volume": 200,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 954
  }
 }

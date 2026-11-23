@@ -889,62 +889,6 @@
   "pharma_value": 5,
   "blog_position_y": 4933
  },
- "칼덱신": {
-  "first_seen": "2026-09-24",
-  "seen_days": [
-   "2026-09-24"
-  ],
-  "last_seen": "2026-09-24",
-  "keyword": "칼덱신정",
-  "search_volume": 4410,
-  "source": "shopping",
-  "shopping_rank": 292,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 974
- },
- "흑염소진액": {
-  "first_seen": "2026-09-24",
-  "seen_days": [
-   "2026-09-24"
-  ],
-  "last_seen": "2026-09-24",
-  "keyword": "흑염소진액",
-  "search_volume": 46280,
-  "source": "shopping",
-  "shopping_rank": 48,
-  "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 8069
- },
- "반려견 치약": {
-  "first_seen": "2026-09-24",
-  "seen_days": [
-   "2026-09-24"
-  ],
-  "last_seen": "2026-09-24",
-  "keyword": "강아지 치약",
-  "search_volume": 10540,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7812
- },
- "포스트바이오틱스": {
-  "first_seen": "2026-09-24",
-  "seen_days": [
-   "2026-09-24"
-  ],
-  "last_seen": "2026-09-24",
-  "keyword": "포스트바이오틱스",
-  "search_volume": 3940,
-  "source": "shopping",
-  "shopping_rank": 254,
-  "shopping_move": "새 진입",
-  "pharma_value": 4,
-  "blog_position_y": 7954
- },
  "베타글루칸": {
   "first_seen": "2026-09-24",
   "seen_days": [
@@ -3213,16 +3157,17 @@
    "2026-10-18",
    "2026-11-02",
    "2026-11-05",
-   "2026-11-21"
+   "2026-11-21",
+   "2026-11-24"
   ],
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-24",
   "keyword": "아커만시아",
-  "search_volume": 10070,
+  "search_volume": 14890,
   "source": "shopping",
-  "shopping_rank": 286,
-  "shopping_move": "새 진입",
-  "pharma_value": 4,
-  "blog_position_y": 7267
+  "shopping_rank": 54,
+  "shopping_move": "최근 진입",
+  "pharma_value": 5,
+  "blog_position_y": 7721
  },
  "쇠비름": {
   "first_seen": "2026-10-18",
@@ -4142,15 +4087,16 @@
    "2026-11-03",
    "2026-11-12",
    "2026-11-15",
-   "2026-11-21"
+   "2026-11-21",
+   "2026-11-24"
   ],
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-24",
   "keyword": "기생충 클렌즈",
   "search_volume": 20,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
+  "pharma_value": 4,
   "blog_position_y": null
  },
  "레스큐민": {
@@ -4272,16 +4218,17 @@
   "first_seen": "2026-11-06",
   "seen_days": [
    "2026-11-06",
-   "2026-11-21"
+   "2026-11-21",
+   "2026-11-24"
   ],
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-24",
   "keyword": "야관문",
-  "search_volume": 5300,
+  "search_volume": 5110,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 2105
+  "blog_position_y": 1955
  },
  "다슬기": {
   "first_seen": "2026-11-06",
@@ -4349,16 +4296,17 @@
  "가물치": {
   "first_seen": "2026-11-07",
   "seen_days": [
-   "2026-11-07"
+   "2026-11-07",
+   "2026-11-24"
   ],
-  "last_seen": "2026-11-07",
+  "last_seen": "2026-11-24",
   "keyword": "가물치즙",
-  "search_volume": 760,
+  "search_volume": 750,
   "source": "shopping",
-  "shopping_rank": 278,
+  "shopping_rank": 293,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6651
+  "blog_position_y": 5925
  },
  "미나리": {
   "first_seen": "2026-11-07",
@@ -5335,5 +5283,33 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 7576
+ },
+ "리포좀 커큐민": {
+  "first_seen": "2026-11-24",
+  "seen_days": [
+   "2026-11-24"
+  ],
+  "last_seen": "2026-11-24",
+  "keyword": "리포좀 커큐민",
+  "search_volume": 860,
+  "source": "shopping",
+  "shopping_rank": 214,
+  "shopping_move": "최근 진입",
+  "pharma_value": 5,
+  "blog_position_y": 5992
+ },
+ "퍼텐션": {
+  "first_seen": "2026-11-24",
+  "seen_days": [
+   "2026-11-24"
+  ],
+  "last_seen": "2026-11-24",
+  "keyword": "퍼텐션",
+  "search_volume": 950,
+  "source": "shopping",
+  "shopping_rank": 298,
+  "shopping_move": "새 진입",
+  "pharma_value": 1,
+  "blog_position_y": 5953
  }
 }

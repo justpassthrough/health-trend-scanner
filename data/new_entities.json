@@ -1180,16 +1180,17 @@
    "2026-10-19",
    "2026-10-25",
    "2026-11-16",
-   "2026-11-22"
+   "2026-11-22",
+   "2026-11-24"
   ],
-  "last_seen": "2026-11-22",
+  "last_seen": "2026-11-24",
   "keyword": "마가목 효능",
-  "search_volume": 29110,
+  "search_volume": 28790,
   "source": "shopping",
-  "shopping_rank": 250,
+  "shopping_rank": 295,
   "shopping_move": null,
-  "pharma_value": 2,
-  "blog_position_y": 9009
+  "pharma_value": 3,
+  "blog_position_y": 9140
  },
  "꾸지뽕": {
   "first_seen": "2026-09-26",
@@ -3112,16 +3113,17 @@
    "2026-10-18",
    "2026-10-29",
    "2026-11-03",
-   "2026-11-15"
+   "2026-11-15",
+   "2026-11-24"
   ],
-  "last_seen": "2026-11-15",
+  "last_seen": "2026-11-24",
   "keyword": "돌외잎 효능",
-  "search_volume": 1540,
+  "search_volume": 1430,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 3708
+  "pharma_value": 3,
+  "blog_position_y": 2837
  },
  "메코발라민": {
   "first_seen": "2026-10-18",
@@ -3859,16 +3861,17 @@
   "seen_days": [
    "2026-10-29",
    "2026-11-02",
-   "2026-11-06"
+   "2026-11-06",
+   "2026-11-24"
   ],
-  "last_seen": "2026-11-06",
+  "last_seen": "2026-11-24",
   "keyword": "호박즙",
-  "search_volume": 6940,
+  "search_volume": 9080,
   "source": "shopping",
-  "shopping_rank": 37,
+  "shopping_rank": 104,
   "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 7389
+  "pharma_value": 3,
+  "blog_position_y": 8283
  },
  "레티놀": {
   "first_seen": "2026-10-30",
@@ -5311,5 +5314,33 @@
   "shopping_move": "새 진입",
   "pharma_value": 1,
   "blog_position_y": 5953
+ },
+ "드시모네": {
+  "first_seen": "2026-11-24",
+  "seen_days": [
+   "2026-11-24"
+  ],
+  "last_seen": "2026-11-24",
+  "keyword": "드시모네",
+  "search_volume": 40460,
+  "source": "shopping",
+  "shopping_rank": 283,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 9840
+ },
+ "아스코르브산": {
+  "first_seen": "2026-11-24",
+  "seen_days": [
+   "2026-11-24"
+  ],
+  "last_seen": "2026-11-24",
+  "keyword": "비타민c 가루",
+  "search_volume": 3750,
+  "source": "shopping",
+  "shopping_rank": 175,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8761
  }
 }

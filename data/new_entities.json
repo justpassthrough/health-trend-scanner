@@ -209,23 +209,6 @@
   "pharma_value": 5,
   "blog_position_y": 7370
  },
- "피크노제놀": {
-  "first_seen": "2026-09-18",
-  "seen_days": [
-   "2026-09-18",
-   "2026-09-20",
-   "2026-09-22",
-   "2026-09-25"
-  ],
-  "last_seen": "2026-09-25",
-  "keyword": "피크노제놀",
-  "search_volume": 20310,
-  "source": "shopping",
-  "shopping_rank": 53,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6961
- },
  "프로폴리스": {
   "first_seen": "2026-09-18",
   "seen_days": [
@@ -243,22 +226,6 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 9562
- },
- "니코틴산아미드": {
-  "first_seen": "2026-09-18",
-  "seen_days": [
-   "2026-09-18",
-   "2026-09-22",
-   "2026-09-25"
-  ],
-  "last_seen": "2026-09-25",
-  "keyword": "나이아신아마이드 효과",
-  "search_volume": 4730,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 176
  },
  "설포라판": {
   "first_seen": "2026-09-18",
@@ -925,20 +892,6 @@
   "pharma_value": 1,
   "blog_position_y": 7350
  },
- "올리브오일캡슐": {
-  "first_seen": "2026-09-25",
-  "seen_days": [
-   "2026-09-25"
-  ],
-  "last_seen": "2026-09-25",
-  "keyword": "올리브오일 캡슐",
-  "search_volume": 17580,
-  "source": "shopping",
-  "shopping_rank": 75,
-  "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6807
- },
  "리포좀비타민C": {
   "first_seen": "2026-09-25",
   "seen_days": [
@@ -989,20 +942,6 @@
   "pharma_value": 2,
   "blog_position_y": 781
  },
- "MAC": {
-  "first_seen": "2026-09-25",
-  "seen_days": [
-   "2026-09-25"
-  ],
-  "last_seen": "2026-09-25",
-  "keyword": "수용성 식이섬유",
-  "search_volume": 2140,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 2164
- },
  "브로멜라인": {
   "first_seen": "2026-09-25",
   "seen_days": [
@@ -1020,20 +959,6 @@
   "shopping_move": "최근 진입",
   "pharma_value": 4,
   "blog_position_y": 9230
- },
- "임산부영양제": {
-  "first_seen": "2026-09-25",
-  "seen_days": [
-   "2026-09-25"
-  ],
-  "last_seen": "2026-09-25",
-  "keyword": "임산부 영양제",
-  "search_volume": 12790,
-  "source": "shopping",
-  "shopping_rank": 258,
-  "shopping_move": "최근 진입",
-  "pharma_value": 5,
-  "blog_position_y": 10399
  },
  "벤포티아민": {
   "first_seen": "2026-09-25",
@@ -5164,16 +5089,17 @@
  "혈당영양제": {
   "first_seen": "2026-11-22",
   "seen_days": [
-   "2026-11-22"
+   "2026-11-22",
+   "2026-11-25"
   ],
-  "last_seen": "2026-11-22",
+  "last_seen": "2026-11-25",
   "keyword": "혈당영양제",
-  "search_volume": 5600,
+  "search_volume": 5620,
   "source": "shopping",
-  "shopping_rank": 196,
+  "shopping_rank": 190,
   "shopping_move": "급상승",
   "pharma_value": 4,
-  "blog_position_y": 8809
+  "blog_position_y": 8702
  },
  "아나파랙틴": {
   "first_seen": "2026-11-22",
@@ -5220,16 +5146,17 @@
  "토마토즙": {
   "first_seen": "2026-11-22",
   "seen_days": [
-   "2026-11-22"
+   "2026-11-22",
+   "2026-11-25"
   ],
-  "last_seen": "2026-11-22",
+  "last_seen": "2026-11-25",
   "keyword": "토마토즙",
-  "search_volume": 6220,
+  "search_volume": 6160,
   "source": "shopping",
-  "shopping_rank": 67,
+  "shopping_rank": 83,
   "shopping_move": "급상승",
   "pharma_value": 3,
-  "blog_position_y": 8733
+  "blog_position_y": 8383
  },
  "사과즙": {
   "first_seen": "2026-11-23",
@@ -5342,5 +5269,33 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 8761
+ },
+ "비타민C 가루": {
+  "first_seen": "2026-11-25",
+  "seen_days": [
+   "2026-11-25"
+  ],
+  "last_seen": "2026-11-25",
+  "keyword": "비타민C 가루",
+  "search_volume": 3750,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": 8807
+ },
+ "알레논필": {
+  "first_seen": "2026-11-25",
+  "seen_days": [
+   "2026-11-25"
+  ],
+  "last_seen": "2026-11-25",
+  "keyword": "알레논필",
+  "search_volume": 2350,
+  "source": "shopping",
+  "shopping_rank": 298,
+  "shopping_move": "새 진입",
+  "pharma_value": 2,
+  "blog_position_y": 6818
  }
 }

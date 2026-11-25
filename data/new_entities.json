@@ -2075,16 +2075,17 @@
    "2026-10-09",
    "2026-10-12",
    "2026-11-09",
-   "2026-11-19"
+   "2026-11-19",
+   "2026-11-25"
   ],
-  "last_seen": "2026-11-19",
-  "keyword": "솔잎농축액",
-  "search_volume": 6790,
+  "last_seen": "2026-11-25",
+  "keyword": "솔잎 효능",
+  "search_volume": 7240,
   "source": "shopping",
-  "shopping_rank": 117,
+  "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 9261
+  "pharma_value": 2,
+  "blog_position_y": 8327
  },
  "루마큐라": {
   "first_seen": "2026-10-05",
@@ -3844,16 +3845,17 @@
  "사과식초": {
   "first_seen": "2026-10-31",
   "seen_days": [
-   "2026-10-31"
+   "2026-10-31",
+   "2026-11-25"
   ],
-  "last_seen": "2026-10-31",
+  "last_seen": "2026-11-25",
   "keyword": "애사비",
-  "search_volume": 36340,
-  "source": "shopping",
+  "search_volume": 34580,
+  "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7219
+  "blog_position_y": 7888
  },
  "판토오틴": {
   "first_seen": "2026-10-31",
@@ -4163,32 +4165,34 @@
   "seen_days": [
    "2026-11-06",
    "2026-11-20",
-   "2026-11-23"
+   "2026-11-23",
+   "2026-11-25"
   ],
-  "last_seen": "2026-11-23",
+  "last_seen": "2026-11-25",
   "keyword": "다슬기즙",
-  "search_volume": 1880,
+  "search_volume": 1890,
   "source": "shopping",
-  "shopping_rank": 131,
+  "shopping_rank": 136,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 6956
+  "blog_position_y": 7225
  },
  "단백질 보충제": {
   "first_seen": "2026-11-06",
   "seen_days": [
    "2026-11-06",
    "2026-11-09",
-   "2026-11-13"
+   "2026-11-13",
+   "2026-11-25"
   ],
-  "last_seen": "2026-11-13",
-  "keyword": "청소년 단백질",
-  "search_volume": 100,
+  "last_seen": "2026-11-25",
+  "keyword": "단백질 보충제",
+  "search_volume": 26800,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 5986
+  "blog_position_y": 9552
  },
  "엉겅퀴": {
   "first_seen": "2026-11-06",
@@ -4892,16 +4896,17 @@
   "first_seen": "2026-11-18",
   "seen_days": [
    "2026-11-18",
-   "2026-11-21"
+   "2026-11-21",
+   "2026-11-25"
   ],
-  "last_seen": "2026-11-21",
-  "keyword": "마테차",
-  "search_volume": 3880,
+  "last_seen": "2026-11-25",
+  "keyword": "마테판",
+  "search_volume": 8800,
   "source": "shopping",
-  "shopping_rank": null,
+  "shopping_rank": 21,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7326
+  "pharma_value": 2,
+  "blog_position_y": 5737
  },
  "마가목열매": {
   "first_seen": "2026-11-19",
@@ -5297,5 +5302,19 @@
   "shopping_move": "새 진입",
   "pharma_value": 2,
   "blog_position_y": 6818
+ },
+ "니코틴파우치": {
+  "first_seen": "2026-11-25",
+  "seen_days": [
+   "2026-11-25"
+  ],
+  "last_seen": "2026-11-25",
+  "keyword": "니코틴파우치",
+  "search_volume": 20,
+  "source": "shopping",
+  "shopping_rank": 217,
+  "shopping_move": "급상승",
+  "pharma_value": 5,
+  "blog_position_y": null
  }
 }

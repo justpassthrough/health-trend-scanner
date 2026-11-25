@@ -563,22 +563,6 @@
   "pharma_value": 4,
   "blog_position_y": 1700
  },
- "영지버섯": {
-  "first_seen": "2026-09-20",
-  "seen_days": [
-   "2026-09-20",
-   "2026-09-23",
-   "2026-09-26"
-  ],
-  "last_seen": "2026-09-26",
-  "keyword": "영지버섯",
-  "search_volume": 19010,
-  "source": "shopping",
-  "shopping_rank": 90,
-  "shopping_move": "급상승",
-  "pharma_value": 3,
-  "blog_position_y": 6722
- },
  "올리브오일 캡슐": {
   "first_seen": "2026-09-21",
   "seen_days": [
@@ -727,16 +711,17 @@
    "2026-09-22",
    "2026-10-10",
    "2026-10-24",
-   "2026-11-16"
+   "2026-11-16",
+   "2026-11-26"
   ],
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-26",
   "keyword": "테라큐민",
-  "search_volume": 9330,
+  "search_volume": 8420,
   "source": "shopping",
-  "shopping_rank": 189,
+  "shopping_rank": 123,
   "shopping_move": "급상승",
   "pharma_value": 5,
-  "blog_position_y": 8583
+  "blog_position_y": null
  },
  "MAC 식단": {
   "first_seen": "2026-09-22",
@@ -993,62 +978,6 @@
   "pharma_value": 3,
   "blog_position_y": 11109
  },
- "식물성 멜라토닌": {
-  "first_seen": "2026-09-26",
-  "seen_days": [
-   "2026-09-26"
-  ],
-  "last_seen": "2026-09-26",
-  "keyword": "식물성 멜라토닌",
-  "search_volume": 17990,
-  "source": "shopping",
-  "shopping_rank": 165,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 7418
- },
- "전립선영양제": {
-  "first_seen": "2026-09-26",
-  "seen_days": [
-   "2026-09-26"
-  ],
-  "last_seen": "2026-09-26",
-  "keyword": "전립선 영양제",
-  "search_volume": 10040,
-  "source": "shopping",
-  "shopping_rank": 246,
-  "shopping_move": "급상승",
-  "pharma_value": 4,
-  "blog_position_y": 8866
- },
- "옵티스텝": {
-  "first_seen": "2026-09-26",
-  "seen_days": [
-   "2026-09-26"
-  ],
-  "last_seen": "2026-09-26",
-  "keyword": "옵티스텝",
-  "search_volume": 11060,
-  "source": "shopping",
-  "shopping_rank": 64,
-  "shopping_move": "급상승",
-  "pharma_value": 2,
-  "blog_position_y": 3911
- },
- "엑소좀": {
-  "first_seen": "2026-09-26",
-  "seen_days": [
-   "2026-09-26"
-  ],
-  "last_seen": "2026-09-26",
-  "keyword": "엑소좀",
-  "search_volume": 9890,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 1504
- },
  "헤어볼": {
   "first_seen": "2026-09-26",
   "seen_days": [
@@ -1064,20 +993,6 @@
   "shopping_move": null,
   "pharma_value": 3,
   "blog_position_y": 1525
- },
- "나토키나제": {
-  "first_seen": "2026-09-26",
-  "seen_days": [
-   "2026-09-26"
-  ],
-  "last_seen": "2026-09-26",
-  "keyword": "나토키나제",
-  "search_volume": 6340,
-  "source": "shopping",
-  "shopping_rank": 249,
-  "shopping_move": "급상승",
-  "pharma_value": 5,
-  "blog_position_y": 6118
  },
  "푸룬": {
   "first_seen": "2026-09-26",
@@ -1824,16 +1739,17 @@
    "2026-10-03",
    "2026-10-17",
    "2026-11-08",
-   "2026-11-17"
+   "2026-11-17",
+   "2026-11-26"
   ],
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-26",
   "keyword": "오쏘몰 이뮨",
-  "search_volume": 29720,
+  "search_volume": 28450,
   "source": "shopping",
-  "shopping_rank": 70,
+  "shopping_rank": 99,
   "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 9211
+  "pharma_value": 4,
+  "blog_position_y": null
  },
  "사워크라우트": {
   "first_seen": "2026-10-03",
@@ -4769,16 +4685,17 @@
  "레몬즙": {
   "first_seen": "2026-11-16",
   "seen_days": [
-   "2026-11-16"
+   "2026-11-16",
+   "2026-11-26"
   ],
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-26",
   "keyword": "레몬즙 효능",
-  "search_volume": 6670,
+  "search_volume": 6050,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 7605
+  "blog_position_y": null
  },
  "케라넷": {
   "first_seen": "2026-11-16",
@@ -5315,6 +5232,62 @@
   "shopping_rank": 217,
   "shopping_move": "급상승",
   "pharma_value": 5,
+  "blog_position_y": null
+ },
+ "블루베리즙": {
+  "first_seen": "2026-11-26",
+  "seen_days": [
+   "2026-11-26"
+  ],
+  "last_seen": "2026-11-26",
+  "keyword": "블루베리즙",
+  "search_volume": 9890,
+  "source": "shopping",
+  "shopping_rank": 50,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": null
+ },
+ "양파즙": {
+  "first_seen": "2026-11-26",
+  "seen_days": [
+   "2026-11-26"
+  ],
+  "last_seen": "2026-11-26",
+  "keyword": "양파즙",
+  "search_volume": 9300,
+  "source": "shopping",
+  "shopping_rank": 97,
+  "shopping_move": null,
+  "pharma_value": 3,
+  "blog_position_y": null
+ },
+ "키움정": {
+  "first_seen": "2026-11-26",
+  "seen_days": [
+   "2026-11-26"
+  ],
+  "last_seen": "2026-11-26",
+  "keyword": "키 크는 영양제",
+  "search_volume": 8760,
+  "source": "shopping",
+  "shopping_rank": 268,
+  "shopping_move": "급상승",
+  "pharma_value": 2,
+  "blog_position_y": null
+ },
+ "펙수클루": {
+  "first_seen": "2026-11-26",
+  "seen_days": [
+   "2026-11-26"
+  ],
+  "last_seen": "2026-11-26",
+  "keyword": "펙수클루",
+  "search_volume": 960,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
   "blog_position_y": null
  }
 }

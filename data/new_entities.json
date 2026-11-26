@@ -1190,16 +1190,17 @@
   "first_seen": "2026-09-28",
   "seen_days": [
    "2026-09-28",
-   "2026-11-21"
+   "2026-11-21",
+   "2026-11-26"
   ],
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-26",
   "keyword": "황기 효능",
-  "search_volume": 7290,
+  "search_volume": 7780,
   "source": "shopping",
-  "shopping_rank": 250,
-  "shopping_move": "급상승",
+  "shopping_rank": 204,
+  "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 5811
+  "blog_position_y": 5664
  },
  "아세트아미노펜": {
   "first_seen": "2026-09-28",
@@ -4400,16 +4401,17 @@
   "first_seen": "2026-11-12",
   "seen_days": [
    "2026-11-12",
-   "2026-11-15"
+   "2026-11-15",
+   "2026-11-26"
   ],
-  "last_seen": "2026-11-15",
-  "keyword": "비타민C 과다복용",
-  "search_volume": 8810,
+  "last_seen": "2026-11-26",
+  "keyword": "메가도스 비타민c",
+  "search_volume": 29590,
   "source": "shopping",
-  "shopping_rank": null,
+  "shopping_rank": 144,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 3097
+  "blog_position_y": 7740
  },
  "참당귀": {
   "first_seen": "2026-11-12",
@@ -4997,16 +4999,17 @@
  "리포좀 비타민B": {
   "first_seen": "2026-11-22",
   "seen_days": [
-   "2026-11-22"
+   "2026-11-22",
+   "2026-11-26"
   ],
-  "last_seen": "2026-11-22",
-  "keyword": "리포좀 비타민B",
-  "search_volume": 140,
+  "last_seen": "2026-11-26",
+  "keyword": "리포좀 비타민b",
+  "search_volume": 160,
   "source": "shopping",
-  "shopping_rank": null,
+  "shopping_rank": 283,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 6514
+  "blog_position_y": 7020
  },
  "혈당영양제": {
   "first_seen": "2026-11-22",
@@ -5289,5 +5292,47 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": null
+ },
+ "안드로그라피스": {
+  "first_seen": "2026-11-26",
+  "seen_days": [
+   "2026-11-26"
+  ],
+  "last_seen": "2026-11-26",
+  "keyword": "파랙틴",
+  "search_volume": 5330,
+  "source": "shopping",
+  "shopping_rank": 100,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 8010
+ },
+ "혈액순환제": {
+  "first_seen": "2026-11-26",
+  "seen_days": [
+   "2026-11-26"
+  ],
+  "last_seen": "2026-11-26",
+  "keyword": "혈액순환 영양제",
+  "search_volume": 10690,
+  "source": "shopping",
+  "shopping_rank": 203,
+  "shopping_move": "새 진입",
+  "pharma_value": 5,
+  "blog_position_y": 8903
+ },
+ "아로나민": {
+  "first_seen": "2026-11-26",
+  "seen_days": [
+   "2026-11-26"
+  ],
+  "last_seen": "2026-11-26",
+  "keyword": "아로나민 골드원",
+  "search_volume": 1200,
+  "source": "news",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 3271
  }
 }

@@ -87,23 +87,6 @@
   "pharma_value": 3,
   "blog_position_y": 7463
  },
- "칼마디": {
-  "first_seen": "2026-09-18",
-  "seen_days": [
-   "2026-09-18",
-   "2026-09-21",
-   "2026-09-24",
-   "2026-09-27"
-  ],
-  "last_seen": "2026-09-27",
-  "keyword": "칼마디",
-  "search_volume": 26260,
-  "source": "shopping",
-  "shopping_rank": 37,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6441
- },
  "흑마늘": {
   "first_seen": "2026-09-18",
   "seen_days": [
@@ -1096,34 +1079,6 @@
   "pharma_value": 3,
   "blog_position_y": 7722
  },
- "하수오": {
-  "first_seen": "2026-09-27",
-  "seen_days": [
-   "2026-09-27"
-  ],
-  "last_seen": "2026-09-27",
-  "keyword": "하수오",
-  "search_volume": 10870,
-  "source": "shopping",
-  "shopping_rank": 257,
-  "shopping_move": "최근 진입",
-  "pharma_value": 5,
-  "blog_position_y": 1300
- },
- "우슬": {
-  "first_seen": "2026-09-27",
-  "seen_days": [
-   "2026-09-27"
-  ],
-  "last_seen": "2026-09-27",
-  "keyword": "우슬",
-  "search_volume": 10970,
-  "source": "shopping",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 8573
- },
  "은행잎추출물": {
   "first_seen": "2026-09-27",
   "seen_days": [
@@ -1139,20 +1094,6 @@
   "shopping_move": null,
   "pharma_value": 5,
   "blog_position_y": 1646
- },
- "마이크로니들": {
-  "first_seen": "2026-09-27",
-  "seen_days": [
-   "2026-09-27"
-  ],
-  "last_seen": "2026-09-27",
-  "keyword": "마이크로니들 패치",
-  "search_volume": 640,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6627
  },
  "캡슐레이션효소": {
   "first_seen": "2026-09-28",
@@ -1278,16 +1219,17 @@
   "first_seen": "2026-09-29",
   "seen_days": [
    "2026-09-29",
-   "2026-11-10"
+   "2026-11-10",
+   "2026-11-27"
   ],
-  "last_seen": "2026-11-10",
+  "last_seen": "2026-11-27",
   "keyword": "인사돌",
-  "search_volume": 15570,
+  "search_volume": 17180,
   "source": "shopping",
-  "shopping_rank": 185,
-  "shopping_move": "급상승",
+  "shopping_rank": 119,
+  "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 6239
+  "blog_position_y": 6593
  },
  "퀘르포민정": {
   "first_seen": "2026-09-29",
@@ -1437,16 +1379,17 @@
    "2026-10-03",
    "2026-10-10",
    "2026-10-27",
-   "2026-11-04"
+   "2026-11-04",
+   "2026-11-27"
   ],
-  "last_seen": "2026-11-04",
+  "last_seen": "2026-11-27",
   "keyword": "파랙틴",
-  "search_volume": 4720,
+  "search_volume": 5270,
   "source": "shopping",
-  "shopping_rank": 40,
-  "shopping_move": null,
+  "shopping_rank": 100,
+  "shopping_move": "새 진입",
   "pharma_value": 2,
-  "blog_position_y": 7789
+  "blog_position_y": 8518
  },
  "한삼덩굴": {
   "first_seen": "2026-09-30",
@@ -3935,9 +3878,10 @@
    "2026-11-12",
    "2026-11-15",
    "2026-11-21",
-   "2026-11-24"
+   "2026-11-24",
+   "2026-11-27"
   ],
-  "last_seen": "2026-11-24",
+  "last_seen": "2026-11-27",
   "keyword": "기생충 클렌즈",
   "search_volume": 20,
   "source": "news",
@@ -4459,16 +4403,17 @@
   "first_seen": "2026-11-13",
   "seen_days": [
    "2026-11-13",
-   "2026-11-23"
+   "2026-11-23",
+   "2026-11-27"
   ],
-  "last_seen": "2026-11-23",
+  "last_seen": "2026-11-27",
   "keyword": "동전파스",
-  "search_volume": 13570,
+  "search_volume": 13280,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 1163
+  "blog_position_y": 2956
  },
  "단단환": {
   "first_seen": "2026-11-13",
@@ -5334,5 +5279,19 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 3271
+ },
+ "미토비타": {
+  "first_seen": "2026-11-27",
+  "seen_days": [
+   "2026-11-27"
+  ],
+  "last_seen": "2026-11-27",
+  "keyword": "미토비타",
+  "search_volume": 2060,
+  "source": "shopping",
+  "shopping_rank": 292,
+  "shopping_move": "급상승",
+  "pharma_value": 3,
+  "blog_position_y": 3964
  }
 }

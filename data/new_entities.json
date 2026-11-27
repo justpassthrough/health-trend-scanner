@@ -261,23 +261,6 @@
   "pharma_value": 3,
   "blog_position_y": 5783
  },
- "PQQ": {
-  "first_seen": "2026-09-19",
-  "seen_days": [
-   "2026-09-19",
-   "2026-09-21",
-   "2026-09-25",
-   "2026-09-28"
-  ],
-  "last_seen": "2026-09-28",
-  "keyword": "PQQ",
-  "search_volume": 1960,
-  "source": "shopping",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 4,
-  "blog_position_y": 6710
- },
  "테아닌": {
   "first_seen": "2026-09-19",
   "seen_days": [
@@ -434,21 +417,6 @@
   "shopping_move": "급상승",
   "pharma_value": 3,
   "blog_position_y": 3198
- },
- "양배추": {
-  "first_seen": "2026-09-20",
-  "seen_days": [
-   "2026-09-20",
-   "2026-09-28"
-  ],
-  "last_seen": "2026-09-28",
-  "keyword": "양배추즙",
-  "search_volume": 26870,
-  "source": "shopping",
-  "shopping_rank": 70,
-  "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 6902
  },
  "삼백초": {
   "first_seen": "2026-09-20",
@@ -1143,20 +1111,6 @@
   "pharma_value": 3,
   "blog_position_y": 5664
  },
- "아세트아미노펜": {
-  "first_seen": "2026-09-28",
-  "seen_days": [
-   "2026-09-28"
-  ],
-  "last_seen": "2026-09-28",
-  "keyword": "아세트아미노펜",
-  "search_volume": 29510,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 6090
- },
  "돈태반": {
   "first_seen": "2026-09-28",
   "seen_days": [
@@ -1186,20 +1140,6 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 7173
- },
- "니코틴아미드": {
-  "first_seen": "2026-09-28",
-  "seen_days": [
-   "2026-09-28"
-  ],
-  "last_seen": "2026-09-28",
-  "keyword": "애크린비타겔",
-  "search_volume": 1140,
-  "source": "news",
-  "shopping_rank": null,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 176
  },
  "비타민C": {
   "first_seen": "2026-09-29",
@@ -2792,16 +2732,17 @@
   "first_seen": "2026-10-17",
   "seen_days": [
    "2026-10-17",
-   "2026-11-04"
+   "2026-11-04",
+   "2026-11-28"
   ],
-  "last_seen": "2026-11-04",
-  "keyword": "센트룸 실버",
-  "search_volume": 2300,
+  "last_seen": "2026-11-28",
+  "keyword": "실버 종합비타민",
+  "search_volume": 60,
   "source": "shopping",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 4,
-  "blog_position_y": 7550
+  "blog_position_y": null
  },
  "황칠나무": {
   "first_seen": "2026-10-17",
@@ -3648,16 +3589,17 @@
    "2026-10-29",
    "2026-11-02",
    "2026-11-06",
-   "2026-11-24"
+   "2026-11-24",
+   "2026-11-28"
   ],
-  "last_seen": "2026-11-24",
+  "last_seen": "2026-11-28",
   "keyword": "호박즙",
-  "search_volume": 9080,
+  "search_volume": 9650,
   "source": "shopping",
-  "shopping_rank": 104,
+  "shopping_rank": 111,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 8283
+  "pharma_value": 4,
+  "blog_position_y": 8311
  },
  "레티놀": {
   "first_seen": "2026-10-30",
@@ -3706,16 +3648,17 @@
   "first_seen": "2026-10-31",
   "seen_days": [
    "2026-10-31",
-   "2026-11-25"
+   "2026-11-25",
+   "2026-11-28"
   ],
-  "last_seen": "2026-11-25",
+  "last_seen": "2026-11-28",
   "keyword": "애사비",
-  "search_volume": 34580,
+  "search_volume": 33920,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 3,
-  "blog_position_y": 7888
+  "pharma_value": 4,
+  "blog_position_y": 7276
  },
  "판토오틴": {
   "first_seen": "2026-10-31",
@@ -4044,16 +3987,17 @@
    "2026-11-06",
    "2026-11-09",
    "2026-11-13",
-   "2026-11-25"
+   "2026-11-25",
+   "2026-11-28"
   ],
-  "last_seen": "2026-11-25",
+  "last_seen": "2026-11-28",
   "keyword": "단백질 보충제",
-  "search_volume": 26800,
+  "search_volume": 26450,
   "source": "news",
   "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 3,
-  "blog_position_y": 9552
+  "blog_position_y": 9177
  },
  "엉겅퀴": {
   "first_seen": "2026-11-06",
@@ -5032,16 +4976,17 @@
  "사과즙": {
   "first_seen": "2026-11-23",
   "seen_days": [
-   "2026-11-23"
+   "2026-11-23",
+   "2026-11-28"
   ],
-  "last_seen": "2026-11-23",
-  "keyword": "사과즙 효능",
-  "search_volume": 1210,
+  "last_seen": "2026-11-28",
+  "keyword": "사과즙",
+  "search_volume": 12680,
   "source": "shopping",
-  "shopping_rank": 88,
-  "shopping_move": null,
-  "pharma_value": 5,
-  "blog_position_y": 7543
+  "shopping_rank": 15,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 8383
  },
  "약인성 간손상": {
   "first_seen": "2026-11-23",

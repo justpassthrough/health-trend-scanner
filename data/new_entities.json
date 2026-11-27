@@ -4761,16 +4761,17 @@
   "seen_days": [
    "2026-11-18",
    "2026-11-21",
-   "2026-11-25"
+   "2026-11-25",
+   "2026-11-27"
   ],
-  "last_seen": "2026-11-25",
-  "keyword": "마테판",
-  "search_volume": 8800,
+  "last_seen": "2026-11-27",
+  "keyword": "마테차",
+  "search_volume": 3640,
   "source": "shopping",
-  "shopping_rank": 21,
+  "shopping_rank": null,
   "shopping_move": null,
-  "pharma_value": 2,
-  "blog_position_y": 5737
+  "pharma_value": 3,
+  "blog_position_y": 7392
  },
  "마가목열매": {
   "first_seen": "2026-11-19",
@@ -5293,5 +5294,19 @@
   "shopping_move": "급상승",
   "pharma_value": 3,
   "blog_position_y": 3964
+ },
+ "아쉬와간다": {
+  "first_seen": "2026-11-27",
+  "seen_days": [
+   "2026-11-27"
+  ],
+  "last_seen": "2026-11-27",
+  "keyword": "아쉬아간다",
+  "search_volume": 1960,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 4,
+  "blog_position_y": 6375
  }
 }

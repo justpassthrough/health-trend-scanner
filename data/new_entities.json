@@ -2809,16 +2809,17 @@
  "록피드": {
   "first_seen": "2026-10-18",
   "seen_days": [
-   "2026-10-18"
+   "2026-10-18",
+   "2026-11-28"
   ],
-  "last_seen": "2026-10-18",
+  "last_seen": "2026-11-28",
   "keyword": "록피드",
-  "search_volume": 990,
+  "search_volume": 1080,
   "source": "shopping",
-  "shopping_rank": 131,
+  "shopping_rank": 71,
   "shopping_move": "새 진입",
-  "pharma_value": 1,
-  "blog_position_y": 5667
+  "pharma_value": 2,
+  "blog_position_y": 6364
  },
  "원더씬": {
   "first_seen": "2026-10-18",
@@ -4890,16 +4891,17 @@
   "first_seen": "2026-11-22",
   "seen_days": [
    "2026-11-22",
-   "2026-11-26"
+   "2026-11-26",
+   "2026-11-28"
   ],
-  "last_seen": "2026-11-26",
-  "keyword": "리포좀 비타민b",
-  "search_volume": 160,
+  "last_seen": "2026-11-28",
+  "keyword": "리포좀 비타민B",
+  "search_volume": 190,
   "source": "shopping",
-  "shopping_rank": 283,
+  "shopping_rank": null,
   "shopping_move": null,
   "pharma_value": 5,
-  "blog_position_y": 7020
+  "blog_position_y": 6511
  },
  "혈당영양제": {
   "first_seen": "2026-11-22",
@@ -5253,5 +5255,47 @@
   "shopping_move": null,
   "pharma_value": 4,
   "blog_position_y": 6375
+ },
+ "단삼": {
+  "first_seen": "2026-11-28",
+  "seen_days": [
+   "2026-11-28"
+  ],
+  "last_seen": "2026-11-28",
+  "keyword": "단삼",
+  "search_volume": 2580,
+  "source": "shopping",
+  "shopping_rank": 280,
+  "shopping_move": "새 진입",
+  "pharma_value": 5,
+  "blog_position_y": 8452
+ },
+ "비타민B6": {
+  "first_seen": "2026-11-28",
+  "seen_days": [
+   "2026-11-28"
+  ],
+  "last_seen": "2026-11-28",
+  "keyword": "비타민B6 효능",
+  "search_volume": 2110,
+  "source": "shopping",
+  "shopping_rank": null,
+  "shopping_move": null,
+  "pharma_value": 5,
+  "blog_position_y": 5570
+ },
+ "포스트바이오틱스": {
+  "first_seen": "2026-11-28",
+  "seen_days": [
+   "2026-11-28"
+  ],
+  "last_seen": "2026-11-28",
+  "keyword": "포스트바이오틱스",
+  "search_volume": 3370,
+  "source": "shopping",
+  "shopping_rank": 164,
+  "shopping_move": "급상승",
+  "pharma_value": 4,
+  "blog_position_y": 6177
  }
 }
